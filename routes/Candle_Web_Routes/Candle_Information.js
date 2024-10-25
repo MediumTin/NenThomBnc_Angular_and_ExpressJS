@@ -5,9 +5,11 @@ const path = require('path');
 const { createClient } = require('redis');
 const Redis_API = require('../../controllers/API_with_Redis/API_Redis');
 const Menu_Candle_Processing = require('../../controllers/Website_Candle_Light/Menu_Candle_Processing_MongooseDB');
+const Global_Interface = require('../../controllers/Website_Candle_Light/Global_interface');
 var result = "";
 var Shopping_bag_array = []; // declare one array (listed node), can easy for adding new element into it.
 var Shopping_bag_array_counter = 0;
+// var isFirstTimeLogin = true;
 const client = createClient();  // Create a Redis client
 // New implementation for Engine template handlerbar
 
@@ -36,6 +38,15 @@ Router.get('^/$|',async (req,res)=>{
             })}
          else {
             // Session is timeout -> Request login again
+            Shopping_bag_array_counter = 0;
+            Shopping_bag_array = [];
+            isFirstTimeLogin = true;
+            // req.sessionStore.clear((err) =>{
+            //    if(err){
+            //        return res.send('Error clearing session.');
+            //    }
+            // })
+            req.session.destroy();
             res.redirect('/login_handling');
          }
       }
@@ -50,12 +61,20 @@ Router.post('/',(req,res)=>{
 
 Router.post('/requestwriteintosession',(req,res)=>{
    console.log(`Post status is received in requestwriteintosession is ${req.body.candle_name}`);
+   
    var local_request_to_write = req.body.candle_name;
    var local_request_quatity = req.body.quatity;
    var local_request_price = req.body.price;
    var isSessionValid = req.session.personal_information; // Check session is exist or not
+
+   // Reset first time after log in
+   if(Global_Interface.isFirstTimeLogin == true){
+      Shopping_bag_array_counter = 0;
+      Shopping_bag_array = [];
+   }
+   console.log(`Value of first login is ${Global_Interface.isFirstTimeLogin}`);
    if(isSessionValid != undefined){
-      
+      Global_Interface.isFirstTimeLogin = false;
       console.log(`Previous value is : ${Shopping_bag_array}`);
       Shopping_bag_array[Shopping_bag_array_counter] = [
          `${local_request_to_write}`,
@@ -68,8 +87,17 @@ Router.post('/requestwriteintosession',(req,res)=>{
    }
    else {
       // Session is timeout -> Request login again
+      // Shopping_bag_array = [];
+      Global_Interface.isFirstTimeLogin = true;
+      req.sessionStore.clear((err) =>{
+         if(err){
+             return res.send('Error clearing session.');
+         }
+     })
+     req.session.destroy();
       res.redirect('/login_handling');
    }
+   console.log(`Value of Shopping_bag_array_counter is ${Shopping_bag_array_counter} and array is ${Shopping_bag_array}`);
 })
 
 const ReadAllData_From_Database_And_RedisCache = async() =>{

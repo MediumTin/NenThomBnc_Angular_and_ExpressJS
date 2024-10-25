@@ -15,16 +15,22 @@ const connectDB = require('./config/dbConn.js');
 const expressHb = require('express-handlebars');
 const session = require('express-session');
 const Redis = require('ioredis');
+const { v4: uuidv4 } = require("uuid");
 const RedisStore = require('connect-redis').default;
-const clientRedis = new Redis(); // defaut localhost
+// const clientRedis = new Redis(); // defaut localhost
+let clientRedis = redis.createClient();
+clientRedis.connect().catch(console.error);
 // import { engine } from 'express-handlebars';
 const PORT = process.env.PORT || 3500;
 const RedisPort = PORT;
-const TargetTime_Of_Minute = 10; // allow in 10 minute
+const TargetTime_Of_Minute = 5; // allow in 10 minute
 var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
 
 // Example using session middleware
 app.use(session({
+    genid: function(req) {
+        return uuidv4(); // use UUIDs for session IDs
+      },
     secret : 'mediumtin',
     store : new RedisStore({client: clientRedis}), // Store SID or session of user into Redis cache
     resave : false,
@@ -83,6 +89,47 @@ app.use('/',require('./routes/Candle_Web_Routes/HomePageRoute'));
 app.get('/get-session', (req,res)=>{
     res.send(req.session); // req.session.user.username
     console.log(`Cookie is ${req.cookie}`); // req.session.cookie.maxAge
+    // Session will have 2 part : 1 is Cookie info and 2,3,4,... is data
+})
+
+app.get('/get-sid', (req,res)=>{
+    console.log(`Cookie is ${req.headers.cookie}`); // req.session.cookie.maxAge
+    req.sessionStore.get(req.sessionID, function(err, session) {
+        if (err) {
+            // Handle the error
+            res.send("Not found SID in Redis cache");
+        } else {
+            // Work with the session
+            res.send(`Found in Redis with Session ID is ${req.sessionID}\n and content is ${session.personal_information.username}`);
+
+        }
+    });
+    // Session will have 2 part : 1 is Cookie info and 2,3,4,... is data
+})
+
+
+app.get('/clear-sid', (req,res)=>{
+    req.sessionStore.clear((err) =>{
+        if(err){
+            return res.send('Error clearing session.');
+        }
+    })
+    res.send("OK")
+})
+
+app.get('/destroy-sid', (req,res)=>{
+    req.sessionStore.destroy(req.sessionID,(err) =>{
+        if(err){
+            return res.send('Error clearing session.');
+        }
+    })
+    res.send("OK")
+})
+
+app.get('/destroy-session', (req,res)=>{
+    req.session.destroy();
+    // res.send(req.session); // req.session.user.username
+    console.log(`Destroyed is ${req.session}`); // req.session.cookie.maxAge
     // Session will have 2 part : 1 is Cookie info and 2,3,4,... is data
 })
 

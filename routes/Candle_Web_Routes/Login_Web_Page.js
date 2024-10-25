@@ -8,6 +8,7 @@ var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const Menu_Candle_Processing = require('../../controllers/Website_Candle_Light/Menu_Candle_Processing_MongooseDB');
 const User_Information_Handling = require('../../controllers/Website_Candle_Light/User_Information_Handling');
+const Global_Interface = require('../../controllers/Website_Candle_Light/Global_interface');
 
 // Declare liberies for express-session
 const session = require('express-session');
@@ -22,6 +23,8 @@ var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
 
 const sessions = {};
 Router.get('^/$|',(req,res)=>{
+   Global_Interface.isFirstTimeLogin = true; // this variable for init class in next log in of next SID
+   req.session.destroy();
    res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Detail_Product','Boostrap_Login_Form.html'));
 })
 

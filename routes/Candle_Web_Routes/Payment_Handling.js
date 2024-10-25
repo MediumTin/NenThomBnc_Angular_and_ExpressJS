@@ -96,6 +96,7 @@ Router.get('/',(req,res)=>{
       });
    } else {
       // Session is timeout -> Request login again
+      req.session.destroy();
       res.redirect('/login_handling');
    }
    

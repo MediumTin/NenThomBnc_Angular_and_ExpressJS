@@ -273,3 +273,23 @@ Expecting 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 
 20241023	02:59:17	5c209f1f-2031-4b5b-80ae-5e69907d98c5	TypeError: Cannot read properties of undefined (reading 'length')
 20241023	02:59:29	93b5e3e9-aaf8-4f73-87a1-d9afce1d57eb	TypeError: Cannot read properties of undefined (reading 'length')
 20241023	03:00:10	a6a21b8a-dce2-4206-b861-9dd17245bdb0	TypeError: Cannot read properties of undefined (reading 'length')
+20241023	03:15:02	0d5f75d7-ef83-4748-b23e-e58ac1d84dde	TypeError: Cannot read properties of undefined (reading 'length')
+20241023	03:18:39	3f89ab6b-f360-4062-a409-b7fd45526abe	TypeError: Cannot read properties of undefined (reading 'length')
+20241023	03:25:28	1d8ad88d-1815-4a2d-8988-112c1c73639e	TypeError: Cannot read properties of null (reading 'destroy')
+20241023	03:26:03	3aef7a1c-1657-495a-958c-3c2d7cd105c7	TypeError: Cannot read properties of undefined (reading 'length')
+20241023	03:31:03	b7567f39-67c3-4327-93e6-10e9b14a3a06	TypeError: Cannot read properties of undefined (reading 'length')
+20241023	23:50:27	859b4b1f-7f6a-4e6a-91fb-22291b6f6f4f	TypeError: req.logout is not a function
+20241024	00:21:13	9898abad-c86e-4023-94e3-61fe938a4698	TypeError: Cannot read properties of undefined (reading 'length')
+20241024	00:32:37	da4d68fc-e6f6-455f-b4ac-a3981f102938	TypeError: Cannot read properties of undefined (reading 'length')
+20241025	00:58:35	5fadfae1-7de5-436d-a83c-5b05d4f6841a	TypeError: Cannot read properties of undefined (reading 'length')
+20241025	01:01:39	5afcf309-7659-4fec-9872-3d66e009c0c9	TypeError: Cannot read properties of undefined (reading 'length')
+20241025	01:03:31	73c904f6-b439-47c9-a8df-af916f56785c	TypeError: Cannot read properties of undefined (reading 'length')
+20241025	01:07:30	f8d261bf-22f5-4fa3-99ed-1f8d01999400	Error: Cannot set headers after they are sent to the client
+20241025	02:20:29	b0f5dc51-8492-4c89-8250-0e921d01baea	TypeError: Cannot read properties of undefined (reading 'length')
+20241025	02:21:14	7ae36f79-dee5-4c2a-a253-598fac830b10	TypeError: Cannot read properties of undefined (reading 'length')
+20241026	00:01:42	c681aa59-50ab-4532-9014-e5785c8f275c	ReferenceError: genuuid is not defined
+20241026	00:01:42	3b0bf68d-2b3c-4bda-b8f3-9d7fe29ed561	ReferenceError: genuuid is not defined
+20241026	00:08:16	4be06904-5d9f-4461-a47d-77ba0fe8b9d8	TypeError: Cannot read properties of undefined (reading 'length')
+20241026	00:42:21	ce835842-2f15-4d05-a909-820d08ef43fd	TypeError: Cannot read properties of undefined (reading 'sid')
+20241026	00:53:16	0e2cc961-38a5-4714-af72-d4c81650385f	Error: secret option required for sessions
+20241026	01:05:43	d874d5b1-62d8-4b2c-8ec8-bc59b7b22090	TypeError: Cannot read properties of undefined (reading 'match')
