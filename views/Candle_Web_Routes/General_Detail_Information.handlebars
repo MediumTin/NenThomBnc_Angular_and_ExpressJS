@@ -123,8 +123,16 @@
                 </div>
                 
                 <div id="AddedIntoBag_showing" class="modal_for_addedIntoBag">
+                    <a href="/Shopping_Bag_handling" id="ShoppingBagLink" style="text-decoration: none;visibility: hidden;"></a>
                     <p style="font-size: 20px">Added into bag</p>
                     <button style="width:100px; height:20px; border-radius:5px;" id="Check_shopping_bag">Check bag</button>
+                    <script>
+                        var Check_shopping_bag = document.getElementById("Check_shopping_bag");
+
+                        Check_shopping_bag.onclick = function(){
+                            document.getElementById("ShoppingBagLink").click();
+                        } 
+                    </script>
                 </div>
             </div>
             <script>
