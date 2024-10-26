@@ -152,7 +152,15 @@
                     </div>
                 </td>
                 <td style="color:black;">
-                    <button class="text_custom">Shopping bag</button>
+                    <a href="/Shopping_Bag_handling" id="ShoppingBagLink" style="text-decoration: none;visibility: hidden;"></a>
+                    <button id="ShoppingBagButton" class="text_custom">Shopping bag</button> 
+                    <script>
+                        var ShoppingBagButton = document.getElementById("ShoppingBagButton");
+
+                        ShoppingBagButton.onclick = function(){
+                            document.getElementById("ShoppingBagLink").click();
+                        } 
+                    </script>
                 </td>
                 <td style="color:black;">
                     <a href="/login_handling" id="LoginLink" style="text-decoration: none;visibility: hidden;"></a>

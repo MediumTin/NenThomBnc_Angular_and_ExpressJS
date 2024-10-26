@@ -161,6 +161,9 @@ app.use('/Add_new_product',require('./routes/Candle_Web_Routes/Add_new_product_I
 // Payment handling
 app.use('/payment_handling',require('./routes/Candle_Web_Routes/Payment_Handling'));
 
+// Shopping bag handling
+app.use('/Shopping_Bag_handling',require('./routes/Candle_Web_Routes/Shopping_Bag_Handling'));
+
 //---------------------------------------Specific Route and Middleware declaration--------------------------//
 // Specific Custom Middleware to check authorization and get Json Web Token to make private action. Before this line, it will not require JWToken to execute
 // app.use(verifyJWT);

@@ -293,3 +293,9 @@ Expecting 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 
 20241026	00:42:21	ce835842-2f15-4d05-a909-820d08ef43fd	TypeError: Cannot read properties of undefined (reading 'sid')
 20241026	00:53:16	0e2cc961-38a5-4714-af72-d4c81650385f	Error: secret option required for sessions
 20241026	01:05:43	d874d5b1-62d8-4b2c-8ec8-bc59b7b22090	TypeError: Cannot read properties of undefined (reading 'match')
+20241026	15:41:35	1518ac64-7ab7-479f-b040-81c9dddf6351	TypeError: Cannot read properties of undefined (reading 'length')
+20241026	15:50:29	9c441fd1-ae99-4e7d-a8f2-0fd3771a25e4	TypeError: Cannot read properties of undefined (reading 'length')
+20241026	15:54:01	dcd929ab-63b0-4bc5-869c-19a1e3b46169	TypeError: Cannot read properties of undefined (reading 'length')
+20241026	16:18:23	216452ec-9958-46c2-960d-fc9bbb22cf77	TypeError: Cannot read properties of undefined (reading 'length')
+20241026	16:19:38	59a350ca-5b87-4b2f-ba3d-d081cf2a7142	TypeError: Cannot read properties of undefined (reading 'length')
+20241026	16:21:22	c0964f54-d875-4dfd-a253-c756f21e7275	TypeError: Cannot read properties of undefined (reading 'length')

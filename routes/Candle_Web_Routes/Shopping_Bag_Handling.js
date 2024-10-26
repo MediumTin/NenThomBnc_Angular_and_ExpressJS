@@ -78,7 +78,7 @@ Router.get('/',(req,res)=>{
    var isSessionValid = req.session.personal_information;
    if(isSessionValid != undefined){
       var CurrentUser = req.session.personal_information.username;
-      res.status(200).render('Payment_handling',{
+      res.status(200).render('Shopping_Bag',{
       Request_From_Header : "payment",
       account : `${CurrentUser}`,
       sessionStorage : JSON.stringify(req.session.personal_shopping_bag)
