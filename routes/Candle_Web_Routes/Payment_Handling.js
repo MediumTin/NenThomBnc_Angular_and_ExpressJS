@@ -77,17 +77,30 @@ Router.get('/',(req,res)=>{
    //  res.cookie("type","candles",{ expires: new Date(Date.now() + (7*3600000+5000)) }).status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Web_Routes','Search_And_Filtering_Product.html'));
    var isSessionValid = req.session.personal_information;
    if(isSessionValid != undefined){
-      var CurrentUser = req.session.personal_information.username;
-      res.status(200).render('Payment_handling',{
-      Request_From_Header : "payment",
-      account : `${CurrentUser}`,
-      sessionStorage : JSON.stringify(req.session.personal_shopping_bag)
-      });
+      const LOC_SessionID = req.sessionID; // Get session ID of client for authentication
+      req.sessionStore.get(LOC_SessionID, function(err, session) {
+         if (err) {
+             // Handle the error
+             res.send("Not found SID in Redis cache");
+         } else {
+             // Work with the session
+            //  res.send(`Found in Redis with Session ID is ${req.sessionID}\n and content is ${session.personal_information.username}`);
+            const LOC_Result_from_SessionStorage = session.personal_shopping_bag;
+            var CurrentUser = session.personal_information.username;
+            res.status(200).render('Payment_handling',{
+            Request_From_Header : "payment",
+            account : `${CurrentUser}`,
+            sessionStorage : JSON.stringify(LOC_Result_from_SessionStorage)
+            });
+         }
+     });
    } else {
       // Session is timeout -> Request login again
       req.session.destroy();
       res.redirect('/login_handling');
    }
+
+   
    
 })
 
