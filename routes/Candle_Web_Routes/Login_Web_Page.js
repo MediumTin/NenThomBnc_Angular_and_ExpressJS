@@ -24,7 +24,7 @@ var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
 const sessions = {};
 Router.get('^/$|',(req,res)=>{
    Global_Interface.isFirstTimeLogin = true; // this variable for init class in next log in of next SID
-   req.session.destroy();
+   req.session.destroy(); // Same as log out session
    res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Detail_Product','Boostrap_Login_Form.html'));
 })
 
@@ -53,7 +53,7 @@ const LoginHandling = async(req,res) => {
    var [isValidUser, isAdminRight] = await User_Information_Handling.Check_Valid_User_in_Database(req.body.username, req.body.password);
    console.log(`isValidUser is ${isValidUser}`);
    var CurrentUser = req.body.username;
-   if(isAdminRight){
+   if(isAdminRight && isValidUser){
       req.session.personal_information ={
          username: req.body.username,
          password: req.body.password,
@@ -67,9 +67,9 @@ const LoginHandling = async(req,res) => {
             smart_banking : "Admin",
             momo : "Admin"
       };
-      // req.session.personal_shopping_bag = {
-      //    Shopping_bag: "admin"
-      // };
+      req.session.personal_shopping_bag = {
+         Shopping_bag: "admin"
+      };
       // res.render('Search_And_Filtering_Product_AdminRight',{
       //    account : `${CurrentUser}`
       // });
@@ -99,17 +99,9 @@ const LoginHandling = async(req,res) => {
             smart_banking : "Vietinbank",
             momo : "0826780002"
       };
-      // req.session.personal_shopping_bag = {
-      //    Shopping_bag: "admin"
-      // };
+      req.session.personal_shopping_bag = [];
       res.redirect('/');
-      
-      // res.render('Search_And_Filtering_Product',{
-      //    account : `${CurrentUser}`
-      // });
-      // res.redirect('/candles');
    } else {
-      // res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Detail_Product','Boostrap_Login_Form.html'));
       res.redirect('/login_handling');
    }
 }

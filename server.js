@@ -14,6 +14,7 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn.js');
 const expressHb = require('express-handlebars');
 const session = require('express-session');
+var cryp = require('crypto');
 const Redis = require('ioredis');
 const { v4: uuidv4 } = require("uuid");
 const RedisStore = require('connect-redis').default;
@@ -23,7 +24,7 @@ clientRedis.connect().catch(console.error);
 // import { engine } from 'express-handlebars';
 const PORT = process.env.PORT || 3500;
 const RedisPort = PORT;
-const TargetTime_Of_Minute = 5; // allow in 10 minute
+const TargetTime_Of_Minute = 20; // allow in 10 minute
 var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
 
 // Example using session middleware
@@ -78,6 +79,52 @@ console.log("Program is running ----------");
 // app.use('/auth', require('./routes/auth')); 
 // app.use('/refresh', require('./routes/refresh'));
 // app.use('/logout', require('./routes/logout'));
+
+
+// Example using JWT without libraries
+// 1. Set new JWT mechanism
+app.get('set-JWT-Example',(req,res)=>{
+    const header = {
+        alg : "HS256",
+        typ : "JWT"
+    }
+    
+    const payload = {
+        sub : "Trung Tin",
+        exp : Date.now() + 3600000
+    }
+    
+    //node crypsto generation jwt secret
+    //  node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+    const JWTsecret = "c682737f1b9d1435c923a963e402f41059ecacdcd393aae69244ef3bb9bf514d";
+    
+    const EncodedHeader = btoa(JSON.stringify(header));
+    const EncodedPayload = btoa(JSON.stringify(payload));
+    const tokenData = `${EncodedHeader}.${EncodedPayload}`;
+    const hmac = cryp.createHmac("sha256",JWTsecret); // sử dụng thuật toán băm secret key , base64 có thể mã hóa/giải mã nhưng băm sẽ ko thể giải mã được
+    const signature = hmac.update(tokenData).digest('base64url');
+    res.json({
+        token : `${tokenData}.${signature}`,
+    })
+})
+
+// 2. Get and verify JWT
+app.get('/get-JWT', (req,res)=>{
+    const token = req.headers.authorization.slice(7);
+    if(!token){
+        return res.status(401).json({
+            message : "Unauthorized!"
+        })
+    }
+    const [encodedHeader, encodedPayload, EncodedSignature] = token.split("."); // seperate from header requested by client
+    const tokenData = `${encodedHeader}.${encodedPayload}`;
+    const hmac = cryp.createHmac("sha256",JWTsecret); // hash string (combined Header and Payload from client) for comparison with signature key
+    const signature = hmac.update(tokenData).digest("base64url");
+    if(signature === EncodedSignature){
+        // do something when signature is correctly
+    }
+    res.json(null)
+})
 
 
 app.use('/',require('./routes/Candle_Web_Routes/HomePageRoute'));

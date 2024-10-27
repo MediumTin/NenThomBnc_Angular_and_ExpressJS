@@ -299,3 +299,20 @@ Expecting 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 
 20241026	16:18:23	216452ec-9958-46c2-960d-fc9bbb22cf77	TypeError: Cannot read properties of undefined (reading 'length')
 20241026	16:19:38	59a350ca-5b87-4b2f-ba3d-d081cf2a7142	TypeError: Cannot read properties of undefined (reading 'length')
 20241026	16:21:22	c0964f54-d875-4dfd-a253-c756f21e7275	TypeError: Cannot read properties of undefined (reading 'length')
+20241027	18:46:55	c3e01e4c-a872-4a1b-ac05-4b6def95ca2e	ReferenceError: LOC_CurrentSessionDataValid is not defined
+20241027	22:29:53	a332fc99-6cf9-4278-bb5e-5a9eec55b8e1	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:29:53	7b194f15-c7b6-4ab5-985e-48c6fc634b6f	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:33:02	ab709fd9-a9b9-49b0-8d9e-4470a9abd59d	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:33:02	86020c40-4458-423b-bb27-a26f42ae32ed	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:33:17	a1dec0dd-ea34-4136-954b-c7d74f189bdd	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:33:17	2e817128-bd34-42b3-beb2-cd576a1ad18c	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:33:23	97352a2e-def2-4f30-b1f0-964c52a36682	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:33:23	4d244dd4-0257-4f9d-b699-c6500dfdf667	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:34:08	a1d0cc2e-251b-42e3-9be0-ba9788fcf5b4	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:34:08	5bc3df92-ab44-4f24-9d07-c1240095b2fd	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:34:22	e4cdf37b-d46a-435d-86cc-34b6b56e1949	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:34:22	692c9d30-2f1d-4b99-ab98-96c30057e9ca	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:36:51	4340e3e9-253b-4297-b83d-2dc7741476e3	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:36:51	23089656-a447-46c9-9cab-bf07f0aea22c	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:37:08	60f25088-3a4f-4b24-8dc8-a25047eee165	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241027	22:37:08	6b62596b-0b89-4cd1-a11f-47e5aa16dd05	SyntaxError: Unexpected non-whitespace character after JSON at position 427
