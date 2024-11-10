@@ -14,7 +14,7 @@ body {
 }
 
 td, th, tr {
-    border: 1px solid #dddddd;
+    border: 1px none #dddddd;
 }
 
 .td1 {

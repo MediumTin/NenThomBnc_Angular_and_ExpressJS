@@ -418,10 +418,13 @@
                 ClearAvailableShoppingBag();
                 const ShoppingDiv = document.querySelector("#ShoppinigDiv");
                 const SessionStorage = document.getElementById("Storage_shopping_bag").innerHTML;
+                console.log(`Type of SessionStorage is ${typeof(SessionStorage)}`);
                 const SessionStorage_Filtered = JSON.parse(SessionStorage);
                 const ShoppingBagLength = SessionStorage_Filtered.length;
                 console.log(`Value length is ${ShoppingBagLength}`);
                 for(let i=0;i<ShoppingBagLength;i++){
+                    SessionStorage_Filtered[i] = SessionStorage_Filtered[i].split(",");
+                    console.log(`SessionStorage_Filtered is ${(SessionStorage_Filtered[i])}`);
                     ShoppingDiv.innerHTML += 
                         `
                         <table style="background-color:grey; border-radius: 3px;">

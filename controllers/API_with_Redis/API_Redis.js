@@ -35,9 +35,22 @@ const Delete_Data_In_Redis = async (local_client) => {
   // return result;
 }
 
+const Delete_seperated_data_inRedis = async (local_client,requestedKey) => {
+  var ResultOfDelete = await local_client.del(requestedKey)
+  // return result;
+}
+
 const Get_Data_From_Redis = async (local_client, Key) => {
   // Get the value from Redis
   const result = await local_client.get(Key);
+  return result;
+}
+
+const Get_Personal_Shopping_Bag = async (local_client, Key) => {
+  // Get the value from Redis
+  const result = await local_client.get(Key);
+  // const result_filtered = 
+  console.log(`Refult from Redis ${result}`)
   return result;
 }
 
@@ -47,5 +60,7 @@ module.exports = {
   Disconnect_To_Redis,   // name client
   Set_Data_To_Redis,     // name client, key, value
   Get_Data_From_Redis,    // name client, key
-  Delete_Data_In_Redis
+  Delete_Data_In_Redis,
+  Get_Personal_Shopping_Bag,
+  Delete_seperated_data_inRedis
 };

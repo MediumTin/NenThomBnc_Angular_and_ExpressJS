@@ -102,7 +102,7 @@ app.get('set-JWT-Example',(req,res)=>{
     const EncodedPayload = btoa(JSON.stringify(payload));
     const tokenData = `${EncodedHeader}.${EncodedPayload}`;
     const hmac = cryp.createHmac("sha256",JWTsecret); // sử dụng thuật toán băm secret key , base64 có thể mã hóa/giải mã nhưng băm sẽ ko thể giải mã được
-    const signature = hmac.update(tokenData).digest('base64url');
+    const signature = hmac.update(tokenData).digest('base64url'); // Generate signature based on Header and Payload
     res.json({
         token : `${tokenData}.${signature}`,
     })

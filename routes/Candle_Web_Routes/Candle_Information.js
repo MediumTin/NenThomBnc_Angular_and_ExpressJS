@@ -5,6 +5,7 @@ const path = require('path');
 const { createClient } = require('redis');
 const Redis_API = require('../../controllers/API_with_Redis/API_Redis');
 const Menu_Candle_Processing = require('../../controllers/Website_Candle_Light/Menu_Candle_Processing_MongooseDB');
+const User_Information_Handling = require('../../controllers/Website_Candle_Light/User_Information_Handling');
 const Global_Interface = require('../../controllers/Website_Candle_Light/Global_interface');
 var result = "";
 var Shopping_bag_array = []; // declare one array (listed node), can easy for adding new element into it.
@@ -81,12 +82,13 @@ Router.post('/requestwriteintosession',(req,res)=>{
       console.log(`Previous value is : ${Shopping_bag_array}`);
 
       // Get current data of authenticated person
-      req.sessionStore.get(LOC_SessionID, function(err, session) {
+      req.sessionStore.get(LOC_SessionID, async function(err, session) {
          if (err) {
              // Handle the error
              res.send("Not found SID in Redis cache");
          } else {
             // Work with the session
+            var CurrentUser = session.personal_information.username;
             console.log("Your first session is",session);
             // Check length of shopping bag in session storage
             var LOC_Length_Of_ShoppingBag_In_Session = session.personal_shopping_bag.length;
@@ -104,11 +106,19 @@ Router.post('/requestwriteintosession',(req,res)=>{
                `${local_request_price}`
             ];
             // Assign local array into session storage
+            console.log(`Current shopping bag array ${Shopping_bag_array}`);
+            console.log(`Current shopping bag array 1 ${Shopping_bag_array[0]}`);
             session.personal_shopping_bag = Shopping_bag_array;
             console.log("Your second session is",session);
             LOC_CurrentSessionDataValid = session;
             
-            // Set new updated value into Redis storage with specific SID of client (other SIDs  will not impact)
+            // 1. Update new value into Database
+            User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Shopping_bag_array[Shopping_bag_array_counter]);
+            // 2. Delete personal shopping bag from Redis cache
+            await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+            await Redis_API.Delete_seperated_data_inRedis(client,CurrentUser);
+            await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+            // 3. Set new updated value into Redis storage with specific SID of client (other SIDs  will not impact)
             req.sessionStore.set(LOC_SessionID,LOC_CurrentSessionDataValid,function(err) {
                console.log("Your FINAL session is",LOC_CurrentSessionDataValid);
                if (err) {

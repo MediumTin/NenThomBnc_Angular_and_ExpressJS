@@ -13,6 +13,10 @@ const userSchema = new Schema({
     email : {
         type: String,
         required: true
+    },
+    personal_shopping_bag :{
+        type: Array,
+        required : false
     }
 });
 module.exports = mongoose.model('User_information',userSchema);
