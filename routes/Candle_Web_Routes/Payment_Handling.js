@@ -3,7 +3,9 @@ const express = require('express');
 const Router = express.Router();
 const path = require('path');
 const Menu_Candle_Processing = require('../../controllers/Website_Candle_Light/Menu_Candle_Processing_MongooseDB');
+const User_Information_Handling = require('../../controllers/Website_Candle_Light/User_Information_Handling');
 var isAdminRightChecked;
+const Global_Interface = require('../../controllers/Website_Candle_Light/Global_interface');
 const Redis_API = require('../../controllers/API_with_Redis/API_Redis');
 const { createClient } = require('redis');
 const samplearray2 = ['Location 1', 'Location 2'];
@@ -78,7 +80,7 @@ Router.get('/',(req,res)=>{
    var isSessionValid = req.session.personal_information;
    if(isSessionValid != undefined){
       const LOC_SessionID = req.sessionID; // Get session ID of client for authentication
-      req.sessionStore.get(LOC_SessionID, function(err, session) {
+      req.sessionStore.get(LOC_SessionID, async function(err, session) {
          if (err) {
              // Handle the error
              res.send("Not found SID in Redis cache");
@@ -87,10 +89,22 @@ Router.get('/',(req,res)=>{
             //  res.send(`Found in Redis with Session ID is ${req.sessionID}\n and content is ${session.personal_information.username}`);
             const LOC_Result_from_SessionStorage = session.personal_shopping_bag;
             var CurrentUser = session.personal_information.username;
+            var LOC_Result_from_Database = await SyncUp_Info_Redis_And_DB(CurrentUser);
+            console.log(`LOC_Result_from_Database : ${LOC_Result_from_Database}`);
+            console.log(`LOC_Result_from_SessionStorage : ${LOC_Result_from_SessionStorage}`);
+            console.log(`Global interface is ${Global_Interface.isFirstTimeLogin}`);
+            if(Global_Interface.isFirstTimeLogin != false){
+               Global_Interface.isFirstTimeLogin = true;
+               LOC_Result_from_Database = JSON.parse(LOC_Result_from_Database);
+            }
+            if(Global_Interface.isFirstTimeLogin == false){
+               // first time after request write
+               Global_Interface.isFirstTimeLogin = true;
+            }
             res.status(200).render('Payment_handling',{
             Request_From_Header : "payment",
             account : `${CurrentUser}`,
-            sessionStorage : JSON.stringify(LOC_Result_from_SessionStorage)
+            sessionStorage : JSON.stringify(LOC_Result_from_Database[0])
             });
          }
      });
@@ -120,6 +134,29 @@ Router.get('/specific_handling',(req,res)=>{
    }
    
 })
+
+const SyncUp_Info_Redis_And_DB = async (username)=>{
+   await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   const Result_Read_From_Cache = await Redis_API.Get_Personal_Shopping_Bag(client,username); // Check request is exist in Cache or not
+   console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
+   if(Result_Read_From_Cache == null){
+      console.log("Miss cached");
+      var Personal_Shopping_Bag = await User_Information_Handling.GetShoppingBagFromUser(username); // Read data from database
+
+      const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(username,JSON.stringify(Personal_Shopping_Bag)); // set new data from database to Redis cache
+      console.log(`Value of writing data to Cache: ${Result_Write_To_Cache}`);
+      // res.status(200).send(Data_From_Database); // After get data from database and write to Cache, it will response to client
+      await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+      return Personal_Shopping_Bag;
+   }
+   else {
+      console.log("Cached");
+      // res.status(200).send(Result_Read_From_Cache); // Available in cache, Read in Cache
+      console.log(`Result from Redis cache : ${Result_Read_From_Cache}`);
+      await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+      return Result_Read_From_Cache;
+   }
+}
 
 const Set_Data_From_Database_To_RedisCache = async (key,data) => {
    const Result_Of_Update_DB = await Redis_API.Set_Data_To_Redis(client,key,data);

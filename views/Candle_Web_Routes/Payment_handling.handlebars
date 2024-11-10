@@ -402,7 +402,6 @@
             <div class="box-inner-1 pb-3 mb-3 ">
                 <div class="d-flex justify-content-between mb-3 userdetails">
                     <p class="fw-bold">Lightroom Presets</p>
-                    <p class="fw-lighter"><span class="fas fa-dollar-sign"></span>33.00+</p>
                 </div>
                 <div id="my" class="carousel slide carousel-fade img-details" data-bs-ride="carousel"
                     data-bs-interval="2000">
@@ -456,38 +455,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            ReadAllShoppingBag();
-            function ClearAvailableShoppingBag(){
-                const ShoppingDiv = document.getElementById("ShoppinigDiv");
-                ShoppingDiv.textContent = "";
-            }
-            function ReadAllShoppingBag(){
-                ClearAvailableShoppingBag();
-                const ShoppingDiv = document.querySelector("#ShoppinigDiv");
-                const SessionStorage = document.getElementById("Storage_shopping_bag").innerHTML;
-                const SessionStorage_Filtered = JSON.parse(SessionStorage);
-                const ShoppingBagLength = SessionStorage_Filtered.length;
-                console.log(`Value length is ${ShoppingBagLength}`);
-                for(let i=0;i<ShoppingBagLength;i++){
-                    ShoppingDiv.innerHTML += 
-                        `
-                        <table style="background-color:grey; border-radius: 3px;">
-                            <tr>
-                                <td rowspan="2" style="width: 30px;text-align: center;"><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
-                                <td style="width: 400px;font-size:15px;text-align: left;">${SessionStorage_Filtered[i][0]}</td>
-                                <td style="font-size:15px;text-align: left;">Price:${SessionStorage_Filtered[i][2]}VND</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 400px;text-align: left;"></td>
-                                <td style="font-size:15px;text-align: left;">Quatity :${SessionStorage_Filtered[i][1]}</td>
-                            </tr>
-                        </table><br>
-                        `;
-                        
-                }
-            }
-        </script>
         <div class="box-2">
             <div class="box-inner-2">
                 <div>
@@ -536,17 +503,17 @@
                             <div class="d-flex flex-column dis">
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <p>Subtotal</p>
-                                    <p><span class="fas fa-dollar-sign"></span>33.00</p>
+                                    <p id="label_for_total_price"></p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <p>VAT<span>(20%)</span></p>
-                                    <p><span class="fas fa-dollar-sign"></span>2.80</p>
+                                    <p id="label_for_total_VAT_price" ></p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <p class="fw-bold">Total</p>
-                                    <p class="fw-bold"><span class="fas fa-dollar-sign"></span>35.80</p>
+                                    <p class="fw-bold" id="label_for_total_payment_2"></p>
                                 </div>
-                                <div class="btn btn-primary mt-2">Pay<span class="fas fa-dollar-sign px-1"></span>35.80
+                                <div class="btn btn-primary mt-2" id="label_for_total_payment">
                                 </div>
                             </div>
                         </div>
@@ -554,6 +521,77 @@
                 </form>
             </div>
         </div>
+        <script>
+            ReadAllShoppingBag();
+            var ShoppingBagLength;
+            var GLOBAL_SessionStorage;
+            var Total_Price;
+            var Total_VAT_Price;
+            var Total_Payment;
+            function ClearAvailableShoppingBag(){
+                const ShoppingDiv = document.getElementById("ShoppinigDiv");
+                ShoppingDiv.textContent = "";
+            }
+            function ReadAllShoppingBag(){
+                Total_Price = 0;
+                Total_VAT_Price = 0;
+                Total_Payment = 0;
+                ClearAvailableShoppingBag();
+                const ShoppingDiv = document.querySelector("#ShoppinigDiv");
+                const SessionStorage = document.getElementById("Storage_shopping_bag").innerHTML;
+                const SessionStorage_Filtered = JSON.parse(SessionStorage);
+                ShoppingBagLength = SessionStorage_Filtered.length;
+                console.log(`Value length is ${ShoppingBagLength}`);
+                for(let i=0;i<ShoppingBagLength;i++){
+                    SessionStorage_Filtered[i] = SessionStorage_Filtered[i].split(",");
+                    ShoppingDiv.innerHTML += 
+                        `
+                        <table style="background-color:grey; border-radius: 3px;">
+                            <tr>
+                                <td rowspan="2" style="width: 30px;text-align: center;"><input type="checkbox" id="${"ShoppingBagList_" + i}" value="Bike"></td>
+                                <td style="width: 400px;font-size:15px;text-align: left;">${SessionStorage_Filtered[i][0]}</td>
+                                <td style="font-size:15px;text-align: left;">Price:${SessionStorage_Filtered[i][2]}VND</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 400px;text-align: left;"></td>
+                                <td style="font-size:15px;text-align: left;">Quatity :${SessionStorage_Filtered[i][1]}</td>
+                            </tr>
+                        </table><br>
+                        `;
+                        
+                }
+                GLOBAL_SessionStorage = SessionStorage_Filtered;
+                
+            }
+            
+            document.getElementById("label_for_total_price").innerHTML = `${Total_Price}` + " VND";
+            document.getElementById("label_for_total_VAT_price").innerHTML = `${Total_VAT_Price}` + " VND";
+            document.getElementById("label_for_total_payment").innerHTML = "Pay " + `${Total_Payment}` + " VND";
+            document.getElementById("label_for_total_payment_2").innerHTML = `${Total_Payment}` + " VND";
+
+            // Alway check if shopping bag list are choose
+            for(let i=0;i<ShoppingBagLength;i++){
+                document.getElementById(`ShoppingBagList_${i}`).onclick = function(){
+                    console.log(`Status of checkbox ${i} is ${document.getElementById(`ShoppingBagList_${i}`).checked}`);
+                    if(document.getElementById(`ShoppingBagList_${i}`).checked == true){
+                        Total_Price = Total_Price + Number(GLOBAL_SessionStorage[i][2]);
+                        Total_VAT_Price = Math.round((Total_Price/100)*10);
+                        Total_Payment = Total_Price + Total_VAT_Price ;
+                    }
+                    else {
+                        Total_Price = Total_Price - Number(GLOBAL_SessionStorage[i][2]);
+                        Total_VAT_Price = Math.round((Total_Price/100)*10);
+                        Total_Payment = Total_Price + Total_VAT_Price ;
+                    }
+                    
+                    document.getElementById("label_for_total_price").innerHTML = `${Total_Price*1000}` + " VND";
+                    document.getElementById("label_for_total_VAT_price").innerHTML = `${Total_VAT_Price*1000}` + " VND";
+                    document.getElementById("label_for_total_payment").innerHTML = "Pay " + `${Total_Payment*1000}` + " VND";
+                    document.getElementById("label_for_total_payment_2").innerHTML = `${Total_Payment*1000}` + " VND";
+                }
+            }
+            
+        </script>
     </div>
 
     
