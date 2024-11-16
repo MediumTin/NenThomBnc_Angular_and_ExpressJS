@@ -405,34 +405,51 @@
                 </div>
                 <div id="my" class="carousel slide carousel-fade img-details" data-bs-ride="carousel"
                     data-bs-interval="2000">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#my" data-bs-slide-to="0" class="active"
+                    <div class="carousel-indicators" id="Total_Button_of_image">
+                        {{!-- <button type="button" data-bs-target="#my" data-bs-slide-to="0" id="Button_image_1"
                             aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#my" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#my" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#my" data-bs-slide-to="1" id="Button_image_2" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#my" data-bs-slide-to="2" id="Button_image_3" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#my" data-bs-slide-to="3" id="Button_image_4" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#my" data-bs-slide-to="4" id="Button_image_5" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#my" data-bs-slide-to="5" id="Button_image_6" aria-label="Slide 6"></button> --}}
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                    <div class="carousel-inner" id="Total_image">
+                        {{!-- <div class="carousel-item" id="image1">
+                            <img src="https://th.bing.com/th/id/OIP.UWp7QXA-_aGPqo_CysbyKAAAAA?rs=1&pid=ImgDetMain"
                                 class="d-block w-100">
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://images.pexels.com/photos/258092/pexels-photo-258092.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                        <div class="carousel-item" id="image2">
+                            <img src="https://th.bing.com/th/id/R.25d0e530c67fdcc960b9eeaea57e5a27?rik=%2fyIuumZ%2fdIMNTw&riu=http%3a%2f%2fst.automobilemag.com%2fuploads%2fsites%2f11%2f2016%2f07%2f2017-Aston-Martin-Vantage-GT8-front-three-quarters.jpg&ehk=F3yV%2fvt2iS3NbSKcrUg1bzb13QwXB5c58OItZMb7LCQ%3d&risl=&pid=ImgRaw&r=0"
                                 class="d-block w-100 h-100">
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                        <div class="carousel-item" id="image3">
+                            <img src="https://th.bing.com/th/id/OIP.X-AteLqYGMFWd2voPS_4_QHaFj?rs=1&pid=ImgDetMain"
                                 class="d-block w-100">
                         </div>
+                        <div class="carousel-item" id="image4">
+                            <img src="https://bringatrailer.com/wp-content/uploads/2022/11/2016_porsche_911-gt3-rs_2016_porsche_911-gt3-rs_af280f31-910c-4316-bdd6-092d8c6d9b85-xvrume-69269-73551.jpg"
+                                class="d-block w-100">
+                        </div>
+
+                        <div class="carousel-item" id="image5">
+                            <img src="https://cdn.motor1.com/images/mgl/1l48X/s1/2018-mclaren-senna-prototype.jpg"
+                                class="d-block w-100">
+                        </div>
+
+                        <div class="carousel-item" id="image6">
+                            <img src="https://images.hdqwalls.com/wallpapers/nissan-gtr-2020-4k-w6.jpg"
+                                class="d-block w-100">
+                        </div> --}}
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#my" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#my" data-bs-slide="prev" id="Previous_button">
                         <div class="icon">
                             <span class="fas fa-arrow-left"></span>
                         </div>
                         <span class="visually-hidden">Previous</span>
                     </button>
 
-                    <button class="carousel-control-next" type="button" data-bs-target="#my" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#my" data-bs-slide="next" id="Next_button">
                         <div class="icon">
                             <span class="fas fa-arrow-right"></span>
                         </div>
@@ -528,6 +545,13 @@
             var Total_Price;
             var Total_VAT_Price;
             var Total_Payment;
+            var PreviousButton = document.getElementById("Previous_button");
+            var NextButton = document.getElementById("Next_button");
+            var Current_Div_Image; // default
+            var Current_Div_Button;
+            var Current_Counter = 0;
+            var pre_selection;
+
             function ClearAvailableShoppingBag(){
                 const ShoppingDiv = document.getElementById("ShoppinigDiv");
                 ShoppingDiv.textContent = "";
@@ -538,15 +562,18 @@
                 Total_Payment = 0;
                 ClearAvailableShoppingBag();
                 const ShoppingDiv = document.querySelector("#ShoppinigDiv");
+                const Button_of_image_div = document.querySelector("#Total_Button_of_image");
+                const Image_div = document.querySelector("#Total_image");
                 const SessionStorage = document.getElementById("Storage_shopping_bag").innerHTML;
                 const SessionStorage_Filtered = JSON.parse(SessionStorage);
                 ShoppingBagLength = SessionStorage_Filtered.length;
                 console.log(`Value length is ${ShoppingBagLength}`);
                 for(let i=0;i<ShoppingBagLength;i++){
+                    // Generate in shopping bag list
                     SessionStorage_Filtered[i] = SessionStorage_Filtered[i].split(",");
                     ShoppingDiv.innerHTML += 
                         `
-                        <table style="background-color:grey; border-radius: 3px;">
+                        <table style="background-color:grey; border-radius: 3px;" id="TableItem${i}">
                             <tr>
                                 <td rowspan="2" style="width: 30px;text-align: center;"><input type="checkbox" id="${"ShoppingBagList_" + i}" value="Bike"></td>
                                 <td style="width: 400px;font-size:15px;text-align: left;">${SessionStorage_Filtered[i][0]}</td>
@@ -558,9 +585,32 @@
                             </tr>
                         </table><br>
                         `;
+                    
+                    // Generate image of shopping bag list
+                    Image_div.innerHTML += 
+                    `
+                        <div class="carousel-item" id="image${i}">
+                            <img src="https://th.bing.com/th/id/R.25d0e530c67fdcc960b9eeaea57e5a27?rik=%2fyIuumZ%2fdIMNTw&riu=http%3a%2f%2fst.automobilemag.com%2fuploads%2fsites%2f11%2f2016%2f07%2f2017-Aston-Martin-Vantage-GT8-front-three-quarters.jpg&ehk=F3yV%2fvt2iS3NbSKcrUg1bzb13QwXB5c58OItZMb7LCQ%3d&risl=&pid=ImgRaw&r=0"
+                                class="d-block w-100">
+                        </div>
+                    `;
+                    // Generate button image of shopping bag list
+                    Button_of_image_div.innerHTML += 
+                    `
+                        <button type="button" data-bs-target="#my" id="Button_image_${i}"
+                            aria-current="true" aria-label="Slide ${i}"></button>
+
+                    `;
+                    
                         
                 }
+                Current_Counter = 0;
+                Current_Div_Image = document.getElementById(`image${Current_Counter}`);
+                Current_Div_Button = document.getElementById(`Button_image_${Current_Counter}`);
+                Current_Div_Image.classList = "carousel-item active";
+                Current_Div_Button.classList = "active";
                 GLOBAL_SessionStorage = SessionStorage_Filtered;
+                
                 
             }
             
@@ -590,6 +640,67 @@
                     document.getElementById("label_for_total_payment_2").innerHTML = `${Total_Payment*1000}` + " VND";
                 }
             }
+            
+            function ButtonImageCheck() {
+                for(let i=0;i<ShoppingBagLength;i++){
+                    var Tempt = document.getElementById(`Button_image_${i}`);
+                    Tempt.onclick = function(){
+                        ResetBackGroundColor();
+                        Current_Div_Image.classList = "carousel-item";
+                        Current_Div_Button.classList = "";
+                        Current_Counter = i; // set current selection sync up with global counter
+                        Current_Div_Image = document.getElementById(`image${i}`);
+                        Current_Div_Button = document.getElementById(`Button_image_${i}`);
+                        Current_Div_Image.classList = "carousel-item active";
+                        Current_Div_Button.classList = "active";
+                        document.getElementById(`TableItem${i}`).style.backgroundColor = "green";
+                        
+                    }
+                }
+            }
+            function ResetBackGroundColor(){
+                for(let i=0;i<ShoppingBagLength;i++){
+                    document.getElementById(`TableItem${i}`).style.backgroundColor = "grey";
+                }
+            }
+            ButtonImageCheck();
+            PreviousButton.onclick = function(){
+                console.log("Previous button is clicked!");
+                // Reset current selection
+                Current_Div_Image.classList = "carousel-item";
+                Current_Div_Button.classList = "";
+                // Decrease one unit
+                if(Current_Counter<=0){
+                    Current_Counter = ShoppingBagLength-1; // Return last position after reach minimum value
+                } else {
+                    Current_Counter -= 1;
+                }
+                Current_Div_Image = document.getElementById(`image${Current_Counter}`);
+                Current_Div_Button = document.getElementById(`Button_image_${Current_Counter}`);
+                Current_Div_Image.classList = "carousel-item active";
+                Current_Div_Button.classList = "active";
+                ResetBackGroundColor();
+                document.getElementById(`TableItem${Current_Counter}`).style.backgroundColor = "green";
+            }
+            NextButton.onclick = function(){
+                console.log("Next button is clicked!");
+                // Reset current selection
+                Current_Div_Image.classList = "carousel-item";
+                Current_Div_Button.classList = "";
+                // Increase one unit
+                if(Current_Counter>=ShoppingBagLength-1){
+                    Current_Counter = 0; // Return first position after reach maximum value
+                } else {
+                    Current_Counter += 1;
+                }
+                Current_Div_Image = document.getElementById(`image${Current_Counter}`);
+                Current_Div_Button = document.getElementById(`Button_image_${Current_Counter}`);
+                Current_Div_Image.classList = "carousel-item active";
+                Current_Div_Button.classList = "active";
+                ResetBackGroundColor();
+                document.getElementById(`TableItem${Current_Counter}`).style.backgroundColor = "green";
+            }
+             
             
         </script>
     </div>
