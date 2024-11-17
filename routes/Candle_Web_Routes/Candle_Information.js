@@ -66,6 +66,7 @@ Router.post('/requestwriteintosession',(req,res)=>{
    var local_request_to_write = req.body.candle_name;
    var local_request_quatity = req.body.quatity;
    var local_request_price = req.body.price;
+   var local_request_image = req.body.image;
    var isSessionValid = req.session.personal_information; // Check session is exist or not
 
    // Reset first time after log in
@@ -103,7 +104,8 @@ Router.post('/requestwriteintosession',(req,res)=>{
             Shopping_bag_array[Shopping_bag_array_counter] = [
                `${local_request_to_write}`,
                `${local_request_quatity}`,
-               `${local_request_price}`
+               `${local_request_price}`,
+               `${local_request_image}`
             ];
             // Assign local array into session storage
             console.log(`Current shopping bag array ${Shopping_bag_array}`);

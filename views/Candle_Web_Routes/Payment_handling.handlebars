@@ -307,11 +307,12 @@
                 width: 10px;
                 height: 10px;
                 border-radius: 50%;
+                transform: translateX(-45px);
             }
     
             .carousel-inner {
-                width: 100%;
-                height: 250px;
+                width: 75%;
+                height: 50%;
             }
     
             .carousel-item img {
@@ -329,7 +330,7 @@
             }
     
             .carousel-control-next {
-                transform: translateX(50%);
+                transform: translateX(-115%);
                 opacity: 1;
             }
     
@@ -394,11 +395,6 @@
             }
         </style>
         <div class="box-1 bg-light user">
-            <div class="d-flex align-items-center mb-3">
-                <img src="https://images.pexels.com/photos/4925916/pexels-photo-4925916.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                    class="pic rounded-circle" alt="">
-                <p class="ps-2 name">Oliur</p>
-            </div>
             <div class="box-inner-1 pb-3 mb-3 ">
                 <div class="d-flex justify-content-between mb-3 userdetails">
                     <p class="fw-bold">Lightroom Presets</p>
@@ -414,7 +410,7 @@
                         <button type="button" data-bs-target="#my" data-bs-slide-to="4" id="Button_image_5" aria-label="Slide 5"></button>
                         <button type="button" data-bs-target="#my" data-bs-slide-to="5" id="Button_image_6" aria-label="Slide 6"></button> --}}
                     </div>
-                    <div class="carousel-inner" id="Total_image">
+                    <div class="carousel-inner" id="Total_image" >
                         {{!-- <div class="carousel-item" id="image1">
                             <img src="https://th.bing.com/th/id/OIP.UWp7QXA-_aGPqo_CysbyKAAAAA?rs=1&pid=ImgDetMain"
                                 class="d-block w-100">
@@ -590,7 +586,7 @@
                     Image_div.innerHTML += 
                     `
                         <div class="carousel-item" id="image${i}">
-                            <img src="https://th.bing.com/th/id/R.25d0e530c67fdcc960b9eeaea57e5a27?rik=%2fyIuumZ%2fdIMNTw&riu=http%3a%2f%2fst.automobilemag.com%2fuploads%2fsites%2f11%2f2016%2f07%2f2017-Aston-Martin-Vantage-GT8-front-three-quarters.jpg&ehk=F3yV%2fvt2iS3NbSKcrUg1bzb13QwXB5c58OItZMb7LCQ%3d&risl=&pid=ImgRaw&r=0"
+                            <img src="${SessionStorage_Filtered[i][3]}"
                                 class="d-block w-100">
                         </div>
                     `;
@@ -624,12 +620,12 @@
                 document.getElementById(`ShoppingBagList_${i}`).onclick = function(){
                     console.log(`Status of checkbox ${i} is ${document.getElementById(`ShoppingBagList_${i}`).checked}`);
                     if(document.getElementById(`ShoppingBagList_${i}`).checked == true){
-                        Total_Price = Total_Price + Number(GLOBAL_SessionStorage[i][2]);
+                        Total_Price = Total_Price + Number(GLOBAL_SessionStorage[i][2])*Number(GLOBAL_SessionStorage[i][1]);
                         Total_VAT_Price = Math.round((Total_Price/100)*10);
                         Total_Payment = Total_Price + Total_VAT_Price ;
                     }
                     else {
-                        Total_Price = Total_Price - Number(GLOBAL_SessionStorage[i][2]);
+                        Total_Price = Total_Price - Number(GLOBAL_SessionStorage[i][2])*Number(GLOBAL_SessionStorage[i][1]);
                         Total_VAT_Price = Math.round((Total_Price/100)*10);
                         Total_Payment = Total_Price + Total_VAT_Price ;
                     }
@@ -658,12 +654,30 @@
                     }
                 }
             }
+            function TableCheck() {
+                for(let i=0;i<ShoppingBagLength;i++){
+                    var Tempt = document.getElementById(`TableItem${i}`);
+                    Tempt.onclick = function(){
+                        ResetBackGroundColor();
+                        Current_Div_Image.classList = "carousel-item";
+                        Current_Div_Button.classList = "";
+                        Current_Counter = i; // set current selection sync up with global counter
+                        Current_Div_Image = document.getElementById(`image${i}`);
+                        Current_Div_Button = document.getElementById(`Button_image_${i}`);
+                        Current_Div_Image.classList = "carousel-item active";
+                        Current_Div_Button.classList = "active";
+                        document.getElementById(`TableItem${i}`).style.backgroundColor = "green";
+                        
+                    }
+                }
+            }
             function ResetBackGroundColor(){
                 for(let i=0;i<ShoppingBagLength;i++){
                     document.getElementById(`TableItem${i}`).style.backgroundColor = "grey";
                 }
             }
             ButtonImageCheck();
+            TableCheck();
             PreviousButton.onclick = function(){
                 console.log("Previous button is clicked!");
                 // Reset current selection

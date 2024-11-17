@@ -124,6 +124,12 @@
             height:40px ;
             width: 80px;
         }
+        .text_custom_user {
+            font-size: 13px;
+            border-style: solid;
+            height:40px ;
+            width: 100px;
+        }
         </style>
 </head>
 
@@ -151,9 +157,9 @@
                         </form>
                     </div>
                 </td>
-                <td style="color:black;">
+                {{!-- <td style="color:black;">
                     <a href="/Shopping_Bag_handling" id="ShoppingBagLink" style="text-decoration: none;visibility: hidden;"></a>
-                    <button id="ShoppingBagButton" class="text_custom">Shopping bag</button> 
+                    <button id="ShoppingBagButton" class="text_custom" style="border:none;border-radius: 8px;">Shopping bag</button> 
                     <script>
                         var ShoppingBagButton = document.getElementById("ShoppingBagButton");
 
@@ -161,10 +167,21 @@
                             document.getElementById("ShoppingBagLink").click();
                         } 
                     </script>
+                </td> --}}
+                <td style="color:black;">
+                    <a href="/payment_handling" id="PaymentLink" style="text-decoration: none;visibility: hidden;"></a>
+                    <button id="PaymentButton" class="text_custom" style="border:none;border-radius: 8px;">Bag and Payment</button> 
+                    <script>
+                        var PaymentButton = document.getElementById("PaymentButton");
+
+                        PaymentButton.onclick = function(){
+                            document.getElementById("PaymentLink").click();
+                        } 
+                    </script>
                 </td>
                 <td style="color:black;">
                     <a href="/login_handling" id="LoginLink" style="text-decoration: none;visibility: hidden;"></a>
-                    <button id="User_Account" class="text_custom">{{{account}}}</button>
+                    <button id="User_Account" class="text_custom_user" style="border:none;border-radius: 8px;">{{{account}}}</button>
                     <script>
                         var LoginButton = document.getElementById("User_Account");
 

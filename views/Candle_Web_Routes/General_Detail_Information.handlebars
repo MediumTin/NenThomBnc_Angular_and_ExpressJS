@@ -137,6 +137,7 @@
             </div>
             <script>
                 var Current_Product;
+                var Current_Product_image;
                 Get_Candle_Information();
                 var QuatityNumber = document.getElementById("Quatity_of_product").value;
                 var QuatityButton = document.getElementById("Quatity_of_product");
@@ -170,6 +171,7 @@
                             myarray = stringtemp.replaceAll(" ","_"); // replace all space in string with underscore
                             Current_Product = receivedMessage.name;
                             Current_Product_price = receivedMessage.price;
+                            Current_Product_image = receivedMessage.image;
                             document.getElementById('Candle_Image').src = `${receivedMessage.image}`; 
                             document.getElementById('Candle_Price').innerHTML = `${receivedMessage.price}`;
                             document.getElementById('Candle_Name').innerHTML = `${receivedMessage.name}`;
@@ -217,7 +219,8 @@
                         { 
                             candle_name: `${Current_Product}`, 
                             quatity: `${QuatityNumber}`, // waiting dev for one button select number of product later
-                            price : `${Current_Product_price}`
+                            price : `${Current_Product_price}`,
+                            image : `${Current_Product_image}`
                         } 
                     ); 
                     xhttp.send(data);
