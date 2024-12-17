@@ -14,6 +14,7 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn.js');
 const expressHb = require('express-handlebars');
 const session = require('express-session');
+const nodemailer = require('nodemailer'); // declare for mail service
 var cryp = require('crypto');
 const Redis = require('ioredis');
 const { v4: uuidv4 } = require("uuid");
@@ -21,6 +22,27 @@ const RedisStore = require('connect-redis').default;
 // const clientRedis = new Redis(); // defaut localhost
 let clientRedis = redis.createClient();
 clientRedis.connect().catch(console.error);
+
+var mailTransport = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth : {
+        user: "nguyentrungtin1002@gmail.com",
+        pass : "xsmm tqvr dldv fcys",
+    }
+});
+
+const SENDMAIL = async (mailDetails) => {
+    try {
+      const info = await transporter.sendMail(mailDetails)
+      callback(info);
+    } catch (error) {
+      console.log(error);
+    } 
+  };
+
 // import { engine } from 'express-handlebars';
 const PORT = process.env.PORT || 3500;
 const RedisPort = PORT;
@@ -80,6 +102,42 @@ console.log("Program is running ----------");
 // app.use('/refresh', require('./routes/refresh'));
 // app.use('/logout', require('./routes/logout'));
 
+// HTML email template
+const htmlEmail = `
+    <html>
+    <body>
+        <h1>Welcome to Our Service!</h1>
+        <p>Thank you for signing up. We're thrilled to have you on board.</p>
+        <table><tr><th><img style="height:5px ;width: 5px;" src="3_Day_WKND.jpg" alt="Our Logo" /></th><th><img style="height:5px ;width: 5
+        px;"  src="3_Day_WKND.jpg" alt="Our Logo" /></th></tr></table>
+    </body>
+    </html>
+`;
+
+app.get('/set-email',(req,res)=>{
+    mailTransport.sendMail({
+        from: '"NenThomBnC" <nenthombnc@gmail.com>',
+        to: 'Tin.NguyenTrung3@vn.bosch.com',
+        subject: 'Order confirmation',
+        //text: 'Thank you for choosing our product. Your product will come to you soon! ',
+        html: htmlEmail,
+        attachments: [{
+            filename: '3_Day_WKND.jpg',
+            path: '3_Day_WKND.jpg',
+            cid: '3_Day_WKND.jpg' //same cid value as in the html img src
+        }],
+        generateTextFromHtml: true,
+        }, function(err){
+        if(err) console.error( 'Unable to send email: ' + err );
+        });
+    res.send("Sent to email!");
+})
+
+// app.get('/set-email', (req,res)=>{
+//     res.send(req.session); // req.session.user.username
+//     console.log(`Cookie is ${req.cookie}`); // req.session.cookie.maxAge
+//     // Session will have 2 part : 1 is Cookie info and 2,3,4,... is data
+// })
 
 // Example using JWT without libraries
 // 1. Set new JWT mechanism

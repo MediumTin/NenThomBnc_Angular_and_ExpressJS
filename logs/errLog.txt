@@ -316,3 +316,8 @@ Expecting 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 
 20241027	22:36:51	23089656-a447-46c9-9cab-bf07f0aea22c	SyntaxError: Unexpected non-whitespace character after JSON at position 427
 20241027	22:37:08	60f25088-3a4f-4b24-8dc8-a25047eee165	SyntaxError: Unexpected non-whitespace character after JSON at position 427
 20241027	22:37:08	6b62596b-0b89-4cd1-a11f-47e5aa16dd05	SyntaxError: Unexpected non-whitespace character after JSON at position 427
+20241204	23:40:57	83232a06-742b-4c64-a0ec-c94fee2847a9	TypeError: Cannot read properties of undefined (reading 'slice')
+20241214	15:59:34	bf27e7a3-6027-4cbe-b294-5098a975e973	Error: Parse error on line 1190:
+...="{{User_for_payment}}}">             
+-----------------------^
+Expecting 'CLOSE', 'OPEN_SEXPR', 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 'CLOSE_UNESCAPED'

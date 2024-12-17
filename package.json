@@ -21,6 +21,7 @@
     "mongodb": "^6.8.0",
     "mongoose": "^8.6.0",
     "mongose": "^0.0.2-security",
+    "nodemailer": "^6.9.16",
     "npm": "^10.8.3",
     "redis": "^4.7.0",
     "uuid": "^9.0.1"

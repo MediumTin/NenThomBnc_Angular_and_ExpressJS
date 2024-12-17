@@ -9,8 +9,20 @@ const Global_Interface = require('../../controllers/Website_Candle_Light/Global_
 const Redis_API = require('../../controllers/API_with_Redis/API_Redis');
 const { createClient } = require('redis');
 const samplearray2 = ['Location 1', 'Location 2'];
+const nodemailer = require('nodemailer'); // declare for mail service
 
 const client = createClient();  // Create a Redis client
+
+var mailTransport = nodemailer.createTransport({
+   service: "gmail",
+   host: "smtp.gmail.com",
+   port: 465,
+   secure: true,
+   auth : {
+       user: "nguyentrungtin1002@gmail.com",
+       pass : "xsmm tqvr dldv fcys",
+   }
+});
 
 Router.post('/',async (req,res)=>{
    // const {user, pwd} = req.body;
@@ -66,12 +78,55 @@ Router.post('/specific_handling',async (req,res)=>{
    // 3. Read cache failure (miss cached)
    // 4. Read data from Datbase due to missing Cache
    // 5. Write new data to Cache
-   Request_Add_New_Product(req,res);
-   await Redis_API.Connect_To_Redis(client); // Open connection to Redis
-   await Redis_API.Delete_Data_In_Redis(client);
-   await Redis_API.Disconnect_To_Redis(client);
-   
-   // res.status(200).send(samplearray);
+   //Request_Add_New_Product(req,res);
+   // await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   // await Redis_API.Delete_Data_In_Redis(client);
+   // await Redis_API.Disconnect_To_Redis(client);
+   console.log(`Visa number in js is ${req.body.Visa_number}`)
+
+   const htmlEmail = `
+    <html>
+    <body>
+        <h1>NenThomBnC thank you!</h1>
+        <p>Thank you ${req.body.Username} for your selection.</p>
+        <p>Your bill is ${req.body.Total_Price_After_VAT} VND with VISA Number ${req.body.Visa_number}</p>
+        <table><tr><th><img style="height:5px ;width: 5px;" src="3_Day_WKND.jpg" alt="Our Logo" /></th><th><img style="height:5px ;width: 5
+        px;"  src="3_Day_WKND.jpg" alt="Our Logo" /></th></tr></table>
+    </body>
+    </html>
+   `;
+
+   mailTransport.sendMail({
+      from: '"NenThomBnC" <nenthombnc@gmail.com>',
+      to: `${req.body.Email}`,
+      subject: 'Order confirmation',
+      //text: 'Thank you for choosing our product. Your product will come to you soon! ',
+      html: htmlEmail,
+      attachments: [{
+          filename: '3_Day_WKND.jpg',
+          path: '3_Day_WKND.jpg',
+          cid: '3_Day_WKND.jpg' //same cid value as in the html img src
+      }],
+      generateTextFromHtml: true,
+      }, function(err){
+      if(err) console.error( 'Unable to send email: ' + err );
+      });
+
+      var Personal_Shopping_Bag = await Menu_Candle_Processing.Update_Content_of_HistoricalBag(
+         req.body.Username,
+         req.body.Email,
+         req.body.Visa_number,
+         req.body.Visa_valid_date,
+         req.body.Visa_cvv,
+         req.body.Nation_buyer,
+         req.body.Nation_zip_buyer,
+         req.body.Nation_state_buyer,
+         req.body.VAT_number_buyer,
+         req.body.Total_Price_Before_VAT,
+         req.body.Total_VAT,
+         req.body.Total_Price_After_VAT,
+         req.body.Selected_List,
+      );
 })
 // Process with router
 Router.get('/',(req,res)=>{
@@ -126,7 +181,8 @@ Router.get('/specific_handling',(req,res)=>{
       var CurrentUser = req.session.personal_information.username;
       // res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Web_Routes','Search_And_Filtering_Product_AdminRight.html'));
       res.status(200).render('Search_And_Filtering_Product_AdminRight',{
-         account : `${CurrentUser}`
+         account : `${CurrentUser}`,
+         User_for_payment : `${CurrentUser}`
       });
    } else {
       // Session is timeout -> Request login again
@@ -216,5 +272,7 @@ const Request_Add_New_Product = async (req,res) => {
    
 
 }
+
+
 // Export router to common usage
 module.exports = Router;

@@ -58,6 +58,7 @@ const Update_Content_of_ShoppingBag = async(username_request,ContentofChanged) =
     };
 }
 
+
 const GetShoppingBagFromUser = async(username_request) => {
     var isValidUser = 0, isValidAdminRight = 0, PersonalShoppingBag = "";
     var result = [];

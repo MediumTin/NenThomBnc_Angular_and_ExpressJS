@@ -1,5 +1,6 @@
 const User = require('../../model/User');
 const Candle_Collection = require('../../model/Candle_Collection');
+const HistoricalBag = require('../../model/Historical_Shopping_Bag');
 
 const bcrypt = require('bcrypt');
 
@@ -16,6 +17,51 @@ const GetAllProductInformation = async () => {
         // res.status(500).json({'message':err.message});
     }
     return result;
+}
+
+const GetAllHistoricalProduct = async () => {
+    var result =[];
+    try{
+        // Get all product information in Database
+        result = await HistoricalBag.find({
+            // username: "TrungTin_2"
+        });
+        // console.log('All_Docuemnt_InDB : ', result[0].name);
+
+    } catch(err){
+        // res.status(500).json({'message':err.message});
+    }
+    return result;
+}
+
+const Update_Content_of_HistoricalBag = async(Username,Email,Visa_number,Visa_valid_date,Visa_cvv,Nation_buyer,Nation_zip_buyer,Nation_state_buyer,VAT_number_buyer,Total_Price_Before_VAT,Total_VAT,Total_Price_After_VAT,Selected_List) => {
+    var List_Of_Product = await GetAllHistoricalProduct();
+    var length_of_DB = (List_Of_Product).length;
+    console.log(`Visa number in function write database is ${Visa_number}`)
+    try{
+        const result = await HistoricalBag.create({
+            "id":length_of_DB+1,
+            "Username": Username,
+            "Email": Email,
+            "Visa_number": Visa_number,
+            "Visa_valid_date": Visa_valid_date,
+            "Visa_cvv": Visa_cvv,
+            "Nation_buyer": Nation_buyer,
+            "Nation_zip_buyer": Nation_zip_buyer,
+            "Nation_state_buyer": Nation_state_buyer,
+            "VAT_number_buyer": VAT_number_buyer,
+            "Total_Price_Before_VAT": Total_Price_Before_VAT,
+            "Total_VAT": Total_VAT,
+            "Total_Price_After_VAT": Total_Price_After_VAT,
+            "Selected_List": Selected_List
+        })
+        return 1;
+
+    } catch(err){
+        // res.status(400).json({'message':err.message});
+        // result = "Failed";
+        return 0;
+    }
 }
 
 const AddNewProductInformation = async (name,type,group,brand,price,price_range,color,image) => {
@@ -109,6 +155,7 @@ const FilterInfo = async (RequestType,RequestGroup,RequestBrand,RequestPrice,Req
 module.exports = {
     AddNewProductInformation,
     GetAllProductInformation,
-    FilterInfo
+    FilterInfo,
+    Update_Content_of_HistoricalBag
 
 };
