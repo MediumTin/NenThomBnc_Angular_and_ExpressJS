@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BnCCandle</title>
+    <link rel="icon" type="image/x-icon" href="../img/IconBnC.ico"> 
+    <!-- Declare css and include into this file -->
+    <!-- <link rel="stylesheet" href="../css/style_Candle.css" />    -->
+    <link rel="stylesheet" href="../css/Header_Component.css" />  
+    
+    <!-- Declare Boostrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+</head>
+
+<body>
+    <!-- 1. Search bar and Navigation bar in header page. -->
+    <div class="div-footer;" style="background-color: white;">
+        <!-- Describe search bar and logo -->
+        <table class="table1">
+            <tr style="width: 50%;">
+                <td>
+                    <img src="../img/IconBnC_Removed.png" style="width:100px;height:100px;">
+                </td>
+                <!-- <th style="color:black;">
+                    <input type="text" name="search">
+                </th>
+                <th>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </th> -->
+                <td>
+                    <div class="search-container">
+                        <form action="/action_page.php">
+                          <input type="text" placeholder="Search your product..." name="search" style="height:40px ;width:400px;">
+                          <button type="submit" style="height:40px ;width: 50px;"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </td>
+                <td style="color:black;">
+                    <button style="height:40px ;width: 80px;">Shopping bag</button>
+                </td>
+                <td style="color:black;">
+                    <a href="/login_handling" id="LoginLink" style="text-decoration: none;visibility: hidden;"></a>
+                    <button style="height:40px ;width: 80px;" id="User_Account">{{{account}}}</button>
+                    <script>
+                        var LoginButton = document.getElementById("User_Account");
+
+                        LoginButton.onclick = function(){
+                            document.getElementById("LoginLink").click();
+                        } 
+                    </script>
+                </td>
+            </tr>
+        </table>
+        <!-- Describe Top Navigation bar -->
+        <div class="topnav">
+            <table class="table1">
+                <tr>
+                    <th><a href="/">Home</a></th>
+                    <th><a href="../candles">Candles</a></th>
+                    <th>
+                        <!-- <a href="#oil">Oils</a> -->
+                        <div class="dropdown">
+                            <button class="dropbtn">
+                                <a href="../oils">Oils</a>   
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="../diffuse_oils">Diffuse Oils</a>
+                                <a href="../natural_oils">Natural Oils</a>
+                            </div>
+                        </div> 
+                    </th>
+                    <th>
+                        <!-- <a href="#accessory">Accessory</a> -->
+                        <div class="dropdown">
+                            <button class="dropbtn">
+                                <a href="../accessory">Accessory</a>
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="../burn_candles">Burn Candles</a>
+                                <a href="../care_candles">Care Candles</a>
+                            </div>
+                        </div> 
+                    </th>
+                    <th><a href="../gift">Gift</a></th>
+                    <th><a href="../news">News</a></th>
+                    <th><a href="../contact">Contact</a></th>
+                    <th><p>Your bill is ${req.body.Total_Price_After_VAT} VND with VISA Number ${req.body.Visa_number}</p></th>
+                </tr>
+            </table>
+            </div>
+    </div>
+
+</body>
+
+</html>

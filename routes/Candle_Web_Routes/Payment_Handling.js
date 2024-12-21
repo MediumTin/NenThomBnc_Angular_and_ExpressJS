@@ -82,30 +82,117 @@ Router.post('/specific_handling',async (req,res)=>{
    // await Redis_API.Connect_To_Redis(client); // Open connection to Redis
    // await Redis_API.Delete_Data_In_Redis(client);
    // await Redis_API.Disconnect_To_Redis(client);
-   console.log(`Visa number in js is ${req.body.Visa_number}`)
+   
+   var selectedList = (req.body.Selected_List);
+   selectedList = selectedList.split(",")
+   var length_of_selectedList = (selectedList.length)/4;
+   var selectedList_filtered = Array(length_of_selectedList).fill(null).map(() => Array(4)); // Declare empty 2 direction array (2 row, each row 4 elements)
+   var Generated_HTML_SelectedProduct ="";
+   for(let i = 0;i<length_of_selectedList;i++){
+      for(let j=0;j<4;j++){
+         selectedList_filtered[i][j] = selectedList[i*4 + j]; 
+      }
+      Generated_HTML_SelectedProduct += `
+         <tr>
+            <td>${selectedList_filtered[i][0]}</td>
+            <td><img src="cid:logo" style="width:100px;height:100px;"></td>
+            <td>${selectedList_filtered[i][1]}</td>
+            <td>${selectedList_filtered[i][2]}</td>
+         </tr>
+      `
+         
+   }
+   console.log(`Visa number in js is ${selectedList_filtered[0].length}`);
+   // console.log(`Visa number in js children 0 is ${selectedList_filtered[0][0]}`);
+   // console.log(`Visa number in js children 1 is ${selectedList_filtered[1][0]}`);
 
-   const htmlEmail = `
-    <html>
-    <body>
-        <h1>NenThomBnC thank you!</h1>
-        <p>Thank you ${req.body.Username} for your selection.</p>
-        <p>Your bill is ${req.body.Total_Price_After_VAT} VND with VISA Number ${req.body.Visa_number}</p>
-        <table><tr><th><img style="height:5px ;width: 5px;" src="3_Day_WKND.jpg" alt="Our Logo" /></th><th><img style="height:5px ;width: 5
-        px;"  src="3_Day_WKND.jpg" alt="Our Logo" /></th></tr></table>
-    </body>
-    </html>
-   `;
+   console.log(`Generated HTML is ${Generated_HTML_SelectedProduct}`);
+
+   // const htmlEmail = `
+   //  <html>
+   //  <body>
+   //      <h1>NenThomBnC thank you!</h1>
+   //      <p>Thank you ${req.body.Username} for your selection.</p>
+   //      <p>Your bill is ${req.body.Total_Price_After_VAT} VND with VISA Number ${req.body.Visa_number}</p>
+   //      <table><tr><th><img style="height:5px ;width: 5px;" src="3_Day_WKND.jpg" alt="Our Logo" /></th><th><img style="height:5px ;width: 5
+   //      px;"  src="3_Day_WKND.jpg" alt="Our Logo" /></th></tr></table>
+   //  </body>
+   //  </html>
+   // `;
+   // Generated_HTML_SelectedProduct
+   const htmlEmail2 = `<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BnCCandle</title>
+    <link rel="icon" type="image/x-icon" href="../img/IconBnC.ico"> 
+    <!-- Declare css and include into this file -->
+    <!-- <link rel="stylesheet" href="../css/style_Candle.css" />    -->
+    <link rel="stylesheet" href="../css/Header_Component.css" />  
+    
+    <!-- Declare Boostrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+</head>
+
+<body>
+    <!-- 1. Search bar and Navigation bar in header page. -->
+    <div class="div-footer;" style="background-color: white;">
+        <!-- Describe search bar and logo -->
+        <table class="table1">
+            <tr>
+                <td><p>Visa card number is ${req.body.Visa_number}</p></td>
+            </tr>
+            <tr>
+                <td><p>National buyer is ${req.body.Nation_buyer}</p></td>
+            </tr>
+            <tr>
+                <td><p>VAT Number is ${req.body.VAT_number_buyer}</p></td>
+            </tr>
+            <tr>
+                <td><p>Total price before VAT is ${req.body.Total_Price_Before_VAT}</p></td>
+            </tr>
+            <tr>
+                <td><p>VAT payment is ${req.body.Total_VAT}</p></td>
+            </tr>
+            <tr>
+                <td><p>Total price after VAT is ${req.body.Total_Price_After_VAT}</p></td>
+            </tr>
+        </table>
+        <p>Detail your product as below</p>
+        <table>
+            <tr>
+               <td><b>Product Name</b></td>
+               <td><b>Product Image</b></td>
+               <td><b>Quatity</b></td>
+               <td><b>Price Unit</b></td>
+            </tr>
+            ${Generated_HTML_SelectedProduct}
+            
+        </table>
+
+    </div>
+
+</body>
+
+</html>`;
 
    mailTransport.sendMail({
       from: '"NenThomBnC" <nenthombnc@gmail.com>',
       to: `${req.body.Email}`,
       subject: 'Order confirmation',
       //text: 'Thank you for choosing our product. Your product will come to you soon! ',
-      html: htmlEmail,
+      html: htmlEmail2,
       attachments: [{
           filename: '3_Day_WKND.jpg',
           path: '3_Day_WKND.jpg',
-          cid: '3_Day_WKND.jpg' //same cid value as in the html img src
+          cid: 'logo' //same cid value as in the html img src
       }],
       generateTextFromHtml: true,
       }, function(err){
