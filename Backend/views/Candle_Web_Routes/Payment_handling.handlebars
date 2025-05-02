@@ -1,0 +1,1719 @@
+
+        <!-- Describe Top Navigation bar -->
+        <div class="topnav">
+            <table class="table1">
+                <tr>
+                    <th><a href="/">Home</a></th>
+                    <th><a href="../candles">Candles</a></th>
+                    <th>
+                        <!-- <a href="#oil">Oils</a> -->
+                        <style>
+                            .dropdown2 {
+                                float: left;
+                                overflow: hidden;
+                            }
+                            .dropdown-content2 {
+                                display: none;
+                                position: absolute;
+                                background-color: #f9f9f9;
+                                min-width: 160px;
+                                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                                z-index: 1;
+                            }
+                            .dropdown-content2 a {
+                                float: none;
+                                color: black;
+                                padding: 12px 16px;
+                                text-decoration: none;
+                                display: block;
+                                text-align: left;
+                            }
+                            .dropdown-content2 a:hover {
+                                background-color: #ddd;
+                            }
+                            .dropdown2 .dropbtn2 {
+                                font-size: 18px;  
+                                border: none;
+                                outline: none;
+                                color: white;
+                                padding: 14px 16px;
+                                background-color: inherit;
+                                font-family: inherit;
+                                margin: 0;
+                            }
+                            .dropdown2:hover .dropbtn2 {
+                                background-color: #FF0066;
+                            }
+                            .dropdown2:hover .dropdown-content2 {
+                                display: block;
+                            }
+                        </style>
+                        <div class="dropdown2">
+                            <button class="dropbtn2">
+                                <a href="../oils">Oils</a>   
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content2">
+                                <a href="../diffuse_oils">Diffuse Oils</a>
+                                <a href="../natural_oils">Natural Oils</a>
+                            </div>
+                        </div> 
+                    </th>
+                    <th>
+                        <!-- <a href="#accessory">Accessory</a> -->
+                        <div class="dropdown2">
+                            <button class="dropbtn2">
+                                <a href="../accessory">Accessory</a>
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content2">
+                                <a href="../burn_candles">Burn Candles</a>
+                                <a href="../care_candles">Care Candles</a>
+                            </div>
+                        </div> 
+                    </th>
+                    <th><a href="../gift">Gift</a></th>
+                    <th><a href="../news">News</a></th>
+                    <th><a href="../contact">Contact</a></th>
+                </tr>
+            </table>
+            </div>
+    </div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            padding: 5px;
+            background-color: #7a34ca;
+        }
+
+        p {
+            margin: 0%;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+
+        .container_child {
+            max-width: 500px;
+            margin: 20px auto;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+
+        .box-1 {
+            max-width: 450px;
+            padding: 10px 40px;
+            user-select: none;
+        }
+
+        .box-1 div .fs-12 {
+            font-size: 8px;
+            color: white;
+        }
+
+        .box-1 div .fs-14 {
+            font-size: 15px;
+            color: white;
+        }
+
+        .box-1 img.pic {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+        }
+
+        .box-1 img.mobile-pic {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .box-1 .name {
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .dis {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        label.box {
+            width: 100%;
+            font-size: 12px;
+            background: #ddd;
+            margin-top: 12px;
+            padding: 10px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        #one:checked~label.first,
+        #two:checked~label.second,
+        #three:checked~label.third {
+            border-color: #7700ff;
+        }
+
+        #one:checked~label.first .circle,
+        #two:checked~label.second .circle,
+        #three:checked~label.third .circle {
+            border-color: #7a34ca;
+            background-color: #fff;
+        }
+
+        label.box .course {
+            width: 100%;
+        }
+
+        label.box .circle {
+            height: 12px;
+            width: 12px;
+            background: #ccc;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 4px solid transparent;
+            display: inline-block;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .box-2 {
+            max-width: 450px;
+            padding: 10px 40px;
+        }
+
+        .box-2 .box-inner-2 input.form-control {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .box-2 .box-inner-2 .inputWithIcon {
+            position: relative;
+        }
+
+        .box-2 .box-inner-2 .inputWithIcon span {
+            position: absolute;
+            left: 15px;
+            top: 8px;
+        }
+
+        .box-2 .box-inner-2 .inputWithcheck {
+            position: relative;
+        }
+
+        .box-2 .box-inner-2 .inputWithcheck span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: green;
+            font-size: 12px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 15px;
+            top: 6px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            box-shadow: none;
+            outline: none;
+            border: 1px solid #7700ff;
+        }
+
+        .border:focus-within {
+            border: 1px solid #7700ff !important;
+        }
+
+        .box-2 .card-atm .form-control {
+            border: none;
+            box-shadow: none;
+        }
+
+        .form-select {
+            border-radius: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+
+        }
+
+        .address .form-control.zip {
+            border-radius: 0;
+            border-bottom-left-radius: 10px;
+
+        }
+
+        .address .form-control.state {
+            border-radius: 0;
+            border-bottom-right-radius: 10px;
+
+        }
+
+        .box-2 .box-inner-2 .btn.btn-outline-primary {
+            width: 120px;
+            padding: 10px;
+            font-size: 11px;
+            padding: 0% !important;
+            display: flex;
+            align-items: center;
+            border: none;
+            border-radius: 0;
+            background-color: whitesmoke;
+            color: black;
+            font-weight: 600;
+        }
+
+        .box-2 .box-inner-2 .btn.btn-primary {
+            background-color: #7700ff;
+            color: whitesmoke;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            justify-content: center;
+            border: none;
+            padding: 10px;
+        }
+
+        .box-2 .box-inner-2 .btn.btn-primary:hover {
+            background-color: #7a34ca;
+        }
+
+        .box-2 .box-inner-2 .btn.btn-primary .fas {
+            font-size: 13px !important;
+            color: whitesmoke;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            transform: translateX(-45px);
+        }
+
+        .carousel-inner {
+            width: 75%;
+            height: 50%;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+        }
+
+        .carousel-control-prev {
+            transform: translateX(-50%);
+            opacity: 1;
+        }
+
+        .carousel-control-prev:hover .fas.fa-arrow-left {
+            transform: translateX(-5px);
+        }
+
+        .carousel-control-next {
+            transform: translateX(-115%);
+            opacity: 1;
+        }
+
+        .carousel-control-next:hover .fas.fa-arrow-right {
+            transform: translateX(5px);
+        }
+
+        .fas.fa-arrow-left,
+        .fas.fa-arrow-right {
+            font-size: 0.8rem;
+            transition: all .2s ease;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            background-color: #f8f9fa;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transform-origin: center;
+            opacity: 1;
+        }
+
+        .fas,
+        .fab {
+            color: #6d6c6d;
+        }
+
+        ::placeholder {
+            font-size: 12px;
+        }
+
+        @media (max-width:768px) {
+            .container {
+                max-width: 700px;
+                margin: 10px auto;
+            }
+
+            .box-1,
+            .box-2 {
+                max-width: 600px;
+                padding: 20px 90px;
+                margin: 20px auto;
+            }
+
+        }
+    
+        @media (max-width:426px) {
+
+            .box-1,
+            .box-2 {
+                max-width: 400px;
+                padding: 20px 10px;
+            }
+
+            ::placeholder {
+                font-size: 9px;
+            }
+        }
+    </style>
+    <!-- 2. Main body -->
+    <div class="container d-lg-flex" id="Main_body" style="display:block;">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+      
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                list-style: none;
+                font-family: 'Montserrat', sans-serif;
+            }
+    
+            body {
+                padding: 5px;
+                background-color: #7a34ca;
+            }
+    
+            p {
+                margin: 0%;
+            }
+    
+            .container {
+                max-width: 900px;
+                margin: 20px auto;
+                overflow: hidden;
+                background-color: #f8f9fa;
+            }
+
+            .container_child {
+                max-width: 500px;
+                margin: 20px auto;
+                overflow: hidden;
+                background-color: #f8f9fa;
+            }
+    
+            .box-1 {
+                max-width: 450px;
+                padding: 10px 40px;
+                user-select: none;
+            }
+    
+            .box-1 div .fs-12 {
+                font-size: 8px;
+                color: white;
+            }
+    
+            .box-1 div .fs-14 {
+                font-size: 15px;
+                color: white;
+            }
+    
+            .box-1 img.pic {
+                width: 20px;
+                height: 20px;
+                object-fit: cover;
+            }
+    
+            .box-1 img.mobile-pic {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+    
+            .box-1 .name {
+                font-size: 11px;
+                font-weight: 600;
+            }
+    
+            .dis {
+                font-size: 12px;
+                font-weight: 500;
+            }
+    
+            label.box {
+                width: 100%;
+                font-size: 12px;
+                background: #ddd;
+                margin-top: 12px;
+                padding: 10px 12px;
+                border-radius: 5px;
+                cursor: pointer;
+                border: 1px solid transparent;
+            }
+    
+            #one:checked~label.first,
+            #two:checked~label.second,
+            #three:checked~label.third {
+                border-color: #7700ff;
+            }
+    
+            #one:checked~label.first .circle,
+            #two:checked~label.second .circle,
+            #three:checked~label.third .circle {
+                border-color: #7a34ca;
+                background-color: #fff;
+            }
+    
+            label.box .course {
+                width: 100%;
+            }
+    
+            label.box .circle {
+                height: 12px;
+                width: 12px;
+                background: #ccc;
+                border-radius: 50%;
+                margin-right: 15px;
+                border: 4px solid transparent;
+                display: inline-block;
+            }
+    
+            input[type="radio"] {
+                display: none;
+            }
+    
+            .box-2 {
+                max-width: 450px;
+                padding: 10px 40px;
+            }
+    
+            .box-2 .box-inner-2 input.form-control {
+                font-size: 12px;
+                font-weight: 600;
+            }
+    
+            .box-2 .box-inner-2 .inputWithIcon {
+                position: relative;
+            }
+    
+            .box-2 .box-inner-2 .inputWithIcon span {
+                position: absolute;
+                left: 15px;
+                top: 8px;
+            }
+    
+            .box-2 .box-inner-2 .inputWithcheck {
+                position: relative;
+            }
+    
+            .box-2 .box-inner-2 .inputWithcheck span {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: green;
+                font-size: 12px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                right: 15px;
+                top: 6px;
+            }
+    
+            .form-control:focus,
+            .form-select:focus {
+                box-shadow: none;
+                outline: none;
+                border: 1px solid #7700ff;
+            }
+    
+            .border:focus-within {
+                border: 1px solid #7700ff !important;
+            }
+    
+            .box-2 .card-atm .form-control {
+                border: none;
+                box-shadow: none;
+            }
+    
+            .form-select {
+                border-radius: 0;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+    
+            }
+    
+            .address .form-control.zip {
+                border-radius: 0;
+                border-bottom-left-radius: 10px;
+    
+            }
+    
+            .address .form-control.state {
+                border-radius: 0;
+                border-bottom-right-radius: 10px;
+    
+            }
+    
+            .box-2 .box-inner-2 .btn.btn-outline-primary {
+                width: 120px;
+                padding: 10px;
+                font-size: 11px;
+                padding: 0% !important;
+                display: flex;
+                align-items: center;
+                border: none;
+                border-radius: 0;
+                background-color: whitesmoke;
+                color: black;
+                font-weight: 600;
+            }
+    
+            .box-2 .box-inner-2 .btn.btn-primary {
+                background-color: #7700ff;
+                color: whitesmoke;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                justify-content: center;
+                border: none;
+                padding: 10px;
+            }
+    
+            .box-2 .box-inner-2 .btn.btn-primary:hover {
+                background-color: #7a34ca;
+            }
+    
+            .box-2 .box-inner-2 .btn.btn-primary .fas {
+                font-size: 13px !important;
+                color: whitesmoke;
+            }
+    
+            .carousel-indicators [data-bs-target] {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                transform: translateX(-45px);
+            }
+    
+            .carousel-inner {
+                width: 75%;
+                height: 50%;
+            }
+    
+            .carousel-item img {
+                object-fit: cover;
+                height: 100%;
+            }
+    
+            .carousel-control-prev {
+                transform: translateX(-50%);
+                opacity: 1;
+            }
+    
+            .carousel-control-prev:hover .fas.fa-arrow-left {
+                transform: translateX(-5px);
+            }
+    
+            .carousel-control-next {
+                transform: translateX(-115%);
+                opacity: 1;
+            }
+    
+            .carousel-control-next:hover .fas.fa-arrow-right {
+                transform: translateX(5px);
+            }
+    
+            .fas.fa-arrow-left,
+            .fas.fa-arrow-right {
+                font-size: 0.8rem;
+                transition: all .2s ease;
+            }
+    
+            .icon {
+                width: 30px;
+                height: 30px;
+                background-color: #f8f9fa;
+                color: black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transform-origin: center;
+                opacity: 1;
+            }
+    
+            .fas,
+            .fab {
+                color: #6d6c6d;
+            }
+    
+            ::placeholder {
+                font-size: 12px;
+            }
+    
+            @media (max-width:768px) {
+                .container {
+                    max-width: 700px;
+                    margin: 10px auto;
+                }
+                .box-1,
+                .box-2 {
+                    max-width: 600px;
+                    padding: 20px 90px;
+                    margin: 20px auto;
+                }
+    
+            }
+      
+            @media (max-width:426px) {
+    
+                .box-1,
+                .box-2 {
+                    max-width: 400px;
+                    padding: 20px 10px;
+                }
+    
+                ::placeholder {
+                    font-size: 9px;
+                }
+            }
+        </style>
+        <div class="box-1 bg-light user" id="Main_body_1" style="display:block;">
+            <div class="box-inner-1 pb-3 mb-3 ">
+                <div class="d-flex justify-content-between mb-3 userdetails">
+                    <p class="fw-bold">Lightroom Presets</p>
+                </div>
+                <div id="my" class="carousel slide carousel-fade img-details" data-bs-ride="carousel"
+                    data-bs-interval="2000">
+                    <div class="carousel-indicators" id="Total_Button_of_image">
+                        {{!-- <button type="button" data-bs-target="#my" data-bs-slide-to="0" id="Button_image_1"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#my" data-bs-slide-to="1" id="Button_image_2" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#my" data-bs-slide-to="2" id="Button_image_3" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#my" data-bs-slide-to="3" id="Button_image_4" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#my" data-bs-slide-to="4" id="Button_image_5" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#my" data-bs-slide-to="5" id="Button_image_6" aria-label="Slide 6"></button> --}}
+                    </div>
+                    <div class="carousel-inner" id="Total_image" >
+                        {{!-- <div class="carousel-item" id="image1">
+                            <img src="https://th.bing.com/th/id/OIP.UWp7QXA-_aGPqo_CysbyKAAAAA?rs=1&pid=ImgDetMain"
+                                class="d-block w-100">
+                        </div>
+                        <div class="carousel-item" id="image2">
+                            <img src="https://th.bing.com/th/id/R.25d0e530c67fdcc960b9eeaea57e5a27?rik=%2fyIuumZ%2fdIMNTw&riu=http%3a%2f%2fst.automobilemag.com%2fuploads%2fsites%2f11%2f2016%2f07%2f2017-Aston-Martin-Vantage-GT8-front-three-quarters.jpg&ehk=F3yV%2fvt2iS3NbSKcrUg1bzb13QwXB5c58OItZMb7LCQ%3d&risl=&pid=ImgRaw&r=0"
+                                class="d-block w-100 h-100">
+                        </div>
+                        <div class="carousel-item" id="image3">
+                            <img src="https://th.bing.com/th/id/OIP.X-AteLqYGMFWd2voPS_4_QHaFj?rs=1&pid=ImgDetMain"
+                                class="d-block w-100">
+                        </div>
+                        <div class="carousel-item" id="image4">
+                            <img src="https://bringatrailer.com/wp-content/uploads/2022/11/2016_porsche_911-gt3-rs_2016_porsche_911-gt3-rs_af280f31-910c-4316-bdd6-092d8c6d9b85-xvrume-69269-73551.jpg"
+                                class="d-block w-100">
+                        </div>
+
+                        <div class="carousel-item" id="image5">
+                            <img src="https://cdn.motor1.com/images/mgl/1l48X/s1/2018-mclaren-senna-prototype.jpg"
+                                class="d-block w-100">
+                        </div>
+
+                        <div class="carousel-item" id="image6">
+                            <img src="https://images.hdqwalls.com/wallpapers/nissan-gtr-2020-4k-w6.jpg"
+                                class="d-block w-100">
+                        </div> --}}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#my" data-bs-slide="prev" id="Previous_button">
+                        <div class="icon">
+                            <span class="fas fa-arrow-left"></span>
+                        </div>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#my" data-bs-slide="next" id="Next_button">
+                        <div class="icon">
+                            <span class="fas fa-arrow-right"></span>
+                        </div>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="radiobtn">
+                    <input type="radio" name="box" id="one">
+                    <input type="radio" name="box" id="two">
+                    <input type="radio" name="box" id="three">
+                    <p id="Storage_shopping_bag" style="display:none">{{sessionStorage}}</p>
+                    <p>Shopping Bag</p>
+                    <div class="my_scroll_div">
+                        {{!-- Start first display --}}
+                        <div id="ShoppinigDiv">
+                            {{!-- Javascript will insert automatically in here for code generation --}}
+                        </div>
+                        {{!-- End first display --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-2" id="Main_body_2" style="display:block;">
+            <div class="box-inner-2" >
+                <div>
+                    <p class="fw-bold">Payment Details</p>
+                    <p class="dis mb-3">Complete your purchase by providing your payment details</p>
+                </div>
+                <form>
+                    <div class="mb-3">
+                        <p class="dis fw-bold mb-2">Email address</p>
+                        <input id="email_of_buyer" class="form-control" type="email" value="luke@skywalker.com">
+                    </div>
+                    <div>
+                        <p class="dis fw-bold mb-2">Card details</p>
+                        <div class="d-flex align-items-center justify-content-between card-atm border rounded">
+                            <div class="fab fa-cc-visa ps-3"></div>
+                            <input id="visa_number" type="text" class="form-control" placeholder="Card Details">
+                            <div class="d-flex w-50">
+                                <input id="visa_valid_date" type="text" class="form-control px-0" placeholder="MM/YY">
+                                <input id="visa_cvv" type="text" maxlength=3 class="form-control px-0" placeholder="CVV">
+                            </div>
+                        </div>
+                        <div class="my-3 cardname">
+                            <p class="dis fw-bold mb-2">Cardholder name</p>
+                            <input class="form-control" id="cardholder_buyer" type="text">
+                        </div>
+                        <div class="address">
+                            <p class="dis fw-bold mb-3">Billing address</p>
+                            <select class="form-select" aria-label="Default select example" id="nation_buyer">
+                                <option selected hidden>United States</option>
+                                <option value="1">India</option>
+                                <option value="2">Australia</option>
+                                <option value="3">Canada</option>
+                            </select>
+                            <div class="d-flex">
+                                <input class="form-control zip" type="text" placeholder="ZIP" id="nation_zip_buyer">
+                                <input class="form-control state" type="text" placeholder="State" id="nation_state_buyer">
+                            </div>
+                            <div class=" my-3">
+                                <p class="dis fw-bold mb-2">VAT Number</p>
+                                <div class="inputWithcheck">
+                                    <input class="form-control" type="text" value="GB012345B9" id="VAT_number_buyer">
+                                    <span class="fas fa-check"></span>
+
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column dis">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <p>Subtotal</p>
+                                    <p id="label_for_total_price"></p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <p>VAT<span>(20%)</span></p>
+                                    <p id="label_for_total_VAT_price" ></p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <p class="fw-bold">Total</p>
+                                    <p class="fw-bold" id="label_for_total_payment_2"></p>
+                                </div>
+                                <div class="btn btn-primary mt-2" id="label_for_total_payment">
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{!-- 3. Div for confirmation --}}
+    <div class="container_child d-lg-flex" id="Confirmation_Box" style="display:none;align-item:center;">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+      
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                list-style: none;
+                font-family: 'Montserrat', sans-serif;
+            }
+    
+            body {
+                padding: 5px;
+                background-color: #7a34ca;
+            }
+    
+            p {
+                margin: 0%;
+            }
+    
+            .container {
+                max-width: 900px;
+                margin: 20px auto;
+                overflow: hidden;
+                background-color: #f8f9fa;
+            }
+
+            .container_child {
+                max-width: 500px;
+                margin: 20px auto;
+                overflow: hidden;
+                background-color: #f8f9fa;
+            }
+    
+            .box-1 {
+                max-width: 450px;
+                padding: 10px 40px;
+                user-select: none;
+            }
+    
+            .box-1 div .fs-12 {
+                font-size: 8px;
+                color: white;
+            }
+    
+            .box-1 div .fs-14 {
+                font-size: 15px;
+                color: white;
+            }
+    
+            .box-1 img.pic {
+                width: 20px;
+                height: 20px;
+                object-fit: cover;
+            }
+    
+            .box-1 img.mobile-pic {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+    
+            .box-1 .name {
+                font-size: 11px;
+                font-weight: 600;
+            }
+    
+            .dis {
+                font-size: 12px;
+                font-weight: 500;
+            }
+    
+            label.box {
+                width: 100%;
+                font-size: 12px;
+                background: #ddd;
+                margin-top: 12px;
+                padding: 10px 12px;
+                border-radius: 5px;
+                cursor: pointer;
+                border: 1px solid transparent;
+            }
+    
+            #one:checked~label.first,
+            #two:checked~label.second,
+            #three:checked~label.third {
+                border-color: #7700ff;
+            }
+    
+            #one:checked~label.first .circle,
+            #two:checked~label.second .circle,
+            #three:checked~label.third .circle {
+                border-color: #7a34ca;
+                background-color: #fff;
+            }
+    
+            label.box .course {
+                width: 100%;
+            }
+    
+            label.box .circle {
+                height: 12px;
+                width: 12px;
+                background: #ccc;
+                border-radius: 50%;
+                margin-right: 15px;
+                border: 4px solid transparent;
+                display: inline-block;
+            }
+    
+            input[type="radio"] {
+                display: none;
+            }
+    
+            .box-2 {
+                max-width: 450px;
+                padding: 10px 40px;
+            }
+    
+            .box-2 .box-inner-2 input.form-control {
+                font-size: 12px;
+                font-weight: 600;
+            }
+    
+            .box-2 .box-inner-2 .inputWithIcon {
+                position: relative;
+            }
+    
+            .box-2 .box-inner-2 .inputWithIcon span {
+                position: absolute;
+                left: 15px;
+                top: 8px;
+            }
+    
+            .box-2 .box-inner-2 .inputWithcheck {
+                position: relative;
+            }
+    
+            .box-2 .box-inner-2 .inputWithcheck span {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: green;
+                font-size: 12px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                right: 15px;
+                top: 6px;
+            }
+    
+            .form-control:focus,
+            .form-select:focus {
+                box-shadow: none;
+                outline: none;
+                border: 1px solid #7700ff;
+            }
+    
+            .border:focus-within {
+                border: 1px solid #7700ff !important;
+            }
+    
+            .box-2 .card-atm .form-control {
+                border: none;
+                box-shadow: none;
+            }
+    
+            .form-select {
+                border-radius: 0;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+    
+            }
+    
+            .address .form-control.zip {
+                border-radius: 0;
+                border-bottom-left-radius: 10px;
+    
+            }
+    
+            .address .form-control.state {
+                border-radius: 0;
+                border-bottom-right-radius: 10px;
+    
+            }
+    
+            .box-2 .box-inner-2 .btn.btn-outline-primary {
+                width: 120px;
+                padding: 10px;
+                font-size: 11px;
+                padding: 0% !important;
+                display: flex;
+                align-items: center;
+                border: none;
+                border-radius: 0;
+                background-color: whitesmoke;
+                color: black;
+                font-weight: 600;
+            }
+    
+            .box-2 .box-inner-2 .btn.btn-primary {
+                background-color: #7700ff;
+                color: whitesmoke;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                justify-content: center;
+                border: none;
+                padding: 10px;
+            }
+    
+            .box-2 .box-inner-2 .btn.btn-primary:hover {
+                background-color: #7a34ca;
+            }
+    
+            .box-2 .box-inner-2 .btn.btn-primary .fas {
+                font-size: 13px !important;
+                color: whitesmoke;
+            }
+    
+            .carousel-indicators [data-bs-target] {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                transform: translateX(-45px);
+            }
+    
+            .carousel-inner {
+                width: 75%;
+                height: 50%;
+            }
+    
+            .carousel-item img {
+                object-fit: cover;
+                height: 100%;
+            }
+    
+            .carousel-control-prev {
+                transform: translateX(-50%);
+                opacity: 1;
+            }
+    
+            .carousel-control-prev:hover .fas.fa-arrow-left {
+                transform: translateX(-5px);
+            }
+    
+            .carousel-control-next {
+                transform: translateX(-115%);
+                opacity: 1;
+            }
+    
+            .carousel-control-next:hover .fas.fa-arrow-right {
+                transform: translateX(5px);
+            }
+    
+            .fas.fa-arrow-left,
+            .fas.fa-arrow-right {
+                font-size: 0.8rem;
+                transition: all .2s ease;
+            }
+    
+            .icon {
+                width: 30px;
+                height: 30px;
+                background-color: #f8f9fa;
+                color: black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transform-origin: center;
+                opacity: 1;
+            }
+    
+            .fas,
+            .fab {
+                color: #6d6c6d;
+            }
+    
+            ::placeholder {
+                font-size: 12px;
+            }
+    
+            @media (max-width:768px) {
+                .container {
+                    max-width: 700px;
+                    margin: 10px auto;
+                }
+    
+                .box-1,
+                .box-2 {
+                    max-width: 600px;
+                    padding: 20px 90px;
+                    margin: 20px auto;
+                }
+    
+            }
+      
+            @media (max-width:426px) {
+    
+                .box-1,
+                .box-2 {
+                    max-width: 400px;
+                    padding: 20px 10px;
+                }
+    
+                ::placeholder {
+                    font-size: 9px;
+                }
+            }
+        </style>
+        <div class="box-2" id="Confirmation_Box_child" style="display:none;align-item:center;">
+            <div >
+                <div>
+                    <p class="fw-bold">Payment Confirmation</p>
+                </div>
+                <form action="">
+                    <div class="mb-3">
+                        <p class="dis fw-bold mb-2">Username</p>
+                        <p style="display:none" id="username_of_buyer_confirmed_tempt">{{{account}}}</p>
+                        {{!-- <input id="username_of_buyer_confirmed" class="form-control"> --}}
+                        <p id="username_of_buyer_confirmed"></p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="dis fw-bold mb-2">Email address</p>
+                        {{!-- <input id="email_of_buyer_confirmed" class="form-control" type="email" value="nguyentrungtin1002@gmail.com"> --}}
+                        <p id="email_of_buyer_confirmed"></p>
+                    </div>
+                    <div>
+                        <p class="dis fw-bold mb-2">Card details</p>
+                        <div class="d-flex align-items-center justify-content-between card-atm border rounded">
+                            <div class="fab fa-cc-visa ps-3"></div>
+                            {{!-- <input id="visa_number_confirmed" type="text" class="form-control" placeholder="Card Details"> --}}
+                            <p id="visa_number_confirmed"></p>
+                            <div class="d-flex w-50">
+                                {{!-- <input id="visa_valid_date_confirmed" type="text" class="form-control px-0" placeholder="MM/YY"> --}}
+                                {{!-- <input id="visa_cvv_confirmed" type="text" maxlength=3 class="form-control px-0" placeholder="CVV"> --}}
+                                <p id="visa_valid_date_confirmed"></p>
+                                <p id="visa_cvv_confirmed"></p>
+                            </div>
+                        </div>
+                        <div class="address">
+                            <p class="dis fw-bold mb-3">Billing address</p>
+                            <select class="form-select" aria-label="Default select example" id="nation_buyer_confirmed">
+                                <option selected hidden>United States</option>
+                                <option value="1">India</option>
+                                <option value="2">Australia</option>
+                                <option value="3">Canada</option>
+                            </select>
+                            <div class="d-flex">
+                                {{!-- <input class="form-control zip" type="text" placeholder="ZIP" id="nation_zip_buyer_confirmed"> --}}
+                                {{!-- <input class="form-control state" type="text" placeholder="State" id="nation_state_buyer_confirmed"> --}}
+                                <p id="nation_zip_buyer_confirmed"></p>
+                                <p id="nation_state_buyer_confirmed"></p>
+                            </div>
+                             <div class=" my-3">
+                                <p class="dis fw-bold mb-2">VAT Number</p>
+                                <div class="inputWithcheck">
+                                    <input class="form-control" type="text" value="GB012345B9" id="VAT_number_buyer_confirmed">
+                                    <p id="VAT_number_buyer_confirmed"></p>
+                                    <span class="fas fa-check"></span>
+
+                                </div>
+                            </div>
+                            <div class="radiobtn">
+                                <p><b>Shopping Bag Confirmation</b></p>
+                                <div class="my_scroll_div">
+                                    {{!-- Start first display --}}
+                                    <div id="ShoppinigDiv_Confirmation">
+                                        {{!-- Javascript will insert automatically in here for code generation --}}
+                                    </div>
+                                    {{!-- End first display --}}
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column dis">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <p><b>Subtotal</b></p>
+                                    <p id="label_for_total_price_confirmed"></p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <p><b>VAT<span>(20%)</span></b></p>
+                                    <p id="label_for_total_VAT_price_confirmed" ></p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <p class="fw-bold"><b>Total</b></p>
+                                    <p class="fw-bold" id="label_for_total_payment_2_confirmed"></p>
+                                </div>
+                                <table>
+                                    <tr>
+                                        <a href="/" id="Return_Home_Page" style="text-decoration: none;visibility: hidden;"></a>
+                                        <td><button class="btn btn-primary mt-2" id="Confirmation_failed">Need to recheck</button></td>
+                                        <td><button class="btn btn-primary mt-2" id="Confirmation_passed">Confirmed</button></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </form>  
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        ReadAllShoppingBag();
+        var SelectedList = [];
+        var SelectedListNew = [];
+        var ShoppingBagLength;
+        var GLOBAL_SessionStorage;
+        var Total_Price;
+        var Total_VAT_Price;
+        var Total_Payment;
+        var PreviousButton = document.getElementById("Previous_button");
+        var NextButton = document.getElementById("Next_button");
+        var PaymentButtonTrigger = document.getElementById("label_for_total_payment");
+        var Failed_Confirmation = document.getElementById("Confirmation_failed");
+        var Passed_Confirmation = document.getElementById("Confirmation_passed");
+        var Current_Div_Image; // default
+        var Current_Div_Button;
+        var Current_Counter = 0;
+        var pre_selection;
+
+        function ClearAvailableShoppingBag(){
+            const ShoppingDiv = document.getElementById("ShoppinigDiv");
+            ShoppingDiv.textContent = "";
+        }
+
+        function ClearAvailableShoppingBag_Confirmation(){
+            document.getElementById("ShoppinigDiv_Confirmation").textContent = "";
+        }
+
+        function ReadAllShoppingBag(){
+            Total_Price = 0;
+            Total_VAT_Price = 0;
+            Total_Payment = 0;
+            ClearAvailableShoppingBag();
+            const ShoppingDiv = document.querySelector("#ShoppinigDiv");
+            const Button_of_image_div = document.querySelector("#Total_Button_of_image");
+            const Image_div = document.querySelector("#Total_image");
+            const SessionStorage = document.getElementById("Storage_shopping_bag").innerHTML;
+            const SessionStorage_Filtered = JSON.parse(SessionStorage);
+            ShoppingBagLength = SessionStorage_Filtered.length;
+            console.log(`Value length is ${ShoppingBagLength}`);
+            for(let i=0;i<ShoppingBagLength;i++){
+                // Generate in shopping bag list
+                SessionStorage_Filtered[i] = SessionStorage_Filtered[i].split(",");
+                ShoppingDiv.innerHTML += 
+                    `
+                    <table style="background-color:grey; border-radius: 3px;" id="TableItem${i}">
+                        <tr>
+                            <td rowspan="2" style="width: 30px;text-align: center;"><input type="checkbox" id="${"ShoppingBagList_" + i}" value="Bike"></td>
+                            <td style="width: 400px;font-size:15px;text-align: left;">${SessionStorage_Filtered[i][0]}</td>
+                            <td style="font-size:15px;text-align: left;">Price:${SessionStorage_Filtered[i][2]}VND</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 400px;text-align: left;"></td>
+                            <td style="font-size:15px;text-align: left;">Quatity :${SessionStorage_Filtered[i][1]}</td>
+                        </tr>
+                    </table><br>
+                    `;
+                
+                // Generate image of shopping bag list
+                Image_div.innerHTML += 
+                `
+                    <div class="carousel-item" id="image${i}">
+                        <img src="${SessionStorage_Filtered[i][3]}"
+                            class="d-block w-100">
+                    </div>
+                `;
+                // Generate button image of shopping bag list
+                Button_of_image_div.innerHTML += 
+                `
+                    <button type="button" data-bs-target="#my" id="Button_image_${i}"
+                        aria-current="true" aria-label="Slide ${i}"></button>
+
+                `;
+                
+                    
+            }
+            Current_Counter = 0;
+            Current_Div_Image = document.getElementById(`image${Current_Counter}`);
+            Current_Div_Button = document.getElementById(`Button_image_${Current_Counter}`);
+            Current_Div_Image.classList = "carousel-item active";
+            Current_Div_Button.classList = "active";
+            GLOBAL_SessionStorage = SessionStorage_Filtered;
+            
+            
+        }
+        function GetInfoFromLocalStorage_to_ConfirmedBox() { 
+            document.getElementById("username_of_buyer_confirmed").innerHTML = document.getElementById("username_of_buyer_confirmed_tempt").innerHTML;
+            document.getElementById("email_of_buyer_confirmed").innerHTML = localStorage.getItem('email_of_buyer');
+            document.getElementById("visa_number_confirmed").innerHTML = localStorage.getItem('visa_number');
+            document.getElementById("visa_valid_date_confirmed").innerHTML = localStorage.getItem('visa_valid_date');
+            document.getElementById("visa_cvv_confirmed").innerHTML = localStorage.getItem('visa_cvv');
+            document.getElementById("nation_buyer_confirmed").innerHTML = localStorage.getItem('nation_buyer');
+            document.getElementById("nation_zip_buyer_confirmed").innerHTML = localStorage.getItem('nation_zip_buyer');
+            document.getElementById("nation_state_buyer_confirmed").innerHTML = localStorage.getItem('nation_state_buyer');
+            document.getElementById("VAT_number_buyer_confirmed").innerHTML = localStorage.getItem('VAT_number_buyer');
+            document.getElementById("label_for_total_price_confirmed").innerHTML = GLOBAL_label_for_total_price + "VND";
+            document.getElementById("label_for_total_VAT_price_confirmed").innerHTML = GLOBAL_label_for_total_VAT_price + "VND";
+            document.getElementById("label_for_total_payment_2_confirmed").innerHTML = GLOBAL_label_for_total_payment + "VND";
+
+        }
+
+        function Product_List_Confirmation(Selected_List){
+            Total_Price = 0;
+            Total_VAT_Price = 0;
+            Total_Payment = 0;
+            ClearAvailableShoppingBag_Confirmation();
+            const ShoppingDiv = document.querySelector("#ShoppinigDiv_Confirmation");
+            const Button_of_image_div = document.querySelector("#Total_Button_of_image");
+            const Image_div = document.querySelector("#Total_image");
+            console.log(`Selected list is ${Selected_List}`);
+            ShoppingBagLength = Selected_List.length;
+            console.log(`Value length is ${ShoppingBagLength}`);
+
+            for(let i=0;i<ShoppingBagLength;i++){
+                // Generate in shopping bag list
+                ShoppingDiv.innerHTML += 
+                    `
+                    <table style=" border-radius: 3px;" id="TableItem${i}">
+                        <tr>
+                            <td style="width: 300px;font-size:13px;text-align: left;">${Selected_List[i][0]}</td>
+                            <td style="font-size:13px;text-align: left;">Quatity :${Selected_List[i][1]}</td>
+                        </tr>
+                    </table><br>
+                    `;
+                
+                // Generate image of shopping bag list
+                Image_div.innerHTML += 
+                `
+                    <div class="carousel-item" id="image${i}">
+                        <img src="${Selected_List[i][3]}"
+                            class="d-block w-100">
+                    </div>
+                `;
+                // Generate button image of shopping bag list
+                Button_of_image_div.innerHTML += 
+                `
+                    <button type="button" data-bs-target="#my" id="Button_image_${i}"
+                        aria-current="true" aria-label="Slide ${i}"></button>
+
+                `;
+                
+                    
+            }
+            Current_Counter = 0;
+            Current_Div_Image = document.getElementById(`image${Current_Counter}`);
+            Current_Div_Button = document.getElementById(`Button_image_${Current_Counter}`);
+            Current_Div_Image.classList = "carousel-item active";
+            Current_Div_Button.classList = "active";
+            
+            
+        }
+        
+        document.getElementById("label_for_total_price").innerHTML = `${Total_Price}` + " VND";
+        document.getElementById("label_for_total_VAT_price").innerHTML = `${Total_VAT_Price}` + " VND";
+        document.getElementById("label_for_total_payment").innerHTML = "Pay " + `${Total_Payment}` + " VND";
+        document.getElementById("label_for_total_payment_2").innerHTML = `${Total_Payment}` + " VND";
+        var GLOBAL_label_for_total_price;
+        var GLOBAL_label_for_total_VAT_price;
+        var GLOBAL_label_for_total_payment;
+        var count_for_selected_product = 0;
+        var pre_selected = [];
+        // Alway check if shopping bag list are choose
+        for(let i=0;i<ShoppingBagLength;i++){
+            document.getElementById(`ShoppingBagList_${i}`).onclick = function(){
+                console.log(`Status of checkbox ${i} is ${document.getElementById(`ShoppingBagList_${i}`).checked}`);
+                if(document.getElementById(`ShoppingBagList_${i}`).checked == true){
+                    Total_Price = Total_Price + Number(GLOBAL_SessionStorage[i][2])*Number(GLOBAL_SessionStorage[i][1]);
+                    Total_VAT_Price = Math.round((Total_Price/100)*10);
+                    Total_Payment = Total_Price + Total_VAT_Price ;
+                    
+                    SelectedList[count_for_selected_product] = GLOBAL_SessionStorage[i];
+                    pre_selected[i] = [true,count_for_selected_product];
+                    count_for_selected_product += 1;
+                    SelectedListNew = SelectedList;
+                    
+                }
+                else {
+                    Total_Price = Total_Price - Number(GLOBAL_SessionStorage[i][2])*Number(GLOBAL_SessionStorage[i][1]);
+                    Total_VAT_Price = Math.round((Total_Price/100)*10);
+                    Total_Payment = Total_Price + Total_VAT_Price ;
+                    SelectedListNew = [];
+
+                    // check previous state is true or not
+                    if(pre_selected[i][0]==true){
+                        // subtract this value in available arrray
+                        var location_historical = pre_selected[i][1];
+                        SelectedList[location_historical] = null;
+                        // sort next element into current location
+                        for(let temppp=location_historical;temppp<(SelectedList.length);temppp++){
+                            if(temppp==(SelectedList.length-1)){
+                                SelectedList[temppp] = null;
+                            }
+                            else {
+                                SelectedList[temppp] = SelectedList[temppp+1];
+                            }
+                        }
+                        for(let tempp2=0;tempp2<(SelectedList.length-1);tempp2++){
+                            SelectedListNew[tempp2] = SelectedList[tempp2];
+                        }
+                        pre_selected[i][0] = false; // reset historical state untill it is true again
+                        pre_selected[i][1] = 0;
+
+                    }
+                    else {
+                        // ignore it
+                        SelectedListNew = SelectedList;
+                    }
+
+                    
+                }
+                GLOBAL_label_for_total_price = `${Total_Price*1000}`;
+                GLOBAL_label_for_total_VAT_price = `${Total_VAT_Price*1000}`;
+                GLOBAL_label_for_total_payment = `${Total_Payment*1000}`;
+
+                document.getElementById("label_for_total_price").innerHTML = `${Total_Price*1000}` + " VND";
+                document.getElementById("label_for_total_VAT_price").innerHTML = `${Total_VAT_Price*1000}` + " VND";
+                document.getElementById("label_for_total_payment").innerHTML = "Pay " + `${Total_Payment*1000}` + " VND";
+                document.getElementById("label_for_total_payment_2").innerHTML = `${Total_Payment*1000}` + " VND";
+                
+            }
+        }
+        
+        function ButtonImageCheck() {
+            for(let i=0;i<ShoppingBagLength;i++){
+                var Tempt = document.getElementById(`Button_image_${i}`);
+                Tempt.onclick = function(){
+                    ResetBackGroundColor();
+                    Current_Div_Image.classList = "carousel-item";
+                    Current_Div_Button.classList = "";
+                    Current_Counter = i; // set current selection sync up with global counter
+                    Current_Div_Image = document.getElementById(`image${i}`);
+                    Current_Div_Button = document.getElementById(`Button_image_${i}`);
+                    Current_Div_Image.classList = "carousel-item active";
+                    Current_Div_Button.classList = "active";
+                    document.getElementById(`TableItem${i}`).style.backgroundColor = "green";
+                    
+                }
+            }
+        }
+        function TableCheck() {
+            for(let i=0;i<ShoppingBagLength;i++){
+                var Tempt = document.getElementById(`TableItem${i}`);
+                Tempt.onclick = function(){
+                    ResetBackGroundColor();
+                    Current_Div_Image.classList = "carousel-item";
+                    Current_Div_Button.classList = "";
+                    Current_Counter = i; // set current selection sync up with global counter
+                    Current_Div_Image = document.getElementById(`image${i}`);
+                    Current_Div_Button = document.getElementById(`Button_image_${i}`);
+                    Current_Div_Image.classList = "carousel-item active";
+                    Current_Div_Button.classList = "active";
+                    document.getElementById(`TableItem${i}`).style.backgroundColor = "green";
+                    
+                }
+            }
+        }
+        function ResetBackGroundColor(){
+            for(let i=0;i<ShoppingBagLength;i++){
+                document.getElementById(`TableItem${i}`).style.backgroundColor = "grey";
+            }
+        }
+        ButtonImageCheck();
+        TableCheck();
+        PreviousButton.onclick = function(){
+            console.log("Previous button is clicked!");
+            // Reset current selection
+            Current_Div_Image.classList = "carousel-item";
+            Current_Div_Button.classList = "";
+            // Decrease one unit
+            if(Current_Counter<=0){
+                Current_Counter = ShoppingBagLength-1; // Return last position after reach minimum value
+            } else {
+                Current_Counter -= 1;
+            }
+            Current_Div_Image = document.getElementById(`image${Current_Counter}`);
+            Current_Div_Button = document.getElementById(`Button_image_${Current_Counter}`);
+            Current_Div_Image.classList = "carousel-item active";
+            Current_Div_Button.classList = "active";
+            ResetBackGroundColor();
+            document.getElementById(`TableItem${Current_Counter}`).style.backgroundColor = "green";
+        }
+        NextButton.onclick = function(){
+            console.log("Next button is clicked!");
+            // Reset current selection
+            Current_Div_Image.classList = "carousel-item";
+            Current_Div_Button.classList = "";
+            // Increase one unit
+            if(Current_Counter>=ShoppingBagLength-1){
+                Current_Counter = 0; // Return first position after reach maximum value
+            } else {
+                Current_Counter += 1;
+            }
+            Current_Div_Image = document.getElementById(`image${Current_Counter}`);
+            Current_Div_Button = document.getElementById(`Button_image_${Current_Counter}`);
+            Current_Div_Image.classList = "carousel-item active";
+            Current_Div_Button.classList = "active";
+            ResetBackGroundColor();
+            document.getElementById(`TableItem${Current_Counter}`).style.backgroundColor = "green";
+        }
+
+        function Request_Write_Into_RedisCache_and_Database
+            (
+                username_of_buyer_confirmed,
+                email_of_buyer_confirmed,
+                visa_number_confirmed,
+                visa_valid_date_confirmed,
+                visa_cvv_confirmed,
+                nation_buyer_confirmed,
+                nation_zip_buyer_confirmed,
+                nation_state_buyer_confirmed,
+                VAT_number_buyer_confirmed,
+                label_for_total_price_confirmed,
+                label_for_total_VAT_price_confirmed,
+                label_for_total_payment_2_confirmed,
+                SelectedListNew
+            ) 
+            {
+            console.log(`visa_number in RequrstWrite function is ${visa_number_confirmed}`);
+            var receivedMessage = "";
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "/payment_handling/specific_handling");
+            xhttp.setRequestHeader( 
+            "Content-Type", "application/json" 
+            ); 
+            var data = JSON.stringify( 
+                { 
+                    Username: `${username_of_buyer_confirmed}`,
+                    Email: `${email_of_buyer_confirmed}`,
+                    Visa_number: `${visa_number_confirmed}`,
+                    Visa_valid_date: `${visa_valid_date_confirmed}`,
+                    Visa_cvv: `${visa_cvv_confirmed}`,
+                    Nation_buyer: `${nation_buyer_confirmed}`,
+                    Nation_zip_buyer: `${nation_zip_buyer_confirmed}`,
+                    Nation_state_buyer: `${nation_state_buyer_confirmed}`,
+                    VAT_number_buyer: `${VAT_number_buyer_confirmed}`,
+                    Total_Price_Before_VAT: `${label_for_total_price_confirmed}`,
+                    Total_VAT: `${label_for_total_VAT_price_confirmed}`,
+                    Total_Price_After_VAT: `${label_for_total_payment_2_confirmed}`,
+                    Selected_List: `${SelectedListNew}`,
+                } 
+            ); 
+            xhttp.send(data);
+            // Create a state change callback 
+            /*xhttp.onreadystatechange = function () { 
+                if (xhttp.readyState === 4 && 
+                    xhttp.status === 200) { 
+                        document.getElementById("Return_Home_Page").click();
+                    // Print received data from server 
+                    //receivedMessage = this.responseText;
+                    //receivedMessage = JSON.parse(receivedMessage);
+                } 
+            };*/
+            
+        }
+        PaymentButtonTrigger.onclick = function(){
+            
+            // Step 1: Pop up a box for confirmation
+            // Step 2: If user choose as confirmed, proceed to send into user's email
+            //         Otherwise (user need to check again shopping bag), return to payment handling (disable pop up) 
+
+            // Stora temporary in local storage
+            var email_of_buyer = document.getElementById("email_of_buyer").value;
+            var visa_number = document.getElementById("visa_number").value;
+            var visa_valid_date = document.getElementById("visa_valid_date").value;
+            var visa_cvv = document.getElementById("visa_cvv").value;
+            var cardholder_buyer = document.getElementById("cardholder_buyer").value;
+            var nation_buyer = document.getElementById("nation_buyer").value;
+            var nation_zip_buyer = document.getElementById("nation_zip_buyer").value;
+            var nation_state_buyer = document.getElementById("nation_state_buyer").value;
+            var VAT_number_buyer = document.getElementById("VAT_number_buyer").value;
+
+            localStorage.setItem('email_of_buyer', `${email_of_buyer}`);
+            localStorage.setItem('visa_number', `${visa_number}`);
+            localStorage.setItem('visa_valid_date', `${visa_valid_date}`);
+            localStorage.setItem('visa_cvv', `${visa_cvv}`);
+            localStorage.setItem('cardholder_buyer', `${cardholder_buyer}`);
+            localStorage.setItem('nation_buyer', `${nation_buyer}`);
+            localStorage.setItem('nation_zip_buyer', `${nation_zip_buyer}`);
+            localStorage.setItem('nation_state_buyer', `${nation_state_buyer}`);
+            localStorage.setItem('VAT_number_buyer', `${VAT_number_buyer}`);
+            localStorage.setItem('label_for_total_price', `${GLOBAL_label_for_total_price}`);
+            localStorage.setItem('label_for_total_VAT_price', `${GLOBAL_label_for_total_VAT_price}`);
+            localStorage.setItem('label_for_total_payment', `${GLOBAL_label_for_total_payment}`);
+
+            document.getElementById("Confirmation_Box").style.display = "block";
+            document.getElementById("Confirmation_Box_child").style.display = "block";
+            document.getElementById("Main_body").style.display = "none"; 
+            document.getElementById("Main_body_1").style.display = "none";
+            document.getElementById("Main_body_2").style.display = "none";
+            Product_List_Confirmation(SelectedListNew); // used for generate some selected products
+            GetInfoFromLocalStorage_to_ConfirmedBox(); // used for get info from local storage and pass it into confirmed box
+            
+            
+            
+        }
+
+        Failed_Confirmation.onclick = function(){
+            document.getElementById("Confirmation_Box").style.display = "none";
+            document.getElementById("Confirmation_Box_child").style.display = "none";
+            document.getElementById("Main_body").style.display = "block"; 
+            document.getElementById("Main_body_1").style.display = "block";
+            document.getElementById("Main_body_2").style.display = "block";
+            // Remove info in local storage brownser and do not store in DB
+            localStorage.clear();
+        }
+
+        Passed_Confirmation.onclick = function(){
+            
+            // Store info into Database and Redis cache and remove in local storage
+            var username_of_buyer_confirmed = document.getElementById("username_of_buyer_confirmed_tempt").innerHTML;
+            var email_of_buyer_confirmed = localStorage.getItem('email_of_buyer');
+            var visa_number_confirmed = localStorage.getItem('visa_number');
+            var visa_valid_date_confirmed = localStorage.getItem('visa_valid_date');
+            var visa_cvv_confirmed = localStorage.getItem('visa_cvv');
+            var nation_buyer_confirmed = localStorage.getItem('nation_buyer');
+            var nation_zip_buyer_confirmed = localStorage.getItem('nation_zip_buyer');
+            var nation_state_buyer_confirmed = localStorage.getItem('nation_state_buyer');
+            var VAT_number_buyer_confirmed = localStorage.getItem('VAT_number_buyer');
+            var label_for_total_price_confirmed = GLOBAL_label_for_total_price;
+            var label_for_total_VAT_price_confirmed = GLOBAL_label_for_total_VAT_price;
+            var label_for_total_payment_2_confirmed = GLOBAL_label_for_total_payment;
+            console.log(`Visa number in html is ${visa_number_confirmed}`);
+            localStorage.clear();
+            Request_Write_Into_RedisCache_and_Database(
+                username_of_buyer_confirmed,
+                email_of_buyer_confirmed,
+                visa_number_confirmed,
+                visa_valid_date_confirmed,
+                visa_cvv_confirmed,
+                nation_buyer_confirmed,
+                nation_zip_buyer_confirmed,
+                nation_state_buyer_confirmed,
+                VAT_number_buyer_confirmed,
+                label_for_total_price_confirmed,
+                label_for_total_VAT_price_confirmed,
+                label_for_total_payment_2_confirmed,
+                SelectedListNew
+            );
+        }
+            
+        
+    </script>
+    
+
+    

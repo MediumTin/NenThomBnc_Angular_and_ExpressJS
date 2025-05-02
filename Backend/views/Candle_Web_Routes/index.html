@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNinjaApp">
+  <head>
+    <title>TheNetNinja Angular Playlist</title>
+    <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="app\lib\angular.min.js"></script>
+    <script src="app\lib\angular-route.min.js"></script>
+    <script src="app\app.js"></script>
+  </head>
+  <body ng-init="colors=['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']">
+    <p>Hello</p>
+    <!-- Include header or website -->
+    <header ng-include="'views/header.html'"></header>
+    <!-- ng-include is a directive that allows you to include an external HTML file in your main HTML file. In this case, we are including the header.html file in the main index.html file. -->
+    <main ng-view></main>
+  </body>
+</html>

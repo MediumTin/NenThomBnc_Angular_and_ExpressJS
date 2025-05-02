@@ -1,0 +1,29 @@
+<div class="content">
+    <h1>Home page</h1>
+    <!-- First custom directive: Rule as if name tags is "random" and "ninja" and "testing" -> Name of directive is "randomNinjaTesting" -->
+    <random-ninja-testing ninjas="ninjas" title="'Random Ninja'"></random-ninja-testing>
+    <input type="text" ng-model="favMeat" placeholder="enter your meat" />
+    <p>1. Your favourite meat is: {{favMeat}}</p>
+    <tringtin>This is first custom tags based on Angular. Please enjoy!</tringtin>
+    <p>2. This is example about expression with ng-init as array</p>
+    <ul>
+        <li ng-repeat="color in colors">{{color}}</li> 
+        <!-- color in colors is a directive -->
+    </ul>
+    <p>3. This is example about expression with ng-init as class in css</p>
+    <div ng-class="colors[4]">This is a div</div>
+
+    <p>4. Example for engine controller based on engine module.</p>
+
+
+    <p>6. Example about engine ng-model and ng-disabled</p>
+    <input type="checkbox" ng-model="enableDisableButton">Disable Button</input>
+    <!-- for example engine disabeld -->
+    <button ng-disabled="enableDisableButton">Click Me for disable</button>
+    <!-- for example engine show/hide -->
+    <button ng-show="enableDisableButton">Click Me for show</button>
+    <button ng-hide="enableDisableButton">Click Me for hide</button>
+    <!-- for example engine click counter -->
+    <p>Total click: {{ clickCounter }}</p>
+    <button ng-click="clickCounter = clickCounter + 1">Click Me!</button>
+</div>

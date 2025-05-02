@@ -1,0 +1,5 @@
+After login,
+
+Allow user 5 minute for select product (switch another pages, press anything)
+
+After 5 minute for timeout (send one message session was timeout, need to re-direct to Login page again)
