@@ -130,6 +130,15 @@ body {
     /* place-content: center; */
 }
 
+.samebody{
+    font-size: 36px;
+    /* min-height: 100vh; */
+    color: white;
+    background-color:#f3f3f3;
+    display: grid;
+    /* place-content: center; */
+}
+
 td, th, tr {
     border: 1px none #dddddd;
 }

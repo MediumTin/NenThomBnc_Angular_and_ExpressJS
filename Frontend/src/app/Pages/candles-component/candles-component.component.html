@@ -1,174 +1,141 @@
-<!-- Describe Top Navigation bar -->
-<div class="topnav">
-    <table class="table1">
-        <tr>
-            <th><a href="/">Home</a></th>
-            <th><a href="candles">Candles</a></th>
-            <th>
-                <!-- <a href="#oil">Oils</a> -->
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        <a href="oils">Oils</a>   
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="diffuse_oils">Diffuse Oils</a>
-                        <a href="natural_oils">Natural Oils</a>
-                    </div>
-                </div> 
-            </th>
-            <th>
-                <!-- <a href="#accessory">Accessory</a> -->
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        <a href="accessory">Accessory</a>
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="burn_candles">Burn Candles</a>
-                        <a href="care_candles">Care Candles</a>
-                    </div>
-                </div> 
-            </th>
-            <th><a href="gift">Gift</a></th>
-            <th><a href="news">News</a></th>
-            <th><a href="contact">Contact</a></th>
-        </tr>
-    </table>
-</div>
+
 
 <!-- 2. Combination in Center component-->
 <div style="margin-left: 100px;margin-right: 100px;margin-top: 20px;margin-bottom: 20px;">
         <!-- 2.1. Menu bar for filter product information-->
-        <div style="width: 250px; float: left;color: black;" >
+        <div style="width: 250px; height:1500px; float : left;color: black;" >
             <table>
-                <tr>
-                    <th>
-                        <h6 style="text-align: left;">Search</h6>
-                        <form action="/action_page.php">
-                            <input type="text" placeholder="Search your product..." name="search" style="height:40px ;width:200px;">
-                            <button type="submit" style="height:40px ;width: 200px;"><i class="fa fa-search"></i></button>
-                        </form>
-                        <br>
-                    </th>
-                </tr>
+                <tbody>
+                    <tr>
+                        <th>
+                            <h6 style="text-align: left;">Search</h6>
+                            <form action="/action_page.php">
+                                <input type="text" placeholder="Search your product..." name="search" style="height:40px ;width:200px;">
+                                <button type="submit" style="height:40px ;width: 200px;"><i class="fa fa-search"></i></button>
+                            </form>
+                            <br>
+                        </th>
+                    </tr>
+                </tbody>
             </table>
             <form style="text-align: left;" action="/action_page2.php">
                 <table>
-                    <tr>
-                        <th>
-                            <!-- A -->
-                            <h6 style="text-align: left;">Type</h6> 
-                            <!-- A1 -->
-                            <input type="checkbox" id="candle" name="fav_language" value="candle" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="candle">Candle</label><br>
-                            <!-- A2 -->
-                            <input type="checkbox" id="oil" name="fav_language" value="oil" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="oil">Oil</label><br>
-                            <!-- A3 -->
-                            <input type="checkbox" id="accessory" name="fav_language" value="accessory" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="accessory">Accessory</label><br>
-                            <!-- A4 -->
-                            <input type="checkbox" id="gift" name="fav_language" value="gift" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="gift">Gift</label>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <!-- B -->
-                            <h6 style="text-align: left;">Product group</h6>
-                            <!-- B1 -->
-                            <input type="checkbox" id="best_saler" name="fav_language" value="best_saler" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="best_saler">Best seller</label><br>
-                            <!-- B2 -->
-                            <input type="checkbox" id="discount" name="fav_language" value="discount" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="discount">Discount</label><br>
-                            <!-- B3 -->
-                            <input type="checkbox" id="new_arrival" name="fav_language" value="new_arrival" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="new_arrival">New arrival</label><br>
-                            <!-- B4 -->
-                            <input type="checkbox" id="sweet_fruit" name="fav_language" value="sweet_fruit" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="sweet_fruit">Sweet and Fruit</label><br>
-                            <!-- B5 -->
-                            <input type="checkbox" id="wood_men" name="fav_language" value="wood_men" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="wood_men">Wood and Men</label><br>
-                            <!-- B6 -->
-                            <input type="checkbox" id="fresh_relax" name="fav_language" value="fresh_relax" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="fresh_relax">Fresh and Relax</label><br>
-                            <!-- B7 -->
-                            <input type="checkbox" id="flower_herb" name="fav_language" value="flower_herb" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="flower_herb">Flower and Herb</label>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <!-- C -->
-                            <h6 style="text-align: left;">Brand</h6>
-                            <!-- C1 -->
-                            <input type="checkbox" id="lumos" name="fav_language" value="lumos" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="lumos">Lumos</label><br>
-                            <!-- C2 -->
-                            <input type="checkbox" id="citta" name="fav_language" value="citta" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="citta">Citta</label><br>
-                            <!-- C3 -->
-                            <input type="checkbox" id="no_brand" name="fav_language" value="no_brand" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="no_brand">No Brand</label><br>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <!-- D -->
-                            <h6 style="text-align: left;">Price</h6>
-                            <!-- D1 -->
-                            <input type="checkbox" id="smaller_100KVND" name="fav_language" value="smaller_100KVND" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="smaller_100KVND">Smaller 100.000 VND</label><br>
-                            <!-- D2 -->
-                            <input type="checkbox" id="100KVND_to_200KVND" name="fav_language" value="100KVND_to_200KVND" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="100KVND_to_200KVND">100.000 to 200.000 VND</label><br>
-                            <!-- D3 -->
-                            <input type="checkbox" id="200KVND_to_300KVND" name="fav_language" value="200KVND_to_300KVND" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="200KVND_to_300KVND">200.000 to 300.000 VND</label><br>
-                            <!-- D4 -->
-                            <input type="checkbox" id="300KVND_to_500KVND" name="fav_language" value="300KVND_to_500KVND" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="300KVND_to_500KVND">300.000 to 500.000 VND</label><br>
-                            <!-- D5 -->
-                            <input type="checkbox" id="larger_500KVND" name="fav_language" value="larger_500KVND" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="larger_500KVND">Larger 500.000 VND</label>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <!-- E -->
-                            <h6 style="text-align: left;">Color</h6>
-                            <!-- E1 -->
-                            <input type="checkbox" id="black" name="fav_language" value="black" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="black">Black</label><br>
-                            <!-- E2 -->
-                            <input type="checkbox" id="white" name="fav_language" value="white" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="white">White</label><br>
-                            <!-- E3 -->
-                            <input type="checkbox" id="red" name="fav_language" value="red" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="red">Red</label><br>
-                            <!-- E4 -->
-                            <input type="checkbox" id="pink" name="fav_language" value="pink" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="pink">Pink</label><br>
-                            <!-- E5 -->
-                            <input type="checkbox" id="blue" name="fav_language" value="blue" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="blue">Blue</label><br>
-                            <!-- E6 -->
-                            <input type="checkbox" id="green" name="fav_language" value="green" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="green">Green</label><br>
-                            <!-- E7 -->
-                            <input type="checkbox" id="yellow" name="fav_language" value="yellow" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="yellow">Yellow</label><br>
-                            <!-- E8 -->
-                            <input type="checkbox" id="orange" name="fav_language" value="orange" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="orange">Orange</label><br>
-                            <!-- E9 -->
-                            <input type="checkbox" id="purple" name="fav_language" value="purple" oninput="ButtonCheck()">
-                            <label style="font-size: 20px;" for="purple">Purple</label>
-                        </th>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <!-- A -->
+                                <h6 style="text-align: left;">Type</h6> 
+                                <!-- A1 -->
+                                <input type="checkbox" id="candle" name="fav_language" value="candle" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="candle">Candle</label><br>
+                                <!-- A2 -->
+                                <input type="checkbox" id="oil" name="fav_language" value="oil" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="oil">Oil</label><br>
+                                <!-- A3 -->
+                                <input type="checkbox" id="accessory" name="fav_language" value="accessory" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="accessory">Accessory</label><br>
+                                <!-- A4 -->
+                                <input type="checkbox" id="gift" name="fav_language" value="gift" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="gift">Gift</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <!-- B -->
+                                <h6 style="text-align: left;">Product group</h6>
+                                <!-- B1 -->
+                                <input type="checkbox" id="best_saler" name="fav_language" value="best_saler" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="best_saler">Best seller</label><br>
+                                <!-- B2 -->
+                                <input type="checkbox" id="discount" name="fav_language" value="discount" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="discount">Discount</label><br>
+                                <!-- B3 -->
+                                <input type="checkbox" id="new_arrival" name="fav_language" value="new_arrival" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="new_arrival">New arrival</label><br>
+                                <!-- B4 -->
+                                <input type="checkbox" id="sweet_fruit" name="fav_language" value="sweet_fruit" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="sweet_fruit">Sweet and Fruit</label><br>
+                                <!-- B5 -->
+                                <input type="checkbox" id="wood_men" name="fav_language" value="wood_men" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="wood_men">Wood and Men</label><br>
+                                <!-- B6 -->
+                                <input type="checkbox" id="fresh_relax" name="fav_language" value="fresh_relax" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="fresh_relax">Fresh and Relax</label><br>
+                                <!-- B7 -->
+                                <input type="checkbox" id="flower_herb" name="fav_language" value="flower_herb" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="flower_herb">Flower and Herb</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <!-- C -->
+                                <h6 style="text-align: left;">Brand</h6>
+                                <!-- C1 -->
+                                <input type="checkbox" id="lumos" name="fav_language" value="lumos" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="lumos">Lumos</label><br>
+                                <!-- C2 -->
+                                <input type="checkbox" id="citta" name="fav_language" value="citta" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="citta">Citta</label><br>
+                                <!-- C3 -->
+                                <input type="checkbox" id="no_brand" name="fav_language" value="no_brand" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="no_brand">No Brand</label><br>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <!-- D -->
+                                <h6 style="text-align: left;">Price</h6>
+                                <!-- D1 -->
+                                <input type="checkbox" id="smaller_100KVND" name="fav_language" value="smaller_100KVND" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="smaller_100KVND">Smaller 100.000 VND</label><br>
+                                <!-- D2 -->
+                                <input type="checkbox" id="100KVND_to_200KVND" name="fav_language" value="100KVND_to_200KVND" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="100KVND_to_200KVND">100.000 to 200.000 VND</label><br>
+                                <!-- D3 -->
+                                <input type="checkbox" id="200KVND_to_300KVND" name="fav_language" value="200KVND_to_300KVND" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="200KVND_to_300KVND">200.000 to 300.000 VND</label><br>
+                                <!-- D4 -->
+                                <input type="checkbox" id="300KVND_to_500KVND" name="fav_language" value="300KVND_to_500KVND" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="300KVND_to_500KVND">300.000 to 500.000 VND</label><br>
+                                <!-- D5 -->
+                                <input type="checkbox" id="larger_500KVND" name="fav_language" value="larger_500KVND" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="larger_500KVND">Larger 500.000 VND</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <!-- E -->
+                                <h6 style="text-align: left;">Color</h6>
+                                <!-- E1 -->
+                                <input type="checkbox" id="black" name="fav_language" value="black" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="black">Black</label><br>
+                                <!-- E2 -->
+                                <input type="checkbox" id="white" name="fav_language" value="white" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="white">White</label><br>
+                                <!-- E3 -->
+                                <input type="checkbox" id="red" name="fav_language" value="red" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="red">Red</label><br>
+                                <!-- E4 -->
+                                <input type="checkbox" id="pink" name="fav_language" value="pink" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="pink">Pink</label><br>
+                                <!-- E5 -->
+                                <input type="checkbox" id="blue" name="fav_language" value="blue" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="blue">Blue</label><br>
+                                <!-- E6 -->
+                                <input type="checkbox" id="green" name="fav_language" value="green" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="green">Green</label><br>
+                                <!-- E7 -->
+                                <input type="checkbox" id="yellow" name="fav_language" value="yellow" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="yellow">Yellow</label><br>
+                                <!-- E8 -->
+                                <input type="checkbox" id="orange" name="fav_language" value="orange" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="orange">Orange</label><br>
+                                <!-- E9 -->
+                                <input type="checkbox" id="purple" name="fav_language" value="purple" oninput="ButtonCheck()">
+                                <label style="font-size: 20px;" for="purple">Purple</label>
+                            </th>
+                        </tr>
+                    </tbody>
                 </table>
             </form>
         </div>
@@ -177,6 +144,7 @@
         <!-- 2.2. Menu bar for showing product information-->
         <div style="margin-left: 260px; color: black;">
             <!-- <p id="demo"> hello</p> -->
-            <table style="border-spacing: 35px;" id="table_menu"></table>
+            <table style="border-spacing: 35px;" #tableMenu></table>
         </div>
+        <p #pTag></p>
  </div>

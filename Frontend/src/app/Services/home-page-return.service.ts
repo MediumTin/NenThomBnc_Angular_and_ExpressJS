@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { AfterViewInit, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BASE_URL} from '../Common_Configuration/Constant/urls';
 @Injectable({
@@ -7,8 +7,12 @@ import { BASE_URL} from '../Common_Configuration/Constant/urls';
 })
 export class HomePageReturnService {
   constructor(private http: HttpClient) {}
+  
 
   ReturnHomePageData(): Observable<any> { // ✅ Ensure it returns an Observable
     return this.http.get<any>(BASE_URL); // Replace `any` with the actual data type
   }
+
+  
+
 }

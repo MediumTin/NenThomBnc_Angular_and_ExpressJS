@@ -7,8 +7,9 @@ export const BASE_URL = environment.production? '' : 'http://localhost:3500';
 export const CANDLES_URL = BASE_URL + '/candles';                           // GET and POST method
 export const CANDLES_AdminRight_URL = CANDLES_URL + '/adminright';         // GET method
 export const CANDLES_AddNewProduct_URL = CANDLES_URL + '/addnewproduct';   // POST method
-export const CANDLES_By_Tag_URL = CANDLES_URL + '/tag/';
-export const CANDLES_By_Search_URL = CANDLES_URL + '/search/';
+export const CANDLES_By_Tag_URL = CANDLES_URL + '/RequestGetCandleByTag/';
+export const CANDLES_By_Filter_URL = CANDLES_URL + '/RequestGetCandleByFilter/';
+export const CANDLES_By_Search_URL = CANDLES_URL + '/RequestGetCandleBySearch/';
 
 // Process with "testangular"
 export const TESTANGULAR_URL = BASE_URL + '/testangular';                   // GET method 

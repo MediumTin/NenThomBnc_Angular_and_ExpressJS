@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-
+  titleFooter: string = "Footer chapter"; // Declare as a class property
+  SecondButtonClick() {
+    console.log("Second button clicked");
+    this.titleFooter = "Footer chapter Clicked";
+  }
 }

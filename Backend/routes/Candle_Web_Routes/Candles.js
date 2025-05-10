@@ -95,11 +95,47 @@ Router.post('/addnewproduct',async (req,res)=>{
 //    }
    
 // })
-Router.get('/',(req,res)=>{
-    res.json([
-        { id: 1, name: 'Candle A', price: 10 },
-        { id: 2, name: 'Candle B', price: 15 }
-    ]);
+Router.get('/',async (req,res)=>{
+   var Request_From_Client = "First_Time_load";
+   console.log("Request first time load page");
+   await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   const Result_Read_From_Cache = await Redis_API.Get_Data_From_Redis(client,Request_From_Client); // Check request is exist in Cache or not
+   console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
+   if(Result_Read_From_Cache == null){
+      console.log("Miss cached");
+      const Data_From_Database = await First_Time_Loading(req,res); // missing in cache , Request read from Database
+      const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(Request_From_Client,JSON.stringify(Data_From_Database)); // set new data from database to Redis cache
+      console.log(`Value of writing data to Cache: ${Result_Write_To_Cache}`);
+      res.status(200).send(Data_From_Database); // After get data from database and write to Cache, it will response to client
+   }
+   else {
+      console.log("Cached");
+      res.status(200).send(Result_Read_From_Cache); // Available in cache, Read in Cache
+   }
+   await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+})
+
+Router.get('/RequestGetCandleByFilter',async (req,res)=>{
+   var Request_From_Client = "Request_Filter_Product";
+   console.log("Request filter product");
+   await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   var Total_Request_Filter_Product = `${req.body.Request_Of_Type},${req.body.Request_Of_Group},${req.body.Request_Of_Brand},${req.body.Request_Of_Price},${req.body.Request_Of_Color}`;
+   console.log(`Total Request type : ------ ${Total_Request_Filter_Product}`);
+   const Result_Read_From_Cache_FilterProduct = await Redis_API.Get_Data_From_Redis(client,Total_Request_Filter_Product); 
+   console.log(`Value of reading data from Cache: ${Result_Read_From_Cache_FilterProduct}`); 
+   if(Result_Read_From_Cache_FilterProduct == null){
+      console.log("Filter product miss cached");
+      const Data_From_Database_FilterProduct = await Request_Filter_Product(req,res); // user for complicated request (multiple conditions)
+      const Result_Write_To_Cache_FilterProduct = await Set_Data_From_Database_To_RedisCache(Total_Request_Filter_Product,JSON.stringify(Data_From_Database_FilterProduct)); // set new data from database to Redis cache
+      console.log(`Value of writing data to Cache: ${Result_Write_To_Cache_FilterProduct}`);
+         res.status(200).send(Data_From_Database_FilterProduct);
+   }
+   else {
+      console.log("Filter product cached");
+         res.status(200).send(Result_Read_From_Cache_FilterProduct); // Available in cache, Read in Cache
+   }
+   await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+
 })
 
 // Process with router

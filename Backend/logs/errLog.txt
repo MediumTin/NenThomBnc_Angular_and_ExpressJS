@@ -330,3 +330,13 @@ Expecting 'CLOSE', 'OPEN_SEXPR', 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED
 20250501	18:04:34	f0b9f544-4c20-41b5-879b-22e3b37e8b97	Error: Not allowed by CORS
 20250502	15:38:12	041cd4a5-8cef-4450-b257-0302d642f95d	MaxRetriesPerRequestError: Reached the max retries per request limit (which is 20). Refer to "maxRetriesPerRequest" option for details.
 20250502	16:29:04	53271831-7842-4f54-a8e9-a3209c6874d4	MaxRetriesPerRequestError: Reached the max retries per request limit (which is 20). Refer to "maxRetriesPerRequest" option for details.
+20250511	02:55:57	22808f1c-e7a6-41be-bcfb-ec32586b05ee	Error: Not allowed by CORS
+20250511	02:56:21	4c1bf0e6-1736-420d-aa0e-b459376bb322	Error: Not allowed by CORS
+20250511	02:56:25	90ecd9ac-09c7-44e3-8e19-a0bc4f236c13	Error: Not allowed by CORS
+20250511	02:56:27	15af8358-3b22-4b66-b54f-8576040ae5b5	Error: Not allowed by CORS
+20250511	02:58:17	5436c395-73fc-4292-80e6-682f3318f5e3	Error: Not allowed by CORS
+20250511	03:00:15	9e7f3ba3-81da-469b-9341-3278ce71fde2	Error: Not allowed by CORS
+20250511	03:02:12	91f7cc7e-db38-441f-9b4d-fc6aad31c0e0	Error: Not allowed by CORS
+20250511	03:02:58	29729815-2c95-46e3-b9d0-eb2e72943f7f	Error: Not allowed by CORS
+20250511	03:03:17	6902664a-6145-4658-8d4e-82557f0c6b7b	Error: Not allowed by CORS
+20250511	03:05:58	30701b0e-0d8c-49f4-ae59-5f469d82ed3b	Error: Not allowed by CORS
