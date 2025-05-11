@@ -3,6 +3,7 @@ import { environment } from "../../../environments/environment";
 
 export const BASE_URL = environment.production? '' : 'http://localhost:3500';
 
+
 // Process with "candles"
 export const CANDLES_URL = BASE_URL + '/candles';                           // GET and POST method
 export const CANDLES_AdminRight_URL = CANDLES_URL + '/adminright';         // GET method
@@ -67,3 +68,6 @@ export const PAYMENT_HANDLING_Specific_Handling_URL = PAYMENT_HANDLING_URL + '/s
 
 // Process with "Shopping_Bag_handling"
 export const SHOPPING_BAG_HANDLING_URL = BASE_URL + '/Shopping_Bag_handling';               // GET method
+
+// Check current user information
+export const CHECK_CURRENT_USER_URL = BASE_URL + '/check_user_identification';               // GET method

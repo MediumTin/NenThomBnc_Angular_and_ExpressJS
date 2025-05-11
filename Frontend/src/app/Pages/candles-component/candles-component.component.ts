@@ -1,10 +1,12 @@
 import { AfterViewInit, Component, ElementRef, importProvidersFrom, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Candles } from '../../Common_Configuration/Models/Candles';
-import { CandlesServiceService } from '../../Services/candles-service.service';
+import { UserInformation } from '../../Common_Configuration/Models/UserInformation';
+import { CandlesServiceService } from '../../Services/CandlesService/candles-service.service';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
+import { IndentificationService } from '../../Services/IdentificationService/indentification.service';
 
 // import { AuthInterceptor } from '../../auth/auth.interceptor';
 // import { LoadingInterceptor } from '../../Common_Configuration/Interceptors/loading.interceptor';
@@ -24,32 +26,52 @@ import { JsonPipe } from '@angular/common';
 })
 export class CandlesComponent implements OnInit, AfterViewInit {
   candles: Candles[] = [];
+  isUserIdentified : UserInformation[] =[];
   @ViewChild('tableMenu', { static: false }) tableMenu!: ElementRef<HTMLTableElement>;
   // @ViewChild('pTag', { static: false }) pTag!: ElementRef<HTMLTableElement>;
-  constructor(private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2 ) { 
+  constructor(private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService ) { 
     let candlesObervalbe: Observable<Candles[]>;
-    activatedRoute.params.subscribe((params) => {
-      if (params['searchTerm']){
-        candlesObervalbe = this.candlesService.getAllCandlesBySearchTerm(params['searchTerm']);
-      }
-      else if (params['tag']) {
-        candlesObervalbe = this.candlesService.getAllCandlesByTag(params['tag']);
-      }
-      else if (params['filter']) {
-        candlesObervalbe = this.candlesService.getAllCandlesByFilter(params['filter']);
-      }
-      else {
-        candlesObervalbe = this.candlesService.getAllCandles();
-      } 
-      candlesObervalbe.subscribe((serverCandles) => {
-      this.candles = serverCandles; // Assign the final data to the component property
-      console.log("Response from serve",this.candles);
-      // console.log(`TotalLengh of received info : ${this.candles.length}`);
-      
-          
-        })
-    })
-  }
+    let isUserIdentifiedObservable : Observable<UserInformation[]>;
+    // this.isUserIdentified = "hello";
+    isUserIdentifiedObservable = this.identification.CheckIdentification();
+      isUserIdentifiedObservable.subscribe((UserInfo) => {
+        this.isUserIdentified = UserInfo;
+        console.log("UserInfo is ",this.isUserIdentified[0].Currentuser);
+        // Check if the user is identified
+        if(this.isUserIdentified[0].Currentuser != "No User"){
+          activatedRoute.params.subscribe((params) => {
+          if (params['searchTerm']){
+            candlesObervalbe = this.candlesService.getAllCandlesBySearchTerm(params['searchTerm']);
+          }
+          else if (params['tag']) {
+            candlesObervalbe = this.candlesService.getAllCandlesByTag(params['tag']);
+          }
+          else if (params['filter']) {
+            candlesObervalbe = this.candlesService.getAllCandlesByFilter(params['filter']);
+          }
+          else {
+            candlesObervalbe = this.candlesService.getAllCandles();
+          } 
+          candlesObervalbe.subscribe((serverCandles) => {
+            this.candles = serverCandles; // Assign the final data to the component property
+            console.log("Response from serve",this.candles);
+            // console.log(`TotalLengh of received info : ${this.candles.length}`);
+            if(this.candles[0].status == "Session is timeout"){
+              console.log("Session is timeout");
+              this.identification.RequestUserLogin();
+            }  
+          });
+        });
+        }
+        else {
+          // User is not identified, handle accordingly - request login
+          console.log("Session is timeout");
+          console.log("User has not identified yet");
+          this.identification.RequestUserLogin();
+        }
+  });
+    };
+  
   loadProducts() {
     // const pTag = this.pTag.nativeElement;
     // pTag.innerHTML = `New hee`;
@@ -161,7 +183,13 @@ export class CandlesComponent implements OnInit, AfterViewInit {
   // }
 
   ngAfterViewInit(): void  {  
-    this.loadProducts();
+    // if(this.candles[0].status = "Session is timeout"){
+    //   this.loadProducts();
+    // }
+    // if(this.isUserIdentified[0].Currentuser != "No User"){
+    //   this.loadProducts();
+    // };
+    
           }
   ngOnInit(): void {
     // Initialization logic here  

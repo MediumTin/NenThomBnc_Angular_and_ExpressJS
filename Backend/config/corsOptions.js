@@ -5,6 +5,7 @@ const whitelist = [
     'http://127.0.0.1:5500',
     'http://localhost:3500',
     'http://localhost:4200',
+    // 'http://localhost:4200',
     'https://nenthombnc.website',
     'https://candlelightbnc.nenthombnc.website',
     'https://nenthombnc.website/login_handling/login'

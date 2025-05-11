@@ -1,4 +1,5 @@
 export class Candles{
+    status?:String;
     id!:Number;
     name!:string;
     type!:String;

@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { HomePageReturnService } from '../../Services/home-page-return.service';
+import { HomePageReturnService } from '../../Services/HomePageService/home-page-return.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

@@ -276,6 +276,9 @@ app.use('/candle_information',require('./routes/Candle_Web_Routes/Candle_Informa
 // Login handling
 app.use('/login_handling',require('./routes/Candle_Web_Routes/Login_Web_Page'));
 
+// Check user identification
+app.use('/check_user_identification',require('./routes/Candle_Web_Routes/CheckUserIdentification'));
+
 // Add new product information - ONly applicable for Admin account
 app.use('/Add_new_product',require('./routes/Candle_Web_Routes/Add_new_product_Information'));
 

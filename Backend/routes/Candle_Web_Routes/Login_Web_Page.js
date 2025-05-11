@@ -22,10 +22,15 @@ var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
 // var result = "";
 
 const sessions = {};
-Router.get('^/$|',(req,res)=>{
+Router.get('^/$|  ',(req,res)=>{
    Global_Interface.isFirstTimeLogin = true; // this variable for init class in next log in of next SID
    req.session.destroy(); // Same as log out session
-   res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Detail_Product','Boostrap_Login_Form.html'));
+   // res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Detail_Product','Boostrap_Login_Form.html'));
+   res.status(200).send(
+      [{
+         "status" : "Already in login of server"
+      }]
+   )
 })
 
 // Handle login action
