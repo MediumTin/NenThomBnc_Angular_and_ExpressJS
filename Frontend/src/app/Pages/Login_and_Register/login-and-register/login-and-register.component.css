@@ -5,6 +5,19 @@ body {
     background-position: center;
     background-size: 1500px 1000px;
 }
+
+.body_copy {
+    background-image: url('https://images.pexels.com/photos/278508/pexels-photo-278508.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    /* background-size: 1500px 1000px; */
+    background-size: cover;
+    /* background-position-x: center;
+    background-position-y: center; */
+    
+}
+
 .panel-login {
     border-color: #ccc;
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
