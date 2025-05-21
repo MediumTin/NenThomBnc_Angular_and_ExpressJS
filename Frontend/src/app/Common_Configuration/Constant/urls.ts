@@ -71,3 +71,10 @@ export const SHOPPING_BAG_HANDLING_URL = BASE_URL + '/Shopping_Bag_handling';   
 
 // Check current user information
 export const CHECK_CURRENT_USER_URL = BASE_URL + '/check_user_identification';               // GET method
+
+// Process with "oils"
+export const GET_SESSION_DATA = BASE_URL + '/get-session'; 
+export const GET_SESSION_ID = BASE_URL + '/get-sid'; 
+export const CLEAR_SESSION_ID = BASE_URL + '/clear-sid'; 
+export const DESTROY_SESSION_ID = BASE_URL + '/destroy-sid'; 
+export const DESTROY_SESSION_DATA = BASE_URL + '/destroy-session'; 

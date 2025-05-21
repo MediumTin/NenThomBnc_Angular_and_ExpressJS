@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { HomePageReturnService } from '../../Services/HomePageService/home-page-return.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserInformation } from '../../Common_Configuration/Models/UserInformation';
+import { IndentificationService } from '../../Services/IdentificationService/indentification.service';
 
 @Component({
   selector: 'app-home-page',
@@ -14,21 +16,25 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   slideIndex: number = 0; // Declare as a class property
   id: number = 1; // Declare as a class property
   title: string = "Home Page"; // Declare as a class property
-  constructor(private homepageReturnService: HomePageReturnService, activateRoute: ActivatedRoute,private renderer: Renderer2) {
+  userInformation: UserInformation[] = [];
+
+  constructor(private router:Router,private homepageReturnService: HomePageReturnService, activateRoute: ActivatedRoute,private renderer: Renderer2, private identification: IndentificationService) {
     // Constructor logic here 
     // Initialization logic here
     this.homepageReturnService.ReturnHomePageData().subscribe((data) => {
+      this.userInformation = data; // Assign the final data to the component property
       console.log("Data from server", data);
-      // this.showSlides();
-      // Handle the data received from the service
+      if(this.userInformation[0].status == "Session is timeout"){
+        console.log("Session is timeout");
+        this.identification.SetisUserIdentifiedMain(false);
+        this.router.navigate(['/login_handling']);
+      }  
     });
   }
   
 
   ngOnInit(): void {
-    // Component initialization logic here
-    // this.showSlides(); // Call showSlides() in ngOnInit
-    // this.SecondButtonClick();
+
   }
 
   ngAfterViewInit(): void {

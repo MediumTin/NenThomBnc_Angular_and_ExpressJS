@@ -22,20 +22,20 @@ var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
 // var result = "";
 
 const sessions = {};
-Router.get('^/$|  ',(req,res)=>{
-   Global_Interface.isFirstTimeLogin = true; // this variable for init class in next log in of next SID
-   req.session.destroy(); // Same as log out session
-   // res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Detail_Product','Boostrap_Login_Form.html'));
-   res.status(200).send(
-      [{
-         "status" : "Already in login of server"
-      }]
-   )
-})
+// Router.get('/',(req,res)=>{
+//    Global_Interface.isFirstTimeLogin = true; // this variable for init class in next log in of next SID
+//    req.session.destroy(); // Same as log out session
+//    // res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Detail_Product','Boostrap_Login_Form.html'));
+//    res.status(200).send(
+//       [{
+//          "status" : "Already in login of server"
+//       }]
+//    )
+// })
 
 // Handle login action
 Router.post('/login',(req,res)=>{
-   console.log(`Login information is received with POST method.`);
+   console.log(`Login information is received with POST method in login handling.`);
    console.log(`Username is ${req.body.username}`);
    console.log(`Password is ${req.body.password}`);
    console.log(`Remember option is ${req.body.remember}`);
@@ -44,7 +44,7 @@ Router.post('/login',(req,res)=>{
 
 // Hangle register action
 Router.post('/register',(req,res)=>{
-   console.log(`Register information is received with POST method.`);
+   console.log(`Register information is received with POST method in register handling.`);
    console.log(`Username is ${req.body.username}`);
    console.log(`Email is ${req.body.email}`);
    console.log(`Password is ${req.body.password}`);
@@ -103,10 +103,27 @@ const LoginHandling = async(req,res) => {
             momo : "0826780002"
       };
       req.session.personal_shopping_bag = [];
+      console.log(`Session ID in Login js is ${req.sessionID} and username is ${req.session.personal_information.username} `); // req.session.cookie.maxAge
+      req.session.save(()=>{
+         res.status(200).send(
+         [{
+            "Currentuser" : `${req.session.personal_information.username}`,
+            "SessionID" : `${req.sessionID}`
+         }]
+      )
+      })
+      
+      console.log(`req.session.personal_information in LoginWebPage is ${req.session.personal_information}`);
       // res.cookie("connect.sid",`${req.sessionID}`,{ expires: new Date(Date.now() + (7*3600000+5000)) }).redirect('/');
-      res.redirect('/');
+      // res.redirect('/');
    } else {
-      res.redirect('/login_handling');
+      // res.redirect('/login_handling');
+      res.status(200).send(
+      [{
+            "Currentuser" : undefined,
+            "SessionID" : undefined
+         }]
+   )
    }
 }
 

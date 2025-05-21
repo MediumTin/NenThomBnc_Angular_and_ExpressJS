@@ -60,7 +60,7 @@ const SENDMAIL = async (mailDetails) => {
 // import { engine } from 'express-handlebars';
 const PORT = process.env.PORT || 3500;
 const RedisPort = PORT;
-const TargetTime_Of_Minute = 20; // allow in 10 minute
+const TargetTime_Of_Minute = 3; // allow in 10 minute
 var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
 
 // Example using session middleware
@@ -68,14 +68,18 @@ app.use(session({
     genid: function(req) {
         return uuidv4(); // use UUIDs for session IDs
       },
+    // name: 'SessionID', // or your custom name
     secret : 'mediumtin',
     store : new RedisStore({client: clientRedis}), // Store SID or session of user into Redis cache
     resave : false,
     saveUninitialized: true, // Properties for re-create Cookies and send to Client
-    cookie : {
-        secure: false,
+    cookie : {  
+        // secure: true,
+        // sameSite: 'None', // allow cross-origin
+        secure: false, // allow cross-origin
+        sameSite: 'lax', // allow cross-origin
         httpOnly: true, // allow client can know document.cookie or not
-        // expires: (new Date(Date.now() + TargetTime_Of_Milisecond + 7*60*60*1000)),
+        // // expires: (new Date(Date.now() + TargetTime_Of_Milisecond + 7*60*60*1000)),
         maxAge : TargetTime_Of_Milisecond // 1 minute
     }
 }))
@@ -96,7 +100,12 @@ connectDB();
 // 1.1. Custom middleware logger
 app.use(logger);
 // 1.2. Build-in middleware to share origin resource to other Routes
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors({
+  origin: 'http://localhost:4200',  // Allow frontend origin
+  credentials: true                 // Allow credentials
+}));
+
 // 1.3. Build-in middleware to convert incomming request to parsed data
 app.use(express.urlencoded({extended:false}));
 // 1.4. Build-in middleware to convert parsed data to JSON data
@@ -213,16 +222,19 @@ app.get('/get-session', (req,res)=>{
 
 app.get('/get-sid', (req,res)=>{
     console.log(`Cookie is ${req.headers.cookie}`); // req.session.cookie.maxAge
-    req.sessionStore.get(req.sessionID, function(err, session) {
-        if (err) {
-            // Handle the error
-            res.send("Not found SID in Redis cache");
-        } else {
-            // Work with the session
-            res.send(`Found in Redis with Session ID is ${req.sessionID}\n and content is ${session.personal_information.username}`);
-
-        }
-    });
+    console.log(`Session ID in server js is ${req.sessionID}`); // req.session.cookie.maxAge
+    res.send(`Found in Redis with Session ID is ${req.sessionID}`);
+    // req.sessionStore.get(req.sessionID, function(err, session) {
+    //     if (err) {
+    //         // Handle the error
+    //         res.send("Not found SID in Redis cache");
+    //         console.log("Not found SID in Redis cache");
+    //     } else {
+    //         // Work with the session
+    //         res.send(`Found in Redis with Session ID is ${req.sessionID}\n and content is ${session.personal_information.username}`);
+    //         console.log(`Found in Redis with Session ID is ${req.sessionID}\n and content is ${session.personal_information.username}`);
+    //     }
+    // });
     // Session will have 2 part : 1 is Cookie info and 2,3,4,... is data
 })
 

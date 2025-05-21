@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./Pages/footer/footer.component";
 import { HeaderComponent } from "./Pages/header/header.component";
 import { TestComponent } from "./test/test.component";
@@ -18,28 +18,25 @@ import { UserInformation } from './Common_Configuration/Models/UserInformation';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Frontend';
   isUserIdentifiedMain: boolean = false;
   isUserIdentified: UserInformation[] = [];
-  isUserIdentifiedObservable: Observable<UserInformation[]>;
 
-  constructor(private activatedRoute: ActivatedRoute, private identification: IndentificationService) { 
-    this.isUserIdentifiedObservable = this.identification.CheckIdentification();
-    this.isUserIdentifiedObservable.subscribe((UserInfo) => {
-      this.isUserIdentified = UserInfo;
-      console.log("UserInfo is ", this.isUserIdentified[0]?.Currentuser);
-      // Check if the user is identified
-      if (this.isUserIdentified[0]?.Currentuser != "No User") {
-        this.isUserIdentifiedMain = true;
-        console.log("User has identified yet");
-      } else {
-        // User is not identified, handle accordingly - request login
-        this.isUserIdentifiedMain = false;
-        console.log("User has not identified yet");
-        this.identification.RequestUserLogin();
-      }
-    });
+  constructor(private router:Router, private activatedRoute: ActivatedRoute, private identification: IndentificationService) { 
+    const sessionInfo = this.identification.GetSessionID();
+    if (sessionInfo.Username != "") {
+      // this.isUserIdentifiedMain = true;
+      this.identification.SetisUserIdentifiedMain(true);
+      console.log("User has identified yet");
+    } else {
+      // User is not identified, handle accordingly - request login
+      // this.isUserIdentifiedMain = false;
+      this.identification.SetisUserIdentifiedMain(false);
+      console.log("User has not identified yet");
+      this.router.navigate(['/login_handling']);
+      
+    }
   }
 
   toggleHeaderVisibility() {
@@ -52,6 +49,13 @@ export class AppComponent {
     this.title = "Second Button Clicked";
     // Add your logic here
   }
+  ngOnInit(){
+  this.identification.isUserIdentifiedMain.subscribe(val => {
+    this.isUserIdentifiedMain = val;
+  });
+}
+
+
 }
 
 

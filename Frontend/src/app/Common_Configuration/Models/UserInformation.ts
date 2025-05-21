@@ -1,3 +1,5 @@
 export class UserInformation{
-    Currentuser!:String;
+    Currentuser!:string;
+    SessionID?:string;
+    status?:String;
   }

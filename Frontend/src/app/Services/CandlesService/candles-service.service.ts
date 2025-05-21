@@ -10,23 +10,23 @@ import { CANDLES_By_Filter_URL, CANDLES_By_Search_URL, CANDLES_By_Tag_URL, CANDL
 export class CandlesServiceService {
   constructor(private http:HttpClient) { }
   getAllCandles(): Observable<Candles[]> {
-    return this.http.get<Candles[]>(CANDLES_URL);
+    return this.http.get<Candles[]>(CANDLES_URL, { withCredentials: true });
   }
 
   getAllCandlesByTag(tag: string): Observable<Candles[]> {
     return tag === "All" ?
       this.getAllCandles() :  // in case of dont have specific request tag, return all candles
-      this.http.get<Candles[]>(CANDLES_By_Tag_URL + tag); // in case of have specific request tag, return candles by tag
+      this.http.get<Candles[]>(CANDLES_By_Tag_URL + tag, { withCredentials: true }); // in case of have specific request tag, return candles by tag
   }
 
   getAllCandlesByFilter(filter: string): Observable<Candles[]> {
     return filter === "All" ?
       this.getAllCandles() :  // in case of dont have specific request tag, return all candles
-      this.http.get<Candles[]>(CANDLES_By_Filter_URL); // in case of have specific request tag, return candles by tag
+      this.http.get<Candles[]>(CANDLES_By_Filter_URL, { withCredentials: true }); // in case of have specific request tag, return candles by tag
   }
 
   getAllCandlesBySearchTerm(searchTerm: string) {
-    return this.http.get<Candles[]>(CANDLES_By_Search_URL + searchTerm);
+    return this.http.get<Candles[]>(CANDLES_By_Search_URL + searchTerm, { withCredentials: true });
   }
   
 }

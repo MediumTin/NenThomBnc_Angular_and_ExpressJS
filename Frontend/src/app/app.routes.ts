@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { CandlesComponent } from './Pages/candles-component/candles-component.component';
 import { HomePageComponent } from './Pages/home-page/home-page.component';
 import { LoginAndRegisterComponent } from './Pages/Login_and_Register/login-and-register/login-and-register.component';
+import { SessionPageComponent } from './Pages/session-page/session-page.component';
 
 export const routes: Routes = [
     {path: '', component: HomePageComponent }, // get to Home Page 
@@ -11,6 +12,11 @@ export const routes: Routes = [
     {path: 'login_handling', component: LoginAndRegisterComponent }, // get products by tag
     {path: 'login_handling/login', component: LoginAndRegisterComponent }, // get products by tag
     {path: 'login_handling/register', component: LoginAndRegisterComponent }, // get products by tag
+    {path: 'get-session', component: SessionPageComponent }, // get session information
+    {path: 'get-sid', component: SessionPageComponent }, // get session information
+    {path: 'clear-sid', component: SessionPageComponent }, // get session information
+    {path: 'destroy-sid', component: SessionPageComponent }, // get session information
+    {path: 'destroy-session', component: SessionPageComponent }, // get session information
     // {path:'food/:id', component:FoodPageComponent}, // same as detailed component
     // {path:'cart-page', component: CartPageComponent},
     // {path:'login', component: LoginPageComponent},

@@ -97,6 +97,7 @@ Router.post('/addnewproduct',async (req,res)=>{
 // })
 Router.get('/',async (req,res)=>{
    var isSessionValid = req.session.personal_information;
+   console.log(`Session ID in Candles.js is ${req.sessionID}`);
    if(isSessionValid != undefined){
       var CurrentUser = req.session.personal_information.username;
       // res.status(200).render('Search_And_Filtering_Product',{
@@ -128,7 +129,6 @@ Router.get('/',async (req,res)=>{
       res.status(200).send(
          [{
             "status" : "Session is timeout",
-            "redirect" : "/login_handling"
          }]
       )
       // res.redirect('/login_handling');

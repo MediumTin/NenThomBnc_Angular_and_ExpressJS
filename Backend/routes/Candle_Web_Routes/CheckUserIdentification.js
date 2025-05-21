@@ -23,8 +23,9 @@ var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
 
 // Handle login action
 Router.get('^/$|  ',(req,res)=>{
-   console.log(`Login information is received with POST method.`);
+   console.log(`Login information is received with POST method in CheckUserIdentification.`);
    var isSessionValid = req.session.personal_information;
+   console.log(`req.session.personal_information in CheckUserIdentify is ${req.session.personal_information}`);
       if(isSessionValid != undefined){
          var CurrentUser = req.session.personal_information.username;
          res.status(200).send(

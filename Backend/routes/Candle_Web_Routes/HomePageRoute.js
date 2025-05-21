@@ -21,7 +21,7 @@ Router.get('/',(req,res)=>{
     // console.log(`REQUEST COOKIE IS ${req.cookies}`);
     // res.sendFile(path.join(__dirname,'../','../','views','Candle_Web_Routes','testHTML.html'));
     var isSessionValid = req.session.personal_information; // Check session is exist or not
-    // if(isSessionValid != undefined){
+    if(isSessionValid != undefined){
     //     // Session is normal - Keep current HTML page
     //     var CurrentUser = req.session.personal_information.username;
     //     res.render('HomePage',{
@@ -30,10 +30,21 @@ Router.get('/',(req,res)=>{
     // } else {
     //     // Session is timeout -> Request login again
     //     res.redirect('/login_handling');
-    // }
-    res.status(200).json([
-        { id: 1, name: 'HomePage archived', price: 10 }
-    ]);
+        console.log(`Session ID in HomePageRoute is ${req.sessionID}`);
+        res.status(200).json([
+            { id: 1, name: 'HomePage archived', price: 10 }
+        ]);
+    }
+    else {
+      // Session is timeout -> Request login again
+      res.status(200).send(
+         [{
+            "status" : "Session is timeout",
+         }]
+      )
+      // res.redirect('/login_handling');
+   }
+    
  
 })
 
