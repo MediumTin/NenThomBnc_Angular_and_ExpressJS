@@ -21,6 +21,11 @@ export class IndentificationService {
     // return this.http.post<UserInformation[]>(LOGIN_HANDLING_Login_URL, userData);
     return this.http.post<UserInformation[]>(LOGIN_HANDLING_Login_URL, userData, { withCredentials: true });
   }
+
+  RequestUserRegister(userData: any): Observable<UserInformation[]> {
+    console.log("RequestUserRegister successfully");
+    return this.http.post<UserInformation[]>(LOGIN_HANDLING_Register_URL, userData, { withCredentials: true });
+  }
   // this.router.navigate(['/login_handling']);
   // }
 
@@ -48,6 +53,12 @@ SetisUserIdentifiedMain(isUserIdentifiedMainLocal: boolean) {
     // document.cookie = `SessionID=${SessionID}; path=/;`; // using cookies to store session ID
     // document.cookie = `Currentuser=${Username}; path=/;`; // using cookies to store username
   }
+
+  ClearSessionStorage(): void {
+  if (typeof window !== 'undefined' && window.sessionStorage) {
+    sessionStorage.clear();
+  }
+}
   
 // GetSessionID(): { SessionID: string; Username: string} {
 //   let sessionId = "";
@@ -79,18 +90,6 @@ GetSessionID(): { SessionID: string; Username: string } {
   return { SessionID: sessionId, Username: username };
 }
 
-  RequestUserRegister(userData: any) {
-  console.log("RequestUserRegister successfully");
-  this.http.post(LOGIN_HANDLING_Register_URL, userData).subscribe(
-    (response) => {
-      console.log("HTTP POST request successful:", response);
-    },
-    (error) => {
-      console.error("HTTP POST request failed:", error);
-    }
-  );
-  // this.router.navigate(['/login_handling']);
-  }
 
   CheckIdentification(): Observable<UserInformation[]>{
     console.log("It is checking identification");

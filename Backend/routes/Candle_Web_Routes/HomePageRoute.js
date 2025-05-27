@@ -31,9 +31,11 @@ Router.get('/',(req,res)=>{
     //     // Session is timeout -> Request login again
     //     res.redirect('/login_handling');
         console.log(`Session ID in HomePageRoute is ${req.sessionID}`);
-        res.status(200).json([
-            { id: 1, name: 'HomePage archived', price: 10 }
-        ]);
+        res.status(200).send(
+         [{
+            "status" : "Session is normal",
+         }]
+      );
     }
     else {
       // Session is timeout -> Request login again

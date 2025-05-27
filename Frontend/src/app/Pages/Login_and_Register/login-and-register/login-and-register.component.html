@@ -46,7 +46,7 @@
                                 </div>
                             </form>
                             <!-- Register form -->
-                            <form id="register-form" #registerForm="ngForm" (ngSubmit)="RegisterUser(registerForm)" role="form" style="display: none;">
+                            <form id="register-form" #registerForm="ngForm" (ngSubmit)="RegisterUser(registerForm.value)" role="form" style="display: none;">
                                 <div class="form-group">
                                     <input type="text" name="username" ngModel id="username" tabindex="1" class="form-control" placeholder="Username">
                                 </div>

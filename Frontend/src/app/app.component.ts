@@ -28,12 +28,12 @@ export class AppComponent implements OnInit {
     if (sessionInfo.Username != "") {
       // this.isUserIdentifiedMain = true;
       this.identification.SetisUserIdentifiedMain(true);
-      console.log("User has identified yet");
+      console.log("User has identified yet in app component");
     } else {
       // User is not identified, handle accordingly - request login
       // this.isUserIdentifiedMain = false;
       this.identification.SetisUserIdentifiedMain(false);
-      console.log("User has not identified yet");
+      console.log("User has not identified yet in app component");
       this.router.navigate(['/login_handling']);
       
     }

@@ -19,16 +19,19 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   userInformation: UserInformation[] = [];
 
   constructor(private router:Router,private homepageReturnService: HomePageReturnService, activateRoute: ActivatedRoute,private renderer: Renderer2, private identification: IndentificationService) {
-    // Constructor logic here 
-    // Initialization logic here
-    this.homepageReturnService.ReturnHomePageData().subscribe((data) => {
+      console.log("User has identified yet");
+      this.homepageReturnService.ReturnHomePageData().subscribe((data) => {
       this.userInformation = data; // Assign the final data to the component property
       console.log("Data from server", data);
       if(this.userInformation[0].status == "Session is timeout"){
-        console.log("Session is timeout");
+        console.log("Session is timeout"); 
+        this.identification.ClearSessionStorage();
         this.identification.SetisUserIdentifiedMain(false);
         this.router.navigate(['/login_handling']);
       }  
+      else {
+        // status is "Session is normal"
+      }
     });
   }
   

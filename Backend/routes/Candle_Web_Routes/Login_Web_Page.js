@@ -133,10 +133,37 @@ const RegisterHandling = async(req,res) => {
    console.log(`isAddUserValid is ${isAddUserValid}`);
    if(isAddUserValid){
       // res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Web_Routes','HomePage.html'));
-      res.redirect('/');
+      // res.redirect('/');
+      req.session.personal_information ={
+         username: req.body.username,
+         password: req.body.password,
+         age: 23,
+         address : "Huynh Tan Phat",
+         sex: "Women",
+         member_type: "VIP",
+         email: "tranbichngoc22112001@gmail.com"
+      };
+      req.session.payment_information ={
+            smart_banking : "Vietinbank",
+            momo : "0826780002"
+      };
+      req.session.personal_shopping_bag = [];
+      console.log(`Session ID in Login js is ${req.sessionID} and username is ${req.session.personal_information.username} `); // req.session.cookie.maxAge
+      req.session.save(()=>{
+         res.status(200).send(
+         [{
+            "Currentuser" : `${req.session.personal_information.username}`,
+            "SessionID" : `${req.sessionID}`
+         }]
+      )
+      })
    } else {
-      // res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Detail_Product','Boostrap_Login_Form.html'));
-      res.redirect('/login_handling');
+      // res.redirect('/login_handling');
+      res.status(200).send(
+      [{
+            "Currentuser" : undefined,
+            "SessionID" : undefined
+         }])
    }
 }
 

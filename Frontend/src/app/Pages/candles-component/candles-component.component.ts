@@ -31,9 +31,6 @@ export class CandlesComponent implements OnInit, AfterViewInit {
   // @ViewChild('pTag', { static: false }) pTag!: ElementRef<HTMLTableElement>;
   constructor(private router:Router, private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService ) { 
     let candlesObervalbe: Observable<Candles[]>;
-    const sessionInfo = this.identification.GetSessionID();
-    if(sessionInfo.Username != ""){
-      this.identification.SetisUserIdentifiedMain(true);
       console.log("User has identified yet");
       activatedRoute.params.subscribe((params) => {
         if (params['searchTerm']){
@@ -54,23 +51,17 @@ export class CandlesComponent implements OnInit, AfterViewInit {
           // console.log(`TotalLengh of received info : ${this.candles.length}`);
           if(this.candles[0].status == "Session is timeout"){
             console.log("Session is timeout");
+            this.identification.ClearSessionStorage();
             this.identification.SetisUserIdentifiedMain(false);
             this.router.navigate(['/login_handling']);
             
           }  
           else {
-            // console.log("Session is not timeout");
+            // status is "Session is normal"
             this.loadProducts();
           }
         });
       });
-    }
-    else {
-      // User is not identified, handle accordingly - request login
-      this.identification.SetisUserIdentifiedMain(false);
-      console.log("User has not identified yet");
-      this.router.navigate(['/login_handling']);
-    }
 
   };
   
