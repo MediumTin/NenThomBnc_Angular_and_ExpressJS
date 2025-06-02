@@ -4,7 +4,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
-import { HomePageComponent } from './Pages/home-page/home-page.component';
+import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
 
 export const appConfig: ApplicationConfig = {
   providers: [

@@ -1,14 +1,15 @@
 import { Routes } from '@angular/router';
-import { CandlesComponent } from './Pages/candles-component/candles-component.component';
-import { HomePageComponent } from './Pages/home-page/home-page.component';
-import { LoginAndRegisterComponent } from './Pages/Login_and_Register/login-and-register/login-and-register.component';
-import { SessionPageComponent } from './Pages/session-page/session-page.component';
+import { CandlesComponent } from './Components/Pages/candles-component/candles-component.component';
+import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
+import { LoginAndRegisterComponent } from './Components/Pages/Login_and_Register/login-and-register/login-and-register.component';
+import { SessionPageComponent } from './Components/Pages/session-page/session-page.component';
 
 export const routes: Routes = [
     {path: '', component: HomePageComponent }, // get to Home Page 
     {path: 'candles', component: CandlesComponent }, // get all components of candles
     {path: 'candles/search/:searchTerm', component: CandlesComponent }, // get products by search item
     {path: 'candles/tag/:tag', component: CandlesComponent }, // get products by tag
+    {path: 'candles/filter/:filter', component: CandlesComponent }, // get products by filter
     {path: 'login_handling', component: LoginAndRegisterComponent }, // get products by tag
     {path: 'login_handling/login', component: LoginAndRegisterComponent }, // get products by tag
     {path: 'login_handling/register', component: LoginAndRegisterComponent }, // get products by tag

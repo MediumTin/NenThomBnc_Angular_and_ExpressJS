@@ -100,11 +100,11 @@ connectDB();
 // 1.1. Custom middleware logger
 app.use(logger);
 // 1.2. Build-in middleware to share origin resource to other Routes
-// app.use(cors(corsOptions));
-app.use(cors({
-  origin: 'http://localhost:4200',  // Allow frontend origin
-  credentials: true                 // Allow credentials
-}));
+app.use(cors(corsOptions));
+// app.use(cors({
+//   origin: 'http://localhost:4200',  // Allow frontend origin
+//   credentials: true                 // Allow credentials
+// }));
 
 // 1.3. Build-in middleware to convert incomming request to parsed data
 app.use(express.urlencoded({extended:false}));
