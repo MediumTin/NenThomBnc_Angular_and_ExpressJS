@@ -17,6 +17,7 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   id: number = 1; // Declare as a class property
   title: string = "Home Page"; // Declare as a class property
   userInformation: UserInformation[] = [];
+  intervalId: any;
 
   constructor(private router:Router,private homepageReturnService: HomePageReturnService, activateRoute: ActivatedRoute,private renderer: Renderer2, private identification: IndentificationService) {
       console.log("User has identified yet");
@@ -41,63 +42,30 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.showSlides(); 
+    this.showSlides(); // Hiển thị slide đầu tiên ngay lập tức
+    this.intervalId = setInterval(() => this.showSlides(), 5000);
   }
   
 
-  showSlides(){
-    console.log("Starting showSlides function...");
-
-    // Get all elements with the class 'mySlides'
+  showSlides() {
     const slides = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
-    console.log("Slides found:", slides);
+    if (slides.length === 0) return;
 
-    if (slides.length === 0) {
-      console.warn("No elements with class 'mySlides' found.");
-      return; // Exit if no slides are found
-    }
-
-    // Hide all slides
+    // Ẩn tất cả slide
     for (let i = 0; i < slides.length; i++) {
-      console.log(`Hiding slide ${i}`);
       slides[i].style.display = "none";
     }
 
-    // Increment slide index
+    // Tăng chỉ số slide
     this.slideIndex++;
-    console.log("Current slide index:", this.slideIndex);
-
     if (this.slideIndex > slides.length) {
-      this.slideIndex = 1; // Reset to the first slide
-      console.log("Resetting slide index to 1");
+      this.slideIndex = 1;
     }
-    // Show the current slide
-    console.log(`Showing slide ${this.slideIndex - 1}`);
+
+    // Hiển thị slide hiện tại
     slides[this.slideIndex - 1].style.display = "block";
-
-    // Call this function again after 2 seconds
-    setTimeout(() => this.showSlides(), 2000); // Change image every 2 seconds
   }
 
-
-  SecondButtonClick() {
-    console.log("Second button clicked");
-    this.title = "Second Button Clicked";
-    // Add your logic here
-  }
-
-  FirstButtonClick() {
-    alert('Button was clicked!');
-    console.log("First button clicked");
-    console.log("First button clicked time 1");
-    console.log("First button clicked time 2");
-    console.log("First button clicked time 3");
-    console.log("First button clicked time 4");
-    this.SecondButtonClick();
-    console.log("First button clicked time 5");
-    console.log("First button clicked time 6");
-    // Add your logic here
-  }
 
   onButtonClick(): void {
     console.log('Button clicked!');

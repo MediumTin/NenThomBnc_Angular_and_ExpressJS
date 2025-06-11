@@ -267,118 +267,221 @@ td, th, tr {
 }
 
 .slideshow-container {
-    max-width: 800px;
-    position: relative;
-    /* margin: auto; */
-    /* margin-left: 600px;
-    margin-right: auto; */
-}
-.mySlides {
-    display: none;
-    /* margin-left: auto;
-    margin-right: auto; */
+  width: 100%;
+  max-width: 1200px;
+  margin: 32px auto 0 auto;
+  /* Giữ nguyên chiều rộng, căn giữa */
+  aspect-ratio: 3/1; /* Tỷ lệ rộng:gấp 3 lần cao, bạn có thể điều chỉnh */
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  background: #fff;
+  min-height: 180px; /* Đảm bảo không quá thấp trên màn hình nhỏ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.mySlides2 {
-    display: none;
-    /* margin-left: auto;
-    margin-right: auto; */
+.mySlides {
+  display: none;
 }
-/* Fading animation */
+
 .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
+  animation: fadeEffect 5s;
 }
-  
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
+
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
 }
 
 .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
 
-  /* Caption text */
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-  }
-  /* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 300px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+.table2 {
+  width: 100%;
+  border-spacing: 16px;
+}
 
-  .modal_for_addedIntoBag {
-    line-height: 0.8;
-    text-align: center;
-    border-radius: 10px;
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 5px; /*Location of the box*/
-    left: 1200px;
-    top: 100px;
-    width: 10%; /* Full width */
-    height: 8%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(229,255,204); /* Fallback color */
-    /* background-color: rgba(0,0,0,0.4); Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    background-color: #CCFFFF;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    text-align: center;
-  }
-  
-  /* The Close Button */
-  .close {
-    color: green;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
+.td1 img {
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+}
 
-  .my_scroll_div{
-    overflow-y: auto;
-    max-height: 250px;
-    width: 430px;
-    }
+.home-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  text-align: center;
+}
 
+.home-title {
+  font-size: 2.5rem;
+  color: #FF0066;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
 
+.carousel {
+  position: relative;
+  margin-bottom: 2rem;
+}
 
-  @media only screen and (max-width: 300px) {
-    .text {font-size: 11px}
+.carousel-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+}
+
+.carousel-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  background: rgba(255,255,255,0.85);
+  color: #333;
+  font-size: 1.2rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0 0 12px 12px;
+  text-align: center;
+}
+
+.user-info-list {
+  margin: 2rem 0;
+}
+
+.user-info-card {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  text-align: left;
+}
+
+.home-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.home-btn {
+  background: #FF0066;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.home-btn:hover {
+  background: #e6005c;
+}
+
+/* Add or update in your CSS file for the slideshow images */
+.slideshow-container img,
+.slideshow-container .td1 img {
+  border-radius: 18px !important; /* Rounded corners */
+  box-shadow: none !important;    /* Remove shadow if you want only the image */
+  border: none !important;        /* Remove any border */
+  background: transparent !important; /* No background */
+}
+
+.featured-categories, .best-sellers, .about-us {
+  max-width: 1200px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.categories-row, .products-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.category-card, .product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem 2rem;
+  min-width: 180px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.category-card img, .product-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.product-card img {
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.promo-banner {
+  background: linear-gradient(90deg,#ffdde1 0%,#ee9ca7 100%);
+  margin: 2rem auto;
+  max-width: 1100px;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+.promo-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #FF0066;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.promo-btn:hover {
+  background: #e6005c;
+}
+.price {
+  color: #FF0066;
+  font-weight: bold;
+}
+.about-us {
+  background: #f8f8f8;
+  border-radius: 14px;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 900px) {
+  .categories-row, .products-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
+  .slideshow-container {
+    max-width: 98vw;
+    min-height: 120px;
+  }
+  .mySlides .td1 img {
+    height: 100px;
+  }
+}
+/* @media only screen and */
 

@@ -2,10 +2,10 @@ import { AfterViewInit, Component, ElementRef, importProvidersFrom, OnInit, Rend
 import { Candles } from '../../../Common_Configuration/Models/Candles';
 import { UserInformation } from '../../../Common_Configuration/Models/UserInformation';
 import { CandlesServiceService } from '../../../Services/CandlesService/candles-service.service';
-import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
-import { JsonPipe } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { IndentificationService } from '../../../Services/IdentificationService/indentification.service';
 
 // import { AuthInterceptor } from '../../auth/auth.interceptor';
@@ -16,7 +16,7 @@ import { IndentificationService } from '../../../Services/IdentificationService/
 @Component({
   selector: 'candles-component',
   standalone: true,
-  imports: [RouterOutlet, JsonPipe, HttpClientModule],
+  imports: [RouterOutlet, JsonPipe, HttpClientModule, CommonModule, RouterModule],
   // providers: [
   //   {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi: true },
   //   {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor, multi: true } 
@@ -126,6 +126,9 @@ export class CandlesComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     // Initialization logic here  
     
+  }
+  getCandleUrl(candle: any): string {
+    return '/candle_information/' + (candle.name || '').replace(/ /g, '_');
   }
 
 }

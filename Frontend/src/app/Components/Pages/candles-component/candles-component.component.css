@@ -367,9 +367,110 @@ td, th, tr {
     width: 430px;
     }
 
+.candles-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
 
+.candles-sidebar {
+  min-width: 260px;
+  max-width: 320px;
+  background: #f8f8f8;
+  border-radius: 14px;
+  padding: 2rem 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  font-size: 1.1rem;
+}
 
-  @media only screen and (max-width: 300px) {
-    .text {font-size: 11px}
+.candles-sidebar h3 {
+  text-align: center;
+  color: #FF0066;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group h6 {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.candles-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candles-products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.candles-products-grid > * {
+  margin: 0; /* remove any default margin */
+}
+
+.candles-products-grid img {
+  margin: 0;
+  display: block;
+}
+
+.candles-products-grid table {
+  border-spacing: 16px !important; /* or 12px, adjust as needed */
+  width: auto;
+  margin: 0 auto;
+}
+.candles-products-grid td {
+  padding: 0 !important;
+  vertical-align: top;
+}
+
+.product-card {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.product-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+  .candles-page-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
   }
+  .candles-sidebar {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .candles-main-content {
+    width: 100%;
+  }
+}
 

@@ -1,5 +1,3 @@
-
-
 <!-- 2. Combination in Center component-->
 <div style="margin-left: 100px;margin-right: 100px;margin-top: 20px;margin-bottom: 20px;">
         <!-- 2.1. Menu bar for filter product information-->
@@ -144,7 +142,17 @@
         <!-- 2.2. Menu bar for showing product information-->
         <div style="margin-left: 260px; color: black;">
             <!-- <p id="demo"> hello</p> -->
-            <table style="border-spacing: 35px;" #tableMenu></table>
+            <!-- <table style="border-spacing: 35px;" #tableMenu></table> -->
         </div>
         <p #pTag></p>
  </div>
+ <div class="candles-products-grid">
+  <div class="product-card" *ngFor="let candle of candles">
+    <a id="RouteIDA13" [href]="getCandleUrl(candle)" style="text-decoration: none; color: black;">
+      <img [src]="candle.image" alt="{{candle.name}}">
+    </a>
+    <div class="product-title">{{candle.name}}</div>
+    <div class="product-price">{{candle.price}}</div>
+  </div>
+</div>
+
