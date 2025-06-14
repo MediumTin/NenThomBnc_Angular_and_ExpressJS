@@ -3,6 +3,13 @@ import { CandlesComponent } from './Components/Pages/candles-component/candles-c
 import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
 import { LoginAndRegisterComponent } from './Components/Pages/Login_and_Register/login-and-register/login-and-register.component';
 import { SessionPageComponent } from './Components/Pages/session-page/session-page.component';
+import { OilsComponentComponent } from './Components/Pages/oils-component/oils-component.component';
+import { AccessoryComponent } from './Components/Pages/accessory/accessory.component';
+import { GiftComponent } from './Components/Pages/gift/gift.component';
+import { DiffuseOilsComponent } from './Components/Pages/diffuse-oils/diffuse-oils.component';
+import { NaturalOilsComponent } from './Components/Pages/natural-oils/natural-oils.component';
+import { BurnCandlesComponent } from './Components/Pages/burn-candles/burn-candles.component';
+import { CareCandlesComponent } from './Components/Pages/care-candles/care-candles.component';
 
 export const routes: Routes = [
     {path: '', component: HomePageComponent }, // get to Home Page 
@@ -10,6 +17,15 @@ export const routes: Routes = [
     {path: 'candles/search/:searchTerm', component: CandlesComponent }, // get products by search item
     {path: 'candles/tag/:tag', component: CandlesComponent }, // get products by tag
     {path: 'candles/filter/:filter', component: CandlesComponent }, // get products by filter
+    {path: 'oils', component: OilsComponentComponent }, // get products by filter
+    {path: 'accessory', component: AccessoryComponent }, // get products by filter
+    {path: 'gift', component: GiftComponent }, // get products by filter
+    {path: 'news', component: HomePageComponent }, // get products by filter
+    {path: 'contact', component: HomePageComponent }, // get products by filter
+    {path: 'diffuse_oils', component: DiffuseOilsComponent }, // get products by filter
+    {path: 'natural_oils', component: NaturalOilsComponent }, // get products by filter
+    {path: 'burn_candles', component: BurnCandlesComponent }, // get products by filter
+    {path: 'care_candles', component: CareCandlesComponent }, // get products by filter
     {path: 'login_handling', component: LoginAndRegisterComponent }, // get products by tag
     {path: 'login_handling/login', component: LoginAndRegisterComponent }, // get products by tag
     {path: 'login_handling/register', component: LoginAndRegisterComponent }, // get products by tag

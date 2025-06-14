@@ -20,7 +20,7 @@ export class CandlesServiceService {
       this.http.get<Candles[]>(CANDLES_By_Tag_URL + tag, { withCredentials: true }); // in case of have specific request tag, return candles by tag
   }
 
-  getAllCandlesByFilter(filter: string): Observable<Candles[]> {
+  getAllCandlesByFilter(filter: any): Observable<Candles[]> {
     return filter === "All" ?
       this.getAllCandles() :  // in case of dont have specific request tag, return all candles
       this.http.post<Candles[]>(CANDLES_By_Filter_URL, filter, { withCredentials: true }); // in case of have specific request tag, return candles by tag

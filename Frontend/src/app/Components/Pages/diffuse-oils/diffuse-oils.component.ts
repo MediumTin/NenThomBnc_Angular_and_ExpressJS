@@ -8,55 +8,51 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, JsonPipe } from '@angular/common';
 import { IndentificationService } from '../../../Services/IdentificationService/indentification.service';
 
-// import { AuthInterceptor } from '../../auth/auth.interceptor';
-// import { LoadingInterceptor } from '../../Common_Configuration/Interceptors/loading.interceptor';
-
-
-
 @Component({
-  selector: 'candles-component',
-  standalone: true,
+  selector: 'app-diffuse-oils',
+standalone: true,
   imports: [RouterOutlet, JsonPipe, HttpClientModule, CommonModule, RouterModule],
-  // providers: [
-  //   {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi: true },
-  //   {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor, multi: true } 
-  // ],
-  templateUrl: './candles-component.component.html',
-  styleUrl: './candles-component.component.css'
+  templateUrl: './diffuse-oils.component.html',
+  styleUrl: './diffuse-oils.component.css'
 })
-export class CandlesComponent implements OnInit, AfterViewInit {
+export class DiffuseOilsComponent implements OnInit, AfterViewInit {
   candles: Candles[] = [];
   isUserIdentified : UserInformation[] =[];
   @ViewChild('tableMenu', { static: false }) tableMenu!: ElementRef<HTMLTableElement>;
   // @ViewChild('pTag', { static: false }) pTag!: ElementRef<HTMLTableElement>;
 
   constructor(private router:Router, private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService ) { 
-        var data_request_filter = 
-      {   name: "Request_Filter_Product", 
-          Request_Of_Type: "candle", 
-          Request_Of_Group: "best_seller,discount,new_arrival,sweet_fruit,wood_men,fresh_relax,flower_herb", 
-          Request_Of_Brand: "lumos,citta,no_brand", 
-          Request_Of_Price: "smaller_100KVND,100KVND_to_200KVND,200KVND_to_300KVND,300KVND_to_500KVND,larger_500KVND", 
-          Request_Of_Color: "black,white,red,pink,blue,green,yellow,orange,purple" 
-      } 
-    ; 
-      let candlesObervalbe: Observable<Candles[]>;
-      candlesObervalbe = this.candlesService.getAllCandlesByFilter(data_request_filter);
-      candlesObervalbe.subscribe((serverCandles) => {
-      this.candles = serverCandles; // Assign the final data to the component property
-      console.log("Response from serve",this.candles);
-      // console.log(`TotalLengh of received info : ${this.candles.length}`);
-      if(this.candles[0].status == "Session is timeout"){
-        console.log("Session is timeout");
-        this.identification.ClearSessionStorage();
-        this.identification.SetisUserIdentifiedMain(false);
-        this.router.navigate(['/login_handling']);
-      }  
-      else {
-        // status is "Session is normal"
-        this.loadProducts();
-      }
-    });
+    let candlesObervalbe: Observable<Candles[]>;
+      console.log("User has identified yet");
+      activatedRoute.params.subscribe((params) => {
+        if (params['searchTerm']){
+          candlesObervalbe = this.candlesService.getAllCandlesBySearchTerm(params['searchTerm']);
+        }
+        else if (params['tag']) {
+          candlesObervalbe = this.candlesService.getAllCandlesByTag(params['tag']);
+        }
+        else if (params['filter']) {
+          candlesObervalbe = this.candlesService.getAllCandlesByFilter(params['filter']);
+        }
+        else {
+          candlesObervalbe = this.candlesService.getAllCandles();
+        } 
+        candlesObervalbe.subscribe((serverCandles) => {
+          this.candles = serverCandles; // Assign the final data to the component property
+          console.log("Response from serve",this.candles);
+          // console.log(`TotalLengh of received info : ${this.candles.length}`);
+          if(this.candles[0].status == "Session is timeout"){
+            console.log("Session is timeout");
+            this.identification.ClearSessionStorage();
+            this.identification.SetisUserIdentifiedMain(false);
+            this.router.navigate(['/login_handling']);
+          }  
+          else {
+            // status is "Session is normal"
+            this.loadProducts();
+          }
+        });
+      });
 
   };
   
@@ -118,21 +114,18 @@ export class CandlesComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void  {  
     // this.loadProducts();
-    this.setCheckboxValue('candle', true);
-
-    
+    // this.setCheckboxValue('gift', true);
   }
   ngOnInit(): void {
     // Initialization logic here  
-    // this.onFilterChange();
     
   }
   getCandleUrl(candle: any): string {
     return '/candle_information/' + (candle.name || '').replace(/ /g, '_');
   }
-  onFilterChange() {
-    // const input = event.target as HTMLInputElement;
-    // console.log(input.id, input.checked); // Xử lý logic filter ở đây
+  onFilterChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    console.log(input.id, input.checked); // Xử lý logic filter ở đây
     // Ví dụ: cập nhật danh sách filter, gọi API, v.v.
     var Result_Of_Type = "", Result_Of_Group = "", Result_Of_Brand = "", Result_Of_Price = "", Result_Of_Color = "";
     var Number_Of_A = 0, Number_Of_B = 0, Number_Of_C = 0, Number_Of_D = 0, Number_Of_E = 0;
@@ -303,5 +296,3 @@ export class CandlesComponent implements OnInit, AfterViewInit {
   }
 
 }
-
-

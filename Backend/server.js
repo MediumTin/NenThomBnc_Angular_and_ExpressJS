@@ -60,7 +60,7 @@ const SENDMAIL = async (mailDetails) => {
 // import { engine } from 'express-handlebars';
 const PORT = process.env.PORT || 3500;
 const RedisPort = PORT;
-const TargetTime_Of_Minute = 3; // allow in 10 minute
+const TargetTime_Of_Minute = 10; // allow in 10 minute
 var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
 
 // Example using session middleware

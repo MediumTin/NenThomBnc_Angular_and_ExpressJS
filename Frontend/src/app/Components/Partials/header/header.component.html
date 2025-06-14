@@ -1,7 +1,6 @@
 <!-- 1. Search bar and Navigation bar in header page. -->
 
 <header class="header-container">
-    
   <div class="header-left">
     <img src="../../../../assets/img/IconBnC_Removed.png" alt="Logo" class="logo">
   </div>
@@ -16,36 +15,29 @@
     <button class="header-btn user-btn">
       <i class="fa fa-user"></i> {{Identified_Current_User}}
     </button>
+
   </div>
 </header>
 <nav class="navbar" style="display: flex; justify-content: center;">    
   <div class="nav-links" style="display: flex; gap: 10px; align-items: center;">
-    <button><a href="/">Home</a></button>
-    <button><a href="candles">Candle</a></button>
-    <div style="display: flex; flex-direction: row; gap: 16px;">
-      <div class="dropdown" style="position: relative;">
-        <button class="dropbtn">
-          <a href="oils">Oils</a>
-          <span class="arrow">&#9662;</span>
-        </button>
-        <div class="dropdown-content">
-          <a href="diffuse_oils">Diffuse Oils</a>
-          <a href="natural_oils">Natural Oils</a>
-        </div>
+    <a href="/">Home</a>
+    <a href="candles">Candle</a>
+    <a class = "custom" href="oils">Oils
+      <span class="arrow">&#9662;</span>
+      <div class="dropdown-content">
+        <a href="diffuse_oils">Diffuse Oils</a>
+        <a href="natural_oils">Natural Oils</a>
       </div>
-        <div class="dropdown" style="position: relative;">
-            <button class="dropbtn">
-                <a href="accessory">Accessory</a>
-                <span class="arrow">&#9662;</span>
-            </button>
-            <div class="dropdown-content">
-                <a href="burn_candles">Burn Candles</a>
-                <a href="care_candles">Care Candles</a>
-            </div>
-        </div>
-    </div>
-    <button><a href="gift">Gift</a></button>
-    <button><a href="news">News</a></button>
-    <button><a href="contact">Contact</a></button>
+    </a>
+    <a class = "custom" href="accessory">Accessory
+      <span class="arrow">&#9662;</span>
+      <div class="dropdown-content">
+        <a href="burn_candles">Burn Candles</a>
+        <a href="care_candles">Care Candles</a>
+      </div>
+    </a>
+    <a href="gift">Gift</a>
+    <a href="news">News</a>
+    <a href="contact">Contact</a>
   </div>
 </nav>
