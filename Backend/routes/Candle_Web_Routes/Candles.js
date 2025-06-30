@@ -88,6 +88,7 @@ Router.post('/RequestGetCandleByFilter',async (req,res)=>{
       }
       else {
          console.log("Filter product cached");
+         console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
             res.status(200).send(Result_Read_From_Cache_FilterProduct); // Available in cache, Read in Cache
       }
       await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis

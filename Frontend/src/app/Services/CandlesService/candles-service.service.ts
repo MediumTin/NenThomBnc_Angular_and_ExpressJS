@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Candles } from '../../Common_Configuration/Models/Candles';
-import { CANDLES_By_Filter_URL, CANDLES_By_Search_URL, CANDLES_By_Tag_URL, CANDLES_URL } from '../../Common_Configuration/Constant/urls';
+import { CANDLE_INFORMATION_URL, CANDLES_By_Filter_URL, CANDLES_By_Search_URL, CANDLES_By_Tag_URL, CANDLES_URL } from '../../Common_Configuration/Constant/urls';
 import { Tag } from '../../Common_Configuration/Models/Tag';
 
 @Injectable({
@@ -27,7 +27,11 @@ export class CandlesServiceService {
   }
 
   getAllCandlesBySearchTerm(searchTerm: string) {
-    return this.http.get<Candles[]>(CANDLES_By_Search_URL + searchTerm, { withCredentials: true });
+    return this.http.get<Candles[]>(CANDLE_INFORMATION_URL +'/'+  searchTerm, { withCredentials: true });
+  }
+
+   getCandlesByID_for_DetailInfo(searchTerm: string) {
+    return this.http.get<Candles[]>(CANDLE_INFORMATION_URL +'/'+  searchTerm, { withCredentials: true });
   }
 
   getAllTags(): Observable<Tag[]> {

@@ -36,26 +36,29 @@ Router.get('^/$|',async (req,res)=>{
       // console.log(`req.url is ${req.url}`);
       if(req.url == temp1){
          result = listofcandle[i]; // send the selected candle information to html page
+         var reslt_string_ceonverted = JSON.stringify(result);
+         reslt_string_ceonverted = "[" + reslt_string_ceonverted + "]";
          // console.log("Matching");
          // res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Web_Routes','General_Detail_Information.html'));
          var isSessionValid = req.session.personal_information; // Check session is exist or not
+         
          if(isSessionValid != undefined){
             var CurrentUser = req.session.personal_information.username;
-            res.status(200).render('General_Detail_Information',{
-               account : `${CurrentUser}`
-            })}
-         else {
+            console.log(`Type of response message ${typeof(reslt_string_ceonverted)}`);
+            res.status(200).send(reslt_string_ceonverted);
+         }
+         else 
+         {
             // Session is timeout -> Request login again
             Shopping_bag_array_counter = 0;
             Shopping_bag_array = [];
             isFirstTimeLogin = true;
-            // req.sessionStore.clear((err) =>{
-            //    if(err){
-            //        return res.send('Error clearing session.');
-            //    }
-            // })
             req.session.destroy();
-            res.redirect('/login_handling');
+            res.status(200).send(
+               [{
+                  "status" : "Session is timeout",
+               }]
+            )
          }
       }
    }

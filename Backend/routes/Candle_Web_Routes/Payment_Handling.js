@@ -207,6 +207,12 @@ Router.post('/specific_handling',async (req,res)=>{
          req.body.Total_Price_After_VAT,
          req.body.Selected_List,
       );
+      // response to client that payment is successful
+      res.status(200).send(
+         [{
+            "status_of_confirmed_order" : "Successful",
+         }]
+      )
 })
 // Process with router
 Router.get('/',(req,res)=>{
@@ -236,17 +242,30 @@ Router.get('/',(req,res)=>{
                // first time after request write
                Global_Interface.isFirstTimeLogin = true;
             }
-            res.status(200).render('Payment_handling',{
-            Request_From_Header : "payment",
-            account : `${CurrentUser}`,
-            sessionStorage : JSON.stringify(LOC_Result_from_Database[0])
-            });
+            // res.status(200).render('Payment_handling',{
+            // Request_From_Header : "payment",
+            // account : `${CurrentUser}`,
+            // sessionStorage : JSON.stringify(LOC_Result_from_Database[0])
+            // });
+
+            // res.status(200).send(JSON.stringify(LOC_Result_from_Database[0])); 
+            res.status(200).send(
+            [{
+               "Currentuser" : `${req.session.personal_information.username}`,
+               "SessionID" : `${req.sessionID}`,
+               "personal_shopping_bag" : JSON.stringify(LOC_Result_from_Database[0])
+            }]);
          }
      });
    } else {
       // Session is timeout -> Request login again
       req.session.destroy();
-      res.redirect('/login_handling');
+      // res.redirect('/login_handling');
+      res.status(200).send(
+         [{
+            "status" : "Session is timeout",
+         }]
+      )
    }
 
    

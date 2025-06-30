@@ -26,42 +26,5 @@
 </head>
 <body>
   <app-root></app-root>
-  <script>
-        // jQuery language : historical language based on Javascript, more simple coding line, but it is dead currently
-        $(function() {
-
-        $('#login-form-link').click(function(e) {
-            $("#login-form").delay(100).fadeIn(100); // Add login form appear
-            $("#register-form").fadeOut(100); // Remove Register form disappear
-            $('#register-form-link').removeClass('active'); // Remove classed related to Register
-            $(this).addClass('active'); 
-            e.preventDefault();
-        });
-        $('#register-form-link').click(function(e) {
-            $("#register-form").delay(100).fadeIn(100);
-            $("#login-form").fadeOut(100);
-            $('#login-form-link').removeClass('active');
-            $(this).addClass('active');
-            e.preventDefault();
-        });
-
-        });
-
-        window.ondblclick = ()=>{
-            document.getElementById("LoginButtonLink").click();
-        }
-
-        // var Login_Submit = document.getElementById("login-submit");
-        // Login_Submit.click = function() {
-        //     console.log("Username is",document.getElementById("username").value);
-        //     console.log("Password is",document.getElementById("password").value);
-        // }
-
-        $('#login-submit').click(function(e) {
-            console.log("Username is",document.getElementById("username").value);
-            console.log("Password is",document.getElementById("password").value);
-        });
-
-    </script> 
 </body>
 </html>

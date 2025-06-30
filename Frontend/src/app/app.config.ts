@@ -6,7 +6,7 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideHttpClient } from '@angular/common/http';
 import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
 
-export const appConfig: ApplicationConfig = {
+export const appConfig: ApplicationConfig ={
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes), 

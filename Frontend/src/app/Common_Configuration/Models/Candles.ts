@@ -5,7 +5,7 @@ export class Candles{
     type!:String;
     group!: String;
     brand!:String;
-    price!: String;
+    price!: string;
     price_range!: string;
     color!: string;
     image!:string;

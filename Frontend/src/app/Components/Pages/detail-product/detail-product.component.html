@@ -1,32 +1,46 @@
 <div style="margin-left: 100px;margin-right: 100px;margin-top: 20px;">
         <!-- 2.1. Menu bar for filter product information-->
-        <div style="width: 780px;height: 550px; float: left;color: black;" >
+        <div style="width: 780px;margin-bottom: 20px; float: left;color: black;" >
             <div style="width: 375px ;float:left;">
-                <img id="Candle_Image" src="../img/Automation/Image/1.jpg" width="350" height="350">
+                <img #candleImg id="Candle_Image" [src]="image" width="350" height="350">
             </div>
-            <div style="margin-left: 385px;">
-                <h3 id="Candle_Name">3 Day WKND</h3>
-                <h6>Status: Available</h6><br>
-                <h3 id="Candle_Price">300.000 VND</h3><br>
-                <h6>Gift: Match box</h6>
+            <div style="margin-left: 385px;font-size:20px;">
+                <h3 #candleName id="Candle_Name" style="font-weight: bold;">{{ name }}</h3>
+                <h6 style="font-size:15px">Status: Available</h6><br>
+                <h3 #candlePrice id="Candle_Price" style="font-weight: bold;">{{ price }}</h3><br>
+                <h6 style="font-size:20px">Gift: Match box</h6><br>
+                <!-- <h3 id="Candle_Price_2">{{ price }}</h3><br> -->
                 <div>
                     <table>
                         <tr>
                             <td>1</td>
-                            <td><input id="Quatity_of_product" type="range" min="1" max="10" value="1"></td>
+                            <td>
+                                <input
+                                    id="Quatity_of_product"
+                                    type="range"
+                                    min="1"
+                                    max="10"
+                                    [(ngModel)]="quantity"
+                                    (input)="onQuantityChange($event)"
+                                >
+                            </td>
                             <td>10</td>
                         </tr>
                         <tr>
                             <td><p style="font-size:20px">Quatity : </p></td>
-                            <td><p id="Display_for_quatity_of_product" style="font-size:20px"></p></td>
+                            <td><p id="Display_for_quatity_of_product" style="font-size:20px">{{ quantity }}</p></td>
                         </tr>
                     </table>
-                </div>
+                </div><br>
                 <!-- Trigger/Open The Modal -->
                 <table>
                     <tr>
-                        <td><button style="height:50px ;width: 200px;border-radius:10px" id="myBtn">Buy Now</button></td>
-                        <td><button style="height:50px ;width: 200px;border-radius:10px" id="myBtnAddIntoBag">Add into Bag</button></td>
+                        <td>
+                            <button class="product-action-btn" id="myBtn">Buy Now</button>
+                        </td>
+                        <td>
+                            <button class="product-action-btn" id="myBtnAddIntoBag">Add into Bag</button>
+                        </td>
                     </tr>
                 </table>
                 
@@ -34,16 +48,16 @@
                     <a href="/Shopping_Bag_handling" id="ShoppingBagLink" style="text-decoration: none;visibility: hidden;"></a>
                     <p style="font-size: 20px">Added into bag</p>
                     <button style="width:100px; height:20px; border-radius:5px;" id="Check_shopping_bag">Check bag</button>
-                    <script>
+                    <!-- <script>
                         var Check_shopping_bag = document.getElementById("Check_shopping_bag");
 
                         Check_shopping_bag.onclick = function(){
                             document.getElementById("ShoppingBagLink").click();
                         } 
-                    </script>
+                    </script> -->
                 </div>
             </div>
-            <script>
+            <!-- <script>
                 var Current_Product;
                 var Current_Product_image;
                 Get_Candle_Information();
@@ -192,23 +206,36 @@
                 }
                 }
                 function Buy_Product(){};       // Additional action 
-            </script>
+            </script> -->
         </div>
         <!-- 2.2. Menu bar for showing product information-->
-        <div style="margin-left: 800px;height: 550px; color: black; background-color: red;">
-            <h3>Right side 1</h3>
-            <!-- <button type="button" onclick="loadDoc()">Try it</button> -->
-            <!-- <p id="demo"> hello</p> -->
-            <table style="border-spacing: 35px;">
-                <tr>
-                    <th>
-                        <a id="RouteIDA11" href="/candle_information" style="text-decoration: none; color: black;">
-                        <img id="DisplayImageA11" src="../img/Automation/Image/1.jpg" width="200" height="200">
-                        <p id="DisplayNameA11" style="font-size: 20px;">Candle 1 </p>
-                        <p id="DisplayPriceA11" style="font-size: 20px;">285.000 VND</p>
-                        </a>
-                    </th>
-                </tr>
-            </table>
+        <div style="margin-left: 800px; margin-bottom: 20px;color: black;">
+            <!-- <h3>Right side 1</h3> -->
+            <p>Dụng cụ chuyên dụng cho người chơi nến thơm để thưởng thức mùi hương nến thơm chuyên nghiệp bằng nhiệt của bóng đèn, có núm điều khiển cường độ ánh sáng.</p>
+            <br>
+            <p><b>THÔNG SỐ:</b></p>
+<ul style="margin-top: 0; margin-bottom: 12px;">
+  <li>Mã sản phẩm: DN01</li>
+  <li>Chiều cao: 300mm</li>
+  <li>Chiều rộng: 150mm</li>
+  <li>Cốc nến cao tối đa: 150mm</li>
+  <li>Màu sắc: Trắng, Đen, Vàng Đồng</li>
+  <li>Chất Liệu: Hợp kim nhôm phủ sơn tĩnh điện nano</li>
+  <li>Kèm bóng đèn</li>
+</ul>
+<br>
+<p><b>CÔNG DỤNG:</b></p>
+<ul style="margin-top: 0; margin-bottom: 12px;">
+  <li>Dùng để tỏa hương tốt hơn cho hũ nến thơm so với cách đốt thông thường</li>
+  <li>Có thể điều chỉnh mức độ ánh sáng đèn mạnh hay yếu để cho nến tỏa hương mạnh hay nhẹ</li>
+  <li>Là món đồ derco phòng rất đẹp</li>
+  <li>Có thể làm đèn ngủ</li>
+  <li>An toàn cho trẻ nhỏ và vật nuôi</li>
+</ul><br>
+<p><b>LƯU Ý:</b></p>
+<ul style="margin-top: 0; margin-bottom: 12px;">
+  <li>Không nên chạm vào bóng đèn đang thắp.</li>
+  <li>Tránh xa tầm tay trẻ em</li>
+</ul>
         </div>
 </div>

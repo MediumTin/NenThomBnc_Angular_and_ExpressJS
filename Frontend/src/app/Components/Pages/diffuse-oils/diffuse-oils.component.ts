@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, JsonPipe } from '@angular/common';
 import { IndentificationService } from '../../../Services/IdentificationService/indentification.service';
+import { FilteredProductService } from '../../../Services/FilteredService/filtered-product.service';
 
 @Component({
   selector: 'app-diffuse-oils',
@@ -21,7 +22,7 @@ export class DiffuseOilsComponent implements OnInit, AfterViewInit {
   @ViewChild('tableMenu', { static: false }) tableMenu!: ElementRef<HTMLTableElement>;
   // @ViewChild('pTag', { static: false }) pTag!: ElementRef<HTMLTableElement>;
 
-  constructor(private router:Router, private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService ) { 
+  constructor(private router:Router, private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService, private filteredProduct : FilteredProductService ) { 
     let candlesObervalbe: Observable<Candles[]>;
       console.log("User has identified yet");
       activatedRoute.params.subscribe((params) => {
@@ -118,6 +119,40 @@ export class DiffuseOilsComponent implements OnInit, AfterViewInit {
   }
   ngOnInit(): void {
     // Initialization logic here  
+    this.filteredProduct.filterChanged$.subscribe((filteredCandles) => {
+      if (filteredCandles) {
+        this.candles = filteredCandles;
+        console.log("Filtered candles in diffuse candles:", this.candles);
+      }
+            this.setCheckboxValue('candle', false);
+            this.setCheckboxValue('oil', false);
+            this.setCheckboxValue('accessory', false);
+            this.setCheckboxValue('gift', false);
+            this.setCheckboxValue('best_saler', false);
+            this.setCheckboxValue('discount', false);
+            this.setCheckboxValue('new_arrival', false);
+            this.setCheckboxValue('sweet_fruit', false);
+            this.setCheckboxValue('wood_men', false);
+            this.setCheckboxValue('fresh_relax', false);
+            this.setCheckboxValue('flower_herb', false);
+            this.setCheckboxValue('lumos', false);
+            this.setCheckboxValue('citta', false);
+            this.setCheckboxValue('no_brand', false);
+            this.setCheckboxValue('smaller_100KVND', false);
+            this.setCheckboxValue('100KVND_to_200KVND', false);
+            this.setCheckboxValue('200KVND_to_300KVND', false);
+            this.setCheckboxValue('300KVND_to_500KVND', false);
+            this.setCheckboxValue('larger_500KVND', false);
+            this.setCheckboxValue('black', false);
+            this.setCheckboxValue('white', false);
+            this.setCheckboxValue('red', false);
+            this.setCheckboxValue('pink', false);
+            this.setCheckboxValue('blue', false);
+            this.setCheckboxValue('green', false);
+            this.setCheckboxValue('yellow', false);
+            this.setCheckboxValue('orange', false);
+            this.setCheckboxValue('purple', false);
+    });
     
   }
   getCandleUrl(candle: any): string {

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, JsonPipe } from '@angular/common';
 import { IndentificationService } from '../../../Services/IdentificationService/indentification.service';
+import { FilteredProductService } from '../../../Services/FilteredService/filtered-product.service';
 
 @Component({
   selector: 'app-burn-candles',
@@ -21,7 +22,7 @@ export class BurnCandlesComponent implements OnInit, AfterViewInit {
   @ViewChild('tableMenu', { static: false }) tableMenu!: ElementRef<HTMLTableElement>;
   // @ViewChild('pTag', { static: false }) pTag!: ElementRef<HTMLTableElement>;
 
-  constructor(private router:Router, private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService ) { 
+  constructor(private filteredProduct : FilteredProductService, private router:Router, private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService ) { 
     let candlesObervalbe: Observable<Candles[]>;
       console.log("User has identified yet");
       activatedRoute.params.subscribe((params) => {
@@ -118,6 +119,13 @@ export class BurnCandlesComponent implements OnInit, AfterViewInit {
   }
   ngOnInit(): void {
     // Initialization logic here  
+    this.filteredProduct.filterChanged$.subscribe((filteredCandles) => {
+      if (filteredCandles) {
+        this.candles = filteredCandles;
+        console.log("Filtered candles in diffuse candles:", this.candles);
+      }
+      
+    });
     
   }
   getCandleUrl(candle: any): string {
