@@ -1,4 +1,4 @@
-  <!-- 2. Main body -->
+<!-- 2. Main body -->
     <div class="container d-lg-flex" id="Main_body" style="display:block;">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
@@ -12,10 +12,18 @@
                 <div id="my" class="carousel slide carousel-fade img-details" data-bs-ride="carousel"
                     data-bs-interval="2000">
                     <div class="carousel-indicators" id="Total_Button_of_image">
-                      <div *ngFor="let PersonalShoppingBag of PersonalShoppingBags">
-                          <button type="button" data-bs-target="#my" id="{{(PersonalShoppingBag.split(','))[0]}}"
-                          aria-current="true" ></button>
-                      </div>
+                        <div *ngFor="let PersonalShoppingBag of PersonalShoppingBags; let i = index">
+                          <button
+                            type="button"
+                            data-bs-target="#my"
+                            [id]="'Button_image_' + i"
+                            aria-current="true"
+                            [attr.aria-label]="'Slide ' + i"
+                            [classList]="isDivButtonActive[i]"
+                            (click)="ButtonImageHandling(i)"
+                            >
+                          </button>
+                        </div>
                         <!-- <button type="button" data-bs-target="#my" data-bs-slide-to="0" id="Button_image_1"
                             aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#my" data-bs-slide-to="1" id="Button_image_2" aria-label="Slide 2"></button>
@@ -24,22 +32,24 @@
                         <button type="button" data-bs-target="#my" data-bs-slide-to="4" id="Button_image_5" aria-label="Slide 5"></button>
                         <button type="button" data-bs-target="#my" data-bs-slide-to="5" id="Button_image_6" aria-label="Slide 6"></button>  -->
                     </div>
-                    <div class="carousel-inner" id="Total_image"  *ngFor="let PersonalShoppingBag of PersonalShoppingBags">
-                          <div id="image${{(PersonalShoppingBag.split(','))[0]}}">
-                            <img [src]="(PersonalShoppingBag.split(','))[3]" class="d-block w-100">
+                    <div class="carousel-inner" id="Total_image"  >
+                          <div class="carousel-item active" *ngFor="let PersonalShoppingBag of PersonalShoppingBags; let i = index" [id]="'image'+i">
+                            <img [src]="(PersonalShoppingBag.split(','))[3]" class="d-block w-100"
+                            [classList]="isDivImageActive[i]">
                           </div>
+
                     </div>
-                    <!-- <div class="carousel-item" id="image${{(PersonalShoppingBags[0].split(','))[0]}}">
-                    <img [src]="(PersonalShoppingBags[0].split(','))[3]" class="d-block w-100">
-                    </div> -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#my" data-bs-slide="prev" id="Previous_button">
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#my" data-bs-slide="prev" id="Previous_button"
+                        (click)="PreviousButtonHandling()">
                         <div class="icon">
                             <span class="fas fa-arrow-left"></span>
                         </div>
                         <span class="visually-hidden">Previous</span>
                     </button>
 
-                    <button class="carousel-control-next" type="button" data-bs-target="#my" data-bs-slide="next" id="Next_button">
+                    <button class="carousel-control-next" type="button" data-bs-target="#my" data-bs-slide="next" id="Next_button"
+                        (click)="NextButtonHandling()">
                         <div class="icon">
                             <span class="fas fa-arrow-right"></span>
                         </div>
@@ -55,10 +65,20 @@
                     <div class="my_scroll_div">
                    
                         <div id="ShoppinigDiv">
-                          <div class="product-card" *ngFor="let PersonalShoppingBag of PersonalShoppingBags">
-                            <table style="background-color:grey; border-radius: 3px;" id="TableItem${i}">
+                          <div class="product-card" *ngFor="let PersonalShoppingBag of PersonalShoppingBags; let i = index">
+                            <table style="background-color:grey; border-radius: 3px;" 
+                                [id]="'TableItem'+i"
+                                (click)="TabelCheckHandling(i)"
+                                [ngStyle]="{'background-color': isButtonBackgroundChecked[i] === true ? 'green' : 'grey', 'border-radius': '3px'}"
+                                >
                                 <tr>
-                                    <td rowspan="2" style="width: 30px;text-align: center;"><input type="checkbox" id="{{(PersonalShoppingBag.split(','))[0]}}" value="Bike"></td>
+                                    <td rowspan="2" style="width: 30px;text-align: center;">
+                                        <input 
+                                            type="checkbox" 
+                                            [id]="'ShoppingBagList_' + i" 
+                                            value="Bike"
+                                            (checked)="isProductChecked(i)">
+                                    </td>
                                     <td style="width: 400px;font-size:15px;text-align: left;">{{(PersonalShoppingBag.split(","))[0]}}</td>
                                     <td style="font-size:15px;text-align: left;">Price:${{(PersonalShoppingBag.split(","))[2]}}VND</td>
                                 </tr>
@@ -683,6 +703,5 @@
             
         
     </script> -->
-    
 
-    
+

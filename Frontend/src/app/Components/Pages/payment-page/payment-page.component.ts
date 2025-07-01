@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { IndentificationService } from '../../../Services/IdentificationService/indentification.service';
@@ -11,9 +11,14 @@ import { PaymentService } from '../../../Services/payment/payment.service';
   templateUrl: './payment-page.component.html',
   styleUrl: './payment-page.component.css'
 })
-export class PaymentPageComponent implements OnInit {
+export class PaymentPageComponent implements OnInit, AfterViewInit {
+
+  Current_Counter : number = 0;
   PersonalShoppingBags : string = "";
   account: string = "";
+  isDivButtonActive: string[] = [];
+  isDivImageActive: string[] = [];
+  isButtonBackgroundChecked: boolean[] = []; // To handle the background color of the button
   constructor(private router:Router, private identification: IndentificationService, private paymentService: PaymentService) {
     const sessionInfo = this.identification.GetSessionID();
     if (sessionInfo.Username != "") {
@@ -56,8 +61,67 @@ export class PaymentPageComponent implements OnInit {
       
     }
    }
+  ngAfterViewInit(): void {
+    this.Current_Counter = 0;
+    this.isDivButtonActive[0] = "active";
+    this.isDivImageActive[0] = "carousel-item active";
+    this.isButtonBackgroundChecked[0] = true;
+  }
 
   ngOnInit(): void {
+  }
+
+  // Function to handle payment
+  NextButtonHandling() {
+      this.isButtonBackgroundChecked = new Array(this.PersonalShoppingBags.length).fill(false);
+      this.isDivButtonActive = new Array(this.PersonalShoppingBags.length).fill("");
+      this.isDivImageActive = new Array(this.PersonalShoppingBags.length).fill("carousel-item");
+      if(this.Current_Counter>=this.PersonalShoppingBags.length-1){
+          this.Current_Counter = 0; // Return first position after reach maximum value
+      } else {
+          this.Current_Counter += 1;
+      }
+      this.isDivButtonActive[this.Current_Counter] = "active";
+      this.isDivImageActive[this.Current_Counter] = "carousel-item active";
+      this.isButtonBackgroundChecked[this.Current_Counter] = true;
+
+  }
+
+  PreviousButtonHandling() {
+      this.isButtonBackgroundChecked = new Array(this.PersonalShoppingBags.length).fill(false);
+      this.isDivButtonActive = new Array(this.PersonalShoppingBags.length).fill("");
+      this.isDivImageActive = new Array(this.PersonalShoppingBags.length).fill("carousel-item");
+      if(this.Current_Counter<=0){
+          this.Current_Counter = this.PersonalShoppingBags.length - 1; // Return first position after reach maximum value
+      } else {
+          this.Current_Counter -= 1;
+      }
+      this.isDivButtonActive[this.Current_Counter] = "active";
+      this.isDivImageActive[this.Current_Counter] = "carousel-item active";
+      this.isButtonBackgroundChecked[this.Current_Counter] = true;
+  }
+
+  ButtonImageHandling(i : number){
+      this.isButtonBackgroundChecked = new Array(this.PersonalShoppingBags.length).fill(false);
+      this.isDivButtonActive = new Array(this.PersonalShoppingBags.length).fill("");
+      this.isDivImageActive = new Array(this.PersonalShoppingBags.length).fill("carousel-item");
+      this.Current_Counter = i;
+      this.isDivButtonActive[i] = "active";
+      this.isDivImageActive[i] = "carousel-item active";
+      this.isButtonBackgroundChecked[i] = true;
+      console.log("Button clicked with index:", i);
+  }
+  TabelCheckHandling(i: number) {
+      this.isButtonBackgroundChecked = new Array(this.PersonalShoppingBags.length).fill(false);
+      this.isDivButtonActive = new Array(this.PersonalShoppingBags.length).fill("");
+      this.isDivImageActive = new Array(this.PersonalShoppingBags.length).fill("carousel-item");
+      this.Current_Counter = i;
+      this.isDivButtonActive[i] = "active";
+      this.isDivImageActive[i] = "carousel-item active";
+      this.isButtonBackgroundChecked[i] = true;
+}
+  isProductChecked(i: number) {
+
   }
 
 }
