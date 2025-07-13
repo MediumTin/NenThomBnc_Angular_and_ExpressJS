@@ -5,14 +5,18 @@ import { IndentificationService } from '../../../Services/IdentificationService/
 import { Candles } from '../../../Common_Configuration/Models/Candles';
 import { Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Selected_Candle } from '../../../Common_Configuration/Models/Selected_candles';
 
 @Component({
   selector: 'app-detail-product',
-  imports: [FormsModule ],
+  imports: [FormsModule, CommonModule],
   templateUrl: './detail-product.component.html',
   styleUrl: './detail-product.component.css'
 })
 export class DetailProductComponent implements OnInit, AfterViewInit{
+
+
   // @ViewChild('candleImg') candleImg!: ElementRef<HTMLImageElement>;
   // @ViewChild('candleName') candleName!: ElementRef<HTMLElement>;
   // @ViewChild('candlePrice') candlePrice!: ElementRef<HTMLElement>;
@@ -21,6 +25,10 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
   name : string = "";
   image : string = "";
   candles: Candles[] = [];
+  AllowedFadeOut: boolean = true; 
+  ReturnValueAfterPostMethod: Selected_Candle = new Selected_Candle; // This is the return value after post method
+  isCheckShoppingBagVisible : boolean = false; // Default visibility of the shopping bag check
+// isCheckShoppingBagVisible: any;
   constructor(
     private router:Router, 
     private candlesService : CandlesServiceService,
@@ -107,4 +115,62 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
     this.quantity = Number(value);
     // Nếu muốn xử lý thêm logic khi số lượng thay đổi, viết ở đây
   }
+  addToBag() {
+    this.isCheckShoppingBagVisible = true; // Show the shopping bag check
+    this.AddedBoxFadeOut(this.AllowedFadeOut);
+    this.candlesService.setCandleInformationToSession({
+      quatity: this.quantity,
+      candle_name: this.name,
+      image: this.image,
+      price: this.price
+    }).subscribe({
+      next: (response) => {
+        console.log("Response from server when add to bag", response);
+        // Navigate to the bag page or show a success message
+        // this.router.navigate(['/bag']);
+      }
+      , error: (error) => {
+        console.error("Error when adding to bag", error);
+        // Handle the error, e.g., show an error message
+      }
+    });
+    // setCandleInformationToSession
+  }
+  BuyNowandMoveToShoppingBag() {
+    // this.router.navigate(['/payment_handling']);
+    this.candlesService.setCandleInformationToSession({
+      quatity: this.quantity,
+      candle_name: this.name,
+      image: this.image,
+      price: this.price
+    }).subscribe((response_From_Serve) => {
+        this.ReturnValueAfterPostMethod = Array.isArray(response_From_Serve) ? response_From_Serve[0] : response_From_Serve;
+        console.log("Response from serve", this.ReturnValueAfterPostMethod);
+        console.log("Candle name:", this.ReturnValueAfterPostMethod.status);
+        if (this.ReturnValueAfterPostMethod.status === "Write session data into Redis sucessfully") {
+          this.router.navigate(['/payment_handling']);
+        }
+
+      });
+    // setCandleInformationToSession
+    // this.router.navigate(['/payment_handling']);
+  }
+
+    checkShoppingBag() {
+      this.router.navigate(['/Shopping_Bag_handling']);
+    }
+    AddedBoxFadeOut = (AllowedFadeOut: boolean)=> {
+      if(AllowedFadeOut){
+          setTimeout(
+              () =>{
+                  this.isCheckShoppingBagVisible = false;
+              }
+              ,
+              3000
+          );
+          
+      } else {
+          this.isCheckShoppingBagVisible = true;
+      }
+      }
 }

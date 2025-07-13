@@ -75,7 +75,7 @@ Router.post('/',async (req,res)=>{
    }
    else {
       console.log("Invalid request from client");
-   }
+   }  
 })
 
 Router.post('/specific_handling',async (req,res)=>{
@@ -91,30 +91,52 @@ Router.post('/specific_handling',async (req,res)=>{
    // await Redis_API.Disconnect_To_Redis(client);
    
    var selectedList = (req.body.Selected_List);
-   selectedList = selectedList.split(",")
-   var length_of_selectedList = (selectedList.length)/4;
+   console.log(`Name of first item is ${selectedList[0]}`);
+   console.log(`Type first item is ${typeof(selectedList[0])}`);
+   // selectedList = selectedList.split(",")
+   //selectedList = selectedList[0].split(",")
+   var Afterchange = selectedList[0].split(",")
+   var selectedList_filtered2 = [];
+   console.log(`Type first item after split is ${typeof(Afterchange)}`);
+   console.log(`Name of first item after split is ${Afterchange[0]}`);
+   
+   for(let i = 0;i<selectedList.length;i++){
+      selectedList_filtered2[i] = selectedList[i].split(","); // Split each item in selectedList by comma
+   }
+   console.log(`Type first item after split selectedList_filtered2 is ${typeof(selectedList_filtered2[0])}`);
+   console.log(`Name of first item after split selectedList_filtered2 is ${selectedList_filtered2[0][0]}`);
+
+   var length_of_selectedList = (selectedList.length);
    var selectedList_filtered = Array(length_of_selectedList).fill(null).map(() => Array(4)); // Declare empty 2 direction array (2 row, each row 4 elements)
    var Generated_HTML_SelectedProduct ="";
    var Generated_Attached_Image = [];
+   ///////////////////////////////////////////////////////////////
    for(let i = 0;i<length_of_selectedList;i++){
-      for(let j=0;j<4;j++){
-         selectedList_filtered[i][j] = selectedList[i*4 + j]; 
-      }
+      // for(let j=0;j<4;j++){
+      //    selectedList_filtered[i][j] = selectedList_filtered2[i*4 + j]; 
+      // }
       Generated_HTML_SelectedProduct += `
          <tr>
-            <td>${selectedList_filtered[i][0]}</td>
-            <td><img src="cid:${selectedList_filtered[i][3]}" style="width:100px;height:100px;"></td>
-            <td>${selectedList_filtered[i][1]}</td>
-            <td>${selectedList_filtered[i][2]}</td>
-            <td>${Number(selectedList_filtered[i][2])*1000*Number(selectedList_filtered[i][1])}</td>
+            <td>${selectedList_filtered2[i][0]}</td>
+            <td><img src="cid:${selectedList_filtered2[i][3]}" style="width:100px;height:100px;"></td>
+            <td>${selectedList_filtered2[i][1]}</td>
+            <td>${selectedList_filtered2[i][2]}</td>
+            <td>${Number(selectedList_filtered2[i][2])*1000*Number(selectedList_filtered2[i][1])}</td>
          </tr>
       `
+      // selectedList_filtered[i][0] is product name
+      // selectedList_filtered[i][1] is quantity
+      // selectedList_filtered[i][2] is price unit   
+      // selectedList_filtered[i][3] is image path
+      // Number(selectedList_filtered[i][2])*1000*Number(selectedList_filtered[i][1]) is total price
+
       Generated_Attached_Image[i] = {
-         filename: `${selectedList_filtered[i][3]}`,
-         path: `./public/${selectedList_filtered[i][3].slice(3)}`,
-         cid: `${selectedList_filtered[i][3]}` //same cid value as in the html img src
+         filename: path.basename(selectedList_filtered2[i][3]),
+         path: path.join(__dirname, '../../public/img/Automation/Image', path.basename(selectedList_filtered2[i][3])), 
+         cid: `${selectedList_filtered2[i][3]}` //same cid value as in the html img src
       }
    }
+   ////////////////////////////////
    // console.log('Generated HTML is' ,Generated_Attached_Image);
    const htmlEmail2 = `<!DOCTYPE html>
       <html lang="en">
@@ -179,7 +201,13 @@ Router.post('/specific_handling',async (req,res)=>{
       </body>
 
       </html>`;
-
+   console.log(`HTML email is ${htmlEmail2}`);
+   console.log(`Email is ${req.body.Email}`);
+   console.log(`Image is ${Generated_Attached_Image[0].filename}`);
+   console.log(`Image is ${Generated_Attached_Image[0].path}`);
+   console.log(`Image is ${Generated_Attached_Image[0].cid}`);
+   console.log(`Slice 12 is ${selectedList_filtered2[0][3].slice(12)}`); // path.basename(selectedList_filtered2[i][3])
+      console.log(`File name is ${path.basename(selectedList_filtered2[0][3])}`);
    mailTransport.sendMail({
       from: '"NenThomBnC" <nenthombnc@gmail.com>',
       to: `${req.body.Email}`,
@@ -208,9 +236,14 @@ Router.post('/specific_handling',async (req,res)=>{
          req.body.Selected_List,
       );
       // response to client that payment is successful
+      // res.status(200).send(
+      //    [{
+      //       "status_of_confirmed_order" : "Successful",
+      //    }]
+      // )
       res.status(200).send(
          [{
-            "status_of_confirmed_order" : "Successful",
+            "status" : "status_of_confirmed_order",
          }]
       )
 })

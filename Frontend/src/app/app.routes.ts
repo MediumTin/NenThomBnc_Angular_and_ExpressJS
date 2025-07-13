@@ -12,6 +12,7 @@ import { BurnCandlesComponent } from './Components/Pages/burn-candles/burn-candl
 import { CareCandlesComponent } from './Components/Pages/care-candles/care-candles.component';
 import { DetailProductComponent } from './Components/Pages/detail-product/detail-product.component';
 import { PaymentPageComponent } from './Components/Pages/payment-page/payment-page.component';
+import { ShoppingBagComponent } from './Components/Pages/shopping-bag/shopping-bag.component';
 
 export const routes: Routes = [
     {path: '', component: HomePageComponent }, // get to Home Page 
@@ -38,6 +39,7 @@ export const routes: Routes = [
     {path: 'destroy-sid', component: SessionPageComponent }, // get session information
     {path: 'destroy-session', component: SessionPageComponent }, // get session information
     {path: 'payment_handling', component: PaymentPageComponent }, // get session information
+    {path: 'Shopping_Bag_handling', component: ShoppingBagComponent }, // get session information
     // {path:'food/:id', component:FoodPageComponent}, // same as detailed component
     // {path:'cart-page', component: CartPageComponent},
     // {path:'login', component: LoginPageComponent},
@@ -46,3 +48,4 @@ export const routes: Routes = [
     // {path:'payment', component: PaymentPageComponent, canActivate:[AuthGuard]},
     // {path:'track/:orderId', component: OrderTrackPageComponent, canActivate:[AuthGuard]},
   ];
+// SHOPPING_BAG_HANDLING_URL

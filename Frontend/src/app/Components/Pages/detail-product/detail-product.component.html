@@ -36,18 +36,34 @@
                 <table>
                     <tr>
                         <td>
-                            <button class="product-action-btn" id="myBtn">Buy Now</button>
+                            <button 
+                                class="product-action-btn" 
+                                id="myBtn"
+                                (click)="BuyNowandMoveToShoppingBag()"
+                            >Buy Now</button>
                         </td>
                         <td>
-                            <button class="product-action-btn" id="myBtnAddIntoBag">Add into Bag</button>
+                            <button 
+                                class="product-action-btn" 
+                                id="myBtnAddIntoBag"
+                                (click)="addToBag()"
+                            >Add into Bag</button>
                         </td>
                     </tr>
                 </table>
                 
-                <div id="AddedIntoBag_showing" class="modal_for_addedIntoBag">
+                <div 
+                    id="AddedIntoBag_showing" 
+                    class="modal_for_addedIntoBag"
+                    [ngStyle]="{'display': isCheckShoppingBagVisible === true ? 'block' : 'none'}"
+                >
                     <a href="/Shopping_Bag_handling" id="ShoppingBagLink" style="text-decoration: none;visibility: hidden;"></a>
                     <p style="font-size: 20px">Added into bag</p>
-                    <button style="width:100px; height:20px; border-radius:5px;" id="Check_shopping_bag">Check bag</button>
+                    <button 
+                        style="width:100px; height:20px; border-radius:5px;" 
+                        id="Check_shopping_bag"
+                        (click) ="checkShoppingBag()"
+                    >Check bag</button>
                     <!-- <script>
                         var Check_shopping_bag = document.getElementById("Check_shopping_bag");
 

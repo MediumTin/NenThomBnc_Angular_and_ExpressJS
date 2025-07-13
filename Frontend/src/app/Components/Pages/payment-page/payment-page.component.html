@@ -1,13 +1,19 @@
 <!-- 2. Main body -->
-    <div class="container d-lg-flex" id="Main_body" style="display:block;">
+    <div class="container d-lg-flex" id="Main_body" 
+        [ngStyle]="{'display': isMain_body_Visible ? 'block' : 'none'}" 
+    >
+    <!-- <div class="container d-lg-flex" id="Main_body" style="display: block;"> -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-        <div class="box-1 bg-light user" id="Main_body_1" style="display:block;">
+        <div class="box-1 bg-light user" id="Main_body_1"
+            [ngStyle]="{'display': isMain_body_1_Visible ? 'block' : 'none'}"
+        >
+        <!-- <div class="box-1 bg-light user" id="Main_body_1" style="display: block;"> -->
             <div class="box-inner-1 pb-3 mb-3 ">
                 <div class="d-flex justify-content-between mb-3 userdetails">
-                    <p class="fw-bold">Lightroom Presets</p>
+                    <p class="fw-bold" style="font-size: 20px;">Lightroom Presets</p>
                 </div>
                 <div id="my" class="carousel slide carousel-fade img-details" data-bs-ride="carousel"
                     data-bs-interval="2000">
@@ -92,93 +98,112 @@
                
                     </div>
                 </div>
+                
             </div>
         </div>
-        <div class="box-2" id="Main_body_2" style="display:block;">
+        <div class="box-2" id="Main_body_2" 
+            [ngStyle]="{'display': isMain_body_2_Visible ? 'block' : 'none'}"
+        >
+        <!-- <div class="box-2" id="Main_body_2" style="display: block;"> -->
             <div class="box-inner-2" >
                 <div>
-                    <p class="fw-bold">Payment Details</p>
+                    <p class="fw-bold" style="font-size: 20px;">Payment Details</p>
                     <p class="dis mb-3">Complete your purchase by providing your payment details</p>
                 </div>
-                <form>
+                <form [formGroup]="paymentForm" (ngSubmit)="PaymentButtonTrigger(paymentForm.value)">
+                    <!-- <input formControlName="Email" type="email" class="form-control" placeholder="Email address"><br>
+                    <input formControlName="Visa_number" type="text" class="form-control" placeholder="Card Details"><br>
+                    <input formControlName="Visa_valid_date" type="text" class="form-control" placeholder="MM/YY"><br>
+                    <input formControlName="Visa_cvv" type="text" maxlength="3" class="form-control" placeholder="CVV"><br>
+                    <input formControlName="Username" type="text" class="form-control" placeholder="Cardholder name"><br>
+                    <input formControlName="Nation_buyer" type="text" class="form-control" placeholder="Nation"><br>
+                    <input formControlName="Nation_zip_buyer" type="text" class="form-control" placeholder="ZIP"><br>
+                    <input formControlName="Nation_state_buyer" type="text" class="form-control" placeholder="State"><br>
+                    <input formControlName="VAT_number_buyer" type="text" class="form-control" placeholder="VAT Number"><br> -->
                     <div class="mb-3">
                         <p class="dis fw-bold mb-2">Email address</p>
-                        <input id="email_of_buyer" class="form-control" type="email" value="luke@skywalker.com">
+                        <input formControlName="Email" id="email_of_buyer" class="form-control" type="email" value="luke@skywalker.com">
                     </div>
-                    <div>
-                        <p class="dis fw-bold mb-2">Card details</p>
-                        <div class="d-flex align-items-center justify-content-between card-atm border rounded">
-                            <div class="fab fa-cc-visa ps-3"></div>
-                            <input id="visa_number" type="text" class="form-control" placeholder="Card Details">
-                            <div class="d-flex w-50">
-                                <input id="visa_valid_date" type="text" class="form-control px-0" placeholder="MM/YY">
-                                <input id="visa_cvv" type="text" maxlength=3 class="form-control px-0" placeholder="CVV">
-                            </div>
+                    <p class="dis fw-bold mb-2">Card details</p>
+                    <div class="d-flex align-items-center justify-content-between card-atm border rounded">
+                        <div class="fab fa-cc-visa ps-3"></div>
+                        <input formControlName="Visa_number" id="visa_number" type="text" class="form-control" placeholder="Card Details">
+                        <div class="d-flex w-50">
+                            <input formControlName="Visa_valid_date" id="visa_valid_date" type="text" class="form-control px-0" placeholder="MM/YY">
+                            <input formControlName="Visa_cvv" id="visa_cvv" type="text" maxlength=3 class="form-control px-0" placeholder="CVV">
                         </div>
-                        <div class="my-3 cardname">
-                            <p class="dis fw-bold mb-2">Cardholder name</p>
-                            <input class="form-control" id="cardholder_buyer" type="text">
+                    </div>
+                    <div class="my-3 cardname">
+                        <p class="dis fw-bold mb-2">Cardholder name</p>
+                        <input formControlName="Nation_buyer" class="form-control" id="cardholder_buyer" type="text">
+                    </div>
+                    <div class="address">
+                        <p class="dis fw-bold mb-3">Billing address</p>
+                        <select formControlName="Nation_buyer" class="form-select form-control" aria-label="Default select example" id="nation_buyer">
+                            <option selected hidden>United States</option>
+                            <option value="1">Viet Nam</option>
+                            <option value="2">Australia</option>
+                            <option value="3">Canada</option>
+                        </select>
+                        <div class="d-flex">
+                            <input formControlName="Nation_zip_buyer" class="form-control zip" type="text" placeholder="ZIP" id="nation_zip_buyer">
+                            <input formControlName="Nation_state_buyer" class="form-control state" type="text" placeholder="State" id="nation_state_buyer">
                         </div>
-                        <div class="address">
-                            <p class="dis fw-bold mb-3">Billing address</p>
-                            <select class="form-select" aria-label="Default select example" id="nation_buyer">
-                                <option selected hidden>United States</option>
-                                <option value="1">India</option>
-                                <option value="2">Australia</option>
-                                <option value="3">Canada</option>
-                            </select>
-                            <div class="d-flex">
-                                <input class="form-control zip" type="text" placeholder="ZIP" id="nation_zip_buyer">
-                                <input class="form-control state" type="text" placeholder="State" id="nation_state_buyer">
-                            </div>
-                            <div class=" my-3">
-                                <p class="dis fw-bold mb-2">VAT Number</p>
-                                <div class="inputWithcheck">
-                                    <input class="form-control" type="text" value="GB012345B9" id="VAT_number_buyer">
-                                    <span class="fas fa-check"></span>
+                        <div class=" my-3">
+                            <p class="dis fw-bold mb-2">VAT Number</p>
+                            <div class="inputWithcheck">
+                                <input formControlName="VAT_number_buyer" class="form-control" type="text" value="GB012345B9" id="VAT_number_buyer">
+                                <span class="fas fa-check"></span>
 
-                                </div>
                             </div>
-                            <div class="d-flex flex-column dis">
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p>Subtotal</p>
-                                    <p id="label_for_total_price"></p>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p>VAT<span>(20%)</span></p>
-                                    <p id="label_for_total_VAT_price" ></p>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p class="fw-bold">Total</p>
-                                    <p class="fw-bold" id="label_for_total_payment_2"></p>
-                                </div>
-                                <div class="btn btn-primary mt-2" id="label_for_total_payment">
-                                    <input type="submit" value="Submit">
-                                </div>
-                            </div>
-                            
                         </div>
                     </div>
+                    <div class="d-flex flex-column dis">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <p>Subtotal</p>
+                            <p id="label_for_total_price"></p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <p>VAT<span>(20%)</span></p>
+                            <p id="label_for_total_VAT_price" ></p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <p class="fw-bold">Total</p>
+                            <p class="fw-bold" id="label_for_total_payment_2"></p>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2" id="label_for_total_payment">Pay</button>
+                    </div>
+                    
                 </form>
             </div>
         </div>
     </div>
 
-    <div class="container_child d-lg-flex" id="Confirmation_Box" style="display:none;align-item:center;">
+    <div class="container_child d-lg-flex" id="Confirmation_Box" style="align-item:center;"
+        [ngStyle]="{'display': isConfirmation_Box_Visible ? 'block' : 'none'}"
+    >
+    
+    <!-- <div class="container_child d-lg-flex" id="Confirmation_Box" style="align-item:center;display: none;"
+    > -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-        <div class="box-2" id="Confirmation_Box_child" style="display:none;align-item:center;">
+        <div class="box-2" id="Confirmation_Box_child" style="align-item:center;"
+            [ngStyle]="{'display': isConfirmation_Box_child_Visible ? 'block' : 'none'}"
+        >
+        <!-- <button (click)="Passed_Confirmation()">tempt he2</button> -->
+        <!-- <div class="box-2" id="Confirmation_Box_child" style="align-item:center;display: none;"
+        > -->
             <div >
                 <div>
-                    <p class="fw-bold">Payment Confirmation</p>
+                    <p class="fw-bold mb-2" style="font-size: 20px;text-align: center;">Payment Confirmation</p>
                 </div>
-                <form action="">
+                <div>
                     <div class="mb-3">
-                        <p class="dis fw-bold mb-2">Username</p>
-                        <p style="display:none" id="username_of_buyer_confirmed_tempt">{{account}}</p>
-                        <!-- <input id="username_of_buyer_confirmed" class="form-control"> -->
+                        <p class="dis fw-bold mb-2">Username : {{Current_Username}}</p>
+                        <!-- <p style="display:block" id="username_of_buyer_confirmed_tempt" >{{Current_Username}}</p> -->
+   
                         <p id="username_of_buyer_confirmed"></p>
                     </div>
                     <div class="mb-3">
@@ -186,77 +211,68 @@
                         <!-- <input id="email_of_buyer_confirmed" class="form-control" type="email" value="nguyentrungtin1002@gmail.com"> -->
                         <p id="email_of_buyer_confirmed"></p>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <p class="dis fw-bold mb-2">Card details</p>
-                        <div class="d-flex align-items-center justify-content-between card-atm border rounded">
-                            <div class="fab fa-cc-visa ps-3"></div>
-                            <!-- <input id="visa_number_confirmed" type="text" class="form-control" placeholder="Card Details"> -->
-                            <p id="visa_number_confirmed"></p>
-                            <div class="d-flex w-50">
-                                <!-- <input id="visa_valid_date_confirmed" type="text" class="form-control px-0" placeholder="MM/YY"> -->
-                                <!-- <input id="visa_cvv_confirmed" type="text" maxlength=3 class="form-control px-0" placeholder="CVV"> -->
-                                <p id="visa_valid_date_confirmed"></p>
-                                <p id="visa_cvv_confirmed"></p>
-                            </div>
-                        </div>
-                        <div class="address">
-                            <p class="dis fw-bold mb-3">Billing address</p>
-                            <select class="form-select" aria-label="Default select example" id="nation_buyer_confirmed">
-                                <option selected hidden>United States</option>
-                                <option value="1">India</option>
-                                <option value="2">Australia</option>
-                                <option value="3">Canada</option>
-                            </select>
-                            <div class="d-flex">
-                                <!-- <input class="form-control zip" type="text" placeholder="ZIP" id="nation_zip_buyer_confirmed"> -->
-                                <!-- <input class="form-control state" type="text" placeholder="State" id="nation_state_buyer_confirmed"> -->
-                                <p id="nation_zip_buyer_confirmed"></p>
-                                <p id="nation_state_buyer_confirmed"></p>
-                            </div>
-                             <div class=" my-3">
-                                <p class="dis fw-bold mb-2">VAT Number</p>
-                                <div class="inputWithcheck">
-                                    <input class="form-control" type="text" value="GB012345B9" id="VAT_number_buyer_confirmed">
-                                    <p id="VAT_number_buyer_confirmed"></p>
-                                    <span class="fas fa-check"></span>
-
-                                </div>
-                            </div>
-                            <div class="radiobtn">
-                                <p><b>Shopping Bag Confirmation</b></p>
-                                <div class="my_scroll_div">
-                               
-                                    <div id="ShoppinigDiv_Confirmation">
-                                
-                                    </div>
-                      
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column dis">
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p><b>Subtotal</b></p>
-                                    <p id="label_for_total_price_confirmed"></p>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p><b>VAT<span>(20%)</span></b></p>
-                                    <p id="label_for_total_VAT_price_confirmed" ></p>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p class="fw-bold"><b>Total</b></p>
-                                    <p class="fw-bold" id="label_for_total_payment_2_confirmed"></p>
-                                </div>
-                                <table>
-                                    <tr>
-                                        <a href="/" id="Return_Home_Page" style="text-decoration: none;visibility: hidden;"></a>
-                                        <td><button class="btn btn-primary mt-2" id="Confirmation_failed">Need to recheck</button></td>
-                                        <td><button class="btn btn-primary mt-2" id="Confirmation_passed">Confirmed</button></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            
-                        </div>
+                        <!-- <input id="email_of_buyer_confirmed" class="form-control" type="email" value="nguyentrungtin1002@gmail.com"> -->
+                        <p id="visa_number_confirmed"></p>
                     </div>
-                </form>  
+                    <div class="mb-3">
+                        <p class="dis fw-bold mb-2">Billing address</p>
+                        <!-- <input id="email_of_buyer_confirmed" class="form-control" type="email" value="nguyentrungtin1002@gmail.com"> -->
+                        <p id="nation_buyer_confirmed"></p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="dis fw-bold mb-2">Nation ZIP</p>
+                        <!-- <input id="email_of_buyer_confirmed" class="form-control" type="email" value="nguyentrungtin1002@gmail.com"> -->
+                        <p id="nation_zip_buyer_confirmed"></p>
+                        <p id="nation_state_buyer_confirmed"></p>
+                    </div>
+                    <div class="mb-3">
+                        <p class="dis fw-bold mb-2">VAT Number</p>
+                        <!-- <input id="email_of_buyer_confirmed" class="form-control" type="email" value="nguyentrungtin1002@gmail.com"> -->
+                        <p id="VAT_number_buyer_confirmed"></p>
+                    </div>
+                    <div>
+                        <p><b style="font-size: 13px;">Shopping Bag Confirmation</b></p>
+                        <div class="my_scroll_div">
+                            <div id="ShoppinigDiv_Confirmation">
+                                <div class="product-card" *ngFor="let SelectedFromPersonalShoppingBag of SelectedFromPersonalShoppingBags; let i = index">
+                                    <table style="background-color:grey; border-radius: 3px;" >
+                                        <tr>
+                                            <td style="width: 300px;font-size:15px;text-align: left;">{{(SelectedFromPersonalShoppingBag.split(","))[0]}}</td>
+                                            <td style="font-size:15px;text-align: left;">Quatity :{{(SelectedFromPersonalShoppingBag.split(","))[1]}}</td>
+                                        </tr>
+                                    </table><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                 
+                            
+                    <div class="d-flex flex-column dis">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <p><b>Subtotal</b></p>
+                            <p id="label_for_total_price_confirmed"></p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <p><b>VAT<span>(20%)</span></b></p>
+                            <p id="label_for_total_VAT_price_confirmed" ></p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <p class="fw-bold"><b>Total</b></p>
+                            <p class="fw-bold" id="label_for_total_payment_2_confirmed"></p>
+                        </div>
+                        <table>
+                            <tr>
+                                <!-- <a href="/" id="Return_Home_Page" style="text-decoration: none;visibility: hidden;"></a> -->
+                                <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
+                                <td style="text-align: right;"><button class="btn btn-primary mt-2" id="Confirmation_passed" (click)="Passed_Confirmation()" >Confirmed</button></td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                    
+                </div>  
             </div>
         </div>
         

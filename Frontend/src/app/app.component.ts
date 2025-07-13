@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     if (sessionInfo.Username != "") {
       // this.isUserIdentifiedMain = true;
       this.identification.SetisUserIdentifiedMain(true);
-      console.log("User has identified yet in app component");
+        console.log("User has identified yet in app component");
     } else {
       // User is not identified, handle accordingly - request login
       // this.isUserIdentifiedMain = false;

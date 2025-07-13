@@ -1,3 +1,5 @@
+
+
 .dropdown2 {
     float: left;
     overflow: hidden;
@@ -230,7 +232,7 @@ input[type="radio"] {
     align-items: center;
     border: none;
     border-radius: 0;
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     color: black;
     font-weight: 600;
 }
@@ -329,6 +331,16 @@ input[type="radio"] {
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 8px;  /* Optional: space for scrollbar */
+}
+
+#label_for_total_payment input[type="submit"] {
+  background: none !important;
+  border: none !important;
+  color: inherit;
+  box-shadow: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 @media (max-width:768px) {

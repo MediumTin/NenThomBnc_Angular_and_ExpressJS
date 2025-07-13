@@ -139,6 +139,15 @@ Router.post('/requestwriteintosession',(req,res)=>{
                } else {
                   // Work with the session
                   console.log("Write session data into Redis sucessfully");
+                  res.status(200).send(
+                     [{
+                        "status" : "Write session data into Redis sucessfully",
+                        "quatity" : `${local_request_quatity}`,
+                        "candle_name" : `${local_request_to_write}`,
+                        "image" : `${local_request_image}`,
+                        "price" : `${local_request_price}`
+                     }]
+                  )
                }
          });
          }
