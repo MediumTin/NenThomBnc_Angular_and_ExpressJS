@@ -83,7 +83,7 @@
                                             type="checkbox" 
                                             [id]="'ShoppingBagList_' + i" 
                                             value="Bike"
-                                            (checked)="isProductChecked(i)">
+                                            (change)="isProductChecked(i, $event)">
                                     </td>
                                     <td style="width: 400px;font-size:15px;text-align: left;">{{(PersonalShoppingBag.split(","))[0]}}</td>
                                     <td style="font-size:15px;text-align: left;">Price:${{(PersonalShoppingBag.split(","))[2]}}VND</td>
@@ -161,17 +161,32 @@
                     <div class="d-flex flex-column dis">
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <p>Subtotal</p>
-                            <p id="label_for_total_price"></p>
+                            <p 
+                                id="label_for_total_price"
+                                [innerHTML]="total_price_before_VAT + '.000 VND'"
+                            ></p>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <p>VAT<span>(20%)</span></p>
-                            <p id="label_for_total_VAT_price" ></p>
+                            <p 
+                                id="label_for_total_VAT_price" 
+                                [innerHTML]="VAT_Price + '.000 VND'"
+                            ></p>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <p class="fw-bold">Total</p>
-                            <p class="fw-bold" id="label_for_total_payment_2"></p>
+                            <p 
+                                class="fw-bold" 
+                                id="label_for_total_payment_2"
+                                [innerHTML]="total_price_after_VAT + '.000 VND'"
+                            ></p>
                         </div>
-                        <button type="submit" class="btn btn-primary mt-2" id="label_for_total_payment">Pay</button>
+                        <button 
+                            type="submit" 
+                            class="btn btn-primary mt-2" 
+                            id="label_for_total_payment"
+                            [innerHTML]="total_price_after_VAT + '.000 VND'"
+                        >Pay</button>
                     </div>
                     
                 </form>
@@ -239,8 +254,8 @@
                                 <div class="product-card" *ngFor="let SelectedFromPersonalShoppingBag of SelectedFromPersonalShoppingBags; let i = index">
                                     <table style="background-color:grey; border-radius: 3px;" >
                                         <tr>
-                                            <td style="width: 300px;font-size:15px;text-align: left;">{{(SelectedFromPersonalShoppingBag.split(","))[0]}}</td>
-                                            <td style="font-size:15px;text-align: left;">Quatity :{{(SelectedFromPersonalShoppingBag.split(","))[1]}}</td>
+                                            <td style="width: 300px;font-size:15px;text-align: left;">{{SelectedFromPersonalShoppingBag.candle_name}}</td>
+                                            <td style="font-size:15px;text-align: left;">Quatity :{{SelectedFromPersonalShoppingBag.quatity}}</td>
                                         </tr>
                                     </table><br>
                                 </div>
@@ -252,15 +267,25 @@
                     <div class="d-flex flex-column dis">
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <p><b>Subtotal</b></p>
-                            <p id="label_for_total_price_confirmed"></p>
+                            <p 
+                                id="label_for_total_price_confirmed"
+                                [innerHTML]="total_price_before_VAT_confirmed + '.000 VND'"
+                            ></p>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <p><b>VAT<span>(20%)</span></b></p>
-                            <p id="label_for_total_VAT_price_confirmed" ></p>
+                            <p 
+                                id="label_for_total_VAT_price_confirmed" 
+                                [innerHTML]="VAT_Price_confirmed + '.000 VND'"
+                            ></p>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <p class="fw-bold"><b>Total</b></p>
-                            <p class="fw-bold" id="label_for_total_payment_2_confirmed"></p>
+                            <p 
+                                class="fw-bold" 
+                                id="label_for_total_payment_2_confirmed"
+                                [innerHTML]="total_price_after_VAT_confirmed + '.000 VND'"
+                            ></p>
                         </div>
                         <table>
                             <tr>

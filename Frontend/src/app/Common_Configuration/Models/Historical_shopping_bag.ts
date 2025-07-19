@@ -11,5 +11,5 @@ export class HistoricalShoppingBag {
     Total_Price_Before_VAT!:string;
     Total_VAT!:string;
     Total_Price_After_VAT!:string;
-    Selected_List!:string;
+    Selected_List!:string[];
   }

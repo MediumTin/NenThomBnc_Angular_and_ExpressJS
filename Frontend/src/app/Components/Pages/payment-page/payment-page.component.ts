@@ -7,6 +7,8 @@ import { HistoricalShoppingBag } from '../../../Common_Configuration/Models/Hist
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CandlesServiceService } from '../../../Services/CandlesService/candles-service.service';
 import { type } from 'node:os';
+import { Selected_Candle } from '../../../Common_Configuration/Models/Selected_candles';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-payment-page',
@@ -16,11 +18,14 @@ import { type } from 'node:os';
   styleUrl: './payment-page.component.css'
 })
 export class PaymentPageComponent implements OnInit, AfterViewInit {
+  counter_to_server : number = 0;
   paymentForm!: FormGroup; // Use definite assignment
   // historicalBag: HistoricalShoppingBag = new HistoricalShoppingBag();
   Current_Counter : number = 0;
   PersonalShoppingBags : string = "";
-  SelectedFromPersonalShoppingBags: string = "";
+  SelectedFromPersonalShoppingBags: Array<Selected_Candle> = []; // To store selected items from personal shopping bags
+  SelectedFromPersonalShoppingBags_TO_SERVER :string[] = []; // type is 
+  counter_for_selected_items: number = 0; // To count the number of selected items
   account: string = "";
   isDivButtonActive: string[] = [];
   isDivImageActive: string[] = [];
@@ -34,6 +39,12 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   GLOBAL_label_for_total_VAT_price : string = "0.00"; // Default value for total VAT price
   GLOBAL_label_for_total_payment : string = "0.00"; // Default value for total payment after VAT
   Current_Username: string = ""; // To store the current username
+  total_price_before_VAT: number = 0;
+  VAT_Price: number = 0;
+  total_price_after_VAT: number = 0;
+total_price_before_VAT_confirmed: any;
+VAT_Price_confirmed: any;
+total_price_after_VAT_confirmed: any;
 
   constructor(
     private fb: FormBuilder, 
@@ -43,6 +54,7 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     private paymentService: PaymentService,
     private candlesService : CandlesServiceService
   ) {
+    // this.SelectedFromPersonalShoppingBags = "";
     const sessionInfo = this.identification.GetSessionID();
     if (sessionInfo.Username != "") {
       this.Current_Username = sessionInfo.Username;
@@ -177,6 +189,7 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
       this.isDivButtonActive[i] = "active";
       this.isDivImageActive[i] = "carousel-item active";
       this.isButtonBackgroundChecked[i] = true;
+      console.log("Table checked with index:", i);
   } 
 /*
     Username!:string;
@@ -287,15 +300,20 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
       localStorage.setItem('label_for_total_price', `${formValue.Total_Price_Before_VAT}`);
       localStorage.setItem('label_for_total_VAT_price', `${formValue.Total_VAT}`);
       localStorage.setItem('label_for_total_payment', `${formValue.Total_Price_After_VAT}`);
+      // this.SelectedFromPersonalShoppingBags = this.PersonalShoppingBags; // data in object
       // localStorage.setItem('Selected_List', `${formValue.Selected_List}`);
-      localStorage.setItem('Selected_List', `${this.PersonalShoppingBags}`); // tempt check
+      localStorage.setItem('Selected_List', `${this.SelectedFromPersonalShoppingBags_TO_SERVER}`); // tempt check
       this.isConfirmation_Box_Visible = true; 
       this.isConfirmation_Box_child_Visible = true; // To handle the visibility of the confirmation box child
       this.isMain_body_Visible = false; // To handle the visibility of the main body
       this.isMain_body_1_Visible = false; // To handle the visibility of the main body 1
       this.isMain_body_2_Visible = false; // To handle the visibility of the main body 2
-
-      this.SelectedFromPersonalShoppingBags = this.PersonalShoppingBags; // data in object
+      this.total_price_after_VAT_confirmed = this.total_price_after_VAT;
+      this.total_price_before_VAT_confirmed = this.total_price_before_VAT;
+      this.VAT_Price_confirmed = this.VAT_Price;
+      console.log("PersonalShoppingBagsis ", this.PersonalShoppingBags);
+      console.log("SelectedFromPersonalShoppingBags_TO_SERVER is ", this.SelectedFromPersonalShoppingBags_TO_SERVER);
+      
       // this.PersonalShoppingBags = JSON.parse(userInfo[0]?.personal_shopping_bag ?? ""); // data in object
       this.GetInfoFromLocalStorage_to_ConfirmedBox(); 
 
@@ -317,9 +335,9 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     var nation_zip_buyer_confirmed = localStorage.getItem('nation_zip_buyer');
     var nation_state_buyer_confirmed = localStorage.getItem('nation_state_buyer');
     var VAT_number_buyer_confirmed = localStorage.getItem('VAT_number_buyer');
-    var label_for_total_price_confirmed = this.GLOBAL_label_for_total_price;
-    var label_for_total_VAT_price_confirmed = this.GLOBAL_label_for_total_VAT_price;
-    var label_for_total_payment_2_confirmed = this.GLOBAL_label_for_total_payment;
+    var label_for_total_price_confirmed = this.total_price_before_VAT + ".000 VND";
+    var label_for_total_VAT_price_confirmed = this.VAT_Price + ".000 VND";
+    var label_for_total_payment_2_confirmed = this.total_price_after_VAT + ".000 VND";
 
     // var SelectedListNew = this.PersonalShoppingBags; // tempt check
     console.log(`Visa number in html is ${visa_number_confirmed}`);
@@ -354,7 +372,7 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
         Total_Price_Before_VAT: "hello",
         Total_VAT: "hello",
         Total_Price_After_VAT: "hello",
-        Selected_List: this.PersonalShoppingBags,
+        Selected_List: this.SelectedFromPersonalShoppingBags_TO_SERVER,
     } ;
     const AllListToServer: HistoricalShoppingBag = { 
     Username: username_of_buyer_confirmed ?? '',
@@ -369,11 +387,14 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     Total_Price_Before_VAT: label_for_total_price_confirmed ?? '',
     Total_VAT: label_for_total_VAT_price_confirmed ?? '',
     Total_Price_After_VAT: label_for_total_payment_2_confirmed ?? '',
-    Selected_List: this.PersonalShoppingBags ?? '',
+    Selected_List: this.SelectedFromPersonalShoppingBags_TO_SERVER ?? '' 
+
 };
 
     console.log("Type of AllListToServer is ", typeof(AllListToServer));
     console.log("Value of AllListToServer is ", AllListToServer);
+    console.log("Type of AllListToServer.Selected_List is ", typeof(AllListToServer.Selected_List));
+    console.log("Value of AllListToServer.Selected_List is ", AllListToServer.Selected_List);
     // this.Request_Write_Into_RedisCache_and_Database(AllListToServer);
     this.paymentService.SetOrderCompleted_and_Confirmed_via_mail(
       AllListToServer
@@ -397,7 +418,58 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     );
   }
 
-  isProductChecked(i: number) {
+  isProductChecked(i: number, event: Event) {
+    // Name of first item is (this.PersonalShoppingBags[0].split(","))[0]
+    // Quantity of first item is (this.PersonalShoppingBags[0].split(","))[1]
+    // Price of first item is (this.PersonalShoppingBags[0].split(","))[2]
+  const checked = (event.target as HTMLInputElement).checked;
+  
+  // this.isButtonBackgroundChecked = new Array(this.PersonalShoppingBags.length).fill(false);
+  if (checked) {
+    // Checkbox is checked
+    // Add item to selected list or update state
+    this.total_price_before_VAT = this.total_price_before_VAT + Number(this.PersonalShoppingBags[i].split(",")[2])*Number(this.PersonalShoppingBags[i].split(",")[1]);
+    this.VAT_Price = this.total_price_before_VAT * 0.2; // Assuming VAT is 20%
+    this.total_price_after_VAT = this.total_price_before_VAT + this.VAT_Price;
+    // this.SelectedFromPersonalShoppingBags_TO_SERVER.length != 0 
+    //   ? this.SelectedFromPersonalShoppingBags_TO_SERVER = this.SelectedFromPersonalShoppingBags_TO_SERVER + "," + this.PersonalShoppingBags[i]
+    //   : this.SelectedFromPersonalShoppingBags_TO_SERVER[] = this.PersonalShoppingBags[i]; // Add item to selected list
+    
+    this.SelectedFromPersonalShoppingBags_TO_SERVER.push(this.PersonalShoppingBags[i]);
+    // this.counter_for_selected_items++;
+    this.SelectedFromPersonalShoppingBags.push({
+      candle_name: this.PersonalShoppingBags[i].split(",")[0],
+      quatity: Number(this.PersonalShoppingBags[i].split(",")[1]),
+      price: this.PersonalShoppingBags[i].split(",")[2],
+      image: this.PersonalShoppingBags[i].split(",")[3]
+    });
+
+    console.log("Total price before VAT is ", this.total_price_before_VAT);
+    console.log("VAT price is ", this.VAT_Price); 
+    console.log("Total price after VAT is ", this.total_price_after_VAT);
+    console.log("SelectedFromPersonalShoppingBags is ", this.SelectedFromPersonalShoppingBags_TO_SERVER);
+    
+  } else {
+    // this.counter_for_selected_items--;
+    // this.SelectedFromPersonalShoppingBags_TO_SERVER[this.counter_for_selected_items] = ""; // Remove item from selected list
+    
+    // Checkbox is unchecked
+    this.total_price_before_VAT = this.total_price_before_VAT - Number(this.PersonalShoppingBags[i].split(",")[2])*Number(this.PersonalShoppingBags[i].split(",")[1]);
+    this.VAT_Price = this.total_price_before_VAT * 0.2; // Assuming VAT is 20%
+    this.total_price_after_VAT = this.total_price_before_VAT + this.VAT_Price;
+    // this.SelectedFromPersonalShoppingBags.length == this.PersonalShoppingBags[i].length
+    //   ? this.SelectedFromPersonalShoppingBags = ""
+    //   : this.SelectedFromPersonalShoppingBags = this.SelectedFromPersonalShoppingBags.replace("," + this.PersonalShoppingBags[i], "");
+    this.SelectedFromPersonalShoppingBags = this.SelectedFromPersonalShoppingBags.filter(item => item.candle_name !== this.PersonalShoppingBags[i].split(",")[0]); 
+    console.log("SelectedFromPersonalShoppingBags lenght is ", this.SelectedFromPersonalShoppingBags.length);
+    // this.SelectedFromPersonalShoppingBags = this.SelectedFromPersonalShoppingBags.replace("," + this.PersonalShoppingBags[i], ""); // Remove item from selected list
+    console.log("Total price before VAT is ", this.total_price_before_VAT);
+    console.log("VAT price is ", this.VAT_Price); 
+    console.log("Total price after VAT is ", this.total_price_after_VAT);
+    console.log("SelectedFromPersonalShoppingBags is ", this.SelectedFromPersonalShoppingBags);
+    // Remove item from selected list or update state
+  }
+
 
   }
 
