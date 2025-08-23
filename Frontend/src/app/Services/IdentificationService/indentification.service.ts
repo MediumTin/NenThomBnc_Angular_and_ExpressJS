@@ -26,7 +26,7 @@ export class IndentificationService {
     console.log("RequestUserRegister successfully");
     return this.http.post<UserInformation[]>(LOGIN_HANDLING_Register_URL, userData, { withCredentials: true });
   }
-  // this.router.navigate(['/login_handling']);
+  // this.router.navigate(['/login_handling']); // Navigate to login handling page internal in Angular
   // }
 
 //    SetisUserIdentifiedMain(isUserIdentifiedMainLocal: boolean) {

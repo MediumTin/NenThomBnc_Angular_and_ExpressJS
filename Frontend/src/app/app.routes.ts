@@ -13,9 +13,16 @@ import { CareCandlesComponent } from './Components/Pages/care-candles/care-candl
 import { DetailProductComponent } from './Components/Pages/detail-product/detail-product.component';
 import { PaymentPageComponent } from './Components/Pages/payment-page/payment-page.component';
 import { ShoppingBagComponent } from './Components/Pages/shopping-bag/shopping-bag.component';
+import { OnlytestComponent } from './Components/onlytest/onlytest.component';
+import { Onlytest2Component } from './Components/onlytest2/onlytest2.component';
+import { NewComponent } from './Components/new/new.component';
+import { ContactComponent } from './Components/contact/contact.component';
 
 export const routes: Routes = [
+  // All below routing only used in Angular internal navigation
     {path: '', component: HomePageComponent }, // get to Home Page 
+    {path: 'onlytest', component: OnlytestComponent }, // test component
+    {path: 'onlytest2', component: Onlytest2Component }, // test component
     {path: 'candles', component: CandlesComponent }, // get all components of candles
     {path: 'candles/search/:searchTerm', component: CandlesComponent }, // get products by search item
     {path: 'candles/tag/:tag', component: CandlesComponent }, // get products by tag
@@ -23,8 +30,8 @@ export const routes: Routes = [
     {path: 'oils', component: OilsComponentComponent }, // get products by filter
     {path: 'accessory', component: AccessoryComponent }, // get products by filter
     {path: 'gift', component: GiftComponent }, // get products by filter
-    {path: 'news', component: HomePageComponent }, // get products by filter
-    {path: 'contact', component: HomePageComponent }, // get products by filter
+    {path: 'news', component: NewComponent }, // get products by filter
+    {path: 'contact', component: ContactComponent }, // get products by filter
     {path: 'diffuse_oils', component: DiffuseOilsComponent }, // get products by filter
     {path: 'natural_oils', component: NaturalOilsComponent }, // get products by filter
     {path: 'burn_candles', component: BurnCandlesComponent }, // get products by filter

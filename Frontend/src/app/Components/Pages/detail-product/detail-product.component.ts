@@ -127,7 +127,7 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
       next: (response) => {
         console.log("Response from server when add to bag", response);
         // Navigate to the bag page or show a success message
-        // this.router.navigate(['/bag']);
+        // this.router.navigate(['/bag']);  // Navigate to login handling page internal in Angular
       }
       , error: (error) => {
         console.error("Error when adding to bag", error);
@@ -137,7 +137,7 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
     // setCandleInformationToSession
   }
   BuyNowandMoveToShoppingBag() {
-    // this.router.navigate(['/payment_handling']);
+    // this.router.navigate(['/payment_handling']); // Navigate to login handling page internal in Angular
     this.candlesService.setCandleInformationToSession({
       quatity: this.quantity,
       candle_name: this.name,
@@ -148,16 +148,16 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
         console.log("Response from serve", this.ReturnValueAfterPostMethod);
         console.log("Candle name:", this.ReturnValueAfterPostMethod.status);
         if (this.ReturnValueAfterPostMethod.status === "Write session data into Redis sucessfully") {
-          this.router.navigate(['/payment_handling']);
+          this.router.navigate(['/payment_handling']);  // Navigate to login handling page internal in Angular
         }
 
       });
     // setCandleInformationToSession
-    // this.router.navigate(['/payment_handling']);
+    // this.router.navigate(['/payment_handling']); // Navigate to login handling page internal in Angular
   }
 
     checkShoppingBag() {
-      this.router.navigate(['/Shopping_Bag_handling']);
+      this.router.navigate(['/Shopping_Bag_handling']); // Navigate to login handling page internal in Angular
     }
     AddedBoxFadeOut = (AllowedFadeOut: boolean)=> {
       if(AllowedFadeOut){

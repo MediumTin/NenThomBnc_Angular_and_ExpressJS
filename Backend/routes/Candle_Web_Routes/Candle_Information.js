@@ -22,6 +22,7 @@ const client = createClient({
 // New implementation for Engine template handlerbar
 
 Router.get('^/$|',async (req,res)=>{
+   console.log(`Request URL in Candle_information is: ${req.url}`);
    // Get all product information in Cache (If Cache available) and in Database (If Cache unavailable)
    var listofcandle = await ReadAllData_From_Database_And_RedisCache();
    // console.log("Result offf",typeof(listofcandle));
@@ -44,7 +45,7 @@ Router.get('^/$|',async (req,res)=>{
          
          if(isSessionValid != undefined){
             var CurrentUser = req.session.personal_information.username;
-            console.log(`Type of response message ${typeof(reslt_string_ceonverted)}`);
+            console.log(`Type of response message in candle information is ${typeof(reslt_string_ceonverted)}`);
             res.status(200).send(reslt_string_ceonverted);
          }
          else 

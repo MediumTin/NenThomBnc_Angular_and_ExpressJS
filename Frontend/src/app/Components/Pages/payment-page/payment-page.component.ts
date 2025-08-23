@@ -68,7 +68,7 @@ total_price_after_VAT_confirmed: any;
           console.log("Session is timeout");
           this.identification.ClearSessionStorage();
           this.identification.SetisUserIdentifiedMain(false);
-          this.router.navigate(['/login_handling']);
+          this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
         } else {
           // status is "Session is normal"
           // this.sessionStorage = userInfo[0]?.personal_shopping_bag ?? ""; // data in string
@@ -96,7 +96,7 @@ total_price_after_VAT_confirmed: any;
             //   next: (response) => {
             //     console.log("Response from server when add to bag", response);
             //     // Navigate to the bag page or show a success message
-            //     // this.router.navigate(['/bag']);
+            //     // this.router.navigate(['/bag']); // Navigate to login handling page internal in Angular
             //   }
             //   , error: (error) => {
             //     console.error("Error when adding to bag", error);
@@ -111,7 +111,7 @@ total_price_after_VAT_confirmed: any;
       // this.isUserIdentifiedMain = false;
       this.identification.SetisUserIdentifiedMain(false);
       console.log("User has not identified yet in app component");
-      this.router.navigate(['/login_handling']);
+      this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
       
     }
    }
@@ -406,10 +406,10 @@ total_price_after_VAT_confirmed: any;
           // this.GLOBAL_label_for_total_VAT_price = inputDataForConfirmation.Total_VAT;
           // this.GLOBAL_label_for_total_payment = inputDataForConfirmation.Total_Price_After_VAT;
           // this.Passed_Confirmation();
-          this.router.navigate(['/']);
+          this.router.navigate(['']);
         } else {
           console.log("Order is not completed");
-          this.router.navigate(['/payment_handling']);
+          this.router.navigate(['/payment_handling']);  // Navigate to login handling page internal in Angular
           // this.Failed_Confirmation();
         }
       }, (error) => {

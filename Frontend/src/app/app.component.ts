@@ -33,11 +33,15 @@ export class AppComponent implements OnInit {
     } else {
       // User is not identified, handle accordingly - request login
       // this.isUserIdentifiedMain = false;
+
       this.identification.SetisUserIdentifiedMain(false);
       console.log("User has not identified yet in app component");
-      this.router.navigate(['/login_handling']);
+      this.router.navigate(['/login_handling']); // Navigate to login handling page internal in Angular
       
     }
+
+    // this.identification.SetisUserIdentifiedMain(true);
+    // console.log("User has identified yet in app component");
   }
 
   toggleHeaderVisibility() {

@@ -1,11 +1,11 @@
 import { environment } from "../../../environments/environment";
 
 
-export const BASE_URL = environment.production? '' : 'http://localhost:3500';
+export const BASE_URL = environment.production? 'https://nenthombnc.website' : 'http://localhost:3500';
 
 
 // Process with "candles"
-export const CANDLES_URL = BASE_URL + '/candles';                           // GET and POST method
+export const CANDLES_URL = BASE_URL + '/api/candles';                           // GET and POST method
 export const CANDLES_AdminRight_URL = CANDLES_URL + '/adminright';         // GET method
 export const CANDLES_AddNewProduct_URL = CANDLES_URL + '/addnewproduct';   // POST method
 export const CANDLES_By_Tag_URL = CANDLES_URL + '/RequestGetCandleByTag/';
@@ -13,71 +13,71 @@ export const CANDLES_By_Filter_URL = CANDLES_URL + '/RequestGetCandleByFilter/';
 export const CANDLES_By_Search_URL = CANDLES_URL + '/RequestGetCandleBySearch/';
 
 // Process with "testangular"
-export const TESTANGULAR_URL = BASE_URL + '/testangular';                   // GET method 
+export const TESTANGULAR_URL = BASE_URL + '/api/testangular';                   // GET method 
 
 // Process with "oils"
-export const OILS_URL = BASE_URL + '/oils';                                 // GET method 
+export const OILS_URL = BASE_URL + '/api/oils';                                 // GET method 
 
 // Process with "diffuse_oils"
-export const DIFFUSE_OILS_URL = BASE_URL + '/diffuse_oils';                 // GET method 
+export const DIFFUSE_OILS_URL = BASE_URL + '/api/diffuse_oils';                 // GET method 
 
 // Process with "natural_oils"
-export const NATURAL_OILS_URL = BASE_URL + '/natural_oils';                 // GET method 
+export const NATURAL_OILS_URL = BASE_URL + '/api/natural_oils';                 // GET method 
 
 // Process with "accessory"
-export const ACCESSORY_URL = BASE_URL + '/accessory';                       // GET method 
+export const ACCESSORY_URL = BASE_URL + '/api/accessory';                       // GET method 
 
 // Process with "burn_candles"
-export const BURN_CANDLES_URL = BASE_URL + '/burn_candles';                 // GET method 
+export const BURN_CANDLES_URL = BASE_URL + '/api/burn_candles';                 // GET method 
 
 // Process with "care_candles"
-export const CARE_CANDLES_URL = BASE_URL + '/care_candles';                 // GET method 
+export const CARE_CANDLES_URL = BASE_URL + '/api/care_candles';                 // GET method 
 
 // Process with "gift"
-export const GIFT_URL = BASE_URL + '/gift';                                 // GET method 
+export const GIFT_URL = BASE_URL + '/api/gift';                                 // GET method 
 
 // Process with "news"
-export const NEWS_URL = BASE_URL + '/news';                                 // GET method
+export const NEWS_URL = BASE_URL + '/api/news';                                 // GET method
 
 // Process with "Contact"
-export const CONTACT_URL = BASE_URL + '/Contact';                           // GET method
+export const CONTACT_URL = BASE_URL + '/api/Contact';                           // GET method
 
 // Process with "another_information"
-export const ANOTHER_INFORMATION_URL = BASE_URL + '/another_information';                           // NO METHOD
+export const ANOTHER_INFORMATION_URL = BASE_URL + '/api/another_information';                           // NO METHOD
 export const ANOTHER_INFORMATION_Delivery_URL = ANOTHER_INFORMATION_URL + '/delivery_policy';       // GET method
 export const ANOTHER_INFORMATION_Payment_URL = ANOTHER_INFORMATION_URL + '/payment_policy';         // GET method
 export const ANOTHER_INFORMATION_Return_URL = ANOTHER_INFORMATION_URL + '/return_policy';           // GET method
 export const ANOTHER_INFORMATION_Privacy_URL = ANOTHER_INFORMATION_URL + '/privacy_policy';         // GET method
 
 // Process with "candle_information"
-export const CANDLE_INFORMATION_URL = BASE_URL + '/candle_information';                                                     // GET and POST method
+export const CANDLE_INFORMATION_URL = BASE_URL + '/api/candle_information';                                                     // GET and POST method
 export const CANDLE_INFORMATION_Request_Write_to_Session_URL = CANDLE_INFORMATION_URL + '/requestwriteintosession';       // GET method
 
 
 // Process with "login_handling"
-export const LOGIN_HANDLING_URL = BASE_URL + '/login_handling';                 // GET method
+export const LOGIN_HANDLING_URL = BASE_URL + '/api/login_handling';                 // GET method
 export const LOGIN_HANDLING_Login_URL = LOGIN_HANDLING_URL + '/login';         // POST method
 export const LOGIN_HANDLING_Register_URL = LOGIN_HANDLING_URL + '/register';   // POST method
 
 // Process with "Add_new_product"
-export const ADD_NEW_PRODUCT_URL = BASE_URL + '/Add_new_product';               // GET method
+export const ADD_NEW_PRODUCT_URL = BASE_URL + '/api/Add_new_product';               // GET method
 
 // Process with "payment_handling"
-export const PAYMENT_HANDLING_URL = BASE_URL + '/payment_handling';                                         // GET and POST method
+export const PAYMENT_HANDLING_URL = BASE_URL + '/api/payment_handling';                                         // GET and POST method
 export const PAYMENT_HANDLING_Specific_Handling_URL = PAYMENT_HANDLING_URL + '/specific_handling';          // GET and POST method
 
 // Process with "Shopping_Bag_handling"
-export const SHOPPING_BAG_HANDLING_URL = BASE_URL + '/Shopping_Bag_handling';               // GET method
+export const SHOPPING_BAG_HANDLING_URL = BASE_URL + '/api/Shopping_Bag_handling';               // GET method
 
 // Check current user information
-export const CHECK_CURRENT_USER_URL = BASE_URL + '/check_user_identification';               // GET method
+export const CHECK_CURRENT_USER_URL = BASE_URL + '/api/check_user_identification';               // GET method
 
 // Process with "oils"
-export const GET_SESSION_DATA = BASE_URL + '/get-session'; 
-export const GET_SESSION_ID = BASE_URL + '/get-sid'; 
-export const CLEAR_SESSION_ID = BASE_URL + '/clear-sid'; 
-export const DESTROY_SESSION_ID = BASE_URL + '/destroy-sid'; 
-export const DESTROY_SESSION_DATA = BASE_URL + '/destroy-session'; 
+export const GET_SESSION_DATA = BASE_URL + '/api/get-session'; 
+export const GET_SESSION_ID = BASE_URL + '/api/get-sid'; 
+export const CLEAR_SESSION_ID = BASE_URL + '/api/clear-sid'; 
+export const DESTROY_SESSION_ID = BASE_URL + '/api/destroy-sid'; 
+export const DESTROY_SESSION_DATA = BASE_URL + '/api/destroy-session'; 
 
 
 export const FOODS_URL = BASE_URL + '/api/foods';

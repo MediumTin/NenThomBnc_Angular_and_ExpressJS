@@ -44,20 +44,20 @@ export class CandlesComponent implements OnInit, AfterViewInit {
       let candlesObervalbe: Observable<Candles[]>;
       candlesObervalbe = this.candlesService.getAllCandlesByFilter(data_request_filter);
       candlesObervalbe.subscribe((serverCandles) => {
-      this.candles = serverCandles; // Assign the final data to the component property
-      console.log("Response from serve",this.candles);
-      // console.log(`TotalLengh of received info : ${this.candles.length}`);
-      if(this.candles[0].status == "Session is timeout"){
-        console.log("Session is timeout");
-        this.identification.ClearSessionStorage();
-        this.identification.SetisUserIdentifiedMain(false);
-        this.router.navigate(['/login_handling']);
-      }  
-      else {
-        // status is "Session is normal"
-        this.loadProducts();
-      }
-    });
+        this.candles = serverCandles; // Assign the final data to the component property
+        console.log("Response from serve",this.candles);
+        // console.log(`TotalLengh of received info : ${this.candles.length}`);
+        if(this.candles[0].status == "Session is timeout"){
+          console.log("Session is timeout");
+          this.identification.ClearSessionStorage();
+          this.identification.SetisUserIdentifiedMain(false);
+          this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
+        }  
+        else {
+          // status is "Session is normal"
+          this.loadProducts();
+        }
+      });
 
   };
   
@@ -322,7 +322,7 @@ export class CandlesComponent implements OnInit, AfterViewInit {
       console.log("Session is timeout");
       this.identification.ClearSessionStorage();
       this.identification.SetisUserIdentifiedMain(false);
-      this.router.navigate(['/login_handling']);
+      this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
     }  
     else {
       // status is "Session is normal"

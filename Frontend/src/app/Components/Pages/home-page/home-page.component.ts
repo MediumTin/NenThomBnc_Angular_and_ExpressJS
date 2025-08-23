@@ -28,7 +28,7 @@ export class HomePageComponent implements OnInit, AfterViewInit {
         console.log("Session is timeout"); 
         this.identification.ClearSessionStorage();
         this.identification.SetisUserIdentifiedMain(false);
-        this.router.navigate(['/login_handling']);
+        this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
       }  
       else {
         // status is "Session is normal"

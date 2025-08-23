@@ -29,6 +29,10 @@ const angularApp = new AngularNodeAppEngine();
 /**
  * Serve static files from /browser
  */
+// app.get('/onlytest', (req,res)=>{
+//     console.log("OK ANGULAR server.ts");
+// })
+
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',

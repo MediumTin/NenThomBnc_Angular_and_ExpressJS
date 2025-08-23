@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit{
         console.log("Session is timeout");
         this.identification.ClearSessionStorage();
         this.identification.SetisUserIdentifiedMain(false);
-        this.router.navigate(['/login_handling']);
+        this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
       }  
       else {
         // status is "Session is normal"
@@ -66,7 +66,7 @@ export class HeaderComponent implements OnInit{
   
   }
   MoveToPaymentPage() {
-    this.router.navigate(['/payment_handling']);
+    this.router.navigate(['/payment_handling']);  // Navigate to login handling page internal in Angular
     // throw new Error('Method not implemented.');
   }
   LogOut() {
@@ -75,6 +75,6 @@ export class HeaderComponent implements OnInit{
     this.identification.ClearSessionStorage();
     this.identification.SetisUserIdentifiedMain(false);
     this.identification.clearAllCookies();
-    this.router.navigate(['/login_handling']);
+    this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
   }
 }
