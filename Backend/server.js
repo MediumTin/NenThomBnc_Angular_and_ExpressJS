@@ -21,16 +21,6 @@ const { v4: uuidv4 } = require("uuid");
 const RedisStore = require('connect-redis').default;
 const { createClient } = require('redis');
 
-// const clientRedis = new Redis(); // defaut localhost
-// let clientRedis = createClient({
-//     username: 'default',
-//     password: 'eKmCEByJceBAy8EXlviDdGnvAbgwLWmI',
-//     socket: {
-//         host: 'redis-17737.c16.us-east-1-3.ec2.redns.redis-cloud.com',
-//         port: 17737
-//     }
-// });
-// clientRedis.connect().catch(console.error);
 
 const clientRedis = new Redis({
     port: 17737,          // Redis port
@@ -104,11 +94,6 @@ connectDB();
 app.use(logger);
 // 1.2. Build-in middleware to share origin resource to other Routes
 app.use(cors(corsOptions));
-// app.use(cors({
-//   origin: 'http://localhost:4200',  // Allow frontend origin
-//   credentials: true                 // Allow credentials
-// }));
-
 // 1.3. Build-in middleware to convert incomming request to parsed data
 app.use(express.urlencoded({extended:false}));
 // 1.4. Build-in middleware to convert parsed data to JSON data
@@ -116,8 +101,8 @@ app.use(express.json());
 // 1.5. Build-in middleware to convert incommong cookies to req.cookie object in express JS
 app.use(cookieParser());
 // 1.6. Built-in middleware to serve static files to all routes (if needed, can give permission only some specific routes)
-app.use(express.static(path.join(__dirname,'/public/dist'))); // Serve Angular static files
-// app.use(express.static(path.join(__dirname,'/public'))); // Serve other static files (images, css, js, etc) without combined Angular
+// app.use(express.static(path.join(__dirname,'/public/dist'))); // Serve Angular static files
+app.use(express.static(path.join(__dirname,'/public'))); // Serve other static files (images, css, js, etc) without combined Angular
 
 
 //---------------------------------------Common Route declaration-------------------------------------------//
@@ -136,6 +121,7 @@ const htmlEmail = `
     </html>
 `;
 
+// Unknown
 app.get('/api/set-email',(req,res)=>{
     mailTransport.sendMail({
         from: '"NenThomBnC" <nenthombnc@gmail.com>',
@@ -155,14 +141,9 @@ app.get('/api/set-email',(req,res)=>{
     res.send("Sent to email!");
 })
 
-// app.get('/set-email', (req,res)=>{
-//     res.send(req.session); // req.session.user.username
-//     console.log(`Cookie is ${req.cookie}`); // req.session.cookie.maxAge
-//     // Session will have 2 part : 1 is Cookie info and 2,3,4,... is data
-// })
 
 // Example using JWT without libraries
-// 1. Set new JWT mechanism
+// For example : Set new JWT mechanism
 app.get('/set-JWT-Example',(req,res)=>{
     const header = {
         alg : "HS256",
@@ -188,7 +169,7 @@ app.get('/set-JWT-Example',(req,res)=>{
     })
 })
 
-// 2. Get and verify JWT
+// For example : Get and verify JWT
 app.get('/api/get-JWT', (req,res)=>{
     const token = req.headers.authorization.slice(7);
     if(!token){
@@ -207,18 +188,14 @@ app.get('/api/get-JWT', (req,res)=>{
 })
 
 
-app.use('/api',require('./routes/Candle_Web_Routes/HomePageRoute'));
-// app.get('/',(req,res)=>{
-//     console.log(`REQUEST COOKIE IS ${req.cookies}`);
-// })
-
-// // example about express session
+// For example : about express session
 app.get('/api/get-session', (req,res)=>{
     res.send(req.session); // req.session.user.username
     console.log(`Cookie is ${req.cookie}`); // req.session.cookie.maxAge
     // Session will have 2 part : 1 is Cookie info and 2,3,4,... is data
 })
 
+// For example : get session ID from request header
 app.get('/api/get-sid', (req,res)=>{
     console.log(`Cookie is ${req.headers.cookie}`); // req.session.cookie.maxAge
     console.log(`Session ID in server js is ${req.sessionID}`); // req.session.cookie.maxAge
@@ -237,7 +214,7 @@ app.get('/api/get-sid', (req,res)=>{
     // Session will have 2 part : 1 is Cookie info and 2,3,4,... is data
 })
 
-
+// For example : clear session storage
 app.get('/api/clear-sid', (req,res)=>{
     req.sessionStore.clear((err) =>{
         if(err){
@@ -247,6 +224,7 @@ app.get('/api/clear-sid', (req,res)=>{
     res.send("OK")
 })
 
+// For example : destroy session storage
 app.get('/api/destroy-sid', (req,res)=>{
     req.sessionStore.destroy(req.sessionID,(err) =>{
         if(err){
@@ -256,6 +234,7 @@ app.get('/api/destroy-sid', (req,res)=>{
     res.send("OK")
 })
 
+// For example : destroy session storage
 app.get('/api/destroy-session', (req,res)=>{
     req.session.destroy();
     // res.send(req.session); // req.session.user.username
@@ -263,64 +242,56 @@ app.get('/api/destroy-session', (req,res)=>{
     // Session will have 2 part : 1 is Cookie info and 2,3,4,... is data
 })
 
+//-----------------------------------------------API Route declaration for Candle sale website----------------------------------------------//
+// API 1:  Home Page route
+app.use('/api',require('./routes/Candle_Web_Routes/HomePageRoute'));
+// API 2:  Candle product route
 app.use('/api/candles',require('./routes/Candle_Web_Routes/Candles'));
-// app.get('/candles', (req, res) => {
-//     const data = ['Location 1', 'Location 2']; // Your data here
-//     res.send({ data }); // Return data as JSON
-//   });
-
-app.use('/api/testangular',require('./routes/Candle_Web_Routes/testangularjs'));
-app.use('/api/oils',require('./routes/Candle_Web_Routes/Oils'));
-app.use('/api/diffuse_oils',require('./routes/Candle_Web_Routes/Diffuse_oils'));
-app.use('/api/natural_oils',require('./routes/Candle_Web_Routes/Natural_oils'));
-app.use('/api/accessory',require('./routes/Candle_Web_Routes/Accessory'));
-app.use('/api/burn_candles',require('./routes/Candle_Web_Routes/Burn_candles'));
-app.use('/api/care_candles',require('./routes/Candle_Web_Routes/Care_candles'));
-app.use('/api/gift',require('./routes/Candle_Web_Routes/Gift'));
-app.use('/api/news',require('./routes/Candle_Web_Routes/News'));
-app.use('/api/contact',require('./routes/Candle_Web_Routes/Contact'));
+// // API 3:  Oils product route
+// app.use('/api/oils',require('./routes/Candle_Web_Routes/Oils'));
+// // API 4:  Diffuse_oils product route
+// app.use('/api/diffuse_oils',require('./routes/Candle_Web_Routes/Diffuse_oils'));
+// // API 5:  Natural_oils product route
+// app.use('/api/natural_oils',require('./routes/Candle_Web_Routes/Natural_oils'));
+// // API 6:  Accessory product route
+// app.use('/api/accessory',require('./routes/Candle_Web_Routes/Accessory'));
+// // API 7:  Burn_candles product route
+// app.use('/api/burn_candles',require('./routes/Candle_Web_Routes/Burn_candles'));
+// // API 8:  Care_candles product route
+// app.use('/api/care_candles',require('./routes/Candle_Web_Routes/Care_candles'));
+// // API 9:  Gift product route
+// app.use('/api/gift',require('./routes/Candle_Web_Routes/Gift'));
+// // API 10:  News product route
+// app.use('/api/news',require('./routes/Candle_Web_Routes/News'));
+// // API 11:  Contact product route
+// app.use('/api/contact',require('./routes/Candle_Web_Routes/Contact'));
+// API 12:  Another_information route
 app.use('/api/another_information',require('./routes/Candle_Web_Routes/Another_information'));
-
-
-app.get('/api/onlytestjson', (req, res) => {
-  res.json({ message: 'Hello from Express!' });
-});
-
-//TestAngularBasicCSR
-app.get('/api/testbasic', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/TestAngularBasicCSR', 'index.html')); // IMPORTANT: 'public' path again
-});
-// Detail product information
+// API 13:  Detail product information
 app.use('/api/candle_information',require('./routes/Candle_Web_Routes/Candle_Information'));
-// app.get('/api/candle_information', (req, res) => {
-//    console.log("Vo day mat roi ne");
-// });
-// Login handling
+// API 14:  Login handling
 app.use('/api/login_handling',require('./routes/Candle_Web_Routes/Login_Web_Page'));
-
-// Check user identification
+// API 15: Check user identification
 app.use('/api/check_user_identification',require('./routes/Candle_Web_Routes/CheckUserIdentification'));
-
-// Add new product information - ONly applicable for Admin account
+// API 16: Admin - Add new product
 app.use('/api/Add_new_product',require('./routes/Candle_Web_Routes/Add_new_product_Information'));
-
-// Payment handling
+// API 17: Payment handling
 app.use('/api/payment_handling',require('./routes/Candle_Web_Routes/Payment_Handling'));
-
-// Shopping bag handling
+// API 18: Shopping bag handling
 app.use('/api/Shopping_Bag_handling',require('./routes/Candle_Web_Routes/Shopping_Bag_Handling'));
 
-//---------------------------------------Specific Route and Middleware declaration--------------------------//
+//--------------------------------Route to serve Angular app----------------------------------------------//
+// Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)
+// app.get('*', (req, res) => {
+//     console.log(`Request URL: ${path.join(__dirname, 'public/dist/index.html')}`);
+//   res.sendFile(path.join(__dirname, 'public/dist/index.html'));
+// });
+
+//---------------------------------------For example : Specific Route and Middleware declaration--------------------------//
 // Specific Custom Middleware to check authorization and get Json Web Token to make private action. Before this line, it will not require JWToken to execute
 // app.use(verifyJWT);
 // After this line, it will require JWToken branded to execute - After login and grant, will allow get data
 app.use('/api/employees',require('./routes/api/employees')); //example create one API
-
-// Route tất cả các yêu cầu khác về index.html của Angular
-app.get('*', (req, res) => {
-    console.log(`Request URL: ${path.join(__dirname, 'public/dist/index.html')}`);
-  res.sendFile(path.join(__dirname, 'public/dist/index.html'));
-});
 
 
 //---------------------------------------Error recognition and connection declaration-----------------------//
@@ -333,9 +304,6 @@ mongoose.connection.once('open',()=>{
     app.listen(PORT, ()=> console.log(`Server is running on Port: ${PORT}`));  
 })
 
-// app.listen(PORT, ()=> console.log(`Server is running on Port: ${PORT}`)); 
-
-// New implementation
 
 
 

@@ -48,12 +48,16 @@ Router.get('/',async (req,res)=>{
          const Data_From_Database = await First_Time_Loading(req,res); // missing in cache , Request read from Database
          const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(Request_From_Client,JSON.stringify(Data_From_Database)); // set new data from database to Redis cache
          console.log(`Value of writing data to Cache: ${Result_Write_To_Cache}`);
+         console.log(`Type of response message ${typeof(Data_From_Database)}`);
          res.status(200).send(Data_From_Database); // After get data from database and write to Cache, it will response to client
       }
       else {
          console.log("Cached");
+         console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`);
+         console.log(`Type of response message ${typeof(Result_Read_From_Cache)}`);
          res.status(200).send(Result_Read_From_Cache); // Available in cache, Read in Cache
-      }
+      }  
+
       await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
 
 
@@ -64,7 +68,6 @@ Router.get('/',async (req,res)=>{
             "status" : "Session is timeout",
          }]
       )
-      // res.redirect('/login_handling');
    }
    
 })
@@ -83,11 +86,15 @@ Router.post('/RequestGetCandleByFilter',async (req,res)=>{
          console.log("Filter product miss cached");
          const Data_From_Database_FilterProduct = await Request_Filter_Product(req,res); // user for complicated request (multiple conditions)
          const Result_Write_To_Cache_FilterProduct = await Set_Data_From_Database_To_RedisCache(Total_Request_Filter_Product,JSON.stringify(Data_From_Database_FilterProduct)); // set new data from database to Redis cache
-         console.log(`Value of writing data to Cache: ${Result_Write_To_Cache_FilterProduct}`);
+         // console.log(`Value of writing data to Cache: ${Result_Write_To_Cache_FilterProduct}`);
+         console.log(`Value of reading data from Cache: ${Data_From_Database_FilterProduct}`);
+         console.log(`Type of response message ${typeof(Data_From_Database_FilterProduct)}`);
             res.status(200).send(Data_From_Database_FilterProduct);
       }
       else {
          console.log("Filter product cached");
+         // console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
+         console.log(`Value of reading data from Cache: ${Result_Read_From_Cache_FilterProduct}`);
          console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
             res.status(200).send(Result_Read_From_Cache_FilterProduct); // Available in cache, Read in Cache
       }

@@ -45,6 +45,7 @@ Router.get('^/$|',async (req,res)=>{
          
          if(isSessionValid != undefined){
             var CurrentUser = req.session.personal_information.username;
+            console.log(`response message in candle information is ${reslt_string_ceonverted}`);
             console.log(`Type of response message in candle information is ${typeof(reslt_string_ceonverted)}`);
             res.status(200).send(reslt_string_ceonverted);
          }
@@ -66,8 +67,8 @@ Router.get('^/$|',async (req,res)=>{
 })
 
 Router.post('/',(req,res)=>{
+   // Consider no logic - just dummy
    console.log(`Post status is received in Candle_information is ${req.body.name}`);
-   // console.log(result);
    res.status(200).send(result);
 })
 
