@@ -345,3 +345,5 @@ Expecting 'CLOSE', 'OPEN_SEXPR', 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED
 20250614	14:52:04	59ba75cc-29a5-405c-8c97-3d2824a77337	InternalServerError: stream is not readable
 20250614	14:52:04	0954b81e-a0b6-481d-af81-31b080c3337e	InternalServerError: stream is not readable
 20250728	00:22:14	ca6c8a85-0bc1-4269-9ec6-a5a55df6ccc9	Error: ENOENT: no such file or directory, stat 'D:\Website_NenThomBnC\Website_NenThomBnC\Backend\routes\Candle_Web_Routes\public\dist\login_handling\index.html'
+20250830	12:51:46	1be84176-988e-4a38-babb-1239fcabccb0	MaxRetriesPerRequestError: Reached the max retries per request limit (which is 20). Refer to "maxRetriesPerRequest" option for details.
+20250830	12:56:00	03f1c5b7-e013-45bd-b186-05c227f32d34	MaxRetriesPerRequestError: Reached the max retries per request limit (which is 20). Refer to "maxRetriesPerRequest" option for details.

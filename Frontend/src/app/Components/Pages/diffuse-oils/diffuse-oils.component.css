@@ -2,7 +2,35 @@
     padding-left: 10%;
     padding-right: 10%;
 }
+.responsive-margin {
+  margin-left: 80px;
+  margin-right: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
+@media (max-width: 768px) {
+  .responsive-margin {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.responsive-size {
+  width: 250px;
+  height: 1500px;
+  float: left;
+  color: black;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .responsive-size {
+    display : none;
+  }
+}
 .col-xs-12 {
     width: 100%;
 }

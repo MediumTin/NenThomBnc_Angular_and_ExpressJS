@@ -1,0 +1,19 @@
+<!-- 2. Combination in Center component-->
+ <!-- 2.1. Menu bar for filter product information-->
+
+<!-- isGiftChecked will assign value to checked in child component -->
+ <!-- filterChanged event will emit data to onFilterChanged in parent component -->
+<app-filter-bar 
+    [CheckBoxValueArray]="CheckBoxValueArrayParentComponent" 
+    (filterChanged)="onFilterChanged($event)"
+></app-filter-bar>
+ <!-- 2.2. Menu bar for showing product information-->
+ <div class="candles-products-grid">
+    <div class="product-card" *ngFor="let candle of candles">
+        <a id="RouteIDA13" [href]="getCandleUrl(candle)" style="text-decoration: none; color: black;">
+        <img [src]="candle.image" alt="{{candle.name}}">
+        </a>
+        <div class="product-title">{{candle.name}}</div>
+        <div class="product-price">{{candle.price}}</div>
+    </div>
+</div>

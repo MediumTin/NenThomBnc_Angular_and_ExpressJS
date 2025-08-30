@@ -17,25 +17,26 @@ import { OnlytestComponent } from './Components/onlytest/onlytest.component';
 import { Onlytest2Component } from './Components/onlytest2/onlytest2.component';
 import { NewComponent } from './Components/new/new.component';
 import { ContactComponent } from './Components/contact/contact.component';
+import { CommonProductComponent } from './Components/common-product/common-product.component';
+import { TESTComponent } from './Components/test/test.component';
+import { environment } from '../environments/environment';
 
 export const routes: Routes = [
   // All below routing only used in Angular internal navigation
     {path: '', component: HomePageComponent }, // get to Home Page 
-    {path: 'onlytest', component: OnlytestComponent }, // test component
-    {path: 'onlytest2', component: Onlytest2Component }, // test component
-    {path: 'candles', component: CandlesComponent }, // get all components of candles
+    (environment.common_concept)?{path: 'candle', component: CommonProductComponent }:{path: 'candle', component: CandlesComponent }, // get all components of candles
     {path: 'candles/search/:searchTerm', component: CandlesComponent }, // get products by search item
     {path: 'candles/tag/:tag', component: CandlesComponent }, // get products by tag
     {path: 'candles/filter/:filter', component: CandlesComponent }, // get products by filter
-    {path: 'oils', component: OilsComponentComponent }, // get products by filter
-    {path: 'accessory', component: AccessoryComponent }, // get products by filter
-    {path: 'gift', component: GiftComponent }, // get products by filter
+    (environment.common_concept)?{path: 'oil', component: CommonProductComponent }:{path: 'oil', component: OilsComponentComponent }, // get products by filter
+    (environment.common_concept)?{path: 'accessory', component: CommonProductComponent }:{path: 'accessory', component: AccessoryComponent }, // get products by filter
+    (environment.common_concept)?{path: 'gift', component: CommonProductComponent }:{path: 'gift', component: GiftComponent }, // get products by filter
     {path: 'news', component: NewComponent }, // get products by filter
     {path: 'contact', component: ContactComponent }, // get products by filter
-    {path: 'diffuse_oils', component: DiffuseOilsComponent }, // get products by filter
-    {path: 'natural_oils', component: NaturalOilsComponent }, // get products by filter
-    {path: 'burn_candles', component: BurnCandlesComponent }, // get products by filter
-    {path: 'care_candles', component: CareCandlesComponent }, // get products by filter
+    (environment.common_concept)?{path: 'diffuse_oils', component: CommonProductComponent }:{path: 'diffuse_oils', component: DiffuseOilsComponent }, // get products by filter
+    (environment.common_concept)?{path: 'natural_oils', component: CommonProductComponent }:{path: 'natural_oils', component: NaturalOilsComponent }, // get products by filter
+    (environment.common_concept)?{path: 'burn_candles', component: CommonProductComponent }:{path: 'burn_candles', component: BurnCandlesComponent }, // get products by filter
+    (environment.common_concept)?{path: 'care_candles', component: CommonProductComponent }:{path: 'care_candles', component: CareCandlesComponent }, // get products by filter
     {path: 'candle_information/:detail_product', component: DetailProductComponent }, // get products by filter
     {path: 'login_handling', component: LoginAndRegisterComponent }, // get products by tag
     {path: 'login_handling/login', component: LoginAndRegisterComponent }, // get products by tag

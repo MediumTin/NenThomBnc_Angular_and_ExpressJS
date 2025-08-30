@@ -101,8 +101,8 @@ app.use(express.json());
 // 1.5. Build-in middleware to convert incommong cookies to req.cookie object in express JS
 app.use(cookieParser());
 // 1.6. Built-in middleware to serve static files to all routes (if needed, can give permission only some specific routes)
-// app.use(express.static(path.join(__dirname,'/public/dist'))); // Serve Angular static files
-app.use(express.static(path.join(__dirname,'/public'))); // Serve other static files (images, css, js, etc) without combined Angular
+app.use(express.static(path.join(__dirname,'/public/dist'))); // Serve Angular static files
+// app.use(express.static(path.join(__dirname,'/public'))); // Serve other static files (images, css, js, etc) without combined Angular
 
 
 //---------------------------------------Common Route declaration-------------------------------------------//
@@ -282,10 +282,10 @@ app.use('/api/Shopping_Bag_handling',require('./routes/Candle_Web_Routes/Shoppin
 
 //--------------------------------Route to serve Angular app----------------------------------------------//
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)
-// app.get('*', (req, res) => {
-//     console.log(`Request URL: ${path.join(__dirname, 'public/dist/index.html')}`);
-//   res.sendFile(path.join(__dirname, 'public/dist/index.html'));
-// });
+app.get('*', (req, res) => {
+    console.log(`Request URL: ${path.join(__dirname, 'public/dist/index.html')}`);
+  res.sendFile(path.join(__dirname, 'public/dist/index.html'));
+});
 
 //---------------------------------------For example : Specific Route and Middleware declaration--------------------------//
 // Specific Custom Middleware to check authorization and get Json Web Token to make private action. Before this line, it will not require JWToken to execute
