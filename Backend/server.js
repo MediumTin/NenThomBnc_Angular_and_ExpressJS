@@ -261,12 +261,12 @@ app.use('/api/candles',require('./routes/Candle_Web_Routes/Candles'));
 // app.use('/api/care_candles',require('./routes/Candle_Web_Routes/Care_candles'));
 // // API 9:  Gift product route
 // app.use('/api/gift',require('./routes/Candle_Web_Routes/Gift'));
-// // API 10:  News product route
-// app.use('/api/news',require('./routes/Candle_Web_Routes/News'));
-// // API 11:  Contact product route
-// app.use('/api/contact',require('./routes/Candle_Web_Routes/Contact'));
-// API 12:  Another_information route
-app.use('/api/another_information',require('./routes/Candle_Web_Routes/Another_information'));
+// API 10:  News product route
+app.use('/api/news',require('./routes/Candle_Web_Routes/News'));
+// API 11:  Contact product route
+app.use('/api/contact',require('./routes/Candle_Web_Routes/Contact'));
+// // API 12:  Another_information route
+// app.use('/api/another_information',require('./routes/Candle_Web_Routes/Another_information'));
 // API 13:  Detail product information
 app.use('/api/candle_information',require('./routes/Candle_Web_Routes/Candle_Information'));
 // API 14:  Login handling
@@ -282,6 +282,7 @@ app.use('/api/Shopping_Bag_handling',require('./routes/Candle_Web_Routes/Shoppin
 
 //--------------------------------Route to serve Angular app----------------------------------------------//
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)
+// API 19: Serve Angular app
 // app.get('*', (req, res) => {
 //     console.log(`Request URL: ${path.join(__dirname, 'public/dist/index.html')}`);
 //   res.sendFile(path.join(__dirname, 'public/dist/index.html'));

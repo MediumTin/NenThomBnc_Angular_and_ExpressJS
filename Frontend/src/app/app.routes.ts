@@ -20,6 +20,7 @@ import { ContactComponent } from './Components/contact/contact.component';
 import { CommonProductComponent } from './Components/common-product/common-product.component';
 import { TESTComponent } from './Components/test/test.component';
 import { environment } from '../environments/environment';
+import { AnotherInformationComponent } from './Components/Pages/another-information/another-information.component';
 
 export const routes: Routes = [
   // All below routing only used in Angular internal navigation
@@ -48,6 +49,10 @@ export const routes: Routes = [
     {path: 'destroy-session', component: SessionPageComponent }, // get session information
     {path: 'payment_handling', component: PaymentPageComponent }, // get session information
     {path: 'Shopping_Bag_handling', component: ShoppingBagComponent }, // get session information
+    {path: 'another_information/delivery_policy', component: AnotherInformationComponent }, // get session information
+    {path: 'another_information/payment_policy', component: AnotherInformationComponent }, // get session information
+    {path: 'another_information/return_policy', component: AnotherInformationComponent }, // get session information
+    {path: 'another_information/privacy_policy', component: AnotherInformationComponent }, // get session information
     // {path:'food/:id', component:FoodPageComponent}, // same as detailed component
     // {path:'cart-page', component: CartPageComponent},
     // {path:'login', component: LoginPageComponent},
