@@ -10,10 +10,15 @@ import { response } from 'express';
   providedIn: 'root'
 })
 export class IndentificationService {
+
   Global_SessionID: string = "";	
   // isUserIdentifiedMain: boolean = false;
   private isUserIdentifiedMainSubject = new BehaviorSubject<boolean>(false);
   isUserIdentifiedMain = this.isUserIdentifiedMainSubject.asObservable();
+
+  private isAdminValid = new BehaviorSubject<boolean>(false);
+  isAdminValidMain = this.isAdminValid.asObservable();
+
   constructor(private http:HttpClient, private router:Router) {  }
 
   RequestUserLogin(userData: any): Observable<UserInformation[]> {
@@ -36,20 +41,29 @@ export class IndentificationService {
 //   GetisUserIdentifiedMain(): boolean {
 //     return this.isUserIdentifiedMain;
 // }
-SetisUserIdentifiedMain(isUserIdentifiedMainLocal: boolean) {
-    this.isUserIdentifiedMainSubject.next(isUserIdentifiedMainLocal);
-  }
+  SetisUserIdentifiedMain(isUserIdentifiedMainLocal: boolean) {
+      this.isUserIdentifiedMainSubject.next(isUserIdentifiedMainLocal);
+    }
 
   GetisUserIdentifiedMain(): boolean {
     return this.isUserIdentifiedMainSubject.value;
   }
 
- SetSessionID(SessionID: string, Username: string) {
+  SetisAdminAccepted(arg0: boolean) {
+    this.isAdminValid.next(arg0);
+    // this.isAdminValid = arg0
+  }
+  GetisAdminAccepted(): boolean {
+    return this.isAdminValid.value; 
+  }
+
+  SetSessionID(SessionID: string, Username: string, isAdminRights: boolean){
     this.Global_SessionID = SessionID;
     // localStorage.setItem('SessionID', SessionID); // using localStorage to store session ID
     // localStorage.setItem('Currentuser', Username);
     sessionStorage.setItem('SessionID', SessionID); // using sessionStorage to store session ID
     sessionStorage.setItem('Currentuser', Username);
+    sessionStorage.setItem('isAdminRights', JSON.stringify(isAdminRights));
     // document.cookie = `SessionID=${SessionID}; path=/;`; // using cookies to store session ID
     // document.cookie = `Currentuser=${Username}; path=/;`; // using cookies to store username
   }
@@ -58,15 +72,15 @@ SetisUserIdentifiedMain(isUserIdentifiedMainLocal: boolean) {
   if (typeof window !== 'undefined' && window.sessionStorage) {
     sessionStorage.clear();
   }
-}
-clearAllCookies() {
-  const cookies = document.cookie.split("; ");
-  for (const cookie of cookies) {
-    const eqPos = cookie.indexOf("=");
-    const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
-    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
   }
-}
+  clearAllCookies() {
+    const cookies = document.cookie.split("; ");
+    for (const cookie of cookies) {
+      const eqPos = cookie.indexOf("=");
+      const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+      document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+    }
+  }
   
 // GetSessionID(): { SessionID: string; Username: string} {
 //   let sessionId = "";
@@ -85,17 +99,20 @@ clearAllCookies() {
 //   return { SessionID: sessionId, Username: username };
 // }
 
-GetSessionID(): { SessionID: string; Username: string } {
+GetSessionID(): { SessionID: string; Username: string, isAdminRights: boolean } {
   let sessionId = "";
   let username = "";
+  let isAdminRights = false;
 
   if (typeof window !== 'undefined' && window.sessionStorage) {
     sessionId = sessionStorage.getItem('SessionID') ?? "";
     username = sessionStorage.getItem('Currentuser') ?? "";
+    const isAdminRightsString = sessionStorage.getItem('isAdminRights');
+    isAdminRights = isAdminRightsString ? JSON.parse(isAdminRightsString) : false
   }
 
   console.log("Session ID is: ", sessionId, "Username is: ", username);
-  return { SessionID: sessionId, Username: username };
+  return { SessionID: sessionId, Username: username, isAdminRights: isAdminRights  };
 }
 
 

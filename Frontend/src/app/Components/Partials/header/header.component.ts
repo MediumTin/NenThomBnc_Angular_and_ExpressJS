@@ -16,7 +16,7 @@ import { CandlesServiceService } from '../../../Services/CandlesService/candles-
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit{
-  
+  isAdminRightValid: boolean = false;
   Identified_Current_User : string = "";
   showClickedMessage = false;
   searchTerm: string = '';
@@ -28,6 +28,10 @@ export class HeaderComponent implements OnInit{
   constructor(private router:Router, private identification: IndentificationService, private filteredProduct : FilteredProductService, private candlesService : CandlesServiceService) { 
     const sessionInfo = this.identification.GetSessionID();
     this.Identified_Current_User = sessionInfo.Username;
+    this.identification.isAdminValidMain.subscribe(val => {
+      this.isAdminRightValid = val;
+    });
+    console.log("Admin right in header component is ", this.identification.GetisAdminAccepted());
     console.log("Got SessionID is: ",`${sessionInfo.SessionID}`, "Got Username is: ",`${sessionInfo.Username}`);	 
   }
   ngOnInit() {
@@ -37,8 +41,9 @@ export class HeaderComponent implements OnInit{
       { id: 2, name: 'two', price: 200 },
       { id: 3, name: 'three', price: 300 },
     ]; // dữ liệu sản phẩm
-    
+
   }
+
   onSearch() {
     let candlesObervalbe: Observable<Candles[]>; 
     candlesObervalbe = this.candlesService.getAllCandles();
@@ -76,5 +81,8 @@ export class HeaderComponent implements OnInit{
     this.identification.SetisUserIdentifiedMain(false);
     this.identification.clearAllCookies();
     this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
+  }
+  AddNewProductForAdminRight() {
+    this.router.navigate(['/add_new_product']);  // Navigate to add new product page internal in Angular
   }
 }

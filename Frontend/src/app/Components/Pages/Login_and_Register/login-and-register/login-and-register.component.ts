@@ -37,7 +37,7 @@ export class LoginAndRegisterComponent implements OnInit {
       if(this.isUserIdentified[0]?.Currentuser != undefined && this.isUserIdentified[0]?.SessionID != undefined){
         // In case of successful login
         // Redirect the user to the home page
-        this.identification.SetSessionID(this.isUserIdentified[0]?.SessionID ?? "",this.isUserIdentified[0]?.Currentuser ?? "" );
+        this.identification.SetSessionID(this.isUserIdentified[0]?.SessionID ?? "",this.isUserIdentified[0]?.Currentuser ?? "",this.isUserIdentified[0]?.isAdminRights ?? false  );
         this.identification.SetisUserIdentifiedMain(true);
         this.router.navigate(['']);
       }
@@ -64,8 +64,14 @@ export class LoginAndRegisterComponent implements OnInit {
       if(this.isUserIdentified[0]?.Currentuser != undefined && this.isUserIdentified[0]?.SessionID != undefined){
         // In case of successful login
         // Redirect the user to the home page
-        this.identification.SetSessionID(this.isUserIdentified[0]?.SessionID ?? "",this.isUserIdentified[0]?.Currentuser ?? "" );
+        this.identification.SetSessionID(this.isUserIdentified[0]?.SessionID ?? "",this.isUserIdentified[0]?.Currentuser ?? "",this.isUserIdentified[0]?.isAdminRights ?? false );
         this.identification.SetisUserIdentifiedMain(true);
+        if(this.isUserIdentified[0]?.isAdminRights == true){
+          this.identification.SetisAdminAccepted(true);
+        }
+        else {
+          this.identification.SetisAdminAccepted(false);
+        }
         this.router.navigate(['']);
       }
       else {

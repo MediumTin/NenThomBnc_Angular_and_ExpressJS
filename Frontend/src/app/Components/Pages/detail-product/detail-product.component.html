@@ -1,10 +1,11 @@
-<div style="margin-left: 100px;margin-right: 100px;margin-top: 20px;">
+<div class="responsive-margin">
         <!-- 2.1. Menu bar for filter product information-->
-        <div style="width: 780px;margin-bottom: 20px; float: left;color: black;" >
-            <div style="width: 375px ;float:left;">
+        <div class="responsive_image_and_product_detail">
+            <div class="image_detail_information">
                 <img #candleImg id="Candle_Image" [src]="image" width="350" height="350">
             </div>
-            <div style="margin-left: 385px;font-size:20px;">
+            <div class="product_detail_information">
+                <!-- <br><br> -->
                 <h3 #candleName id="Candle_Name" style="font-weight: bold;">{{ name }}</h3>
                 <h6 style="font-size:15px">Status: Available</h6><br>
                 <h3 #candlePrice id="Candle_Price" style="font-weight: bold;">{{ price }}</h3><br>
@@ -27,7 +28,7 @@
                             <td>10</td>
                         </tr>
                         <tr>
-                            <td><p style="font-size:20px">Quatity : </p></td>
+                            <td><p style="font-size:20px">Quatity:</p></td>
                             <td><p id="Display_for_quatity_of_product" style="font-size:20px">{{ quantity }}</p></td>
                         </tr>
                     </table>
@@ -223,9 +224,9 @@
                 }
                 function Buy_Product(){};       // Additional action 
             </script> -->
-        </div>
+        </div><br><br>
         <!-- 2.2. Menu bar for showing product information-->
-        <div class="another-information-container">
+        <div class="detail-information-container">
             <!-- <h3>Right side 1</h3> -->
             <p>Dụng cụ chuyên dụng cho người chơi nến thơm để thưởng thức mùi hương nến thơm chuyên nghiệp bằng nhiệt của bóng đèn, có núm điều khiển cường độ ánh sáng.</p>
             <br>

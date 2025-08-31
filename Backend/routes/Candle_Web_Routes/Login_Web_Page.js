@@ -76,7 +76,16 @@ const LoginHandling = async(req,res) => {
       // res.render('Search_And_Filtering_Product_AdminRight',{
       //    account : `${CurrentUser}`
       // });
-      res.redirect('/candles/adminright');
+      // res.redirect('/candles/adminright');
+      req.session.save(()=>{
+         res.status(200).send(
+         [{
+            "Currentuser" : `${req.session.personal_information.username}`,
+            "SessionID" : `${req.sessionID}`,
+            "isAdminRights" : true
+         }]
+      )
+      })
    } else if (isValidUser) { 
       // Set new session for valid user
 
@@ -108,7 +117,8 @@ const LoginHandling = async(req,res) => {
          res.status(200).send(
          [{
             "Currentuser" : `${req.session.personal_information.username}`,
-            "SessionID" : `${req.sessionID}`
+            "SessionID" : `${req.sessionID}`,
+            "isAdminRights" : false
          }]
       )
       })
@@ -121,7 +131,8 @@ const LoginHandling = async(req,res) => {
       res.status(200).send(
       [{
             "Currentuser" : undefined,
-            "SessionID" : undefined
+            "SessionID" : undefined,
+            "isAdminRights" : false
          }]
    )
    }

@@ -29,7 +29,7 @@ Router.post('/addnewproduct',async (req,res)=>{
    await Redis_API.Connect_To_Redis(client); // Open connection to Redis
    await Redis_API.Delete_Data_In_Redis(client);
    await Redis_API.Disconnect_To_Redis(client);
-   
+
    // res.status(200).send(samplearray);
 })
 
@@ -156,14 +156,14 @@ const Request_Filter_Product = async (req,res) => {
 }
 
 const Request_Add_New_Product = async (req,res) => {
-   var Request_Add_Name = req.body.productname;
-   var Request_Add_Type = req.body.producttype;
-   var Request_Add_Group = req.body.productgroup;
-   var Request_Add_Brand = req.body.productbrand;
-   var Request_Add_Price = req.body.productprice;
-   var Request_Add_Price_Range = req.body.productpricerange;
-   var Request_Add_Color = req.body.productcolor;
-   var Request_Add_Image = req.body.productimage;
+   var Request_Add_Name = req.body.name;
+   var Request_Add_Type = req.body.type;
+   var Request_Add_Group = req.body.group;
+   var Request_Add_Brand = req.body.brand;
+   var Request_Add_Price = req.body.price;
+   var Request_Add_Price_Range = req.body.price_range;
+   var Request_Add_Color = req.body.color;
+   var Request_Add_Image = req.body.image;
  
    var result = await Menu_Candle_Processing.AddNewProductInformation(
       Request_Add_Name,
@@ -178,10 +178,31 @@ const Request_Add_New_Product = async (req,res) => {
    console.log("Result of Add new product : ",result);
    if(result==1){
       // Add successfully
-      res.status(200).redirect('/candles/adminright');
+      // For testing purpose
+      res.status(200).send(
+      [{
+         "name" : `${req.body.name}`,
+         "type" : `${req.body.type}`,
+         "group" : `${req.body.group}`,
+         "brand" : `${req.body.brand}`,
+         "price" : `${req.body.price}`,
+         "price_range" : `${req.body.price_range}`,
+         "color" : `${req.body.color}`,
+         "image" : `${req.body.image}`,
+      }]);
    } else {
       // Add failure
-      res.status(200).redirect('/Add_new_product');
+      res.status(200).send(
+      [{
+         "name" : "undefined",
+         "type" : "undefined",
+         "group" : "undefined",
+         "brand" : "undefined",
+         "price" : "undefined",
+         "price_range" : "undefined",
+         "color" : "undefined",
+         "image" : "undefined",
+      }]);
    }
    
 

@@ -13,10 +13,10 @@
   <div class="header-right">
     <!-- <button class="header-btn"><a class="header-btn "href="payment_handling">Bag and Payment</a></button> -->
     <button class="header-btn" (click)="MoveToPaymentPage()">Bag and Payment</button>
+    <button class="header-btn" (click)="AddNewProductForAdminRight()" *ngIf="isAdminRightValid">Add new product</button>
     <button class="header-btn user-btn" (click)="LogOut()">
       <i class="fa fa-user"></i> {{Identified_Current_User}}
     </button>
-
   </div>
 </header>
 <nav class="navbar" style="display: flex; justify-content: center;">    

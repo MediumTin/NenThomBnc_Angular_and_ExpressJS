@@ -2,9 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Candles } from '../../Common_Configuration/Models/Candles';
-import { CANDLE_INFORMATION_Request_Write_to_Session_URL, CANDLE_INFORMATION_URL, CANDLES_By_Filter_URL, CANDLES_By_Search_URL, CANDLES_By_Tag_URL, CANDLES_URL } from '../../Common_Configuration/Constant/urls';
+import { CANDLE_INFORMATION_Request_Write_to_Session_URL, CANDLE_INFORMATION_URL, CANDLES_AddNewProduct_URL, CANDLES_By_Filter_URL, CANDLES_By_Search_URL, CANDLES_By_Tag_URL, CANDLES_URL } from '../../Common_Configuration/Constant/urls';
 import { Tag } from '../../Common_Configuration/Models/Tag';
 import { Selected_Candle } from '../../Common_Configuration/Models/Selected_candles';
+import { AddNewProduct } from '../../Common_Configuration/Models/AddNewProduct';
+
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +43,10 @@ export class CandlesServiceService {
   // CANDLE_INFORMATION_Request_Write_to_Session_URL
   setCandleInformationToSession(selected_candles: Selected_Candle): Observable<Selected_Candle> {
     return this.http.post<Selected_Candle>(CANDLE_INFORMATION_Request_Write_to_Session_URL, selected_candles, { withCredentials: true }); 
+  };
+
+  setAddNewProduct(NewProductToBeAdded: AddNewProduct): Observable<AddNewProduct> {
+    return this.http.post<AddNewProduct>(CANDLES_AddNewProduct_URL, NewProductToBeAdded, { withCredentials: true }); 
   };
   
 }

@@ -4,4 +4,5 @@ export class UserInformation{
     status?:String;
     status_of_confirmed_order?:String;
     personal_shopping_bag?:string;
+    isAdminRights?:boolean;
   }
