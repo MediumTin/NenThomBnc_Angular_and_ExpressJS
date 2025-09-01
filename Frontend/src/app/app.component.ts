@@ -24,32 +24,37 @@ export class AppComponent implements OnInit {
   isUserIdentifiedMain: boolean = false;
   isUserIdentified: UserInformation[] = [];
 
-  constructor(private router:Router, private activatedRoute: ActivatedRoute, private identification: IndentificationService) { 
-    const sessionInfo = this.identification.GetSessionID();
-    if (sessionInfo.Username != "") {
-      // this.isUserIdentifiedMain = true;
-      this.identification.SetisUserIdentifiedMain(true);
-      if(sessionInfo.isAdminRights == true){
+  constructor(private router:Router, private activatedRoute: ActivatedRoute, private identification: IndentificationService) {
+    // Scenario 1: If want user can access the website without login
+    this.isUserIdentifiedMain = true;
+    this.identification.SetisUserIdentifiedMain(true);
+    const sessionInfo = this.identification.GetSessionID(); // read for checking admin rights only
+    if(sessionInfo.isAdminRights == true){
         this.identification.SetisAdminAccepted(true);
-        console.log("User has identified yet in app component");
-      }
-      else {
+    }
+    else {
         this.identification.SetisAdminAccepted(false);
-        console.log("User has identified yet in app component");
-      }
-    } else {
-      // User is not identified, handle accordingly - request login
-      // this.isUserIdentifiedMain = false;
-
-      this.identification.SetisUserIdentifiedMain(false);
-      this.identification.SetisAdminAccepted(false);
-      console.log("User has not identified yet in app component");
-      this.router.navigate(['/login_handling']); // Navigate to login handling page internal in Angular
-      
     }
 
-    // this.identification.SetisUserIdentifiedMain(true);
-    // console.log("User has identified yet in app component");
+    // Scenario 2: If want user must login before access the website
+    // const sessionInfo = this.identification.GetSessionID();
+    // if (sessionInfo.Username != "") {
+    //   this.identification.SetisUserIdentifiedMain(true);
+    //   if(sessionInfo.isAdminRights == true){
+    //     this.identification.SetisAdminAccepted(true);
+    //     console.log("User has identified yet in app component");
+    //   }
+    //   else {
+    //     this.identification.SetisAdminAccepted(false);
+    //     console.log("User has identified yet in app component");
+    //   }
+    // } else {
+    //   this.identification.SetisUserIdentifiedMain(false);
+    //   this.identification.SetisAdminAccepted(false);
+    //   console.log("User has not identified yet in app component");
+    //   this.router.navigate(['/login_handling']);
+    // }
+
   }
 
   toggleHeaderVisibility() {
@@ -63,10 +68,13 @@ export class AppComponent implements OnInit {
     // Add your logic here
   }
   ngOnInit(){
-  this.identification.isUserIdentifiedMain.subscribe(val => {
-    this.isUserIdentifiedMain = val;
-  });
-}
+    this.isUserIdentifiedMain = true;
+    
+    // Scenario 2: If want user must login before access the website
+    // this.identification.isUserIdentifiedMain.subscribe(val => {
+    //   this.isUserIdentifiedMain = val;
+    // });
+  }
 
 
 }

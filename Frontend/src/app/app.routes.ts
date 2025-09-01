@@ -43,24 +43,17 @@ export const routes: Routes = [
     {path: 'login_handling', component: LoginAndRegisterComponent }, // get products by tag
     {path: 'login_handling/login', component: LoginAndRegisterComponent }, // get products by tag
     {path: 'login_handling/register', component: LoginAndRegisterComponent }, // get products by tag
-    {path: 'get-session', component: SessionPageComponent }, // get session information
-    {path: 'get-sid', component: SessionPageComponent }, // get session information
-    {path: 'clear-sid', component: SessionPageComponent }, // get session information
-    {path: 'destroy-sid', component: SessionPageComponent }, // get session information
-    {path: 'destroy-session', component: SessionPageComponent }, // get session information
-    {path: 'payment_handling', component: PaymentPageComponent }, // get session information
-    {path: 'Shopping_Bag_handling', component: ShoppingBagComponent }, // get session information
     {path: 'another_information/delivery_policy', component: AnotherInformationComponent }, // get session information
     {path: 'another_information/payment_policy', component: AnotherInformationComponent }, // get session information
     {path: 'another_information/return_policy', component: AnotherInformationComponent }, // get session information
     {path: 'another_information/privacy_policy', component: AnotherInformationComponent }, // get session information
-    {path: 'add_new_product', component: AddNewProductAdminComponent }, // get session information
-    // {path:'food/:id', component:FoodPageComponent}, // same as detailed component
-    // {path:'cart-page', component: CartPageComponent},
-    // {path:'login', component: LoginPageComponent},
-    // {path:'register', component: RegisterPageComponent},
-    // {path:'checkout', component: CheckoutPageComponent, canActivate:[AuthGuard]},
-    // {path:'payment', component: PaymentPageComponent, canActivate:[AuthGuard]},
-    // {path:'track/:orderId', component: OrderTrackPageComponent, canActivate:[AuthGuard]},
+    {path: 'payment_handling', component: PaymentPageComponent }, // get session information - NEED TO AUTHENTICATE
+    {path: 'Shopping_Bag_handling', component: ShoppingBagComponent }, // get session information - NEED TO AUTHENTICATE
+    {path: 'add_new_product', component: AddNewProductAdminComponent } // get session information - NEED TO AUTHORIZE
+    // {path: 'get-session', component: SessionPageComponent }, // get session information
+    // {path: 'get-sid', component: SessionPageComponent }, // get session information
+    // {path: 'clear-sid', component: SessionPageComponent }, // get session information
+    // {path: 'destroy-sid', component: SessionPageComponent }, // get session information
+    // {path: 'destroy-session', component: SessionPageComponent }, // get session information
   ];
 // SHOPPING_BAG_HANDLING_URL

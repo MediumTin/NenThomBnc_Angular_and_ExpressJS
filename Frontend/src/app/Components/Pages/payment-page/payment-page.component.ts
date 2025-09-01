@@ -59,7 +59,6 @@ total_price_after_VAT_confirmed: any;
     if (sessionInfo.Username != "") {
       this.Current_Username = sessionInfo.Username;
       console.log("Current_Username is ", this.Current_Username);
-      // this.isUserIdentifiedMain = true;
       this.identification.SetisUserIdentifiedMain(true);
       console.log("User has identified yet in payment component");
       this.paymentService.GetShoppingBagOfCurrentUser().subscribe((userInfo) => {
@@ -108,8 +107,6 @@ total_price_after_VAT_confirmed: any;
         });
     } else {
       // User is not identified, handle accordingly - request login
-      // this.isUserIdentifiedMain = false;
-      this.identification.SetisUserIdentifiedMain(false);
       console.log("User has not identified yet in app component");
       this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
       

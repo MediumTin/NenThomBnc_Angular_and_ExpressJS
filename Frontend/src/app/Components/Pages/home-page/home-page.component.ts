@@ -21,19 +21,24 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   constructor(private router:Router,private homepageReturnService: HomePageReturnService, activateRoute: ActivatedRoute,private renderer: Renderer2, private identification: IndentificationService) {
       console.log("User has identified yet");
-      this.homepageReturnService.ReturnHomePageData().subscribe((data) => {
-      this.userInformation = data; // Assign the final data to the component property
-      console.log("Data from server", data);
-      if(this.userInformation[0].status == "Session is timeout"){
-        console.log("Session is timeout"); 
-        this.identification.ClearSessionStorage();
-        this.identification.SetisUserIdentifiedMain(false);
-        this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
-      }  
-      else {
-        // status is "Session is normal"
-      }
-    });
+
+      // Scenario 1: If want user can access the website without login
+
+
+      // Scenario 2: If want user must login before access the website
+      // this.homepageReturnService.ReturnHomePageData().subscribe((data) => {
+      //   this.userInformation = data; // Assign the final data to the component property
+      //   console.log("Data from server", data);
+      //   if(this.userInformation[0].status == "Session is timeout"){
+      //     console.log("Session is timeout"); 
+      //     this.identification.ClearSessionStorage();
+      //     this.identification.SetisUserIdentifiedMain(false);
+      //     this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
+      //   }  
+      //   else {
+      //     // status is "Session is normal"
+      //   }
+      // });
   }
   
 
@@ -71,23 +76,5 @@ export class HomePageComponent implements OnInit, AfterViewInit {
     console.log('Button clicked!');
     alert('Button was clicked!');
   }
-
-//   // Config for Shopping Bag Button - Number 1
-// var ShoppingBagButton = document.getElementById("ShoppingBagButton");
-// ShoppingBagButton.onclick = function(){
-//     document.getElementById("ShoppingBagLink").click();
-// }
-
-// // Config for Shopping Bag Button - Number 2
-// var PaymentButton = document.getElementById("PaymentButton");
-// PaymentButton.onclick = function(){
-//     document.getElementById("PaymentLink").click();
-// } 
-
-// // Config for Shopping Bag Button - Number 3
-// var LoginButton = document.getElementById("User_Account");
-// LoginButton.onclick = function(){
-//     document.getElementById("LoginLink").click();
-// } 
   
 }

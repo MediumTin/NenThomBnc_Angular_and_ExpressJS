@@ -96,20 +96,18 @@ export class IndentificationService {
 //   return { SessionID: sessionId, Username: username };
 // }
 
-GetSessionID(): { SessionID: string; Username: string, isAdminRights: boolean } {
-  let sessionId = "";
+GetSessionID(): { Username: string, isAdminRights: boolean } {
   let username = "";
   let isAdminRights = false;
 
   if (typeof window !== 'undefined' && window.sessionStorage) {
-    sessionId = sessionStorage.getItem('SessionID') ?? "";
     username = sessionStorage.getItem('Currentuser') ?? "";
     const isAdminRightsString = sessionStorage.getItem('isAdminRights');
     isAdminRights = isAdminRightsString ? JSON.parse(isAdminRightsString) : false
   }
 
-  console.log("Session ID is: ", sessionId, "Username is: ", username);
-  return { SessionID: sessionId, Username: username, isAdminRights: isAdminRights  };
+  console.log("Username is: ", username);
+  return {Username: username, isAdminRights: isAdminRights  };
 }
 
 

@@ -73,41 +73,66 @@ Router.get('/',async (req,res)=>{
 })
 
 Router.post('/RequestGetCandleByFilter',async (req,res)=>{
-   var isSessionValid = req.session.personal_information;
-   console.log(`Session ID in Candles.js is ${req.sessionID}`);
-   if(isSessionValid != undefined){
-      console.log("Request filter product");
-      await Redis_API.Connect_To_Redis(client); // Open connection to Redis
-      var Total_Request_Filter_Product = `${req.body.Request_Of_Type},${req.body.Request_Of_Group},${req.body.Request_Of_Brand},${req.body.Request_Of_Price},${req.body.Request_Of_Color}`;
-      console.log(`Total Request type : ------ ${Total_Request_Filter_Product}`);
-      const Result_Read_From_Cache_FilterProduct = await Redis_API.Get_Data_From_Redis(client,Total_Request_Filter_Product); 
-      console.log(`Value of reading data from Cache: ${Result_Read_From_Cache_FilterProduct}`); 
-      if(Result_Read_From_Cache_FilterProduct == null){
-         console.log("Filter product miss cached");
-         const Data_From_Database_FilterProduct = await Request_Filter_Product(req,res); // user for complicated request (multiple conditions)
-         const Result_Write_To_Cache_FilterProduct = await Set_Data_From_Database_To_RedisCache(Total_Request_Filter_Product,JSON.stringify(Data_From_Database_FilterProduct)); // set new data from database to Redis cache
-         // console.log(`Value of writing data to Cache: ${Result_Write_To_Cache_FilterProduct}`);
-         console.log(`Value of reading data from Cache: ${Data_From_Database_FilterProduct}`);
-         console.log(`Type of response message ${typeof(Data_From_Database_FilterProduct)}`);
-            res.status(200).send(Data_From_Database_FilterProduct);
-      }
-      else {
-         console.log("Filter product cached");
-         // console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
-         console.log(`Value of reading data from Cache: ${Result_Read_From_Cache_FilterProduct}`);
-         console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
-            res.status(200).send(Result_Read_From_Cache_FilterProduct); // Available in cache, Read in Cache
-      }
-      await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
-   } else {
-      // Session is timeout -> Request login again
-      res.status(200).send(
-         [{
-            "status" : "Session is timeout",
-         }]
-      )
-      // res.redirect('/login_handling');
+   // Scenario 1: If want user can access the website without login
+   console.log("Request filter product");
+   await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   var Total_Request_Filter_Product = `${req.body.Request_Of_Type},${req.body.Request_Of_Group},${req.body.Request_Of_Brand},${req.body.Request_Of_Price},${req.body.Request_Of_Color}`;
+   console.log(`Total Request type : ------ ${Total_Request_Filter_Product}`);
+   const Result_Read_From_Cache_FilterProduct = await Redis_API.Get_Data_From_Redis(client,Total_Request_Filter_Product); 
+   console.log(`Value of reading data from Cache: ${Result_Read_From_Cache_FilterProduct}`); 
+   if(Result_Read_From_Cache_FilterProduct == null){
+      console.log("Filter product miss cached");
+      const Data_From_Database_FilterProduct = await Request_Filter_Product(req,res); // user for complicated request (multiple conditions)
+      const Result_Write_To_Cache_FilterProduct = await Set_Data_From_Database_To_RedisCache(Total_Request_Filter_Product,JSON.stringify(Data_From_Database_FilterProduct)); // set new data from database to Redis cache
+      // console.log(`Value of writing data to Cache: ${Result_Write_To_Cache_FilterProduct}`);
+      console.log(`Value of reading data from Cache: ${Data_From_Database_FilterProduct}`);
+      console.log(`Type of response message ${typeof(Data_From_Database_FilterProduct)}`);
+         res.status(200).send(Data_From_Database_FilterProduct);
    }
+   else {
+      console.log("Filter product cached");
+      // console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
+      console.log(`Value of reading data from Cache: ${Result_Read_From_Cache_FilterProduct}`);
+      console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
+         res.status(200).send(Result_Read_From_Cache_FilterProduct); // Available in cache, Read in Cache
+   }
+   await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+   // Scenario 2: If want user must login before access the website
+   // var isSessionValid = req.session.personal_information;
+   // console.log(`Session ID in Candles.js is ${req.sessionID}`);
+   // if(isSessionValid != undefined){
+   //    console.log("Request filter product");
+   //    await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   //    var Total_Request_Filter_Product = `${req.body.Request_Of_Type},${req.body.Request_Of_Group},${req.body.Request_Of_Brand},${req.body.Request_Of_Price},${req.body.Request_Of_Color}`;
+   //    console.log(`Total Request type : ------ ${Total_Request_Filter_Product}`);
+   //    const Result_Read_From_Cache_FilterProduct = await Redis_API.Get_Data_From_Redis(client,Total_Request_Filter_Product); 
+   //    console.log(`Value of reading data from Cache: ${Result_Read_From_Cache_FilterProduct}`); 
+   //    if(Result_Read_From_Cache_FilterProduct == null){
+   //       console.log("Filter product miss cached");
+   //       const Data_From_Database_FilterProduct = await Request_Filter_Product(req,res); // user for complicated request (multiple conditions)
+   //       const Result_Write_To_Cache_FilterProduct = await Set_Data_From_Database_To_RedisCache(Total_Request_Filter_Product,JSON.stringify(Data_From_Database_FilterProduct)); // set new data from database to Redis cache
+   //       // console.log(`Value of writing data to Cache: ${Result_Write_To_Cache_FilterProduct}`);
+   //       console.log(`Value of reading data from Cache: ${Data_From_Database_FilterProduct}`);
+   //       console.log(`Type of response message ${typeof(Data_From_Database_FilterProduct)}`);
+   //          res.status(200).send(Data_From_Database_FilterProduct);
+   //    }
+   //    else {
+   //       console.log("Filter product cached");
+   //       // console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
+   //       console.log(`Value of reading data from Cache: ${Result_Read_From_Cache_FilterProduct}`);
+   //       console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
+   //          res.status(200).send(Result_Read_From_Cache_FilterProduct); // Available in cache, Read in Cache
+   //    }
+   //    await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+   // } else {
+   //    // Session is timeout -> Request login again
+   //    res.status(200).send(
+   //       [{
+   //          "status" : "Session is timeout",
+   //       }]
+   //    )
+   //    // res.redirect('/login_handling');
+   // }
 
 })
 

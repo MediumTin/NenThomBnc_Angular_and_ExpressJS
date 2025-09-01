@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit{
       this.isAdminRightValid = val;
     });
     console.log("Admin right in header component is ", this.identification.GetisAdminAccepted());
-    console.log("Got SessionID is: ",`${sessionInfo.SessionID}`, "Got Username is: ",`${sessionInfo.Username}`);	 
+    console.log("Got Username is: ",`${sessionInfo.Username}`);	 
   }
   ngOnInit() {
   // Lấy danh sách sản phẩm từ server hoặc gán cứng

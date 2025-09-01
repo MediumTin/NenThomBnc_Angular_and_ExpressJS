@@ -39,29 +39,32 @@ Router.get('^/$|',async (req,res)=>{
          result = listofcandle[i]; // send the selected candle information to html page
          var reslt_string_ceonverted = JSON.stringify(result);
          reslt_string_ceonverted = "[" + reslt_string_ceonverted + "]";
-         // console.log("Matching");
-         // res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Web_Routes','General_Detail_Information.html'));
-         var isSessionValid = req.session.personal_information; // Check session is exist or not
-         
-         if(isSessionValid != undefined){
-            var CurrentUser = req.session.personal_information.username;
-            console.log(`response message in candle information is ${reslt_string_ceonverted}`);
-            console.log(`Type of response message in candle information is ${typeof(reslt_string_ceonverted)}`);
-            res.status(200).send(reslt_string_ceonverted);
-         }
-         else 
-         {
-            // Session is timeout -> Request login again
-            Shopping_bag_array_counter = 0;
-            Shopping_bag_array = [];
-            isFirstTimeLogin = true;
-            req.session.destroy();
-            res.status(200).send(
-               [{
-                  "status" : "Session is timeout",
-               }]
-            )
-         }
+
+         // Scenario 1: If want user can access the website without login
+         console.log(`response message in candle information is ${reslt_string_ceonverted}`);
+         console.log(`Type of response message in candle information is ${typeof(reslt_string_ceonverted)}`);
+         res.status(200).send(reslt_string_ceonverted);
+
+         // Scenario 2: If want user must login before access the website
+         // var isSessionValid = req.session.personal_information; // Check session is exist or not
+         // if(isSessionValid != undefined){
+         //    var CurrentUser = req.session.personal_information.username;
+         //    console.log(`response message in candle information is ${reslt_string_ceonverted}`);
+         //    console.log(`Type of response message in candle information is ${typeof(reslt_string_ceonverted)}`);
+         //    res.status(200).send(reslt_string_ceonverted);
+         // }
+         // else 
+         // {
+         //    Shopping_bag_array_counter = 0;
+         //    Shopping_bag_array = [];
+         //    isFirstTimeLogin = true;
+         //    req.session.destroy();
+         //    res.status(200).send(
+         //       [{
+         //          "status" : "Session is timeout",
+         //       }]
+         //    )
+         // }
       }
    }
 })
@@ -86,87 +89,143 @@ Router.post('/requestwriteintosession',(req,res)=>{
       Shopping_bag_array_counter = 0;
       Shopping_bag_array = [];
    }
-   console.log(`Value of first login is ${Global_Interface.isFirstTimeLogin}`);
-   if(isSessionValid != undefined){
-      // Handle when client still valid
-      const LOC_SessionID = req.sessionID; // Get session ID of client for authentication
-      var LOC_CurrentSessionDataValid = "";
-      Global_Interface.isFirstTimeLogin = false;
-      console.log(`Previous value is : ${Shopping_bag_array}`);
 
-      // Get current data of authenticated person
-      req.sessionStore.get(LOC_SessionID, async function(err, session) {
-         if (err) {
-             // Handle the error
-             res.send("Not found SID in Redis cache");
-         } else {
-            // Work with the session
-            var CurrentUser = session.personal_information.username;
-            console.log("Your first session is",session);
-            // Check length of shopping bag in session storage
-            var LOC_Length_Of_ShoppingBag_In_Session = session.personal_shopping_bag.length;
+   // Scenario 1: If want user can access the website without login
+   const LOC_SessionID = req.sessionID; // Get session ID of client for authentication
+   var LOC_CurrentSessionDataValid = "";
+   Global_Interface.isFirstTimeLogin = false;
+   console.log(`Previous value is : ${Shopping_bag_array}`);
+   req.sessionStore.get(LOC_SessionID, async function(err, session) {
+      if (err) {
+            // Handle the error
+            res.send("Not found SID in Redis cache");
+      } else {
+         // Work with the session
+         var CurrentUser = session.personal_information.username;
+         console.log("Your first session is",session);
+         // Check length of shopping bag in session storage
+         var LOC_Length_Of_ShoppingBag_In_Session = session.personal_shopping_bag.length;
 
-            console.log(`Length of shopping bag session ${LOC_Length_Of_ShoppingBag_In_Session}`); // ex: 4
-            // Assign new index for add new product into session storage of authenticated person
-            Shopping_bag_array_counter = LOC_Length_Of_ShoppingBag_In_Session;
-            // Assign data in session storage into local array for update new value
-            Shopping_bag_array = (session.personal_shopping_bag);
-            console.log(`Shopping_bag_array from session ${Shopping_bag_array}`);
-            // Add new product into local array
-            Shopping_bag_array[Shopping_bag_array_counter] = [
-               `${local_request_to_write}`,
-               `${local_request_quatity}`,
-               `${local_request_price}`,
-               `${local_request_image}`
-            ];
-            // Assign local array into session storage
-            console.log(`Current shopping bag array ${Shopping_bag_array}`);
-            console.log(`Current shopping bag array 1 ${Shopping_bag_array[0]}`);
-            session.personal_shopping_bag = Shopping_bag_array;
-            console.log("Your second session is",session);
-            LOC_CurrentSessionDataValid = session;
+         console.log(`Length of shopping bag session ${LOC_Length_Of_ShoppingBag_In_Session}`); // ex: 4
+         // Assign new index for add new product into session storage of authenticated person
+         Shopping_bag_array_counter = LOC_Length_Of_ShoppingBag_In_Session;
+         // Assign data in session storage into local array for update new value
+         Shopping_bag_array = (session.personal_shopping_bag);
+         console.log(`Shopping_bag_array from session ${Shopping_bag_array}`);
+         // Add new product into local array
+         Shopping_bag_array[Shopping_bag_array_counter] = [
+            `${local_request_to_write}`,
+            `${local_request_quatity}`,
+            `${local_request_price}`,
+            `${local_request_image}`
+         ];
+         // Assign local array into session storage
+         console.log(`Current shopping bag array ${Shopping_bag_array}`);
+         console.log(`Current shopping bag array 1 ${Shopping_bag_array[0]}`);
+         session.personal_shopping_bag = Shopping_bag_array;
+         console.log("Your second session is",session);
+         LOC_CurrentSessionDataValid = session;
+         
+         // 1. Update new value into Database
+         User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Shopping_bag_array[Shopping_bag_array_counter]);
+         // 2. Delete personal shopping bag from Redis cache
+         await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+         await Redis_API.Delete_seperated_data_inRedis(client,CurrentUser);
+         await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+         // 3. Set new updated value into Redis storage with specific SID of client (other SIDs  will not impact)
+         req.sessionStore.set(LOC_SessionID,LOC_CurrentSessionDataValid,function(err) {
+            console.log("Your FINAL session is",LOC_CurrentSessionDataValid);
+            if (err) {
+               // Handle the error
+               res.send("Error when write session data into Redis");
+            } else {
+               // Work with the session
+               console.log("Write session data into Redis sucessfully");
+               res.status(200).send(
+                  [{
+                     "status" : "Write session data into Redis sucessfully",
+                     "quatity" : `${local_request_quatity}`,
+                     "candle_name" : `${local_request_to_write}`,
+                     "image" : `${local_request_image}`,
+                     "price" : `${local_request_price}`
+                  }]
+               )
+            }
+      });
+      }
+   });
+
+   // Scenario 2: If want user must login before access the website
+   // console.log(`Value of first login is ${Global_Interface.isFirstTimeLogin}`);
+   // if(isSessionValid != undefined){
+   //    const LOC_SessionID = req.sessionID; // Get session ID of client for authentication
+   //    var LOC_CurrentSessionDataValid = "";
+   //    Global_Interface.isFirstTimeLogin = false;
+   //    console.log(`Previous value is : ${Shopping_bag_array}`);
+   //    req.sessionStore.get(LOC_SessionID, async function(err, session) {
+   //       if (err) {
+   //           res.send("Not found SID in Redis cache");
+   //       } else {
+   //          var CurrentUser = session.personal_information.username;
+   //          console.log("Your first session is",session);
+   //          var LOC_Length_Of_ShoppingBag_In_Session = session.personal_shopping_bag.length;
+   //          console.log(`Length of shopping bag session ${LOC_Length_Of_ShoppingBag_In_Session}`); // ex: 4
+   //          Shopping_bag_array_counter = LOC_Length_Of_ShoppingBag_In_Session;
+   //          Shopping_bag_array = (session.personal_shopping_bag);
+   //          console.log(`Shopping_bag_array from session ${Shopping_bag_array}`);
+   //          Shopping_bag_array[Shopping_bag_array_counter] = [
+   //             `${local_request_to_write}`,
+   //             `${local_request_quatity}`,
+   //             `${local_request_price}`,
+   //             `${local_request_image}`
+   //          ];
+   //          console.log(`Current shopping bag array ${Shopping_bag_array}`);
+   //          console.log(`Current shopping bag array 1 ${Shopping_bag_array[0]}`);
+   //          session.personal_shopping_bag = Shopping_bag_array;
+   //          console.log("Your second session is",session);
+   //          LOC_CurrentSessionDataValid = session;
             
-            // 1. Update new value into Database
-            User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Shopping_bag_array[Shopping_bag_array_counter]);
-            // 2. Delete personal shopping bag from Redis cache
-            await Redis_API.Connect_To_Redis(client); // Open connection to Redis
-            await Redis_API.Delete_seperated_data_inRedis(client,CurrentUser);
-            await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
-            // 3. Set new updated value into Redis storage with specific SID of client (other SIDs  will not impact)
-            req.sessionStore.set(LOC_SessionID,LOC_CurrentSessionDataValid,function(err) {
-               console.log("Your FINAL session is",LOC_CurrentSessionDataValid);
-               if (err) {
-                  // Handle the error
-                  res.send("Error when write session data into Redis");
-               } else {
-                  // Work with the session
-                  console.log("Write session data into Redis sucessfully");
-                  res.status(200).send(
-                     [{
-                        "status" : "Write session data into Redis sucessfully",
-                        "quatity" : `${local_request_quatity}`,
-                        "candle_name" : `${local_request_to_write}`,
-                        "image" : `${local_request_image}`,
-                        "price" : `${local_request_price}`
-                     }]
-                  )
-               }
-         });
-         }
-     });
-   }
-   else {
-      // Session is timeout -> Request login again
-      // Shopping_bag_array = [];
-      Global_Interface.isFirstTimeLogin = true;
-      req.sessionStore.clear((err) =>{
-         if(err){
-             return res.send('Error clearing session.');
-         }
-     })
-     req.session.destroy();
-      res.redirect('/login_handling');
-   }
+   //          // 1. Update new value into Database
+   //          User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Shopping_bag_array[Shopping_bag_array_counter]);
+   //          // 2. Delete personal shopping bag from Redis cache
+   //          await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   //          await Redis_API.Delete_seperated_data_inRedis(client,CurrentUser);
+   //          await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+   //          // 3. Set new updated value into Redis storage with specific SID of client (other SIDs  will not impact)
+   //          req.sessionStore.set(LOC_SessionID,LOC_CurrentSessionDataValid,function(err) {
+   //             console.log("Your FINAL session is",LOC_CurrentSessionDataValid);
+   //             if (err) {
+   //                // Handle the error
+   //                res.send("Error when write session data into Redis");
+   //             } else {
+   //                // Work with the session
+   //                console.log("Write session data into Redis sucessfully");
+   //                res.status(200).send(
+   //                   [{
+   //                      "status" : "Write session data into Redis sucessfully",
+   //                      "quatity" : `${local_request_quatity}`,
+   //                      "candle_name" : `${local_request_to_write}`,
+   //                      "image" : `${local_request_image}`,
+   //                      "price" : `${local_request_price}`
+   //                   }]
+   //                )
+   //             }
+   //       });
+   //       }
+   //   });
+   // }
+   // else {
+   //    // Session is timeout -> Request login again
+   //    // Shopping_bag_array = [];
+   //    Global_Interface.isFirstTimeLogin = true;
+   //    req.sessionStore.clear((err) =>{
+   //       if(err){
+   //           return res.send('Error clearing session.');
+   //       }
+   //   })
+   //   req.session.destroy();
+   //    res.redirect('/login_handling');
+   // }
    console.log(`Value of Shopping_bag_array_counter is ${Shopping_bag_array_counter} and array is ${Shopping_bag_array}`);
 })
 

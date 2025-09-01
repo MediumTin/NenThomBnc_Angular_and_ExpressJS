@@ -265,27 +265,25 @@ Router.get('/',(req,res)=>{
             var CurrentUser = session.personal_information.username;
             var LOC_Result_from_Database = await SyncUp_Info_Redis_And_DB(CurrentUser);
             console.log(`LOC_Result_from_Database : ${LOC_Result_from_Database}`);
-            console.log(`LOC_Result_from_SessionStorage : ${LOC_Result_from_SessionStorage}`);
+            console.log(`LOC_Result_from_SessionStorage : ${LOC_Result_from_SessionStorage}`); // missing sync up between local storage and database --> make later
             console.log(`Global interface is ${Global_Interface.isFirstTimeLogin}`);
-            if(Global_Interface.isFirstTimeLogin != false){
-               Global_Interface.isFirstTimeLogin = true;
-               LOC_Result_from_Database = JSON.parse(LOC_Result_from_Database);
-            }
-            if(Global_Interface.isFirstTimeLogin == false){
-               // first time after request write
-               Global_Interface.isFirstTimeLogin = true;
-            }
-            // res.status(200).render('Payment_handling',{
-            // Request_From_Header : "payment",
-            // account : `${CurrentUser}`,
-            // sessionStorage : JSON.stringify(LOC_Result_from_Database[0])
-            // });
 
-            // res.status(200).send(JSON.stringify(LOC_Result_from_Database[0])); 
+            // Scenario 1: If want user can access the website without login
+            LOC_Result_from_Database = JSON.parse(LOC_Result_from_Database);
+
+            // Scenario 2: If want user must login before access the website
+            // if(Global_Interface.isFirstTimeLogin != false){
+            //    Global_Interface.isFirstTimeLogin = true;
+            //    LOC_Result_from_Database = JSON.parse(LOC_Result_from_Database);
+            // }
+            // if(Global_Interface.isFirstTimeLogin == false){
+            //    // first time after request write
+            //    Global_Interface.isFirstTimeLogin = true;
+            // }
+            
             res.status(200).send(
             [{
                "Currentuser" : `${req.session.personal_information.username}`,
-               "SessionID" : `${req.sessionID}`,
                "personal_shopping_bag" : JSON.stringify(LOC_Result_from_Database[0])
             }]);
          }
