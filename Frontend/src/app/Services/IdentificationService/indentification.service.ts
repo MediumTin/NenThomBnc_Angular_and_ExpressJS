@@ -11,7 +11,6 @@ import { response } from 'express';
 })
 export class IndentificationService {
 
-  Global_SessionID: string = "";	
   // isUserIdentifiedMain: boolean = false;
   private isUserIdentifiedMainSubject = new BehaviorSubject<boolean>(false);
   isUserIdentifiedMain = this.isUserIdentifiedMainSubject.asObservable();
@@ -57,11 +56,9 @@ export class IndentificationService {
     return this.isAdminValid.value; 
   }
 
-  SetSessionID(SessionID: string, Username: string, isAdminRights: boolean){
-    this.Global_SessionID = SessionID;
+  SetSessionID(Username: string, isAdminRights: boolean){
     // localStorage.setItem('SessionID', SessionID); // using localStorage to store session ID
     // localStorage.setItem('Currentuser', Username);
-    sessionStorage.setItem('SessionID', SessionID); // using sessionStorage to store session ID
     sessionStorage.setItem('Currentuser', Username);
     sessionStorage.setItem('isAdminRights', JSON.stringify(isAdminRights));
     // document.cookie = `SessionID=${SessionID}; path=/;`; // using cookies to store session ID

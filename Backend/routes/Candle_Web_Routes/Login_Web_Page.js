@@ -81,7 +81,7 @@ const LoginHandling = async(req,res) => {
          res.status(200).send(
          [{
             "Currentuser" : `${req.session.personal_information.username}`,
-            "SessionID" : `${req.sessionID}`,
+            // "SessionID" : `${req.sessionID}`,
             "isAdminRights" : true
          }]
       )
@@ -114,10 +114,18 @@ const LoginHandling = async(req,res) => {
       req.session.personal_shopping_bag = [];
       console.log(`Session ID in Login js is ${req.sessionID} and username is ${req.session.personal_information.username} `); // req.session.cookie.maxAge
       req.session.save(()=>{
+         // Session automatically add SessionID in cookie as code below, dont need to add manually
+         // res.cookie('sid', sessionId, {
+         // httpOnly: true,
+         // secure: true, // bắt buộc nếu dùng HTTPS
+         // sameSite: 'Strict', // hoặc 'Lax' nếu cần
+         // maxAge: 1000 * 60 * 30 // 30 phút
+         // });
+
          res.status(200).send(
          [{
             "Currentuser" : `${req.session.personal_information.username}`,
-            "SessionID" : `${req.sessionID}`,
+            // "SessionID" : `${req.sessionID}`, // dont send SessionID in manually for security reason
             "isAdminRights" : false
          }]
       )
@@ -131,7 +139,7 @@ const LoginHandling = async(req,res) => {
       res.status(200).send(
       [{
             "Currentuser" : undefined,
-            "SessionID" : undefined,
+            // "SessionID" : undefined,
             "isAdminRights" : false
          }]
    )

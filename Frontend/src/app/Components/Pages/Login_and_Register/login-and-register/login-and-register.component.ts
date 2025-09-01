@@ -33,11 +33,11 @@ export class LoginAndRegisterComponent implements OnInit {
     isUserRegister.subscribe((UserInfo) => {
       this.isUserIdentified = UserInfo;
       console.log("UserInfo is ", this.isUserIdentified[0]?.Currentuser);
-      console.log("UserInfo is ", this.isUserIdentified[0]?.SessionID);
-      if(this.isUserIdentified[0]?.Currentuser != undefined && this.isUserIdentified[0]?.SessionID != undefined){
+      // console.log("UserInfo is ", this.isUserIdentified[0]?.SessionID); // server does not return session ID to client for security reason
+      if(this.isUserIdentified[0]?.Currentuser != undefined){
         // In case of successful login
         // Redirect the user to the home page
-        this.identification.SetSessionID(this.isUserIdentified[0]?.SessionID ?? "",this.isUserIdentified[0]?.Currentuser ?? "",this.isUserIdentified[0]?.isAdminRights ?? false  );
+        this.identification.SetSessionID(this.isUserIdentified[0]?.Currentuser ?? "",this.isUserIdentified[0]?.isAdminRights ?? false  );
         this.identification.SetisUserIdentifiedMain(true);
         this.router.navigate(['']);
       }
@@ -60,11 +60,11 @@ export class LoginAndRegisterComponent implements OnInit {
     isUserLogin.subscribe((UserInfo) => {
       this.isUserIdentified = UserInfo;
       console.log("UserInfo is ", this.isUserIdentified[0]?.Currentuser);
-      console.log("UserInfo is ", this.isUserIdentified[0]?.SessionID);
-      if(this.isUserIdentified[0]?.Currentuser != undefined && this.isUserIdentified[0]?.SessionID != undefined){
+      // console.log("UserInfo is ", this.isUserIdentified[0]?.SessionID); // server does not return session ID to client for security reason
+      if(this.isUserIdentified[0]?.Currentuser != undefined){
         // In case of successful login
         // Redirect the user to the home page
-        this.identification.SetSessionID(this.isUserIdentified[0]?.SessionID ?? "",this.isUserIdentified[0]?.Currentuser ?? "",this.isUserIdentified[0]?.isAdminRights ?? false );
+        this.identification.SetSessionID(this.isUserIdentified[0]?.Currentuser ?? "",this.isUserIdentified[0]?.isAdminRights ?? false );
         this.identification.SetisUserIdentifiedMain(true);
         if(this.isUserIdentified[0]?.isAdminRights == true){
           this.identification.SetisAdminAccepted(true);

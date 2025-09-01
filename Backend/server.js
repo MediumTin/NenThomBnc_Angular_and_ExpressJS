@@ -55,7 +55,8 @@ const PORT = process.env.PORT || 3500;
 const RedisPort = PORT;
 const TargetTime_Of_Minute = 10; // allow in 10 minute
 var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
-
+const isProduction = process.env.IS_PRODUCTION === 'true'; // convert string to boolean (because .env only support string)
+const isCombineAngular = process.env.IS_COMBINE_ANGULAR === 'true'; // convert string to boolean (because .env only support string)
 // Example using session middleware
 app.use(session({
     genid: function(req) {
@@ -69,11 +70,11 @@ app.use(session({
     cookie : {  
         // secure: true,
         // sameSite: 'None', // allow cross-origin
-        secure: false, // allow cross-origin
-        sameSite: 'lax', // allow cross-origin
+        secure: isProduction ? true : false, // in production, use true to force https, in local use false
+        sameSite: (isProduction | isCombineAngular) ?'Strict':'lax', // in production, use strict to avoid CSRF, in local use lax: Strict for frontend and backend are same origin, Lax for different origin
         httpOnly: true, // allow client can know document.cookie or not
         // // expires: (new Date(Date.now() + TargetTime_Of_Milisecond + 7*60*60*1000)),
-        maxAge : TargetTime_Of_Milisecond // 1 minute
+        maxAge : TargetTime_Of_Milisecond // 10 minute
     }
 }))
 
@@ -102,7 +103,13 @@ app.use(express.json());
 app.use(cookieParser());
 // 1.6. Built-in middleware to serve static files to all routes (if needed, can give permission only some specific routes)
 // app.use(express.static(path.join(__dirname,'/public/dist'))); // Serve Angular static files
-app.use(express.static(path.join(__dirname,'/public'))); // Serve other static files (images, css, js, etc) without combined Angular
+app.use(express.static(
+    isProduction ? 
+        path.join(__dirname,'/public/dist') : // if in production, serve Angular combined files
+        isCombineAngular ? 
+            path.join(__dirname,'/public/dist') : // if in local and want to serve Angular combined files    
+            path.join(__dirname,'/public') // if in local and want to serve other static files
+    )); // Serve other static files (images, css, js, etc) without combined Angular
 
 
 //---------------------------------------Common Route declaration-------------------------------------------//
@@ -283,10 +290,15 @@ app.use('/api/Shopping_Bag_handling',require('./routes/Candle_Web_Routes/Shoppin
 //--------------------------------Route to serve Angular app----------------------------------------------//
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)
 // API 19: Serve Angular app
-// app.get('*', (req, res) => {
-//     console.log(`Request URL: ${path.join(__dirname, 'public/dist/index.html')}`);
-//   res.sendFile(path.join(__dirname, 'public/dist/index.html'));
-// });
+            
+if(isProduction || isCombineAngular)
+{
+    // Handle every other route with index.html, which will contain
+    app.get('*', (req, res) => {
+        console.log(`Request URL: ${path.join(__dirname, 'public/dist/index.html')}`);
+        res.sendFile(path.join(__dirname, 'public/dist/index.html'));
+    });
+}
 
 //---------------------------------------For example : Specific Route and Middleware declaration--------------------------//
 // Specific Custom Middleware to check authorization and get Json Web Token to make private action. Before this line, it will not require JWToken to execute
