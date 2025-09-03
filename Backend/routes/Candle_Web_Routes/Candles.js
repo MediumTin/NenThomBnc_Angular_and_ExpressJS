@@ -1,11 +1,19 @@
 // Declare library and dependent module
+// const express = require('express');
+// const Router = express.Router();
+// const path = require('path');
+// const Menu_Candle_Processing = require('../../controllers/Website_Candle_Light/Menu_Candle_Processing_MongooseDB');
+// var isAdminRightChecked;
+// const Redis_API = require('../../controllers/API_with_Redis/API_Redis');
+// const { createClient } = require('redis');
+
 const express = require('express');
 const Router = express.Router();
 const path = require('path');
 const Menu_Candle_Processing = require('../../controllers/Website_Candle_Light/Menu_Candle_Processing_MongooseDB');
-var isAdminRightChecked;
 const Redis_API = require('../../controllers/API_with_Redis/API_Redis');
 const { createClient } = require('redis');
+
 const samplearray2 = ['Location 1', 'Location 2'];
 
 const client = createClient({
@@ -17,6 +25,13 @@ const client = createClient({
    }
 });  // Create a Redis client
 
+// This step to connect to Redis server - only connect 1 time at the beginning
+client.connect().then(() => {
+  console.log('Connected to Redis');   
+   // Khởi động server hoặc các thao tác khác
+}).catch((err) => {
+   console.error('Redis connection error:', err);
+});
 
 Router.post('/addnewproduct',async (req,res)=>{
    // Startdard way:
@@ -26,56 +41,79 @@ Router.post('/addnewproduct',async (req,res)=>{
    // 4. Read data from Datbase due to missing Cache
    // 5. Write new data to Cache
    Request_Add_New_Product(req,res);
-   await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   // await Redis_API.Connect_To_Redis(client);
    await Redis_API.Delete_Data_In_Redis(client);
-   await Redis_API.Disconnect_To_Redis(client);
+   // await Redis_API.Disconnect_To_Redis(client);
 
    // res.status(200).send(samplearray);
 })
 
 Router.get('/',async (req,res)=>{
-   var isSessionValid = req.session.personal_information;
-   console.log(`Session ID in Candles.js is ${req.sessionID}`);
-   if(isSessionValid != undefined){
-      var CurrentUser = req.session.personal_information.username;
-      var Request_From_Client = "Get_All_Product_Information"; // store all products in redis cache
-      console.log("Request first time load page");
-      await Redis_API.Connect_To_Redis(client); // Open connection to Redis
-      const Result_Read_From_Cache = await Redis_API.Get_Data_From_Redis(client,Request_From_Client); // Check request is exist in Cache or not
-      console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
-      if(Result_Read_From_Cache == null){
-         console.log("Miss cached");
-         const Data_From_Database = await First_Time_Loading(req,res); // missing in cache , Request read from Database
-         const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(Request_From_Client,JSON.stringify(Data_From_Database)); // set new data from database to Redis cache
-         console.log(`Value of writing data to Cache: ${Result_Write_To_Cache}`);
-         console.log(`Type of response message ${typeof(Data_From_Database)}`);
-         res.status(200).send(Data_From_Database); // After get data from database and write to Cache, it will response to client
-      }
-      else {
-         console.log("Cached");
-         console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`);
-         console.log(`Type of response message ${typeof(Result_Read_From_Cache)}`);
-         res.status(200).send(Result_Read_From_Cache); // Available in cache, Read in Cache
-      }  
-
-      await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
-
-
-   } else {
-      // Session is timeout -> Request login again
-      res.status(200).send(
-         [{
-            "status" : "Session is timeout",
-         }]
-      )
+   // Scenario 1: If want user can access the website without login
+   var Request_From_Client = "Get_All_Product_Information"; // store all products in redis cache
+   console.log("Request first time load page");
+   // await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   const Result_Read_From_Cache = await Redis_API.Get_Data_From_Redis(client,Request_From_Client); // Check request is exist in Cache or not
+   console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
+   if(Result_Read_From_Cache == null){
+      console.log("Miss cached");
+      const Data_From_Database = await First_Time_Loading(req,res); // missing in cache , Request read from Database
+      const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(Request_From_Client,JSON.stringify(Data_From_Database)); // set new data from database to Redis cache
+      console.log(`Value of writing data to Cache: ${Result_Write_To_Cache}`);
+      console.log(`Type of response message ${typeof(Data_From_Database)}`);
+      res.status(200).send(Data_From_Database); // After get data from database and write to Cache, it will response to client
    }
+   else {
+      console.log("Cached");
+      console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`);
+      console.log(`Type of response message ${typeof(Result_Read_From_Cache)}`);
+      res.status(200).send(Result_Read_From_Cache); // Available in cache, Read in Cache
+   }  
+
+   // await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+
+   // Scenario 2: If want user must login before access the website
+   // var isSessionValid = req.session.personal_information;
+   // console.log(`Session ID in Candles.js is ${req.sessionID}`);
+   // if(isSessionValid != undefined){
+
+   //    var CurrentUser = req.session.personal_information.username;
+   //    var Request_From_Client = "Get_All_Product_Information"; // store all products in redis cache
+   //    console.log("Request first time load page");
+   //    await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   //    const Result_Read_From_Cache = await Redis_API.Get_Data_From_Redis(client,Request_From_Client); // Check request is exist in Cache or not
+   //    console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
+   //    if(Result_Read_From_Cache == null){
+   //       console.log("Miss cached");
+   //       const Data_From_Database = await First_Time_Loading(req,res); // missing in cache , Request read from Database
+   //       const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(Request_From_Client,JSON.stringify(Data_From_Database)); // set new data from database to Redis cache
+   //       console.log(`Value of writing data to Cache: ${Result_Write_To_Cache}`);
+   //       console.log(`Type of response message ${typeof(Data_From_Database)}`);
+   //       res.status(200).send(Data_From_Database); // After get data from database and write to Cache, it will response to client
+   //    }
+   //    else {
+   //       console.log("Cached");
+   //       console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`);
+   //       console.log(`Type of response message ${typeof(Result_Read_From_Cache)}`);
+   //       res.status(200).send(Result_Read_From_Cache); // Available in cache, Read in Cache
+   //    }  
+   //    await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+
+   // } else {
+   //    // Session is timeout -> Request login again
+   //    res.status(200).send(
+   //       [{
+   //          "status" : "Session is timeout",
+   //       }]
+   //    )
+   // }
    
 })
 
 Router.post('/RequestGetCandleByFilter',async (req,res)=>{
    // Scenario 1: If want user can access the website without login
    console.log("Request filter product");
-   await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   // await Redis_API.Connect_To_Redis(client); // Open connection to Redis - not need connect/disconnect every time
    var Total_Request_Filter_Product = `${req.body.Request_Of_Type},${req.body.Request_Of_Group},${req.body.Request_Of_Brand},${req.body.Request_Of_Price},${req.body.Request_Of_Color}`;
    console.log(`Total Request type : ------ ${Total_Request_Filter_Product}`);
    const Result_Read_From_Cache_FilterProduct = await Redis_API.Get_Data_From_Redis(client,Total_Request_Filter_Product); 
@@ -87,16 +125,18 @@ Router.post('/RequestGetCandleByFilter',async (req,res)=>{
       // console.log(`Value of writing data to Cache: ${Result_Write_To_Cache_FilterProduct}`);
       console.log(`Value of reading data from Cache: ${Data_From_Database_FilterProduct}`);
       console.log(`Type of response message ${typeof(Data_From_Database_FilterProduct)}`);
-         res.status(200).send(Data_From_Database_FilterProduct);
+      res.status(200).send(Data_From_Database_FilterProduct);
    }
    else {
       console.log("Filter product cached");
       // console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
       console.log(`Value of reading data from Cache: ${Result_Read_From_Cache_FilterProduct}`);
       console.log(`Type of response message ${typeof(Result_Read_From_Cache_FilterProduct)}`);
-         res.status(200).send(Result_Read_From_Cache_FilterProduct); // Available in cache, Read in Cache
+      
+      res.status(200).send(Result_Read_From_Cache_FilterProduct); // Available in cache, Read in Cache
    }
-   await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+   // await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis - not needed for now
+
    // Scenario 2: If want user must login before access the website
    // var isSessionValid = req.session.personal_information;
    // console.log(`Session ID in Candles.js is ${req.sessionID}`);

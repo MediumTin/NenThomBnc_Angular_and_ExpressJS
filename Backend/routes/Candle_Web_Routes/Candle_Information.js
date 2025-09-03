@@ -75,6 +75,7 @@ Router.post('/',(req,res)=>{
    res.status(200).send(result);
 })
 
+// Only allow to write session when user is authenticated
 Router.post('/requestwriteintosession',(req,res)=>{
    console.log(`Post status is received in requestwriteintosession is ${req.body.candle_name}`);
    

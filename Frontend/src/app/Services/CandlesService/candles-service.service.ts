@@ -45,6 +45,16 @@ export class CandlesServiceService {
     return this.http.post<Selected_Candle>(CANDLE_INFORMATION_Request_Write_to_Session_URL, selected_candles, { withCredentials: true }); 
   };
 
+  setCandleInformationToLocalStorageOfBrownser(selected_candles: Selected_Candle){
+    localStorage.setItem('Selected_candles', selected_candles.candle_name); // using localStorage to store session ID
+    localStorage.setItem('Quatity', selected_candles.quatity.toString());
+    localStorage.setItem('Price', selected_candles.price.toString());
+    localStorage.setItem('Image', selected_candles.image.toString());
+    // sessionStorage.setItem('Currentuser', Username);
+    // sessionStorage.setItem('isAdminRights', JSON.stringify(isAdminRights));
+    // document.cookie = `SessionID=${SessionID}; path=/;`; // using cookies to store session ID
+    // document.cookie = `Currentuser=${Username}; path=/;`; // using cookies to store username
+  }
   setAddNewProduct(NewProductToBeAdded: AddNewProduct): Observable<AddNewProduct> {
     return this.http.post<AddNewProduct>(CANDLES_AddNewProduct_URL, NewProductToBeAdded, { withCredentials: true }); 
   };

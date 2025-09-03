@@ -13,44 +13,48 @@
                 <!-- <h3 id="Candle_Price_2">{{ price }}</h3><br> -->
                 <div>
                     <table>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <input
-                                    id="Quatity_of_product"
-                                    type="range"
-                                    min="1"
-                                    max="10"
-                                    [(ngModel)]="quantity"
-                                    (input)="onQuantityChange($event)"
-                                >
-                            </td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td><p style="font-size:20px">Quatity:</p></td>
-                            <td><p id="Display_for_quatity_of_product" style="font-size:20px">{{ quantity }}</p></td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <input
+                                        id="Quatity_of_product"
+                                        type="range"
+                                        min="1"
+                                        max="10"
+                                        [(ngModel)]="quantity"
+                                        (input)="onQuantityChange($event)"
+                                    >
+                                </td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td><p style="font-size:20px">Quatity:</p></td>
+                                <td><p id="Display_for_quatity_of_product" style="font-size:20px">{{ quantity }}</p></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div><br>
                 <!-- Trigger/Open The Modal -->
                 <table>
-                    <tr>
-                        <td>
-                            <button 
-                                class="product-action-btn" 
-                                id="myBtn"
-                                (click)="BuyNowandMoveToShoppingBag()"
-                            >Buy Now</button>
-                        </td>
-                        <td>
-                            <button 
-                                class="product-action-btn" 
-                                id="myBtnAddIntoBag"
-                                (click)="addToBag()"
-                            >Add into Bag</button>
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <button 
+                                    class="product-action-btn" 
+                                    id="myBtn"
+                                    (click)="BuyNowandMoveToShoppingBag()"
+                                >Buy Now</button>
+                            </td>
+                            <td>
+                                <button 
+                                    class="product-action-btn" 
+                                    id="myBtnAddIntoBag"
+                                    (click)="addToBag()"
+                                >Add into Bag</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
                 
                 <div 

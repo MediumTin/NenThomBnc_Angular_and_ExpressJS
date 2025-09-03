@@ -7,11 +7,12 @@ import { FilteredProductService } from '../../../Services/FilteredService/filter
 import { Candles } from '../../../Common_Configuration/Models/Candles';
 import { Observable } from 'rxjs';
 import { CandlesServiceService } from '../../../Services/CandlesService/candles-service.service';
+import { FilterBarComponent } from "../../filter-bar/filter-bar.component";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule,CommonModule, FormsModule],
+  imports: [RouterModule, CommonModule, FormsModule, FilterBarComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -50,23 +51,29 @@ export class HeaderComponent implements OnInit{
     candlesObervalbe.subscribe((serverCandles) => {
       this.AllCandles = serverCandles; // Assign the final data to the component property
       console.log("Response from serve",this.AllCandles);
-      // console.log(`TotalLengh of received info : ${this.candles.length}`);
-      if(this.AllCandles[0].status == "Session is timeout"){
-        console.log("Session is timeout");
-        this.identification.ClearSessionStorage();
-        this.identification.SetisUserIdentifiedMain(false);
-        this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
-      }  
-      else {
-        // status is "Session is normal"
-        // this.candles = this.AllCandles;
-        const term = this.searchTerm.trim().toLowerCase();
-        this.candles = this.AllCandles.filter(AllCandle =>
-          AllCandle.name.toLowerCase().includes(term)
-        );
-        console.log("Filtered products in header component:", this.candles);
-        this.filteredProduct.notifyFilterChanged(this.candles);
-      }
+      // Scenario 1: If want user can access the website without login
+      const term = this.searchTerm.trim().toLowerCase();
+      this.candles = this.AllCandles.filter(AllCandle =>
+        AllCandle.name.toLowerCase().includes(term)
+      );
+      console.log("Filtered products in header component:", this.candles);
+      this.filteredProduct.notifyFilterChanged(this.candles);
+
+      // Scenario 2: If want user must login before access the website
+      // if(this.AllCandles[0].status == "Session is timeout"){
+      //   console.log("Session is timeout");
+      //   this.identification.ClearSessionStorage();
+      //   this.identification.SetisUserIdentifiedMain(false);
+      //   this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
+      // }  
+      // else {
+      //   const term = this.searchTerm.trim().toLowerCase();
+      //   this.candles = this.AllCandles.filter(AllCandle =>
+      //     AllCandle.name.toLowerCase().includes(term)
+      //   );
+      //   console.log("Filtered products in header component:", this.candles);
+      //   this.filteredProduct.notifyFilterChanged(this.candles);
+      // }
     });
   
   }

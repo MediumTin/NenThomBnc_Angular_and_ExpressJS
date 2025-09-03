@@ -70,21 +70,23 @@
                                 (click)="TabelCheckHandling(i)"
                                 [ngStyle]="{'background-color': isButtonBackgroundChecked[i] === true ? 'green' : 'grey', 'border-radius': '3px'}"
                                 >
-                                <tr>
-                                    <td rowspan="2" style="width: 30px;text-align: center;">
-                                        <input 
-                                            type="checkbox" 
-                                            [id]="'ShoppingBagList_' + i" 
-                                            value="Bike"
-                                            (change)="isProductChecked(i, $event)">
-                                    </td>
-                                    <td style="width: 400px;font-size:15px;text-align: left;">{{(PersonalShoppingBag.split(","))[0]}}</td>
-                                    <td style="font-size:15px;text-align: left;">Price:${{(PersonalShoppingBag.split(","))[2]}}VND</td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 400px;text-align: left;"></td>
-                                    <td style="font-size:15px;text-align: left;">Quatity :${{(PersonalShoppingBag.split(","))[1]}}</td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2" style="width: 30px;text-align: center;">
+                                            <input 
+                                                type="checkbox" 
+                                                [id]="'ShoppingBagList_' + i" 
+                                                value="Bike"
+                                                (change)="isProductChecked(i, $event)">
+                                        </td>
+                                        <td style="width: 400px;font-size:15px;text-align: left;">{{(PersonalShoppingBag.split(","))[0]}}</td>
+                                        <td style="font-size:15px;text-align: left;">Price:${{(PersonalShoppingBag.split(","))[2]}}VND</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 400px;text-align: left;"></td>
+                                        <td style="font-size:15px;text-align: left;">Quatity :${{(PersonalShoppingBag.split(","))[1]}}</td>
+                                    </tr>
+                                </tbody>
                             </table><br>
                           </div>
                         </div>
@@ -246,10 +248,12 @@
                             <div id="ShoppinigDiv_Confirmation">
                                 <div class="product-card" *ngFor="let SelectedFromPersonalShoppingBag of SelectedFromPersonalShoppingBags; let i = index">
                                     <table style="background-color:grey; border-radius: 3px;" >
-                                        <tr>
-                                            <td style="width: 300px;font-size:15px;text-align: left;">{{SelectedFromPersonalShoppingBag.candle_name}}</td>
-                                            <td style="font-size:15px;text-align: left;">Quatity :{{SelectedFromPersonalShoppingBag.quatity}}</td>
-                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 300px;font-size:15px;text-align: left;">{{SelectedFromPersonalShoppingBag.candle_name}}</td>
+                                                <td style="font-size:15px;text-align: left;">Quatity :{{SelectedFromPersonalShoppingBag.quatity}}</td>
+                                            </tr>
+                                        </tbody>
                                     </table><br>
                                 </div>
                             </div>
@@ -281,11 +285,13 @@
                             ></p>
                         </div>
                         <table>
-                            <tr>
-                                <!-- <a href="/" id="Return_Home_Page" style="text-decoration: none;visibility: hidden;"></a> -->
-                                <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
-                                <td style="text-align: right;"><button class="btn btn-primary mt-2" id="Confirmation_passed" (click)="Passed_Confirmation()" >Confirmed</button></td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <!-- <a href="/" id="Return_Home_Page" style="text-decoration: none;visibility: hidden;"></a> -->
+                                    <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
+                                    <td style="text-align: right;"><button class="btn btn-primary mt-2" id="Confirmation_passed" (click)="Passed_Confirmation()" >Confirmed</button></td>
+                                </tr>
+                            </tbody>
                         </table>
                         
                     </div>

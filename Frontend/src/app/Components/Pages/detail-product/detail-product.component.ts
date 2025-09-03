@@ -116,44 +116,58 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
     // Nếu muốn xử lý thêm logic khi số lượng thay đổi, viết ở đây
   }
   addToBag() {
+    console.log('clicked');
     this.isCheckShoppingBagVisible = true; // Show the shopping bag check
     this.AddedBoxFadeOut(this.AllowedFadeOut);
-    this.candlesService.setCandleInformationToSession({
+    // Scenario 1: If want user can access the website without login - will store in local storage (can store by any window and never clear until user clear it)
+    this.candlesService.setCandleInformationToLocalStorageOfBrownser({
       quatity: this.quantity,
       candle_name: this.name,
       image: this.image,
       price: this.price
-    }).subscribe({
-      next: (response) => {
-        console.log("Response from server when add to bag", response);
-        // Navigate to the bag page or show a success message
-        // this.router.navigate(['/bag']);  // Navigate to login handling page internal in Angular
-      }
-      , error: (error) => {
-        console.error("Error when adding to bag", error);
-        // Handle the error, e.g., show an error message
-      }
     });
-    // setCandleInformationToSession
+
+    // Scenario 2: If want user must login before access the website - if user already loggin, will store in session storage  in server side
+    // this.candlesService.setCandleInformationToSession({
+    //   quatity: this.quantity,
+    //   candle_name: this.name,
+    //   image: this.image,
+    //   price: this.price
+    // }).subscribe({
+    //   next: (response) => {
+    //     console.log("Response from server when add to bag", response);
+    //   }
+    //   , error: (error) => {
+    //     console.error("Error when adding to bag", error);
+    //   }
+    // });
+    
   }
   BuyNowandMoveToShoppingBag() {
-    // this.router.navigate(['/payment_handling']); // Navigate to login handling page internal in Angular
-    this.candlesService.setCandleInformationToSession({
+    // Scenario 1: If want user can access the website without login - will store in local storage (can store by any window and never clear until user clear it)
+    this.candlesService.setCandleInformationToLocalStorageOfBrownser({
       quatity: this.quantity,
       candle_name: this.name,
       image: this.image,
       price: this.price
-    }).subscribe((response_From_Serve) => {
-        this.ReturnValueAfterPostMethod = Array.isArray(response_From_Serve) ? response_From_Serve[0] : response_From_Serve;
-        console.log("Response from serve", this.ReturnValueAfterPostMethod);
-        console.log("Candle name:", this.ReturnValueAfterPostMethod.status);
-        if (this.ReturnValueAfterPostMethod.status === "Write session data into Redis sucessfully") {
-          this.router.navigate(['/payment_handling']);  // Navigate to login handling page internal in Angular
-        }
+    });
+    this.router.navigate(['/payment_handling']);  // Navigate to login handling page internal in Angular
 
-      });
-    // setCandleInformationToSession
-    // this.router.navigate(['/payment_handling']); // Navigate to login handling page internal in Angular
+    // Scenario 2: If want user must login before access the website - if user already loggin, will store in session storage  in server side
+    // this.candlesService.setCandleInformationToSession({
+    //   quatity: this.quantity,
+    //   candle_name: this.name,
+    //   image: this.image,
+    //   price: this.price
+    // }).subscribe((response_From_Serve) => {
+    //     this.ReturnValueAfterPostMethod = Array.isArray(response_From_Serve) ? response_From_Serve[0] : response_From_Serve;
+    //     console.log("Response from serve", this.ReturnValueAfterPostMethod);
+    //     console.log("Candle name:", this.ReturnValueAfterPostMethod.status);
+    //     if (this.ReturnValueAfterPostMethod.status === "Write session data into Redis sucessfully") {
+    //       this.router.navigate(['/payment_handling']);  // Navigate to login handling page internal in Angular
+    //     }
+
+    //   });
   }
 
     checkShoppingBag() {

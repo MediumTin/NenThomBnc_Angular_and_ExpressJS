@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { FilterBarComponent } from '../filter-bar/filter-bar.component';
 import { ActivatedRoute, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule, JsonPipe } from '@angular/common';
@@ -64,7 +64,7 @@ export class CommonProductComponent implements OnInit, AfterViewInit{
   @ViewChild('tableMenu', { static: false }) tableMenu!: ElementRef<HTMLTableElement>;
   // @ViewChild('pTag', { static: false }) pTag!: ElementRef<HTMLTableElement>;
 
-  constructor(private filteredProduct : FilteredProductService, private router:Router, private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService )
+  constructor(private cdr: ChangeDetectorRef, private filteredProduct : FilteredProductService, private router:Router, private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService )
   { 
     this.currentRoute = this.router.url.split('/')[1];
     console.log("Current route in common product component:", this.currentRoute);
@@ -116,7 +116,10 @@ export class CommonProductComponent implements OnInit, AfterViewInit{
       this.accessory_CB = false;
       this.gift_CB = false;
     }
+    // this.SyncUpCheckBoxChildComponent();
+
     this.SyncUpCheckBoxChildComponent();
+    this.cdr.detectChanges();
   }
   ngOnInit(): void {
     // Initialization logic here  

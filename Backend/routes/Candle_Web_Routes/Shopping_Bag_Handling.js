@@ -39,14 +39,20 @@ Router.get('/',(req,res)=>{
             var LOC_Result_from_SessionStorage = await SyncUp_Info_Redis_And_DB(CurrentUser);
             console.log(`LOC_Result_from_SessionStorage : ${LOC_Result_from_SessionStorage}`);
             console.log(`Global interface is ${Global_Interface.isFirstTimeLogin}`);
-            if(Global_Interface.isFirstTimeLogin != false){
-               Global_Interface.isFirstTimeLogin = true;
-               LOC_Result_from_SessionStorage = JSON.parse(LOC_Result_from_SessionStorage);
-            }
-            if(Global_Interface.isFirstTimeLogin == false){
-               // first time after request write
-               Global_Interface.isFirstTimeLogin = true;
-            }
+
+            // Scenario 1: If want user can access the website without login
+            LOC_Result_from_SessionStorage = JSON.parse(LOC_Result_from_SessionStorage);
+
+            // Scenario 2: If want user must login before access the website
+            // if(Global_Interface.isFirstTimeLogin != false){
+            //    Global_Interface.isFirstTimeLogin = true;
+            //    LOC_Result_from_SessionStorage = JSON.parse(LOC_Result_from_SessionStorage);
+            // }
+            // if(Global_Interface.isFirstTimeLogin == false){
+            //    // first time after request write
+            //    Global_Interface.isFirstTimeLogin = true;
+            // }
+
             
             console.log(`type of LOC_Result_from_SessionStorage : ${(LOC_Result_from_SessionStorage[0])}`);
             old_array = LOC_Result_from_SessionStorage;

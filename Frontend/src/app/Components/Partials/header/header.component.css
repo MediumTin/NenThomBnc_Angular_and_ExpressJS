@@ -279,6 +279,8 @@ td, th, tr {
       z-index: 1;
       border-radius: 12px;
       overflow: hidden;
+      margin-left: 10px;
+      margin-top: 8px;
 }
 
 .dropdown-content a {
@@ -570,7 +572,7 @@ td, th, tr {
   display: block;
 }
 
-.nav-links a , .dropdown a{
+.nav-links a  , .dropdown a{
   /* color: #FF0066;
   font-weight: 500;
   text-decoration: none;

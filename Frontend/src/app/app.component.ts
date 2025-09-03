@@ -15,7 +15,7 @@ import { LoadingComponent } from "./Components/Partials/loading/loading.componen
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, HeaderComponent, TestComponent, Test2Component, CommonModule, LoadingComponent],
+  imports: [RouterOutlet, FooterComponent, HeaderComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(){
     this.isUserIdentifiedMain = true;
-    
+
     // Scenario 2: If want user must login before access the website
     // this.identification.isUserIdentifiedMain.subscribe(val => {
     //   this.isUserIdentifiedMain = val;

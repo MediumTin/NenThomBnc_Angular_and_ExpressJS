@@ -21,6 +21,11 @@ async function Connect_To_Redis(local_client){
   await local_client.connect();
 }
 
+function Connect_To_Redis_from_Initial(local_client){
+  // Connect to Redis
+  local_client.connect();
+}
+
 async function Disconnect_To_Redis(local_client){
   // Disconnect from Redis
   await local_client.disconnect();

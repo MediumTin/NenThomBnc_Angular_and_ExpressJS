@@ -25,16 +25,18 @@
                     <table style="background-color:grey; border-radius: 3px;" 
                         [id]="'TableItem'+i"
                         >
-                        <tr>
-                            <td rowspan="2" style="width: 30px;text-align: center;">
-                            </td>
-                            <td style="width: 400px;font-size:15px;text-align: left;">{{(PersonalShoppingBag.split(","))[0]}}</td>
-                            <td style="font-size:15px;text-align: left;">Price:${{(PersonalShoppingBag.split(","))[2]}}VND</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 400px;text-align: left;"></td>
-                            <td style="font-size:15px;text-align: left;">Quatity :${{(PersonalShoppingBag.split(","))[1]}}</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" style="width: 30px;text-align: center;">
+                                </td>
+                                <td style="width: 400px;font-size:15px;text-align: left;">{{(PersonalShoppingBag.split(","))[0]}}</td>
+                                <td style="font-size:15px;text-align: left;">Price:${{(PersonalShoppingBag.split(","))[2]}}VND</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 400px;text-align: left;"></td>
+                                <td style="font-size:15px;text-align: left;">Quatity :${{(PersonalShoppingBag.split(","))[1]}}</td>
+                            </tr>
+                        </tbody>
                     </table><br>
                     </div>
                 </div>
