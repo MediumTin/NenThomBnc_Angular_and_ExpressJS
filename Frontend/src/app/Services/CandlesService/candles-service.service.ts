@@ -12,6 +12,7 @@ import { AddNewProduct } from '../../Common_Configuration/Models/AddNewProduct';
   providedIn: 'root'
 })
 export class CandlesServiceService {
+  
   constructor(private http:HttpClient) { }
   getAllCandles(): Observable<Candles[]> {
     return this.http.get<Candles[]>(CANDLES_URL, { withCredentials: true });
@@ -46,15 +47,63 @@ export class CandlesServiceService {
   };
 
   setCandleInformationToLocalStorageOfBrownser(selected_candles: Selected_Candle){
-    localStorage.setItem('Selected_candles', selected_candles.candle_name); // using localStorage to store session ID
-    localStorage.setItem('Quatity', selected_candles.quatity.toString());
-    localStorage.setItem('Price', selected_candles.price.toString());
-    localStorage.setItem('Image', selected_candles.image.toString());
+    let existing_candle_name = localStorage.getItem('Selected_candles_name');
+    let existing_quatity = localStorage.getItem('Selected_candles_Quatity');
+    let existing_price = localStorage.getItem('Selected_candles_Price');
+    let existing_image = localStorage.getItem('Selected_candles_Image');
+
+    if(existing_candle_name === null || existing_quatity === null || existing_price === null || existing_image === null) {
+      localStorage.setItem('Selected_candles_name',selected_candles.candle_name?? ''); // using localStorage to store session ID
+      localStorage.setItem('Selected_candles_Quatity',(selected_candles.quatity?? '').toString());
+      localStorage.setItem('Selected_candles_Price',(selected_candles.price?? '').toString());
+      localStorage.setItem('Selected_candles_Image',(selected_candles.image?? '').toString());
+    }
+    else {
+      localStorage.setItem('Selected_candles_name', existing_candle_name + ':' + selected_candles.candle_name); // using localStorage to store session ID
+      localStorage.setItem('Selected_candles_Quatity', existing_quatity + ':' + (selected_candles.quatity?? '').toString());
+      localStorage.setItem('Selected_candles_Price', existing_price + ':' + (selected_candles.price?? '').toString());
+      localStorage.setItem('Selected_candles_Image', existing_image + ':' + (selected_candles.image?? '').toString());
+    }
+    
+    
     // sessionStorage.setItem('Currentuser', Username);
     // sessionStorage.setItem('isAdminRights', JSON.stringify(isAdminRights));
     // document.cookie = `SessionID=${SessionID}; path=/;`; // using cookies to store session ID
     // document.cookie = `Currentuser=${Username}; path=/;`; // using cookies to store username
   }
+
+  getCandleInformationFromLocalStorageOfBrownser() : Selected_Candle {
+    let existing_candle_name = localStorage.getItem('Selected_candles_name');
+    let existing_quatity = localStorage.getItem('Selected_candles_Quatity');
+    let existing_price = localStorage.getItem('Selected_candles_Price');
+    let existing_image = localStorage.getItem('Selected_candles_Image');
+    console.log("existing_candle_name is ", existing_candle_name);
+    console.log("existing_quatity is ", existing_quatity);
+    console.log("existing_price is ", existing_price);
+    console.log("existing_image is ", existing_image);
+    if(existing_candle_name === null || existing_quatity === null || existing_price === null || existing_image === null) {
+      return {candle_name: '', quatity: 0, price: "0VND", image: ''};
+    }
+    else {
+      let candle_name_array = existing_candle_name.split(':');
+      let quatity_array = existing_quatity.split(':');
+      let price_array = existing_price.split(':');
+      let image_array = existing_image.split(':');
+      console.log("candle_name_array is ", candle_name_array);
+      console.log("quatity_array is ", quatity_array);  
+      console.log("price_array is ", price_array);
+      console.log("image_array is ", image_array);
+
+      return {
+        candle_name_array: candle_name_array,
+        quatity_array: quatity_array.map(q => parseInt(q)),
+        price_array: price_array,
+        image_array: image_array
+      };
+    }
+    
+  }
+
   setAddNewProduct(NewProductToBeAdded: AddNewProduct): Observable<AddNewProduct> {
     return this.http.post<AddNewProduct>(CANDLES_AddNewProduct_URL, NewProductToBeAdded, { withCredentials: true }); 
   };
