@@ -12,11 +12,16 @@ import { response } from 'express';
 export class IndentificationService {
 
   // isUserIdentifiedMain: boolean = false;
+  private currentUser = new BehaviorSubject<string>(''); 
+  currentUser_Observe = this.currentUser.asObservable(); // global observable to track current user
+
+  private isAdminValid = new BehaviorSubject<boolean>(false);
+  isAdminValidMain = this.isAdminValid.asObservable(); // global observable to track admin right
+
   private isUserIdentifiedMainSubject = new BehaviorSubject<boolean>(false);
   isUserIdentifiedMain = this.isUserIdentifiedMainSubject.asObservable();
 
-  private isAdminValid = new BehaviorSubject<boolean>(false);
-  isAdminValidMain = this.isAdminValid.asObservable();
+  
 
   constructor(private http:HttpClient, private router:Router) {  }
 
@@ -49,7 +54,7 @@ export class IndentificationService {
   }
 
   SetisAdminAccepted(arg0: boolean) {
-    this.isAdminValid.next(arg0);
+    this.isAdminValid.next(arg0); // 
     // this.isAdminValid = arg0
   }
   GetisAdminAccepted(): boolean {
@@ -61,6 +66,8 @@ export class IndentificationService {
     // localStorage.setItem('Currentuser', Username);
     sessionStorage.setItem('Currentuser', Username);
     sessionStorage.setItem('isAdminRights', JSON.stringify(isAdminRights));
+    this.currentUser.next(Username);
+
     // document.cookie = `SessionID=${SessionID}; path=/;`; // using cookies to store session ID
     // document.cookie = `Currentuser=${Username}; path=/;`; // using cookies to store username
   }
@@ -95,8 +102,22 @@ export class IndentificationService {
 //   console.log("Session ID is: ", sessionId, "Username is: ", username);
 //   return { SessionID: sessionId, Username: username };
 // }
-
 GetSessionID(): { Username: string, isAdminRights: boolean } {
+  let username = "";
+  let isAdminRights = false;
+
+  if (typeof window !== 'undefined' && window.sessionStorage) {
+    username = sessionStorage.getItem('Currentuser') ?? "";
+    const isAdminRightsString = sessionStorage.getItem('isAdminRights');
+    isAdminRights = isAdminRightsString ? JSON.parse(isAdminRightsString) : false
+  }
+  this.currentUser.next(username);
+  this.isAdminValid.next(isAdminRights); // 
+  console.log("Username is: ", username);
+  return { Username: username, isAdminRights: isAdminRights };
+}
+
+GetSessionID_observable(): Observable<{ Username: string, isAdminRights: boolean }> {
   let username = "";
   let isAdminRights = false;
 
@@ -107,7 +128,7 @@ GetSessionID(): { Username: string, isAdminRights: boolean } {
   }
 
   console.log("Username is: ", username);
-  return {Username: username, isAdminRights: isAdminRights  };
+  return of({ Username: username, isAdminRights: isAdminRights });
 }
 
 

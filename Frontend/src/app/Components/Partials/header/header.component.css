@@ -635,3 +635,55 @@ a.custom .dropdown-content {
   }
 }
 
+.modal_for_addedIntoBag {
+    flex-direction: row; /* hoặc row nếu muốn ngang */
+    align-items: center;
+    line-height: 1.4;
+    text-align: center;
+    border-radius: 16px;
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    top: 32px;
+    right: 32px;
+    left: auto;
+    bottom: auto;
+    transform: none; /* Không dùng translateX(-50%) nữa */
+    width: auto;
+    /* min-height: 90px; */
+    height: auto;
+    padding: 24px 18px 18px 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    background: linear-gradient(135deg, #eafff0 0%, #ffe3ec 100%);
+    border: 2px solid #FFB266;
+    color: #222;
+    font-size: 1.1rem;
+    /* animation: fadeInModal 0.3s; */
+}
+
+.modal_for_addedIntoBag p {
+    margin: 12px 0 18px 0;
+    font-size: 1.15rem;
+    color: #FF0066;
+    font-weight: bold;
+}
+
+.modal_for_addedIntoBag button {
+    width: 120px;
+    height: 36px;
+    margin: 8px 8px 0 8px; /* trên, phải, dưới, trái */
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(90deg, #FFB266 0%, #FF0066 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 8px;
+}
+
+.modal_for_addedIntoBag button:hover {
+    background: linear-gradient(90deg, #FF0066 0%, #FFB266 100%);
+    transform: scale(1.05);
+}

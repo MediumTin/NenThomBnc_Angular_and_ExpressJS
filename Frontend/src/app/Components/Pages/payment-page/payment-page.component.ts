@@ -42,9 +42,9 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   total_price_before_VAT: number = 0;
   VAT_Price: number = 0;
   total_price_after_VAT: number = 0;
-total_price_before_VAT_confirmed: any;
-VAT_Price_confirmed: any;
-total_price_after_VAT_confirmed: any;
+  total_price_before_VAT_confirmed: any;
+  VAT_Price_confirmed: any;
+  total_price_after_VAT_confirmed: any;
 
   constructor(
     private fb: FormBuilder, 
@@ -61,50 +61,76 @@ total_price_after_VAT_confirmed: any;
       console.log("Current_Username is ", this.Current_Username);
       this.identification.SetisUserIdentifiedMain(true);
       console.log("User has identified yet in payment component");
-      this.paymentService.GetShoppingBagOfCurrentUser().subscribe((userInfo) => {
+      const selectedCandle: Selected_Candle = this.candlesService.getCandleInformationFromLocalStorageOfBrownser();
+      console.log("selectedCandle in payment component is ", selectedCandle);
+      console.log("selected_name in payment component is ", selectedCandle.candle_name_array);
+      console.log("selected_quatity in payment component is ", selectedCandle.quatity_array);
+      console.log("selected_price in payment component is ", selectedCandle.price_array);
+      console.log("selected_image in payment component is ", selectedCandle.image_array);
+
+      // Scenario 1: If want user can access the website without login
+      this.paymentService.Get_and_merge_ShoppingBag_FromLocalStorage_ToServer(selectedCandle).subscribe((userInfo) => {
         console.log("UserInfo is ", userInfo);  
-        if (userInfo[0]?.status == "Session is timeout") {
-          console.log("Session is timeout");
-          this.identification.ClearSessionStorage();
-          this.identification.SetisUserIdentifiedMain(false);
-          this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
-        } else {
-          // status is "Session is normal"
-          // this.sessionStorage = userInfo[0]?.personal_shopping_bag ?? ""; // data in string
-          this.PersonalShoppingBags = JSON.parse(userInfo[0]?.personal_shopping_bag ?? ""); // data in object
-          this.account = userInfo[0]?.Currentuser ?? "";
-          console.log("type of personal_shopping_bag ", typeof this.PersonalShoppingBags);
-          console.log("Personal shopping bag is ",this.PersonalShoppingBags);
-          console.log("this.PersonalShoppingBags[0] is ", (this.PersonalShoppingBags[0].split(","))[3]);
-          // Name of first item is (this.PersonalShoppingBags[0].split(","))[0]
-          // Quantity of first item is (this.PersonalShoppingBags[0].split(","))[1]
-          // Price of first item is (this.PersonalShoppingBags[0].split(","))[2]
-          // Image of first item is (this.PersonalShoppingBags[0].split(","))[3]
+          if (userInfo[0]?.status == "Session is timeout") {
+            console.log("Session is timeout");
+            this.identification.ClearSessionStorage();
+            this.identification.SetisUserIdentifiedMain(false);
+            this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
+          } else {
+            this.PersonalShoppingBags = JSON.parse(userInfo[0]?.personal_shopping_bag ?? ""); // data in object
+            this.account = userInfo[0]?.Currentuser ?? "";
+            console.log("type of personal_shopping_bag ", typeof this.PersonalShoppingBags);
+            console.log("Personal shopping bag is ",this.PersonalShoppingBags);
+            console.log("this.PersonalShoppingBags[0] is ", (this.PersonalShoppingBags[0].split(","))[3]);
+            this.candlesService.ClearAllDataInLocalStorageOfBrownser(); // Clear all data in local storage of browser after merge to server
+          }
+      });
 
-          // Name of second item is (this.PersonalShoppingBags[1].split(","))[0]
-          // Quantity of second item is (this.PersonalShoppingBags[1].split(","))[1]
-          // Price of second item is (this.PersonalShoppingBags[1].split(","))[2]
-          // Image of second item is (this.PersonalShoppingBags[1].split(","))[3]
-          // this.Passed_Confirmation();
-            //   this.candlesService.setCandleInformationToSession({
-            //   quatity: 10,
-            //   candle_name: "Hello",
-            //   image: "Hello",
-            //   price: "Hello"
-            // }).subscribe({
-            //   next: (response) => {
-            //     console.log("Response from server when add to bag", response);
-            //     // Navigate to the bag page or show a success message
-            //     // this.router.navigate(['/bag']); // Navigate to login handling page internal in Angular
-            //   }
-            //   , error: (error) => {
-            //     console.error("Error when adding to bag", error);
-            //     // Handle the error, e.g., show an error message
-            //   }
-            // });
 
-        }
-        });
+      // Scenario 2: If want user must login before access the website
+      // this.paymentService.GetShoppingBagOfCurrentUser().subscribe((userInfo) => {
+      //   console.log("UserInfo is ", userInfo);  
+      //   if (userInfo[0]?.status == "Session is timeout") {
+      //     console.log("Session is timeout");
+      //     this.identification.ClearSessionStorage();
+      //     this.identification.SetisUserIdentifiedMain(false);
+      //     this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
+      //   } else {
+      //     this.PersonalShoppingBags = JSON.parse(userInfo[0]?.personal_shopping_bag ?? ""); // data in object
+      //     this.account = userInfo[0]?.Currentuser ?? "";
+      //     console.log("type of personal_shopping_bag ", typeof this.PersonalShoppingBags);
+      //     console.log("Personal shopping bag is ",this.PersonalShoppingBags);
+      //     console.log("this.PersonalShoppingBags[0] is ", (this.PersonalShoppingBags[0].split(","))[3]);
+      //     // Name of first item is (this.PersonalShoppingBags[0].split(","))[0]
+      //     // Quantity of first item is (this.PersonalShoppingBags[0].split(","))[1]
+      //     // Price of first item is (this.PersonalShoppingBags[0].split(","))[2]
+      //     // Image of first item is (this.PersonalShoppingBags[0].split(","))[3]
+
+      //     // Name of second item is (this.PersonalShoppingBags[1].split(","))[0]
+      //     // Quantity of second item is (this.PersonalShoppingBags[1].split(","))[1]
+      //     // Price of second item is (this.PersonalShoppingBags[1].split(","))[2]
+      //     // Image of second item is (this.PersonalShoppingBags[1].split(","))[3]
+      //     // this.Passed_Confirmation();
+      //       //   this.candlesService.setCandleInformationToSession({
+      //       //   quatity: 10,
+      //       //   candle_name: "Hello",
+      //       //   image: "Hello",
+      //       //   price: "Hello"
+      //       // }).subscribe({
+      //       //   next: (response) => {
+      //       //     console.log("Response from server when add to bag", response);
+      //       //     // Navigate to the bag page or show a success message
+      //       //     // this.router.navigate(['/bag']); // Navigate to login handling page internal in Angular
+      //       //   }
+      //       //   , error: (error) => {
+      //       //     console.error("Error when adding to bag", error);
+      //       //     // Handle the error, e.g., show an error message
+      //       //   }
+      //       // });
+
+      //   }
+      //   });
+
     } else {
       // User is not identified, handle accordingly - request login
       console.log("User has not identified yet in app component");

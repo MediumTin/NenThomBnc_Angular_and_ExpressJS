@@ -24,6 +24,7 @@ export class HeaderReferComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
   }
 
   logout(){

@@ -37,22 +37,51 @@ const Update_Content_of_ShoppingBag = async(username_request,ContentofChanged) =
             username: username_request
         });
         console.log('User is : ', result);
+        var Result_of_writing_into_DB = await User_Information.findOneAndUpdate(
+            { username: `${username_request}` },
+            { $push: { personal_shopping_bag: `${ContentofChanged}` } },
+            { upsert: true }
+        )
+        // console.log('User email is : ', result[0].email);
+
+    } catch(err){
+        // res.status(500).json({'message':err.message});
+    }
+    // if(result.length != 0){
+    //     // Check current length of shopping bag
+    //     // var length_of_shoppingBag_inDB = (result.personal_shopping_bag).length; // ex : 1
+    //     // var current_array_of_shoppingBag_inDB = result.personal_shopping_bag;
+    //     // console.log(`Length in DB is ${length_of_shoppingBag_inDB}`);
+    //     // console.log(`Current info shoppingbag in DB is ${current_array_of_shoppingBag_inDB}`);
+    //     // current_array_of_shoppingBag_inDB[length_of_shoppingBag_inDB] = ContentofChanged;
+
+    //     var Result_of_writing_into_DB = await User_Information.findOneAndUpdate(
+    //         { username: `${username_request}` },
+    //         { $push: { personal_shopping_bag: `${ContentofChanged}` } },
+    //         { upsert: true }
+    //     )
+    // };
+}
+
+const Replace_all_Content_of_ShoppingBag = async(username_request,ContentofChanged) => {
+    var isValidUser = 0, isValidAdminRight = 0;
+    console.log(`Username request is ${username_request}`);
+    console.log(`Content request is ${ContentofChanged}`);
+    var result = [];
+    try{
+        result = await User_Information.findOne({
+            username: username_request
+        });
+        console.log('User is : ', result);
         // console.log('User email is : ', result[0].email);
 
     } catch(err){
         // res.status(500).json({'message':err.message});
     }
     if(result.length != 0){
-        // Check current length of shopping bag
-        // var length_of_shoppingBag_inDB = (result.personal_shopping_bag).length; // ex : 1
-        // var current_array_of_shoppingBag_inDB = result.personal_shopping_bag;
-        // console.log(`Length in DB is ${length_of_shoppingBag_inDB}`);
-        // console.log(`Current info shoppingbag in DB is ${current_array_of_shoppingBag_inDB}`);
-        // current_array_of_shoppingBag_inDB[length_of_shoppingBag_inDB] = ContentofChanged;
-
         var Result_of_writing_into_DB = await User_Information.findOneAndUpdate(
             { username: `${username_request}` },
-            { $push: { personal_shopping_bag: `${ContentofChanged}` } },
+            { $set: { personal_shopping_bag: `${ContentofChanged}` } },
             { upsert: true }
         )
     };
@@ -67,13 +96,20 @@ const GetShoppingBagFromUser = async(username_request) => {
             username: username_request
         });
         console.log('User is : ', result);
+        console.log('User email is : ', result[0].email);
+        console.log('User shopping bag is : ', result[0].personal_shopping_bag);
+        console.log('Type of User shopping bag is : ', typeof(result[0].personal_shopping_bag)); // object
+        console.log('Length of User shopping bag is : ', (result[0].personal_shopping_bag).length); // 18
+        console.log('First item of User shopping bag is : ', result[0].personal_shopping_bag[0]); // Candle Snuffer,1,85.000,../../../../assets/img/Automation/Image/26.jpg
+        console.log('Type of first item of User shopping bag is : ', typeof(result[0].personal_shopping_bag[0])); // string
 
     } catch(err){
         // res.status(500).json({'message':err.message});
     }
     if(result.length != 0){
         isValidUser = 1;
-        PersonalShoppingBag = result[0].personal_shopping_bag;
+        // PersonalShoppingBag = result[0].personal_shopping_bag;
+        return result[0].personal_shopping_bag;
     };
     console.log('Result of User finding is : ', isValidUser);
     return [PersonalShoppingBag];
@@ -112,5 +148,6 @@ module.exports = {
     Add_New_User_Information, 
     Check_All_user,
     GetShoppingBagFromUser,
-    Update_Content_of_ShoppingBag
+    Update_Content_of_ShoppingBag,
+    Replace_all_Content_of_ShoppingBag
 };

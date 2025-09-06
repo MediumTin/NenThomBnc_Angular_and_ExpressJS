@@ -18,6 +18,23 @@
       <i class="fa fa-user"></i> {{Identified_Current_User}}
     </button>
   </div>
+  <div 
+      id="AddedIntoBag_showing" 
+      class="modal_for_addedIntoBag"
+      [ngStyle]="{'display': isCheckShoppingBagVisible === true ? 'block' : 'none'}"
+  >
+      <p style="font-size: 20px">You should login before payment!</p>
+      <button 
+          
+          id="Login_now"
+          (click) ="Login_now()"
+      >Login now</button>
+      <button 
+       
+          id="Login_later"
+          (click) ="Login_later()"
+      >Login later</button>
+  </div>
 </header>
 <nav class="navbar" style="display: flex; justify-content: center;">    
   <div class="nav-links" style="display: flex; gap: 10px; align-items: center;">

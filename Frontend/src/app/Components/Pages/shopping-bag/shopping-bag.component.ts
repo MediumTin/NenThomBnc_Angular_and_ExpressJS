@@ -19,7 +19,7 @@ export class ShoppingBagComponent {
     // Scenario 2: If want user must login before access the website
     // PersonalShoppingBags : string="";
 
-    
+
     account: string = "";
       constructor(private router:Router, private identification: IndentificationService, private paymentService: PaymentService, private candlesService : CandlesServiceService,) {
         // Scenario 1: If want user can access the website without login
@@ -49,6 +49,7 @@ export class ShoppingBagComponent {
           }
         }
         this.PersonalShoppingBags = testArray;
+        
         console.log("PersonalShoppingBags in shopping bag component is ", this.PersonalShoppingBags);
         console.log("this.PersonalShoppingBags[0] in shopping bag component is ", (this.PersonalShoppingBags[0]));
         console.log("this.PersonalShoppingBags[0][0] in shopping bag component is ", (this.PersonalShoppingBags[0].split(","))[0]);

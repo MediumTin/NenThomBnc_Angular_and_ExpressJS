@@ -71,7 +71,10 @@ export class CandlesServiceService {
     // document.cookie = `SessionID=${SessionID}; path=/;`; // using cookies to store session ID
     // document.cookie = `Currentuser=${Username}; path=/;`; // using cookies to store username
   }
-
+  ClearAllDataInLocalStorageOfBrownser() {
+    localStorage.clear();
+    console.log("All data in local storage of browser has been cleared");
+  }
   getCandleInformationFromLocalStorageOfBrownser() : Selected_Candle {
     let existing_candle_name = localStorage.getItem('Selected_candles_name');
     let existing_quatity = localStorage.getItem('Selected_candles_Quatity');
@@ -101,7 +104,6 @@ export class CandlesServiceService {
         image_array: image_array
       };
     }
-    
   }
 
   setAddNewProduct(NewProductToBeAdded: AddNewProduct): Observable<AddNewProduct> {

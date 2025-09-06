@@ -247,6 +247,98 @@ Router.post('/specific_handling',async (req,res)=>{
          }]
       )
 })
+
+
+Router.post('/mergelocalstorageandDB',async (req,res)=>{
+   // Startdard way:
+   // 1. Set new value in Database
+   // 2. Delete from Cache
+   // 3. Read cache failure (miss cached)
+   // 4. Read data from Datbase due to missing Cache
+   // 5. Write new data to Cache
+   //Request_Add_New_Product(req,res);
+   // await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   // await Redis_API.Delete_Data_In_Redis(client);
+   // await Redis_API.Disconnect_To_Redis(client);
+   
+   let Quatity_array = req.body.quatity_array; // array of quantity, but when typeof is object, because it is array (JS consider array is object)
+   let Candle_name_array = req.body.candle_name_array; // array of candle name
+   let Image_array = req.body.image_array; // array of image path
+   let Price_array = req.body.price_array; // array of price unit
+
+   console.log(`Quatity_array is ${Quatity_array}`); 
+   console.log(`Candle_name_array is ${Candle_name_array}`);
+   // Candle_name_array[0] = Candle Snuffer
+   console.log(`Image_array is ${Image_array}`);
+   console.log(`Price_array is ${Price_array}`);
+   console.log(`Type of first item in Quatity_array is ${typeof(Quatity_array)}`);
+   console.log(`Type of first item in Candle_name_array is ${typeof(Candle_name_array)}`);
+   console.log(`Type of first item in Image_array is ${typeof(Image_array)}`);
+   console.log(`Type of first item in Price_array is ${typeof(Price_array)}`);
+   var CurrentUser = req.session.personal_information.username;
+   let Merge_data_from_localstorage = [];
+   let length_of_merge_array = (Quatity_array != undefined) ? Quatity_array.length : 0; // if local storage is empty, length of merge array = 0
+   console.log(`Length Merge_data_from_localstorage 1 is ${Merge_data_from_localstorage.length}`);
+   if(Quatity_array != undefined){
+      // local storage is not empty
+      for(let i=0;i<length_of_merge_array;i++){
+         Merge_data_from_localstorage[i] = `${Candle_name_array[i]},${Quatity_array[i]},${Price_array[i]},${Image_array[i]}`;
+         // Write to database and clear Redis cache
+         console.log(`Username is ${CurrentUser}`);
+         await User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Merge_data_from_localstorage[i]); // Update new shopping bag to database
+      }
+      console.log(`Merge_data_from_localstorage after local storage only is ${Merge_data_from_localstorage}`);
+      
+      console.log(`Length Quatity_array is ${Quatity_array.length}`);
+      console.log(`Length Merge_data_from_localstorage 2 is ${Merge_data_from_localstorage.length}`);
+      await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+      const Result_Delete_Cache = await Redis_API.Delete_seperated_data_inRedis(client,CurrentUser); // Delete data in Redis cache
+      console.log(`Value of deleting data in Cache: ${Result_Delete_Cache}`);
+      await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+   }
+   
+   var LOC_Result_from_Database = await ReadShoppingBag_From_Database_and_Redis(CurrentUser);
+   console.log(`LOC_Result_from_Database---------------- : ${LOC_Result_from_Database}`);
+   console.log(`Type of LOC_Result_from_Database , expect is Array of String : ${typeof(LOC_Result_from_Database)}`);
+   // LOC_Result_from_Database = JSON.parse(LOC_Result_from_Database);
+   console.log(`First item of LOC_Result_from_Database : ${LOC_Result_from_Database[0]}`); // Candle Snuffer,1,85.000,../../../../assets/img/Automation/Image/26.jpg
+   console.log(`Type of First item with LOC_Result_from_Database : ${typeof(LOC_Result_from_Database[0])}`); // string
+   // let count_item_in_database = 0;
+   // for(let i = length_of_merge_array; i < (LOC_Result_from_Database.length + length_of_merge_array);i++){
+   //    Merge_data_from_localstorage[i] = LOC_Result_from_Database[count_item_in_database];
+   //    count_item_in_database += 1;
+   // }
+   // console.log(`Length LOC_Result_from_Database is ${LOC_Result_from_Database.length}`);
+   // console.log(`Length Merge_data_from_localstorage 3 is ${Merge_data_from_localstorage.length}`);
+   // console.log(`Merge_data_from_localstorage after add database is ${Merge_data_from_localstorage}`);
+   // console.log(`Type of Merge_data_from_localstorage is ${typeof(Merge_data_from_localstorage)}`); // object (array)
+   // console.log(`First item of Merge_data_from_localstorage is ${Merge_data_from_localstorage[0]}`);
+   // console.log(`Type of First item of Merge_data_from_localstorage is ${typeof(Merge_data_from_localstorage[0])}`); // string
+   /// Sync up between local storage and database
+//
+
+   /// After sync up, write to database and Redis cache
+   // // Write to database and clear Redis cache
+   // var Personal_Shopping_Bag = await User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Merge_data_from_localstorage); // Update new shopping bag to database
+   // console.log(`Value of writing data to Database: ${Personal_Shopping_Bag}`);
+   // clear Redis cache
+   // await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   // const Result_Delete_Cache = await Redis_API.Delete_seperated_data_inRedis(client,CurrentUser); // Delete data in Redis cache
+   // console.log(`Value of deleting data in Cache: ${Result_Delete_Cache}`);
+   // await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+
+   // Write to Redis cache (for backup, not necessary)
+   // await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   // const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(CurrentUser,JSON.stringify(Merge_data_from_localstorage)); // set new data from database to Redis cache
+   // console.log(`Value of writing data to Cache: ${Result_Write_To_Cache}`);
+   // await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+   res.status(200).send(
+   [{
+      "Currentuser" : `${req.session.personal_information.username}`,
+      "personal_shopping_bag" : JSON.stringify(LOC_Result_from_Database)
+   }]);
+})
+
 // Process with router
 Router.get('/',(req,res)=>{
    isAdminRightChecked = 0;
@@ -280,7 +372,7 @@ Router.get('/',(req,res)=>{
             //    // first time after request write
             //    Global_Interface.isFirstTimeLogin = true;
             // }
-            
+
             res.status(200).send(
             [{
                "Currentuser" : `${req.session.personal_information.username}`,
@@ -329,6 +421,14 @@ const SyncUp_Info_Redis_And_DB = async (username)=>{
       console.log("Miss cached");
       var Personal_Shopping_Bag = await User_Information_Handling.GetShoppingBagFromUser(username); // Read data from database
 
+      console.log(`Value of reading data from Database: ${Personal_Shopping_Bag}`);
+      console.log(`Type of reading data from Database: ${typeof(Personal_Shopping_Bag)}`);
+
+      console.log(`First item is ${Personal_Shopping_Bag[0]}`); // Candle Snuffer,1,85.000,../../../../assets/img/Automation/Image/26.jpg
+      // Personal_Shopping_Bag = JSON.parse(Personal_Shopping_Bag);
+      console.log(`Type of first item is ${typeof(Personal_Shopping_Bag[0])}`); // string
+
+
       const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(username,JSON.stringify(Personal_Shopping_Bag)); // set new data from database to Redis cache
       console.log(`Value of writing data to Cache: ${Result_Write_To_Cache}`);
       // res.status(200).send(Data_From_Database); // After get data from database and write to Cache, it will response to client
@@ -343,6 +443,39 @@ const SyncUp_Info_Redis_And_DB = async (username)=>{
       return Result_Read_From_Cache;
    }
 }
+
+const ReadShoppingBag_From_Database_and_Redis = async (username)=>{
+   await Redis_API.Connect_To_Redis(client); // Open connection to Redis
+   const Result_Read_From_Cache = await Redis_API.Get_Personal_Shopping_Bag(client,username); // Check request is exist in Cache or not
+   console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
+   if(Result_Read_From_Cache == null){
+      console.log("Miss cached");
+      var Personal_Shopping_Bag = await User_Information_Handling.GetShoppingBagFromUser(username); // Read data from database
+      console.log(`Value of reading data from Database: ${Personal_Shopping_Bag}`);
+      console.log(`Type of reading data from Database: ${typeof(Personal_Shopping_Bag)}`);
+      console.log(`First item is ${Personal_Shopping_Bag[0]}`); // Candle Snuffer,1,85.000,../../../../assets/img/Automation/Image/26.jpg
+      console.log(`Type of first item is ${typeof(Personal_Shopping_Bag[0])}`); // string
+      const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(username,JSON.stringify(Personal_Shopping_Bag)); // set new data from database to Redis cache
+      console.log(`Value of writing data to Cache: ${Result_Write_To_Cache}`);
+      await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+      return Personal_Shopping_Bag;
+   }
+   else {
+      console.log("Cached");
+      const Result_Read_From_Cache_2 = JSON.parse(Result_Read_From_Cache);
+      // res.status(200).send(Result_Read_From_Cache); // Available in cache, Read in Cache
+      console.log(`Result from Redis cache : ${Result_Read_From_Cache_2}`);
+      console.log(`Type of reading data from Redis cache: ${typeof(Result_Read_From_Cache_2)}`);
+      console.log(`First item is ${Result_Read_From_Cache_2[0]}`); // string
+      console.log(`Type of first item is ${typeof(Result_Read_From_Cache_2[0])}`); // string
+
+      await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
+      return Result_Read_From_Cache_2;
+   }
+   
+}
+
+
 
 const Set_Data_From_Database_To_RedisCache = async (key,data) => {
    const Result_Of_Update_DB = await Redis_API.Set_Data_To_Redis(client,key,data);

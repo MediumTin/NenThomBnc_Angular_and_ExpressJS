@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { IndentificationService } from '../../../Services/IdentificationService/indentification.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -17,6 +17,7 @@ import { FilterBarComponent } from "../../filter-bar/filter-bar.component";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit{
+  isCheckShoppingBagVisible: boolean = false; // Default visibility of the shopping bag check
   isAdminRightValid: boolean = false;
   Identified_Current_User : string = "";
   showClickedMessage = false;
@@ -26,11 +27,17 @@ export class HeaderComponent implements OnInit{
   filteredProducts: Candles[] = [];
   products: { id: number; name: string; price: number; }[] = []; // Declare products as an empty array
 
-  constructor(private router:Router, private identification: IndentificationService, private filteredProduct : FilteredProductService, private candlesService : CandlesServiceService) { 
+  constructor(private router:Router, private identification: IndentificationService, private filteredProduct : FilteredProductService, private candlesService : CandlesServiceService, private cdr: ChangeDetectorRef) { 
     const sessionInfo = this.identification.GetSessionID();
-    this.Identified_Current_User = sessionInfo.Username;
+    
+    // Below is behavior subject to track admin right from identification service
     this.identification.isAdminValidMain.subscribe(val => {
       this.isAdminRightValid = val;
+    });
+
+    // Below is behavior subject to track current user from identification service
+    this.identification.currentUser_Observe.subscribe(val => {
+      this.Identified_Current_User = val;
     });
     console.log("Admin right in header component is ", this.identification.GetisAdminAccepted());
     console.log("Got Username is: ",`${sessionInfo.Username}`);	 
@@ -42,7 +49,6 @@ export class HeaderComponent implements OnInit{
       { id: 2, name: 'two', price: 200 },
       { id: 3, name: 'three', price: 300 },
     ]; // dữ liệu sản phẩm
-
   }
 
   onSearch() {
@@ -78,9 +84,36 @@ export class HeaderComponent implements OnInit{
   
   }
   MoveToPaymentPage() {
-    this.router.navigate(['/payment_handling']);  // Navigate to login handling page internal in Angular
-    // throw new Error('Method not implemented.');
+    if(this.Identified_Current_User == "" || this.Identified_Current_User == null) {
+        // Call confirme box
+        this.isCheckShoppingBagVisible = true;
+        this.AddedBoxFadeOut();
+      }
+      else {
+        this.router.navigate(['/payment_handling']);  // Navigate to login handling page internal in Angular
+      } 
   }
+
+  Login_now() {
+    // Turn off the confirme box
+    this.isCheckShoppingBagVisible = false;
+    this.router.navigate(['/login_handling']);  
+  }
+
+  Login_later(){
+    // Turn off the confirme box
+    this.isCheckShoppingBagVisible = false;
+  }
+  AddedBoxFadeOut() {
+    setTimeout(
+        () =>{
+            this.isCheckShoppingBagVisible = false;
+        }
+        ,
+        3000
+    );
+  }
+
   LogOut() {
     // throw new Error('Method not implemented.');
     console.log("Session is timeout");

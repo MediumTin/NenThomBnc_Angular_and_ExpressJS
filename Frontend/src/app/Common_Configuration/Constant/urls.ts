@@ -65,6 +65,7 @@ export const ADD_NEW_PRODUCT_URL = BASE_URL + '/api/Add_new_product';           
 // Process with "payment_handling"
 export const PAYMENT_HANDLING_URL = BASE_URL + '/api/payment_handling';                                         // GET and POST method
 export const PAYMENT_HANDLING_Specific_Handling_URL = PAYMENT_HANDLING_URL + '/specific_handling';          // GET and POST method
+export const PAYMENT_HANDLING_Merge_local_storage_and_DB = PAYMENT_HANDLING_URL + '/mergelocalstorageandDB'; // POST method
 
 // Process with "Shopping_Bag_handling"
 export const SHOPPING_BAG_HANDLING_URL = BASE_URL + '/api/Shopping_Bag_handling';               // GET method

@@ -186,5 +186,5 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
       } else {
           this.isCheckShoppingBagVisible = true;
       }
-      }
+    }
 }
