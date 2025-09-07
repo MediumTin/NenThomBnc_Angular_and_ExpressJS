@@ -27,7 +27,7 @@ export class CommonProductComponent implements OnInit, AfterViewInit{
     [false, false, false, false, false],
     [false, false, false, false, false, false, false, false, false]
   ]; // default value
-
+    isAdminRightValid: boolean = false;
     candle_CB : boolean = false;
     oil_CB : boolean = false;
     accessory_CB : boolean = false;
@@ -66,6 +66,11 @@ export class CommonProductComponent implements OnInit, AfterViewInit{
 
   constructor(private cdr: ChangeDetectorRef, private filteredProduct : FilteredProductService, private router:Router, private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService )
   { 
+    // Below is behavior subject to track admin right from identification service
+    this.identification.isAdminValidMain.subscribe(val => {
+      this.isAdminRightValid = val;
+    });
+
     this.currentRoute = this.router.url.split('/')[1];
     console.log("Current route in common product component:", this.currentRoute);
       var data_request_filter = 
@@ -142,6 +147,18 @@ export class CommonProductComponent implements OnInit, AfterViewInit{
     [this.smaller_100KVND_CB, this.HundredKVND_to_200KVND_CB, this.TwoHundredKVND_to_300KVND_CB, this.ThreeHundredKVND_to_500KVND_CB, this.larger_500KVND_CB],
     [this.black_CB, this.white_CB, this.red_CB, this.pink_CB, this.blue_CB, this.green_CB, this.yellow_CB, this.orange_CB, this.purple_CB]
   ];
+  }
+  RemoveProduct_AdminRight(ProductToBeRemoved: Candles) {
+    let ProductToBeRemoved_local: Observable<Candles[]>;
+    ProductToBeRemoved_local = this.candlesService.RequestToRemovedProduct(ProductToBeRemoved);
+    ProductToBeRemoved_local.subscribe((result_of_remove_request) => {
+      console.log("Response from serve",result_of_remove_request);
+      console.log("Response from serve for name",result_of_remove_request[0].status_of_removed_product);
+      if(result_of_remove_request[0].status_of_removed_product == "Remove product successfully"){
+        alert("Remove product successfully");
+      }
+      this.router.navigate(['']);
+    });
   }
 
   onFilterChanged(data_request_filter: object) {   

@@ -1,6 +1,6 @@
 export class Candles{
     status?:String;
-    id!:Number;
+    id?:Number;
     name!:string;
     type!:String;
     group!: String;
@@ -9,4 +9,5 @@ export class Candles{
     price_range!: string;
     color!: string;
     image!:string;
+    status_of_removed_product?:string;
   }

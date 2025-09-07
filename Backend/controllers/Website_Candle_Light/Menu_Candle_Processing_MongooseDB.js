@@ -89,6 +89,35 @@ const AddNewProductInformation = async (name,type,group,brand,price,price_range,
     
 }
 
+const RemoveProductInformation = async (name) => {
+    try{
+        // const result = await Candle_Collection.create({
+        //     "id":length_of_DB+1,
+        //     "name": name,
+        //     "type": type,
+        //     "group": group,
+        //     "brand": brand,
+        //     "price": price,
+        //     "price_range" : price_range,
+        //     "color": color,
+        //     "image": image
+        // })
+
+        const delete_result = await Candle_Collection.deleteOne({
+            name: name
+        })
+        console.log(`Result of delete is : ${delete_result[0]}`);
+        return 1;
+
+    } catch(err){
+        // res.status(400).json({'message':err.message});
+        // result = "Failed";
+        return 0;
+    }
+    
+}
+
+
 const FilterInfo = async (RequestType,RequestGroup,RequestBrand,RequestPrice,RequestColor) => {
     var List_Of_Product = await GetAllProductInformation();
     var length_of_DB = (List_Of_Product).length;
@@ -156,6 +185,7 @@ module.exports = {
     AddNewProductInformation,
     GetAllProductInformation,
     FilterInfo,
-    Update_Content_of_HistoricalBag
+    Update_Content_of_HistoricalBag,
+    RemoveProductInformation
 
 };

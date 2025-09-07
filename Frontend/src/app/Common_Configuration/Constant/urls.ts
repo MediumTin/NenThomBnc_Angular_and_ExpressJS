@@ -11,6 +11,7 @@ export const CANDLES_AddNewProduct_URL = CANDLES_URL + '/addnewproduct';   // PO
 export const CANDLES_By_Tag_URL = CANDLES_URL + '/RequestGetCandleByTag/';
 export const CANDLES_By_Filter_URL = CANDLES_URL + '/RequestGetCandleByFilter/';
 export const CANDLES_By_Search_URL = CANDLES_URL + '/RequestGetCandleBySearch/';
+export const CANDLES_By_RequestToBeRemoved = CANDLES_URL + '/RemoveProduct/';
 
 // Process with "testangular"
 export const TESTANGULAR_URL = BASE_URL + '/api/testangular';                   // GET method 

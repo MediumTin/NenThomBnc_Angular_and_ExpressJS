@@ -48,6 +48,21 @@ Router.post('/addnewproduct',async (req,res)=>{
    // res.status(200).send(samplearray);
 })
 
+Router.post('/RemoveProduct',async (req,res)=>{
+   // Startdard way:
+   // 1. Set new value in Database
+   // 2. Delete from Cache
+   // 3. Read cache failure (miss cached)
+   // 4. Read data from Datbase due to missing Cache
+   // 5. Write new data to Cache
+   Request_To_RemoveProduct(req,res);
+   // await Redis_API.Connect_To_Redis(client);
+   await Redis_API.Delete_Data_In_Redis(client);
+   // await Redis_API.Disconnect_To_Redis(client);
+
+   // res.status(200).send(samplearray);
+})
+
 Router.get('/',async (req,res)=>{
    // Scenario 1: If want user can access the website without login
    var Request_From_Client = "Get_All_Product_Information"; // store all products in redis cache
@@ -267,6 +282,46 @@ const Request_Add_New_Product = async (req,res) => {
          "price_range" : "undefined",
          "color" : "undefined",
          "image" : "undefined",
+      }]);
+   }
+   
+
+}
+
+const Request_To_RemoveProduct = async (req,res) => {
+   var Request_Remove_Name = req.body.name;
+   var result = await Menu_Candle_Processing.RemoveProductInformation(
+      Request_Remove_Name
+   );
+   console.log("Result of Add new product : ",result);
+   if(result==1){
+      // Add successfully
+      // For testing purpose
+      res.status(200).send(
+      [{
+         "name" : `${req.body.name}`,
+         "type" : `${req.body.type}`,
+         "group" : `${req.body.group}`,
+         "brand" : `${req.body.brand}`,
+         "price" : `${req.body.price}`,
+         "price_range" : `${req.body.price_range}`,
+         "color" : `${req.body.color}`,
+         "image" : `${req.body.image}`,
+         "status_of_removed_product" : "Remove product successfully"
+      }]);
+   } else {
+      // Add failure
+      res.status(200).send(
+      [{
+         "name" : "undefined",
+         "type" : "undefined",
+         "group" : "undefined",
+         "brand" : "undefined",
+         "price" : "undefined",
+         "price_range" : "undefined",
+         "color" : "undefined",
+         "image" : "undefined",
+         "status_of_removed_product" : "Remove product unsuccessfully"
       }]);
    }
    
