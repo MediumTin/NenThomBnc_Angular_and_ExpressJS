@@ -12,13 +12,24 @@ var Shopping_bag_array = []; // declare one array (listed node), can easy for ad
 var Shopping_bag_array_counter = 0;
 // var isFirstTimeLogin = true;
 const client = createClient({
-   username: 'default',
-   password: 'eKmCEByJceBAy8EXlviDdGnvAbgwLWmI',
+   username: process.env.REDIS_USERNAME,
+   password: process.env.REDIS_PASSWORD,
    socket: {
-       host: 'redis-17737.c16.us-east-1-3.ec2.redns.redis-cloud.com',
-       port: 17737
+       host: process.env.REDIS_HOST,
+       port: process.env.REDIS_PORT
    }
 });  // Create a Redis client
+
+// const client = createClient({
+//    username: 'default',
+//    password: 'Ug2FCahkYUOsMzn8AkuvSIRoarnuJzwb',
+//    socket: {
+//        host: 'redis-13281.c292.ap-southeast-1-1.ec2.redns.redis-cloud.com',
+//        port: 13281
+//    }
+// });  // Create a Redis client
+
+
 // New implementation for Engine template handlerbar
 
 Router.get('^/$|',async (req,res)=>{

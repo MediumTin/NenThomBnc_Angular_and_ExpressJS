@@ -5,11 +5,11 @@ const path = require('path');
 const Redis_API = require('../../controllers/API_with_Redis/API_Redis');
 const { createClient } = require('redis');
 const client = createClient({
-   username: 'default',
-   password: 'eKmCEByJceBAy8EXlviDdGnvAbgwLWmI',
+   username: process.env.REDIS_USERNAME,
+   password: process.env.REDIS_PASSWORD,
    socket: {
-       host: 'redis-17737.c16.us-east-1-3.ec2.redns.redis-cloud.com',
-       port: 17737
+       host: process.env.REDIS_HOST,
+       port: process.env.REDIS_PORT
    }
 });  // Create a Redis client
 

@@ -22,13 +22,27 @@ const RedisStore = require('connect-redis').default;
 const { createClient } = require('redis');
 
 
+// const clientRedis = new Redis({
+//     username: 'default',
+//     password: 'Ug2FCahkYUOsMzn8AkuvSIRoarnuJzwb',
+//     socket: {
+//         host: 'redis-13281.c292.ap-southeast-1-1.ec2.redns.redis-cloud.com',
+//         port: 13281
+//     }
+// }); 
+
 const clientRedis = new Redis({
-    port: 17737,          // Redis port
-    host: 'redis-17737.c16.us-east-1-3.ec2.redns.redis-cloud.com',   // Redis host
-    family: 4,           // 4 (IPv4) or 6 (IPv6)
-    password: 'eKmCEByJceBAy8EXlviDdGnvAbgwLWmI',
-    db: 0
+   username: process.env.REDIS_USERNAME,
+   password: process.env.REDIS_PASSWORD,
+   socket: {
+       host: process.env.REDIS_HOST,
+       port: process.env.REDIS_PORT
+   }
+    // tls: {
+    //     rejectUnauthorized: false
+    // }
 }); // defaut localhost
+
 
 var mailTransport = nodemailer.createTransport({
     service: "gmail",
