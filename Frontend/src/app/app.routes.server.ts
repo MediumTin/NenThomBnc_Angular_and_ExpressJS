@@ -2,10 +2,6 @@ import { RenderMode, ServerRoute } from '@angular/ssr';
 
 export const serverRoutes: ServerRoute[] = [
   {
-    path: '**',
-    renderMode: RenderMode.Prerender
-  },
-  {
     path: 'candles/search/:searchTerm',
     renderMode: RenderMode.Prerender,
     async getPrerenderParams() {
@@ -48,5 +44,10 @@ export const serverRoutes: ServerRoute[] = [
           { detail_product: 'Day_Party' }
         ];
     }
+  },
+  {
+    path: '**',
+    renderMode: RenderMode.Prerender
   }
+  
 ];

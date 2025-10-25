@@ -31,17 +31,15 @@ const { createClient } = require('redis');
 //     }
 // }); 
 
+
 const clientRedis = new Redis({
-   username: process.env.REDIS_USERNAME,
-   password: process.env.REDIS_PASSWORD,
-   socket: {
-       host: process.env.REDIS_HOST,
-       port: process.env.REDIS_PORT
-   }
-    // tls: {
-    //     rejectUnauthorized: false
-    // }
-}); // defaut localhost
+  host: process.env.REDIS_HOST,
+  port: process.env.REDIS_PORT,
+  username: process.env.REDIS_USERNAME,
+  password: process.env.REDIS_PASSWORD,
+  family: 4,           // 4 (IPv4) or 6 (IPv6)
+  db: 0 // Not use socket and TTL config, socket only used for redis library while current is ioredis
+});
 
 
 var mailTransport = nodemailer.createTransport({
@@ -116,12 +114,11 @@ app.use(express.json());
 // 1.5. Build-in middleware to convert incommong cookies to req.cookie object in express JS
 app.use(cookieParser());
 // 1.6. Built-in middleware to serve static files to all routes (if needed, can give permission only some specific routes)
-// app.use(express.static(path.join(__dirname,'/public/dist'))); // Serve Angular static files
 app.use(express.static(
     isProduction ? 
-        path.join(__dirname,'/public/dist') : // if in production, serve Angular combined files
+        path.join(__dirname,'/public/Generative_Static_Angular_files/Production') : // if in production, serve Angular combined files
         isCombineAngular ? 
-            path.join(__dirname,'/public/dist') : // if in local and want to serve Angular combined files    
+            path.join(__dirname,'/public/Generative_Static_Angular_files/Development') : // if in local and want to serve Angular combined files    
             path.join(__dirname,'/public') // if in local and want to serve other static files
     )); // Serve other static files (images, css, js, etc) without combined Angular
 
@@ -305,13 +302,22 @@ app.use('/api/Shopping_Bag_handling',require('./routes/Candle_Web_Routes/Shoppin
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)
 // API 19: Serve Angular app
             
-if(isProduction || isCombineAngular)
+if(isCombineAngular)
 {
-    // Handle every other route with index.html, which will contain
-    app.get('*', (req, res) => {
-        console.log(`Request URL: ${path.join(__dirname, 'public/dist/index.html')}`);
-        res.sendFile(path.join(__dirname, 'public/dist/index.html'));
-    });
+    if(isProduction){
+        // Handle every other route with index.html, which will contain
+        app.get('*', (req, res) => {
+            console.log(`Request URL: ${path.join(__dirname, 'public/Generative_Static_Angular_files/Production/index.html')}`);
+            res.sendFile(path.join(__dirname, 'public/Generative_Static_Angular_files/Production/index.html'));
+        });
+    }
+    else {
+        // Handle every other route with index.html, which will contain
+        app.get('*', (req, res) => {
+            console.log(`Request URL: ${path.join(__dirname, 'public/Generative_Static_Angular_files/Development/index.html')}`);
+            res.sendFile(path.join(__dirname, 'public/Generative_Static_Angular_files/Development/index.html'));
+        });
+    }
 }
 
 //---------------------------------------For example : Specific Route and Middleware declaration--------------------------//
