@@ -82,7 +82,7 @@ app.use(session({
     cookie : {  
         // secure: true,
         // sameSite: 'None', // allow cross-origin
-        secure: isProduction ? true : false, // in production, use true to force https, in local use false
+        secure: false, // in production, use true to force https, in local use false --> Should not be TRUE due to CPanel will be considered as insecure connection (not https)
         sameSite: (isProduction | isCombineAngular) ?'Strict':'lax', // in production, use strict to avoid CSRF, in local use lax: Strict for frontend and backend are same origin, Lax for different origin
         httpOnly: true, // allow client can know document.cookie or not
         // // expires: (new Date(Date.now() + TargetTime_Of_Milisecond + 7*60*60*1000)),
