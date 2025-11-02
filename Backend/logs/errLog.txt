@@ -348,3 +348,7 @@ Expecting 'CLOSE', 'OPEN_SEXPR', 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED
 20250830	12:51:46	1be84176-988e-4a38-babb-1239fcabccb0	MaxRetriesPerRequestError: Reached the max retries per request limit (which is 20). Refer to "maxRetriesPerRequest" option for details.
 20250830	12:56:00	03f1c5b7-e013-45bd-b186-05c227f32d34	MaxRetriesPerRequestError: Reached the max retries per request limit (which is 20). Refer to "maxRetriesPerRequest" option for details.
 20250901	19:28:50	7a7a2f43-8138-4883-8afa-31ae5a08ae7f	InternalServerError: stream is not readable
+20251102	18:14:44	dff53672-4561-48d4-a82e-2d0e2a61b318	TypeError: Cannot read properties of undefined (reading 'then')
+20251102	18:16:34	7b5847ac-b052-4af6-9f19-a5412a1e6f30	TypeError: Cannot read properties of undefined (reading 'then')
+20251102	18:16:43	438f0905-e288-4358-81bf-42706556db57	TypeError: Cannot read properties of undefined (reading 'then')
+20251102	18:17:13	e215fb1d-bc4a-4feb-b230-86e45dcf9f1c	TypeError: Cannot read properties of undefined (reading 'update')

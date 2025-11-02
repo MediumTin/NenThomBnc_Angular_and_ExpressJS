@@ -20,6 +20,7 @@ const Redis = require('ioredis');
 const { v4: uuidv4 } = require("uuid");
 const RedisStore = require('connect-redis').default;
 const { createClient } = require('redis');
+const productModel = require('./controllers/API_with_MySQL/MySQL_API_products_table');
 
 
 // const clientRedis = new Redis({
@@ -298,10 +299,58 @@ app.use('/api/payment_handling',require('./routes/Candle_Web_Routes/Payment_Hand
 // API 18: Shopping bag handling
 app.use('/api/Shopping_Bag_handling',require('./routes/Candle_Web_Routes/Shopping_Bag_Handling'));
 
+// API 20 : Test get MySQL connection
+app.get('/api/mysql/get_product', async (req,res)=>{
+    const products = await productModel.getAllProducts();
+    console.log('Products fetched successfully:', products);
+    res.json(products);
+})
+// API 21 : Test insert MySQL connection
+app.get('/api/mysql/insert_product', async (req,res)=>{
+    const data = {
+        name: "Nến thơm Lavender",
+        price: 120000,
+        description: "Nến hương lavender thư giãn"
+    };
+    const products = await productModel.insertProduct(data);
+    console.log('Products fetched successfully:', products);
+    res.json(products);
+})
+
+// API 22 : Test update MySQL connection
+app.get('/api/mysql/update_product', async (req,res)=>{
+    const id = 3; // ID of the product to update
+    const data = {
+        name: "Nến thơm Lavender Cập nhật",
+        price: 120000,
+        description: "Nến hương lavender thư giãn Cập nhật"
+    };
+    const products = await productModel.updateProduct(id,data);
+    console.log('Products fetched successfully:', products);
+    res.json(products);
+})
+
+// API 23 : Test delete MySQL connection
+app.get('/api/mysql/delete_product', async (req, res) => {
+  try {
+    const { id } = req.query; // Lấy id từ query parameter
+    if (!id) {
+      return res.status(400).json({ error: 'Missing id parameter' });
+    }
+
+    const result = await productModel.deleteProduct(id);
+    console.log(`Product with id=${id} deleted successfully:`, result);
+
+    res.json({ message: `Product with id=${id} deleted!`, result });
+  } catch (err) {
+    console.error('Error deleting product:', err);
+    res.status(500).json({ error: 'Internal Server Error', detail: err.message });
+  }
+});
+
 //--------------------------------Route to serve Angular app----------------------------------------------//
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)
 // API 19: Serve Angular app
-            
 if(isCombineAngular)
 {
     if(isProduction){
@@ -319,8 +368,8 @@ if(isCombineAngular)
         });
     }
 }
-
 //---------------------------------------For example : Specific Route and Middleware declaration--------------------------//
+
 // Specific Custom Middleware to check authorization and get Json Web Token to make private action. Before this line, it will not require JWToken to execute
 // app.use(verifyJWT);
 // After this line, it will require JWToken branded to execute - After login and grant, will allow get data
@@ -336,6 +385,40 @@ mongoose.connection.once('open',()=>{
     console.log('Connected to MongooseDB');
     app.listen(PORT, ()=> console.log(`Server is running on Port: ${PORT}`));  
 })
+
+// const mysql = require('mysql2');
+// const connection = mysql.createConnection({
+//     host: process.env.MYSQL_DB_HOST,
+//     user: process.env.MYSQL_DB_USER,
+//     password: process.env.MYSQL_DB_PASSWORD,
+//     database: process.env.MYSQL_DB_NAME
+// });
+
+// // Kết nối đến MySQL
+// connection.connect(err => {
+//   if (err) {
+//     console.error('❌ Kết nối thất bại:', err);
+//     return;
+//   }
+//   console.log('✅ Đã kết nối MySQL!');
+
+//   // Câu lệnh SQL cơ bản
+//   const query = 'SELECT * FROM products';
+
+//   // Thực thi truy vấn
+//   connection.query(query, (err, results, fields) => {
+//     if (err) {
+//       console.error('❌ Lỗi truy vấn:', err);
+//       return;
+//     }
+
+//     console.log('📦 Dữ liệu lấy được:');
+//     console.table(results);
+
+//     // Đóng kết nối
+//     connection.end();
+//   });
+// });
 
 
 
