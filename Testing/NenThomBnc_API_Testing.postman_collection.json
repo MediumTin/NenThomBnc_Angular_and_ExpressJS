@@ -1,0 +1,989 @@
+{
+	"info": {
+		"_postman_id": "ac145115-73ea-4d4c-87a4-e1f3e1f6b912",
+		"name": "NenThomBnc_API_Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42734650"
+	},
+	"item": [
+		{
+			"name": "API 1:  Home Page route",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "HomePageRoute",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "HomePageRoute",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API 2:  Candle product route",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "Candles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/candles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"candles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "adminright",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/candles/adminright",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"candles",
+										"adminright"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RequestGetCandleByFilter",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/candles/RequestGetCandleByFilter",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"candles",
+										"RequestGetCandleByFilter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addnewproduct",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/candles/addnewproduct",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"candles",
+										"addnewproduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RemoveProduct",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/candles/RemoveProduct",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"candles",
+										"RemoveProduct"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "Candles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/candles",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"candles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "adminright",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/candles/adminright",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"candles",
+										"adminright"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RequestGetCandleByFilter",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/candles/RequestGetCandleByFilter",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"candles",
+										"RequestGetCandleByFilter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addnewproduct",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/candles/addnewproduct",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"candles",
+										"addnewproduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RemoveProduct",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/candles/RemoveProduct",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"candles",
+										"RemoveProduct"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API 10:  News product route",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "News",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/news",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"news"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "News",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/news",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"news"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API 11:  Contact product route",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "Contact",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/Contact",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"Contact"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "Contact",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/Contact",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"Contact"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API 13:  Detail product information",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "searchItem",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/candle_information",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"candle_information"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "requestwriteintosession",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/candle_information/requestwriteintosession",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"candle_information",
+										"requestwriteintosession"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "searchItem",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/candle_information",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"candle_information"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "requestwriteintosession",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/candle_information/requestwriteintosession",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"candle_information",
+										"requestwriteintosession"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API 14:  Login handling",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/login_handling/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"login_handling",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/login_handling/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"login_handling",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/login_handling/login",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"login_handling",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/login_handling/register",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"login_handling",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API 15: Check user identification",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "CheckUserIdentification",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/check_user_identification",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"check_user_identification"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "CheckUserIdentification",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/check_user_identification",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"check_user_identification"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API 16: Admin - Add new product",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "Add_new_product_Information",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/Add_new_product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"Add_new_product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "Add_new_product_Information",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/Add_new_product",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"Add_new_product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API 17: Payment handling",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "Payment_Handling",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/payment_handling",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"payment_handling"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "specific_handling",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/payment_handling/specific_handling",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"payment_handling",
+										"specific_handling"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mergelocalstorageandDB",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Cookie",
+										"value": "connect.sid=s%3Acc8c0eb5-6bf9-4f4d-9293-3f9ca8a8b516.XJzA6LgiQLuzA02yGWlMxt04BHBqwgU9p9Jr5vxUaEE"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"candle_name_array\":[\"Candle Scissor\",\"Lumos Rose Boutique\"],\r\n    \"quatity_array\":[1,1],\r\n    \"price_array\":[\"80.000\",\"480.000\"],\r\n    \"image_array\":[\"../../../../assets/img/Automation/Image/27.jpg\",\"../../../../assets/img/Automation/Image/15.jpg\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3500/api/payment_handling/mergelocalstorageandDB",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"payment_handling",
+										"mergelocalstorageandDB"
+									]
+								},
+								"description": "Login first, afterthat get cookie information in raw text and pass value into Cookie, modify Body and send request"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "Payment_Handling",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/payment_handling",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"payment_handling"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "specific_handling",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/payment_handling/specific_handling",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"payment_handling",
+										"specific_handling"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mergelocalstorageandDB",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "connect.sid=s%3Acc8c0eb5-6bf9-4f4d-9293-3f9ca8a8b516.XJzA6LgiQLuzA02yGWlMxt04BHBqwgU9p9Jr5vxUaEE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"candle_name_array\":[\"Candle Scissor\",\"Lumos Rose Boutique\"],\r\n    \"quatity_array\":[1,1],\r\n    \"price_array\":[\"80.000\",\"480.000\"],\r\n    \"image_array\":[\"../../../../assets/img/Automation/Image/27.jpg\",\"../../../../assets/img/Automation/Image/15.jpg\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nenthombnc.website/api/payment_handling/mergelocalstorageandDB",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"payment_handling",
+										"mergelocalstorageandDB"
+									]
+								},
+								"description": "Login first, afterthat get cookie information in raw text and pass value into Cookie, modify Body and send request"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API 18: Shopping bag handling",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "Shopping_Bag_Handling",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/api/Shopping_Bag_handling",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										"api",
+										"Shopping_Bag_handling"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "Shopping_Bag_Handling",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/api/Shopping_Bag_handling",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										"api",
+										"Shopping_Bag_handling"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API 19: Serve Angular app",
+			"item": [
+				{
+					"name": "Development",
+					"item": [
+						{
+							"name": "Check_Static_Angular_serve",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3500/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3500",
+									"path": [
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "Check_Static_Angular_serve",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://nenthombnc.website/",
+									"protocol": "https",
+									"host": [
+										"nenthombnc",
+										"website"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
