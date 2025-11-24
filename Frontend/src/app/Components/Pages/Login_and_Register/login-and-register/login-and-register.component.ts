@@ -13,16 +13,31 @@ import { Router } from '@angular/router'; // <-- Correct import
   styleUrl: './login-and-register.component.css'
 })
 export class LoginAndRegisterComponent implements OnInit {
+
   isUserIdentified : UserInformation[] =[];
+  RegisterVisible : boolean = false;
+  LoginVisible : boolean = true;
   constructor(private identification: IndentificationService, private router:Router) {
   }
-  RegisterUser(formValue: { username: string; email : string, password: string; confirm_password: string; }) {
+  Register_visible() {
+    this.RegisterVisible = true;
+    this.LoginVisible = false;
+  }
+  Login_visible() {
+    this.RegisterVisible = false;
+    this.LoginVisible = true;
+  }
+  RegisterUser(formValue: { name_register:string, first_name_register:string, last_name_register:string, username: string; address_register:string, email : string, password: string; confirm_password: string; }) {
     // const user = { username: 'Nguyen Van Tam', password: '09004092001' };
     // this.identification.RequestUserRegister(user);
     // const sessionInfo = this.identification.GetSessionID();
     // console.log("Got SessionID is: ",`${sessionInfo.SessionID}`, "Got Username is: ",`${sessionInfo.Username}`);	
     const userRegister = {
+      name_register : formValue.name_register,
+      first_name_register : formValue.first_name_register,
+      last_name_register : formValue.last_name_register,
       username: formValue.username,
+      address_register : formValue.address_register,
       email : formValue.email,
       password: formValue.password,
       confirm_password: formValue.confirm_password

@@ -8,6 +8,7 @@ var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const Menu_Candle_Processing = require('../../controllers/Website_Candle_Light/Menu_Candle_Processing_MongooseDB');
 const User_Information_Handling = require('../../controllers/Website_Candle_Light/User_Information_Handling');
+const User_Information_From_MySQL = require('../../controllers/API_with_MySQL/MySQL_API_products_table');
 const Global_Interface = require('../../controllers/Website_Candle_Light/Global_interface');
 
 // Declare liberies for express-session
@@ -17,7 +18,7 @@ const RedisStore = require('connect-redis').default;
 // const clientRedis = new Redis(); // defaut localhost
 const TargetTime_Of_Minute = 1;
 var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
-
+const isDatabaseCombination = process.env.IS_DATABASE_COMBINATION === 'true';
 
 // var result = "";
 
@@ -55,7 +56,14 @@ Router.post('/register',(req,res)=>{
 
 
 const LoginHandling = async(req,res) => {
-   var [isValidUser, isAdminRight] = await User_Information_Handling.Check_Valid_User_in_Database(req.body.username, req.body.password);
+   if(isDatabaseCombination){
+      console.log("Database combination mode is ON");
+      var [isValidUser, isAdminRight] = await User_Information_From_MySQL.Check_Valid_User_in_MySQL(req.body.username, req.body.password);
+   } else {
+      console.log("Database combination mode is OFF");
+      var [isValidUser, isAdminRight] = await User_Information_Handling.Check_Valid_User_in_Database(req.body.username, req.body.password);
+   }  
+   
    console.log(`isValidUser is ${isValidUser}`);
    var CurrentUser = req.body.username;
    if(isAdminRight && isValidUser){
@@ -148,7 +156,14 @@ const LoginHandling = async(req,res) => {
 
 
 const RegisterHandling = async(req,res) => {
-   var isAddUserValid = await User_Information_Handling.Add_New_User_Information(req.body.username, req.body.email, req.body.password, req.body.confirm_password);
+   if(isDatabaseCombination){
+      console.log("Database combination mode is ON");
+      var isAddUserValid = await User_Information_From_MySQL.Add_New_User_Information_in_MySQL(req.body.name_register, req.body.first_name_register,req.body.last_name_register,req.body.username, req.body.address_register, req.body.email, req.body.password, req.body.confirm_password);
+   } else {
+      console.log("Database combination mode is OFF");
+      var isAddUserValid = await User_Information_Handling.Add_New_User_Information(req.body.username, req.body.email, req.body.password, req.body.confirm_password);
+   }  
+
    console.log(`isAddUserValid is ${isAddUserValid}`);
    if(isAddUserValid){
       // res.status(200).sendFile(path.join(__dirname,'../','../','views','Candle_Web_Routes','HomePage.html'));
