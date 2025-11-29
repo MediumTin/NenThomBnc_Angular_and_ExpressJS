@@ -4,13 +4,14 @@ const Router = express.Router();
 const path = require('path');
 const Menu_Candle_Processing = require('../../controllers/Website_Candle_Light/Menu_Candle_Processing_MongooseDB');
 const User_Information_Handling = require('../../controllers/Website_Candle_Light/User_Information_Handling');
+const User_Information_From_MySQL = require('../../controllers/API_with_MySQL/MySQL_API_products_table');
 var isAdminRightChecked;
 const Global_Interface = require('../../controllers/Website_Candle_Light/Global_interface');
 const Redis_API = require('../../controllers/API_with_Redis/API_Redis');
 const { createClient } = require('redis');
 const samplearray2 = ['Location 1', 'Location 2'];
 const nodemailer = require('nodemailer'); // declare for mail service
-
+const isDatabaseCombination = process.env.IS_DATABASE_COMBINATION === 'true';
 const client = createClient({
    username: process.env.REDIS_USERNAME,
    password: process.env.REDIS_PASSWORD,
@@ -292,10 +293,17 @@ Router.post('/mergelocalstorageandDB',async (req,res)=>{
    if(Quatity_array != undefined){
       // local storage is not empty
       for(let i=0;i<length_of_merge_array;i++){
+         // Write into Database each item from local storage
          Merge_data_from_localstorage[i] = `${Candle_name_array[i]},${Quatity_array[i]},${Price_array[i]},${Image_array[i]}`;
          // Write to database and clear Redis cache
          console.log(`Username is ${CurrentUser}`);
-         await User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Merge_data_from_localstorage[i]); // Update new shopping bag to database
+         if(isDatabaseCombination){
+            console.log("Database combination mode is ON");
+            await User_Information_From_MySQL.Update_Content_of_ShoppingBag_MYSQL(CurrentUser,Merge_data_from_localstorage[i]); // Update new shopping bag to database
+         } else {
+            console.log("Database combination mode is OFF");
+            await User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Merge_data_from_localstorage[i]); // Update new shopping bag to database
+         }  
       }
       console.log(`Merge_data_from_localstorage after local storage only is ${Merge_data_from_localstorage}`);
       
@@ -429,8 +437,13 @@ const SyncUp_Info_Redis_And_DB = async (username)=>{
    console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
    if(Result_Read_From_Cache == null){
       console.log("Miss cached");
-      var Personal_Shopping_Bag = await User_Information_Handling.GetShoppingBagFromUser(username); // Read data from database
-
+      if(isDatabaseCombination){
+         console.log("Database combination mode is ON");
+         var Personal_Shopping_Bag = await User_Information_From_MySQL.GetShoppingBagFromUser_MYSQL(username); // Read data from database
+      } else {
+         console.log("Database combination mode is OFF");
+         var Personal_Shopping_Bag = await User_Information_Handling.GetShoppingBagFromUser(username); // Read data from database
+      } 
       console.log(`Value of reading data from Database: ${Personal_Shopping_Bag}`);
       console.log(`Type of reading data from Database: ${typeof(Personal_Shopping_Bag)}`);
 
@@ -460,7 +473,19 @@ const ReadShoppingBag_From_Database_and_Redis = async (username)=>{
    console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
    if(Result_Read_From_Cache == null){
       console.log("Miss cached");
-      var Personal_Shopping_Bag = await User_Information_Handling.GetShoppingBagFromUser(username); // Read data from database
+      if(isDatabaseCombination){
+         console.log("Database combination mode is ON");
+         var Personal_Shopping_Bag = await User_Information_From_MySQL.GetShoppingBagFromUser_MYSQL(username); // Read data from database
+         // Need to convert from array of objects to array of strings to same as MongooseDB
+         let Converted_array_of_strings = [];
+         for(let i=0;i<Personal_Shopping_Bag.length;i++){
+            Converted_array_of_strings[i] = Personal_Shopping_Bag[i].candle_name + ',' + Personal_Shopping_Bag[i].quantity + ',' + Personal_Shopping_Bag[i].price_unit + ',' + Personal_Shopping_Bag[i].candle_image;
+         }
+         Personal_Shopping_Bag = Converted_array_of_strings;
+      } else {
+         console.log("Database combination mode is OFF");
+         var Personal_Shopping_Bag = await User_Information_Handling.GetShoppingBagFromUser(username); // Read data from database
+      } 
       console.log(`Value of reading data from Database: ${Personal_Shopping_Bag}`);
       console.log(`Type of reading data from Database: ${typeof(Personal_Shopping_Bag)}`);
       console.log(`First item is ${Personal_Shopping_Bag[0]}`); // Candle Snuffer,1,85.000,../../../../assets/img/Automation/Image/26.jpg

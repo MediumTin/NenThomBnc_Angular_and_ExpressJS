@@ -2,7 +2,7 @@ const User_Information = require('../../model/User_Information');
 const bcrypt = require('bcrypt');
 
 const Check_Valid_User_in_Database = async(username_request, password_request) => {
-    var isValidUser = 0, isValidAdminRight = 0;
+    var isValidUser = 0, isValidAdminRight = 0, UserName = "";
     var result = [];
     try{
         result = await User_Information.find({
@@ -17,6 +17,7 @@ const Check_Valid_User_in_Database = async(username_request, password_request) =
     }
     if(result.length != 0){
         isValidUser = 1;
+        UserName = result[0].username;
         // Check valid admin right
         if(username_request == "Nguyen Trung Tin"){
             isValidAdminRight = 1;
@@ -24,7 +25,7 @@ const Check_Valid_User_in_Database = async(username_request, password_request) =
         }
     };
     console.log('Result of User finding is : ', isValidUser);
-    return [isValidUser, isValidAdminRight];
+    return [isValidUser, isValidAdminRight, UserName];
 }
 
 const Update_Content_of_ShoppingBag = async(username_request,ContentofChanged) => {

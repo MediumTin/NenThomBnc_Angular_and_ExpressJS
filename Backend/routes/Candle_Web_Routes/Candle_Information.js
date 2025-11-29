@@ -6,10 +6,12 @@ const { createClient } = require('redis');
 const Redis_API = require('../../controllers/API_with_Redis/API_Redis');
 const Menu_Candle_Processing = require('../../controllers/Website_Candle_Light/Menu_Candle_Processing_MongooseDB');
 const User_Information_Handling = require('../../controllers/Website_Candle_Light/User_Information_Handling');
+const User_Information_From_MySQL = require('../../controllers/API_with_MySQL/MySQL_API_products_table');
 const Global_Interface = require('../../controllers/Website_Candle_Light/Global_interface');
 var result = "";
 var Shopping_bag_array = []; // declare one array (listed node), can easy for adding new element into it.
 var Shopping_bag_array_counter = 0;
+const isDatabaseCombination = process.env.IS_DATABASE_COMBINATION === 'true';
 // var isFirstTimeLogin = true;
 const client = createClient({
    username: process.env.REDIS_USERNAME,
@@ -138,8 +140,17 @@ Router.post('/requestwriteintosession',(req,res)=>{
          console.log("Your second session is",session);
          LOC_CurrentSessionDataValid = session;
          
-         // 1. Update new value into Database
-         User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Shopping_bag_array[Shopping_bag_array_counter]);
+         if(isDatabaseCombination){
+            console.log("Database combination mode is ON");
+            // 1. Update new value into Database
+            User_Information_From_MySQL.Update_Content_of_ShoppingBag_MYSQL(CurrentUser,Shopping_bag_array[Shopping_bag_array_counter]);
+         } else {
+            console.log("Database combination mode is OFF");
+            // 1. Update new value into Database
+            User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Shopping_bag_array[Shopping_bag_array_counter]);
+         }  
+
+         
          // 2. Delete personal shopping bag from Redis cache
          await Redis_API.Connect_To_Redis(client); // Open connection to Redis
          await Redis_API.Delete_seperated_data_inRedis(client,CurrentUser);

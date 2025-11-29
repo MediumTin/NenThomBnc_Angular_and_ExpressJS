@@ -58,17 +58,17 @@ Router.post('/register',(req,res)=>{
 const LoginHandling = async(req,res) => {
    if(isDatabaseCombination){
       console.log("Database combination mode is ON");
-      var [isValidUser, isAdminRight] = await User_Information_From_MySQL.Check_Valid_User_in_MySQL(req.body.username, req.body.password);
+      var [isValidUser, isAdminRight, UserName] = await User_Information_From_MySQL.Check_Valid_User_in_MySQL(req.body.username, req.body.password);
    } else {
       console.log("Database combination mode is OFF");
-      var [isValidUser, isAdminRight] = await User_Information_Handling.Check_Valid_User_in_Database(req.body.username, req.body.password);
+      var [isValidUser, isAdminRight, UserName] = await User_Information_Handling.Check_Valid_User_in_Database(req.body.username, req.body.password);
    }  
    
    console.log(`isValidUser is ${isValidUser}`);
    var CurrentUser = req.body.username;
    if(isAdminRight && isValidUser){
       req.session.personal_information ={
-         username: req.body.username,
+         username: UserName,
          password: req.body.password,
          age: 23,
          address : "Admin",
@@ -88,7 +88,7 @@ const LoginHandling = async(req,res) => {
       req.session.save(()=>{
          res.status(200).send(
          [{
-            "Currentuser" : `${req.session.personal_information.username}`,
+            "Currentuser" : `${UserName}`,
             // "SessionID" : `${req.sessionID}`,
             "isAdminRights" : true
          }]
@@ -107,7 +107,7 @@ const LoginHandling = async(req,res) => {
       
       // Way 2: Using express-session library
       req.session.personal_information ={
-         username: req.body.username,
+         username: UserName,
          password: req.body.password,
          age: 23,
          address : "Huynh Tan Phat",
@@ -132,7 +132,7 @@ const LoginHandling = async(req,res) => {
 
          res.status(200).send(
          [{
-            "Currentuser" : `${req.session.personal_information.username}`,
+            "Currentuser" : `${UserName}`,
             // "SessionID" : `${req.sessionID}`, // dont send SessionID in manually for security reason
             "isAdminRights" : false
          }]
