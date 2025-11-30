@@ -126,6 +126,10 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
     // Nếu muốn xử lý thêm logic khi số lượng thay đổi, viết ở đây
   }
   addToBag() {
+    if(this.available_quantity <= 0){
+      window.alert('Cannot buy due to out of stock');
+      return; // Do nothing if the item is out of stock
+    } 
     console.log('clicked');
     this.isCheckShoppingBagVisible = true; // Show the shopping bag check
     this.AddedBoxFadeOut(this.AllowedFadeOut);
@@ -154,6 +158,10 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
     
   }
   BuyNowandMoveToShoppingBag() {
+    if(this.available_quantity <= 0){
+      window.alert('Cannot buy due to out of stock');
+      return; // Do nothing if the item is out of stock
+    } 
     // Scenario 1: If want user can access the website without login - will store in local storage (can store by any window and never clear until user clear it)
     this.candlesService.setCandleInformationToLocalStorageOfBrownser({
       quatity: this.quantity,

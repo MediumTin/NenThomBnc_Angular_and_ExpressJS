@@ -85,12 +85,12 @@
                 function Get_Candle_Information() {
                     var receivedMessage = "";
                     const xhttp = new XMLHttpRequest();
-                    xhttp.open("POST", "/candle_information");
-                    xhttp.setRequestHeader( 
-                    "Content-Type", "application/json" 
-                    ); 
-                    var data = JSON.stringify( 
-                        { name: "getdetailinfor", email: "testagain" } 
+                                                    <button 
+                                                        class="product-action-btn" 
+                                                        id="myBtn"
+                                                        [disabled]="available_quantity === 0"
+                                                        (click)="onBuyNowClick()"
+                                                    >Buy Now</button>
                     ); 
                     xhttp.send(data);
                     // Create a state change callback 
@@ -103,6 +103,10 @@
                             // document.getElementById("demo").innerHTML = receivedMessage[0].name; 
                             let stringtemp = "";
                             let myarray = "";
+                                    <div *ngIf="showOutOfStockPopup" class="popup-out-of-stock">
+                                      <span>Cannot buy due to out of stock</span>
+                                      <button (click)="closeOutOfStockPopup()">Close</button>
+                                    </div>
                             stringtemp = `${receivedMessage.name}`;
                             myarray = stringtemp.replaceAll(" ","_"); // replace all space in string with underscore
                             Current_Product = receivedMessage.name;

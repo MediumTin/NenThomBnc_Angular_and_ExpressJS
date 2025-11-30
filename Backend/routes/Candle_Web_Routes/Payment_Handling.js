@@ -100,7 +100,24 @@ Router.post('/specific_handling',async (req,res)=>{
    // await Redis_API.Connect_To_Redis(client); // Open connection to Redis
    // await Redis_API.Delete_Data_In_Redis(client);
    // await Redis_API.Disconnect_To_Redis(client);
-   
+   var requested_username = req.session.personal_information.username;
+   console.log(`Requested username for payment handling is ${requested_username}`);
+   var requested_password = req.session.personal_information.password;
+   console.log(`Requested password for payment handling is ${requested_password}`);
+   const Customer_ID_Info = await User_Information_From_MySQL.Get_Customer_ID_in_MySQL_DB_HighCorrection(requested_username,requested_password);
+   console.log(`Customer_ID_Info is ${Customer_ID_Info}`);
+
+   var total_price_After_VAT = req.body.Total_Price_After_VAT;
+   console.log(`Total price after VAT is ${total_price_After_VAT}`);
+
+   // Create new order in order table
+   const Get_new_OrderID_created = await User_Information_From_MySQL.Create_New_Order_in_MySQL(Customer_ID_Info,total_price_After_VAT,'Processing');
+   console.log(`Create_New_Order result is ${Get_new_OrderID_created}`);
+
+   // Create new payment in payment table
+   const Get_new_PaymentID_created = await User_Information_From_MySQL.Create_New_payment_in_MySQL(Get_new_OrderID_created,total_price_After_VAT,'Processing');
+   console.log(`Create_New_payment result is ${Get_new_PaymentID_created}`);
+
    var selectedList = (req.body.Selected_List);
    console.log(`Name of first item is ${selectedList[0]}`);
    console.log(`Type first item is ${typeof(selectedList[0])}`);
@@ -108,11 +125,16 @@ Router.post('/specific_handling',async (req,res)=>{
    //selectedList = selectedList[0].split(",")
    var Afterchange = selectedList[0].split(",")
    var selectedList_filtered2 = [];
+   var selectedListt_with_order_detail = [];
    console.log(`Type first item after split is ${typeof(Afterchange)}`);
    console.log(`Name of first item after split is ${Afterchange[0]}`);
    
    for(let i = 0;i<selectedList.length;i++){
       selectedList_filtered2[i] = selectedList[i].split(","); // Split each item in selectedList by comma
+      const Create_new_Order_detail_in_MySQL = await User_Information_From_MySQL.Create_Order_detail_in_MySQL(Get_new_OrderID_created,Get_new_PaymentID_created,selectedList_filtered2[i][1], selectedList_filtered2[i][2]);
+      console.log(`Create_Order_detail_in_MySQL result is ${Create_new_Order_detail_in_MySQL}`);
+      selectedListt_with_order_detail[i] = Create_new_Order_detail_in_MySQL;
+
    }
    console.log(`Type first item after split selectedList_filtered2 is ${typeof(selectedList_filtered2[0])}`);
    console.log(`Name of first item after split selectedList_filtered2 is ${selectedList_filtered2[0][0]}`);
@@ -128,6 +150,7 @@ Router.post('/specific_handling',async (req,res)=>{
       // }
       Generated_HTML_SelectedProduct += `
          <tr>
+            <td>${selectedListt_with_order_detail[i]}</td>
             <td>${selectedList_filtered2[i][0]}</td>
             <td><img src="cid:${selectedList_filtered2[i][3]}" style="width:100px;height:100px;"></td>
             <td>${selectedList_filtered2[i][1]}</td>
@@ -176,6 +199,12 @@ Router.post('/specific_handling',async (req,res)=>{
             <!-- Describe search bar and logo -->
             <table class="table1">
                   <tr>
+                     <td><p>Order number is ${Get_new_OrderID_created}</p></td>
+                  </tr>
+                  <tr>
+                     <td><p>Payment number is ${Get_new_PaymentID_created}</p></td>
+                  </tr>
+                  <tr>
                      <td><p>Visa card number is ${req.body.Visa_number}</p></td>
                   </tr>
                   <tr>
@@ -197,6 +226,7 @@ Router.post('/specific_handling',async (req,res)=>{
             <p>Detail your product as below</p>
             <table>
                   <tr>
+                     <td><b>Order detail number</b></td>
                      <td><b>Product Name</b></td>
                      <td><b>Product Image</b></td>
                      <td><b>Quatity</b></td>

@@ -1,4 +1,5 @@
 
+const { Console } = require('console');
 const pool = require('../../config/DB_Connection_MySQL_DB'); // đây là pool, không phải connection đơn lẻ
 const crypto = require('crypto');
 // Example : Lấy tất cả sản phẩm
@@ -81,6 +82,22 @@ const Check_Valid_User_in_MySQL = async(username_request, password_request) => {
       return [isValidUser, isValidAdminRight, Username];
     } catch (err) {
       console.error('❌ Lỗi truy vấn getAllProducts:', err);
+      throw err;
+    }
+
+}
+
+// Table 1: customers - Read
+const Get_Customer_ID_in_MySQL_DB_HighCorrection = async(username_request,password_request) => {
+    console.log(`Username request is ${username_request}`);
+    console.log(`Password request is ${password_request}`);
+    try {
+      const [username_id] = await pool.query(`SELECT customer_id FROM customers WHERE name = '${username_request}' AND password = '${password_request}' ;`);
+      console.log('📦 Dữ liệu lấy được:');
+      console.table(username_id);
+      return username_id[0].customer_id;
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn Get_Customer_ID_in_MySQL_DB_HighCorrection:', err);
       throw err;
     }
 
@@ -253,6 +270,63 @@ const Get_quantity_available_in_Warehouse = async(Product_name) => {
     }
 
 }
+// Table 4: orders - Insert
+const Create_New_Order_in_MySQL = async(customer_id,total_payment,status) => {
+    var Result_Checking= 0;
+    console.log(`Customer ID request is ${customer_id}`);
+    console.log(`Total amount request is ${total_payment}`);
+    console.log(`Status request is ${status}`);
+    try {
+      const [results] = await pool.query(`INSERT INTO orders (customer_id, total_amount, status) VALUES ('${customer_id}',  '${total_payment}', '${status}');`);
+      console.log('📦 Register successfully:');
+      console.table(results);
+      console.log(results.insertId); // Lấy ID của đơn hàng mới tạo
+      Result_Checking = 1;
+      return results.insertId;     
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn:', err);
+      throw err;
+    }
+}
+// Table 6: payments - Insert
+const Create_New_payment_in_MySQL = async(order_id,total_payment,status) => {
+    var Result_Checking= 0;
+    console.log(`Order ID request is ${order_id}`);
+    console.log(`Total amount request is ${total_payment}`);
+    console.log(`Status request is ${status}`);
+    try {
+      const [results] = await pool.query(`INSERT INTO payments (order_id, amount, status) VALUES ('${order_id}',  '${total_payment}', '${status}');`);
+      console.log('📦 Register successfully:');
+      console.table(results);
+      console.log(results.insertId); // Lấy ID của payment mới tạo
+      Result_Checking = 1;
+      return results.insertId;     
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn:', err);
+      throw err;
+    }
+}
+// Table 5: order_details - Insert
+const Create_Order_detail_in_MySQL = async(order_id,payment_id,quantity,price_unit) => {
+    var Result_Checking= 0;
+    console.log(`Order ID request is ${order_id}`);
+    console.log(`Payment ID request is ${payment_id}`);
+    console.log(`Quantity request is ${quantity}`);
+    console.log(`Price unit request is ${price_unit}`);
+    subtotal = quantity * price_unit;
+    console.log(`Subtotal request is ${subtotal}`);
+    try {
+      const [results] = await pool.query(`INSERT INTO order_details (order_id,payment_id,quantity, unit_price, subtotal) VALUES ('${order_id}',  '${payment_id}', '${quantity}', '${price_unit}', '${subtotal}');`);
+      console.log('📦 Register successfully:');
+      console.table(results);
+      console.log(results.insertId); // Lấy ID của order_detail mới tạo
+      Result_Checking = 1;
+      return results.insertId;     
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn:', err);
+      throw err;
+    }
+}
 
 module.exports = {
   getAllProducts,
@@ -264,5 +338,9 @@ module.exports = {
   Update_Content_of_ShoppingBag_MYSQL,
   GetShoppingBagFromUser_MYSQL,
   Update_All_Products_into_Warehouse_for_admin,
-  Get_quantity_available_in_Warehouse
+  Get_quantity_available_in_Warehouse,
+  Get_Customer_ID_in_MySQL_DB_HighCorrection,
+  Create_New_Order_in_MySQL,
+  Create_New_payment_in_MySQL,
+  Create_Order_detail_in_MySQL
 };
