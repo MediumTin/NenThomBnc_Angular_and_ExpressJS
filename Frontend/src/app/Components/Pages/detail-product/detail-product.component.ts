@@ -24,6 +24,8 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
   price : string = "";
   name : string = "";
   image : string = "";
+  available_quantity : number = 0;
+  available_status : string = "";
   candles: Candles[] = [];
   AllowedFadeOut: boolean = true; 
   ReturnValueAfterPostMethod: Selected_Candle = new Selected_Candle; // This is the return value after post method
@@ -55,11 +57,19 @@ export class DetailProductComponent implements OnInit, AfterViewInit{
             this.price = this.candles[0].price;
             this.name = this.candles[0].name;
             this.image = this.candles[0].image;
+            this.available_quantity = Number(this.candles[0].available_quantity ?? 0);
+            if(this.available_quantity > 0){
+              this.available_status = `Available ${this.available_quantity} items`;
+            } else {
+              this.available_status = "Out of Stock";
+            }
             this.cdr.detectChanges();
           } else {
             this.price = '';
             this.name = '';
             this.image = '';
+            this.available_quantity = 0;
+            this.available_status = "Out of Stock";
           }
           // this.candles = serverCandles; 
           

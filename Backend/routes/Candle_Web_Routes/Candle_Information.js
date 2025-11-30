@@ -50,6 +50,8 @@ Router.get('^/$|',async (req,res)=>{
       // console.log(`req.url is ${req.url}`);
       if(req.url == temp1){
          result = listofcandle[i]; // send the selected candle information to html page
+         var detail_product_quantity = await User_Information_From_MySQL.Get_quantity_available_in_Warehouse(listofcandle[i].name);
+         result.available_quantity = detail_product_quantity;
          var reslt_string_ceonverted = JSON.stringify(result);
          reslt_string_ceonverted = "[" + reslt_string_ceonverted + "]";
 

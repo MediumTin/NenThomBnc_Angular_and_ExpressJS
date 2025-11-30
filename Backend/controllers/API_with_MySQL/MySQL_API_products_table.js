@@ -1,82 +1,7 @@
-// const connection = require('../../config/DB_Connection_MySQL_DB');
-
-// // Lấy tất cả sản phẩm
-// const getAllProducts = () => {
-//   return new Promise((resolve, reject) => {
-//     connection.query('SELECT * FROM products', (err, results) => {
-//       if (err) {
-//         console.error('❌ Lỗi truy vấn:', err);
-//         return reject(err);
-//       }
-//       console.log('📦 Dữ liệu lấy được:');
-//       console.table(results);
-//       resolve(results);
-//     });
-//   });
-// };
-
-// // Thêm sản phẩm
-// const  insertProduct = (data)=> {
-//   return new Promise((resolve, reject) => {
-//   const { name, price, description } = data;
-//   connection.query(
-//     'INSERT INTO products (name, price, description) VALUES (?, ?, ?)',
-//     [name, price, description],
-//     (err, result) => {
-//       if (err) {
-//         console.error('❌ Lỗi truy vấn:', err);
-//         return reject(err);
-//       }
-//       console.log('📦 Thêm dữ liệu OK:');
-//       resolve(result);
-//     }
-//   );
-// });
-// }
-
-// // Cập nhật sản phẩm
-// const updateProduct = (id, data) =>  {
-//   return new Promise((resolve, reject) => {
-//   const { name, price, description } = data;
-//     connection.query(
-//       'UPDATE products SET name=?, price=?, description=? WHERE id=?',
-//       [name, price, description, id],
-//       (err, result) => {
-//       if (err) {
-//         console.error('❌ Lỗi truy vấn:', err);
-//         return reject(err);
-//       }
-//       console.log('📦 Sửa dữ liệu OK:');
-//       resolve(result);
-//     }
-//     );
-//   });
-// }
-
-// // Xóa sản phẩm
-// const deleteProduct = (id) => {
-//     return new Promise((resolve, reject) => {
-//     connection.query('DELETE FROM products WHERE id=?', [id], (err, result) => {
-//       if (err) {
-//         console.error('❌ Lỗi truy vấn:', err);
-//         return reject(err);
-//       }
-//       console.log('📦 Xóa dữ liệu OK:');
-//       resolve(result);
-//     });
-//   });
-// }
-
-// module.exports = {
-//   getAllProducts,
-//   insertProduct,
-//   updateProduct,
-//   deleteProduct
-// };
 
 const pool = require('../../config/DB_Connection_MySQL_DB'); // đây là pool, không phải connection đơn lẻ
-
-// Lấy tất cả sản phẩm
+const crypto = require('crypto');
+// Example : Lấy tất cả sản phẩm
 const getAllProducts = async () => {
   try {
     const [results] = await pool.query('SELECT * FROM products');
@@ -89,7 +14,7 @@ const getAllProducts = async () => {
   }
 };
 
-// Thêm sản phẩm
+// Example : Thêm sản phẩm
 const insertProduct = async (data) => {
   const { name, price, description } = data;
   try {
@@ -105,7 +30,7 @@ const insertProduct = async (data) => {
   }
 };
 
-// Cập nhật sản phẩm
+// Example : Cập nhật sản phẩm
 const updateProduct = async (id, data) => {
   const { name, price, description } = data;
   try {
@@ -121,7 +46,7 @@ const updateProduct = async (id, data) => {
   }
 };
 
-// Xóa sản phẩm
+// Example : Xóa sản phẩm
 const deleteProduct = async (id) => {
   try {
     const [result] = await pool.query('DELETE FROM products WHERE id=?', [id]);
@@ -133,6 +58,7 @@ const deleteProduct = async (id) => {
   }
 };
 
+// Table 1: customers - Read
 const Check_Valid_User_in_MySQL = async(username_request, password_request) => {
     var isValidUser = 0, isValidAdminRight = 0, Username= "";
     console.log(`Username request is ${username_request}`);
@@ -160,6 +86,7 @@ const Check_Valid_User_in_MySQL = async(username_request, password_request) => {
 
 }
 
+// Table 1: customers - Read
 const Get_Customer_ID_in_MySQL_DB = async(username_request) => {
     console.log(`Username request is ${username_request}`);
     try {
@@ -174,6 +101,7 @@ const Get_Customer_ID_in_MySQL_DB = async(username_request) => {
 
 }
 
+// Table 1: customers - Insert
 const Add_New_User_Information_in_MySQL = async(name_register, first_name_register, last_name_register, username_register, address_register, email, password, confirmed_password) => {
     var Result_Checking= 0;
     console.log(`Username request is ${username_register}`);
@@ -194,6 +122,7 @@ const Add_New_User_Information_in_MySQL = async(name_register, first_name_regist
       throw err;
     }
 }
+// Table 1: customers - Read & Table 2: personal_shopping_bag - Insert
 const Update_Content_of_ShoppingBag_MYSQL = async(username_request,ContentofChanged) => {
     var isValidUser = 0, isValidAdminRight = 0;
     var Result_Checking= 0;
@@ -233,6 +162,7 @@ const Update_Content_of_ShoppingBag_MYSQL = async(username_request,ContentofChan
     }
 }
 
+// Table 1: customers - Read & Table 2: personal_shopping_bag - Read (Join 2 table)
 const GetShoppingBagFromUser_MYSQL = async(username_request) => {
     var isValidUser = 0, isValidAdminRight = 0, PersonalShoppingBag = "";
     var result = [];
@@ -261,41 +191,67 @@ const GetShoppingBagFromUser_MYSQL = async(username_request) => {
         // console.log('First item of User shopping bag is : ', result[0].personal_shopping_bag[0]); // Candle Snuffer,1,85.000,../../../../assets/img/Automation/Image/26.jpg
         // console.log('Type of first item of User shopping bag is : ', typeof(result[0].personal_shopping_bag[0])); // string
         return result[0];
-      //         Result content full is :  [
-      //   {
-      //     candle_name: 'Candle matchbox',
-      //     quantity: 1,
-      //     price_unit: '10.00',
-      //     candle_image: '../../../../assets/img/Automation/Image/28.jpg'
-      //   },
-      //   {
-      //     candle_name: 'Candle Snuffer',
-      //     quantity: 9,
-      //     price_unit: '85.00',
-      //     candle_image: '../../../../assets/img/Automation/Image/26.jpg'
-      //   },
-      //   {
-      //     candle_name: 'Lumos Honeydrew And Coconut',
-      //     quantity: 1,
-      //     price_unit: '480.00',
-      //     candle_image: '../../../../assets/img/Automation/Image/13.jpg'
-      //   },
-      //   {
-      //     candle_name: 'Candle Snuffer',
-      //     quantity: 9,
-      //     price_unit: '85.00',
-      //     candle_image: '../../../../assets/img/Automation/Image/26.jpg'
-      //   },
-      //   {
-      //     candle_name: '3 Day WKND',
-      //     quantity: 5,
-      //     price_unit: '300.00',
-      //     candle_image: '../../../../assets/img/Automation/Image/1.jpg'
-      //   }
-      // ]
     };
     console.log('Result of User finding is : ', isValidUser);
     return [PersonalShoppingBag];
+}
+// Generate secure random integer between min and max (inclusive)
+const secureRandomInt = (min, max) => {
+  return crypto.randomInt(min, max + 1);
+}
+
+// Generate random Warehouse ID between 1 and 5
+const Warehouse_id_random = () => {
+  return secureRandomInt(1, 5);
+}
+
+// Generate random Quantity of product between 50 and 200
+const Quantity_product_random = () => {
+  return secureRandomInt(50, 200);
+}
+
+// Specific table : Read all product from MongoDB and Insert new random product into Ware_house of My SQL
+const Update_All_Products_into_Warehouse_for_admin = async(product_list) => {
+    var isValidUser = 0, isValidAdminRight = 0;
+    var Result_Checking= 0;
+    console.log(`product_list is ${product_list}`);
+    console.log(`Type of product_list is ${typeof(product_list)}`);
+    var RequestText = "";
+    for(let i = 0; i < product_list.length; i++){
+      if(i == product_list.length - 1){
+        RequestText += `('${Warehouse_id_random()}', '${product_list[i]}', ${Quantity_product_random()})`;
+      } else{
+        RequestText += `('${Warehouse_id_random()}', '${product_list[i]}', ${Quantity_product_random()}), `;
+      }
+    }
+    try{
+        const [results] = await pool.query(
+          ` INSERT INTO inventory (warehouse_id, product_sku, quantity) 
+            VALUES ${RequestText};`
+        );
+        console.log('📦 Register successfully:');
+        console.table(results); 
+        Result_Checking = 1;
+        return Result_Checking;  
+    } catch(err){
+        console.error('❌ Lỗi truy vấn:', err);
+        throw err;
+    }
+}
+
+// Table 6: inventory - Read
+const Get_quantity_available_in_Warehouse = async(Product_name) => {
+    console.log(`Product_name request is ${Product_name}`);
+    try {
+      const [product_quantity] = await pool.query(`SELECT quantity FROM inventory WHERE product_sku = '${Product_name}';`);
+      console.log('📦 Dữ liệu lấy được:');
+      console.table(product_quantity);
+      return product_quantity[0].quantity;
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn Get_quantity_available_in_Warehouse:', err);
+      throw err;
+    }
+
 }
 
 module.exports = {
@@ -306,5 +262,7 @@ module.exports = {
   Check_Valid_User_in_MySQL,
   Add_New_User_Information_in_MySQL,
   Update_Content_of_ShoppingBag_MYSQL,
-  GetShoppingBagFromUser_MYSQL
+  GetShoppingBagFromUser_MYSQL,
+  Update_All_Products_into_Warehouse_for_admin,
+  Get_quantity_available_in_Warehouse
 };

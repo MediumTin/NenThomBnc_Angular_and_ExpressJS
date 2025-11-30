@@ -21,6 +21,8 @@ const { v4: uuidv4 } = require("uuid");
 const RedisStore = require('connect-redis').default;
 const { createClient } = require('redis');
 const productModel = require('./controllers/API_with_MySQL/MySQL_API_products_table');
+const Specific_file_for_admin = require('./controllers/Admin_file/Specific_file_for_admin');
+
 
 
 // const clientRedis = new Redis({
@@ -347,6 +349,12 @@ app.get('/api/mysql/delete_product', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error', detail: err.message });
   }
 });
+
+// API 24: Get all product from MongoDB and Update Warehouse in MySQL
+app.get('/api/admin/update_warehouse_mysql', async (req,res)=>{
+    const status_update = await Specific_file_for_admin.GetAllProduct_MongoDB_and_Update_Warehouse_MySQL(req,res); // Update new shopping bag to database
+    res.json({ message: `Update status is ${status_update}`});
+})
 
 //--------------------------------Route to serve Angular app----------------------------------------------//
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)

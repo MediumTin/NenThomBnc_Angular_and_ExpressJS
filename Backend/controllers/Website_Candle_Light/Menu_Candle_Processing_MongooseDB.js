@@ -11,7 +11,7 @@ const GetAllProductInformation = async () => {
         result = await Candle_Collection.find({
             // username: "TrungTin_2"
         });
-        // console.log('All_Docuemnt_InDB : ', result[0].name);
+        console.log('All_Docuemnt_InDB : ', result[0].name);
 
     } catch(err){
         // res.status(500).json({'message':err.message});
