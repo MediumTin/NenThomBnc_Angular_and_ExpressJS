@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { IndentificationService } from '../../../Services/IdentificationService/indentification.service';
 import { PaymentService } from '../../../Services/payment/payment.service';
@@ -9,6 +10,10 @@ import { CandlesServiceService } from '../../../Services/CandlesService/candles-
 import { type } from 'node:os';
 import { Selected_Candle } from '../../../Common_Configuration/Models/Selected_candles';
 import { empty } from 'rxjs';
+import { Capture_Order_URL, Create_Order_URL } from '../../../Common_Configuration/Constant/urls';
+import { firstValueFrom } from 'rxjs';
+
+declare var paypal: any;
 
 @Component({
   selector: 'app-payment-page',
@@ -18,6 +23,7 @@ import { empty } from 'rxjs';
   styleUrl: './payment-page.component.css'
 })
 export class PaymentPageComponent implements OnInit, AfterViewInit {
+  @ViewChild('paypal', { static: true }) paypalElement!: ElementRef;
   counter_to_server : number = 0;
   paymentForm!: FormGroup; // Use definite assignment
   // historicalBag: HistoricalShoppingBag = new HistoricalShoppingBag();
@@ -45,8 +51,25 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   total_price_before_VAT_confirmed: any;
   VAT_Price_confirmed: any;
   total_price_after_VAT_confirmed: any;
+  AllListToServer2: HistoricalShoppingBag = {
+    Username: '',
+    Email: '',
+    Visa_number: '',
+    Visa_valid_date: '',
+    Visa_cvv: '',
+    Nation_buyer: '',
+    Nation_zip_buyer: '',
+    Nation_state_buyer: '',
+    VAT_number_buyer: '',
+    Total_Price_Before_VAT: '',
+    Total_VAT: '',
+    Total_Price_After_VAT: '',
+    Selected_List: []
+  };
+  
 
   constructor(
+    private http:HttpClient,
     private fb: FormBuilder, 
     private router:Router, 
     private identification: 
@@ -339,6 +362,7 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
       
       // this.PersonalShoppingBags = JSON.parse(userInfo[0]?.personal_shopping_bag ?? ""); // data in object
       this.GetInfoFromLocalStorage_to_ConfirmedBox(); 
+      this.loadButtons();
 
   }
   Failed_Confirmation() {
@@ -348,6 +372,44 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
       this.isMain_body_1_Visible = true;
       this.isMain_body_2_Visible = true;
   }
+  Trigger_PayPal_Payment() {
+    console.log("Trigger_PayPal_Payment called");
+    // Implement PayPal payment logic here
+    this.paymentService.Create_PayPal_Order(this.AllListToServer2).subscribe((response) => {
+      console.log("Response from server for PayPal order is ", response);
+    });
+
+  }
+
+  loadButtons() {
+    this.paymentService
+      .loadPaypalScript('Af0dZWwp7kgYSc_Dd5Uo2evyrVE5zVTh7DPzW7RONsXm4ABoT_n3RGVXBMOFRdpHcDO6qBWZLqsDuHgp')
+      .then(() => {
+        paypal.Buttons({
+           createOrder: async () => {
+              const res: any = await firstValueFrom(
+                this.http.post(Create_Order_URL, {})
+              );
+              console.log('Order created:', res);
+              return res.id;  // Bắt buộc trả về id
+            },
+
+          onApprove: async (data: any) => {
+            console.log("onApprove:", data);
+
+            const details: any = await firstValueFrom(
+              this.http.post(Capture_Order_URL, { orderID: data.orderID })
+            );
+
+            alert("Thanh toán thành công: " + details.payer.name.given_name);
+          },
+          onError: (err: any) => {
+            console.error('PayPal Error: ', err);
+          }
+        }).render(this.paypalElement.nativeElement);
+      });
+  }
+
   Passed_Confirmation() {
     var username_of_buyer_confirmed = localStorage.getItem('cardholder_buyer');
     var email_of_buyer_confirmed = localStorage.getItem('email_of_buyer');
@@ -413,6 +475,7 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     Selected_List: this.SelectedFromPersonalShoppingBags_TO_SERVER ?? '' 
 
 };
+  this.AllListToServer2 = AllListToServer; // Assign local variable to global variable
 
     console.log("Type of AllListToServer is ", typeof(AllListToServer));
     console.log("Value of AllListToServer is ", AllListToServer);

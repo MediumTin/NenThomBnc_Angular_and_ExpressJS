@@ -22,6 +22,7 @@ const RedisStore = require('connect-redis').default;
 const { createClient } = require('redis');
 const productModel = require('./controllers/API_with_MySQL/MySQL_API_products_table');
 const Specific_file_for_admin = require('./controllers/Admin_file/Specific_file_for_admin');
+const PayPal_Interface = require('./controllers/API_with_PayPal/PayPal_API');
 
 
 
@@ -355,6 +356,26 @@ app.get('/api/admin/update_warehouse_mysql', async (req,res)=>{
     const status_update = await Specific_file_for_admin.GetAllProduct_MongoDB_and_Update_Warehouse_MySQL(req,res); // Update new shopping bag to database
     res.json({ message: `Update status is ${status_update}`});
 })
+
+// API 25: Tried POST method with PayPal payment gateway
+app.post('/api/payment/paypal/create-order', async (req,res)=>{
+    const status_update = await PayPal_Interface.CreateOrder(); // Update new shopping bag to database
+    // const data = await response.json();
+    console.log(`Order ID is ${status_update.id}`);
+    res.json({ id: status_update.id });
+    // res.json({ message: `Update status is ${status_update}`});
+})
+
+// API 26: Tried POST method with PayPal payment gateway
+app.post('/api/payment/paypal/capture-order', async (req,res)=>{
+    const { orderID } = req.body;
+    console.log(`Order ID received in server: ${orderID}`);
+    const status_update = await PayPal_Interface.CaptureOrder(orderID); // Update new shopping bag to database
+    console.log(`status_update is ${status_update}`);
+    console.log(`Buyer name is ${status_update.payer.name.given_name}`);
+    res.json(status_update);
+})
+
 
 //--------------------------------Route to serve Angular app----------------------------------------------//
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)

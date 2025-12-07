@@ -290,6 +290,9 @@
                                     <!-- <a href="/" id="Return_Home_Page" style="text-decoration: none;visibility: hidden;"></a> -->
                                     <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
                                     <td style="text-align: right;"><button class="btn btn-primary mt-2" id="Confirmation_passed" (click)="Passed_Confirmation()" >Confirmed</button></td>
+                                    <td style="text-align: right;"><button class="btn btn-primary mt-2" id="Confirmation_passed" (click)="Trigger_PayPal_Payment()" >Trigger PayPal Manual</button></td>
+                                    <!-- <td style="text-align: right;"><button class="btn btn-primary mt-2" id="Confirmation_passed" (click)="loadButtons()" >Trigger PayPal JS SDK</button></td> -->
+                                    <td><div #paypal>PayPal Javascript SDK</div></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -68,6 +68,10 @@ export const PAYMENT_HANDLING_URL = BASE_URL + '/api/payment_handling';         
 export const PAYMENT_HANDLING_Specific_Handling_URL = PAYMENT_HANDLING_URL + '/specific_handling';          // GET and POST method
 export const PAYMENT_HANDLING_Merge_local_storage_and_DB = PAYMENT_HANDLING_URL + '/mergelocalstorageandDB'; // POST method
 
+// Inteface for PayPal payment creation
+export const Create_Order_URL = BASE_URL + '/api/payment/paypal/create-order';
+export const Capture_Order_URL = BASE_URL + '/api/payment/paypal/capture-order';
+
 // Process with "Shopping_Bag_handling"
 export const SHOPPING_BAG_HANDLING_URL = BASE_URL + '/api/Shopping_Bag_handling';               // GET method
 
@@ -98,3 +102,5 @@ export const ORDER_CREATE_URL = ORDERS_URL + '/create';
 export const ORDER_NEW_FOR_CURRENT_USER_URL = ORDERS_URL + '/newOrderForCurrentUser';
 export const ORDER_PAY_URL = ORDERS_URL + '/pay';
 export const ORDER_TRACK_URL = ORDERS_URL + '/track/';
+
+
