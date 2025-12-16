@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserInformation } from '../../Common_Configuration/Models/UserInformation';
-import { CANDLE_INFORMATION_Request_Write_to_Session_URL, Create_Order_URL, PAYMENT_HANDLING_Merge_local_storage_and_DB, PAYMENT_HANDLING_Specific_Handling_URL, PAYMENT_HANDLING_URL } from '../../Common_Configuration/Constant/urls';
+import { CANDLE_INFORMATION_Request_Write_to_Session_URL, Create_Order_URL, External_Exchange_Rate_API, PAYMENT_HANDLING_Merge_local_storage_and_DB, PAYMENT_HANDLING_Specific_Handling_URL, PAYMENT_HANDLING_URL } from '../../Common_Configuration/Constant/urls';
 import { HistoricalShoppingBag } from '../../Common_Configuration/Models/Historical_shopping_bag';
 import { Selected_Candle } from '../../Common_Configuration/Models/Selected_candles';
 
@@ -10,6 +10,10 @@ import { Selected_Candle } from '../../Common_Configuration/Models/Selected_cand
   providedIn: 'root'
 })
 export class PaymentService {
+  Get_Exchange_Rate(): any {
+    return this.http.get<any>(External_Exchange_Rate_API);
+  }
+
    private scriptLoaded = false;
   constructor(private http:HttpClient) { }
   loadPaypalScript(clientId: string): Promise<void> {

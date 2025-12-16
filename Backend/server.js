@@ -359,7 +359,7 @@ app.get('/api/admin/update_warehouse_mysql', async (req,res)=>{
 
 // API 25: Tried POST method with PayPal payment gateway
 app.post('/api/payment/paypal/create-order', async (req,res)=>{
-    const status_update = await PayPal_Interface.CreateOrder(); // Update new shopping bag to database
+    const status_update = await PayPal_Interface.CreateOrder(req,res); // Update new shopping bag to database
     // const data = await response.json();
     console.log(`Order ID is ${status_update.id}`);
     res.json({ id: status_update.id });
@@ -373,7 +373,17 @@ app.post('/api/payment/paypal/capture-order', async (req,res)=>{
     const status_update = await PayPal_Interface.CaptureOrder(orderID); // Update new shopping bag to database
     console.log(`status_update is ${status_update}`);
     console.log(`Buyer name is ${status_update.payer.name.given_name}`);
+    const detail_info = await PayPal_Interface.ShowOrderDetails(orderID); // Update new shopping bag to database
+    console.log(`Detail info is ${JSON.stringify(detail_info)}`);
     res.json(status_update);
+})
+
+// API 27: Get Show detail
+app.get('/api/payment/paypal/show_detail', async (req,res)=>{
+    const { orderID } = req.query;
+    console.log(`Order ID received in server for detail info: ${orderID}`);
+    const detail_info = await PayPal_Interface.ShowOrderDetails(orderID); // Update new shopping bag to database
+    res.json(detail_info);
 })
 
 

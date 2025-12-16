@@ -103,4 +103,7 @@ export const ORDER_NEW_FOR_CURRENT_USER_URL = ORDERS_URL + '/newOrderForCurrentU
 export const ORDER_PAY_URL = ORDERS_URL + '/pay';
 export const ORDER_TRACK_URL = ORDERS_URL + '/track/';
 
+const API_Key_Exchangerate_API = '0d30a4fc3163eaf74cd78989';
+export const External_Exchange_Rate_API = `https://v6.exchangerate-api.com/v6/${API_Key_Exchangerate_API}/latest/VND`;
+
 

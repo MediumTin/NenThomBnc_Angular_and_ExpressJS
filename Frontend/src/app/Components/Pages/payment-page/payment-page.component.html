@@ -119,7 +119,7 @@
                         <p class="dis fw-bold mb-2">Email address</p>
                         <input formControlName="Email" id="email_of_buyer" class="form-control" type="email" value="luke@skywalker.com">
                     </div>
-                    <p class="dis fw-bold mb-2">Card details</p>
+                    <!-- <p class="dis fw-bold mb-2">Card details</p>
                     <div class="d-flex align-items-center justify-content-between card-atm border rounded">
                         <div class="fab fa-cc-visa ps-3"></div>
                         <input formControlName="Visa_number" id="visa_number" type="text" class="form-control" placeholder="Card Details">
@@ -131,7 +131,7 @@
                     <div class="my-3 cardname">
                         <p class="dis fw-bold mb-2">Cardholder name</p>
                         <input formControlName="Nation_buyer" class="form-control" id="cardholder_buyer" type="text">
-                    </div>
+                    </div> -->
                     <div class="address">
                         <p class="dis fw-bold mb-3">Billing address</p>
                         <select formControlName="Nation_buyer" class="form-select form-control" aria-label="Default select example" id="nation_buyer">
@@ -144,28 +144,40 @@
                             <input formControlName="Nation_zip_buyer" class="form-control zip" type="text" placeholder="ZIP" id="nation_zip_buyer">
                             <input formControlName="Nation_state_buyer" class="form-control state" type="text" placeholder="State" id="nation_state_buyer">
                         </div>
-                        <div class=" my-3">
+                        <!-- <div class=" my-3">
                             <p class="dis fw-bold mb-2">VAT Number</p>
                             <div class="inputWithcheck">
                                 <input formControlName="VAT_number_buyer" class="form-control" type="text" value="GB012345B9" id="VAT_number_buyer">
                                 <span class="fas fa-check"></span>
 
                             </div>
-                        </div>
+                        </div> -->
+                        <br>
+                    <!-- <p class="dis fw-bold mb-2">Card details</p> -->
+                    </div>
+                    <div>
+                        <p class="dis fw-bold mb-3">Price Currency</p>
+                        <select formControlName="Price_currency" class="form-select form-control" aria-label="Default select example" id="price_currency">
+                            <option selected hidden>VND</option>
+                            <option value="1">VND</option>
+                            <option value="2">USD</option>
+                            <option value="3">EUR</option>
+                        </select>
                     </div>
                     <div class="d-flex flex-column dis">
+                        <p class="dis fw-bold mb-2">Total payment</p>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <p>Subtotal</p>
                             <p 
                                 id="label_for_total_price"
-                                [innerHTML]="total_price_before_VAT + '.000 VND'"
+                                [innerHTML]="total_price_before_VAT/1000 + '.000 VND'"
                             ></p>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <p>VAT<span>(20%)</span></p>
                             <p 
                                 id="label_for_total_VAT_price" 
-                                [innerHTML]="VAT_Price + '.000 VND'"
+                                [innerHTML]="VAT_Price/1000 + '.000 VND'"
                             ></p>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
@@ -173,14 +185,25 @@
                             <p 
                                 class="fw-bold" 
                                 id="label_for_total_payment_2"
-                                [innerHTML]="total_price_after_VAT + '.000 VND'"
+                                [innerHTML]="total_price_after_VAT/1000 + '.000 VND'"
                             ></p>
                         </div>
+
+                        <p class="dis fw-bold mb-3">Billing Method</p>
+                        <select formControlName="Payment_Method" class="form-select form-control" aria-label="Default select example" id="payment_method">
+                            <option selected hidden>Cash on Delivery</option>
+                            <option value="1">Cash on Delivery</option>
+                            <option value="2">PayPal</option>
+                            <option value="3">VNPay</option>
+                            <option value="4">Momo</option>
+                            <option value="5">Internet backing</option>
+                        </select>
+                        <br>
                         <button 
                             type="submit" 
                             class="btn btn-primary mt-2" 
                             id="label_for_total_payment"
-                            [innerHTML]="total_price_after_VAT + '.000 VND'"
+                            [innerHTML]="total_price_after_VAT/1000 + '.000 VND'"
                         >Pay</button>
                     </div>
                     
@@ -232,6 +255,16 @@
                         <p id="nation_buyer_confirmed"></p>
                     </div>
                     <div class="mb-3">
+                        <p class="dis fw-bold mb-2">Price currency</p>
+                        <!-- <input id="email_of_buyer_confirmed" class="form-control" type="email" value="nguyentrungtin1002@gmail.com"> -->
+                        <p id="price_currency_confirmed"></p>
+                    </div>
+                    <div class="mb-3"[ngStyle]="{'display': Price_currency_selected != 1 ? 'block' : 'none'}">
+                        <p class="dis fw-bold mb-2">Exchange Rate</p>
+                        <!-- <input id="email_of_buyer_confirmed" class="form-control" type="email" value="nguyentrungtin1002@gmail.com"> -->
+                        <p id="exchange_Rate_confirmed"></p>
+                    </div>
+                    <div class="mb-3">
                         <p class="dis fw-bold mb-2">Nation ZIP</p>
                         <!-- <input id="email_of_buyer_confirmed" class="form-control" type="email" value="nguyentrungtin1002@gmail.com"> -->
                         <p id="nation_zip_buyer_confirmed"></p>
@@ -266,14 +299,14 @@
                             <p><b>Subtotal</b></p>
                             <p 
                                 id="label_for_total_price_confirmed"
-                                [innerHTML]="total_price_before_VAT_confirmed + '.000 VND'"
+                              
                             ></p>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <p><b>VAT<span>(20%)</span></b></p>
                             <p 
                                 id="label_for_total_VAT_price_confirmed" 
-                                [innerHTML]="VAT_Price_confirmed + '.000 VND'"
+                             
                             ></p>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-2">
@@ -281,18 +314,46 @@
                             <p 
                                 class="fw-bold" 
                                 id="label_for_total_payment_2_confirmed"
-                                [innerHTML]="total_price_after_VAT_confirmed + '.000 VND'"
+                               
                             ></p>
                         </div>
                         <table>
                             <tbody>
-                                <tr>
-                                    <!-- <a href="/" id="Return_Home_Page" style="text-decoration: none;visibility: hidden;"></a> -->
+                                <!-- Use ngIf to control element is generated or not. While ngStyle only change the style of element -->
+                                <tr *ngIf="isCash_Payment_Visible">
                                     <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
                                     <td style="text-align: right;"><button class="btn btn-primary mt-2" id="Confirmation_passed" (click)="Passed_Confirmation()" >Confirmed</button></td>
-                                    <td style="text-align: right;"><button class="btn btn-primary mt-2" id="Confirmation_passed" (click)="Trigger_PayPal_Payment()" >Trigger PayPal Manual</button></td>
-                                    <!-- <td style="text-align: right;"><button class="btn btn-primary mt-2" id="Confirmation_passed" (click)="loadButtons()" >Trigger PayPal JS SDK</button></td> -->
-                                    <td><div #paypal>PayPal Javascript SDK</div></td>
+                                </tr>
+                                <!-- For PayPal SDK, it is required to generate the div even though it is hidden, so cannot use *ngIf -->
+                                <tr [ngStyle]="{'display': isPayPal_Payment_Visible ? 'block' : 'none'}">
+                                    <td><div #paypal [ngStyle]="{'display': isPayPal_Payment_Visible ? 'block' : 'none'}"></div></td>
+                                </tr>
+                                <tr *ngIf="isPayPal_Payment_Visible">
+                                    <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
+                                </tr>
+                                <tr *ngIf="isVNPay_Payment_Visible">
+                                    <td>
+                                        <!-- <div #paypal [ngStyle]="{'display': isVNPay_Payment_Visible ? 'block' : 'none'}"></div> -->
+                                    </td>
+                                </tr>
+                                <tr *ngIf="isVNPay_Payment_Visible">
+                                    <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
+                                </tr>
+                                <tr *ngIf="isMomo_Payment_Visible">
+                                    <td>
+                                        <!-- <div #paypal [ngStyle]="{'display': isMomo_Payment_Visible ? 'block' : 'none'}"></div> -->
+                                    </td>
+                                </tr>
+                                <tr *ngIf="isMomo_Payment_Visible">
+                                    <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
+                                </tr>
+                                <tr *ngIf="isInternetBanking_Payment_Visible">
+                                    <td>
+                                        <!-- <div #paypal [ngStyle]="{'display': isInternetBanking_Payment_Visible ? 'block' : 'none'}"></div> -->
+                                    </td>
+                                </tr>
+                                <tr *ngIf="isInternetBanking_Payment_Visible">
+                                    <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
                                 </tr>
                             </tbody>
                         </table>

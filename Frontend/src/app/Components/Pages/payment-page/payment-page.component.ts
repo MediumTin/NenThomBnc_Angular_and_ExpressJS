@@ -31,19 +31,31 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   PersonalShoppingBags : string = "";
   SelectedFromPersonalShoppingBags: Array<Selected_Candle> = []; // To store selected items from personal shopping bags
   SelectedFromPersonalShoppingBags_TO_SERVER :string[] = []; // type is 
+  SelectedFromPersonalShoppingBags_In_USD : Array<Selected_Candle> = []; // type is
   counter_for_selected_items: number = 0; // To count the number of selected items
   account: string = "";
   isDivButtonActive: string[] = [];
   isDivImageActive: string[] = [];
+  total_price_before_VAT_in_USD = 0;
+  VAT_Price_in_USD = 0; // Assuming VAT is 20%
+  total_price_after_VAT_in_USD = 0;
   isButtonBackgroundChecked: boolean[] = []; // To handle the background color of the button
   isConfirmation_Box_Visible: boolean = false; // To handle the visibility of the confirmation box
   isConfirmation_Box_child_Visible: boolean = false; // To handle the visibility of the confirmation box child
+  isPayPal_Payment_Visible: boolean = false; // To handle the visibility of PayPal payment section
   isMain_body_Visible: boolean = true; // To handle the visibility of the main body
   isMain_body_1_Visible: boolean = true; // To handle the visibility of the main body 1
   isMain_body_2_Visible: boolean = true; // To handle the visibility of the main body 2
   GLOBAL_label_for_total_price : string = "0.00"; // Default value for total price before VAT
   GLOBAL_label_for_total_VAT_price : string = "0.00"; // Default value for total VAT price
   GLOBAL_label_for_total_payment : string = "0.00"; // Default value for total payment after VAT
+  isCash_Payment_Visible: boolean = false;
+  isVNPay_Payment_Visible: boolean = false;
+  isMomo_Payment_Visible: boolean = false;
+  exchange_Rate_VND_to_USD: number = 1; // Default value for exchange rate VND to USD
+  exchange_Rate_VND_to_EUR: number = 1; // Default value for exchange rate VND to EUR
+  isInternetBanking_Payment_Visible: boolean = false;
+  Price_currency_selected: number = 1; // Default value for price currency 1 is VND, 2 is USD, 3 is EUR
   Current_Username: string = ""; // To store the current username
   total_price_before_VAT: number = 0;
   VAT_Price: number = 0;
@@ -51,6 +63,9 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   total_price_before_VAT_confirmed: any;
   VAT_Price_confirmed: any;
   total_price_after_VAT_confirmed: any;
+  isTrigger_Paypal_JS_SDK: boolean = false;
+  isFirstCalculate_Total_Price: boolean = true;
+  orderID_from_PayPal: string = "";
   AllListToServer2: HistoricalShoppingBag = {
     Username: '',
     Email: '',
@@ -64,7 +79,8 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     Total_Price_Before_VAT: '',
     Total_VAT: '',
     Total_Price_After_VAT: '',
-    Selected_List: []
+    Selected_List: [],
+    Price_currency: ''
   };
   
 
@@ -107,6 +123,13 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
             console.log("this.PersonalShoppingBags[0] is ", (this.PersonalShoppingBags[0].split(","))[3]);
             this.candlesService.ClearAllDataInLocalStorageOfBrownser(); // Clear all data in local storage of browser after merge to server
           }
+      });
+
+      this.paymentService.Get_Exchange_Rate().subscribe((data: any) => {
+        console.log("Exchange rate info:", data);
+        this.exchange_Rate_VND_to_USD = data.conversion_rates.USD;
+        this.exchange_Rate_VND_to_EUR = data.conversion_rates.EUR;
+
       });
 
 
@@ -184,9 +207,20 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
       Total_VAT: [''],
       Total_Price_After_VAT: [''],
       Selected_List: [''],
+      Payment_Method: [''],
+      Price_currency: ['']
     });
   }
-
+  // Because Paypal must check in 2 decimal places, cannot use 3 decimal places
+  round2(value : number) : number {
+    return Math.round(value * 100) / 100;
+  }
+  Convert_Price_Currency_From_VND_to_USD(VND_price: number): number {
+    return this.round2(VND_price * this.exchange_Rate_VND_to_USD);
+  }
+  Convert_Price_Currency_From_VND_to_EUR(VND_price: number): number { 
+    return this.round2(VND_price * this.exchange_Rate_VND_to_EUR);
+  }
   // Function to handle payment
   NextButtonHandling() {
       this.isButtonBackgroundChecked = new Array(this.PersonalShoppingBags.length).fill(false);
@@ -258,7 +292,62 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
       const el = document.getElementById(id);
       if (el) el.innerHTML = value ?? '';
     };
-
+    if (Number(localStorage.getItem('Payment_Method')) == 2) {
+      // PayPal payment selected
+      this.isPayPal_Payment_Visible = true; // To handle the visibility of PayPal payment section
+      this.isCash_Payment_Visible = false;
+      this.isVNPay_Payment_Visible = false;
+      this.isMomo_Payment_Visible = false;
+      this.isInternetBanking_Payment_Visible = false;
+      console.log("SelectedFromPersonalShoppingBags",this.SelectedFromPersonalShoppingBags);
+      for (let i = 0; i < this.SelectedFromPersonalShoppingBags.length; i++) {
+        console.log("SelectedFromPersonalShoppingBags[i].price before convert",this.SelectedFromPersonalShoppingBags[i].price);
+        console.log("Type of this.SelectedFromPersonalShoppingBags[i].price is ", typeof this.SelectedFromPersonalShoppingBags[i].price);
+        console.log("(Number(this.SelectedFromPersonalShoppingBags[i].price)) before convert",(Number(this.SelectedFromPersonalShoppingBags[i].price)));
+        console.log("Type of (Number(this.SelectedFromPersonalShoppingBags[i].price)) is ", typeof (Number(this.SelectedFromPersonalShoppingBags[i].price)));
+        this.SelectedFromPersonalShoppingBags_In_USD[i] = {
+          candle_name: this.SelectedFromPersonalShoppingBags[i].candle_name,
+          quatity: this.SelectedFromPersonalShoppingBags[i].quatity,
+          price: this.Convert_Price_Currency_From_VND_to_USD((Number(this.SelectedFromPersonalShoppingBags[i].price))*1000).toString(),
+          image: this.SelectedFromPersonalShoppingBags[i].image
+        };
+        console.log("SelectedFromPersonalShoppingBags_In_USD",this.SelectedFromPersonalShoppingBags_In_USD); 
+      }
+      if(!this.isTrigger_Paypal_JS_SDK){
+        this.Trigger_PayPal_Javascript_SDK();
+      }
+    } else if (Number(localStorage.getItem('Payment_Method')) == 3){
+      // VNPAY payment selected
+      this.isVNPay_Payment_Visible = true;
+      this.isPayPal_Payment_Visible = false;
+      this.isCash_Payment_Visible = false;
+      this.isMomo_Payment_Visible = false;
+      this.isInternetBanking_Payment_Visible = false;
+      
+      // do nothing
+    } else if (Number(localStorage.getItem('Payment_Method')) == 4) {
+      // Momo payment selected
+      this.isMomo_Payment_Visible = true;
+      this.isPayPal_Payment_Visible = false;
+      this.isCash_Payment_Visible = false;
+      this.isVNPay_Payment_Visible = false;
+      this.isInternetBanking_Payment_Visible = false;
+    }
+    else if (Number(localStorage.getItem('Payment_Method')) == 5) {
+      // Internet Banking payment selected
+      this.isInternetBanking_Payment_Visible = true;
+      this.isPayPal_Payment_Visible = false;
+      this.isCash_Payment_Visible = false;
+      this.isVNPay_Payment_Visible = false;
+      this.isMomo_Payment_Visible = false;
+    } else {
+      // Cash on delivery selected
+      this.isCash_Payment_Visible = true;
+      this.isPayPal_Payment_Visible = false;
+      this.isVNPay_Payment_Visible = false;
+      this.isMomo_Payment_Visible = false;
+      this.isInternetBanking_Payment_Visible = false;
+    }
     setInnerHTML("username_of_buyer_confirmed", localStorage.getItem('cardholder_buyer'));
     setInnerHTML("email_of_buyer_confirmed", localStorage.getItem('email_of_buyer'));
     setInnerHTML("visa_number_confirmed", localStorage.getItem('visa_number'));
@@ -268,9 +357,11 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     setInnerHTML("nation_zip_buyer_confirmed", localStorage.getItem('nation_zip_buyer'));
     setInnerHTML("nation_state_buyer_confirmed", localStorage.getItem('nation_state_buyer'));
     setInnerHTML("VAT_number_buyer_confirmed", localStorage.getItem('VAT_number_buyer'));
-    setInnerHTML("label_for_total_price_confirmed", this.GLOBAL_label_for_total_price + "VND");
-    setInnerHTML("label_for_total_VAT_price_confirmed", this.GLOBAL_label_for_total_VAT_price + "VND");
-    setInnerHTML("label_for_total_payment_2_confirmed", this.GLOBAL_label_for_total_payment + "VND");
+    setInnerHTML("price_currency_confirmed", localStorage.getItem('Price_currency') == '1' ? 'VND' : (localStorage.getItem('Price_currency') == '2' ? 'USD' : 'EUR'));
+    setInnerHTML("exchange_Rate_confirmed", this.Price_currency_selected == 2 ? this.exchange_Rate_VND_to_USD.toString() : (this.Price_currency_selected == 3 ? this.exchange_Rate_VND_to_EUR.toString() : "1"));
+    setInnerHTML("label_for_total_price_confirmed", this.Price_currency_selected == 1 ? `${this.total_price_before_VAT_confirmed/1000}.000 VND` : this.Price_currency_selected == 2 ? `${this.total_price_before_VAT_confirmed} USD` : `${this.total_price_before_VAT_confirmed} EUR`); // Convert to VND display
+    setInnerHTML("label_for_total_VAT_price_confirmed", this.Price_currency_selected == 1 ? `${this.VAT_Price_confirmed/1000}.000 VND`: this.Price_currency_selected == 2 ? `${this.VAT_Price_confirmed} USD` : `${this.VAT_Price_confirmed} EUR`); // Convert to VND display
+    setInnerHTML("label_for_total_payment_2_confirmed", this.Price_currency_selected == 1 ? `${this.total_price_after_VAT_confirmed/1000}.000 VND` : this.Price_currency_selected == 2 ? `${this.total_price_after_VAT_confirmed} USD` : `${this.total_price_after_VAT_confirmed} EUR`); // Convert to VND display
   }
 
   Request_Write_Into_RedisCache_and_Database(inputDataForConfirmation:HistoricalShoppingBag){
@@ -334,6 +425,33 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   }
   PaymentButtonTrigger(formValue: HistoricalShoppingBag) {
       console.log(formValue);
+      
+      this.Price_currency_selected = Number(formValue.Price_currency);
+      // this.SelectedFromPersonalShoppingBags = this.PersonalShoppingBags; // data in object
+      // localStorage.setItem('Selected_List', `${formValue.Selected_List}`);
+      localStorage.setItem('Selected_List', `${this.SelectedFromPersonalShoppingBags_TO_SERVER}`); // tempt check
+      this.isConfirmation_Box_Visible = true; 
+      this.isConfirmation_Box_child_Visible = true; // To handle the visibility of the confirmation box child
+      this.isMain_body_Visible = false; // To handle the visibility of the main body
+      this.isMain_body_1_Visible = false; // To handle the visibility of the main body 1
+      this.isMain_body_2_Visible = false; // To handle the visibility of the main body 2
+      
+      if(this.Price_currency_selected == 1) {
+          // VND selected
+          this.total_price_after_VAT_confirmed = this.round2(this.total_price_after_VAT);
+          this.total_price_before_VAT_confirmed = this.round2(this.total_price_before_VAT);
+          this.VAT_Price_confirmed = this.round2(this.VAT_Price);
+      } else if (this.Price_currency_selected == 2) {
+          // USD selected
+          this.total_price_after_VAT_confirmed = this.Convert_Price_Currency_From_VND_to_USD(this.total_price_after_VAT);
+          this.total_price_before_VAT_confirmed = this.Convert_Price_Currency_From_VND_to_USD(this.total_price_before_VAT);
+          this.VAT_Price_confirmed = this.Convert_Price_Currency_From_VND_to_USD(this.VAT_Price);
+      } else {
+          // EUR selected
+          this.total_price_after_VAT_confirmed = this.Convert_Price_Currency_From_VND_to_EUR(this.total_price_after_VAT);
+          this.total_price_before_VAT_confirmed = this.Convert_Price_Currency_From_VND_to_EUR(this.total_price_before_VAT);
+          this.VAT_Price_confirmed = this.Convert_Price_Currency_From_VND_to_EUR(this.VAT_Price);
+      }
       localStorage.setItem('email_of_buyer', `${formValue.Email}`);
       localStorage.setItem('visa_number', `${formValue.Visa_number}`);
       localStorage.setItem('visa_valid_date', `${formValue.Visa_valid_date}`);
@@ -343,26 +461,18 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
       localStorage.setItem('nation_zip_buyer', `${formValue.Nation_zip_buyer}`);
       localStorage.setItem('nation_state_buyer', `${formValue.Nation_state_buyer}`);
       localStorage.setItem('VAT_number_buyer', `${formValue.VAT_number_buyer}`);
-      localStorage.setItem('label_for_total_price', `${formValue.Total_Price_Before_VAT}`);
-      localStorage.setItem('label_for_total_VAT_price', `${formValue.Total_VAT}`);
-      localStorage.setItem('label_for_total_payment', `${formValue.Total_Price_After_VAT}`);
-      // this.SelectedFromPersonalShoppingBags = this.PersonalShoppingBags; // data in object
-      // localStorage.setItem('Selected_List', `${formValue.Selected_List}`);
-      localStorage.setItem('Selected_List', `${this.SelectedFromPersonalShoppingBags_TO_SERVER}`); // tempt check
-      this.isConfirmation_Box_Visible = true; 
-      this.isConfirmation_Box_child_Visible = true; // To handle the visibility of the confirmation box child
-      this.isMain_body_Visible = false; // To handle the visibility of the main body
-      this.isMain_body_1_Visible = false; // To handle the visibility of the main body 1
-      this.isMain_body_2_Visible = false; // To handle the visibility of the main body 2
-      this.total_price_after_VAT_confirmed = this.total_price_after_VAT;
-      this.total_price_before_VAT_confirmed = this.total_price_before_VAT;
-      this.VAT_Price_confirmed = this.VAT_Price;
+      localStorage.setItem('label_for_total_price', `${this.total_price_before_VAT/1000}.000 VND`);
+      localStorage.setItem('label_for_total_VAT_price', `${this.VAT_Price/1000}.000 VND`);
+      localStorage.setItem('label_for_total_payment', `${this.total_price_after_VAT/1000}.000 VND`);
+      localStorage.setItem('Payment_Method', `${formValue.Payment_Method}`);
+      localStorage.setItem('Price_currency', `${formValue.Price_currency}`);
+      console.log("formValue.Payment_Method is ", `${formValue.Payment_Method}`);
+      console.log("formValue.Price_currency is ", `${formValue.Price_currency}`);
+
       console.log("PersonalShoppingBagsis ", this.PersonalShoppingBags);
       console.log("SelectedFromPersonalShoppingBags_TO_SERVER is ", this.SelectedFromPersonalShoppingBags_TO_SERVER);
-      
-      // this.PersonalShoppingBags = JSON.parse(userInfo[0]?.personal_shopping_bag ?? ""); // data in object
       this.GetInfoFromLocalStorage_to_ConfirmedBox(); 
-      this.loadButtons();
+      // this.loadButtons();
 
   }
   Failed_Confirmation() {
@@ -381,27 +491,45 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
 
   }
 
-  loadButtons() {
+  // JavaScript SDK method to load PayPal buttons
+  Trigger_PayPal_Javascript_SDK() {
+    this.isTrigger_Paypal_JS_SDK = true;
     this.paymentService
       .loadPaypalScript('Af0dZWwp7kgYSc_Dd5Uo2evyrVE5zVTh7DPzW7RONsXm4ABoT_n3RGVXBMOFRdpHcDO6qBWZLqsDuHgp')
       .then(() => {
+        // Button is on build-in PayPal JS SDK
         paypal.Buttons({
-           createOrder: async () => {
+
+          // Stardard flow of PayPal payment: Create order -> Approve payment -> Capture order
+          // Fỉrst step: Create order
+          createOrder: async () => {
               const res: any = await firstValueFrom(
-                this.http.post(Create_Order_URL, {})
+                this.http.post(Create_Order_URL, {
+                  orderDetails: this.GetAllValidInformation_for_payment()
+                })
               );
               console.log('Order created:', res);
               return res.id;  // Bắt buộc trả về id
             },
-
+          
+          // After order is created successfully, Login pop up of PayPal will appear for user to approve payment
+          // Second step: Approve payment
           onApprove: async (data: any) => {
+            this.orderID_from_PayPal = data.orderID;
             console.log("onApprove:", data);
 
             const details: any = await firstValueFrom(
               this.http.post(Capture_Order_URL, { orderID: data.orderID })
             );
-
-            alert("Thanh toán thành công: " + details.payer.name.given_name);
+            // Third step: Capture order
+            if(details.payer.name.given_name != null || details.payer.name.given_name != undefined){ 
+              // Payment is successful
+              this.Passed_Confirmation();
+              alert("Thanh toán thành công: " + details.payer.name.given_name);
+            } else {
+              alert("Thanh toán không thành công");
+            }
+            
           },
           onError: (err: any) => {
             console.error('PayPal Error: ', err);
@@ -409,8 +537,8 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
         }).render(this.paypalElement.nativeElement);
       });
   }
-
-  Passed_Confirmation() {
+  GetAllValidInformation_for_payment() {
+    // To get all valid information for payment from local storage
     var username_of_buyer_confirmed = localStorage.getItem('cardholder_buyer');
     var email_of_buyer_confirmed = localStorage.getItem('email_of_buyer');
     var visa_number_confirmed = localStorage.getItem('visa_number');
@@ -420,29 +548,51 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     var nation_zip_buyer_confirmed = localStorage.getItem('nation_zip_buyer');
     var nation_state_buyer_confirmed = localStorage.getItem('nation_state_buyer');
     var VAT_number_buyer_confirmed = localStorage.getItem('VAT_number_buyer');
-    var label_for_total_price_confirmed = this.total_price_before_VAT + ".000 VND";
-    var label_for_total_VAT_price_confirmed = this.VAT_Price + ".000 VND";
-    var label_for_total_payment_2_confirmed = this.total_price_after_VAT + ".000 VND";
+    if(this.Price_currency_selected == 1) {
+        // VND selected
+        var label_for_total_price_confirmed = this.total_price_before_VAT_confirmed/1000 + ".000 VND";
+        var label_for_total_VAT_price_confirmed = this.VAT_Price_confirmed/1000 + ".000 VND";
+        var label_for_total_payment_2_confirmed = this.total_price_after_VAT_confirmed/1000 + ".000 VND";
 
-    // var SelectedListNew = this.PersonalShoppingBags; // tempt check
-    console.log(`Visa number in html is ${visa_number_confirmed}`);
+    } else if (this.Price_currency_selected == 2) {
+        // USD selected
+        var label_for_total_price_confirmed = this.total_price_before_VAT_in_USD + " USD";
+        var label_for_total_VAT_price_confirmed = this.VAT_Price_in_USD + " USD";
+        var label_for_total_payment_2_confirmed = this.total_price_after_VAT_in_USD + " USD";
+    } else {
+        // EUR selected
+        var label_for_total_price_confirmed = this.total_price_before_VAT_confirmed + " EUR";
+        var label_for_total_VAT_price_confirmed = this.VAT_Price_confirmed + " EUR";
+        var label_for_total_payment_2_confirmed = this.total_price_after_VAT_confirmed + " EUR";
+    }
+      const AllListToServer: HistoricalShoppingBag = { 
+      Username: username_of_buyer_confirmed ?? '',
+      Email: email_of_buyer_confirmed ?? '',
+      Visa_number: visa_number_confirmed ?? '',
+      Visa_valid_date: visa_valid_date_confirmed ?? '',
+      Visa_cvv: visa_cvv_confirmed ?? '',
+      Nation_buyer: nation_buyer_confirmed ?? '',
+      Nation_zip_buyer: nation_zip_buyer_confirmed ?? '',
+      Nation_state_buyer: nation_state_buyer_confirmed ?? '',
+      VAT_number_buyer: VAT_number_buyer_confirmed ?? '',
+      Total_Price_Before_VAT: label_for_total_price_confirmed ?? '',
+      Total_VAT: label_for_total_VAT_price_confirmed ?? '',
+      Total_Price_After_VAT: label_for_total_payment_2_confirmed ?? '',
+      Selected_List: this.SelectedFromPersonalShoppingBags_TO_SERVER ?? '',
+      Selected_List_Object: this.SelectedFromPersonalShoppingBags_In_USD ?? '',
+      Price_currency: this.Price_currency_selected.toString()
+
+    };
+    return AllListToServer;
+  }
+
+  Passed_Confirmation() {
+    this.AllListToServer2  = this.GetAllValidInformation_for_payment();
+    if(this.isPayPal_Payment_Visible){
+      this.AllListToServer2.PayPal_order_id = this.orderID_from_PayPal;
+    }
     localStorage.clear();
-    // var AllListToServer = 
-    // { 
-    //     Username: username_of_buyer_confirmed,
-    //     Email: email_of_buyer_confirmed,
-    //     Visa_number: visa_number_confirmed,
-    //     Visa_valid_date: visa_valid_date_confirmed,
-    //     Visa_cvv: visa_cvv_confirmed,
-    //     Nation_buyer: nation_buyer_confirmed,
-    //     Nation_zip_buyer: nation_zip_buyer_confirmed,
-    //     Nation_state_buyer: nation_state_buyer_confirmed,
-    //     VAT_number_buyer: VAT_number_buyer_confirmed,
-    //     Total_Price_Before_VAT: label_for_total_price_confirmed,
-    //     Total_VAT: label_for_total_VAT_price_confirmed,
-    //     Total_Price_After_VAT: label_for_total_payment_2_confirmed,
-    //     Selected_List: this.PersonalShoppingBags,
-    // } ;
+
     var TransmitData3 = 
     { 
         Username: "hello",
@@ -459,31 +609,17 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
         Total_Price_After_VAT: "hello",
         Selected_List: this.SelectedFromPersonalShoppingBags_TO_SERVER,
     } ;
-    const AllListToServer: HistoricalShoppingBag = { 
-    Username: username_of_buyer_confirmed ?? '',
-    Email: email_of_buyer_confirmed ?? '',
-    Visa_number: visa_number_confirmed ?? '',
-    Visa_valid_date: visa_valid_date_confirmed ?? '',
-    Visa_cvv: visa_cvv_confirmed ?? '',
-    Nation_buyer: nation_buyer_confirmed ?? '',
-    Nation_zip_buyer: nation_zip_buyer_confirmed ?? '',
-    Nation_state_buyer: nation_state_buyer_confirmed ?? '',
-    VAT_number_buyer: VAT_number_buyer_confirmed ?? '',
-    Total_Price_Before_VAT: label_for_total_price_confirmed ?? '',
-    Total_VAT: label_for_total_VAT_price_confirmed ?? '',
-    Total_Price_After_VAT: label_for_total_payment_2_confirmed ?? '',
-    Selected_List: this.SelectedFromPersonalShoppingBags_TO_SERVER ?? '' 
+    
+  // this.AllListToServer2 = AllListToServer; // Assign local variable to global variable
 
-};
-  this.AllListToServer2 = AllListToServer; // Assign local variable to global variable
-
-    console.log("Type of AllListToServer is ", typeof(AllListToServer));
-    console.log("Value of AllListToServer is ", AllListToServer);
-    console.log("Type of AllListToServer.Selected_List is ", typeof(AllListToServer.Selected_List));
-    console.log("Value of AllListToServer.Selected_List is ", AllListToServer.Selected_List);
-    // this.Request_Write_Into_RedisCache_and_Database(AllListToServer);
+  //   console.log("Type of AllListToServer is ", typeof(AllListToServer));
+  //   console.log("Value of AllListToServer is ", AllListToServer);
+  //   console.log("Type of AllListToServer.Selected_List is ", typeof(AllListToServer.Selected_List));
+  //   console.log("Value of AllListToServer.Selected_List is ", AllListToServer.Selected_List);
+  //   // this.Request_Write_Into_RedisCache_and_Database(AllListToServer);
+    
     this.paymentService.SetOrderCompleted_and_Confirmed_via_mail(
-      AllListToServer
+      this.AllListToServer2
     ).subscribe((response) => {
       console.log("Response from server is ", response);
         if (response[0]?.status == "status_of_confirmed_order") {
@@ -513,15 +649,17 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   // this.isButtonBackgroundChecked = new Array(this.PersonalShoppingBags.length).fill(false);
   if (checked) {
     // Checkbox is checked
-    // Add item to selected list or update state
-    this.total_price_before_VAT = this.total_price_before_VAT + Number(this.PersonalShoppingBags[i].split(",")[2])*Number(this.PersonalShoppingBags[i].split(",")[1]);
+
+    this.total_price_before_VAT = this.total_price_before_VAT + 1000*(Number(this.PersonalShoppingBags[i].split(",")[2])*Number(this.PersonalShoppingBags[i].split(",")[1]));
     this.VAT_Price = this.total_price_before_VAT * 0.2; // Assuming VAT is 20%
     this.total_price_after_VAT = this.total_price_before_VAT + this.VAT_Price;
-    // this.SelectedFromPersonalShoppingBags_TO_SERVER.length != 0 
-    //   ? this.SelectedFromPersonalShoppingBags_TO_SERVER = this.SelectedFromPersonalShoppingBags_TO_SERVER + "," + this.PersonalShoppingBags[i]
-    //   : this.SelectedFromPersonalShoppingBags_TO_SERVER[] = this.PersonalShoppingBags[i]; // Add item to selected list
-    
+
+    this.total_price_before_VAT_in_USD = this.total_price_before_VAT_in_USD + (this.Convert_Price_Currency_From_VND_to_USD(Number(this.PersonalShoppingBags[i].split(",")[2])*1000*Number(this.PersonalShoppingBags[i].split(",")[1])));
+    this.VAT_Price_in_USD = this.round2(this.total_price_before_VAT_in_USD * 0.2); // Assuming VAT is 20%
+    this.total_price_after_VAT_in_USD = this.round2(this.total_price_before_VAT_in_USD + this.VAT_Price_in_USD);
+
     this.SelectedFromPersonalShoppingBags_TO_SERVER.push(this.PersonalShoppingBags[i]);
+
     // this.counter_for_selected_items++;
     this.SelectedFromPersonalShoppingBags.push({
       candle_name: this.PersonalShoppingBags[i].split(",")[0],
@@ -540,9 +678,14 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     // this.SelectedFromPersonalShoppingBags_TO_SERVER[this.counter_for_selected_items] = ""; // Remove item from selected list
     
     // Checkbox is unchecked
-    this.total_price_before_VAT = this.total_price_before_VAT - Number(this.PersonalShoppingBags[i].split(",")[2])*Number(this.PersonalShoppingBags[i].split(",")[1]);
+    this.total_price_before_VAT = this.total_price_before_VAT - 1000* (Number(this.PersonalShoppingBags[i].split(",")[2])*Number(this.PersonalShoppingBags[i].split(",")[1]));
     this.VAT_Price = this.total_price_before_VAT * 0.2; // Assuming VAT is 20%
     this.total_price_after_VAT = this.total_price_before_VAT + this.VAT_Price;
+
+    this.total_price_before_VAT_in_USD = this.total_price_before_VAT_in_USD - (this.Convert_Price_Currency_From_VND_to_USD(Number(this.PersonalShoppingBags[i].split(",")[2])*1000*Number(this.PersonalShoppingBags[i].split(",")[1])));
+    this.VAT_Price_in_USD = this.round2(this.total_price_before_VAT_in_USD * 0.2);
+    this.total_price_after_VAT_in_USD = this.round2(this.total_price_before_VAT_in_USD + this.VAT_Price_in_USD);
+
     // this.SelectedFromPersonalShoppingBags.length == this.PersonalShoppingBags[i].length
     //   ? this.SelectedFromPersonalShoppingBags = ""
     //   : this.SelectedFromPersonalShoppingBags = this.SelectedFromPersonalShoppingBags.replace("," + this.PersonalShoppingBags[i], "");
@@ -555,8 +698,7 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     console.log("SelectedFromPersonalShoppingBags is ", this.SelectedFromPersonalShoppingBags);
     // Remove item from selected list or update state
   }
-
-
+  
   }
 
 }

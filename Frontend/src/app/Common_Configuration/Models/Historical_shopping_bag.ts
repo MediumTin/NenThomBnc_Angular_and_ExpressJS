@@ -1,3 +1,5 @@
+import { Selected_Candle } from "./Selected_candles";
+
 export class HistoricalShoppingBag {
     Username!:string;
     Email!:string;
@@ -12,4 +14,8 @@ export class HistoricalShoppingBag {
     Total_VAT!:string;
     Total_Price_After_VAT!:string;
     Selected_List!:string[];
+    Selected_List_Object?: Array<Selected_Candle>;
+    Payment_Method?:string;
+    Price_currency?:string;
+    PayPal_order_id?:string;
   }

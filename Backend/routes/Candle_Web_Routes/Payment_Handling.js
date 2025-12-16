@@ -104,6 +104,10 @@ Router.post('/specific_handling',async (req,res)=>{
    console.log(`Requested username for payment handling is ${requested_username}`);
    var requested_password = req.session.personal_information.password;
    console.log(`Requested password for payment handling is ${requested_password}`);
+
+   const PayPal_order_id = req.body.PayPal_order_id;
+   console.log(`PayPal order ID is ${PayPal_order_id}`);
+
    const Customer_ID_Info = await User_Information_From_MySQL.Get_Customer_ID_in_MySQL_DB_HighCorrection(requested_username,requested_password);
    console.log(`Customer_ID_Info is ${Customer_ID_Info}`);
 
@@ -115,7 +119,7 @@ Router.post('/specific_handling',async (req,res)=>{
    console.log(`Create_New_Order result is ${Get_new_OrderID_created}`);
 
    // Create new payment in payment table
-   const Get_new_PaymentID_created = await User_Information_From_MySQL.Create_New_payment_in_MySQL(Get_new_OrderID_created,total_price_After_VAT,'Processing');
+   const Get_new_PaymentID_created = await User_Information_From_MySQL.Create_New_payment_in_MySQL(Get_new_OrderID_created,total_price_After_VAT,'Processing', PayPal_order_id);
    console.log(`Create_New_payment result is ${Get_new_PaymentID_created}`);
 
    var selectedList = (req.body.Selected_List);
@@ -205,13 +209,7 @@ Router.post('/specific_handling',async (req,res)=>{
                      <td><p>Payment number is ${Get_new_PaymentID_created}</p></td>
                   </tr>
                   <tr>
-                     <td><p>Visa card number is ${req.body.Visa_number}</p></td>
-                  </tr>
-                  <tr>
                      <td><p>National buyer is ${req.body.Nation_buyer}</p></td>
-                  </tr>
-                  <tr>
-                     <td><p>VAT Number is ${req.body.VAT_number_buyer}</p></td>
                   </tr>
                   <tr>
                      <td><p>Total price before VAT is ${req.body.Total_Price_Before_VAT}</p></td>
