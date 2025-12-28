@@ -6,9 +6,9 @@ const whitelist = [
     'http://localhost:3500',
     'http://localhost:4200',
     // 'http://localhost:4200',
-    'https://nenthombnc.website',
+    'https://nenthombnc.com',
     'https://candlelightbnc.nenthombnc.website',
-    'https://nenthombnc.website/login_handling/login'
+    'https://nenthombnc.com/login_handling/login'
 ];
 
 const corsOption ={

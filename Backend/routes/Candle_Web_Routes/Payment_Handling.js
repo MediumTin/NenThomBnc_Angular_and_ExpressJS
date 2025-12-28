@@ -105,8 +105,11 @@ Router.post('/specific_handling',async (req,res)=>{
    var requested_password = req.session.personal_information.password;
    console.log(`Requested password for payment handling is ${requested_password}`);
 
-   const PayPal_order_id = req.body.PayPal_order_id;
-   console.log(`PayPal order ID is ${PayPal_order_id}`);
+   const Payment_gateway_id = req.body.Payment_gateway_id;
+   console.log(`PayPal order ID is ${Payment_gateway_id}`);
+
+   const Method_by_Order = req.body.Method_by_Order;
+   console.log(`Method_by_Order is ${Method_by_Order}`);
 
    const Customer_ID_Info = await User_Information_From_MySQL.Get_Customer_ID_in_MySQL_DB_HighCorrection(requested_username,requested_password);
    console.log(`Customer_ID_Info is ${Customer_ID_Info}`);
@@ -119,7 +122,7 @@ Router.post('/specific_handling',async (req,res)=>{
    console.log(`Create_New_Order result is ${Get_new_OrderID_created}`);
 
    // Create new payment in payment table
-   const Get_new_PaymentID_created = await User_Information_From_MySQL.Create_New_payment_in_MySQL(Get_new_OrderID_created,total_price_After_VAT,'Processing', PayPal_order_id);
+   const Get_new_PaymentID_created = await User_Information_From_MySQL.Create_New_payment_in_MySQL(Get_new_OrderID_created,total_price_After_VAT,'Processing',Method_by_Order, Payment_gateway_id);
    console.log(`Create_New_payment result is ${Get_new_PaymentID_created}`);
 
    var selectedList = (req.body.Selected_List);

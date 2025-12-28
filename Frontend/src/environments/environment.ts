@@ -3,9 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiUrl: 'https://nenthombnc.website',
-  common_concept : true
+  production: true,
+  apiUrl: 'https://nenthombnc.com',
+  common_concept : true,
+  isNgRokUsing : false
   // apiUrl: 'http://localhost:3500'
 };
 

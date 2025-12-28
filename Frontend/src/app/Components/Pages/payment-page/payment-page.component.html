@@ -196,7 +196,6 @@
                             <option value="2">PayPal</option>
                             <option value="3">VNPay</option>
                             <option value="4">Momo</option>
-                            <option value="5">Internet backing</option>
                         </select>
                         <br>
                         <button 
@@ -332,12 +331,8 @@
                                     <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
                                 </tr>
                                 <tr *ngIf="isVNPay_Payment_Visible">
-                                    <td>
-                                        <!-- <div #paypal [ngStyle]="{'display': isVNPay_Payment_Visible ? 'block' : 'none'}"></div> -->
-                                    </td>
-                                </tr>
-                                <tr *ngIf="isVNPay_Payment_Visible">
                                     <td><button class="btn btn-primary mt-2" id="Confirmation_failed" (click)="Failed_Confirmation()">Need to recheck</button></td>
+                                    <button class="btn btn-primary mt-2" id="Confirmation_Passed_VNPay" (click)="Passed_Confirmation_of_VNPay()">Pay with VNPay</button>
                                 </tr>
                                 <tr *ngIf="isMomo_Payment_Visible">
                                     <td>

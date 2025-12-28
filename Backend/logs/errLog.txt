@@ -352,3 +352,30 @@ Expecting 'CLOSE', 'OPEN_SEXPR', 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED
 20251102	18:16:34	7b5847ac-b052-4af6-9f19-a5412a1e6f30	TypeError: Cannot read properties of undefined (reading 'then')
 20251102	18:16:43	438f0905-e288-4358-81bf-42706556db57	TypeError: Cannot read properties of undefined (reading 'then')
 20251102	18:17:13	e215fb1d-bc4a-4feb-b230-86e45dcf9f1c	TypeError: Cannot read properties of undefined (reading 'update')
+20251219	01:05:39	3b7e6e38-b717-4844-b3fb-372602d9b85a	Error: Failed to lookup view "orderlist" in views directory "./views/Candle_Web_Routes"
+20251224	01:55:51	5686d593-9d45-4cab-85eb-f4fc3bf4b6dd	Error: Not allowed by CORS
+20251224	01:55:51	ac537899-d21c-422d-b590-aff9e4a15d08	Error: Not allowed by CORS
+20251224	01:55:55	472a3690-7552-4637-8210-dc1e5e5a5d60	Error: Not allowed by CORS
+20251224	01:55:55	193dc591-76b4-4c7c-9770-2c31aa79e641	Error: Not allowed by CORS
+20251224	01:58:00	b6fc11fc-cbe4-4bcc-95a2-4b3b29b137a2	Error: Not allowed by CORS
+20251224	01:58:00	fd9609d9-1ddd-4fab-b7c3-8b4beb5cec65	Error: Not allowed by CORS
+20251224	01:58:02	73d11984-2547-4fb0-8883-1ebda7b8c2b2	Error: Not allowed by CORS
+20251224	01:58:02	ccfc0782-e0c9-4c0f-9957-d6eb23810457	Error: Not allowed by CORS
+20251224	01:58:07	dace6069-50e7-402c-9c3c-09292ffbe619	Error: Not allowed by CORS
+20251224	01:58:07	d4f53345-5a7f-48bb-a01f-bfa217c07037	Error: Not allowed by CORS
+20251224	01:58:38	a2907002-9306-4055-a798-f8976463a8e1	Error: Not allowed by CORS
+20251224	01:58:38	ccd0d53b-f863-4b54-b4a6-dd635d05069e	Error: Not allowed by CORS
+20251224	01:58:49	75ed5bee-e87d-401f-b3ab-d9c15743faf2	Error: Not allowed by CORS
+20251224	01:58:49	4b61b9d1-1186-465d-b54b-b2803566bcb8	Error: Not allowed by CORS
+20251224	01:59:42	d2c1fcc8-4051-4560-aaff-def74e0b2569	Error: Not allowed by CORS
+20251224	01:59:42	33d758c2-2e9a-43d8-ae9f-9153dd990ecd	Error: Not allowed by CORS
+20251224	01:59:43	fd5ad358-b3d5-4268-a93c-93a7aa1e07e2	Error: Not allowed by CORS
+20251224	01:59:43	46dc8051-f574-478e-952c-142736ade11b	Error: Not allowed by CORS
+20251224	01:59:49	f108f5df-48f3-44ce-8798-fa1207a7c99b	Error: Not allowed by CORS
+20251224	01:59:49	1ed5f9fc-0c8d-427d-874b-1e384f2e3554	Error: Not allowed by CORS
+20251224	01:59:50	96279790-c544-4f0e-a456-e6d580e067d3	Error: Not allowed by CORS
+20251224	01:59:50	aa8cbcba-7635-4d6f-b514-09b7a63e02a9	Error: Not allowed by CORS
+20251224	01:59:55	6e701aab-96c7-45e2-bb32-a3ab2e4ba9c4	Error: Not allowed by CORS
+20251224	01:59:55	d459c382-78e0-4417-8e89-c42feca7136c	Error: Not allowed by CORS
+20251224	02:00:09	ce223b9e-23da-4a97-a620-93e82b333657	Error: Not allowed by CORS
+20251224	02:00:09	37aabed7-4c9d-49bb-9d39-c2357ba25750	Error: Not allowed by CORS

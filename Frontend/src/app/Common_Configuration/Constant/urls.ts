@@ -1,8 +1,8 @@
 import { environment } from "../../../environments/environment";
 
 
-export const BASE_URL = environment.production? 'https://nenthombnc.website' : 'http://localhost:3500';
-
+export const BASE_URL = environment.production? 'https://nenthombnc.com' : (environment.isNgRokUsing ? 'https://gangly-reclinable-shari.ngrok-free.dev': 'http://localhost:3500');
+// export const BASE_URL = environment.production? 'https://nenthombnc.com' : 'http://localhost:3500';
 
 // Process with "candles"
 export const CANDLES_URL = BASE_URL + '/api/candles';                           // GET and POST method
@@ -71,6 +71,11 @@ export const PAYMENT_HANDLING_Merge_local_storage_and_DB = PAYMENT_HANDLING_URL 
 // Inteface for PayPal payment creation
 export const Create_Order_URL = BASE_URL + '/api/payment/paypal/create-order';
 export const Capture_Order_URL = BASE_URL + '/api/payment/paypal/capture-order';
+
+// Interface for VNPAY payment creation
+export const Create_VNPAY_Order_URL = BASE_URL + '/api/payment/vnpay/create_payment_url';
+// export const VNPAY_Return_URL = BASE_URL + '/api/payment/vnpay/vnpay_return';
+export const Check_status_Order_VNPay = BASE_URL + '/api/payment/vnpay/querydr';
 
 // Process with "Shopping_Bag_handling"
 export const SHOPPING_BAG_HANDLING_URL = BASE_URL + '/api/Shopping_Bag_handling';               // GET method

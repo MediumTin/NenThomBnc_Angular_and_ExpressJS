@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,7 @@ import { CandlesServiceService } from '../../../Services/CandlesService/candles-
 import { type } from 'node:os';
 import { Selected_Candle } from '../../../Common_Configuration/Models/Selected_candles';
 import { empty } from 'rxjs';
-import { Capture_Order_URL, Create_Order_URL } from '../../../Common_Configuration/Constant/urls';
+import { Capture_Order_URL, Check_status_Order_VNPay, Create_Order_URL } from '../../../Common_Configuration/Constant/urls';
 import { firstValueFrom } from 'rxjs';
 
 declare var paypal: any;
@@ -22,7 +22,7 @@ declare var paypal: any;
   templateUrl: './payment-page.component.html',
   styleUrl: './payment-page.component.css'
 })
-export class PaymentPageComponent implements OnInit, AfterViewInit {
+export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
   @ViewChild('paypal', { static: true }) paypalElement!: ElementRef;
   counter_to_server : number = 0;
   paymentForm!: FormGroup; // Use definite assignment
@@ -52,10 +52,14 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   isCash_Payment_Visible: boolean = false;
   isVNPay_Payment_Visible: boolean = false;
   isMomo_Payment_Visible: boolean = false;
+  // VNPay_OrderId : string = "";
   exchange_Rate_VND_to_USD: number = 1; // Default value for exchange rate VND to USD
   exchange_Rate_VND_to_EUR: number = 1; // Default value for exchange rate VND to EUR
   isInternetBanking_Payment_Visible: boolean = false;
+  orderId_VNPay : string = "";
+  orderId_Momo : string = "";
   Price_currency_selected: number = 1; // Default value for price currency 1 is VND, 2 is USD, 3 is EUR
+  Payment_Method_selected: number = 1; // Default value for payment method 1 is Cash on delivery, 2 is PayPal, 3 is VNPAY, 4 is Momo, 5 is Internet Banking
   Current_Username: string = ""; // To store the current username
   total_price_before_VAT: number = 0;
   VAT_Price: number = 0;
@@ -66,6 +70,8 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   isTrigger_Paypal_JS_SDK: boolean = false;
   isFirstCalculate_Total_Price: boolean = true;
   orderID_from_PayPal: string = "";
+  bankCode_for_VNPay: string = "";
+  timer: any;
   AllListToServer2: HistoricalShoppingBag = {
     Username: '',
     Email: '',
@@ -132,50 +138,7 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
 
       });
 
-
-      // Scenario 2: If want user must login before access the website
-      // this.paymentService.GetShoppingBagOfCurrentUser().subscribe((userInfo) => {
-      //   console.log("UserInfo is ", userInfo);  
-      //   if (userInfo[0]?.status == "Session is timeout") {
-      //     console.log("Session is timeout");
-      //     this.identification.ClearSessionStorage();
-      //     this.identification.SetisUserIdentifiedMain(false);
-      //     this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
-      //   } else {
-      //     this.PersonalShoppingBags = JSON.parse(userInfo[0]?.personal_shopping_bag ?? ""); // data in object
-      //     this.account = userInfo[0]?.Currentuser ?? "";
-      //     console.log("type of personal_shopping_bag ", typeof this.PersonalShoppingBags);
-      //     console.log("Personal shopping bag is ",this.PersonalShoppingBags);
-      //     console.log("this.PersonalShoppingBags[0] is ", (this.PersonalShoppingBags[0].split(","))[3]);
-      //     // Name of first item is (this.PersonalShoppingBags[0].split(","))[0]
-      //     // Quantity of first item is (this.PersonalShoppingBags[0].split(","))[1]
-      //     // Price of first item is (this.PersonalShoppingBags[0].split(","))[2]
-      //     // Image of first item is (this.PersonalShoppingBags[0].split(","))[3]
-
-      //     // Name of second item is (this.PersonalShoppingBags[1].split(","))[0]
-      //     // Quantity of second item is (this.PersonalShoppingBags[1].split(","))[1]
-      //     // Price of second item is (this.PersonalShoppingBags[1].split(","))[2]
-      //     // Image of second item is (this.PersonalShoppingBags[1].split(","))[3]
-      //     // this.Passed_Confirmation();
-      //       //   this.candlesService.setCandleInformationToSession({
-      //       //   quatity: 10,
-      //       //   candle_name: "Hello",
-      //       //   image: "Hello",
-      //       //   price: "Hello"
-      //       // }).subscribe({
-      //       //   next: (response) => {
-      //       //     console.log("Response from server when add to bag", response);
-      //       //     // Navigate to the bag page or show a success message
-      //       //     // this.router.navigate(['/bag']); // Navigate to login handling page internal in Angular
-      //       //   }
-      //       //   , error: (error) => {
-      //       //     console.error("Error when adding to bag", error);
-      //       //     // Handle the error, e.g., show an error message
-      //       //   }
-      //       // });
-
-      //   }
-      //   });
+      this.bankCode_for_VNPay = "NCB"; // Default bank code for VNPay - Detail implement later
 
     } else {
       // User is not identified, handle accordingly - request login
@@ -189,6 +152,62 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
     this.isDivButtonActive[0] = "active";
     this.isDivImageActive[0] = "carousel-item active";
     this.isButtonBackgroundChecked[0] = true;
+  }
+
+    startPolling_Check_Order_status_VNPay() {
+      console.log('START POLLING'); 
+    this.timer = setInterval(async () => {
+      console.log('CALL API'); 
+      console.log("Response from server orderId_VNPay is ", this.orderId_VNPay);
+      const res: any = await this.http
+        .get(`${Check_status_Order_VNPay}?orderId=${this.orderId_VNPay}`,{ withCredentials: true })
+        .toPromise();
+            console.log("Response from server VNpay_Url is ", res);
+            console.log("Response from server VNpay_Url status_order_vnpay_return is ", res.status_order_vnpay_return);
+            console.log("Response from server VNpay_Url status_order_vnpay_ipn is ", res.status_order_vnpay_ipn);
+            console.log("Response from server VNpay_Url is ", res.requested_orderID);
+          if (res.status_order_vnpay_return === 'PAID_With_VNPay_Return'){
+            if(res.status_order_vnpay_ipn === 'PAID_PAYMENT_With_VNPay_IPN') {
+              // clearInterval(this.timer);
+              this.stopPolling();
+              alert('Payment with VNPay successfully');
+              this.Passed_Confirmation();
+              this.orderId_VNPay = "";
+            }
+            else if (res.status_order_vnpay_ipn === 'FAILED_PAYMENT_With_VNPay_IPN') {
+              // clearInterval(this.timer);
+              this.stopPolling();
+              alert('Payment with VNPay Unsuccessfully. Please try again');
+              this.orderId_VNPay = "";
+            }
+            else if (res.status_order_vnpay_ipn === 'INCONSISTENCY_AMOUNT_VNPay_IPN') {
+              // clearInterval(this.timer);
+              this.stopPolling();
+              alert('Inconsistency amount. Please try again');
+              this.orderId_VNPay = "";
+            }
+            else if (res.status_order_vnpay_ipn === 'INCONSISTENCY_ORDER_VNPay_IPN') {
+              // clearInterval(this.timer);
+              this.stopPolling();
+              alert('Inconsistency order. Please try again');
+              this.orderId_VNPay = "";
+            }
+          }
+    }, 3000);
+  }
+
+  stopPolling() {
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = null;
+      console.log('STOP POLLING');
+    }
+  }
+   ngOnDestroy(): void {
+    console.log('COMPONENT DESTROYED'); 
+    this.stopPolling();
+    clearInterval(this.timer);
+    this.orderId_VNPay = "";
   }
 
   ngOnInit(): void {
@@ -425,17 +444,27 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   }
   PaymentButtonTrigger(formValue: HistoricalShoppingBag) {
       console.log(formValue);
-      
       this.Price_currency_selected = Number(formValue.Price_currency);
-      // this.SelectedFromPersonalShoppingBags = this.PersonalShoppingBags; // data in object
-      // localStorage.setItem('Selected_List', `${formValue.Selected_List}`);
+      this.Payment_Method_selected = Number(formValue.Payment_Method);
+      if(this.Payment_Method_selected == 2) {
+        // PayPal selected - Can use in USD or EUR
+        if(this.Price_currency_selected == 1) {
+            alert("PayPal payment method can only use in USD or EUR currency. Please change the currency.");
+            return;
+        }
+      } else {
+        // VNPAY or Momo or Cash on Delivery selected - Must use VND
+        if(this.Price_currency_selected != 1) {
+            alert("Selected payment method can only use in VND currency. Please change the currency.");
+            return;
+        }
+      } 
       localStorage.setItem('Selected_List', `${this.SelectedFromPersonalShoppingBags_TO_SERVER}`); // tempt check
       this.isConfirmation_Box_Visible = true; 
       this.isConfirmation_Box_child_Visible = true; // To handle the visibility of the confirmation box child
       this.isMain_body_Visible = false; // To handle the visibility of the main body
       this.isMain_body_1_Visible = false; // To handle the visibility of the main body 1
       this.isMain_body_2_Visible = false; // To handle the visibility of the main body 2
-      
       if(this.Price_currency_selected == 1) {
           // VND selected
           this.total_price_after_VAT_confirmed = this.round2(this.total_price_after_VAT);
@@ -580,7 +609,10 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
       Total_Price_After_VAT: label_for_total_payment_2_confirmed ?? '',
       Selected_List: this.SelectedFromPersonalShoppingBags_TO_SERVER ?? '',
       Selected_List_Object: this.SelectedFromPersonalShoppingBags_In_USD ?? '',
-      Price_currency: this.Price_currency_selected.toString()
+      Price_currency: this.Price_currency_selected.toString(),
+      language_for_VNPay: 'en',
+      amount_for_VNPay: this.total_price_after_VAT_confirmed.toString(),
+      bankCode_for_VNPay: this.bankCode_for_VNPay ?? ''
 
     };
     return AllListToServer;
@@ -589,26 +621,39 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
   Passed_Confirmation() {
     this.AllListToServer2  = this.GetAllValidInformation_for_payment();
     if(this.isPayPal_Payment_Visible){
-      this.AllListToServer2.PayPal_order_id = this.orderID_from_PayPal;
+      this.AllListToServer2.Payment_gateway_id = this.orderID_from_PayPal;
+      this.AllListToServer2.Method_by_Order = "paypal";
+    }
+    else if (this.isVNPay_Payment_Visible){
+      this.AllListToServer2.Payment_gateway_id = this.orderId_VNPay;
+      this.AllListToServer2.Method_by_Order = "vnpay";
+    }
+    else if (this.isMomo_Payment_Visible){
+      this.AllListToServer2.Payment_gateway_id = this.orderId_Momo;
+      this.AllListToServer2.Method_by_Order = "momo";
+    }
+    else {
+      this.AllListToServer2.Payment_gateway_id = "Undefine by Cash";
+      this.AllListToServer2.Method_by_Order = "cash";
     }
     localStorage.clear();
 
-    var TransmitData3 = 
-    { 
-        Username: "hello",
-        Email: "nguyentrungtin1002@gmail.com",
-        Visa_number: "hello",
-        Visa_valid_date: "hello",
-        Visa_cvv: "hello",
-        Nation_buyer: "hello",
-        Nation_zip_buyer: "hello",
-        Nation_state_buyer: "hello",
-        VAT_number_buyer: "hello",
-        Total_Price_Before_VAT: "hello",
-        Total_VAT: "hello",
-        Total_Price_After_VAT: "hello",
-        Selected_List: this.SelectedFromPersonalShoppingBags_TO_SERVER,
-    } ;
+    // var TransmitData3 = 
+    // { 
+    //     Username: "hello",
+    //     Email: "nguyentrungtin1002@gmail.com",
+    //     Visa_number: "hello",
+    //     Visa_valid_date: "hello",
+    //     Visa_cvv: "hello",
+    //     Nation_buyer: "hello",
+    //     Nation_zip_buyer: "hello",
+    //     Nation_state_buyer: "hello",
+    //     VAT_number_buyer: "hello",
+    //     Total_Price_Before_VAT: "hello",
+    //     Total_VAT: "hello",
+    //     Total_Price_After_VAT: "hello",
+    //     Selected_List: this.SelectedFromPersonalShoppingBags_TO_SERVER,
+    // } ;
     
   // this.AllListToServer2 = AllListToServer; // Assign local variable to global variable
 
@@ -638,6 +683,28 @@ export class PaymentPageComponent implements OnInit, AfterViewInit {
         console.error("Error occurred while writing into Redis cache and database:", error);
       }
     );
+  }
+  Passed_Confirmation_of_VNPay() {
+    console.log("Passed_Confirmation_of_VNPay called");
+    this.AllListToServer2  = this.GetAllValidInformation_for_payment();
+    if(this.isPayPal_Payment_Visible){
+      this.AllListToServer2.Payment_gateway_id = this.orderID_from_PayPal;
+    }
+    // localStorage.clear();
+    this.paymentService.VNPay_Create_Order_to_Backend(this.AllListToServer2).subscribe((response) => {
+      console.log("Response from server is ", response);
+      console.log("Response from server is ", response.vnpUrl);
+      const VNpay_Url = response.vnpUrl;
+      const VNPay_OrderId = response.orderId;
+      this.orderId_VNPay = VNPay_OrderId;
+      console.log("Response from server VNpay_Url is ", VNpay_Url);
+      console.log("Response from server VNPay_OrderId is ", VNPay_OrderId);
+      // window.location.href = response.vnpUrl;
+      window.open(VNpay_Url, '_blank'); // 👈 mở tab mới
+      }, (error) => {
+        console.error("Error occurred while writing into Redis cache and database:", error);
+      });
+      this.startPolling_Check_Order_status_VNPay();
   }
 
   isProductChecked(i: number, event: Event) {

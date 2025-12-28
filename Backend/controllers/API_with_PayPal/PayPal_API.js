@@ -86,7 +86,7 @@ const CreateOrder = async (req,res) => {
                 value: select_list[j].price
             },
             quantity: select_list[j].quatity,
-            image_url: `https://nenthombnc.website/${select_list[j].image.replace(/\.\.\//g, '')}`
+            image_url: `https://nenthombnc.com/${select_list[j].image.replace(/\.\.\//g, '')}`
         });
 
         new_Total_prive_before_VAT += parseFloat(select_list[j].price).toFixed(2) * parseInt(select_list[j].quatity);

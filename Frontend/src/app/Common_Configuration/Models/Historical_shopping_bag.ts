@@ -17,5 +17,10 @@ export class HistoricalShoppingBag {
     Selected_List_Object?: Array<Selected_Candle>;
     Payment_Method?:string;
     Price_currency?:string;
-    PayPal_order_id?:string;
+    Payment_gateway_id?:string;
+    amount_for_VNPay?:string;
+    bankCode_for_VNPay?:string;
+    language_for_VNPay?:string;
+    Method_by_Order?:string;
+
   }

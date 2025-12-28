@@ -289,13 +289,13 @@ const Create_New_Order_in_MySQL = async(customer_id,total_payment,status) => {
     }
 }
 // Table 6: payments - Insert
-const Create_New_payment_in_MySQL = async(order_id,total_payment,status,paypal_order_id) => {
+const Create_New_payment_in_MySQL = async(order_id,total_payment,status,method,payment_gateway_id) => {
     var Result_Checking= 0;
     console.log(`Order ID request is ${order_id}`);
     console.log(`Total amount request is ${total_payment}`);
     console.log(`Status request is ${status}`);
     try {
-      const [results] = await pool.query(`INSERT INTO payments (order_id, amount, status, paypal_order_id) VALUES ('${order_id}',  '${total_payment}', '${status}', '${paypal_order_id}');`);
+      const [results] = await pool.query(`INSERT INTO payments (order_id, amount, status,method, payment_gateway_id) VALUES ('${order_id}',  '${total_payment}', '${status}', '${method}','${payment_gateway_id}');`);
       console.log('📦 Register successfully:');
       console.table(results);
       console.log(results.insertId); // Lấy ID của payment mới tạo

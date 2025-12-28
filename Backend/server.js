@@ -73,6 +73,7 @@ const TargetTime_Of_Minute = 10; // allow in 10 minute
 var TargetTime_Of_Milisecond = TargetTime_Of_Minute*60*1000;
 const isProduction = process.env.IS_PRODUCTION === 'true'; // convert string to boolean (because .env only support string)
 const isCombineAngular = process.env.IS_COMBINE_ANGULAR === 'true'; // convert string to boolean (because .env only support string)
+const isNgrokCombined = process.env.IS_SIMULATE_WITH_NGROK === 'true'; 
 // Example using session middleware
 app.use(session({
     genid: function(req) {
@@ -82,12 +83,12 @@ app.use(session({
     secret : 'mediumtin',
     store : new RedisStore({client: clientRedis}), // Store SID or session of user into Redis cache
     resave : false,
-    saveUninitialized: true, // Properties for re-create Cookies and send to Client
+    saveUninitialized: false, // Properties for re-create Cookies and send to Client
     cookie : {  
         // secure: true,
         // sameSite: 'None', // allow cross-origin
-        secure: false, // in production, use true to force https, in local use false --> Should not be TRUE due to CPanel will be considered as insecure connection (not https)
-        sameSite: (isProduction | isCombineAngular) ?'Strict':'lax', // in production, use strict to avoid CSRF, in local use lax: Strict for frontend and backend are same origin, Lax for different origin
+        secure: (isCombineAngular) ? false : (isProduction ? false : true), // in production, use true to force https, in local use false --> Should not be TRUE due to CPanel will be considered as insecure connection (not https)
+        sameSite: (isCombineAngular) ?'Strict': 'None', // in production, use strict to avoid CSRF, in local use None (Lax in limited case): Strict for frontend and backend are same origin, None (Lax for Limited case) for different origin
         httpOnly: true, // allow client can know document.cookie or not
         // // expires: (new Date(Date.now() + TargetTime_Of_Milisecond + 7*60*60*1000)),
         maxAge : TargetTime_Of_Milisecond // 10 minute
@@ -111,6 +112,7 @@ connectDB();
 app.use(logger);
 // 1.2. Build-in middleware to share origin resource to other Routes
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // 🔥 BẮT BUỘC
 // 1.3. Build-in middleware to convert incomming request to parsed data
 app.use(express.urlencoded({extended:false}));
 // 1.4. Build-in middleware to convert parsed data to JSON data
@@ -119,13 +121,14 @@ app.use(express.json());
 app.use(cookieParser());
 // 1.6. Built-in middleware to serve static files to all routes (if needed, can give permission only some specific routes)
 app.use(express.static(
-    isProduction ? 
-        path.join(__dirname,'/public/Generative_Static_Angular_files/Production') : // if in production, serve Angular combined files
-        isCombineAngular ? 
-            path.join(__dirname,'/public/Generative_Static_Angular_files/Development') : // if in local and want to serve Angular combined files    
-            path.join(__dirname,'/public') // if in local and want to serve other static files
+    isCombineAngular ? (
+        isProduction ?
+            path.join(__dirname,'/public/Generative_Static_Angular_files/Production') : // if in production, serve Angular combined files
+            path.join(__dirname,'/public/Generative_Static_Angular_files/Development') // if in local and want to serve Angular combined files   
+        ) :  
+        path.join(__dirname,'/public') // if in local and want to serve other static files
     )); // Serve other static files (images, css, js, etc) without combined Angular
-
+// isProduction
 
 //---------------------------------------Common Route declaration-------------------------------------------//
 console.log("Program is running ----------");
@@ -302,90 +305,20 @@ app.use('/api/payment_handling',require('./routes/Candle_Web_Routes/Payment_Hand
 // API 18: Shopping bag handling
 app.use('/api/Shopping_Bag_handling',require('./routes/Candle_Web_Routes/Shopping_Bag_Handling'));
 
-// API 20 : Test get MySQL connection
-app.get('/api/mysql/get_product', async (req,res)=>{
-    const products = await productModel.getAllProducts();
-    console.log('Products fetched successfully:', products);
-    res.json(products);
-})
-// API 21 : Test insert MySQL connection
-app.get('/api/mysql/insert_product', async (req,res)=>{
-    const data = {
-        name: "Nến thơm Lavender",
-        price: 120000,
-        description: "Nến hương lavender thư giãn"
-    };
-    const products = await productModel.insertProduct(data);
-    console.log('Products fetched successfully:', products);
-    res.json(products);
-})
+// API 20: Test MySQL connection
+app.use('/api/mysql',require('./routes/MySQL_TestConnection'));
 
-// API 22 : Test update MySQL connection
-app.get('/api/mysql/update_product', async (req,res)=>{
-    const id = 3; // ID of the product to update
-    const data = {
-        name: "Nến thơm Lavender Cập nhật",
-        price: 120000,
-        description: "Nến hương lavender thư giãn Cập nhật"
-    };
-    const products = await productModel.updateProduct(id,data);
-    console.log('Products fetched successfully:', products);
-    res.json(products);
-})
-
-// API 23 : Test delete MySQL connection
-app.get('/api/mysql/delete_product', async (req, res) => {
-  try {
-    const { id } = req.query; // Lấy id từ query parameter
-    if (!id) {
-      return res.status(400).json({ error: 'Missing id parameter' });
-    }
-
-    const result = await productModel.deleteProduct(id);
-    console.log(`Product with id=${id} deleted successfully:`, result);
-
-    res.json({ message: `Product with id=${id} deleted!`, result });
-  } catch (err) {
-    console.error('Error deleting product:', err);
-    res.status(500).json({ error: 'Internal Server Error', detail: err.message });
-  }
-});
-
-// API 24: Get all product from MongoDB and Update Warehouse in MySQL
+// API 21: Get all product from MongoDB and Update Warehouse in MySQL
 app.get('/api/admin/update_warehouse_mysql', async (req,res)=>{
     const status_update = await Specific_file_for_admin.GetAllProduct_MongoDB_and_Update_Warehouse_MySQL(req,res); // Update new shopping bag to database
     res.json({ message: `Update status is ${status_update}`});
 })
 
-// API 25: Tried POST method with PayPal payment gateway
-app.post('/api/payment/paypal/create-order', async (req,res)=>{
-    const status_update = await PayPal_Interface.CreateOrder(req,res); // Update new shopping bag to database
-    // const data = await response.json();
-    console.log(`Order ID is ${status_update.id}`);
-    res.json({ id: status_update.id });
-    // res.json({ message: `Update status is ${status_update}`});
-})
+// API 22: Payment PayPal gateway
+app.use('/api/payment/paypal',require('./routes/Payment_Gateway/Payment_Paypal'));
 
-// API 26: Tried POST method with PayPal payment gateway
-app.post('/api/payment/paypal/capture-order', async (req,res)=>{
-    const { orderID } = req.body;
-    console.log(`Order ID received in server: ${orderID}`);
-    const status_update = await PayPal_Interface.CaptureOrder(orderID); // Update new shopping bag to database
-    console.log(`status_update is ${status_update}`);
-    console.log(`Buyer name is ${status_update.payer.name.given_name}`);
-    const detail_info = await PayPal_Interface.ShowOrderDetails(orderID); // Update new shopping bag to database
-    console.log(`Detail info is ${JSON.stringify(detail_info)}`);
-    res.json(status_update);
-})
-
-// API 27: Get Show detail
-app.get('/api/payment/paypal/show_detail', async (req,res)=>{
-    const { orderID } = req.query;
-    console.log(`Order ID received in server for detail info: ${orderID}`);
-    const detail_info = await PayPal_Interface.ShowOrderDetails(orderID); // Update new shopping bag to database
-    res.json(detail_info);
-})
-
+// API 23: Payment VNPay gateway 
+app.use('/api/payment/vnpay', require('./routes/Payment_Gateway/Payment_VNPay'));
 
 //--------------------------------Route to serve Angular app----------------------------------------------//
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)
@@ -412,7 +345,7 @@ if(isCombineAngular)
 // Specific Custom Middleware to check authorization and get Json Web Token to make private action. Before this line, it will not require JWToken to execute
 // app.use(verifyJWT);
 // After this line, it will require JWToken branded to execute - After login and grant, will allow get data
-app.use('/api/employees',require('./routes/api/employees')); //example create one API
+// app.use('/api/employees',require('./routes/api/employees')); //example create one API
 
 
 //---------------------------------------Error recognition and connection declaration-----------------------//
