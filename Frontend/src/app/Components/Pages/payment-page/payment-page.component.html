@@ -190,7 +190,7 @@
                         </div>
 
                         <p class="dis fw-bold mb-3">Billing Method</p>
-                        <select formControlName="Payment_Method" class="form-select form-control" aria-label="Default select example" id="payment_method">
+                        <select formControlName="Payment_Method" class="form-select form-control" aria-label="Default select example" id="payment_method" >
                             <option selected hidden>Cash on Delivery</option>
                             <option value="1">Cash on Delivery</option>
                             <option value="2">PayPal</option>
@@ -198,6 +198,16 @@
                             <option value="4">Momo</option>
                         </select>
                         <br>
+                        <!-- <p class="dis fw-bold mb-3" *ngIf="isVNPay_Payment_Visible">Bank supplier for VNPay</p>
+                        <select formControlName="Bank_Supplier" class="form-select form-control" aria-label="Default select example" id="bank_supplier"
+                            *ngIf="isVNPay_Payment_Visible">
+                            <option selected hidden>Vietinbank</option>
+                            <option value="1">MB Bank</option>
+                            <option value="2">Vietcombank</option>
+                            <option value="3">Shinhan</option>
+                            <option value="4">Dong A Bank</option>
+                        </select>
+                        <br> -->
                         <button 
                             type="submit" 
                             class="btn btn-primary mt-2" 

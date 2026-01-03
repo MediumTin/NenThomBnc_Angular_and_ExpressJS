@@ -23,6 +23,7 @@ declare var paypal: any;
   styleUrl: './payment-page.component.css'
 })
 export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
+
   @ViewChild('paypal', { static: true }) paypalElement!: ElementRef;
   counter_to_server : number = 0;
   paymentForm!: FormGroup; // Use definite assignment
@@ -70,7 +71,7 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
   isTrigger_Paypal_JS_SDK: boolean = false;
   isFirstCalculate_Total_Price: boolean = true;
   orderID_from_PayPal: string = "";
-  bankCode_for_VNPay: string = "";
+  bankCode_for_VNPay: string = ""; // default logic bankcode selection will performed by VNPay, not by bussiness logic
   timer: any;
   AllListToServer2: HistoricalShoppingBag = {
     Username: '',
@@ -138,7 +139,7 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
 
       });
 
-      this.bankCode_for_VNPay = "NCB"; // Default bank code for VNPay - Detail implement later
+      // this.bankCode_for_VNPay = "NCB"; // Default bank code for VNPay - Detail implement later
 
     } else {
       // User is not identified, handle accordingly - request login
@@ -147,6 +148,17 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
       
     }
    }
+
+  // onSelectChange(event: Event) {
+  //     const value = (event.target as HTMLSelectElement).value;
+  //     if(Number(value) == 4){
+  //       this.isVNPay_Payment_Visible = true;
+  //     }
+  //     else {
+  //       this.isVNPay_Payment_Visible = false;
+  //     }
+  //     console.log(value);
+  // }
   ngAfterViewInit(): void {
     this.Current_Counter = 0;
     this.isDivButtonActive[0] = "active";
@@ -227,8 +239,20 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
       Total_Price_After_VAT: [''],
       Selected_List: [''],
       Payment_Method: [''],
-      Price_currency: ['']
+      Price_currency: [''],
+      Bank_Supplier : ['']
+
     });
+    // this.paymentForm.get('Payment_Method')?.valueChanges.subscribe(value => {
+    //  console.log('Payment Method changed:', value);
+    //   if(Number(value) == 3){
+    //     this.isVNPay_Payment_Visible = true;
+    //   }
+    //   else {
+    //     this.isVNPay_Payment_Visible = false;
+    //   }
+    //   console.log(value);
+    // });
   }
   // Because Paypal must check in 2 decimal places, cannot use 3 decimal places
   round2(value : number) : number {

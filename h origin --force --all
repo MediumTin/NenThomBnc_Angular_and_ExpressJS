@@ -1,0 +1,35 @@
+[33mcommit 7b4d7d478e10a0ef0d7b3f6ae35a8c12b69cf58b[m
+Author: Medium Tin <nguyentrungtin1002@gmail.com>
+Date:   Sun Dec 28 20:28:43 2025 +0700
+
+    version 40 - Combine VNPay payment gateway
+
+ Backend.zip | 3 [31m---[m
+ 1 file changed, 3 deletions(-)
+
+[33mcommit 3a04f17105d074e57ea2bb04e7a4a32d8a467406[m
+Author: Medium Tin <nguyentrungtin1002@gmail.com>
+Date:   Sun Dec 28 20:27:22 2025 +0700
+
+    version 40 - Combine VNPay payment gateway
+
+ Backend.zip | 3 [32m+++[m
+ 1 file changed, 3 insertions(+)
+
+[33mcommit 8549e5bc59dfb017eb9c8c7be2eab61d084c7975[m
+Author: Nguyen Trung Tin <nguyentrungtin1002@gmail.com>
+Date:   Thu Oct 23 01:26:11 2025 +0700
+
+    version 29 - Update Redis info in environment setting
+
+ Backend.zip | 3 [31m---[m
+ 1 file changed, 3 deletions(-)
+
+[33mcommit 21a503036d3a6b73ec63b57d4f7cbd2cbfebf92f[m
+Author: Nguyen Trung Tin <nguyentrungtin1002@gmail.com>
+Date:   Thu Oct 23 01:19:15 2025 +0700
+
+    version 29 - Update Redis info in environment setting
+
+ Backend.zip | 3 [32m+++[m
+ 1 file changed, 3 insertions(+)
