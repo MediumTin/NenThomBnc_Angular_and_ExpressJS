@@ -11,6 +11,7 @@ const express = require('express');
 const Router = express.Router();
 const path = require('path');
 const Menu_Candle_Processing = require('../../controllers/Website_Candle_Light/Menu_Candle_Processing_MongooseDB');
+const Product_Information_From_MySQL = require('../../controllers/API_with_MySQL/MySQL_API_products_table');
 const Redis_API = require('../../controllers/API_with_Redis/API_Redis');
 const { createClient } = require('redis');
 
@@ -253,6 +254,8 @@ const Request_Add_New_Product = async (req,res) => {
    var Request_Add_Price_Range = req.body.price_range;
    var Request_Add_Color = req.body.color;
    var Request_Add_Image = req.body.image;
+   var Request_Add_Quantity = req.body.quantity;
+   var Request_Add_Area = req.body.area;
  
    var result = await Menu_Candle_Processing.AddNewProductInformation(
       Request_Add_Name,
@@ -264,8 +267,14 @@ const Request_Add_New_Product = async (req,res) => {
       Request_Add_Color,
       Request_Add_Image
    );
-   console.log("Result of Add new product : ",result);
-   if(result==1){
+   console.log("Result of Add new product in Mongo DB : ",result);
+   var result_of_MySQL = await Product_Information_From_MySQL.Update_product_in_Warehouse(
+      Request_Add_Name,
+      Request_Add_Quantity,
+      Request_Add_Area
+   );
+   console.log("Result of Add new product in MySQL DB : ",result_of_MySQL);
+   if(result==1 && result_of_MySQL==1){
       // Add successfully
       // For testing purpose
       res.status(200).send(
@@ -302,8 +311,12 @@ const Request_To_RemoveProduct = async (req,res) => {
    var result = await Menu_Candle_Processing.RemoveProductInformation(
       Request_Remove_Name
    );
-   console.log("Result of Add new product : ",result);
-   if(result==1){
+   console.log("Result of Remove product : ",result);
+   var result_of_MySQL = await Product_Information_From_MySQL.Delete_product_in_Warehouse(
+      Request_Remove_Name
+   );
+   console.log("Result of Remove product in My SQL : ",result_of_MySQL);
+   if(result==1 && result_of_MySQL==1){
       // Add successfully
       // For testing purpose
       res.status(200).send(

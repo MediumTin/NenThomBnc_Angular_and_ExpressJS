@@ -1,7 +1,7 @@
 
 
 export const environment = {
-  production: false,
+  production: true,
   apiUrl: 'https://nenthombnc.com',
   common_concept : true,
   isNgRokUsing : false

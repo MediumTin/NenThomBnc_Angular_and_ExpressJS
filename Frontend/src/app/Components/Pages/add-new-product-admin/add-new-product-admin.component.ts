@@ -19,7 +19,7 @@ import { UserInformation } from '../../../Common_Configuration/Models/UserInform
 export class AddNewProductAdminComponent {
   isUserIdentified : UserInformation[] =[];
   constructor(private filteredProduct : FilteredProductService, private router:Router, private candlesService : CandlesServiceService,activatedRoute: ActivatedRoute, private renderer:Renderer2,private identification: IndentificationService ){}
-  AddNewProductUser(addnewproductForm: { productname: string; producttype : string, productgroup: string; productbrand: string;productprice: string;productpricerange: string;productcolor: string;productimage: string; }) {
+  AddNewProductUser(addnewproductForm: { productname: string; producttype : string, productgroup: string; productbrand: string;productprice: string;productpricerange: string;productcolor: string;productimage: string;productquantity: string;productarea: string }) {
       let ProductToBeAdded = {
             name :addnewproductForm.productname,
             type :addnewproductForm.producttype,
@@ -28,9 +28,12 @@ export class AddNewProductAdminComponent {
             price : addnewproductForm.productprice,
             price_range: addnewproductForm.productpricerange,
             color: addnewproductForm.productcolor,
-            image :addnewproductForm.productimage
+            image :addnewproductForm.productimage,
+            quantity : addnewproductForm.productquantity,
+            area : addnewproductForm.productarea
       };
-
+      console.log('Result ProductToBeAdded :',ProductToBeAdded);
+      console.log('Result ProductToBeAdded with area :',ProductToBeAdded.area);
       let isProductToBeAdded : Observable<AddNewProduct>;
       isProductToBeAdded = this.candlesService.setAddNewProduct(ProductToBeAdded);
       isProductToBeAdded.subscribe((UserInfo) => {

@@ -7,4 +7,6 @@ export class AddNewProduct{
     price_range!: string;
     color!: string;
     image!:string;
+    quantity!:string;
+    area !:string
   }

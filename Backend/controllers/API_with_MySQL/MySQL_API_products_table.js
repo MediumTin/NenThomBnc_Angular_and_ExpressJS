@@ -73,7 +73,7 @@ const Check_Valid_User_in_MySQL = async(username_request, password_request) => {
       if(results.length != 0){
         isValidUser = 1;
         // Check valid admin right
-        if(username_request == "Nguyen Trung Tin"){
+        if(username_request == "nguyentrungtin2001@gmail.com"){
             isValidAdminRight = 1;
             console.log("Valid admin right");
         }
@@ -268,8 +268,43 @@ const Get_quantity_available_in_Warehouse = async(Product_name) => {
       console.error('❌ Lỗi truy vấn Get_quantity_available_in_Warehouse:', err);
       throw err;
     }
-
 }
+
+// Table 6: inventory - Insert
+const Update_product_in_Warehouse = async(Product_name, Product_quantity, Product_area) => {
+    var Result_Checking= 0;
+    console.log(`Product_name request is ${Product_name}`);
+    console.log(`Product_quantity request is ${Product_quantity}`);
+    console.log(`Product_area request is ${Product_area}`);
+    try {
+      const [results] = await pool.query(`INSERT INTO inventory (product_sku,quantity,warehouse_id) VALUES ('${Product_name}',${Product_quantity},${Product_area});`);
+      console.log('📦 Dữ liệu lấy được:');
+      console.table(results);
+      // console.log(results.insertId); // Lấy ID của payment mới tạo
+      Result_Checking = 1;
+      return Result_Checking;
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn Get_quantity_available_in_Warehouse:', err);
+      throw err;
+    }
+}
+// Table 6: inventory - Delete
+const Delete_product_in_Warehouse = async(Product_name) => {
+    var Result_Checking= 0;
+    console.log(`Product_name request is ${Product_name}`);
+    try {
+      const [results] = await pool.query(`DELETE from inventory WHERE product_sku = '${Product_name}'`);
+      console.log('📦 Dữ liệu lấy được:');
+      console.table(results);
+      // console.log(results.insertId); // Lấy ID của payment mới tạo
+      Result_Checking = 1;
+      return Result_Checking;
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn Get_quantity_available_in_Warehouse:', err);
+      throw err;
+    }
+}
+
 // Table 4: orders - Insert
 const Create_New_Order_in_MySQL = async(customer_id,total_payment,status) => {
     var Result_Checking= 0;
@@ -342,5 +377,7 @@ module.exports = {
   Get_Customer_ID_in_MySQL_DB_HighCorrection,
   Create_New_Order_in_MySQL,
   Create_New_payment_in_MySQL,
-  Create_Order_detail_in_MySQL
+  Create_Order_detail_in_MySQL,
+  Update_product_in_Warehouse,
+  Delete_product_in_Warehouse
 };

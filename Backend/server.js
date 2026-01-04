@@ -320,6 +320,12 @@ app.use('/api/payment/paypal',require('./routes/Payment_Gateway/Payment_Paypal')
 // API 23: Payment VNPay gateway 
 app.use('/api/payment/vnpay', require('./routes/Payment_Gateway/Payment_VNPay'));
 
+// API 24: Payment Momo gateway 
+app.use('/api/payment/momo', require('./routes/Payment_Gateway/Payment_Momo'));
+
+// API 21: Get all product from MongoDB and Update Warehouse in MySQL
+app.get('/api/payment/momo_test', require('./controllers/API_with_Momo_Ex/Momo_Export'));
+
 //--------------------------------Route to serve Angular app----------------------------------------------//
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)
 // API 19: Serve Angular app
