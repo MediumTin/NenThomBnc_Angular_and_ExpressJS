@@ -323,6 +323,9 @@ app.use('/api/payment/vnpay', require('./routes/Payment_Gateway/Payment_VNPay'))
 // API 24: Payment Momo gateway 
 app.use('/api/payment/momo', require('./routes/Payment_Gateway/Payment_Momo'));
 
+// API 25: Admin management gateway 
+app.use('/api/admin_management', require('./routes/Candle_Web_Routes/Admin_management'));
+
 // API 21: Get all product from MongoDB and Update Warehouse in MySQL
 app.get('/api/payment/momo_test', require('./controllers/API_with_Momo_Ex/Momo_Export'));
 

@@ -22,6 +22,7 @@ import { TESTComponent } from './Components/test/test.component';
 import { environment } from '../environments/environment';
 import { AnotherInformationComponent } from './Components/Pages/another-information/another-information.component';
 import { AddNewProductAdminComponent } from './Components/Pages/add-new-product-admin/add-new-product-admin.component';
+import { OrderManagementComponent } from './Components/Pages/order-management/order-management.component';
 
 export const routes: Routes = [
   // All below routing only used in Angular internal navigation
@@ -49,7 +50,8 @@ export const routes: Routes = [
     {path: 'another_information/privacy_policy', component: AnotherInformationComponent }, // get session information
     {path: 'payment_handling', component: PaymentPageComponent }, // get session information - NEED TO AUTHENTICATE
     {path: 'Shopping_Bag_handling', component: ShoppingBagComponent }, // get session information - NEED TO AUTHENTICATE
-    {path: 'add_new_product', component: AddNewProductAdminComponent } // get session information - NEED TO AUTHORIZE
+    {path: 'add_new_product', component: AddNewProductAdminComponent }, // get session information - NEED TO AUTHORIZE
+    {path: 'manage_order_adminright', component: OrderManagementComponent } // get session information - NEED TO AUTHORIZE
     // {path: 'get-session', component: SessionPageComponent }, // get session information
     // {path: 'get-sid', component: SessionPageComponent }, // get session information
     // {path: 'clear-sid', component: SessionPageComponent }, // get session information

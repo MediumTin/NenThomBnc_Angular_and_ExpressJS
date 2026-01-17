@@ -122,7 +122,7 @@ Router.post('/specific_handling',async (req,res)=>{
    console.log(`Create_New_Order result is ${Get_new_OrderID_created}`);
 
    // Create new payment in payment table
-   const Get_new_PaymentID_created = await User_Information_From_MySQL.Create_New_payment_in_MySQL(Get_new_OrderID_created,total_price_After_VAT,'Processing',Method_by_Order, Payment_gateway_id);
+   const Get_new_PaymentID_created = await User_Information_From_MySQL.Create_New_payment_in_MySQL(Get_new_OrderID_created,total_price_After_VAT,'pending',Method_by_Order, Payment_gateway_id);
    console.log(`Create_New_payment result is ${Get_new_PaymentID_created}`);
 
    var selectedList = (req.body.Selected_List);
@@ -138,7 +138,9 @@ Router.post('/specific_handling',async (req,res)=>{
    
    for(let i = 0;i<selectedList.length;i++){
       selectedList_filtered2[i] = selectedList[i].split(","); // Split each item in selectedList by comma
-      const Create_new_Order_detail_in_MySQL = await User_Information_From_MySQL.Create_Order_detail_in_MySQL(Get_new_OrderID_created,Get_new_PaymentID_created,selectedList_filtered2[i][1], selectedList_filtered2[i][2]);
+      console.log(`Type first item after split selectedList_filtered2 is ${typeof(selectedList_filtered2[0])}`);
+      console.log(`Name of first item after split selectedList_filtered2 is ${selectedList_filtered2[0][0]}`);
+      const Create_new_Order_detail_in_MySQL = await User_Information_From_MySQL.Create_Order_detail_in_MySQL(Get_new_OrderID_created,Get_new_PaymentID_created,selectedList_filtered2[i][1], selectedList_filtered2[i][2],selectedList_filtered2[i][0]);
       console.log(`Create_Order_detail_in_MySQL result is ${Create_new_Order_detail_in_MySQL}`);
       selectedListt_with_order_detail[i] = Create_new_Order_detail_in_MySQL;
 

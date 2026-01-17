@@ -125,4 +125,7 @@ export class HeaderComponent implements OnInit{
   AddNewProductForAdminRight() {
     this.router.navigate(['/add_new_product']);  // Navigate to add new product page internal in Angular
   }
+  ManageOrderAdminRight() {
+    this.router.navigate(['/manage_order_adminright']);  // Navigate to add new product page internal in Angular
+  }
 }

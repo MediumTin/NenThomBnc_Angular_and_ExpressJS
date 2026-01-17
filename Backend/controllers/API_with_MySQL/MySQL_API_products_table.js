@@ -115,7 +115,24 @@ const Get_Customer_ID_in_MySQL_DB = async(username_request) => {
       console.error('❌ Lỗi truy vấn Get_Customer_ID_in_MySQL_DB:', err);
       throw err;
     }
+}
 
+// Table 1: customers - Read
+const Get_Customer_List_in_MySQL_DB_for_Admin = async() => {
+    console.log(`Getting all customer list for admin`);
+    try {
+      const [ResultList] = await pool.query(`SELECT customer_id, name, email, address FROM customers;`);
+      console.log('📦 Dữ liệu lấy được:');
+      console.table(ResultList);
+      console.log(`ResultList length is ${ResultList.length}`); 
+      console.log('First item of ResultList is : ', ResultList[0]);
+      console.log('Type of first item of ResultList is : ', typeof(ResultList[0])); // object
+
+      return ResultList;
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn Get_Customer_List_in_MySQL_DB_for_Admin:', err);
+      throw err;
+    }
 }
 
 // Table 1: customers - Insert
@@ -270,6 +287,19 @@ const Get_quantity_available_in_Warehouse = async(Product_name) => {
     }
 }
 
+// Table 6: inventory - Read
+const Get_Inventory_List_for_Admin = async() => {
+    try {
+      const [Inventory_List] = await pool.query(`SELECT i.inventory_id, i.product_sku, i.quantity, w.name, w.location FROM inventory i JOIN ware_houses w ON i.warehouse_id = w.warehouse_id;`);
+      console.log('📦 Dữ liệu lấy được:');
+      console.table(Inventory_List);
+      return Inventory_List;
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn Get_quantity_available_in_Warehouse:', err);
+      throw err;
+    }
+}
+
 // Table 6: inventory - Insert
 const Update_product_in_Warehouse = async(Product_name, Product_quantity, Product_area) => {
     var Result_Checking= 0;
@@ -299,6 +329,19 @@ const Delete_product_in_Warehouse = async(Product_name) => {
       // console.log(results.insertId); // Lấy ID của payment mới tạo
       Result_Checking = 1;
       return Result_Checking;
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn Get_quantity_available_in_Warehouse:', err);
+      throw err;
+    }
+}
+
+// Table 9: warehouses - Read
+const Get_Warehouse_List_for_Admin = async() => {
+    try {
+      const [Warehouse_List] = await pool.query(`SELECT * FROM ware_houses;`);
+      console.log('📦 Dữ liệu lấy được:');
+      console.table(Warehouse_List);
+      return Warehouse_List;
     } catch (err) {
       console.error('❌ Lỗi truy vấn Get_quantity_available_in_Warehouse:', err);
       throw err;
@@ -342,7 +385,7 @@ const Create_New_payment_in_MySQL = async(order_id,total_payment,status,method,p
     }
 }
 // Table 5: order_details - Insert
-const Create_Order_detail_in_MySQL = async(order_id,payment_id,quantity,price_unit) => {
+const Create_Order_detail_in_MySQL = async(order_id,payment_id,quantity,price_unit,product_name) => {
     var Result_Checking= 0;
     console.log(`Order ID request is ${order_id}`);
     console.log(`Payment ID request is ${payment_id}`);
@@ -351,7 +394,20 @@ const Create_Order_detail_in_MySQL = async(order_id,payment_id,quantity,price_un
     subtotal = quantity * price_unit;
     console.log(`Subtotal request is ${subtotal}`);
     try {
-      const [results] = await pool.query(`INSERT INTO order_details (order_id,payment_id,quantity, unit_price, subtotal) VALUES ('${order_id}',  '${payment_id}', '${quantity}', '${price_unit}', '${subtotal}');`);
+      const [results] = await pool.query(`
+        INSERT INTO order_details 
+        (order_id, payment_id, quantity, unit_price, subtotal, inventory_id)
+        SELECT 
+            '${order_id}',
+            '${payment_id}',
+            '${quantity}',
+            '${price_unit}',
+            '${subtotal}',
+            i.inventory_id
+        FROM inventory i
+        WHERE i.product_sku = '${product_name}'
+        LIMIT 1;
+      `);
       console.log('📦 Register successfully:');
       console.table(results);
       console.log(results.insertId); // Lấy ID của order_detail mới tạo
@@ -363,6 +419,97 @@ const Create_Order_detail_in_MySQL = async(order_id,payment_id,quantity,price_un
     }
 }
 
+// Table 5: order_details list - Read
+const Get_Order_Detail_List_for_Admin = async() => {
+    var Result_Checking= 0;
+    try {
+      const [results] = await pool.query(`SELECT i.order_id, i.order_date, i.total_amount,i.status, w.name, i.customer_id FROM orders i JOIN customers w ON i.customer_id = w.customer_id;`);
+      console.log('📦 Dữ liệu lấy được:');
+      console.table(results);
+      return results;     
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn:', err);
+      throw err;
+    }
+}
+
+// Table 5: order_details - Read
+const Get_Order_Detail_for_Admin = async(order_id) => {
+    try {
+      const [results] = await pool.query(`
+        SELECT 
+            i.order_detail_id,
+            i.payment_id,
+            i.quantity,
+            i.unit_price,
+            i.subtotal,
+            inv.product_sku,
+            w.method,
+            w.status,
+            w.payment_gateway_id
+        FROM order_details i
+        JOIN payments w 
+            ON i.payment_id = w.payment_id
+        JOIN inventory inv
+            ON i.inventory_id = inv.inventory_id
+        WHERE i.order_id = '${order_id}';
+        `);
+      console.log('📦 Dữ liệu lấy được Get_Order_Detail_for_Admin:');
+      console.table(results);
+      return results;     
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn:', err);
+      throw err;
+    }
+}
+
+// Table 7: coupons - Read
+const Get_Coupon_List_for_Admin = async() => {
+    console.log(`Getting all coupon list for admin`);
+    try {
+      const [ResultList] = await pool.query(`SELECT * FROM coupons;`);
+      console.log('📦 Dữ liệu lấy được:');
+      console.table(ResultList);
+      console.log(`ResultList length is ${ResultList.length}`); 
+      console.log('First item of ResultList is : ', ResultList[0]);
+      console.log('Type of first item of ResultList is : ', typeof(ResultList[0])); // object
+      return ResultList;
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn Get_Coupon_List_for_Admin:', err);
+      throw err;
+    }
+}
+
+// Table 7: coupons - Update
+const Update_Coupon_Status_for_Admin = async(coupon_id, status) => {
+    console.log(`Updating coupon status for coupon ID: ${coupon_id} to status: ${status}`);
+    try {
+      const [ResultList] = await pool.query(`UPDATE coupons SET status = ? WHERE coupon_id = ?`, [status, coupon_id]);
+      console.log('📦 Dữ liệu cập nhật:');
+      console.table(ResultList);
+      console.log(`ResultList length is ${ResultList.length}`); 
+      console.log('First item of ResultList is : ', ResultList[0]);
+      console.log('Type of first item of ResultList is : ', typeof(ResultList[0])); // object
+      return ResultList;
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn Get_Coupon_List_for_Admin:', err);
+      throw err;
+    }
+}
+
+// Table 5: order - Update
+const Update_Order_Status_for_Admin = async(order_id, status) => {
+    var Result_Checking= 0;
+    try {
+      const [results] = await pool.query(`UPDATE orders SET status = ? WHERE order_id = ?`, [status, order_id]);
+      console.log('📦 Dữ liệu cập nhật:');
+      console.table(results);
+      return results;     
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn:', err);
+      throw err;
+    }
+}
 module.exports = {
   getAllProducts,
   insertProduct,
@@ -379,5 +526,13 @@ module.exports = {
   Create_New_payment_in_MySQL,
   Create_Order_detail_in_MySQL,
   Update_product_in_Warehouse,
-  Delete_product_in_Warehouse
+  Delete_product_in_Warehouse,
+  Get_Customer_List_in_MySQL_DB_for_Admin,
+  Get_Coupon_List_for_Admin,
+  Get_Inventory_List_for_Admin,
+  Get_Warehouse_List_for_Admin,
+  Get_Order_Detail_List_for_Admin,
+  Get_Order_Detail_for_Admin,
+  Update_Coupon_Status_for_Admin,
+  Update_Order_Status_for_Admin
 };

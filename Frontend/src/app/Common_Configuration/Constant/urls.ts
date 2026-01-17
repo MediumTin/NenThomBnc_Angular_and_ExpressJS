@@ -108,6 +108,14 @@ export const ORDER_NEW_FOR_CURRENT_USER_URL = ORDERS_URL + '/newOrderForCurrentU
 export const ORDER_PAY_URL = ORDERS_URL + '/pay';
 export const ORDER_TRACK_URL = ORDERS_URL + '/track/';
 
+
+export const ADMIN_URL = BASE_URL + '/api/admin_management';
+export const ADMIN_Customer_URL = ADMIN_URL + '/customer';
+export const ADMIN_Coupon_URL = ADMIN_URL + '/coupon';
+export const ADMIN_Inventory_URL = ADMIN_URL + '/inventory';
+export const ADMIN_Warehouse_URL = ADMIN_URL + '/warehouse';
+export const ADMIN_OrderStatus_URL = ADMIN_URL + '/orderstatus';
+
 const API_Key_Exchangerate_API = '0d30a4fc3163eaf74cd78989';
 export const External_Exchange_Rate_API = `https://v6.exchangerate-api.com/v6/${API_Key_Exchangerate_API}/latest/VND`;
 

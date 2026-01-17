@@ -1,0 +1,220 @@
+<div class="dashboard-container">
+	<aside class="sidebar">
+		<ul>
+			<li *ngFor="let section of sections" 
+							[class.active]="selectedSection === section.key"
+							(click)="selectSection(section.key)">
+				{{ section.label }}
+			</li>
+		</ul>
+	</aside>
+	<main class="main-content">
+		<ng-container [ngSwitch]="selectedSection">
+			<section *ngSwitchCase="'Customer'">
+				<div class="table-header">
+					<h2>Customer List</h2>
+					<button (click)="exportCustomers()">Export CSV</button>
+				</div>
+				<table class="customer-table">
+					<thead>
+						<tr>
+							<th>Customer ID</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Address</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let customer of customers">
+							<td>{{ customer.Customer_Id }}</td>
+							<td>{{ customer.name }}</td>
+							<td>{{ customer.email }}</td>
+							<td>{{ customer.address }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section *ngSwitchCase="'Coupon'">
+				<div class="table-header">
+					<h2>Coupon List</h2>
+					<button (click)="exportCoupons()">Export CSV</button>
+				</div>
+				<table class="coupon-table">
+					<thead>
+						<tr>
+							<th>Coupon ID</th>
+							<th>Code</th>
+							<th>Discount Type</th>
+							<th>Discount Value</th>
+							<th>Min Order Value</th>
+							<th>Max Discount Value</th>
+							<th>Valid From</th>
+							<th>Valid To</th>
+							<th>Usage Limit</th>
+							<th>Limit for Person</th>
+							<th>Status Activation</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let coupon of coupons">
+							<td>{{ coupon.Coupon_id }}</td>
+							<td>{{ coupon.Code }}</td>
+							<td>{{ coupon.Discount_type }}</td>
+							<td>{{ coupon.Discount_value }}</td>
+							<td>{{ coupon.MinOrderValue | number }}</td>
+							<td>{{ coupon.MaxDiscountValue | number }}</td>
+							<td>{{ coupon.ValidFrom }}</td>
+							<td>{{ coupon.ValidTo }}</td>
+							<td>{{ coupon.UsageLimit }}</td>
+							<td>{{ coupon.LimitForPerson }}</td>
+							<td>
+								<select [(ngModel)]="coupon.StatusActivation" (ngModelChange)="onEdit_for_Coupon(coupon)">
+									<option value="active">Active</option>
+									<option value="expired">Expired</option>
+									<option value="disabled">Disabled</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section *ngSwitchCase="'Inventory'">
+				<div class="table-header">
+					<h2>Inventory List</h2>
+					<button (click)="exportInventories()">Export CSV</button>
+				</div>
+				<table class="inventory-table">
+					<thead>
+						<tr>
+							<th>Inventory ID</th>
+							<th>Product Name</th>
+							<th>Quantity</th>
+							<th>Warehouse Name</th>
+							<th>Location</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let inventory of inventories">
+							<td>{{ inventory.InventoryId }}</td>
+							<td>{{ inventory.ProductName }}</td>
+							<td>{{ inventory.Quantity }}</td>
+							<td>{{ inventory.WarehouseName }}</td>
+							<td>{{ inventory.Location }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section *ngSwitchCase="'WareHouse'">
+				<div class="table-header">
+					<h2>Warehouse List</h2>
+					<button (click)="exportWarehouses()">Export CSV</button>
+				</div>
+				<table class="warehouse-table">
+					<thead>
+						<tr>
+							<th>Warehouse ID</th>
+							<th>Warehouse Name</th>
+							<th>Location</th>
+							<th>Capacity</th>
+							<th>Manager Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let warehouse of warehouses">
+							<td>{{ warehouse.Warehouse_ID }}</td>
+							<td>{{ warehouse.WarehouseName }}</td>
+							<td>{{ warehouse.Location }}</td>
+							<td>{{ warehouse.Capacity }}</td>
+							<td>{{ warehouse.ManagerName }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section *ngSwitchCase="'OrderStatus'">
+				<div class="table-header">
+					<h2>Order List</h2>
+					<button (click)="exportOrders()">Export CSV</button>
+				</div>
+				<table class="order-table" *ngIf="!selectedOrder">
+					<thead>
+						<tr>
+							<th>Order ID</th>
+							<th>Customer ID</th>
+							<th>Customer Username</th>
+							<th>Total Amount</th>
+							  <th>Order Status</th>
+							  <th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let order of orders">
+							<td>{{ order.OrderId }}</td>
+							<td>{{ order.CustomerId }}</td>
+							<td>{{ order.CustomerUsername }}</td>
+							<td>{{ order.TotalAmount | number }}</td>
+							<td>
+								<select [(ngModel)]="order.OrderStatus" (ngModelChange)="onEdit_for_Order_status(order)">
+									<option value="pending">Pending</option>
+									<option value="processing">Processing</option>
+									<option value="shipped">Shipped</option>
+									<option value="completed">Completed</option>
+									<option value="cancelled">Cancelled</option>
+								</select>
+							</td>
+							<td>
+								<button (click)="selectOrder(order)">View Detail</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				
+				<!-- Order Detail -->
+				<div *ngIf="selectedOrder" class="order-detail">
+					<button class="close-btn" (click)="closeOrderDetail()">Close</button>
+					<h3>Order Detail: {{ selectedOrder.OrderId }}</h3>
+					<table class="order-detail-table">
+						<thead>
+							<tr>
+								<th>Order Detail ID</th>
+								<th>Product Name</th>
+								<th>Quantity</th>
+								<th>Unit Price</th>
+								<th>Sub Total Amount</th>
+								<th>Payment ID</th>
+								<th>Payment Method</th>
+								<th>Payment Gateway ID</th>
+								<th>Payment Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let detail of selectedOrder.details">
+								<td>{{ detail.OrderDetailId }}</td>
+								<td>{{ detail.ProductName }}</td>
+								<td>{{ detail.Quantity }}</td>
+								<td>{{ detail.UnitPrice | number }}</td>
+								<td>{{ detail.SubTotalAmount | number }}</td>
+								<td>{{ detail.PaymentId }}</td>
+								<td>{{ detail.PaymentMethod }}</td>
+								<td>{{ detail.PaymentGatewayId }}</td>
+								<td>{{ detail.PaymentStatus }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</ng-container>
+		</main>
+
+		<!-- Popup xác nhận thay đổi -->
+		<div class="popup-backdrop" *ngIf="showConfirmPopup">
+			<div class="popup-modal">
+				<h3>You have some unsave changes!</h3>
+				<p>Do you want to save the changes or ignore them?</p>
+				<div class="popup-actions">
+					<button (click)="confirmIgnoreChanges()">Ignore all changes</button>
+					<button (click)="confirmSaveChanges()">Save changes</button>
+				</div>
+			</div>
+		</div>
+</div>
