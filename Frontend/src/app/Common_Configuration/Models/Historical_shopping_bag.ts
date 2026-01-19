@@ -22,5 +22,4 @@ export class HistoricalShoppingBag {
     bankCode_for_VNPay?:string;
     language_for_VNPay?:string;
     Method_by_Order?:string;
-
   }

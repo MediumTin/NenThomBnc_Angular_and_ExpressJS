@@ -27,7 +27,7 @@ router.get('/create_payment_url', function (req, res, next) {
     }])
 });
 
-router.get('/querydr', function (req, res, next) {
+router.post('/querydr', function (req, res, next) {
     console.log(`Requesting to with orderId: ${req}`);
     console.log(`Requesting to with orderId: ${req.body}`);
     
@@ -200,7 +200,7 @@ router.get('/vnpay_ipn', function (req, res, next) {
                         // Ở đây cập nhật trạng thái giao dịch thanh toán thất bại vào CSDL của bạn
                         paymentStatus = '2';
                         status_order_vnpay_ipn = 'FAILED_PAYMENT_With_VNPay_IPN'; // Response for polling for waiting result from Frontend
-                        res.status(200).json({RspCode: '00', Message: 'Success'})
+                        res.status(200).json({RspCode: `${rspCode}`, Message: 'Failed'})
                     }
                 }
                 else{

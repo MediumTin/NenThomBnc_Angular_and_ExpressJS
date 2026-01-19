@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserInformation } from '../../Common_Configuration/Models/UserInformation';
-import { CANDLE_INFORMATION_Request_Write_to_Session_URL, Create_Order_URL, Create_VNPAY_Order_URL, External_Exchange_Rate_API, PAYMENT_HANDLING_Merge_local_storage_and_DB, PAYMENT_HANDLING_Specific_Handling_URL, PAYMENT_HANDLING_URL } from '../../Common_Configuration/Constant/urls';
+import { CANDLE_INFORMATION_Request_Write_to_Session_URL, Capture_Order_URL, Check_status_Order_VNPay, Create_Order_URL, Create_VNPAY_Order_URL, External_Exchange_Rate_API, PAYMENT_HANDLING_Merge_local_storage_and_DB, PAYMENT_HANDLING_Specific_Handling_URL, PAYMENT_HANDLING_URL } from '../../Common_Configuration/Constant/urls';
 import { HistoricalShoppingBag } from '../../Common_Configuration/Models/Historical_shopping_bag';
 import { Selected_Candle } from '../../Common_Configuration/Models/Selected_candles';
 
@@ -57,11 +57,24 @@ export class PaymentService {
     }
 
   // Advanced payment method: Create PayPal order
-  Create_PayPal_Order(payment_data: HistoricalShoppingBag): Observable<any> {
+  Create_PayPal_Order(orderDetailsData: HistoricalShoppingBag): Observable<any> {
     console.log("Create_PayPal_Order successfully");
-    return this.http.post<any>(Create_Order_URL, payment_data, { 
+    return this.http.post(
+      Create_Order_URL, 
+      { orderDetails: orderDetailsData }, 
+      { 
+        withCredentials: true,
+        // headers: { 'Content-Type': 'application/json' }
+      }
+    );
+  }
+
+   // Advanced payment method: Create PayPal order
+  Capture_PayPal_Order(OrderId: any): Observable<any> {
+    console.log("Capture_PayPal_Order successfully");
+    return this.http.post<any>(Capture_Order_URL, { orderID: OrderId }, { 
       withCredentials: true,
-      headers: { 'Content-Type': 'application/json' }
+      // headers: { 'Content-Type': 'application/json' }
     });
   }
 
@@ -79,4 +92,14 @@ export class PaymentService {
   //   });
   // }
 
+    VNPay_Polling_to_QueryyDrr_to_Backend(orderId_VNPay: any): Observable <any> {
+    console.log("VNPay_Create_Order_to_Backend successfully");
+    return this.http.post<any>(
+      Check_status_Order_VNPay, 
+      {orderId : orderId_VNPay}, 
+      { 
+        withCredentials: true
+      // headers: { 'Content-Type': 'application/json' 
+      });
+  }
 }

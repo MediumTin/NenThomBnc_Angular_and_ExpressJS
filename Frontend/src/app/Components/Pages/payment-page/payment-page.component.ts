@@ -10,7 +10,7 @@ import { CandlesServiceService } from '../../../Services/CandlesService/candles-
 import { type } from 'node:os';
 import { Selected_Candle } from '../../../Common_Configuration/Models/Selected_candles';
 import { empty } from 'rxjs';
-import { Capture_Order_URL, Check_status_Order_VNPay, Create_Order_URL } from '../../../Common_Configuration/Constant/urls';
+import { Check_status_Order_VNPay} from '../../../Common_Configuration/Constant/urls';
 import { firstValueFrom } from 'rxjs';
 
 declare var paypal: any;
@@ -95,8 +95,7 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
     private http:HttpClient,
     private fb: FormBuilder, 
     private router:Router, 
-    private identification: 
-    IndentificationService, 
+    private identification: IndentificationService, 
     private paymentService: PaymentService,
     private candlesService : CandlesServiceService
   ) {
@@ -171,40 +170,39 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
     this.timer = setInterval(async () => {
       console.log('CALL API'); 
       console.log("Response from server orderId_VNPay is ", this.orderId_VNPay);
-      const res: any = await this.http
-        .get(`${Check_status_Order_VNPay}?orderId=${this.orderId_VNPay}`,{ withCredentials: true })
-        .toPromise();
-            console.log("Response from server VNpay_Url is ", res);
-            console.log("Response from server VNpay_Url status_order_vnpay_return is ", res.status_order_vnpay_return);
-            console.log("Response from server VNpay_Url status_order_vnpay_ipn is ", res.status_order_vnpay_ipn);
-            console.log("Response from server VNpay_Url is ", res.requested_orderID);
-          if (res.status_order_vnpay_return === 'PAID_With_VNPay_Return'){
-            if(res.status_order_vnpay_ipn === 'PAID_PAYMENT_With_VNPay_IPN') {
-              // clearInterval(this.timer);
-              this.stopPolling();
-              alert('Payment with VNPay successfully');
-              this.Passed_Confirmation();
-              this.orderId_VNPay = "";
-            }
-            else if (res.status_order_vnpay_ipn === 'FAILED_PAYMENT_With_VNPay_IPN') {
-              // clearInterval(this.timer);
-              this.stopPolling();
-              alert('Payment with VNPay Unsuccessfully. Please try again');
-              this.orderId_VNPay = "";
-            }
-            else if (res.status_order_vnpay_ipn === 'INCONSISTENCY_AMOUNT_VNPay_IPN') {
-              // clearInterval(this.timer);
-              this.stopPolling();
-              alert('Inconsistency amount. Please try again');
-              this.orderId_VNPay = "";
-            }
-            else if (res.status_order_vnpay_ipn === 'INCONSISTENCY_ORDER_VNPay_IPN') {
-              // clearInterval(this.timer);
-              this.stopPolling();
-              alert('Inconsistency order. Please try again');
-              this.orderId_VNPay = "";
-            }
-          }
+      // const res: any = await this.http.get(`${Check_status_Order_VNPay}?orderId=${this.orderId_VNPay}`,{ withCredentials: true });
+      const res: any = await firstValueFrom(this.paymentService.VNPay_Polling_to_QueryyDrr_to_Backend(this.orderId_VNPay));
+      console.log("Response from server VNpay_Url is ", res);
+      console.log("Response from server VNpay_Url status_order_vnpay_return is ", res.status_order_vnpay_return);
+      console.log("Response from server VNpay_Url status_order_vnpay_ipn is ", res.status_order_vnpay_ipn);
+      console.log("Response from server VNpay_Url is ", res.requested_orderID);
+      if (res.status_order_vnpay_return === 'PAID_With_VNPay_Return'){
+        if(res.status_order_vnpay_ipn === 'PAID_PAYMENT_With_VNPay_IPN') {
+          // clearInterval(this.timer);
+          this.stopPolling();
+          alert('Payment with VNPay successfully');
+          this.Passed_Confirmation();
+          this.orderId_VNPay = "";
+        }
+        else if (res.status_order_vnpay_ipn === 'FAILED_PAYMENT_With_VNPay_IPN') {
+          // clearInterval(this.timer);
+          this.stopPolling();
+          alert('Payment with VNPay Unsuccessfully. Please try again');
+          this.orderId_VNPay = "";
+        }
+        else if (res.status_order_vnpay_ipn === 'INCONSISTENCY_AMOUNT_VNPay_IPN') {
+          // clearInterval(this.timer);
+          this.stopPolling();
+          alert('Inconsistency amount. Please try again');
+          this.orderId_VNPay = "";
+        }
+        else if (res.status_order_vnpay_ipn === 'INCONSISTENCY_ORDER_VNPay_IPN') {
+          // clearInterval(this.timer);
+          this.stopPolling();
+          alert('Inconsistency order. Please try again');
+          this.orderId_VNPay = "";
+        }
+      }
     }, 3000);
   }
 
@@ -556,11 +554,8 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
           // Stardard flow of PayPal payment: Create order -> Approve payment -> Capture order
           // Fỉrst step: Create order
           createOrder: async () => {
-              const res: any = await firstValueFrom(
-                this.http.post(Create_Order_URL, {
-                  orderDetails: this.GetAllValidInformation_for_payment()
-                })
-              );
+              const orderDetails = this.GetAllValidInformation_for_payment();
+              const res : any = await firstValueFrom (this.paymentService.Create_PayPal_Order(orderDetails));
               console.log('Order created:', res);
               return res.id;  // Bắt buộc trả về id
             },
@@ -570,10 +565,11 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
           onApprove: async (data: any) => {
             this.orderID_from_PayPal = data.orderID;
             console.log("onApprove:", data);
-
             const details: any = await firstValueFrom(
-              this.http.post(Capture_Order_URL, { orderID: data.orderID })
+              this.paymentService.Capture_PayPal_Order(data.orderID)
             );
+
+
             // Third step: Capture order
             if(details.payer.name.given_name != null || details.payer.name.given_name != undefined){ 
               // Payment is successful

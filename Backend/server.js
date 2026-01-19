@@ -299,7 +299,7 @@ app.use('/api/login_handling',require('./routes/Candle_Web_Routes/Login_Web_Page
 // API 15: Check user identification
 app.use('/api/check_user_identification',require('./routes/Candle_Web_Routes/CheckUserIdentification'));
 // API 16: Admin - Add new product
-app.use('/api/Add_new_product',require('./routes/Candle_Web_Routes/Add_new_product_Information'));
+// app.use('/api/Add_new_product',require('./routes/Candle_Web_Routes/Add_new_product_Information'));
 // API 17: Payment handling
 app.use('/api/payment_handling',require('./routes/Candle_Web_Routes/Payment_Handling'));
 // API 18: Shopping bag handling
@@ -308,7 +308,7 @@ app.use('/api/Shopping_Bag_handling',require('./routes/Candle_Web_Routes/Shoppin
 // API 20: Test MySQL connection
 app.use('/api/mysql',require('./routes/MySQL_TestConnection'));
 
-// API 21: Get all product from MongoDB and Update Warehouse in MySQL
+// API 21: Get Data from MongoDB and merge with MySQL Warehouse
 app.get('/api/admin/update_warehouse_mysql', async (req,res)=>{
     const status_update = await Specific_file_for_admin.GetAllProduct_MongoDB_and_Update_Warehouse_MySQL(req,res); // Update new shopping bag to database
     res.json({ message: `Update status is ${status_update}`});
@@ -320,14 +320,14 @@ app.use('/api/payment/paypal',require('./routes/Payment_Gateway/Payment_Paypal')
 // API 23: Payment VNPay gateway 
 app.use('/api/payment/vnpay', require('./routes/Payment_Gateway/Payment_VNPay'));
 
-// API 24: Payment Momo gateway 
-app.use('/api/payment/momo', require('./routes/Payment_Gateway/Payment_Momo'));
+// // API 25: Payment Momo gateway - Off Momo for now due to need to sign a contract with Momo
+// app.use('/api/payment/momo', require('./routes/Payment_Gateway/Payment_Momo')); 
 
-// API 25: Admin management gateway 
+// API 24: Admin management gateway 
 app.use('/api/admin_management', require('./routes/Candle_Web_Routes/Admin_management'));
 
-// API 21: Get all product from MongoDB and Update Warehouse in MySQL
-app.get('/api/payment/momo_test', require('./controllers/API_with_Momo_Ex/Momo_Export'));
+// // API 26: Test API with Momo - Off Momo for now due to need to sign a contract with Momo
+// app.get('/api/payment/momo_test', require('./controllers/API_with_Momo_Ex/Momo_Export'));
 
 //--------------------------------Route to serve Angular app----------------------------------------------//
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)

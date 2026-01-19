@@ -19,7 +19,7 @@ Router.get('/show_detail',async (req,res)=>{
 // Tried POST method with PayPal payment gateway
 Router.post('/capture-order',async (req,res)=>{
     const { orderID } = req.body;
-    console.log(`Order ID received in server: ${orderID}`);
+    console.log(`Order ID received in server: ${orderID}`); 
     const status_update = await PayPal_Interface.CaptureOrder(orderID); // Update new shopping bag to database
     console.log(`status_update is ${status_update}`);
     console.log(`Buyer name is ${status_update.payer.name.given_name}`);
