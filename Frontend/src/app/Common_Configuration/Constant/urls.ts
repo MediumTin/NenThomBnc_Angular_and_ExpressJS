@@ -2,6 +2,7 @@ import { environment } from "../../../environments/environment";
 
 
 export const BASE_URL = environment.production? 'https://nenthombnc.com' : (environment.isNgRokUsing ? 'https://gangly-reclinable-shari.ngrok-free.dev': 'http://localhost:3500');
+export const WebSocket_URL = environment.production? 'wss://nenthombnc.com' : (environment.isNgRokUsing ? 'https://gangly-reclinable-shari.ngrok-free.dev': 'ws://localhost:3500');
 // export const BASE_URL = environment.production? 'https://nenthombnc.com' : 'http://localhost:3500';
 
 // Process with "candles"

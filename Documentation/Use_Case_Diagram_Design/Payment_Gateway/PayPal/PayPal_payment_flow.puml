@@ -1,0 +1,29 @@
+@startuml
+title PayPal Payment Flow
+
+actor User
+participant Frontend
+participant Backend
+participant PayPal
+
+User -> Frontend: Click "Pay with PayPal"
+
+Frontend -> Backend: POST /api/payment/paypal/create-order\n{ Selected_List_Object,\n  Price_currency }
+Backend -> PayPal: POST /v2/checkout/orders\n(Access Token valid)
+PayPal --> Backend: ApprovalURL + OrderId
+Backend --> Frontend: { id: OrderId }
+
+Frontend -> User: Redirect to PayPal
+User -> PayPal: Approve payment
+
+PayPal --> User: Redirect back\n(included OrderId)
+User -> Frontend: Return from PayPal
+
+Frontend -> Backend: POST /api/payment/paypal/capture-order\n{ OrderId }
+Backend -> PayPal: POST /v2/checkout/orders/{OrderId}/capture\n(Access Token valid)
+
+PayPal --> Backend: Capture result\n(SUCCESS / FAILED)
+Backend --> Frontend: Payment Status
+Frontend --> User: Show Result
+
+@enduml

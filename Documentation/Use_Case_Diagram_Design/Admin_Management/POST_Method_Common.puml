@@ -1,0 +1,18 @@
+@startuml
+title Admin - Update Data (Invalidate Cache)
+
+actor Admin
+participant Frontend
+participant Backend
+participant Redis
+participant MySQL
+
+Admin -> Frontend: Update data
+Frontend -> Backend: POST <API>
+
+Backend -> MySQL: Update records
+Backend -> Redis: Delete related cache
+Backend --> Frontend: Success message
+Frontend --> Admin: Show success
+
+@enduml

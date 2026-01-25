@@ -7,6 +7,7 @@ let router = express.Router();
 let $ = require('jquery');
 const request = require('request');
 const moment = require('moment');
+const { emitPaymentStatus } = require('../../controllers/WebSocket/WebSocket_connection');
 const isProduction = process.env.IS_PRODUCTION === 'true';
 let status_order_vnpay_return = 'PENDING';
 let status_order_vnpay_ipn = 'PENDING';
@@ -119,7 +120,7 @@ router.post('/create_payment_url', function (req, res, next) {
 // Second step: VNPay return URL - Browser automatically redirect to here via return url configured
 router.get('/vnpay_return', function (req, res, next) {
     let vnp_Params = req.query;
-
+    let orderId = vnp_Params['vnp_TxnRef'];
     let secureHash = vnp_Params['vnp_SecureHash'];
 
     delete vnp_Params['vnp_SecureHash'];
@@ -140,6 +141,13 @@ router.get('/vnpay_return', function (req, res, next) {
 
         // res.render('success', {code: vnp_Params['vnp_ResponseCode']})
         status_order_vnpay_return = 'PAID_With_VNPay_Return'; // Response for polling for waiting result from Frontend - Just for testing in local - official will process in vnpay_ipn
+        emitPaymentStatus(
+            orderId, {
+                        source: 'RETURN',
+                        status: 'SUCCESS'
+                    }
+        );
+
         res.status(200).send(
         [{
             "VNPay_Result" : "success",
@@ -148,6 +156,12 @@ router.get('/vnpay_return', function (req, res, next) {
     } else{
         status_order_vnpay_return = 'FAILED_With_VNPay_Return'; // Response for polling for waiting result from Frontend - Just for testing in local - official will process in vnpay_ipn
         // res.render('success', {code: '97'})
+        // 🔥 EMIT FAILED TO FRONTEND
+        emitPaymentStatus(orderId, {
+            source: 'RETURN',
+            status: 'FAILED',
+            rspCode
+        });
         res.status(200).send(
         [{
             "VNPay_Result" : "success",
@@ -192,6 +206,11 @@ router.get('/vnpay_ipn', function (req, res, next) {
                         // Ở đây cập nhật trạng thái giao dịch thanh toán thành công vào CSDL của bạn
                         paymentStatus = '1';
                         status_order_vnpay_ipn = 'PAID_PAYMENT_With_VNPay_IPN'; // Response for polling for waiting result from Frontend
+                        // 🔥 EMIT SUCCESS TO FRONTEND
+                        emitPaymentStatus(orderId, {
+                            source: 'IPN',
+                            status: 'SUCCESS'
+                        });
                         res.status(200).json({RspCode: '00', Message: 'Success'})
                     }
                     else {
@@ -200,6 +219,12 @@ router.get('/vnpay_ipn', function (req, res, next) {
                         // Ở đây cập nhật trạng thái giao dịch thanh toán thất bại vào CSDL của bạn
                         paymentStatus = '2';
                         status_order_vnpay_ipn = 'FAILED_PAYMENT_With_VNPay_IPN'; // Response for polling for waiting result from Frontend
+                        // 🔥 EMIT FAILED TO FRONTEND
+                        emitPaymentStatus(orderId, {
+                            source: 'IPN',
+                            status: 'FAILED',
+                            rspCode
+                        });
                         res.status(200).json({RspCode: `${rspCode}`, Message: 'Failed'})
                     }
                 }
@@ -222,63 +247,64 @@ router.get('/vnpay_ipn', function (req, res, next) {
         status_order_vnpay_ipn = 'INCONSISTENCY_HASH_VNPay_IPN'; // Response for polling for waiting result from Frontend
         res.status(200).json({RspCode: '97', Message: 'Checksum failed'})
     }
+    // emitPaymentStatus(orderId, 'PAID');
 });
 
-router.post('/querydr', function (req, res, next) {
+// router.post('/querydr', function (req, res, next) {
     
-    process.env.TZ = 'Asia/Ho_Chi_Minh';
-    let date = new Date();
+//     process.env.TZ = 'Asia/Ho_Chi_Minh';
+//     let date = new Date();
 
-    let crypto = require("crypto");
+//     let crypto = require("crypto");
     
-    let vnp_TmnCode = process.env.vnp_TmnCode;
-    let secretKey = process.env.vnp_HashSecret;
-    let vnp_Api = process.env.vnp_Api;
+//     let vnp_TmnCode = process.env.vnp_TmnCode;
+//     let secretKey = process.env.vnp_HashSecret;
+//     let vnp_Api = process.env.vnp_Api;
     
-    let vnp_TxnRef = req.body.orderId;
-    let vnp_TransactionDate = req.body.transDate;
+//     let vnp_TxnRef = req.body.orderId;
+//     let vnp_TransactionDate = req.body.transDate;
     
-    let vnp_RequestId =moment(date).format('HHmmss');
-    let vnp_Version = '2.1.0';
-    let vnp_Command = 'querydr';
-    let vnp_OrderInfo = 'Truy van GD ma:' + vnp_TxnRef;
+//     let vnp_RequestId =moment(date).format('HHmmss');
+//     let vnp_Version = '2.1.0';
+//     let vnp_Command = 'querydr';
+//     let vnp_OrderInfo = 'Truy van GD ma:' + vnp_TxnRef;
     
-    let vnp_IpAddr = req.headers['x-forwarded-for'] ||
-        req.connection.remoteAddress ||
-        req.socket.remoteAddress ||
-        req.connection.socket.remoteAddress;
+//     let vnp_IpAddr = req.headers['x-forwarded-for'] ||
+//         req.connection.remoteAddress ||
+//         req.socket.remoteAddress ||
+//         req.connection.socket.remoteAddress;
 
-    let currCode = 'VND';
-    let vnp_CreateDate = moment(date).format('YYYYMMDDHHmmss');
+//     let currCode = 'VND';
+//     let vnp_CreateDate = moment(date).format('YYYYMMDDHHmmss');
     
-    let data = vnp_RequestId + "|" + vnp_Version + "|" + vnp_Command + "|" + vnp_TmnCode + "|" + vnp_TxnRef + "|" + vnp_TransactionDate + "|" + vnp_CreateDate + "|" + vnp_IpAddr + "|" + vnp_OrderInfo;
+//     let data = vnp_RequestId + "|" + vnp_Version + "|" + vnp_Command + "|" + vnp_TmnCode + "|" + vnp_TxnRef + "|" + vnp_TransactionDate + "|" + vnp_CreateDate + "|" + vnp_IpAddr + "|" + vnp_OrderInfo;
     
-    let hmac = crypto.createHmac("sha512", secretKey);
-    let vnp_SecureHash = hmac.update(new Buffer(data, 'utf-8')).digest("hex"); 
+//     let hmac = crypto.createHmac("sha512", secretKey);
+//     let vnp_SecureHash = hmac.update(new Buffer(data, 'utf-8')).digest("hex"); 
     
-    let dataObj = {
-        'vnp_RequestId': vnp_RequestId,
-        'vnp_Version': vnp_Version,
-        'vnp_Command': vnp_Command,
-        'vnp_TmnCode': vnp_TmnCode,
-        'vnp_TxnRef': vnp_TxnRef,
-        'vnp_OrderInfo': vnp_OrderInfo,
-        'vnp_TransactionDate': vnp_TransactionDate,
-        'vnp_CreateDate': vnp_CreateDate,
-        'vnp_IpAddr': vnp_IpAddr,
-        'vnp_SecureHash': vnp_SecureHash
-    };
-    // /merchant_webapi/api/transaction
-    request({
-        url: vnp_Api,
-        method: "POST",
-        json: true,   
-        body: dataObj
-            }, function (error, response, body){
-                console.log(response);
-            });
+//     let dataObj = {
+//         'vnp_RequestId': vnp_RequestId,
+//         'vnp_Version': vnp_Version,
+//         'vnp_Command': vnp_Command,
+//         'vnp_TmnCode': vnp_TmnCode,
+//         'vnp_TxnRef': vnp_TxnRef,
+//         'vnp_OrderInfo': vnp_OrderInfo,
+//         'vnp_TransactionDate': vnp_TransactionDate,
+//         'vnp_CreateDate': vnp_CreateDate,
+//         'vnp_IpAddr': vnp_IpAddr,
+//         'vnp_SecureHash': vnp_SecureHash
+//     };
+//     // /merchant_webapi/api/transaction
+//     request({
+//         url: vnp_Api,
+//         method: "POST",
+//         json: true,   
+//         body: dataObj
+//             }, function (error, response, body){
+//                 console.log(response);
+//             });
 
-});
+// });
 
 router.post('/refund', function (req, res, next) {
     

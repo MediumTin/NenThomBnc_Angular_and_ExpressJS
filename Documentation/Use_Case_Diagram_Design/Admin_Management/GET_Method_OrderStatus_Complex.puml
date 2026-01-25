@@ -1,0 +1,37 @@
+@startuml
+title Admin - Get Order Status List
+
+actor Admin
+participant "Angular Frontend" as FE
+participant "Express Backend" as BE
+participant Redis
+participant MySQL
+
+Admin -> FE: Open Order Management
+FE -> BE: GET /orderstatus
+
+BE -> Redis: Get_Order_Detail_list_For_Admin
+
+alt Cache Miss
+    Redis --> BE: null
+
+    BE -> MySQL: Get_Order_Detail_List_for_Admin
+    MySQL --> BE: Order list
+
+    loop For each order
+        BE -> MySQL: Get_Order_Detail_for_Admin(order_id)
+        MySQL --> BE: Order detail items
+        BE -> BE: Build detail_items
+    end
+
+    BE -> BE: Build response_array
+    BE -> Redis: Set cache (Order detail list)
+
+else Cache Hit
+    Redis --> BE: Cached order detail list
+end
+
+BE --> FE: Order detail list
+FE --> Admin: Display orders & details
+
+@enduml

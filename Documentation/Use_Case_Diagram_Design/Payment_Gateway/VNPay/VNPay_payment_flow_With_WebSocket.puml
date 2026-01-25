@@ -1,0 +1,41 @@
+@startuml
+title VNPAY Payment Flow (IPN + WebSocket, No Polling)
+
+actor User
+participant "Angular Frontend" as FE
+participant "Express Backend" as BE
+participant "VNPAY Gateway" as VNPAY
+database DB
+
+User -> FE: Click "Pay with VNPAY"
+
+FE -> BE: POST /api/payment/vnpay/create_payment_url
+BE -> DB: Create order (PENDING)
+BE --> FE: paymentUrl + orderId
+
+FE -> BE: Open WebSocket (subscribe orderId)
+
+FE -> User: Redirect to VNPAY
+User -> VNPAY: Complete payment
+
+VNPAY -> BE: POST /api/payment/vnpay/ipn
+BE -> BE: Verify signature
+BE -> DB: Update payment = PAID / FAILED
+
+BE -> FE: WebSocket event\n{ orderId, status { source, status, rspCode } }
+
+alt msg.status.source == "IPN"
+    alt msg.status.status == "SUCCESS"
+        FE -> FE: Set paymentStatus = SUCCESS
+        FE -> User: Alert "Payment successful 🎉"
+        FE -> FE: Passed_Confirmation()
+    else msg.status.status == "FAILED"
+        FE -> FE: Set paymentStatus = FAILED
+        FE -> User: Alert "Payment failed ❌"
+    end
+    FE -> BE: Close WebSocket connection
+else Not IPN source
+    FE -> FE: Ignore message
+end
+
+@enduml

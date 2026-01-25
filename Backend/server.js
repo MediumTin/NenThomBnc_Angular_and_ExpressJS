@@ -364,7 +364,9 @@ app.use(errorHandler);
 // Method is used to start a web server and listen for connections on a specified host and port
 mongoose.connection.once('open',()=>{
     console.log('Connected to MongooseDB');
-    app.listen(PORT, ()=> console.log(`Server is running on Port: ${PORT}`));  
+    // const server = http.createServer(app);
+    const server = app.listen(PORT, ()=> console.log(`Server is running on Port: ${PORT}`));  
+    require('./controllers/WebSocket/WebSocket_connection').init(server);
 })
 
 // const mysql = require('mysql2');
@@ -400,6 +402,8 @@ mongoose.connection.once('open',()=>{
 //     connection.end();
 //   });
 // });
+
+
 
 
 

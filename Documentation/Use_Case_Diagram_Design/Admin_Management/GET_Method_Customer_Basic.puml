@@ -1,0 +1,28 @@
+@startuml
+title Admin - Get Customer List
+
+actor Admin
+participant Frontend
+participant Backend
+participant Redis
+participant MySQL
+
+Admin -> Frontend: Open Customer Management
+Frontend -> Backend: GET /customer
+
+Backend -> Redis: Get_Customer_List_For_Admin
+
+alt Cache Miss
+    Redis --> Backend: null
+    Backend -> MySQL: Get_Customer_List_in_MySQL_DB_for_Admin
+    MySQL --> Backend: Customer list
+    Backend -> Backend: Build response_array
+    Backend -> Redis: Set cache (Customer list)
+else Cache Hit
+    Redis --> Backend: Cached customer list
+end
+
+Backend --> Frontend: Customer list
+Frontend --> Admin: Display customers
+
+@enduml

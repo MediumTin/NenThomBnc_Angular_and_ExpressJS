@@ -1,0 +1,17 @@
+@startuml
+title Admin Management - System Overview
+
+actor Admin
+participant "Angular Frontend" as FE
+participant "Express Backend" as BE
+participant Redis
+participant MySQL
+
+Admin -> FE: Manage system data
+FE -> BE: Admin APIs
+BE -> Redis: Read / Write cache
+BE -> MySQL: Query / Update data
+BE --> FE: Response data
+FE --> Admin: Display result
+
+@enduml

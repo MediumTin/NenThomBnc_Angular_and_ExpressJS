@@ -1,0 +1,47 @@
+@startuml
+title WebSocket Principle (Frontend ↔ Backend, Order-based Subscription)
+
+participant "Angular Frontend" as FE
+participant "Express Backend\n(WebSocket Server)" as BE
+
+== Open connection ==
+
+FE -> BE: Open WebSocket connection
+BE --> FE: Connection established (101 Switching Protocols)
+
+== Subscribe to resource ==
+
+FE -> BE: Send message\n{ orderId }
+BE -> BE: ws.orderId = orderId\n(store on connection)
+
+== Backend business event happens ==
+
+note right of BE
+Event triggered by:
+- VNPay IPN
+- Internal job
+- Other async source
+end note
+
+BE -> BE: emitPaymentStatus(orderId, status)
+
+== Emit to matched client ==
+
+loop for each ws in wss.clients
+    BE -> BE: if ws.orderId == orderId
+    BE -> FE: WebSocket message\n{ orderId, status }
+end
+
+== Frontend handle message ==
+
+FE -> FE: if msg.status.source == "IPN"
+FE -> FE: if msg.status.status == SUCCESS / FAILED
+FE -> FE: Update UI state
+FE -> FE: Show alert / confirm order
+
+== Close connection ==
+
+FE -> BE: Close WebSocket
+BE -> FE: Connection closed
+
+@enduml

@@ -4,12 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { IndentificationService } from '../../../Services/IdentificationService/indentification.service';
 import { PaymentService } from '../../../Services/payment/payment.service';
+import { PaymentWebSocketService } from '../../../Services/PaymentWebSocket/payment-web-socket.service';
 import { HistoricalShoppingBag } from '../../../Common_Configuration/Models/Historical_shopping_bag';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CandlesServiceService } from '../../../Services/CandlesService/candles-service.service';
 import { type } from 'node:os';
 import { Selected_Candle } from '../../../Common_Configuration/Models/Selected_candles';
-import { empty } from 'rxjs';
+import { empty, Subscription } from 'rxjs';
 import { Check_status_Order_VNPay} from '../../../Common_Configuration/Constant/urls';
 import { firstValueFrom } from 'rxjs';
 
@@ -89,7 +90,9 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
     Selected_List: [],
     Price_currency: ''
   };
-  
+  orderId!: string;
+  paymentStatus = '';
+  wsSub!: Subscription;
 
   constructor(
     private http:HttpClient,
@@ -97,7 +100,9 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
     private router:Router, 
     private identification: IndentificationService, 
     private paymentService: PaymentService,
-    private candlesService : CandlesServiceService
+    private candlesService : CandlesServiceService,
+    // private wsService: PaymentWsService
+    private wsService: PaymentWebSocketService
   ) {
     // this.SelectedFromPersonalShoppingBags = "";
     const sessionInfo = this.identification.GetSessionID();
@@ -165,6 +170,30 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
     this.isButtonBackgroundChecked[0] = true;
   }
 
+  listenPaymentStatus(orderId: string) {
+    console.log('Listening payment status for orderId:', orderId);
+    this.wsSub = this.wsService.connect(orderId)
+      .subscribe((msg) => {
+        console.log('WS message:', msg);
+
+        if (msg.status.source === 'IPN') {
+          if (msg.status.status === 'SUCCESS') {
+            this.paymentStatus = 'Payment successful 🎉';
+            alert('Payment with VNPay successfully');
+            this.Passed_Confirmation();
+            this.orderId_VNPay = "";
+          } else {
+            this.paymentStatus = 'Payment failed ❌';
+            alert('Payment with VNPay Unsuccessfully. Please try again');
+            this.orderId_VNPay = "";
+          }
+          console.log('Final payment status from IPN from WebSocket:', this.paymentStatus);
+          // 🔒 stop listening after final status
+          this.wsService.close();
+        }
+        console.log('Current payment status from WebSocket:', this.paymentStatus);
+      });
+  }
     startPolling_Check_Order_status_VNPay() {
       console.log('START POLLING'); 
     this.timer = setInterval(async () => {
@@ -719,12 +748,16 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
       this.orderId_VNPay = VNPay_OrderId;
       console.log("Response from server VNpay_Url is ", VNpay_Url);
       console.log("Response from server VNPay_OrderId is ", VNPay_OrderId);
+
+      // 🔥 CONNECT WEBSOCKET BEFORE REDIRECT
+        this.listenPaymentStatus(VNPay_OrderId);
+
       // window.location.href = response.vnpUrl;
       window.open(VNpay_Url, '_blank'); // 👈 mở tab mới
       }, (error) => {
         console.error("Error occurred while writing into Redis cache and database:", error);
       });
-      this.startPolling_Check_Order_status_VNPay();
+      // this.startPolling_Check_Order_status_VNPay();
   }
 
   isProductChecked(i: number, event: Event) {
