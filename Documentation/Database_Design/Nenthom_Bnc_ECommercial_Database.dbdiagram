@@ -1,0 +1,83 @@
+{
+  "version": "1.0.0",
+  "darkMode": true,
+  "gridEnabling": false,
+  "detailLevel": "All",
+  "tablePositions": [
+    {
+      "name": "coupons",
+      "schemaName": "public",
+      "x": 12,
+      "y": 12
+    },
+    {
+      "name": "customer_coupons",
+      "schemaName": "public",
+      "x": 666.90966796875,
+      "y": 53
+    },
+    {
+      "name": "customers",
+      "schemaName": "public",
+      "x": 12,
+      "y": 506
+    },
+    {
+      "name": "inventory",
+      "schemaName": "public",
+      "x": 666.90966796875,
+      "y": 909
+    },
+    {
+      "name": "order_coupons",
+      "schemaName": "public",
+      "x": 1361.06884765625,
+      "y": 22.224297750070548
+    },
+    {
+      "name": "order_details_inventory",
+      "schemaName": "public",
+      "x": 1375.0986328125,
+      "y": 909
+    },
+    {
+      "name": "order_details",
+      "schemaName": "public",
+      "x": 1385.697265625,
+      "y": 286.53892787569373
+    },
+    {
+      "name": "orders",
+      "schemaName": "public",
+      "x": 666.90966796875,
+      "y": 259
+    },
+    {
+      "name": "payments",
+      "schemaName": "public",
+      "x": 1252.123046875,
+      "y": 525.2928136261406
+    },
+    {
+      "name": "personal_shopping_bag",
+      "schemaName": "public",
+      "x": 666.90966796875,
+      "y": 497
+    },
+    {
+      "name": "phone",
+      "schemaName": "public",
+      "x": 666.90966796875,
+      "y": 767
+    },
+    {
+      "name": "ware_houses",
+      "schemaName": "public",
+      "x": 12,
+      "y": 840
+    }
+  ],
+  "tableGroupCollapseStates": [],
+  "stickyNoteLayouts": [],
+  "referencePaths": []
+}

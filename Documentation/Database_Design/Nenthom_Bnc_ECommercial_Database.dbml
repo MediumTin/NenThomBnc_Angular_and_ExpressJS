@@ -1,0 +1,172 @@
+
+Enum "coupons_discount_type_enum" {
+  "percent"
+  "amount"
+}
+
+Enum "coupons_status_enum" {
+  "active"
+  "expired"
+  "disabled"
+}
+
+Enum "orders_status_order_enum" {
+  "pending"
+  "processing"
+  "shipped"
+  "completed"
+  "cancelled"
+}
+
+Enum "payments_method_enum" {
+  "cash"
+  "paypal"
+  "vnpay"
+  "momo"
+}
+
+Enum "payments_status_payment_enum" {
+  "pending"
+  "success"
+  "failed"
+  "refund"
+}
+
+Table "coupons" {
+  "coupon_id" int(11) [pk, not null]
+  "code" varchar(50) [not null]
+  "discount_type" coupons_discount_type_enum [not null]
+  "discount_value" decimal(10,2) [not null]
+  "min_order_value" decimal(10,2)
+  "max_discount_value" decimal(10,2)
+  "valid_from" datetime [not null]
+  "valid_to" datetime [not null]
+  "usage_limit" int(11)
+  "per_user_limit" int(11)
+  "status" coupons_status_enum [default: 'active']
+  "created_at" datetime [default: `current_timestamp()`]
+  "updated_at" datetime [default: `current_timestamp()`]
+}
+
+Table "customer_coupons" {
+  "customer_id" int(11) [not null]
+  "coupon_id" int(11) [not null]
+  "times_used" int(11) [default: 0]
+  "last_used_at" datetime
+
+  Indexes {
+    (customer_id, coupon_id) [pk]
+  }
+}
+
+Table "customers" {
+  "customer_id" int(11) [pk, not null]
+  "email" varchar(100) [not null]
+  "address" varchar(255)
+  "created_at" timestamp [not null, default: `current_timestamp()`]
+  "username" varchar(100) [not null]
+  "password" varchar(255) [not null]
+  "first_name" varchar(100)
+  "last_name" varchar(100)
+}
+
+Table "inventory" {
+  "inventory_id" int(11) [pk, not null]
+  "warehouse_id" int(11) [not null]
+  "product_sku" varchar(100) [not null]
+  "quantity_storage" int(11) [not null, default: 0]
+  "updated_at" datetime [default: `current_timestamp()`]
+}
+
+Table "order_coupons" {
+  "order_id" int(11) [not null]
+  "coupon_id" int(11) [not null]
+  "discount_applied" decimal(12,2) [default: 0.00]
+
+  Indexes {
+    (order_id, coupon_id) [pk]
+  }
+}
+
+Table "order_details_inventory" {
+  "order_detail_id" int(11) [not null]
+  "inventory_id" int(11) [not null]
+  "allocated_quantity" int(11) [not null]
+
+  Indexes {
+    (order_detail_id, inventory_id) [pk]
+  }
+}
+
+Table "order_details" {
+  "order_detail_id" int(11) [pk, not null]
+  "order_id" int(11) [not null]
+  "quantity" int(11) [not null]
+}
+
+Table "orders" {
+  "order_id" int(11) [pk, not null]
+  "customer_id" int(11) [not null]
+  "order_date" datetime [default: `current_timestamp()`]
+  "total_amount" decimal(12,2) [not null]
+  "status_order" orders_status_order_enum [default: 'pending']
+}
+
+Table "payments" {
+  "payment_id" int(11) [pk, not null]
+  "order_id" int(11) [not null]
+  "method" payments_method_enum [not null]
+  "payment_gateway_id" varchar(255)
+  "status_payment" payments_status_payment_enum [default: 'pending']
+  "payment_date" datetime [default: `current_timestamp()`]
+}
+
+Table "personal_shopping_bag" {
+  "bag_item_id" int(11) [pk, not null]
+  "customer_id" int(11) [not null]
+  "candle_name" varchar(255)
+  "quantity" int(11)
+  "price_unit" decimal(10,2)
+  "candle_image" varchar(500)
+}
+
+Table "phone" {
+  "customer_id" int(11) [not null]
+  "phone" varchar(20) [not null]
+
+  Indexes {
+    (customer_id, phone) [pk]
+  }
+}
+
+Table "ware_houses" {
+  "warehouse_id" int(11) [pk, not null]
+  "name" varchar(100) [not null]
+  "location" varchar(255)
+  "capacity" int(11)
+  "manager_name" varchar(100)
+}
+
+Ref "fk_cc_coupon":"coupons"."coupon_id" < "customer_coupons"."coupon_id" [update: cascade, delete: cascade]
+
+Ref "fk_cc_customer":"customers"."customer_id" < "customer_coupons"."customer_id" [update: cascade, delete: cascade]
+
+Ref "fk_inventory_warehouse":"ware_houses"."warehouse_id" < "inventory"."warehouse_id" [update: cascade]
+
+Ref "fk_oc_coupon":"coupons"."coupon_id" < "order_coupons"."coupon_id" [update: cascade, delete: cascade]
+
+Ref "fk_oc_order":"orders"."order_id" < "order_coupons"."order_id" [update: cascade, delete: cascade]
+
+Ref "order_details_inventory_ibfk_1":"order_details"."order_detail_id" < "order_details_inventory"."order_detail_id"
+
+Ref "order_details_inventory_ibfk_2":"inventory"."inventory_id" < "order_details_inventory"."inventory_id"
+
+Ref "order_details_ibfk_1":"orders"."order_id" < "order_details"."order_id"
+
+Ref "fk_orders_customer":"customers"."customer_id" < "orders"."customer_id" [update: cascade]
+
+Ref "fk_payments_order":"orders"."order_id" < "payments"."order_id" [update: cascade, delete: cascade]
+
+Ref "personal_shopping_bag_ibfk_1":"customers"."customer_id" < "personal_shopping_bag"."customer_id"
+
+Ref "phone_ibfk_1":"customers"."customer_id" < "phone"."customer_id" [update: cascade, delete: cascade]
