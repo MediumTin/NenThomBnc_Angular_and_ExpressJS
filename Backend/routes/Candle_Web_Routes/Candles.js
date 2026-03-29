@@ -268,8 +268,11 @@ const Request_Add_New_Product = async (req,res) => {
       Request_Add_Image
    );
    console.log("Result of Add new product in Mongo DB : ",result);
-   var result_of_MySQL = await Product_Information_From_MySQL.Update_product_in_Warehouse(
+   var result_of_MySQL = await Product_Information_From_MySQL.Add_new_product_to_Products_and_Inventory_MySQL(
       Request_Add_Name,
+      Request_Add_Price,
+      Request_Add_Type,
+      Request_Add_Image,
       Request_Add_Quantity,
       Request_Add_Area
    );
@@ -312,7 +315,7 @@ const Request_To_RemoveProduct = async (req,res) => {
       Request_Remove_Name
    );
    console.log("Result of Remove product : ",result);
-   var result_of_MySQL = await Product_Information_From_MySQL.Delete_product_in_Warehouse(
+   var result_of_MySQL = await Product_Information_From_MySQL.Delete_product_in_Products(
       Request_Remove_Name
    );
    console.log("Result of Remove product in My SQL : ",result_of_MySQL);

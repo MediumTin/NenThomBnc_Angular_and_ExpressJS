@@ -45,25 +45,20 @@ Router.get('/',(req,res)=>{
          } else {
              // Work with the session
             // const LOC_Result_from_SessionStorage = session.personal_shopping_bag; // Return info related to shopping bag
-            var CurrentUser = session.personal_information.username;
-            var LOC_Result_from_SessionStorage = await SyncUp_Info_Redis_And_DB(CurrentUser);
+            var customer_id = req.session.personal_information && req.session.personal_information.customer_id;
+            if (!customer_id) {
+            req.session.destroy();
+            res.status(200).send(
+            [{
+               "status" : "Session timeout",
+            }]
+            );
+            return;
+            }
+            var LOC_Result_from_SessionStorage = await SyncUp_Info_Redis_And_DB(customer_id);
             console.log(`LOC_Result_from_SessionStorage : ${LOC_Result_from_SessionStorage}`);
             console.log(`Global interface is ${Global_Interface.isFirstTimeLogin}`);
-
-            // Scenario 1: If want user can access the website without login
             LOC_Result_from_SessionStorage = JSON.parse(LOC_Result_from_SessionStorage);
-
-            // Scenario 2: If want user must login before access the website
-            // if(Global_Interface.isFirstTimeLogin != false){
-            //    Global_Interface.isFirstTimeLogin = true;
-            //    LOC_Result_from_SessionStorage = JSON.parse(LOC_Result_from_SessionStorage);
-            // }
-            // if(Global_Interface.isFirstTimeLogin == false){
-            //    // first time after request write
-            //    Global_Interface.isFirstTimeLogin = true;
-            // }
-
-            
             console.log(`type of LOC_Result_from_SessionStorage : ${(LOC_Result_from_SessionStorage[0])}`);
             old_array = LOC_Result_from_SessionStorage;
             res.status(200).render('Shopping_Bag',{
@@ -71,15 +66,6 @@ Router.get('/',(req,res)=>{
             account : `${CurrentUser}`,
             sessionStorage : JSON.stringify(LOC_Result_from_SessionStorage[0]) // Return info related to shopping bag
                });
-
-            // res.status(200).send(
-            // [{
-            //    "Currentuser" : `${req.session.personal_information.username}`,
-            //    "SessionID" : `${req.sessionID}`,
-            //    "personal_shopping_bag" : JSON.stringify(LOC_Result_from_Database[0])
-            // }]);
-
-            
          }
      });
       
@@ -92,15 +78,15 @@ Router.get('/',(req,res)=>{
 })
 
 
-const SyncUp_Info_Redis_And_DB = async (username)=>{
+const SyncUp_Info_Redis_And_DB = async (customer_id)=>{
    await Redis_API.Connect_To_Redis(client); // Open connection to Redis
-   const Result_Read_From_Cache = await Redis_API.Get_Personal_Shopping_Bag(client,username); // Check request is exist in Cache or not
+   const Result_Read_From_Cache = await Redis_API.Get_Personal_Shopping_Bag(client,customer_id); // Check request is exist in Cache or not
    console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
    if(Result_Read_From_Cache == null){
       console.log("Miss cached");
       if(isDatabaseCombination){
          console.log("Database combination mode is ON");
-         var Personal_Shopping_Bag = await User_Information_From_MySQL.GetShoppingBagFromUser_MYSQL(username); // Read data from database
+         var Personal_Shopping_Bag = await User_Information_From_MySQL.GetShoppingBagFromUser_MYSQL(customer_id); // Read data from database
       } else {
          console.log("Database combination mode is OFF");
          var Personal_Shopping_Bag = await User_Information_Handling.GetShoppingBagFromUser(username); // Read data from database

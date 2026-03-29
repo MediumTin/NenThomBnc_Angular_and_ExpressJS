@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 23, 2026 at 09:44 PM
+-- Generation Time: Mar 20, 2026 at 12:18 AM
 -- Server version: 10.6.18-MariaDB-cll-lve-log
--- PHP Version: 8.4.17
+-- PHP Version: 8.4.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,9 +50,9 @@ INSERT INTO `customers` (`customer_id`, `email`, `address`, `created_at`, `usern
 (5, 'nguyenvantu1975@gmail.com', 'Hue', '2025-11-06 18:22:42', 'nguyenvantu1975@gmail.com', '', 'Nguyen Van', 'Tu'),
 (6, 'nguyenvanminh2001@gmail.com', '558/1/16 Binh Quoi Street', '2024-01-05 03:15:00', 'nguyenvanminh2001@gmail.com', '09004092001', 'Nguyen Van', 'Minh'),
 (7, 'nguyenvantoan2001@gmail.com', 'Binh Thanh', '2024-01-05 03:15:00', 'nguyenvantoan2001@gmail.com', '09004092001', 'Nguyen Van', 'Toan'),
-(11, 'nguyenvanlan2001@gmail.com', 'Binh Thanh', '2024-01-05 03:15:00', 'nguyenvanlan2001@gmail.com', '09004092001', 'Nguyen Van', 'Lan'),
-(12, 'tranminhtoan2001@gmail.com', 'Binh Thanh', '0000-00-00 00:00:00', 'tranminhtoan2001@gmail.com', '09004092001', 'Tran Minh', 'Toan'),
-(14, 'tranminhphong2001@gmail.com', 'Binh Thanh', '2025-11-24 01:24:28', 'tranminhphong2001@gmail.com', '09004092001', 'Tran Minh', 'Phong');
+(8, 'nguyenvanlan2001@gmail.com', 'Binh Thanh', '2026-03-19 16:50:20', 'nguyenvanlan2001@gmail.com', '09004092001', 'Nguyen Van', 'Lan'),
+(9, 'tranminhtoan2001@gmail.com', 'Binh Thanh', '2026-03-19 16:50:28', 'tranminhtoan2001@gmail.com', '09004092001', 'Tran Minh', 'Toan'),
+(10, 'tranminhphong2001@gmail.com', 'Binh Thanh', '2026-03-19 16:50:36', 'tranminhphong2001@gmail.com', '09004092001', 'Tran Minh', 'Phong');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +63,8 @@ INSERT INTO `customers` (`customer_id`, `email`, `address`, `created_at`, `usern
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables

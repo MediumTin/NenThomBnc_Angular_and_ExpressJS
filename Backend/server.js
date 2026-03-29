@@ -309,8 +309,14 @@ app.use('/api/Shopping_Bag_handling',require('./routes/Candle_Web_Routes/Shoppin
 app.use('/api/mysql',require('./routes/MySQL_TestConnection'));
 
 // API 21: Get Data from MongoDB and merge with MySQL Warehouse
-app.get('/api/admin/update_warehouse_mysql', async (req,res)=>{
-    const status_update = await Specific_file_for_admin.GetAllProduct_MongoDB_and_Update_Warehouse_MySQL(req,res); // Update new shopping bag to database
+// app.get('/api/admin/update_warehouse_mysql', async (req,res)=>{
+//     const status_update = await Specific_file_for_admin.GetAllProduct_MongoDB_and_Update_Warehouse_MySQL(req,res); // Update new shopping bag to database
+//     res.json({ message: `Update status is ${status_update}`});
+// })
+
+// API 25: Get Data from MongoDB and merge with MySQL Products
+app.get('/api/admin/update_products_mysql', async (req,res)=>{
+    const status_update = await Specific_file_for_admin.GetAllProduct_MongoDB_and_Update_Products_MySQL(req,res); // Update new shopping bag to database
     res.json({ message: `Update status is ${status_update}`});
 })
 

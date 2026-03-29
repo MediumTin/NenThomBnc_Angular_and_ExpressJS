@@ -42,45 +42,25 @@ Router.get('^/$|',async (req,res)=>{
    var lengthofcandle = listofcandle.length;
    let temp = "";
    let temp1 ="";
+   let found = false;
    for(let i = 0; i<lengthofcandle; i++){
       temp = listofcandle[i].name;
       temp = temp.replaceAll(" ","_");
-      temp1 = `${"/"+temp}`;
-      // console.log(`tempt is ${temp1}`);
-      // console.log(`req.url is ${req.url}`);
+      temp1 = `/${temp}`;
       if(req.url == temp1){
-         result = listofcandle[i]; // send the selected candle information to html page
+         result = listofcandle[i];
          var detail_product_quantity = await User_Information_From_MySQL.Get_quantity_available_in_Warehouse(listofcandle[i].name);
          result.available_quantity = detail_product_quantity;
-         var reslt_string_ceonverted = JSON.stringify(result);
-         reslt_string_ceonverted = "[" + reslt_string_ceonverted + "]";
-
-         // Scenario 1: If want user can access the website without login
-         console.log(`response message in candle information is ${reslt_string_ceonverted}`);
-         console.log(`Type of response message in candle information is ${typeof(reslt_string_ceonverted)}`);
-         res.status(200).send(reslt_string_ceonverted);
-
-         // Scenario 2: If want user must login before access the website
-         // var isSessionValid = req.session.personal_information; // Check session is exist or not
-         // if(isSessionValid != undefined){
-         //    var CurrentUser = req.session.personal_information.username;
-         //    console.log(`response message in candle information is ${reslt_string_ceonverted}`);
-         //    console.log(`Type of response message in candle information is ${typeof(reslt_string_ceonverted)}`);
-         //    res.status(200).send(reslt_string_ceonverted);
-         // }
-         // else 
-         // {
-         //    Shopping_bag_array_counter = 0;
-         //    Shopping_bag_array = [];
-         //    isFirstTimeLogin = true;
-         //    req.session.destroy();
-         //    res.status(200).send(
-         //       [{
-         //          "status" : "Session is timeout",
-         //       }]
-         //    )
-         // }
+         // Send as JSON array, not string
+         console.log(`response message in candle information is`, [result]);
+         res.status(200).json([result]);
+         found = true;
+         return;
       }
+   }
+   // Fallback: no candle matched
+   if (!found) {
+      res.status(404).json({ error: "Candle not found" });
    }
 })
 
@@ -117,7 +97,7 @@ Router.post('/requestwriteintosession',(req,res)=>{
             res.send("Not found SID in Redis cache");
       } else {
          // Work with the session
-         var CurrentUser = session.personal_information.username;
+         var Customer_id = session.personal_information.customer_id;
          console.log("Your first session is",session);
          // Check length of shopping bag in session storage
          var LOC_Length_Of_ShoppingBag_In_Session = session.personal_shopping_bag.length;
@@ -145,7 +125,7 @@ Router.post('/requestwriteintosession',(req,res)=>{
          if(isDatabaseCombination){
             console.log("Database combination mode is ON");
             // 1. Update new value into Database
-            User_Information_From_MySQL.Update_Content_of_ShoppingBag_MYSQL(CurrentUser,Shopping_bag_array[Shopping_bag_array_counter]);
+            User_Information_From_MySQL.Update_Content_of_ShoppingBag_MYSQL(Customer_id,Shopping_bag_array[Shopping_bag_array_counter]);
          } else {
             console.log("Database combination mode is OFF");
             // 1. Update new value into Database

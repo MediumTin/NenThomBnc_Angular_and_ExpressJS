@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 23, 2026 at 09:46 PM
+-- Generation Time: Mar 20, 2026 at 12:19 AM
 -- Server version: 10.6.18-MariaDB-cll-lve-log
--- PHP Version: 8.4.17
+-- PHP Version: 8.4.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,16 +29,34 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `order_details_inventory` (
   `order_detail_id` int(11) NOT NULL,
-  `inventory_id` int(11) NOT NULL,
-  `allocated_quantity` int(11) NOT NULL
+  `inventory_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `order_details_inventory`
 --
 
-INSERT INTO `order_details_inventory` (`order_detail_id`, `inventory_id`, `allocated_quantity`) VALUES
-(3, 30, 45);
+INSERT INTO `order_details_inventory` (`order_detail_id`, `inventory_id`) VALUES
+(1, 190),
+(2, 173),
+(3, 192),
+(4, 163),
+(5, 134),
+(6, 254),
+(7, 239),
+(8, 155),
+(9, 127),
+(10, 245),
+(11, 212),
+(12, 224),
+(13, 204),
+(14, 245),
+(15, 158),
+(16, 128),
+(17, 239),
+(18, 182),
+(19, 262),
+(20, 138);
 
 --
 -- Indexes for dumped tables

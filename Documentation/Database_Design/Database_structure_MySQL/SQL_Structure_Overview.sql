@@ -53,6 +53,10 @@ ALTER TABLE `coupons`
   MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 -- --------------------------------------------------------
 
 --
@@ -100,6 +104,11 @@ ALTER TABLE `customer_coupons`
   ADD CONSTRAINT `fk_cc_customer` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
 -- --------------------------------------------------------
 
 --
@@ -129,9 +138,9 @@ INSERT INTO `customers` (`customer_id`, `email`, `address`, `created_at`, `usern
 (5, 'nguyenvantu1975@gmail.com', 'Hue', '2025-11-06 18:22:42', 'nguyenvantu1975@gmail.com', '', 'Nguyen Van', 'Tu'),
 (6, 'nguyenvanminh2001@gmail.com', '558/1/16 Binh Quoi Street', '2024-01-05 03:15:00', 'nguyenvanminh2001@gmail.com', '09004092001', 'Nguyen Van', 'Minh'),
 (7, 'nguyenvantoan2001@gmail.com', 'Binh Thanh', '2024-01-05 03:15:00', 'nguyenvantoan2001@gmail.com', '09004092001', 'Nguyen Van', 'Toan'),
-(11, 'nguyenvanlan2001@gmail.com', 'Binh Thanh', '2024-01-05 03:15:00', 'nguyenvanlan2001@gmail.com', '09004092001', 'Nguyen Van', 'Lan'),
-(12, 'tranminhtoan2001@gmail.com', 'Binh Thanh', '0000-00-00 00:00:00', 'tranminhtoan2001@gmail.com', '09004092001', 'Tran Minh', 'Toan'),
-(14, 'tranminhphong2001@gmail.com', 'Binh Thanh', '2025-11-24 01:24:28', 'tranminhphong2001@gmail.com', '09004092001', 'Tran Minh', 'Phong');
+(8, 'nguyenvanlan2001@gmail.com', 'Binh Thanh', '2026-03-19 16:50:20', 'nguyenvanlan2001@gmail.com', '09004092001', 'Nguyen Van', 'Lan'),
+(9, 'tranminhtoan2001@gmail.com', 'Binh Thanh', '2026-03-19 16:50:28', 'tranminhtoan2001@gmail.com', '09004092001', 'Tran Minh', 'Toan'),
+(10, 'tranminhphong2001@gmail.com', 'Binh Thanh', '2026-03-19 16:50:36', 'tranminhphong2001@gmail.com', '09004092001', 'Tran Minh', 'Phong');
 
 --
 -- Indexes for dumped tables
@@ -142,7 +151,8 @@ INSERT INTO `customers` (`customer_id`, `email`, `address`, `created_at`, `usern
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -155,6 +165,10 @@ ALTER TABLE `customers`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 -- --------------------------------------------------------
 
 --
@@ -164,51 +178,191 @@ COMMIT;
 CREATE TABLE `inventory` (
   `inventory_id` int(11) NOT NULL,
   `warehouse_id` int(11) NOT NULL,
-  `product_sku` varchar(100) NOT NULL,
   `quantity_storage` int(11) NOT NULL DEFAULT 0,
-  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `inventory`
 --
 
-INSERT INTO `inventory` (`inventory_id`, `warehouse_id`, `product_sku`, `quantity_storage`, `updated_at`) VALUES
-(1, 2, '3 Day WKND', 194, '2025-11-30 17:38:51'),
-(2, 4, 'Amber And Vanilla', 75, '2025-11-30 07:27:49'),
-(3, 5, 'Coconut And Sea Salt', 130, '2025-11-30 07:27:49'),
-(4, 2, 'Day Party', 131, '2025-11-30 07:27:49'),
-(5, 5, 'Jasmin ylang ylang sandalwood', 183, '2025-11-30 07:27:49'),
-(6, 5, 'Lavander Vanilia', 160, '2025-11-30 07:27:49'),
-(7, 1, 'Milk Vanilla', 198, '2025-11-30 07:27:49'),
-(8, 5, 'Sandalwood And Rose', 198, '2025-11-30 07:27:49'),
-(9, 2, 'Shower Playlist', 106, '2025-11-30 07:27:49'),
-(10, 5, 'Smells Like Cacao And Vanilla', 100, '2025-11-30 07:27:49'),
-(11, 1, 'Sunset Disco', 126, '2025-11-30 07:27:49'),
-(12, 1, 'Warn Cider And Cinamon', 72, '2025-11-30 07:27:49'),
-(13, 5, 'Lumos Honeydrew And Coconut', 55, '2025-11-30 07:27:49'),
-(14, 3, 'Lumos Tropical Orchard', 113, '2025-11-30 07:27:49'),
-(15, 3, 'Lumos Rose Boutique', 111, '2025-11-30 07:27:49'),
-(16, 4, 'Lumos Lemongrass', 69, '2025-11-30 07:27:49'),
-(17, 2, 'Lumos Cajeput', 58, '2025-11-30 07:27:49'),
-(18, 4, 'Lumos menthol', 120, '2025-11-30 07:27:49'),
-(19, 1, 'Lumos cold', 127, '2025-11-30 07:27:49'),
-(20, 5, 'Lumos And Cucumber', 56, '2025-11-30 07:27:49'),
-(21, 1, 'Lumos Juicy Peach', 157, '2025-11-30 07:27:49'),
-(22, 4, 'Lumos Midnight sandalwood', 136, '2025-11-30 07:27:49'),
-(23, 5, 'YOU ARE THE MAGIC', 50, '2025-11-30 07:27:49'),
-(24, 1, 'BLOW A WISH', 164, '2025-11-30 07:27:49'),
-(25, 2, 'Candle Tray', 137, '2025-11-30 07:27:49'),
-(26, 2, 'Candle Snuffer', 182, '2025-11-30 07:27:49'),
-(27, 2, 'Candle Scissor', 137, '2025-11-30 07:27:49'),
-(28, 4, 'Candle matchbox', 50, '2025-11-30 07:27:49'),
-(29, 5, 'Candle rotation tray', 95, '2025-11-30 07:27:49'),
-(30, 3, 'Candle pinwheel', 54, '2025-11-30 07:27:49'),
-(31, 4, 'Candle metal tray', 77, '2025-11-30 07:27:49'),
-(32, 3, 'Candle holder', 74, '2025-11-30 07:27:49'),
-(33, 3, 'Wood tray', 102, '2025-11-30 07:27:49'),
-(34, 1, 'Nen_and_Hoa', 143, '2025-11-30 07:27:49'),
-(35, 4, 'Dalat Gift', 62, '2025-11-30 07:27:49');
+INSERT INTO `inventory` (`inventory_id`, `warehouse_id`, `quantity_storage`, `updated_at`, `product_id`) VALUES
+(104, 1, 117, '2026-03-19 23:48:08', 1),
+(105, 2, 297, '2026-03-19 23:48:08', 1),
+(106, 3, 182, '2026-03-19 23:48:08', 1),
+(107, 4, 422, '2026-03-19 23:48:08', 1),
+(108, 5, 160, '2026-03-19 23:48:08', 1),
+(109, 1, 386, '2026-03-19 23:48:08', 2),
+(110, 2, 50, '2026-03-19 23:48:08', 2),
+(111, 3, 393, '2026-03-19 23:48:08', 2),
+(112, 4, 413, '2026-03-19 23:48:08', 2),
+(113, 5, 386, '2026-03-19 23:48:08', 2),
+(114, 1, 191, '2026-03-19 23:48:08', 3),
+(115, 2, 199, '2026-03-19 23:48:08', 3),
+(116, 3, 373, '2026-03-19 23:48:08', 3),
+(117, 4, 318, '2026-03-19 23:48:08', 3),
+(118, 5, 418, '2026-03-19 23:48:08', 3),
+(119, 1, 188, '2026-03-19 23:48:08', 4),
+(120, 2, 85, '2026-03-19 23:48:08', 4),
+(121, 3, 263, '2026-03-19 23:48:08', 4),
+(122, 4, 109, '2026-03-19 23:48:08', 4),
+(123, 5, 156, '2026-03-19 23:48:08', 4),
+(124, 1, 405, '2026-03-19 23:48:08', 5),
+(125, 2, 156, '2026-03-19 23:48:08', 5),
+(126, 3, 415, '2026-03-19 23:48:08', 5),
+(127, 4, 204, '2026-03-19 23:48:08', 5),
+(128, 5, 178, '2026-03-19 23:48:08', 5),
+(129, 1, 226, '2026-03-19 23:48:08', 6),
+(130, 2, 97, '2026-03-19 23:48:08', 6),
+(131, 3, 208, '2026-03-19 23:48:08', 6),
+(132, 4, 251, '2026-03-19 23:48:08', 6),
+(133, 5, 127, '2026-03-19 23:48:08', 6),
+(134, 1, 285, '2026-03-19 23:48:08', 7),
+(135, 2, 91, '2026-03-19 23:48:08', 7),
+(136, 3, 454, '2026-03-19 23:48:08', 7),
+(137, 4, 142, '2026-03-19 23:48:08', 7),
+(138, 5, 200, '2026-03-19 23:48:08', 7),
+(139, 1, 76, '2026-03-19 23:48:08', 8),
+(140, 2, 180, '2026-03-19 23:48:08', 8),
+(141, 3, 171, '2026-03-19 23:48:08', 8),
+(142, 4, 266, '2026-03-19 23:48:08', 8),
+(143, 5, 318, '2026-03-19 23:48:08', 8),
+(144, 1, 288, '2026-03-19 23:48:08', 9),
+(145, 2, 440, '2026-03-19 23:48:08', 9),
+(146, 3, 383, '2026-03-19 23:48:08', 9),
+(147, 4, 93, '2026-03-19 23:48:08', 9),
+(148, 5, 169, '2026-03-19 23:48:08', 9),
+(149, 1, 68, '2026-03-19 23:48:08', 10),
+(150, 2, 233, '2026-03-19 23:48:08', 10),
+(151, 3, 461, '2026-03-19 23:48:08', 10),
+(152, 4, 203, '2026-03-19 23:48:08', 10),
+(153, 5, 486, '2026-03-19 23:48:08', 10),
+(154, 1, 419, '2026-03-19 23:48:08', 11),
+(155, 2, 137, '2026-03-19 23:48:08', 11),
+(156, 3, 279, '2026-03-19 23:48:08', 11),
+(157, 4, 482, '2026-03-19 23:48:08', 11),
+(158, 5, 171, '2026-03-19 23:48:08', 11),
+(159, 1, 263, '2026-03-19 23:48:08', 12),
+(160, 2, 301, '2026-03-19 23:48:08', 12),
+(161, 3, 216, '2026-03-19 23:48:08', 12),
+(162, 4, 126, '2026-03-19 23:48:08', 12),
+(163, 5, 382, '2026-03-19 23:48:08', 12),
+(164, 1, 132, '2026-03-19 23:48:08', 13),
+(165, 2, 366, '2026-03-19 23:48:08', 13),
+(166, 3, 484, '2026-03-19 23:48:08', 13),
+(167, 4, 371, '2026-03-19 23:48:08', 13),
+(168, 5, 353, '2026-03-19 23:48:08', 13),
+(169, 1, 149, '2026-03-19 23:48:08', 14),
+(170, 2, 90, '2026-03-19 23:48:08', 14),
+(171, 3, 404, '2026-03-19 23:48:08', 14),
+(172, 4, 348, '2026-03-19 23:48:08', 14),
+(173, 5, 478, '2026-03-19 23:48:08', 14),
+(174, 1, 395, '2026-03-19 23:48:08', 15),
+(175, 2, 491, '2026-03-19 23:48:08', 15),
+(176, 3, 320, '2026-03-19 23:48:08', 15),
+(177, 4, 76, '2026-03-19 23:48:08', 15),
+(178, 5, 271, '2026-03-19 23:48:08', 15),
+(179, 1, 178, '2026-03-19 23:48:08', 16),
+(180, 2, 477, '2026-03-19 23:48:08', 16),
+(181, 3, 450, '2026-03-19 23:48:08', 16),
+(182, 4, 319, '2026-03-19 23:48:08', 16),
+(183, 5, 195, '2026-03-19 23:48:08', 16),
+(184, 1, 417, '2026-03-19 23:48:08', 17),
+(185, 2, 101, '2026-03-19 23:48:08', 17),
+(186, 3, 105, '2026-03-19 23:48:08', 17),
+(187, 4, 171, '2026-03-19 23:48:08', 17),
+(188, 5, 490, '2026-03-19 23:48:08', 17),
+(189, 1, 83, '2026-03-19 23:48:08', 18),
+(190, 2, 251, '2026-03-19 23:48:08', 18),
+(191, 3, 55, '2026-03-19 23:48:08', 18),
+(192, 4, 373, '2026-03-19 23:48:08', 18),
+(193, 5, 296, '2026-03-19 23:48:08', 18),
+(194, 1, 313, '2026-03-19 23:48:08', 19),
+(195, 2, 175, '2026-03-19 23:48:08', 19),
+(196, 3, 339, '2026-03-19 23:48:08', 19),
+(197, 4, 217, '2026-03-19 23:48:08', 19),
+(198, 5, 472, '2026-03-19 23:48:08', 19),
+(199, 1, 306, '2026-03-19 23:48:08', 20),
+(200, 2, 62, '2026-03-19 23:48:08', 20),
+(201, 3, 247, '2026-03-19 23:48:08', 20),
+(202, 4, 97, '2026-03-19 23:48:08', 20),
+(203, 5, 147, '2026-03-19 23:48:08', 20),
+(204, 1, 393, '2026-03-19 23:48:08', 21),
+(205, 2, 122, '2026-03-19 23:48:08', 21),
+(206, 3, 284, '2026-03-19 23:48:08', 21),
+(207, 4, 100, '2026-03-19 23:48:08', 21),
+(208, 5, 53, '2026-03-19 23:48:08', 21),
+(209, 1, 363, '2026-03-19 23:48:08', 22),
+(210, 2, 255, '2026-03-19 23:48:08', 22),
+(211, 3, 137, '2026-03-19 23:48:08', 22),
+(212, 4, 321, '2026-03-19 23:48:08', 22),
+(213, 5, 242, '2026-03-19 23:48:08', 22),
+(214, 1, 198, '2026-03-19 23:48:08', 23),
+(215, 2, 214, '2026-03-19 23:48:08', 23),
+(216, 3, 425, '2026-03-19 23:48:08', 23),
+(217, 4, 82, '2026-03-19 23:48:08', 23),
+(218, 5, 437, '2026-03-19 23:48:08', 23),
+(219, 1, 85, '2026-03-19 23:48:08', 24),
+(220, 2, 420, '2026-03-19 23:48:08', 24),
+(221, 3, 440, '2026-03-19 23:48:08', 24),
+(222, 4, 442, '2026-03-19 23:48:08', 24),
+(223, 5, 387, '2026-03-19 23:48:08', 24),
+(224, 1, 111, '2026-03-19 23:48:08', 25),
+(225, 2, 244, '2026-03-19 23:48:08', 25),
+(226, 3, 389, '2026-03-19 23:48:08', 25),
+(227, 4, 260, '2026-03-19 23:48:08', 25),
+(228, 5, 85, '2026-03-19 23:48:08', 25),
+(229, 1, 496, '2026-03-19 23:48:08', 26),
+(230, 2, 374, '2026-03-19 23:48:08', 26),
+(231, 3, 331, '2026-03-19 23:48:08', 26),
+(232, 4, 484, '2026-03-19 23:48:08', 26),
+(233, 5, 477, '2026-03-19 23:48:08', 26),
+(234, 1, 433, '2026-03-19 23:48:08', 27),
+(235, 2, 231, '2026-03-19 23:48:08', 27),
+(236, 3, 258, '2026-03-19 23:48:08', 27),
+(237, 4, 95, '2026-03-19 23:48:08', 27),
+(238, 5, 105, '2026-03-19 23:48:08', 27),
+(239, 1, 189, '2026-03-19 23:48:08', 28),
+(240, 2, 131, '2026-03-19 23:48:08', 28),
+(241, 3, 488, '2026-03-19 23:48:08', 28),
+(242, 4, 196, '2026-03-19 23:48:08', 28),
+(243, 5, 367, '2026-03-19 23:48:08', 28),
+(244, 1, 297, '2026-03-19 23:48:08', 29),
+(245, 2, 335, '2026-03-19 23:48:08', 29),
+(246, 3, 282, '2026-03-19 23:48:08', 29),
+(247, 4, 356, '2026-03-19 23:48:08', 29),
+(248, 5, 435, '2026-03-19 23:48:08', 29),
+(249, 1, 156, '2026-03-19 23:48:08', 30),
+(250, 2, 325, '2026-03-19 23:48:08', 30),
+(251, 3, 209, '2026-03-19 23:48:08', 30),
+(252, 4, 468, '2026-03-19 23:48:08', 30),
+(253, 5, 311, '2026-03-19 23:48:08', 30),
+(254, 1, 100, '2026-03-19 23:48:08', 31),
+(255, 2, 423, '2026-03-19 23:48:08', 31),
+(256, 3, 410, '2026-03-19 23:48:08', 31),
+(257, 4, 281, '2026-03-19 23:48:08', 31),
+(258, 5, 124, '2026-03-19 23:48:08', 31),
+(259, 1, 179, '2026-03-19 23:48:08', 32),
+(260, 2, 472, '2026-03-19 23:48:08', 32),
+(261, 3, 423, '2026-03-19 23:48:08', 32),
+(262, 4, 199, '2026-03-19 23:48:08', 32),
+(263, 5, 128, '2026-03-19 23:48:08', 32),
+(264, 1, 443, '2026-03-19 23:48:08', 33),
+(265, 2, 427, '2026-03-19 23:48:08', 33),
+(266, 3, 307, '2026-03-19 23:48:08', 33),
+(267, 4, 204, '2026-03-19 23:48:08', 33),
+(268, 5, 50, '2026-03-19 23:48:08', 33),
+(269, 1, 491, '2026-03-19 23:48:08', 34),
+(270, 2, 452, '2026-03-19 23:48:08', 34),
+(271, 3, 285, '2026-03-19 23:48:08', 34),
+(272, 4, 469, '2026-03-19 23:48:08', 34),
+(273, 5, 91, '2026-03-19 23:48:08', 34),
+(274, 1, 350, '2026-03-19 23:48:08', 35),
+(275, 2, 76, '2026-03-19 23:48:08', 35),
+(276, 3, 182, '2026-03-19 23:48:08', 35),
+(277, 4, 182, '2026-03-19 23:48:08', 35),
+(278, 5, 316, '2026-03-19 23:48:08', 35);
 
 --
 -- Indexes for dumped tables
@@ -219,8 +373,8 @@ INSERT INTO `inventory` (`inventory_id`, `warehouse_id`, `product_sku`, `quantit
 --
 ALTER TABLE `inventory`
   ADD PRIMARY KEY (`inventory_id`),
-  ADD KEY `fk_inventory_warehouse` (`warehouse_id`),
-  ADD KEY `idx_inventory_sku` (`product_sku`);
+  ADD UNIQUE KEY `unique_warehouse_product` (`warehouse_id`,`product_id`),
+  ADD KEY `fk_inventory_product` (`product_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -230,7 +384,7 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
 
 --
 -- Constraints for dumped tables
@@ -240,8 +394,13 @@ ALTER TABLE `inventory`
 -- Constraints for table `inventory`
 --
 ALTER TABLE `inventory`
+  ADD CONSTRAINT `fk_inventory_product` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_inventory_warehouse` FOREIGN KEY (`warehouse_id`) REFERENCES `ware_houses` (`warehouse_id`) ON UPDATE CASCADE;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 -- --------------------------------------------------------
 
@@ -289,6 +448,10 @@ ALTER TABLE `order_coupons`
   ADD CONSTRAINT `fk_oc_order` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 -- --------------------------------------------------------
 
 --
@@ -297,16 +460,34 @@ COMMIT;
 
 CREATE TABLE `order_details_inventory` (
   `order_detail_id` int(11) NOT NULL,
-  `inventory_id` int(11) NOT NULL,
-  `allocated_quantity` int(11) NOT NULL
+  `inventory_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `order_details_inventory`
 --
 
-INSERT INTO `order_details_inventory` (`order_detail_id`, `inventory_id`, `allocated_quantity`) VALUES
-(3, 30, 45);
+INSERT INTO `order_details_inventory` (`order_detail_id`, `inventory_id`) VALUES
+(1, 190),
+(2, 173),
+(3, 192),
+(4, 163),
+(5, 134),
+(6, 254),
+(7, 239),
+(8, 155),
+(9, 127),
+(10, 245),
+(11, 212),
+(12, 224),
+(13, 204),
+(14, 245),
+(15, 158),
+(16, 128),
+(17, 239),
+(18, 182),
+(19, 262),
+(20, 138);
 
 --
 -- Indexes for dumped tables
@@ -330,6 +511,11 @@ ALTER TABLE `order_details_inventory`
   ADD CONSTRAINT `order_details_inventory_ibfk_1` FOREIGN KEY (`order_detail_id`) REFERENCES `order_details` (`order_detail_id`),
   ADD CONSTRAINT `order_details_inventory_ibfk_2` FOREIGN KEY (`inventory_id`) REFERENCES `inventory` (`inventory_id`);
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 -- --------------------------------------------------------
 
@@ -367,206 +553,7 @@ INSERT INTO `order_details` (`order_detail_id`, `order_id`, `quantity`) VALUES
 (17, 12, 1),
 (18, 13, 9),
 (19, 14, 9),
-(20, 14, 1),
-(21, 14, 9),
-(22, 15, 1),
-(23, 15, 9),
-(24, 16, 1),
-(25, 16, 9),
-(26, 16, 5),
-(27, 17, 9),
-(28, 17, 1),
-(29, 18, 9),
-(30, 18, 1),
-(31, 19, 1),
-(32, 19, 9),
-(33, 19, 2),
-(34, 19, 1),
-(35, 20, 1),
-(36, 20, 9),
-(37, 21, 1),
-(38, 21, 9),
-(39, 22, 1),
-(40, 22, 9),
-(41, 23, 1),
-(42, 23, 9),
-(43, 24, 1),
-(44, 24, 9),
-(45, 24, 1),
-(46, 25, 1),
-(47, 25, 9),
-(48, 25, 9),
-(49, 26, 1),
-(50, 26, 9),
-(51, 26, 1),
-(52, 26, 1),
-(53, 27, 1),
-(54, 27, 9),
-(55, 28, 1),
-(56, 28, 9),
-(57, 29, 1),
-(58, 29, 9),
-(59, 30, 1),
-(60, 30, 9),
-(61, 31, 1),
-(62, 31, 9),
-(63, 32, 1),
-(64, 32, 9),
-(65, 32, 1),
-(66, 32, 9),
-(67, 33, 1),
-(68, 33, 1),
-(69, 34, 1),
-(70, 34, 9),
-(71, 34, 1),
-(72, 35, 5),
-(73, 35, 1),
-(74, 36, 1),
-(75, 36, 9),
-(76, 37, 1),
-(77, 37, 9),
-(78, 37, 1),
-(79, 38, 1),
-(80, 38, 9),
-(81, 39, 1),
-(82, 39, 9),
-(83, 40, 1),
-(84, 40, 9),
-(85, 40, 1),
-(86, 41, 1),
-(87, 41, 7),
-(88, 41, 1),
-(89, 42, 1),
-(90, 42, 9),
-(91, 42, 1),
-(92, 43, 1),
-(93, 43, 9),
-(94, 44, 9),
-(95, 44, 1),
-(96, 45, 1),
-(97, 45, 9),
-(98, 45, 1),
-(99, 46, 1),
-(100, 46, 9),
-(101, 46, 1),
-(102, 46, 9),
-(103, 47, 1),
-(104, 47, 9),
-(105, 48, 9),
-(106, 48, 5),
-(107, 48, 1),
-(108, 49, 1),
-(109, 49, 9),
-(110, 50, 1),
-(111, 50, 9),
-(112, 50, 1),
-(113, 50, 9),
-(114, 51, 1),
-(115, 51, 1),
-(116, 52, 1),
-(117, 52, 1),
-(118, 53, 1),
-(119, 53, 9),
-(120, 54, 1),
-(121, 54, 9),
-(122, 55, 1),
-(123, 55, 9),
-(124, 56, 1),
-(125, 56, 9),
-(126, 57, 1),
-(127, 57, 9),
-(128, 57, 1),
-(129, 58, 1),
-(130, 58, 9),
-(131, 58, 1),
-(132, 59, 9),
-(133, 59, 5),
-(134, 60, 1),
-(135, 60, 9),
-(136, 61, 1),
-(137, 61, 9),
-(138, 62, 1),
-(139, 62, 9),
-(140, 63, 1),
-(141, 63, 9),
-(142, 64, 1),
-(143, 64, 9),
-(144, 65, 1),
-(145, 65, 9),
-(146, 66, 1),
-(147, 66, 9),
-(148, 67, 1),
-(149, 67, 9),
-(150, 68, 1),
-(151, 68, 9),
-(152, 69, 1),
-(153, 69, 9),
-(154, 70, 1),
-(155, 70, 9),
-(156, 71, 1),
-(157, 71, 9),
-(158, 72, 1),
-(159, 72, 9),
-(160, 73, 1),
-(161, 73, 9),
-(162, 74, 1),
-(163, 74, 9),
-(164, 75, 1),
-(165, 75, 9),
-(166, 76, 1),
-(167, 76, 9),
-(168, 76, 5),
-(169, 76, 1),
-(170, 76, 1),
-(171, 76, 1),
-(172, 76, 6),
-(173, 76, 1),
-(174, 76, 1),
-(175, 77, 1),
-(176, 77, 9),
-(177, 78, 1),
-(178, 78, 9),
-(179, 79, 1),
-(180, 79, 1),
-(181, 80, 1),
-(182, 80, 7),
-(183, 80, 1),
-(184, 81, 1),
-(185, 81, 9),
-(186, 82, 1),
-(187, 82, 9),
-(188, 82, 1),
-(189, 83, 1),
-(190, 83, 9),
-(191, 83, 1),
-(192, 83, 9),
-(193, 84, 1),
-(194, 84, 9),
-(195, 84, 1),
-(196, 85, 1),
-(197, 85, 9),
-(198, 86, 1),
-(199, 86, 9),
-(200, 87, 1),
-(201, 87, 9),
-(202, 87, 1),
-(203, 87, 5),
-(204, 88, 9),
-(205, 88, 1),
-(206, 89, 1),
-(207, 89, 9),
-(208, 90, 1),
-(209, 90, 9),
-(210, 91, 1),
-(211, 91, 9),
-(212, 92, 1),
-(213, 92, 9),
-(214, 93, 1),
-(215, 93, 9),
-(216, 94, 1),
-(217, 94, 9),
-(218, 95, 1),
-(219, 95, 9);
+(20, 14, 1);
 
 --
 -- Indexes for dumped tables
@@ -600,6 +587,11 @@ ALTER TABLE `order_details`
   ADD CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`);
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
 -- --------------------------------------------------------
 
 --
@@ -628,88 +620,7 @@ INSERT INTO `orders` (`order_id`, `customer_id`, `order_date`, `total_amount`, `
 (11, 4, '2025-12-01 00:42:30', 678.00, 'processing'),
 (12, 1, '2025-12-01 00:58:08', 1872.00, 'processing'),
 (13, 1, '2025-12-01 01:00:33', 918.00, 'processing'),
-(14, 1, '2025-12-01 15:17:08', 2412.00, 'processing'),
-(15, 1, '2025-12-13 13:14:50', 930.00, 'processing'),
-(16, 1, '2025-12-13 13:17:01', 3294.00, 'processing'),
-(17, 1, '2025-12-14 10:08:42', 1494.00, 'processing'),
-(18, 1, '2025-12-14 16:29:14', 1494.00, 'processing'),
-(19, 1, '2025-12-14 16:32:09', 57.23, 'processing'),
-(20, 1, '2025-12-14 16:33:34', 35.34, 'processing'),
-(21, 1, '2025-12-14 17:26:21', 930.00, 'processing'),
-(22, 1, '2025-12-14 17:27:03', 35.34, 'processing'),
-(23, 1, '2025-12-14 17:30:09', 35.34, 'processing'),
-(24, 1, '2025-12-14 18:10:44', 57.23, 'processing'),
-(25, 1, '2025-12-14 18:12:00', 70.22, 'processing'),
-(26, 1, '2025-12-14 18:18:12', 39.44, 'processing'),
-(27, 1, '2025-12-14 21:47:57', 35.34, 'processing'),
-(28, 1, '2025-12-14 21:50:28', 56.77, 'processing'),
-(29, 1, '2025-12-14 21:53:28', 56.77, 'processing'),
-(30, 1, '2025-12-14 21:55:05', 35.34, 'processing'),
-(31, 1, '2025-12-14 21:59:51', 35.34, 'processing'),
-(32, 1, '2025-12-16 22:17:34', 92.11, 'processing'),
-(33, 1, '2025-12-16 22:27:58', 22.34, 'processing'),
-(34, 1, '2025-12-16 22:29:47', 57.23, 'processing'),
-(35, 1, '2025-12-16 22:32:08', 68.86, 'processing'),
-(36, 1, '2025-12-16 22:35:11', 35.34, 'processing'),
-(37, 1, '2025-12-16 23:06:29', 57.23, 'processing'),
-(38, 1, '2025-12-16 23:08:11', 35.34, 'processing'),
-(39, 1, '2025-12-16 23:09:13', 930.00, 'processing'),
-(40, 1, '2025-12-16 23:11:01', 48.19, 'processing'),
-(41, 4, '2025-12-16 23:54:20', 103.94, 'processing'),
-(42, 1, '2025-12-17 00:04:46', 57.47, 'processing'),
-(43, 1, '2025-12-17 00:06:39', 35.48, 'processing'),
-(44, 1, '2025-12-17 00:12:54', 35.48, 'processing'),
-(45, 1, '2025-12-17 08:03:05', 57.42, 'processing'),
-(46, 1, '2025-12-17 15:57:19', 92.42, 'processing'),
-(47, 1, '2025-12-20 12:58:23', 35.44, 'processing'),
-(48, 1, '2025-12-20 13:01:40', 104.04, 'processing'),
-(49, 1, '2025-12-23 09:19:44', 930.00, 'processing'),
-(50, 1, '2025-12-23 09:20:41', 2424.00, 'processing'),
-(51, 4, '2025-12-25 01:57:22', 678.00, 'processing'),
-(52, 4, '2025-12-25 23:59:41', 678.00, 'processing'),
-(53, 1, '2025-12-26 00:04:25', 930.00, 'processing'),
-(54, 1, '2025-12-28 12:10:58', 930.00, 'processing'),
-(55, 1, '2025-12-28 12:12:14', 35.48, 'processing'),
-(56, 1, '2025-12-28 14:31:35', 930.00, 'processing'),
-(57, 1, '2025-12-28 16:37:25', 1506.00, 'processing'),
-(58, 1, '2025-12-28 16:43:52', 1506.00, 'processing'),
-(59, 1, '2025-12-28 16:46:02', 2718.00, 'processing'),
-(60, 1, '2025-12-28 18:13:23', 930.00, 'processing'),
-(61, 1, '2025-12-28 18:13:24', 930.00, 'processing'),
-(62, 1, '2025-12-28 18:13:26', 930.00, 'processing'),
-(63, 1, '2025-12-28 18:13:27', 930.00, 'processing'),
-(64, 1, '2025-12-28 18:13:29', 930.00, 'processing'),
-(65, 1, '2025-12-28 18:13:32', 930.00, 'processing'),
-(66, 1, '2025-12-28 18:14:11', 930.00, 'processing'),
-(67, 1, '2025-12-28 18:14:12', 930.00, 'processing'),
-(68, 1, '2025-12-28 18:14:17', 930.00, 'processing'),
-(69, 1, '2025-12-28 18:14:19', 930.00, 'processing'),
-(70, 1, '2025-12-28 18:14:49', 930.00, 'processing'),
-(71, 1, '2025-12-28 18:14:50', 930.00, 'processing'),
-(72, 1, '2025-12-28 18:14:53', 930.00, 'processing'),
-(73, 1, '2025-12-28 18:14:56', 930.00, 'processing'),
-(74, 1, '2025-12-28 18:18:37', 930.00, 'processing'),
-(75, 1, '2025-12-28 18:18:38', 930.00, 'processing'),
-(76, 1, '2025-12-28 18:23:45', 4590.00, 'processing'),
-(77, 1, '2025-12-28 19:19:55', 35.48, 'processing'),
-(78, 1, '2025-12-28 19:36:39', 35.48, 'processing'),
-(79, 4, '2025-12-28 20:15:51', 25.87, 'processing'),
-(80, 4, '2025-12-28 20:16:50', 3198.00, 'completed'),
-(81, 1, '2025-12-28 20:19:46', 930.00, 'processing'),
-(82, 1, '2025-12-28 20:20:34', 57.47, 'processing'),
-(83, 1, '2025-12-28 20:21:40', 2424.00, 'processing'),
-(84, 1, '2026-01-06 06:55:05', 1506.00, 'processing'),
-(85, 1, '2026-01-06 06:56:26', 930.00, 'processing'),
-(86, 1, '2026-01-15 08:24:08', 930.00, 'processing'),
-(87, 1, '2026-01-15 08:50:20', 126.19, 'processing'),
-(88, 1, '2026-01-17 15:35:02', 1494.00, 'completed'),
-(89, 1, '2026-01-17 20:44:40', 35.46, 'processing'),
-(90, 1, '2026-01-18 16:43:05', 35.50, 'processing'),
-(91, 1, '2026-01-18 16:56:02', 35.50, 'processing'),
-(92, 1, '2026-01-18 16:59:31', 35.50, 'processing'),
-(93, 1, '2026-01-25 19:46:41', 930.00, 'processing'),
-(94, 1, '2026-01-25 19:54:02', 930.00, 'processing'),
-(95, 1, '2026-01-25 20:23:03', 930.00, 'processing');
+(14, 1, '2025-12-01 15:17:08', 2412.00, 'processing');
 
 --
 -- Indexes for dumped tables
@@ -743,6 +654,10 @@ ALTER TABLE `orders`
   ADD CONSTRAINT `fk_orders_customer` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`) ON UPDATE CASCADE;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 -- --------------------------------------------------------
 
 --
@@ -772,88 +687,7 @@ INSERT INTO `payments` (`payment_id`, `order_id`, `method`, `payment_gateway_id`
 (9, 11, 'cash', 'Undefine by Cash', 'success', '2025-12-01 00:42:30'),
 (10, 12, 'cash', 'Undefine by Cash', 'success', '2025-12-01 00:58:08'),
 (11, 13, 'cash', 'Undefine by Cash', 'success', '2025-12-01 01:00:33'),
-(12, 14, 'cash', 'Undefine by Cash', 'success', '2025-12-01 15:17:08'),
-(13, 15, 'cash', 'Undefine by Cash', 'success', '2025-12-13 13:14:50'),
-(14, 16, 'cash', 'Undefine by Cash', 'success', '2025-12-13 13:17:01'),
-(15, 17, 'cash', 'Undefine by Cash', 'success', '2025-12-14 10:08:42'),
-(16, 18, 'cash', 'Undefine by Cash', 'success', '2025-12-14 16:29:14'),
-(17, 19, 'cash', 'Undefine by Cash', 'success', '2025-12-14 16:32:09'),
-(18, 20, 'cash', 'Undefine by Cash', 'success', '2025-12-14 16:33:34'),
-(19, 21, 'cash', 'Undefine by Cash', 'success', '2025-12-14 17:26:21'),
-(20, 22, 'cash', 'Undefine by Cash', 'success', '2025-12-14 17:27:03'),
-(21, 23, 'cash', 'Undefine by Cash', 'success', '2025-12-14 17:30:10'),
-(22, 24, 'cash', 'Undefine by Cash', 'success', '2025-12-14 18:10:44'),
-(23, 25, 'cash', 'Undefine by Cash', 'success', '2025-12-14 18:12:00'),
-(24, 26, 'cash', 'Undefine by Cash', 'success', '2025-12-14 18:18:12'),
-(25, 27, 'cash', 'Undefine by Cash', 'success', '2025-12-14 21:47:57'),
-(26, 28, 'cash', 'Undefine by Cash', 'success', '2025-12-14 21:50:28'),
-(27, 29, 'cash', 'Undefine by Cash', 'success', '2025-12-14 21:53:28'),
-(28, 30, 'cash', 'Undefine by Cash', 'success', '2025-12-14 21:55:05'),
-(29, 31, 'cash', 'Undefine by Cash', 'success', '2025-12-14 21:59:51'),
-(30, 32, 'cash', 'Undefine by Cash', 'success', '2025-12-16 22:17:34'),
-(31, 33, 'cash', 'Undefine by Cash', 'success', '2025-12-16 22:27:58'),
-(32, 34, 'cash', 'Undefine by Cash', 'success', '2025-12-16 22:29:47'),
-(33, 35, 'cash', 'Undefine by Cash', 'success', '2025-12-16 22:32:08'),
-(34, 36, 'cash', 'Undefine by Cash', 'success', '2025-12-16 22:35:11'),
-(35, 37, 'cash', 'Undefine by Cash', 'success', '2025-12-16 23:06:29'),
-(36, 38, 'cash', 'Undefine by Cash', 'success', '2025-12-16 23:08:11'),
-(37, 39, 'cash', 'Undefine by Cash', 'success', '2025-12-16 23:09:13'),
-(38, 40, 'cash', 'Undefine by Cash', 'success', '2025-12-16 23:11:01'),
-(39, 41, 'cash', 'Undefine by Cash', 'success', '2025-12-16 23:54:20'),
-(40, 42, 'cash', 'Undefine by Cash', 'success', '2025-12-17 00:04:46'),
-(41, 43, 'cash', 'Undefine by Cash', 'success', '2025-12-17 00:06:39'),
-(42, 44, 'cash', 'Undefine by Cash', 'success', '2025-12-17 00:12:54'),
-(43, 45, 'cash', 'Undefine by Cash', 'success', '2025-12-17 08:03:05'),
-(44, 46, 'cash', 'Undefine by Cash', 'success', '2025-12-17 15:57:19'),
-(45, 47, 'cash', 'Undefine by Cash', 'success', '2025-12-20 12:58:23'),
-(46, 48, 'cash', 'Undefine by Cash', 'success', '2025-12-20 13:01:40'),
-(47, 49, 'cash', 'Undefine by Cash', 'success', '2025-12-23 09:19:44'),
-(48, 50, 'cash', 'Undefine by Cash', 'success', '2025-12-23 09:20:41'),
-(49, 51, 'cash', 'Undefine by Cash', 'success', '2025-12-25 01:57:22'),
-(50, 52, 'cash', 'Undefine by Cash', 'success', '2025-12-25 23:59:41'),
-(51, 53, 'cash', 'Undefine by Cash', 'success', '2025-12-26 00:04:25'),
-(52, 54, 'cash', 'Undefine by Cash', 'success', '2025-12-28 12:10:58'),
-(53, 55, 'cash', 'Undefine by Cash', 'success', '2025-12-28 12:12:14'),
-(54, 56, 'cash', 'Undefine by Cash', 'success', '2025-12-28 14:31:35'),
-(55, 57, 'cash', 'Undefine by Cash', 'success', '2025-12-28 16:37:25'),
-(56, 58, 'cash', 'Undefine by Cash', 'success', '2025-12-28 16:43:52'),
-(57, 59, 'cash', 'Undefine by Cash', 'success', '2025-12-28 16:46:02'),
-(58, 60, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:13:23'),
-(59, 61, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:13:24'),
-(60, 62, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:13:26'),
-(61, 63, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:13:27'),
-(62, 64, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:13:29'),
-(63, 65, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:13:32'),
-(64, 66, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:14:11'),
-(65, 67, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:14:12'),
-(66, 68, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:14:17'),
-(67, 69, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:14:19'),
-(68, 70, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:14:49'),
-(69, 71, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:14:50'),
-(70, 72, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:14:53'),
-(71, 73, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:14:56'),
-(72, 74, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:18:37'),
-(73, 75, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:18:38'),
-(74, 76, 'cash', 'Undefine by Cash', 'success', '2025-12-28 18:23:45'),
-(75, 77, 'cash', 'Undefine by Cash', 'success', '2025-12-28 19:19:55'),
-(76, 78, 'paypal', '6UD11051JE873780N', 'success', '2025-12-28 19:36:39'),
-(77, 79, 'paypal', '428323611R377405B', 'success', '2025-12-28 20:15:51'),
-(78, 80, 'cash', 'Undefine by Cash', 'success', '2025-12-28 20:16:50'),
-(79, 81, 'cash', 'Undefine by Cash', 'success', '2025-12-28 20:19:46'),
-(80, 82, 'paypal', '2ES06100XA0939833', 'success', '2025-12-28 20:20:34'),
-(81, 83, 'vnpay', '28202103', 'success', '2025-12-28 20:21:40'),
-(82, 84, 'cash', 'Undefine by Cash', 'success', '2026-01-06 06:55:05'),
-(83, 85, 'cash', 'Undefine by Cash', 'success', '2026-01-06 06:56:26'),
-(84, 86, 'cash', 'Undefine by Cash', 'pending', '2026-01-15 08:24:08'),
-(85, 87, 'paypal', '51W72818AG839343J', 'pending', '2026-01-15 08:50:20'),
-(86, 88, 'cash', 'Undefine by Cash', 'pending', '2026-01-17 15:35:02'),
-(87, 89, 'paypal', '9JD69701WX538660N', 'pending', '2026-01-17 20:44:40'),
-(88, 90, 'paypal', '1CS20671NL340402F', 'pending', '2026-01-18 16:43:05'),
-(89, 91, 'paypal', '6MD83973Y0407434M', 'pending', '2026-01-18 16:56:02'),
-(90, 92, 'paypal', '0R9228755V178211T', 'pending', '2026-01-18 16:59:31'),
-(91, 93, 'vnpay', '25195017', 'pending', '2026-01-25 19:46:41'),
-(92, 94, 'vnpay', '25195314', 'pending', '2026-01-25 19:54:02'),
-(93, 95, 'vnpay', '25202215', 'pending', '2026-01-25 20:23:03');
+(12, 14, 'cash', 'Undefine by Cash', 'success', '2025-12-01 15:17:08');
 
 --
 -- Indexes for dumped tables
@@ -887,6 +721,10 @@ ALTER TABLE `payments`
   ADD CONSTRAINT `fk_payments_order` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 -- --------------------------------------------------------
 
 --
@@ -894,56 +732,25 @@ COMMIT;
 --
 
 CREATE TABLE `personal_shopping_bag` (
-  `bag_item_id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL,
-  `candle_name` varchar(255) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL,
-  `price_unit` decimal(10,2) DEFAULT NULL,
-  `candle_image` varchar(500) DEFAULT NULL
+  `shopping_bag_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `personal_shopping_bag`
 --
 
-INSERT INTO `personal_shopping_bag` (`bag_item_id`, `customer_id`, `candle_name`, `quantity`, `price_unit`, `candle_image`) VALUES
-(1, 1, 'Candle matchbox', 1, 10.00, '../../../../assets/img/Automation/Image/28.jpg'),
-(2, 1, 'Candle Snuffer', 9, 85.00, '../../../../assets/img/Automation/Image/26.jpg'),
-(3, 1, 'Lumos Honeydrew And Coconut', 1, 480.00, '../../../../assets/img/Automation/Image/13.jpg'),
-(4, 3, 'BLOW A WISH', 10, 315.00, '../../../../assets/img/Automation/Image/24.jpg'),
-(5, 3, 'Warn Cider And Cinamon', 4, 450.00, '../../../../assets/img/Automation/Image/12.jpg'),
-(6, 4, 'Rose Garden Candle', 2, 18.20, 'images/candles/rose_garden.jpg'),
-(7, 5, 'Jasmine Night Candle', 1, 13.90, 'images/candles/jasmine_night.jpg'),
-(8, 5, 'Coffee Aroma Candle', 2, 11.50, 'images/candles/coffee_aroma.jpg'),
-(9, 1, 'Candle Snuffer', 9, 85.00, '../../../../assets/img/Automation/Image/26.jpg'),
-(10, 1, '3 Day WKND', 5, 300.00, '../../../../assets/img/Automation/Image/1.jpg'),
-(14, 2, 'Candle Scissor', 7, 80.00, '../../../../assets/img/Automation/Image/27.jpg'),
-(15, 2, '3 Day WKND', 5, 300.00, '../../../../assets/img/Automation/Image/1.jpg'),
-(16, 2, 'Candle matchbox', 8, 10.00, '../../../../assets/img/Automation/Image/28.jpg'),
-(17, 2, 'Lumos Rose Boutique', 1, 480.00, '../../../../assets/img/Automation/Image/15.jpg'),
-(18, 2, 'Lumos Lemongrass', 1, 255.00, '../../../../assets/img/Automation/Image/16.jpg'),
-(21, 1, 'Lavender Breeze Candle2', 2, 12.99, 'images/candles/lavender_breeze.jpg'),
-(22, 1, 'Candle matchbox', 1, 10.00, '../../../../assets/img/Automation/Image/28.jpg'),
-(23, 1, 'Candle matchbox', 1, 10.00, '../../../../assets/img/Automation/Image/28.jpg'),
-(24, 1, 'Candle Scissor', 1, 80.00, '../../../../assets/img/Automation/Image/27.jpg'),
-(25, 1, 'Candle Scissor', 1, 80.00, '../../../../assets/img/Automation/Image/27.jpg'),
-(26, 1, 'Candle Scissor', 1, 80.00, '../../../../assets/img/Automation/Image/27.jpg'),
-(27, 1, 'Wood tray', 1, 20.00, '../../../../assets/img/Automation/Image/33.jpg'),
-(28, 1, 'Candle pinwheel', 1, 90.00, '../../../../assets/img/Automation/Image/30.jpg'),
-(29, 1, 'Candle Tray', 6, 80.00, '../../../../assets/img/Automation/Image/25.jpg'),
-(30, 1, 'Lumos Honeydrew And Coconut', 1, 480.00, '../../../../assets/img/Automation/Image/13.jpg'),
-(31, 1, 'Lumos Honeydrew And Coconut', 1, 480.00, '../../../../assets/img/Automation/Image/13.jpg'),
-(32, 1, 'Lumos Honeydrew And Coconut', 1, 480.00, '../../../../assets/img/Automation/Image/13.jpg'),
-(33, 12, 'Candle holder', 7, 90.00, '../../../../assets/img/Automation/Image/32.jpg'),
-(34, 12, '3 Day WKND', 1, 300.00, '../../../../assets/img/Automation/Image/1.jpg'),
-(35, 12, 'Day Party', 1, 150.00, '../../../../assets/img/Automation/Image/4.jpg'),
-(36, 12, 'Amber And Vanilla', 1, 400.00, '../../../../assets/img/Automation/Image/2.jpg'),
-(37, 12, '3 Day WKND', 1, 300.00, '../../../../assets/img/Automation/Image/1.jpg'),
-(38, 1, 'Amber And Vanilla', 1, 400.00, '../../../../assets/img/Automation/Image/2.jpg'),
-(39, 1, 'Wood tray', 1, 20.00, '../../../../assets/img/Automation/Image/33.jpg'),
-(40, 1, 'Candle Scissor', 1, 80.00, '../../../../assets/img/Automation/Image/27.jpg'),
-(41, 1, 'Candle Scissor', 1, 80.00, '../../../../assets/img/Automation/Image/27.jpg'),
-(42, 1, 'Candle Scissor', 1, 80.00, '../../../../assets/img/Automation/Image/27.jpg');
+INSERT INTO `personal_shopping_bag` (`shopping_bag_id`, `customer_id`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
 
 --
 -- Indexes for dumped tables
@@ -953,8 +760,8 @@ INSERT INTO `personal_shopping_bag` (`bag_item_id`, `customer_id`, `candle_name`
 -- Indexes for table `personal_shopping_bag`
 --
 ALTER TABLE `personal_shopping_bag`
-  ADD PRIMARY KEY (`bag_item_id`),
-  ADD KEY `customer_id` (`customer_id`);
+  ADD PRIMARY KEY (`shopping_bag_id`),
+  ADD UNIQUE KEY `customer_id` (`customer_id`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -964,7 +771,7 @@ ALTER TABLE `personal_shopping_bag`
 -- AUTO_INCREMENT for table `personal_shopping_bag`
 --
 ALTER TABLE `personal_shopping_bag`
-  MODIFY `bag_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `shopping_bag_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
@@ -977,51 +784,9 @@ ALTER TABLE `personal_shopping_bag`
   ADD CONSTRAINT `personal_shopping_bag_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`);
 COMMIT;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `phone`
---
-
-CREATE TABLE `phone` (
-  `customer_id` int(11) NOT NULL,
-  `phone` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `phone`
---
-
-INSERT INTO `phone` (`customer_id`, `phone`) VALUES
-(1, '0826780002'),
-(1, '0931950826'),
-(2, '0901234567'),
-(2, '0912345678'),
-(3, '0826780002'),
-(3, '0906937424'),
-(3, '0931950826'),
-(5, '0906054449');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `phone`
---
-ALTER TABLE `phone`
-  ADD PRIMARY KEY (`customer_id`,`phone`);
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `phone`
---
-ALTER TABLE `phone`
-  ADD CONSTRAINT `phone_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 -- --------------------------------------------------------
 
@@ -1068,3 +833,498 @@ ALTER TABLE `ware_houses`
 ALTER TABLE `ware_houses`
   MODIFY `warehouse_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `product_description` text DEFAULT NULL,
+  `price_unit` decimal(10,2) NOT NULL,
+  `product_category` varchar(100) DEFAULT NULL,
+  `product_image` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `price_unit`, `product_category`, `product_image`, `created_at`) VALUES
+(1, '3 Day WKND', '3 Day WKND', 300.00, 'candle', '../../../../assets/img/Automation/Image/1.jpg', '2026-03-19 16:25:10'),
+(2, 'Amber And Vanilla', 'Amber And Vanilla', 400.00, 'candle', '../../../../assets/img/Automation/Image/2.jpg', '2026-03-19 16:25:10'),
+(3, 'Coconut And Sea Salt', 'Coconut And Sea Salt', 250.00, 'candle', '../../../../assets/img/Automation/Image/3.jpg', '2026-03-19 16:25:10'),
+(4, 'Day Party', 'Day Party', 150.00, 'candle', '../../../../assets/img/Automation/Image/4.jpg', '2026-03-19 16:25:10'),
+(5, 'Jasmin ylang ylang sandalwood', 'Jasmin ylang ylang sandalwood', 275.00, 'candle', '../../../../assets/img/Automation/Image/5.jpg', '2026-03-19 16:25:10'),
+(6, 'Lavander Vanilia', 'Lavander Vanilia', 195.00, 'candle', '../../../../assets/img/Automation/Image/6.jpg', '2026-03-19 16:25:10'),
+(7, 'Milk Vanilla', 'Milk Vanilla', 150.00, 'candle', '../../../../assets/img/Automation/Image/7.jpg', '2026-03-19 16:25:10'),
+(8, 'Sandalwood And Rose', 'Sandalwood And Rose', 250.00, 'candle', '../../../../assets/img/Automation/Image/8.jpg', '2026-03-19 16:25:10'),
+(9, 'Shower Playlist', 'Shower Playlist', 240.00, 'candle', '../../../../assets/img/Automation/Image/9.jpg', '2026-03-19 16:25:10'),
+(10, 'Smells Like Cacao And Vanilla', 'Smells Like Cacao And Vanilla', 190.00, 'candle', '../../../../assets/img/Automation/Image/10.jpg', '2026-03-19 16:25:10'),
+(11, 'Sunset Disco', 'Sunset Disco', 150.00, 'candle', '../../../../assets/img/Automation/Image/11.jpg', '2026-03-19 16:25:10'),
+(12, 'Warn Cider And Cinamon', 'Warn Cider And Cinamon', 450.00, 'candle', '../../../../assets/img/Automation/Image/12.jpg', '2026-03-19 16:25:10'),
+(13, 'Lumos Honeydrew And Coconut', 'Lumos Honeydrew And Coconut', 480.00, 'oil', '../../../../assets/img/Automation/Image/13.jpg', '2026-03-19 16:25:10'),
+(14, 'Lumos Tropical Orchard', 'Lumos Tropical Orchard', 480.00, 'oil', '../../../../assets/img/Automation/Image/14.jpg', '2026-03-19 16:25:10'),
+(15, 'Lumos Rose Boutique', 'Lumos Rose Boutique', 480.00, 'oil', '../../../../assets/img/Automation/Image/15.jpg', '2026-03-19 16:25:10'),
+(16, 'Lumos Lemongrass', 'Lumos Lemongrass', 255.00, 'oil', '../../../../assets/img/Automation/Image/16.jpg', '2026-03-19 16:25:10'),
+(17, 'Lumos Cajeput', 'Lumos Cajeput', 255.00, 'oil', '../../../../assets/img/Automation/Image/17.jpg', '2026-03-19 16:25:10'),
+(18, 'Lumos menthol', 'Lumos menthol', 255.00, 'oil', '../../../../assets/img/Automation/Image/18.jpg', '2026-03-19 16:25:10'),
+(19, 'Lumos cold', 'Lumos cold', 255.00, 'oil', '../../../../assets/img/Automation/Image/19.jpg', '2026-03-19 16:25:10'),
+(20, 'Lumos And Cucumber', 'Lumos And Cucumber', 450.00, 'oil', '../../../../assets/img/Automation/Image/20.jpg', '2026-03-19 16:25:10'),
+(21, 'Lumos Juicy Peach', 'Lumos Juicy Peach', 450.00, 'oil', '../../../../assets/img/Automation/Image/21.jpg', '2026-03-19 16:25:10'),
+(22, 'Lumos Midnight sandalwood', 'Lumos Midnight sandalwood', 600.00, 'oil', '../../../../assets/img/Automation/Image/22.jpg', '2026-03-19 16:25:10'),
+(23, 'YOU ARE THE MAGIC', 'YOU ARE THE MAGIC', 295.00, 'candle', '../../../../assets/img/Automation/Image/23.jpg', '2026-03-19 16:25:10'),
+(24, 'BLOW A WISH', 'BLOW A WISH', 315.00, 'candle', '../../../../assets/img/Automation/Image/24.jpg', '2026-03-19 16:25:10'),
+(25, 'Candle Tray', 'Candle Tray', 80.00, 'accessory', '../../../../assets/img/Automation/Image/25.jpg', '2026-03-19 16:25:10'),
+(26, 'Candle Snuffer', 'Candle Snuffer', 85.00, 'accessory', '../../../../assets/img/Automation/Image/26.jpg', '2026-03-19 16:25:10'),
+(27, 'Candle Scissor', 'Candle Scissor', 80.00, 'accessory', '../../../../assets/img/Automation/Image/27.jpg', '2026-03-19 16:25:10'),
+(28, 'Candle matchbox', 'Candle matchbox', 10.00, 'accessory', '../../../../assets/img/Automation/Image/28.jpg', '2026-03-19 16:25:10'),
+(29, 'Candle rotation tray', 'Candle rotation tray', 89.00, 'accessory', '../../../../assets/img/Automation/Image/29.jpg', '2026-03-19 16:25:10'),
+(30, 'Candle pinwheel', 'Candle pinwheel', 90.00, 'accessory', '../../../../assets/img/Automation/Image/30.jpg', '2026-03-19 16:25:10'),
+(31, 'Candle metal tray', 'Candle metal tray', 150.00, 'accessory', '../../../../assets/img/Automation/Image/31.jpg', '2026-03-19 16:25:10'),
+(32, 'Candle holder', 'Candle holder', 90.00, 'accessory', '../../../../assets/img/Automation/Image/32.jpg', '2026-03-19 16:25:10'),
+(33, 'Wood tray', 'Wood tray', 20.00, 'accessory', '../../../../assets/img/Automation/Image/33.jpg', '2026-03-19 16:25:10'),
+(34, 'Nen_and_Hoa', 'Nen_and_Hoa', 600.00, 'candle', '../../../../assets/img/Automation/Image/39.jpg', '2026-03-19 16:25:10'),
+(35, 'Dalat Gift', 'Dalat Gift', 600.00, 'gift', '../../../../assets/img/Automation/Image/40.jpg', '2026-03-19 16:25:10');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shopping_bag_item`
+--
+
+CREATE TABLE `shopping_bag_item` (
+  `bag_item_id` int(11) NOT NULL,
+  `shopping_bag_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `shopping_bag_item`
+--
+
+INSERT INTO `shopping_bag_item` (`bag_item_id`, `shopping_bag_id`, `product_id`, `quantity`) VALUES
+(1, 1, 1, 2),
+(2, 2, 1, 5),
+(3, 3, 1, 5),
+(4, 4, 1, 1),
+(5, 5, 1, 3),
+(6, 6, 1, 1),
+(7, 7, 1, 2),
+(8, 8, 1, 5),
+(9, 9, 1, 4),
+(10, 10, 1, 4),
+(11, 1, 2, 2),
+(12, 2, 2, 3),
+(13, 3, 2, 5),
+(14, 4, 2, 4),
+(15, 5, 2, 3),
+(16, 6, 2, 3),
+(17, 7, 2, 3),
+(18, 8, 2, 3),
+(19, 9, 2, 5),
+(20, 10, 2, 3),
+(21, 1, 3, 5),
+(22, 2, 3, 5),
+(23, 3, 3, 1),
+(24, 4, 3, 1),
+(25, 5, 3, 5),
+(26, 6, 3, 3),
+(27, 7, 3, 1),
+(28, 8, 3, 5),
+(29, 9, 3, 5),
+(30, 10, 3, 1),
+(31, 1, 4, 1),
+(32, 2, 4, 4),
+(33, 3, 4, 2),
+(34, 4, 4, 3),
+(35, 5, 4, 3),
+(36, 6, 4, 2),
+(37, 7, 4, 5),
+(38, 8, 4, 3),
+(39, 9, 4, 1),
+(40, 10, 4, 4),
+(41, 1, 5, 1),
+(42, 2, 5, 4),
+(43, 3, 5, 1),
+(44, 4, 5, 2),
+(45, 5, 5, 5),
+(46, 6, 5, 1),
+(47, 7, 5, 3),
+(48, 8, 5, 3),
+(49, 9, 5, 4),
+(50, 10, 5, 4),
+(51, 1, 6, 5),
+(52, 2, 6, 2),
+(53, 3, 6, 1),
+(54, 4, 6, 4),
+(55, 5, 6, 3),
+(56, 6, 6, 5),
+(57, 7, 6, 5),
+(58, 8, 6, 1),
+(59, 9, 6, 5),
+(60, 10, 6, 1),
+(61, 1, 7, 5),
+(62, 2, 7, 4),
+(63, 3, 7, 3),
+(64, 4, 7, 5),
+(65, 5, 7, 1),
+(66, 6, 7, 2),
+(67, 7, 7, 4),
+(68, 8, 7, 3),
+(69, 9, 7, 2),
+(70, 10, 7, 2),
+(71, 1, 8, 4),
+(72, 2, 8, 4),
+(73, 3, 8, 1),
+(74, 4, 8, 4),
+(75, 5, 8, 1),
+(76, 6, 8, 2),
+(77, 7, 8, 1),
+(78, 8, 8, 4),
+(79, 9, 8, 4),
+(80, 10, 8, 1),
+(81, 1, 9, 1),
+(82, 2, 9, 4),
+(83, 3, 9, 3),
+(84, 4, 9, 5),
+(85, 5, 9, 5),
+(86, 6, 9, 4),
+(87, 7, 9, 4),
+(88, 8, 9, 2),
+(89, 9, 9, 4),
+(90, 10, 9, 2),
+(91, 1, 10, 5),
+(92, 2, 10, 3),
+(93, 3, 10, 4),
+(94, 4, 10, 5),
+(95, 5, 10, 2),
+(96, 6, 10, 2),
+(97, 7, 10, 2),
+(98, 8, 10, 3),
+(99, 9, 10, 3),
+(100, 10, 10, 5),
+(101, 1, 11, 5),
+(102, 2, 11, 4),
+(103, 3, 11, 5),
+(104, 4, 11, 4),
+(105, 5, 11, 4),
+(106, 6, 11, 1),
+(107, 7, 11, 4),
+(108, 8, 11, 1),
+(109, 9, 11, 1),
+(110, 10, 11, 3),
+(111, 1, 12, 2),
+(112, 2, 12, 1),
+(113, 3, 12, 1),
+(114, 4, 12, 2),
+(115, 5, 12, 2),
+(116, 6, 12, 1),
+(117, 7, 12, 2),
+(118, 8, 12, 5),
+(119, 9, 12, 5),
+(120, 10, 12, 2),
+(121, 1, 13, 2),
+(122, 2, 13, 1),
+(123, 3, 13, 5),
+(124, 4, 13, 1),
+(125, 5, 13, 4),
+(126, 6, 13, 1),
+(127, 7, 13, 4),
+(128, 8, 13, 4),
+(129, 9, 13, 3),
+(130, 10, 13, 3),
+(131, 1, 14, 4),
+(132, 2, 14, 1),
+(133, 3, 14, 3),
+(134, 4, 14, 3),
+(135, 5, 14, 3),
+(136, 6, 14, 5),
+(137, 7, 14, 1),
+(138, 8, 14, 5),
+(139, 9, 14, 2),
+(140, 10, 14, 2),
+(141, 1, 15, 2),
+(142, 2, 15, 1),
+(143, 3, 15, 2),
+(144, 4, 15, 5),
+(145, 5, 15, 1),
+(146, 6, 15, 3),
+(147, 7, 15, 5),
+(148, 8, 15, 4),
+(149, 9, 15, 5),
+(150, 10, 15, 1),
+(151, 1, 16, 4),
+(152, 2, 16, 3),
+(153, 3, 16, 3),
+(154, 4, 16, 5),
+(155, 5, 16, 5),
+(156, 6, 16, 1),
+(157, 7, 16, 3),
+(158, 8, 16, 3),
+(159, 9, 16, 5),
+(160, 10, 16, 5),
+(161, 1, 17, 5),
+(162, 2, 17, 1),
+(163, 3, 17, 2),
+(164, 4, 17, 1),
+(165, 5, 17, 4),
+(166, 6, 17, 2),
+(167, 7, 17, 5),
+(168, 8, 17, 2),
+(169, 9, 17, 2),
+(170, 10, 17, 5),
+(171, 1, 18, 3),
+(172, 2, 18, 4),
+(173, 3, 18, 2),
+(174, 4, 18, 5),
+(175, 5, 18, 2),
+(176, 6, 18, 2),
+(177, 7, 18, 5),
+(178, 8, 18, 3),
+(179, 9, 18, 4),
+(180, 10, 18, 4),
+(181, 1, 19, 4),
+(182, 2, 19, 5),
+(183, 3, 19, 1),
+(184, 4, 19, 3),
+(185, 5, 19, 5),
+(186, 6, 19, 2),
+(187, 7, 19, 5),
+(188, 8, 19, 2),
+(189, 9, 19, 2),
+(190, 10, 19, 3),
+(191, 1, 20, 4),
+(192, 2, 20, 1),
+(193, 3, 20, 3),
+(194, 4, 20, 2),
+(195, 5, 20, 1),
+(196, 6, 20, 3),
+(197, 7, 20, 2),
+(198, 8, 20, 4),
+(199, 9, 20, 5),
+(200, 10, 20, 5),
+(201, 1, 21, 3),
+(202, 2, 21, 2),
+(203, 3, 21, 3),
+(204, 4, 21, 5),
+(205, 5, 21, 3),
+(206, 6, 21, 4),
+(207, 7, 21, 1),
+(208, 8, 21, 2),
+(209, 9, 21, 2),
+(210, 10, 21, 5),
+(211, 1, 22, 3),
+(212, 2, 22, 5),
+(213, 3, 22, 4),
+(214, 4, 22, 4),
+(215, 5, 22, 4),
+(216, 6, 22, 1),
+(217, 7, 22, 4),
+(218, 8, 22, 5),
+(219, 9, 22, 1),
+(220, 10, 22, 2),
+(221, 1, 23, 1),
+(222, 2, 23, 3),
+(223, 3, 23, 2),
+(224, 4, 23, 5),
+(225, 5, 23, 4),
+(226, 6, 23, 3),
+(227, 7, 23, 2),
+(228, 8, 23, 3),
+(229, 9, 23, 2),
+(230, 10, 23, 5),
+(231, 1, 24, 4),
+(232, 2, 24, 3),
+(233, 3, 24, 2),
+(234, 4, 24, 2),
+(235, 5, 24, 5),
+(236, 6, 24, 1),
+(237, 7, 24, 5),
+(238, 8, 24, 1),
+(239, 9, 24, 3),
+(240, 10, 24, 3),
+(241, 1, 25, 4),
+(242, 2, 25, 1),
+(243, 3, 25, 2),
+(244, 4, 25, 2),
+(245, 5, 25, 1),
+(246, 6, 25, 5),
+(247, 7, 25, 3),
+(248, 8, 25, 3),
+(249, 9, 25, 1),
+(250, 10, 25, 2),
+(251, 1, 26, 1),
+(252, 2, 26, 3),
+(253, 3, 26, 3),
+(254, 4, 26, 5),
+(255, 5, 26, 4),
+(256, 6, 26, 2),
+(257, 7, 26, 3),
+(258, 8, 26, 2),
+(259, 9, 26, 1),
+(260, 10, 26, 3),
+(261, 1, 27, 1),
+(262, 2, 27, 3),
+(263, 3, 27, 5),
+(264, 4, 27, 4),
+(265, 5, 27, 5),
+(266, 6, 27, 5),
+(267, 7, 27, 3),
+(268, 8, 27, 5),
+(269, 9, 27, 4),
+(270, 10, 27, 2),
+(271, 1, 28, 5),
+(272, 2, 28, 4),
+(273, 3, 28, 5),
+(274, 4, 28, 3),
+(275, 5, 28, 4),
+(276, 6, 28, 1),
+(277, 7, 28, 1),
+(278, 8, 28, 3),
+(279, 9, 28, 2),
+(280, 10, 28, 3),
+(281, 1, 29, 1),
+(282, 2, 29, 3),
+(283, 3, 29, 2),
+(284, 4, 29, 3),
+(285, 5, 29, 2),
+(286, 6, 29, 2),
+(287, 7, 29, 1),
+(288, 8, 29, 1),
+(289, 9, 29, 1),
+(290, 10, 29, 3),
+(291, 1, 30, 4),
+(292, 2, 30, 2),
+(293, 3, 30, 3),
+(294, 4, 30, 2),
+(295, 5, 30, 1),
+(296, 6, 30, 2),
+(297, 7, 30, 4),
+(298, 8, 30, 4),
+(299, 9, 30, 3),
+(300, 10, 30, 4),
+(301, 1, 31, 3),
+(302, 2, 31, 4),
+(303, 3, 31, 2),
+(304, 4, 31, 5),
+(305, 5, 31, 5),
+(306, 6, 31, 2),
+(307, 7, 31, 5),
+(308, 8, 31, 4),
+(309, 9, 31, 4),
+(310, 10, 31, 1),
+(311, 1, 32, 3),
+(312, 2, 32, 2),
+(313, 3, 32, 3),
+(314, 4, 32, 5),
+(315, 5, 32, 2),
+(316, 6, 32, 4),
+(317, 7, 32, 5),
+(318, 8, 32, 1),
+(319, 9, 32, 1),
+(320, 10, 32, 3),
+(321, 1, 33, 4),
+(322, 2, 33, 5),
+(323, 3, 33, 4),
+(324, 4, 33, 3),
+(325, 5, 33, 4),
+(326, 6, 33, 3),
+(327, 7, 33, 5),
+(328, 8, 33, 3),
+(329, 9, 33, 5),
+(330, 10, 33, 4),
+(331, 1, 34, 2),
+(332, 2, 34, 3),
+(333, 3, 34, 3),
+(334, 4, 34, 1),
+(335, 5, 34, 1),
+(336, 6, 34, 2),
+(337, 7, 34, 2),
+(338, 8, 34, 3),
+(339, 9, 34, 3),
+(340, 10, 34, 5),
+(341, 1, 35, 5),
+(342, 2, 35, 4),
+(343, 3, 35, 3),
+(344, 4, 35, 1),
+(345, 5, 35, 3),
+(346, 6, 35, 1),
+(347, 7, 35, 2),
+(348, 8, 35, 2),
+(349, 9, 35, 3),
+(350, 10, 35, 3);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `shopping_bag_item`
+--
+ALTER TABLE `shopping_bag_item`
+  ADD PRIMARY KEY (`bag_item_id`),
+  ADD KEY `fk_bag` (`shopping_bag_id`),
+  ADD KEY `fk_product` (`product_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `shopping_bag_item`
+--
+ALTER TABLE `shopping_bag_item`
+  MODIFY `bag_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=512;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `shopping_bag_item`
+--
+ALTER TABLE `shopping_bag_item`
+  ADD CONSTRAINT `fk_bag` FOREIGN KEY (`shopping_bag_id`) REFERENCES `personal_shopping_bag` (`shopping_bag_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_product` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+

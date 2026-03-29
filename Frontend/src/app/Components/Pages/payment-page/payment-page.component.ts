@@ -478,7 +478,12 @@ export class PaymentPageComponent implements OnInit, AfterViewInit, OnDestroy  {
       inputDataForConfirmation
     ).subscribe((response) => {
       console.log("Response from server is ", response);
-        if (response[0]?.status == "status_of_confirmed_order") {
+       if(response[0]?.status == "Session timeout") {
+          console.log("Session is timeout");
+          this.identification.ClearSessionStorage();
+          this.identification.SetisUserIdentifiedMain(false);
+          this.router.navigate(['/login_handling']);  // Navigate to login handling page internal in Angular
+        } else if (response[0]?.status == "status_of_confirmed_order") {
           console.log("Order is completed");
           this.GLOBAL_label_for_total_price = inputDataForConfirmation.Total_Price_Before_VAT;
           this.GLOBAL_label_for_total_VAT_price = inputDataForConfirmation.Total_VAT;

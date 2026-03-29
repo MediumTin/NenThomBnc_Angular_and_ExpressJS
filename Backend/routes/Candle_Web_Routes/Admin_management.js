@@ -49,7 +49,7 @@ Router.get('/customer',async (req,res)=>{
          response_array.push({
             "Customer_Id" : `${customer.customer_id}`,
             "email" : `${customer.email}`,
-            "name" : `${customer.name}`,
+            "name" : `${customer.first_name} ${customer.last_name}`,
             "address" : `${customer.address}`
          });
       }
@@ -135,8 +135,8 @@ Router.get('/inventory',async (req,res)=>{
          let inventory = Inventory_list[i];
          response_array.push({
             "InventoryId" : `${inventory.inventory_id}`,
-            "ProductName" : `${inventory.product_sku}`,
-            "Quantity" : `${inventory.quantity}`,
+            "ProductName" : `${inventory.product_name}`,
+            "Quantity" : `${inventory.quantity_storage}`,
             "WarehouseName" : `${inventory.name}`,
             "Location" : `${inventory.location}`
          });
@@ -218,13 +218,13 @@ Router.get('/orderstatus',async (req,res)=>{
             let d = detail[j];
             detail_items.push({
                "OrderDetailId" : `${d.order_detail_id}`,
-               "ProductName" : `${d.product_sku}`,
+               "ProductName" : `${d.product_name}`,
                "Quantity" : `${d.quantity}`,
-               "UnitPrice" : `${d.unit_price}`,
-               "SubTotalAmount" : `${d.subtotal}`,
+               "UnitPrice" : `${d.price_unit}`,
+               "SubTotalAmount" : `${d.price_unit * d.quantity}`,
                "PaymentId" : `${d.payment_id}`,
                "PaymentMethod" : `${d.method}`,
-               "PaymentStatus" : `${d.status}`,
+               "PaymentStatus" : `${d.status_payment}`,
                "PaymentGatewayId" : `${d.payment_gateway_id}`
             });
          }
@@ -233,7 +233,7 @@ Router.get('/orderstatus',async (req,res)=>{
             "CustomerId" : `${order_detail.customer_id}`,
             "CustomerUsername" : `${order_detail.name}`,
             "TotalAmount" : `${order_detail.total_amount}`,
-            "OrderStatus" : `${order_detail.status}`,
+            "OrderStatus" : `${order_detail.status_order}`,
             "OrderDate" : `${order_detail.order_date}`,
             "details" : detail_items
          });

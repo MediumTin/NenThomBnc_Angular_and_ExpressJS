@@ -19,6 +19,7 @@ const GetAllProductInformation = async () => {
     return result;
 }
 
+
 const GetAllHistoricalProduct = async () => {
     var result =[];
     try{

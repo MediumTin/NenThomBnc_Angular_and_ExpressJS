@@ -58,7 +58,7 @@ Router.post('/register',(req,res)=>{
 const LoginHandling = async(req,res) => {
    if(isDatabaseCombination){
       console.log("Database combination mode is ON");
-      var [isValidUser, isAdminRight, UserName] = await User_Information_From_MySQL.Check_Valid_User_in_MySQL(req.body.username, req.body.password);
+      var [isValidUser, isAdminRight, Full_name, Customer_ID] = await User_Information_From_MySQL.Check_Valid_User_in_MySQL(req.body.username, req.body.password);
    } else {
       console.log("Database combination mode is OFF");
       var [isValidUser, isAdminRight, UserName] = await User_Information_Handling.Check_Valid_User_in_Database(req.body.username, req.body.password);
@@ -68,13 +68,13 @@ const LoginHandling = async(req,res) => {
    var CurrentUser = req.body.username;
    if(isAdminRight && isValidUser){
       req.session.personal_information ={
-         username: UserName,
-         password: req.body.password,
+         username: Full_name,
          age: 23,
          address : "Admin",
          sex: "Admin",
          member_type: "Admin",
-         email: "admin@gmail.com"
+         email: "admin@gmail.com",
+         customer_id : Customer_ID
       };
       req.session.payment_information ={
             smart_banking : "Admin",
@@ -88,7 +88,7 @@ const LoginHandling = async(req,res) => {
       req.session.save(()=>{
          res.status(200).send(
          [{
-            "Currentuser" : `${UserName}`,
+            "Currentuser" : `${Full_name}`,
             // "SessionID" : `${req.sessionID}`,
             "isAdminRights" : true
          }]
@@ -107,13 +107,13 @@ const LoginHandling = async(req,res) => {
       
       // Way 2: Using express-session library
       req.session.personal_information ={
-         username: UserName,
-         password: req.body.password,
+         username: Full_name,
          age: 23,
          address : "Huynh Tan Phat",
          sex: "Women",
          member_type: "VIP",
-         email: "tranbichngoc22112001@gmail.com"
+         email: "tranbichngoc22112001@gmail.com",
+         customer_id : Customer_ID
       };
       req.session.payment_information ={
             smart_banking : "Vietinbank",
@@ -132,7 +132,7 @@ const LoginHandling = async(req,res) => {
 
          res.status(200).send(
          [{
-            "Currentuser" : `${UserName}`,
+            "Currentuser" : `${Full_name}`,
             // "SessionID" : `${req.sessionID}`, // dont send SessionID in manually for security reason
             "isAdminRights" : false
          }]

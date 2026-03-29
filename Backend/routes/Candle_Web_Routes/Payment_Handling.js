@@ -100,10 +100,19 @@ Router.post('/specific_handling',async (req,res)=>{
    // await Redis_API.Connect_To_Redis(client); // Open connection to Redis
    // await Redis_API.Delete_Data_In_Redis(client);
    // await Redis_API.Disconnect_To_Redis(client);
-   var requested_username = req.session.personal_information.username;
-   console.log(`Requested username for payment handling is ${requested_username}`);
-   var requested_password = req.session.personal_information.password;
-   console.log(`Requested password for payment handling is ${requested_password}`);
+   var requested_Full_name = req.session.personal_information.username;
+   var customer_id = req.session.personal_information && req.session.personal_information.customer_id;
+   if (!customer_id) {
+   req.session.destroy();
+   res.status(200).send(
+   [{
+      "status" : "Session timeout",
+   }]
+   );
+   return;
+   }
+   console.log(`Requested username for payment handling is ${requested_Full_name}`);
+   console.log(`Customer ID for payment handling is ${customer_id}`);
 
    const Payment_gateway_id = req.body.Payment_gateway_id;
    console.log(`PayPal order ID is ${Payment_gateway_id}`);
@@ -111,18 +120,18 @@ Router.post('/specific_handling',async (req,res)=>{
    const Method_by_Order = req.body.Method_by_Order;
    console.log(`Method_by_Order is ${Method_by_Order}`);
 
-   const Customer_ID_Info = await User_Information_From_MySQL.Get_Customer_ID_in_MySQL_DB_HighCorrection(requested_username,requested_password);
-   console.log(`Customer_ID_Info is ${Customer_ID_Info}`);
+   // const Customer_ID_Info = await User_Information_From_MySQL.Get_Customer_ID_in_MySQL_DB_HighCorrection(requested_Full_name);
+   console.log(`Customer_ID_Info is ${customer_id}`);
 
    var total_price_After_VAT = req.body.Total_Price_After_VAT;
    console.log(`Total price after VAT is ${total_price_After_VAT}`);
 
    // Create new order in order table
-   const Get_new_OrderID_created = await User_Information_From_MySQL.Create_New_Order_in_MySQL(Customer_ID_Info,total_price_After_VAT,'Processing');
+   const Get_new_OrderID_created = await User_Information_From_MySQL.Create_New_Order_in_MySQL(customer_id,total_price_After_VAT,'Processing');
    console.log(`Create_New_Order result is ${Get_new_OrderID_created}`);
 
    // Create new payment in payment table
-   const Get_new_PaymentID_created = await User_Information_From_MySQL.Create_New_payment_in_MySQL(Get_new_OrderID_created,total_price_After_VAT,'pending',Method_by_Order, Payment_gateway_id);
+   const Get_new_PaymentID_created = await User_Information_From_MySQL.Create_New_payment_in_MySQL(Get_new_OrderID_created,'pending',Method_by_Order, Payment_gateway_id);
    console.log(`Create_New_payment result is ${Get_new_PaymentID_created}`);
 
    var selectedList = (req.body.Selected_List);
@@ -140,8 +149,8 @@ Router.post('/specific_handling',async (req,res)=>{
       selectedList_filtered2[i] = selectedList[i].split(","); // Split each item in selectedList by comma
       console.log(`Type first item after split selectedList_filtered2 is ${typeof(selectedList_filtered2[0])}`);
       console.log(`Name of first item after split selectedList_filtered2 is ${selectedList_filtered2[0][0]}`);
-      const Create_new_Order_detail_in_MySQL = await User_Information_From_MySQL.Create_Order_detail_in_MySQL(Get_new_OrderID_created,Get_new_PaymentID_created,selectedList_filtered2[i][1], selectedList_filtered2[i][2],selectedList_filtered2[i][0]);
-      console.log(`Create_Order_detail_in_MySQL result is ${Create_new_Order_detail_in_MySQL}`);
+      const Create_new_Order_detail_in_MySQL = await User_Information_From_MySQL.Create_Order_detail_Inventory_in_MySQL(Get_new_OrderID_created,Get_new_PaymentID_created,selectedList_filtered2[i][1], selectedList_filtered2[i][2],selectedList_filtered2[i][0]);
+      console.log(`Create_Order_detail_Inventory_in_MySQL result is ${Create_new_Order_detail_in_MySQL}`);
       selectedListt_with_order_detail[i] = Create_new_Order_detail_in_MySQL;
 
    }
@@ -319,7 +328,15 @@ Router.post('/mergelocalstorageandDB',async (req,res)=>{
    console.log(`Type of first item in Candle_name_array is ${typeof(Candle_name_array)}`);
    console.log(`Type of first item in Image_array is ${typeof(Image_array)}`);
    console.log(`Type of first item in Price_array is ${typeof(Price_array)}`);
-   var CurrentUser = req.session.personal_information.username;
+      var Customer_id = req.session.personal_information && req.session.personal_information.customer_id;
+   if (!Customer_id) {
+   req.session.destroy();
+   res.status(200).send(
+   [{
+      "status" : "Session is timeout"
+   }]);
+   return;
+   }
    let Merge_data_from_localstorage = [];
    let length_of_merge_array = (Quatity_array != undefined) ? Quatity_array.length : 0; // if local storage is empty, length of merge array = 0
    console.log(`Length Merge_data_from_localstorage 1 is ${Merge_data_from_localstorage.length}`);
@@ -329,10 +346,10 @@ Router.post('/mergelocalstorageandDB',async (req,res)=>{
          // Write into Database each item from local storage
          Merge_data_from_localstorage[i] = `${Candle_name_array[i]},${Quatity_array[i]},${Price_array[i]},${Image_array[i]}`;
          // Write to database and clear Redis cache
-         console.log(`Username is ${CurrentUser}`);
+         console.log(`Customer ID is ${Customer_id}`);
          if(isDatabaseCombination){
             console.log("Database combination mode is ON");
-            await User_Information_From_MySQL.Update_Content_of_ShoppingBag_MYSQL(CurrentUser,Merge_data_from_localstorage[i]); // Update new shopping bag to database
+            await User_Information_From_MySQL.Update_Content_of_ShoppingBag_MYSQL(Customer_id,Merge_data_from_localstorage[i]); // Update new shopping bag to database
          } else {
             console.log("Database combination mode is OFF");
             await User_Information_Handling.Update_Content_of_ShoppingBag(CurrentUser,Merge_data_from_localstorage[i]); // Update new shopping bag to database
@@ -343,12 +360,12 @@ Router.post('/mergelocalstorageandDB',async (req,res)=>{
       console.log(`Length Quatity_array is ${Quatity_array.length}`);
       console.log(`Length Merge_data_from_localstorage 2 is ${Merge_data_from_localstorage.length}`);
       await Redis_API.Connect_To_Redis(client); // Open connection to Redis
-      const Result_Delete_Cache = await Redis_API.Delete_seperated_data_inRedis(client,CurrentUser); // Delete data in Redis cache
+      const Result_Delete_Cache = await Redis_API.Delete_seperated_data_inRedis(client,Customer_id); // Delete data in Redis cache
       console.log(`Value of deleting data in Cache: ${Result_Delete_Cache}`);
       await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
    }
    
-   var LOC_Result_from_Database = await ReadShoppingBag_From_Database_and_Redis(CurrentUser);
+   var LOC_Result_from_Database = await ReadShoppingBag_From_Database_and_Redis(Customer_id);
    console.log(`LOC_Result_from_Database---------------- : ${LOC_Result_from_Database}`);
    console.log(`Type of LOC_Result_from_Database , expect is Array of String : ${typeof(LOC_Result_from_Database)}`);
    // LOC_Result_from_Database = JSON.parse(LOC_Result_from_Database);
@@ -405,25 +422,21 @@ Router.get('/',(req,res)=>{
              // Work with the session
             //  res.send(`Found in Redis with Session ID is ${req.sessionID}\n and content is ${session.personal_information.username}`);
             const LOC_Result_from_SessionStorage = session.personal_shopping_bag;
-            var CurrentUser = session.personal_information.username;
-            var LOC_Result_from_Database = await SyncUp_Info_Redis_And_DB(CurrentUser);
+            var Customer_id = req.session.personal_information && req.session.personal_information.customer_id;
+            if (!Customer_id) {
+            req.session.destroy();
+            res.status(200).send(
+            [{
+               "Currentuser" : 'Session timeout',
+               "personal_shopping_bag" : 'Session timeout'
+            }]);
+            return;
+            }
+            var LOC_Result_from_Database = await SyncUp_Info_Redis_And_DB(Customer_id);
             console.log(`LOC_Result_from_Database : ${LOC_Result_from_Database}`);
             console.log(`LOC_Result_from_SessionStorage : ${LOC_Result_from_SessionStorage}`); // missing sync up between local storage and database --> make later
             console.log(`Global interface is ${Global_Interface.isFirstTimeLogin}`);
-
-            // Scenario 1: If want user can access the website without login
             LOC_Result_from_Database = JSON.parse(LOC_Result_from_Database);
-
-            // Scenario 2: If want user must login before access the website
-            // if(Global_Interface.isFirstTimeLogin != false){
-            //    Global_Interface.isFirstTimeLogin = true;
-            //    LOC_Result_from_Database = JSON.parse(LOC_Result_from_Database);
-            // }
-            // if(Global_Interface.isFirstTimeLogin == false){
-            //    // first time after request write
-            //    Global_Interface.isFirstTimeLogin = true;
-            // }
-
             res.status(200).send(
             [{
                "Currentuser" : `${req.session.personal_information.username}`,
@@ -464,15 +477,15 @@ Router.get('/specific_handling',(req,res)=>{
    
 })
 
-const SyncUp_Info_Redis_And_DB = async (username)=>{
+const SyncUp_Info_Redis_And_DB = async (customer_id)=>{
    await Redis_API.Connect_To_Redis(client); // Open connection to Redis
-   const Result_Read_From_Cache = await Redis_API.Get_Personal_Shopping_Bag(client,username); // Check request is exist in Cache or not
+   const Result_Read_From_Cache = await Redis_API.Get_Personal_Shopping_Bag(client,customer_id); // Check request is exist in Cache or not
    console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
    if(Result_Read_From_Cache == null){
       console.log("Miss cached");
       if(isDatabaseCombination){
          console.log("Database combination mode is ON");
-         var Personal_Shopping_Bag = await User_Information_From_MySQL.GetShoppingBagFromUser_MYSQL(username); // Read data from database
+         var Personal_Shopping_Bag = await User_Information_From_MySQL.GetShoppingBagFromUser_MYSQL(customer_id); // Read data from database
       } else {
          console.log("Database combination mode is OFF");
          var Personal_Shopping_Bag = await User_Information_Handling.GetShoppingBagFromUser(username); // Read data from database
@@ -500,19 +513,19 @@ const SyncUp_Info_Redis_And_DB = async (username)=>{
    }
 }
 
-const ReadShoppingBag_From_Database_and_Redis = async (username)=>{
+const ReadShoppingBag_From_Database_and_Redis = async (customer_id)=>{
    await Redis_API.Connect_To_Redis(client); // Open connection to Redis
-   const Result_Read_From_Cache = await Redis_API.Get_Personal_Shopping_Bag(client,username); // Check request is exist in Cache or not
+   const Result_Read_From_Cache = await Redis_API.Get_Personal_Shopping_Bag(client,customer_id); // Check request is exist in Cache or not
    console.log(`Value of reading data from Cache: ${Result_Read_From_Cache}`); 
    if(Result_Read_From_Cache == null){
       console.log("Miss cached");
       if(isDatabaseCombination){
          console.log("Database combination mode is ON");
-         var Personal_Shopping_Bag = await User_Information_From_MySQL.GetShoppingBagFromUser_MYSQL(username); // Read data from database
+         var Personal_Shopping_Bag = await User_Information_From_MySQL.GetShoppingBagFromUser_MYSQL(customer_id); // Read data from database
          // Need to convert from array of objects to array of strings to same as MongooseDB
          let Converted_array_of_strings = [];
          for(let i=0;i<Personal_Shopping_Bag.length;i++){
-            Converted_array_of_strings[i] = Personal_Shopping_Bag[i].candle_name + ',' + Personal_Shopping_Bag[i].quantity + ',' + Personal_Shopping_Bag[i].price_unit + ',' + Personal_Shopping_Bag[i].candle_image;
+            Converted_array_of_strings[i] = Personal_Shopping_Bag[i].product_name + ',' + Personal_Shopping_Bag[i].quantity + ',' + Personal_Shopping_Bag[i].price_unit + ',' + Personal_Shopping_Bag[i].product_image;
          }
          Personal_Shopping_Bag = Converted_array_of_strings;
       } else {
@@ -523,7 +536,7 @@ const ReadShoppingBag_From_Database_and_Redis = async (username)=>{
       console.log(`Type of reading data from Database: ${typeof(Personal_Shopping_Bag)}`);
       console.log(`First item is ${Personal_Shopping_Bag[0]}`); // Candle Snuffer,1,85.000,../../../../assets/img/Automation/Image/26.jpg
       console.log(`Type of first item is ${typeof(Personal_Shopping_Bag[0])}`); // string
-      const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(username,JSON.stringify(Personal_Shopping_Bag)); // set new data from database to Redis cache
+      const Result_Write_To_Cache = await Set_Data_From_Database_To_RedisCache(customer_id,JSON.stringify(Personal_Shopping_Bag)); // set new data from database to Redis cache
       console.log(`Value of writing data to Cache: ${Result_Write_To_Cache}`);
       await Redis_API.Disconnect_To_Redis(client); // Close connection to Redis
       return Personal_Shopping_Bag;

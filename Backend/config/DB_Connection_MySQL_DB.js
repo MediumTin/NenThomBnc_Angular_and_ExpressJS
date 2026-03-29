@@ -29,7 +29,8 @@ const pool = mysql.createPool({
   database: process.env.MYSQL_DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,   // tối đa 10 connection cùng lúc
-  queueLimit: 0
+  queueLimit: 0,
+  multipleStatements: true  // Cho phép thực thi nhiều câu lệnh SQL trong một truy vấn
 });
 
 module.exports = pool;

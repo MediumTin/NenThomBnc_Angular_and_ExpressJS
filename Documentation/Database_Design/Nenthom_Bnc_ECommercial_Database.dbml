@@ -73,9 +73,9 @@ Table "customers" {
 Table "inventory" {
   "inventory_id" int(11) [pk, not null]
   "warehouse_id" int(11) [not null]
-  "product_sku" varchar(100) [not null]
   "quantity_storage" int(11) [not null, default: 0]
   "updated_at" datetime [default: `current_timestamp()`]
+  "product_id" int(11) [not null]
 }
 
 Table "order_coupons" {
@@ -91,7 +91,6 @@ Table "order_coupons" {
 Table "order_details_inventory" {
   "order_detail_id" int(11) [not null]
   "inventory_id" int(11) [not null]
-  "allocated_quantity" int(11) [not null]
 
   Indexes {
     (order_detail_id, inventory_id) [pk]
@@ -122,21 +121,8 @@ Table "payments" {
 }
 
 Table "personal_shopping_bag" {
-  "bag_item_id" int(11) [pk, not null]
+  "shopping_bag_id" int(11) [pk, not null]
   "customer_id" int(11) [not null]
-  "candle_name" varchar(255)
-  "quantity" int(11)
-  "price_unit" decimal(10,2)
-  "candle_image" varchar(500)
-}
-
-Table "phone" {
-  "customer_id" int(11) [not null]
-  "phone" varchar(20) [not null]
-
-  Indexes {
-    (customer_id, phone) [pk]
-  }
 }
 
 Table "ware_houses" {
@@ -147,9 +133,28 @@ Table "ware_houses" {
   "manager_name" varchar(100)
 }
 
+Table "products" {
+  "product_id" int(11) [pk, not null]
+  "product_name" varchar(255) [not null]
+  "product_description" text
+  "price_unit" decimal(10,2) [not null]
+  "product_category" varchar(100)
+  "product_image" varchar(255)
+  "created_at" timestamp [not null, default: `current_timestamp()`]
+}
+
+Table "shopping_bag_item" {
+  "bag_item_id" int(11) [pk, not null]
+  "shopping_bag_id" int(11) [not null]
+  "product_id" int(11) [not null]
+  "quantity" int(11) [default: 1]
+}
+
 Ref "fk_cc_coupon":"coupons"."coupon_id" < "customer_coupons"."coupon_id" [update: cascade, delete: cascade]
 
 Ref "fk_cc_customer":"customers"."customer_id" < "customer_coupons"."customer_id" [update: cascade, delete: cascade]
+
+Ref "fk_inventory_product":"products"."product_id" < "inventory"."product_id" [delete: cascade]
 
 Ref "fk_inventory_warehouse":"ware_houses"."warehouse_id" < "inventory"."warehouse_id" [update: cascade]
 
@@ -169,4 +174,6 @@ Ref "fk_payments_order":"orders"."order_id" < "payments"."order_id" [update: cas
 
 Ref "personal_shopping_bag_ibfk_1":"customers"."customer_id" < "personal_shopping_bag"."customer_id"
 
-Ref "phone_ibfk_1":"customers"."customer_id" < "phone"."customer_id" [update: cascade, delete: cascade]
+Ref "fk_bag":"personal_shopping_bag"."shopping_bag_id" < "shopping_bag_item"."shopping_bag_id" [delete: cascade]
+
+Ref "fk_product":"products"."product_id" < "shopping_bag_item"."product_id" [delete: cascade]
