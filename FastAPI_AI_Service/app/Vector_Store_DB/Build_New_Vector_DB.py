@@ -12,14 +12,14 @@ import sys
 
 try:
     from app.Embedding_Model.Embedding_model import embeddings
-    from app.Chunking.Chunking import splits
+    from app.Chunking.Chunking import all_docs
 except ModuleNotFoundError:
     # Allow direct execution: python app/Vector_Store_DB/Build_New_Vector_DB.py
     PROJECT_ROOT = Path(__file__).resolve().parents[2]
     if str(PROJECT_ROOT) not in sys.path:
         sys.path.insert(0, str(PROJECT_ROOT))
     from app.Embedding_Model.Embedding_model import embeddings
-    from app.Chunking.Chunking import splits
+    from app.Chunking.Chunking import all_docs
 
 from dotenv import load_dotenv # Import the load_dotenv function to load environment variables from a .env file
 load_dotenv() # Load the environment variables from the .env file
@@ -33,7 +33,7 @@ from pprint import pprint # Import the pprint function for pretty-printing the s
 # Using seperate file
 # ----------------------------------Step 4: Store into Vector Database------------------------------------------
 vectorstore = FAISS.from_documents(
-    documents=splits,# The documents to be stored in the vector database, which are the chunks created from the original documents.
+    documents=all_docs,# The documents to be stored in the vector database, which are the chunks created from the original documents.
     embedding=embeddings, # The embedding model to be used for converting the documents into vector representations. In this case, it uses the OpenAIEmbeddings model defined earlier.
     distance_strategy=DistanceStrategy.COSINE, # Use cosine similarity for distance calculation
 )

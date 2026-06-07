@@ -1,6 +1,8 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, Inject, PLATFORM_ID, SecurityContext, ViewChild } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { AiChatbotInterfaceService } from '../../../Services/AI_Chatbot/ai-chatbot-interface.service';
+import { marked } from 'marked';
 
 interface ChatMessage {
   id: string;
@@ -28,10 +30,16 @@ interface ChatBotProfile {
   templateUrl: './ai-chat-bot.component.html',
   styleUrl: './ai-chat-bot.component.css'
 })
-export class AIChatBotComponent {
+export class AIChatBotComponent implements AfterViewChecked {
   private readonly panelStateStorageKey = 'nen-thom-ai-chatbot-open';
+  private ssidForNonBrowser?: string;
+  private shouldScrollToBottom = false;
+
+  @ViewChild('chatMessages')
+  private chatMessages?: ElementRef<HTMLDivElement>;
 
   isOpen = false;
+  isThinking = false;
   draftMessage = '';
 
   readonly profile: ChatBotProfile = {
@@ -48,7 +56,7 @@ export class AIChatBotComponent {
 
   messages: ChatMessage[] = [
     {
-      id: this.createId(),
+      id: this.Check_and_provide_SSID(),
       role: 'assistant',
       content: 'Xin chao, minh la tro ly AI cua Nen Thom. Ban can goi y san pham hay ho tro don hang?',
       time: this.nowTime()
@@ -57,18 +65,48 @@ export class AIChatBotComponent {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: object , 
-    private ai_chatbot_interface_service: AiChatbotInterfaceService
+    private ai_chatbot_interface_service: AiChatbotInterfaceService,
+    private sanitizer: DomSanitizer
   ) {
     this.isOpen = this.getStoredPanelState();
+    if (this.isOpen) {
+      this.requestScrollToBottom();
+    }
   }
 
   togglePanel(): void {
     this.isOpen = !this.isOpen;
     this.persistPanelState();
+
+    if (this.isOpen) {
+      this.requestScrollToBottom();
+    }
+  }
+
+  Check_and_provide_SSID() : string {
+    const storage = typeof globalThis !== 'undefined' ? globalThis.localStorage : undefined;
+
+    if (storage) {
+      const existing_ssid = storage.getItem('SSID_for_AI_chatbot');
+      if (existing_ssid) {
+        return existing_ssid;
+      }
+
+      const new_ssid = this.createId();
+      storage.setItem('SSID_for_AI_chatbot', new_ssid);
+      return new_ssid;
+    }
+
+    // Keep a stable ID during SSR where localStorage is unavailable.
+    if (!this.ssidForNonBrowser) {
+      this.ssidForNonBrowser = this.createId();
+    }
+
+    return this.ssidForNonBrowser;
   }
 
   GLOBAL_Resonse_message : ChatMessage = {
-    id: '',
+    id: this.Check_and_provide_SSID(),
     role: 'assistant',
     content: '',
     time: ''
@@ -96,28 +134,44 @@ export class AIChatBotComponent {
       return;
     }
     const current_message: ChatMessage = {
-      id: this.createId(),
+      id: this.Check_and_provide_SSID(),
       role: 'user',
       content: message,
       time: this.nowTime()
     }
 
     this.messages.push(current_message); // Add user message to the chat history
+    this.requestScrollToBottom();
 
     this.draftMessage = '';
+    this.isThinking = true;
+    this.requestScrollToBottom();
 
-    // Call the function to interact with the AI chatbot using the user's message and assign to response_message variable
-    const response_message: ChatMessage = await this.InteractWithAIChatbot(current_message);
+    try {
+      // Call the function to interact with the AI chatbot using the user's message and assign to response_message variable
+      const response_message: ChatMessage = await this.InteractWithAIChatbot(current_message);
 
-    // Placeholder response to keep the UI feeling alive before API integration.
-    // this.messages.push({
-    //   id: this.createId(),
-    //   role: 'assistant',
-    //   content: 'Minh da nhan yeu cau cua ban. Ban co the noi ro hon de minh goi y chinh xac hon nhe.',
-    //   time: this.nowTime()
-    // });
+      // Placeholder response to keep the UI feeling alive before API integration.
+      // this.messages.push({
+      //   id: this.createId(),
+      //   role: 'assistant',
+      //   content: 'Minh da nhan yeu cau cua ban. Ban co the noi ro hon de minh goi y chinh xac hon nhe.',
+      //   time: this.nowTime()
+      // });
 
-    this.messages.push(response_message); // Add AI response to the chat history
+      this.messages.push(response_message); // Add AI response to the chat history
+      this.requestScrollToBottom();
+    } catch {
+      this.messages.push({
+        id: this.Check_and_provide_SSID(),
+        role: 'assistant',
+        content: 'Xin loi, he thong dang ban. Ban thu lai sau it phut nhe.',
+        time: this.nowTime()
+      });
+      this.requestScrollToBottom();
+    } finally {
+      this.isThinking = false;
+    }
   }
 
   useQuickAction(action: ChatQuickAction): void {
@@ -133,10 +187,18 @@ export class AIChatBotComponent {
     return item.id;
   }
 
+  // Function to convert markdown content to sanitized HTML
+  provideMarkdown(content: string): string {
+    const normalizedContent = (content ?? '').replace(/\\n/g, '\n').trim();
+    const rawHtml = marked.parse(normalizedContent, { breaks: true });
+    return this.sanitizer.sanitize(SecurityContext.HTML, rawHtml) ?? '';
+  }
+
   private nowTime(): string {
     return new Date().toLocaleTimeString('vi-VN', {
       hour: '2-digit',
-      minute: '2-digit'
+      minute: '2-digit',
+      second: '2-digit'
     });
   }
 
@@ -158,6 +220,28 @@ export class AIChatBotComponent {
     }
 
     localStorage.setItem(this.panelStateStorageKey, String(this.isOpen));
+  }
+
+  ngAfterViewChecked(): void {
+    if (!this.shouldScrollToBottom) {
+      return;
+    }
+
+    this.scrollToBottom();
+    this.shouldScrollToBottom = false;
+  }
+
+  private requestScrollToBottom(): void {
+    this.shouldScrollToBottom = true;
+  }
+
+  private scrollToBottom(): void {
+    if (!isPlatformBrowser(this.platformId) || !this.chatMessages) {
+      return;
+    }
+
+    const container = this.chatMessages.nativeElement;
+    container.scrollTop = container.scrollHeight;
   }
 
 }

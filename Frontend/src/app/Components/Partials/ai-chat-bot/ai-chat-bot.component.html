@@ -31,15 +31,29 @@
 			</button>
 		</div>
 
-		<div class="chatbot-messages">
+		<div class="chatbot-messages" #chatMessages>
 			<article
 				*ngFor="let message of messages; trackBy: trackByMessage"
 				class="message"
 				[class.assistant]="message.role === 'assistant'"
 				[class.user]="message.role === 'user'"
 			>
-				<p>{{ message.content }}</p>
+				<ng-container *ngIf="message.role === 'assistant'; else userMessage">
+					<div class="markdown-content" [innerHTML]="provideMarkdown(message.content)"></div>
+				</ng-container>
+				<ng-template #userMessage>
+					<p>{{ message.content }}</p>
+				</ng-template>
 				<time>{{ message.time }}</time>
+			</article>
+
+			<article *ngIf="isThinking" class="message assistant thinking">
+				<div class="thinking-label">Nen Thom AI dang suy nghi...</div>
+				<div class="thinking-dots" aria-label="AI is typing">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 			</article>
 		</div>
 

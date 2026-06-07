@@ -567,6 +567,42 @@ const Update_Order_Status_for_Admin = async(order_id, status) => {
       throw err;
     }
 }
+
+// API 18: Add chat history of user and assistant into MySQL database  - Not login
+const Add_Chat_History_in_MySQL = async(SessionID, user_message, assistant_response) => {
+    var Result_Checking= 0;
+    console.log(`Session ID request is ${SessionID}`);
+    console.log(`User message request is ${user_message}`);
+    console.log(`Assistant response request is ${assistant_response}`);
+    try {
+      const [results] = await pool.query(`INSERT INTO History_AI_Chatbot (session_id_chatbot, role, content) VALUES ('${SessionID}', '${user_message}', '${assistant_response}');`);
+      console.log('📦 Register successfully:');
+      Result_Checking = 1;
+      return Result_Checking;     
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn in Add_Chat_History_in_MySQL:', err);
+      throw err;
+    }
+}
+
+// API 19: Add chat history of user and assistant into MySQL database  - Customer logined
+const Add_Chat_History_in_MySQL_Login = async(customer_id, SessionID, user_message, assistant_response) => {
+    var Result_Checking= 0;
+    console.log(`Customer ID request is ${customer_id}`);
+    console.log(`Session ID request is ${SessionID}`);
+    console.log(`User message request is ${user_message}`);
+    console.log(`Assistant response request is ${assistant_response}`);
+    try {
+      const [results] = await pool.query(`INSERT INTO History_AI_Chatbot (customer_id,session_id_chatbot, role, content) VALUES ('${customer_id}', '${SessionID}', '${user_message}', '${assistant_response}');`);
+      console.log('📦 Register successfully:');
+      Result_Checking = 1;
+      return Result_Checking;     
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn in Add_Chat_History_in_MySQL_Login:', err);
+      throw err;
+    }
+}
+
 module.exports = {
   Check_Valid_User_in_MySQL,
   Add_New_User_Information_in_MySQL,
@@ -588,5 +624,7 @@ module.exports = {
   Get_Order_Detail_for_Admin,
   Update_Coupon_Status_for_Admin,
   Update_Order_Status_for_Admin,
-  Update_All_Products_into_Products_for_admin
+  Update_All_Products_into_Products_for_admin,
+  Add_Chat_History_in_MySQL,
+  Add_Chat_History_in_MySQL_Login
 };
