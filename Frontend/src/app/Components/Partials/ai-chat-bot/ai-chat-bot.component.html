@@ -1,0 +1,57 @@
+<div class="chatbot-shell" [class.closed]="!isOpen">
+	<button
+		type="button"
+		class="chatbot-toggle"
+		[attr.aria-expanded]="isOpen"
+		(click)="togglePanel()"
+	>
+		<span class="chatbot-toggle-dot"></span>
+		<span>{{ isOpen ? 'Thu gon chat' : 'Chat voi Nen Thom AI' }}</span>
+	</button>
+
+	<section class="chatbot-panel" *ngIf="isOpen">
+		<header class="chatbot-header">
+			<div class="chatbot-avatar">NT</div>
+			<div class="chatbot-meta">
+				<h3>{{ profile.name }}</h3>
+				<p>
+					<span class="online-dot" [class.offline]="!profile.online"></span>
+					{{ profile.subtitle }}
+				</p>
+			</div>
+		</header>
+
+		<div class="chatbot-actions">
+			<button
+				type="button"
+				*ngFor="let action of quickActions; trackBy: trackByAction"
+				(click)="useQuickAction(action)"
+			>
+				{{ action.label }}
+			</button>
+		</div>
+
+		<div class="chatbot-messages">
+			<article
+				*ngFor="let message of messages; trackBy: trackByMessage"
+				class="message"
+				[class.assistant]="message.role === 'assistant'"
+				[class.user]="message.role === 'user'"
+			>
+				<p>{{ message.content }}</p>
+				<time>{{ message.time }}</time>
+			</article>
+		</div>
+
+		<div class="chatbot-input-row">
+			<input
+				type="text"
+				[value]="draftMessage"
+				(input)="draftMessage = $any($event.target).value"
+				(keydown.enter)="sendMessage()"
+				placeholder="Nhap noi dung can ho tro..."
+			/>
+			<button type="button" (click)="sendMessage()">Gui</button>
+		</div>
+	</section>
+</div>

@@ -332,8 +332,11 @@ app.use('/api/payment/vnpay', require('./routes/Payment_Gateway/Payment_VNPay'))
 // API 24: Admin management gateway 
 app.use('/api/admin_management', require('./routes/Candle_Web_Routes/Admin_management'));
 
-// // API 26: Test API with Momo - Off Momo for now due to need to sign a contract with Momo
+// // API 24_2: Test API with Momo - Off Momo for now due to need to sign a contract with Momo
 // app.get('/api/payment/momo_test', require('./controllers/API_with_Momo_Ex/Momo_Export'));
+
+// API 26: RAG chatbot
+app.use('/api/rag_chatbot', require('./routes/AI_Service_routes/RAG_Chatbot'));
 
 //--------------------------------Route to serve Angular app----------------------------------------------//
 // Route tất cả các yêu cầu khác về index.html của Angular -> để Angular xử lý định tuyến phía client (không phải server API)

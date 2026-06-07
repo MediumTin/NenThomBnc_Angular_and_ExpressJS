@@ -1,89 +1,304 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "darkMode": true,
   "gridEnabling": false,
-  "detailLevel": "All",
-  "tablePositions": [
-    {
-      "name": "coupons",
-      "schemaName": "public",
-      "x": 12,
-      "y": 10.250407612927916
-    },
-    {
-      "name": "customer_coupons",
-      "schemaName": "public",
-      "x": 691.5743653742693,
-      "y": -12.49429341900921
-    },
-    {
-      "name": "customers",
-      "schemaName": "public",
-      "x": 12,
-      "y": 757.7917996460226
-    },
-    {
-      "name": "inventory",
-      "schemaName": "public",
-      "x": 689.3622071711443,
-      "y": 421.7268061970699
-    },
-    {
-      "name": "order_coupons",
-      "schemaName": "public",
-      "x": 691.5743653742693,
-      "y": 233.2227300677909
-    },
-    {
-      "name": "order_details_inventory",
-      "schemaName": "public",
-      "x": 1264.9967681300275,
-      "y": 271.3072488033223
-    },
-    {
-      "name": "order_details",
-      "schemaName": "public",
-      "x": 1264.9967681300275,
-      "y": 544.9983695482882
-    },
-    {
-      "name": "orders",
-      "schemaName": "public",
-      "x": 691.5743653742693,
-      "y": 717.2009060094884
-    },
-    {
-      "name": "payments",
-      "schemaName": "public",
-      "x": 1264.9967681300275,
-      "y": 798.5397615813829
-    },
-    {
-      "name": "personal_shopping_bag",
-      "schemaName": "public",
-      "x": 691.5743653742693,
-      "y": 994.9257300771158
-    },
-    {
-      "name": "ware_houses",
-      "schemaName": "public",
-      "x": 12,
-      "y": 512.9983695482882
-    },
-    {
-      "name": "products",
-      "schemaName": "public",
-      "x": 12,
-      "y": 1097.2455162577928
-    },
-    {
-      "name": "shopping_bag_item",
-      "schemaName": "public",
-      "x": 691.5743653742693,
-      "y": 1193.2455162577928
-    }
-  ],
-  "tableGroupCollapseStates": [],
-  "stickyNoteLayouts": [],
-  "referencePaths": []
+  "currentViewName": null,
+  "defaultView": {
+    "detailLevel": "All",
+    "tablePositions": [
+      {
+        "name": "coupons",
+        "schemaName": "public",
+        "x": 0,
+        "y": 50
+      },
+      {
+        "name": "customer_coupons",
+        "schemaName": "public",
+        "x": 438.90966796875,
+        "y": 50
+      },
+      {
+        "name": "customers",
+        "schemaName": "public",
+        "x": 752.5791015625,
+        "y": 50
+      },
+      {
+        "name": "inventory",
+        "schemaName": "public",
+        "x": 1056.56201171875,
+        "y": 50
+      },
+      {
+        "name": "order_coupons",
+        "schemaName": "public",
+        "x": 0,
+        "y": 548
+      },
+      {
+        "name": "order_details_inventory",
+        "schemaName": "public",
+        "x": 438.90966796875,
+        "y": 260
+      },
+      {
+        "name": "order_details",
+        "schemaName": "public",
+        "x": 752.5791015625,
+        "y": 388
+      },
+      {
+        "name": "orders",
+        "schemaName": "public",
+        "x": 1056.56201171875,
+        "y": 292
+      },
+      {
+        "name": "payments",
+        "schemaName": "public",
+        "x": 0,
+        "y": 726
+      },
+      {
+        "name": "personal_shopping_bag",
+        "schemaName": "public",
+        "x": 438.90966796875,
+        "y": 406
+      },
+      {
+        "name": "ware_houses",
+        "schemaName": "public",
+        "x": 752.5791015625,
+        "y": 566
+      },
+      {
+        "name": "products",
+        "schemaName": "public",
+        "x": 1056.56201171875,
+        "y": 534
+      },
+      {
+        "name": "shopping_bag_item",
+        "schemaName": "public",
+        "x": 0,
+        "y": 1000
+      }
+    ],
+    "tableGroupCollapseStates": [],
+    "stickyNoteLayouts": [],
+    "referencePaths": [
+      {
+        "firstFieldNames": [
+          "coupon_id"
+        ],
+        "firstTableName": "coupons",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "coupon_id"
+        ],
+        "secondTableName": "customer_coupons",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "customer_id"
+        ],
+        "firstTableName": "customers",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "customer_id"
+        ],
+        "secondTableName": "customer_coupons",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "product_id"
+        ],
+        "firstTableName": "products",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "product_id"
+        ],
+        "secondTableName": "inventory",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "warehouse_id"
+        ],
+        "firstTableName": "ware_houses",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "warehouse_id"
+        ],
+        "secondTableName": "inventory",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "coupon_id"
+        ],
+        "firstTableName": "coupons",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "coupon_id"
+        ],
+        "secondTableName": "order_coupons",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "order_id"
+        ],
+        "firstTableName": "orders",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "order_id"
+        ],
+        "secondTableName": "order_coupons",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "order_detail_id"
+        ],
+        "firstTableName": "order_details",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "order_detail_id"
+        ],
+        "secondTableName": "order_details_inventory",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "inventory_id"
+        ],
+        "firstTableName": "inventory",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "inventory_id"
+        ],
+        "secondTableName": "order_details_inventory",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "order_id"
+        ],
+        "firstTableName": "orders",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "order_id"
+        ],
+        "secondTableName": "order_details",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "customer_id"
+        ],
+        "firstTableName": "customers",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "customer_id"
+        ],
+        "secondTableName": "orders",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "order_id"
+        ],
+        "firstTableName": "orders",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "order_id"
+        ],
+        "secondTableName": "payments",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "customer_id"
+        ],
+        "firstTableName": "customers",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "customer_id"
+        ],
+        "secondTableName": "personal_shopping_bag",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "shopping_bag_id"
+        ],
+        "firstTableName": "personal_shopping_bag",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "shopping_bag_id"
+        ],
+        "secondTableName": "shopping_bag_item",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "product_id"
+        ],
+        "firstTableName": "products",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "product_id"
+        ],
+        "secondTableName": "shopping_bag_item",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      }
+    ]
+  },
+  "views": {}
 }

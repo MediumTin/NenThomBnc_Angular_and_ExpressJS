@@ -11,11 +11,12 @@ import { IndentificationService } from './Services/IdentificationService/indenti
 import { Observable } from 'rxjs';
 import { UserInformation } from './Common_Configuration/Models/UserInformation';
 import { LoadingComponent } from "./Components/Partials/loading/loading.component";
+import { AIChatBotComponent } from './Components/Partials/ai-chat-bot/ai-chat-bot.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, HeaderComponent, CommonModule],
+  imports: [RouterOutlet, FooterComponent, HeaderComponent, CommonModule, AIChatBotComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

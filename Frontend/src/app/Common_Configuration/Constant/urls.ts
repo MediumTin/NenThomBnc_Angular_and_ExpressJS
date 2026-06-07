@@ -91,6 +91,8 @@ export const CLEAR_SESSION_ID = BASE_URL + '/api/clear-sid';
 export const DESTROY_SESSION_ID = BASE_URL + '/api/destroy-sid'; 
 export const DESTROY_SESSION_DATA = BASE_URL + '/api/destroy-session'; 
 
+// Process with "AI_RAG_Chatbot"
+export const AI_RAG_CHATBOT_URL = BASE_URL + '/api/rag_chatbot';               // POST method
 
 export const FOODS_URL = BASE_URL + '/api/foods';
 export const FOODS_TAGS_URL = FOODS_URL + '/tags';
