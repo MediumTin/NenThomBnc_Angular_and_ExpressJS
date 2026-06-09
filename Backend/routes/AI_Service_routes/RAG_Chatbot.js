@@ -34,6 +34,11 @@ Router.post('/',async (req,res)=>{
     console.log("Received question:", question); // Log the received question
     console.log("Received session ID:", sessionId_for_chatbot); // Log the received session ID
     var AI_Chatbot_response = "";
+
+    // Get Chat history from MySQL database for the current session ID
+    var chat_history = await User_Information_From_MySQL.Get_Chat_History_in_MySQL_DB(sessionId_for_chatbot);
+    console.log("Chat history:", chat_history);
+
     var customer_id = req.session.personal_information && req.session.personal_information.customer_id;
    if (!customer_id) {
         console.log("Customer ID is not available in session. Using 'guest' as customer ID.");    // Add user question into MySQL database for future training and improving AI chatbot
@@ -50,7 +55,8 @@ Router.post('/',async (req,res)=>{
             const response = await axios.post(
                 (isProduction ? process.env.Production_FastAPI_AI_Service_URL : process.env.Local_FastAPI_AI_Service_URL) + "/chat",
                 {
-                    "question": question
+                    "question": question,
+                    "chat_history": chat_history
                 }
             );
             console.log("AI Service Response:", response.data.answer); // Log the response from the AI service

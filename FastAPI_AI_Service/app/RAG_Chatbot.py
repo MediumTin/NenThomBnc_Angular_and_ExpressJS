@@ -7,6 +7,7 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_experimental.text_splitter import SemanticChunker
+from langchain_core.runnables import RunnableLambda
 # For FastAPI usage
 from app.Prompt.Promtp_Config import get_prompt_template
 from app.LLM_Config.LLM_Config import llm_config
@@ -35,6 +36,8 @@ from pprint import pprint # Import the pprint function for pretty-printing the s
 # ----------------------------------Step 6: Initialize the LLM chat model------------------------------------------
 # Using seperate file
 # ----------------------------------Step 7: Initialize the RAG chain------------------------------------------
+
+
 vectorstore = FAISS.load_local(
     "app/Vector_Store_DB/Built_Vector_Model",
     embeddings,
@@ -47,12 +50,54 @@ retriever = vectorstore.as_retriever(
     # search_type = "similarity_score_threshold", # Specify the search type for the retriever. In this case, it uses a similarity score threshold to determine which chunks are relevant to a given query.
     # search_kwargs = {"k":5, "score_threshold": 0.2} 
 ) 
+
+def debug_context(data):
+    print("\n========== HISTORY ==========\n")
+    print(data["chat_history"])
+
+    print("\n========== CONTEXT ==========\n")
+
+    for i, doc in enumerate(data["context"], start=1):
+        print(f"Chunk {i}:")
+        print(doc.page_content)
+        print("-" * 50)
+
+    return data
+
+def prepare_input(data):
+    history_text = "\n".join(
+        f"{msg.role}: {msg.content}"
+        for msg in data["chat_history"]
+    )
+    return {
+        "context": retriever.invoke(data["question"]),
+        "chat_history": history_text, # Add this line to include chat history in the input to the prompt
+        "question": data["question"]
+    }
+
+# rag_chain = (
+#     {   
+#         "context":retriever, 
+#         "chat_history" : chat_history, # Add this line to include chat history in the input to the prompt
+#         "question":RunnablePassthrough()
+#     }
+#     | RunnableLambda(debug_context) # Add this line to print the retrieved context
+#     | get_prompt_template()
+#     | llm_config
+#     | StrOutputParser()
+# )
+
 rag_chain = (
-    {"context":retriever, "question":RunnablePassthrough()}
+    RunnableLambda(prepare_input)
+    | RunnableLambda(debug_context)
     | get_prompt_template()
     | llm_config
     | StrOutputParser()
 )
+
+    # Print the promt
+
+
 # Output of first step is input of next step
 # step 1: create input for prompt by retrieving relevant chunks based on the question (question is not change, context come from Vector DB)
 # step 2: generate answer based on the retrieved context and the question using the prompt template
@@ -74,5 +119,5 @@ rag_chain = (
 #     print("AI Chatbot:", answer)
 
 
-def RAG_Model_ask(question: str):
-    return rag_chain.invoke(question)
+def RAG_Model_ask(question: str, chat_history: list = []    ):
+    return rag_chain.invoke({"question": question, "chat_history": chat_history})

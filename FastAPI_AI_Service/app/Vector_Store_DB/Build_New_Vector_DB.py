@@ -1,3 +1,5 @@
+import pandas as pd
+
 from langchain_community.document_loaders import DirectoryLoader, UnstructuredFileLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate
@@ -37,4 +39,30 @@ vectorstore = FAISS.from_documents(
     embedding=embeddings, # The embedding model to be used for converting the documents into vector representations. In this case, it uses the OpenAIEmbeddings model defined earlier.
     distance_strategy=DistanceStrategy.COSINE, # Use cosine similarity for distance calculation
 )
+
 vectorstore.save_local("app/Vector_Store_DB/Built_Vector_Model")
+
+# Print embedding results for all_docs
+# Lấy nội dung các chunk
+texts = [doc.page_content for doc in all_docs]
+
+# Sinh embedding cho toàn bộ chunk
+vectors = embeddings.embed_documents(texts)
+
+rows = []
+
+for i, (doc, vector) in enumerate(zip(all_docs, vectors), start=1):
+    rows.append({
+        "chunk_id": i,
+        "content": doc.page_content,
+        "embedding": str(vector)  # lưu nguyên vector thành chuỗi
+    })
+
+df = pd.DataFrame(rows)
+
+df.to_excel(
+    "app/Vector_Store_DB/chunk_embeddings.xlsx",
+    index=False
+)
+
+print("Đã xuất file Excel thành công")

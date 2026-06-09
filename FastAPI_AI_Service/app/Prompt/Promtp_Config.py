@@ -29,8 +29,16 @@ def get_prompt_template():
         "- Must response all questions in the same language as the user's question even it is content from documents.\n"
         # "3) Do NOT use outside knowledge, guessing, or web information.\n"
         # "4) If possible, cite sources as (source:page) using the metadata.\n\n"
-        "Context:\n{context}\n\n"
-        "Question: {question}"
+        "\n"
+        "Chat History:\n"
+        "{chat_history}\n"
+        "\n"
+        "Context:\n"
+        "{context}\n"
+        "\n"
+        "Question:\n"
+        "{question}"
     )
     prompt = ChatPromptTemplate.from_template(template)
+
     return prompt

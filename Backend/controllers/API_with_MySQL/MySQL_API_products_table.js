@@ -603,6 +603,34 @@ const Add_Chat_History_in_MySQL_Login = async(customer_id, SessionID, user_messa
     }
 }
 
+// API 20:
+const Get_Chat_History_in_MySQL_DB = async(session_id) => {
+    console.log(`Getting Get_Chat_History_in_MySQL_DB`);
+    try {
+      const [ResultList] = await pool.query(`
+        SELECT role, content
+        FROM (
+            SELECT role, content, message_id
+            FROM History_AI_Chatbot
+            WHERE session_id_chatbot = '${session_id}'
+            ORDER BY message_id DESC
+            LIMIT 10
+        ) AS last_10
+        ORDER BY message_id ASC;
+
+      `);
+      console.log('📦 Dữ liệu lấy được:');
+      console.table(ResultList);
+      console.log(`ResultList length is ${ResultList.length}`); 
+      console.log('First item of ResultList is : ', ResultList[0]);
+      console.log('Type of first item of ResultList is : ', typeof(ResultList[0])); // object
+
+      return ResultList;
+    } catch (err) {
+      console.error('❌ Lỗi truy vấn Get_Chat_History_in_MySQL_DB:', err);
+      throw err;
+    }
+}
 module.exports = {
   Check_Valid_User_in_MySQL,
   Add_New_User_Information_in_MySQL,
@@ -626,5 +654,6 @@ module.exports = {
   Update_Order_Status_for_Admin,
   Update_All_Products_into_Products_for_admin,
   Add_Chat_History_in_MySQL,
-  Add_Chat_History_in_MySQL_Login
+  Add_Chat_History_in_MySQL_Login,
+  Get_Chat_History_in_MySQL_DB
 };
