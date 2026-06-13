@@ -1,0 +1,24 @@
+[
+    
+    {
+        "question": "What base notes can be found in 3 Day WKND?",
+        "ground_truth_answer": "Violet Leaf and Woods.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "Is 3 Day WKND better suited for warm or cold weather?",
+        "ground_truth_answer": "It is best suited for spring, summer, and generally works well year-round.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "What mood does the 3 Day WKND candle create?",
+        "ground_truth_answer": "Refreshing, carefree, relaxing, cheerful, and rejuvenating.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    }
+]

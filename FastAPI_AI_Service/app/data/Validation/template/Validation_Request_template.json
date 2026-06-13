@@ -1,0 +1,17 @@
+[
+    {
+        "question": "What does Smells Like Cacao And Vanilla smell like?",
+        "ground_truth_answer": "Cacao, coffee and vanilla",
+        "relevant_docs": [
+        "smells_like_cacao_and_vanilla.md"
+        ]
+    },
+    {
+        "question": "...",
+        "ground_truth_answer": "...",
+        "relevant_docs": [
+        "doc_3",
+        "doc_8"
+        ]
+    }
+]

@@ -77,13 +77,13 @@ for _, row in discounts_df.iterrows():
 
 
 loader = DirectoryLoader(
-    path = str(POLICIES_PATH),
-    glob = "**/*",  
+    path = str(DATA_DIR),
+    glob = "**/*.docx", # Adjust the glob pattern to match the file types you want to load (e.g., .txt, .pdf, etc.)
     show_progress = True,
     loader_cls=UnstructuredFileLoader,
     use_multithreading=True
 )
-print("POLICIES_PATH", POLICIES_PATH)
+print("DATA_DIR", DATA_DIR)
 docs = loader.load()
 #print(docs)
 #print(len(docs))
@@ -120,22 +120,34 @@ text_splitter = RecursiveCharacterTextSplitter(
 Doccument_splits = text_splitter.split_documents(docs)
 # pprint(splits)
 
+# ------ For reading markdown file directly ---------------
+load_markdown = DirectoryLoader(
+    path = str(DATA_DIR),
+    glob="**/*.md"
+)
+docs_markdown = load_markdown.load()
+
 # ---------------------------------- Merging all document splits -----------------------------------
 all_docs.extend(Doccument_splits)
 
-all_docs.extend(product_docs)
+# all_docs.extend(product_docs)
 
 all_docs.extend(coupon_docs)
+
+all_docs.extend(docs_markdown)  
+
+# Assign chunk_id to each document in all_docs
+for i, doc in enumerate(all_docs):
+    doc.metadata["chunk_id"] = i
 
 print(len(all_docs))
 
 # For checking the splits by excel
 rows = []
 
-for i, chunk in enumerate(all_docs):
-
+for chunk in all_docs:
     rows.append({
-        "chunk_id": i + 1,
+        "chunk_id": chunk.metadata.get("chunk_id"),
         "source": chunk.metadata.get("source", ""),
         "length": len(chunk.page_content),
         "content": chunk.page_content

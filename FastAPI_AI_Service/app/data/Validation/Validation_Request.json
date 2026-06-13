@@ -1,0 +1,1486 @@
+[
+    {
+        "question": "What are the main scent notes of 3 Day WKND?",
+        "ground_truth_answer": "Green Apple, Cucumber, and Waterlily.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "What are the top notes in the 3 Day WKND fragrance?",
+        "ground_truth_answer": "Green Apple and Cucumber.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "What middle notes are present in 3 Day WKND?",
+        "ground_truth_answer": "Lily of the Valley, Waterlily, and Green Juice.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "What base notes can be found in 3 Day WKND?",
+        "ground_truth_answer": "Violet Leaf and Woods.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "Is 3 Day WKND better suited for warm or cold weather?",
+        "ground_truth_answer": "It is best suited for spring, summer, and generally works well year-round.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "What mood does the 3 Day WKND candle create?",
+        "ground_truth_answer": "Refreshing, carefree, relaxing, cheerful, and rejuvenating.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "What type of wax is used in the 3 Day WKND candle?",
+        "ground_truth_answer": "Soy wax blend.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "How many wicks does the 3 Day WKND candle have?",
+        "ground_truth_answer": "Three wicks.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "Where is the 3 Day WKND candle most suitable to use?",
+        "ground_truth_answer": "Living rooms, bedrooms, home offices, apartments, and spaces intended for relaxation.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "I want a candle that smells fresh, crisp, and like a relaxing weekend morning. Which product fits best?",
+        "ground_truth_answer": "3 Day WKND, because it combines green apple, cucumber, and waterlily to create a fresh and carefree weekend-inspired atmosphere.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "Why would someone who enjoys clean and airy fragrances like 3 Day WKND?",
+        "ground_truth_answer": "Because its green apple, cucumber, and waterlily notes create a fresh, light, and clean-smelling fragrance profile rather than a heavy sweet or woody scent.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "Is 3 Day WKND more fruity or woody?",
+        "ground_truth_answer": "It is primarily fruity and fresh-green, with only subtle woody notes in the base.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "Recommend a candle for a bright spring afternoon.",
+        "ground_truth_answer": "3 Day WKND, thanks to its refreshing green apple, cucumber, and waterlily fragrance profile that suits spring and summer environments.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+        "question": "How long does the 3 Day WKND candle burn?",
+        "ground_truth_answer": "Approximately 45–48 hours under normal usage conditions.",
+        "relevant_docs": [
+        "3_Day_WKND.md"
+        ]
+    },
+    {
+    "question": "What is the primary scent combination of Haz Todo Con Amor?",
+    "ground_truth_answer": "Amber and Vanilla.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Which fragrance family does this candle belong to?",
+    "ground_truth_answer": "Amber, Gourmand, and Warm Sweet.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "What are the main scent notes in this candle?",
+    "ground_truth_answer": "Amber, Vanilla, and Soft Musk.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "What mood does the candle create?",
+    "ground_truth_answer": "Cozy, relaxing, comforting, romantic, and inviting.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Which rooms are suitable for using this candle?",
+    "ground_truth_answer": "Living room, bedroom, reading corner, home office, and relaxation spaces.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Is this candle more fresh or warm?",
+    "ground_truth_answer": "It is primarily warm and comforting.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "During which seasons is this candle most appropriate?",
+    "ground_truth_answer": "Autumn, Winter, and year-round use.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "What type of atmosphere does this candle help create?",
+    "ground_truth_answer": "A cozy, welcoming, and relaxing atmosphere.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "What is the net weight of the candle?",
+    "ground_truth_answer": "12 oz (340 g).",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "What is the candle made of?",
+    "ground_truth_answer": "Wax blend in a glass jar with a metal lid.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "I want a candle that smells warm, sweet, and comforting for reading a book at night. Which product should I choose?",
+    "ground_truth_answer": "Haz Todo Con Amor - Amber & Vanilla, because its amber and vanilla fragrance creates a cozy and relaxing atmosphere.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Recommend a candle for creating a cozy autumn evening.",
+    "ground_truth_answer": "Haz Todo Con Amor - Amber & Vanilla due to its warm amber and vanilla fragrance profile.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Why is this candle suitable for relaxation?",
+    "ground_truth_answer": "Because the amber and vanilla notes create a soothing, warm, and comforting scent that helps promote relaxation.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Would this candle be heavier or lighter than a green apple scented candle?",
+    "ground_truth_answer": "It would generally feel heavier and warmer because amber and vanilla are richer fragrance notes than green apple.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Is Haz Todo Con Amor a good gift candle?",
+    "ground_truth_answer": "Yes, its warm amber and vanilla fragrance is widely appreciated and suitable for gifting on many occasions.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Which note gives Haz Todo Con Amor its warm and cozy character?",
+    "ground_truth_answer": "Amber.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Which note contributes sweetness to the fragrance?",
+    "ground_truth_answer": "Vanilla.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Is Haz Todo Con Amor more suitable for a summer beach vibe or a cozy indoor evening?",
+    "ground_truth_answer": "A cozy indoor evening.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "What fragrance style best describes this candle?",
+    "ground_truth_answer": "Warm sweet amber vanilla fragrance.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "A customer dislikes strong fruity scents. Would Haz Todo Con Amor be a good recommendation?",
+    "ground_truth_answer": "Yes, because it focuses on amber and vanilla rather than fruity notes.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+   {
+    "question": "What is the name of the candle?",
+    "ground_truth_answer": "Blow A Wish.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Which brand produces the Blow A Wish candle?",
+    "ground_truth_answer": "Lumos.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What fragrance family does Blow A Wish belong to?",
+    "ground_truth_answer": "Warm, Amber, and Sweet.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What are the main scent notes of Blow A Wish?",
+    "ground_truth_answer": "Vanilla, Amber, and Soft Musk.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What mood does Blow A Wish create?",
+    "ground_truth_answer": "Cozy, peaceful, elegant, relaxing, celebratory, and romantic.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Which rooms are suitable for using Blow A Wish?",
+    "ground_truth_answer": "Bedroom, living room, reading corner, meditation space, and gift occasions.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What is the weight of the Blow A Wish candle?",
+    "ground_truth_answer": "7.4 oz.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What color is the candle container?",
+    "ground_truth_answer": "Black.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What type of lid does the candle have?",
+    "ground_truth_answer": "A wooden lid.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "How long does Blow A Wish burn?",
+    "ground_truth_answer": "Approximately 30–40 hours.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Recommend a candle for a birthday gift.",
+    "ground_truth_answer": "Blow A Wish is a suitable birthday gift candle because it creates a warm, celebratory, and elegant atmosphere.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "I want a candle for reading and relaxing in the evening. Which product fits best?",
+    "ground_truth_answer": "Blow A Wish because its warm amber and vanilla profile creates a cozy and relaxing environment.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Is Blow A Wish more suitable for summer freshness or cozy indoor evenings?",
+    "ground_truth_answer": "It is more suitable for cozy indoor evenings.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Why is Blow A Wish considered a relaxing candle?",
+    "ground_truth_answer": "Because its warm amber, vanilla, and soft musk notes create a soothing and comforting atmosphere.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Would someone who likes warm sweet fragrances enjoy Blow A Wish?",
+    "ground_truth_answer": "Yes, because the candle features amber and vanilla notes that create a warm sweet scent profile.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Which note contributes most to the candle's sweetness?",
+    "ground_truth_answer": "Vanilla.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Which note contributes most to the candle's warmth?",
+    "ground_truth_answer": "Amber.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Is Blow A Wish a good choice for romantic settings?",
+    "ground_truth_answer": "Yes, it helps create a cozy, elegant, and romantic atmosphere.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What type of container does Blow A Wish use?",
+    "ground_truth_answer": "A glass jar.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "A customer dislikes bright fruity fragrances. Is Blow A Wish a suitable recommendation?",
+    "ground_truth_answer": "Yes, because it focuses on warm amber and vanilla notes rather than fruity accords.",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What is the product called?",
+    "ground_truth_answer": "White Bear Candle Dome.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What category does this product belong to?",
+    "ground_truth_answer": "Decorative Candle.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Is this candle primarily intended for fragrance or decoration?",
+    "ground_truth_answer": "It is primarily intended for decoration.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What figure is featured in the candle design?",
+    "ground_truth_answer": "A white bear.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What color is the candle?",
+    "ground_truth_answer": "White.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What materials are used in the product?",
+    "ground_truth_answer": "Wax, glass, and wood.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What type of container does the candle use?",
+    "ground_truth_answer": "A glass dome.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What type of base does the candle have?",
+    "ground_truth_answer": "A natural wood base.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What mood does this candle help create?",
+    "ground_truth_answer": "Cute, cozy, peaceful, playful, whimsical, and heartwarming.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Which rooms are suitable for displaying this candle?",
+    "ground_truth_answer": "Bedrooms, living rooms, desks, nurseries, and decorative display spaces.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Recommend a candle for nursery decoration.",
+    "ground_truth_answer": "White Bear Candle Dome because of its cute and playful design.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "I want a candle that doubles as room decor. Which product should I choose?",
+    "ground_truth_answer": "White Bear Candle Dome because it is designed primarily as a decorative candle.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Is this candle suitable as a gift?",
+    "ground_truth_answer": "Yes, it is commonly used as a decorative gift item.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Does this product have an officially specified fragrance profile?",
+    "ground_truth_answer": "No official fragrance information is available.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Would this product be suitable for someone looking for strong fruity scents?",
+    "ground_truth_answer": "Not necessarily, because the product is primarily decorative and no fragrance profile is specified.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What decorative style best matches this candle?",
+    "ground_truth_answer": "Nordic, minimalist, and kawaii decorative styles.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What animal is represented by the candle?",
+    "ground_truth_answer": "A bear.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Is the candle enclosed inside a protective display structure?",
+    "ground_truth_answer": "Yes, it is displayed inside a glass dome.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Would this product fit a minimalist home decor theme?",
+    "ground_truth_answer": "Yes, its simple design and natural materials fit minimalist decor styles.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Why might customers purchase this candle?",
+    "ground_truth_answer": "Customers often purchase it for decoration, gifting, photography props, and aesthetic room styling.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What is the name of the candle?",
+    "ground_truth_answer": "Seychelles Coconut + Sea Salt.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Which brand produces the Seychelles Coconut + Sea Salt candle?",
+    "ground_truth_answer": "PotterWick.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What are the main scent notes of this candle?",
+    "ground_truth_answer": "Coconut, Sea Salt, and Ocean Breeze.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Which fragrance family does the candle belong to?",
+    "ground_truth_answer": "Fresh, Aquatic, and Tropical.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What atmosphere does this candle create?",
+    "ground_truth_answer": "A fresh coastal atmosphere with tropical beach-inspired vibes.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What mood does Seychelles Coconut + Sea Salt create?",
+    "ground_truth_answer": "Relaxing, refreshing, tropical, calm, airy, vacation-like, and coastal.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What type of wax is used in this candle?",
+    "ground_truth_answer": "Soy blend wax.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What is the weight of the candle?",
+    "ground_truth_answer": "12 oz.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What type of lid does the candle have?",
+    "ground_truth_answer": "A wooden lid.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What type of container does the candle use?",
+    "ground_truth_answer": "A ceramic jar.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "How long does the candle burn?",
+    "ground_truth_answer": "Approximately 50–70 hours.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Which seasons are most suitable for this candle?",
+    "ground_truth_answer": "Spring, Summer, and year-round use.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Recommend a candle that smells like a tropical beach vacation.",
+    "ground_truth_answer": "Seychelles Coconut + Sea Salt because it combines coconut and sea salt notes with a fresh coastal character.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "I want a candle that feels fresh and ocean-inspired. Which product should I choose?",
+    "ground_truth_answer": "Seychelles Coconut + Sea Salt.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Why is this candle suitable for a bathroom?",
+    "ground_truth_answer": "Because its fresh marine and sea salt notes help create a clean and airy atmosphere.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Would someone who enjoys beach-themed fragrances like this candle?",
+    "ground_truth_answer": "Yes, because it features coconut and sea salt notes that evoke a tropical coastal environment.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Is Seychelles Coconut + Sea Salt more fresh or gourmand?",
+    "ground_truth_answer": "It is primarily fresh and aquatic with a tropical character.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Which note gives the candle its tropical feeling?",
+    "ground_truth_answer": "Coconut.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Which note contributes to the marine coastal feeling?",
+    "ground_truth_answer": "Sea Salt.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "A customer wants a heavy vanilla dessert scent. Is this candle the best recommendation?",
+    "ground_truth_answer": "No, this candle focuses on fresh tropical and coastal notes rather than rich dessert-like vanilla fragrances.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Would this candle be appropriate for creating a beach house atmosphere?",
+    "ground_truth_answer": "Yes, it is designed around coconut and sea salt notes that create a beach-inspired ambiance.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Is this candle better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is better suited for summer gatherings because of its tropical and coastal fragrance profile.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Is this candle better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is better suited for summer gatherings because of its fun, energetic, and cheerful mood paired with a fruity, citrus-heavy fragrance profile ideal for warm weather.",
+    "relevant_docs": [
+      "Day_Party.md"
+    ]
+  },
+  {
+    "question": "What are the specific top, middle, and base notes of the Day Party candle?",
+    "ground_truth_answer": "The top notes are Lemon, Orange, and Apple Pie; the middle notes are Strawberry, Rose, and Peach Juice; and the base notes are Flowers and Sugar.",
+    "relevant_docs": [
+      "Day_Party.md"
+    ]
+  },
+  {
+    "question": "What material is the Day Party candle made of, and what is its weight?",
+    "ground_truth_answer": "The candle is made of a soy wax blend infused with essential oils and has a weight of 13.5 oz.",
+    "relevant_docs": [
+      "Day_Party.md"
+    ]
+  },
+  {
+    "question": "What kind of mood or vibe does the Friday Collective Day Party candle create?",
+    "ground_truth_answer": "It creates a fun, energetic, cheerful, and summer-inspired mood that is perfect for daytime use and vibrant social settings.",
+    "relevant_docs": [
+      "Day_Party.md"
+    ]
+  },
+  {
+    "question": "Is this candle better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is better suited for cozy winter holiday evenings or nighttime relaxation because its rich, warm woody base of sandalwood combined with heavy florals like jasmin and ylang-ylang creates a grounding, comforting, and deeply relaxing atmosphere ideal for cold weather or winding down.",
+    "relevant_docs": [
+      "Jasmin_ylang_ylang_sandalwood.md"
+    ]
+  },
+  {
+    "question": "What are the three core fragrance components featured in this PotterWick candle?",
+    "ground_truth_answer": "The three core fragrance components featured in this candle are Jasmin, Ylang-Ylang, and Sandalwood.",
+    "relevant_docs": [
+      "Jasmin_ylang_ylang_sandalwood.md"
+    ]
+  },
+  {
+    "question": "What is the weight of this specific PotterWick candle and what does the packaging look like?",
+    "ground_truth_answer": "The candle has a weight of 16 oz and comes in an off-white/matte light grey jar paired with a natural wood lid.",
+    "relevant_docs": [
+      "Jasmin_ylang_ylang_sandalwood.md"
+    ]
+  },
+  {
+    "question": "What kind of mood or vibe does the Jasmin Ylang-Ylang Sandalwood candle evoke?",
+    "ground_truth_answer": "It evokes a calm, relaxing, sensual, and meditative mood, making it perfect for stress relief, yoga, or creating a spa-like environment at home.",
+    "relevant_docs": [
+      "Jasmin_ylang_ylang_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Is this candle better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is better suited for cozy evenings (such as autumn or winter nights) or bedtime relaxation because the calming properties of lavender combined with the warm, rich sweetness of vanilla create a comforting, peaceful atmosphere perfect for winding down in cooler weather.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md"
+    ]
+  },
+  {
+    "question": "What are the core fragrance components featured in this Delight Candles product?",
+    "ground_truth_answer": "The core fragrance components featured in this candle are Lavender and Vanilla.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md"
+    ]
+  },
+  {
+    "question": "What is the weight of the Lavender Vanilla candle and what unique design feature is on its lid?",
+    "ground_truth_answer": "The candle has a weight of 12 oz and features a decorative lid illustrated with autumn elements like pumpkins, sunflowers, and the cursive text 'So Thankful'.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md"
+    ]
+  },
+  {
+    "question": "What kind of mood or vibe does the Delight Candles Lavender Vanilla candle evoke?",
+    "ground_truth_answer": "It evokes a calming, cozy, comforting, and peaceful mood, making it an excellent choice for stress relief and evening relaxation.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is perfectly suited for year-round use, but its crisp, clean, and refreshing fragrance profile makes it exceptionally well-suited for summer daytime settings to maintain a fresh, airy, and cooling atmosphere indoors.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md"
+    ]
+  },
+  {
+    "question": "What category of home fragrance does this Lumos product belong to, and how does it differ from a candle?",
+    "ground_truth_answer": "This product belongs to the Reed Diffuser (tinh dầu tán hương cắm que) category. Unlike a candle, it does not require an open flame or heat to release its fragrance; instead, it provides continuous, effortless scent distribution through porous reeds inserted into the oil.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md"
+    ]
+  },
+  {
+    "question": "Describe the visual packaging and design details of this Lumos product.",
+    "ground_truth_answer": "The product features a sleek, glossy white bottle with the minimalist text 'LUMOS REED DIFFUSER' on the front, sealed with a light-colored wooden stopper, and decorated with a elegant black ribbon bow around the neck.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md"
+    ]
+  },
+  {
+    "question": "What are the ideal spaces or rooms to place this Lumos Reed Diffuser?",
+    "ground_truth_answer": "It is ideal for high-traffic areas or small spaces that benefit from constant freshening, such as entryways, living rooms, bathrooms, walk-in closets, or office spaces where burning a candle might be unsafe.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "This product collection is highly versatile and suited for both: the Peppermint and Lemongrass oils are excellent for refreshing summer days and keeping mosquitoes away, while the Cold Relief (Xông Cảm) and Cajeput (Tràm Gió) oils are perfectly suited for winter evenings to warm up the room and support respiratory health.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md"
+    ]
+  },
+  {
+    "question": "What are the four specific types of essential oils shown in the Natural Lumos collection picture?",
+    "ground_truth_answer": "The four specific types shown are Xông Cảm (Cold/Flu Relief), Sả Chanh (Lemongrass), Bạc Hà (Peppermint), and Tràm Gió (Cajeput).",
+    "relevant_docs": [
+      "Lumos_Cajeput.md"
+    ]
+  },
+  {
+    "question": "What is the volume of each bottle and where are these essential oils manufactured?",
+    "ground_truth_answer": "Each bottle has a volume of 50ml, and the products are proudly made in Vietnam ('Made in Vietnam' is printed on the labels).",
+    "relevant_docs": [
+      "Lumos_Cajeput.md"
+    ]
+  },
+  {
+    "question": "Why does the brand use dark amber glass bottles for the Natural Lumos essential oils?",
+    "ground_truth_answer": "The brand uses dark amber glass bottles to protect the 100% pure essential oils from sunlight and UV rays, which prevents degradation and maintains the potency of the fragrance and its therapeutic qualities over time.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md"
+    ]
+  },
+  {
+    "question": "Is this candle better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "This product is better suited for chilly winter holiday evenings or rainy seasons because its spicy ginger, warm rosemary, and therapeutic herbal notes are specifically blended to create a comforting, physically warming environment that supports respiratory health during cold weather.",
+    "relevant_docs": [
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "What traditional Vietnamese remedy inspires the scent profile of the Xông Cảm essential oil?",
+    "ground_truth_answer": "The scent profile is inspired by traditional Vietnamese medicinal steaming baths ('nồi lá xông'), utilizing comforting natural ingredients like ginger, lemongrass, mint, and citrus peel to relieve body fatigue and congestion.",
+    "relevant_docs": [
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "What are the volume specifications and origin of this Natural Lumos product?",
+    "ground_truth_answer": "The bottle has a volume of 50ml, and it is proudly made in Vietnam as indicated by the 'Made in Vietnam' statement on the label.",
+    "relevant_docs": [
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "What primary therapeutic benefits do customers seek when using the Xông Cảm essential oil blend?",
+    "ground_truth_answer": "Customers primarily use it to help relieve symptoms of cold, flu, and nasal congestion, as well as to purify indoor air and soothe body fatigue or mental exhaustion.",
+    "relevant_docs": [
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is better suited for summer gatherings and warm-weather daytime settings because its sweet, tropical fragrance profile of fresh honeydew melon and creamy coconut naturally evokes a cheerful, sunny, and breezy resort-like atmosphere.",
+    "relevant_docs": [
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "What are the core fruit and botanical scent elements highlighted on the label of this Lumos Co. product?",
+    "ground_truth_answer": "The core scent elements highlighted on the label are Honeydew and Coconut.",
+    "relevant_docs": [
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "What is the fluid volume of this diffuser and what does the bottle design look like?",
+    "ground_truth_answer": "The diffuser has a volume of 100ml and is housed in a clean, square clear glass bottle featuring a minimalist white label and a polished metallic silver cap.",
+    "relevant_docs": [
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "How do customers generally perceive the scent strength and atmosphere of the Honeydew & Coconut diffuser?",
+    "ground_truth_answer": "Customers perceive it as a sweet, comforting, and uplifting aroma that mimics an upscale tropical resort. It provides a smooth, consistent background scent throw without being overly harsh or synthetic.",
+    "relevant_docs": [
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is better suited for airy spring and summer daytime settings because its delicate, fresh profile of blooming pink peonies and elegant roses naturally complements a bright, sunny, and refreshing indoor atmosphere.",
+    "relevant_docs": [
+      "Lumos_Juicy_Peach.md"
+    ]
+  },
+  {
+    "question": "What category of home fragrance does this pink Lumos product belong to, and what are its core advantages over a traditional candle?",
+    "ground_truth_answer": "This product belongs to the Reed Diffuser category. Its core advantages over a traditional candle are that it requires no open flame or heat source to function, making it safer for continuous, unattended room scenting 24/7.",
+    "relevant_docs": [
+      "Lumos_Juicy_Peach.md"
+    ]
+  },
+  {
+    "question": "Describe the aesthetic features and design elements of the Lumos Pink Reed Diffuser package.",
+    "ground_truth_answer": "The diffuser comes in a soft, glossy pastel pink bottle featuring a minimalist white font inscription, topped with a natural light-colored wooden stopper and an elegant cream-and-gold decorative ribbon bow tied around the neck.",
+    "relevant_docs": [
+      "Lumos_Juicy_Peach.md"
+    ]
+  },
+  {
+    "question": "What type of room mood or vibe does the Bulgarian Rose and Peony profile create?",
+    "ground_truth_answer": "It creates a romantic, elegant, soft, and highly feminine mood, making it exceptionally well-suited for personal sanctuaries like bedrooms, vanity areas, and dressing rooms.",
+    "relevant_docs": [
+      "Lumos_Juicy_Peach.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is exceptionally well-suited for summer daytime settings and rainy seasons because its sharp, crisp, and refreshing citrus-herbal profile is perfect for cooling down the indoor mood and naturally repelling mosquitoes during peak insect seasons.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md"
+    ]
+  },
+  {
+    "question": "What specific botanical name is highlighted on the label of this 50ml Natural Lumos product?",
+    "ground_truth_answer": "The specific botanical name highlighted on the label is Sả Chanh (Lemongrass).",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md"
+    ]
+  },
+  {
+    "question": "What type of bottle material and color does Natural Lumos use for this product, and why?",
+    "ground_truth_answer": "The brand uses a dark amber glass bottle to protect the 100% pure essential oil from sunlight and UV degradation, ensuring the formula maintains its natural aromatic potency over time.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md"
+    ]
+  },
+  {
+    "question": "What are the primary functional uses for the Sả Chanh essential oil according to customer perception?",
+    "ground_truth_answer": "The primary functional uses are natural mosquito and insect bug-repelling, neutralizing heavy room or kitchen odors, purifying indoor air, and creating an energizing, spa-like atmosphere.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is exceptionally well-suited for hot summer days and daytime gatherings because its powerful menthol and icy mint profile provides an instant cooling, crisp, and refreshing sensation that clarifies stuffy indoor spaces.",
+    "relevant_docs": [
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "What specific botanical name is highlighted on the label of this 50ml Natural Lumos product?",
+    "ground_truth_answer": "The specific botanical name highlighted on the label is Bạc Hà (Peppermint).",
+    "relevant_docs": [
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "What type of bottle material and design elements does Natural Lumos use for this product?",
+    "ground_truth_answer": "The product is housed in a dark amber glass bottle designed for UV light protection, paired with a minimalist black screw cap and a rustic kraft paper label featuring a botanical illustration of mint leaves.",
+    "relevant_docs": [
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "What are the primary therapeutic and cognitive benefits that customers expect when diffusing the Bạc Hà essential oil?",
+    "ground_truth_answer": "Customers primarily use it to boost mental focus, improve daytime alertness, relieve mental fatigue or head tension, and create an intensely clean, odor-free indoor environment.",
+    "relevant_docs": [
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is better suited for cozy winter holiday evenings because its deep, rich, and warm woody-oriental profile of oud wood, sandalwood, and dark rose provides a comforting, heavy, and luxurious ambient layer that fits perfectly with cold weather.",
+    "relevant_docs": [
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "What category of home fragrance does this black Lumos product belong to, and how does it function?",
+    "ground_truth_answer": "This product belongs to the Reed Diffuser category. It functions by drawing concentrated fragrance oil up through porous reeds (or diffuser sticks) inserted into the bottle, continuously evaporating the scent into the air without needing an open flame or electric heat source.",
+    "relevant_docs": [
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Describe the aesthetic design features of the Lumos Classic Black Line packaging.",
+    "ground_truth_answer": "The diffuser features a sleek, glossy opaque black bottle with clean white text, topped with a natural light wooden stopper plug, and decorated with a matching black ribbon bow tied around the bottle neck.",
+    "relevant_docs": [
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "How do customers generally perceive the scent profile and ideal placement for the black Lumos Reed Diffuser?",
+    "ground_truth_answer": "Customers perceive it as a highly premium, bold, and mysterious unisex scent resembling a high-end boutique hotel. Because of its mature, grounding vibe, it is ideally placed in spaces like master bedrooms, living rooms, and modern home offices.",
+    "relevant_docs": [
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is exceptionally well-suited for spring and summer gatherings because its bubbly, effervescent fragrance profile of sparkling rosé wine, wild strawberries, and fresh red roses perfectly captures a sunny, cheerful, and celebratory warm-weather daytime vibe.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "What specific product line name and fragrance description are featured on the front label of this 100ml Lumos Co. diffuser?",
+    "ground_truth_answer": "The front label highlights the product name 'ROSÉ BOUQUET', classifies it as a 'reed diffuser', and includes the quality tagline 'the finest quality'.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "What is the physical capacity of the bottle and what are its prominent visual packaging details?",
+    "ground_truth_answer": "The diffuser has a capacity of 100ml and is housed in a clear, square glass block bottle that showcases its rich amber/rose-gold tinted oil. It features a clean white minimalist label and holds sleek black diffuser reeds.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "What kind of ambiance or mood does the Rosé Bouquet scent profile bring to a living space?",
+    "ground_truth_answer": "It brings a highly romantic, luxurious, and celebratory mood to a room, making it excellent for setting an upscale atmosphere in master bedrooms, dressing areas, or welcoming living rooms.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is exceptionally well-suited for summer gatherings and bright daytime environments because its mouth-watering, vibrant profile of ripe mango, passion fruit, and fresh tropical orchard elements naturally elevates a sunlit, joyful, and energetic atmosphere.",
+    "relevant_docs": [
+      "Lumos_Tropical_Orchard.md"
+    ]
+  },
+  {
+    "question": "What specific product title and volume are printed on the front label of this clear glass Lumos Co. diffuser?",
+    "ground_truth_answer": "The front label displays the specific product title 'TROPICAL ORCHARD' alongside a volume indicator of '100ML'.",
+    "relevant_docs": [
+      "Lumos_Tropical_Orchard.md"
+    ]
+  },
+  {
+    "question": "Describe the container shape and visual characteristics of the Tropical Orchard reed diffuser as seen in the image.",
+    "ground_truth_answer": "The product comes in a heavy, clear glass square-shaped bottle that prominently showcases its warm golden-yellow fluid inside. It is topped with a reflective metallic silver cap and a minimalist white label on the front face.",
+    "relevant_docs": [
+      "Lumos_Tropical_Orchard.md"
+    ]
+  },
+  {
+    "question": "How do green leaf notes contribute to the overall customer perception of the Tropical Orchard scent profile?",
+    "ground_truth_answer": "The sheer green leaf notes balance out the heavy sweetness of the ripe mango and tropical fruits, preventing the aroma from becoming overly syrupy or cloying, which allows the room to maintain a fresh, crisp, and realistic atmosphere.",
+    "relevant_docs": [
+      "Lumos_Tropical_Orchard.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "This product is exceptionally well-suited for summer gatherings and bright daytime events because its fruity, effervescent fragrance profile of vibrant citrus, fresh mango, and sparkling prosecco naturally amplifies a lively, sunny, and joyful atmosphere.",
+    "relevant_docs": [
+      "Milk_Vanilla.md"
+    ]
+  },
+  {
+    "question": "What is the specific brand name and product title printed on the front of this neon yellow jar?",
+    "ground_truth_answer": "The front of the jar displays the brand name 'FRIDAY COLLECTIVE™' stacked above the bold product title 'DAY PARTY'.",
+    "relevant_docs": [
+      "Milk_Vanilla.md"
+    ]
+  },
+  {
+    "question": "What key formulation detail is printed at the bottom of the Friday Collective label, and what is the visual aesthetic of the container?",
+    "ground_truth_answer": "The bottom of the label notes that the candle is 'MADE WITH ESSENTIAL OILS'. Visually, it features a bold, smooth, opaque neon yellow glass container with stark white minimalist typography.",
+    "relevant_docs": [
+      "Milk_Vanilla.md"
+    ]
+  },
+  {
+    "question": "How do customers describe the vibe and performance of the Day Party candle?",
+    "ground_truth_answer": "Customers describe it as an ultimate mood booster that smells like a tropical cocktail or a sun-drenched pool party. They note that its fragrance profile is loud and bright, filling the room with an energetic throw very quickly.",
+    "relevant_docs": [
+      "Milk_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "This product is better suited for cozy winter holiday evenings or nighttime relaxation because its heavy, warm, and creamy oriental base of sandalwood paired with rich jasmine and ylang-ylang creates a comforting, warm, and deeply serene atmosphere that counteracts cold weather.",
+    "relevant_docs": [
+      "Nen_and_Hoa.md"
+    ]
+  },
+  {
+    "question": "What is the specific fluid volume or weight listed on the front label, and what is the brand name?",
+    "ground_truth_answer": "The weight listed on the front label is 16oz, and the brand name is PotterWick.",
+    "relevant_docs": [
+      "Nen_and_Hoa.md"
+    ]
+  },
+  {
+    "question": "What three core scent notes are explicitly carved or printed on the front face of this PotterWick jar?",
+    "ground_truth_answer": "The three core scent notes explicitly shown on the front face are jasmin, ylang-ylang, and sandalwood.",
+    "relevant_docs": [
+      "Nen_and_Hoa.md"
+    ]
+  },
+  {
+    "question": "Describe the container design and aesthetic properties of this 16oz PotterWick product.",
+    "ground_truth_answer": "The candle is housed in a smooth, minimalist matte cream/light grey cylindrical jar featuring clean lowercase typography, a subtle introductory quote 'For the love of candles', and is topped with a flat, natural light-grain wooden lid.",
+    "relevant_docs": [
+      "Nen_and_Hoa.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "This product is better suited for cozy winter holiday evenings or reflective nighttime sessions because its heavy, warm, and highly grounding combination of sandalwood, traditional incense notes, and deep red rose creates a velvety, comforting shield against chilly weather.",
+    "relevant_docs": [
+      "Sandalwood_And_Rose.md"
+    ]
+  },
+  {
+    "question": "What is the exact net weight listed in both standard ounces and grams on the front face of the Western Brook label?",
+    "ground_truth_answer": "The label explicitly lists a weight of 12oz / 340g at the very bottom.",
+    "relevant_docs": [
+      "Sandalwood_And_Rose.md"
+    ]
+  },
+  {
+    "question": "What specific inspirational text and primary scent notes are printed in cursive font on this red candle's label?",
+    "ground_truth_answer": "The cursive font features the Spanish text 'el amor todo lo puede' (love conquers all) printed above the all-caps scent combination 'SANDALWOOD & ROSE'.",
+    "relevant_docs": [
+      "Sandalwood_And_Rose.md"
+    ]
+  },
+  {
+    "question": "Describe the central visual illustration featured on the label of the Western Brook Sandalwood & Rose candle.",
+    "ground_truth_answer": "The central illustration features a sacred portrait of Our Lady of Guadalupe wearing a blue star-patterned mantle, surrounded by a radiant golden sunburst halo and framed beautifully at the base by a cluster of blooming pink and red roses.",
+    "relevant_docs": [
+      "Sandalwood_And_Rose.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "This product is ideally suited for year-round daily routines and warm summer days because its incredibly clean, aquatic, and crisp profile of refreshing eucalyptus, sea salt, and clean cotton brings an immediate sense of cooling, airy freshness indoors.",
+    "relevant_docs": [
+      "Shower_Playlist.md"
+    ]
+  },
+  {
+    "question": "What is the exact brand name and product title printed on the front face of this iridescent blue jar?",
+    "ground_truth_answer": "The front of the jar displays the brand name 'FRIDAY COLLECTIVE™' positioned directly above the bold, all-caps product title 'SHOWER PLAYLIST'.",
+    "relevant_docs": [
+      "Shower_Playlist.md"
+    ]
+  },
+  {
+    "question": "What core formulation text is visible at the lower-left section of the Friday Collective container?",
+    "ground_truth_answer": "The lower-left section of the container explicitly reads 'MADE WITH ESSENTIAL OILS'.",
+    "relevant_docs": [
+      "Shower_Playlist.md"
+    ]
+  },
+  {
+    "question": "Describe the physical container texture and aesthetic visual properties of this specific Friday Collective item.",
+    "ground_truth_answer": "The candle is housed in a smooth, opaque blue glass jar that features an eye-catching iridescent sheen, reflecting subtle shades of purple and turquoise under the light, finished with minimal white graphic text.",
+    "relevant_docs": [
+      "Shower_Playlist.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "This product is ideally suited for vibrant summer gatherings and twilight parties because its warm citrus, golden amber, and exotic teakwood profile perfectly captures the energetic, sunny-yet-seductive atmosphere of a summer beachside sunset.",
+    "relevant_docs": [
+      "Sunset_Disco.md"
+    ]
+  },
+  {
+    "question": "What is the exact brand name and product title printed on the front face of this iridescent orange jar?",
+    "ground_truth_answer": "The front face of the jar displays the brand name 'FRIDAY COLLECTIVE™' positioned directly above the bold, all-caps product title 'SUNSET DISCO'.",
+    "relevant_docs": [
+      "Sunset_Disco.md"
+    ]
+  },
+  {
+    "question": "What core formulation text is visible at the lower-left section of the Friday Collective Sunset Disco container?",
+    "ground_truth_answer": "The text at the lower-left section of the container explicitly reads 'MADE WITH ESSENTIAL OILS'.",
+    "relevant_docs": [
+      "Sunset_Disco.md"
+    ]
+  },
+  {
+    "question": "Describe the physical container texture and aesthetic visual properties of this specific Friday Collective item.",
+    "ground_truth_answer": "The candle is housed in a smooth, opaque orange glass jar that features a stunning iridescent coating, reflecting vibrant metallic yellow, pink, and gold tones under different lighting angles, complete with minimal white graphic text.",
+    "relevant_docs": [
+      "Sunset_Disco.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "This product is exceptionally well-suited for winter holiday evenings and cozy autumn settings because its rich, warm gourmand profile of crisp apple cider, ground cinnamon, and spiced clove creates a deeply comforting, nostalgic layer of heat that counteracts cold weather.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md"
+    ]
+  },
+  {
+    "question": "What is the exact weight of the candle listed in both ounces and grams on the front and top labels?",
+    "ground_truth_answer": "The labels explicitly list a net weight of 11.9 OZ (338 g) near the bottom edge.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md"
+    ]
+  },
+  {
+    "question": "What primary scent title and description are printed on the label of this translucent jar?",
+    "ground_truth_answer": "The label displays the all-caps scent title 'WARM CIDER & CINNAMON' positioned directly above the product description 'SCENTED SOY BLEND CANDLE'.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md"
+    ]
+  },
+  {
+    "question": "Describe the core aesthetic theme and pattern design used on this candle package.",
+    "ground_truth_answer": "The candle is housed in a smooth, translucent dark amber/plum glass jar and features a cozy, rustic country theme utilizing a beige, white, and brown plaid checkerboard pattern on both its front label and circular top insert.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "This product is explicitly designed for winter holiday evenings and festive Christmas gifting because the entire box set is decorated with classic winter elements like pine cones, dried orange slices, and red berries to evoke seasonal warmth.",
+    "relevant_docs": [
+      "YOU_ARE_THE_MAGIC.md"
+    ]
+  },
+  {
+    "question": "What exact phrase is printed inside the green wreath graphic on the front face of the candle label?",
+    "ground_truth_answer": "The front face label explicitly features the all-caps inspirational quote 'YOU ARE THE MAGIC' centered inside the green holiday wreath graphic.",
+    "relevant_docs": [
+      "YOU_ARE_THE_MAGIC.md"
+    ]
+  },
+  {
+    "question": "What brand identity text is printed directly beneath the main wreath graphic on the label?",
+    "ground_truth_answer": "The text directly beneath the wreath reads 'FROM LUMOS | CANDLES' split across two lines.",
+    "relevant_docs": [
+      "YOU_ARE_THE_MAGIC.md"
+    ]
+  },
+  {
+    "question": "Describe the container properties of the candle and list the specific natural festive decorations packed around it inside the box.",
+    "ground_truth_answer": "The candle is contained in a smooth, translucent deep berry/magenta glass jar fitted with a flat, natural light-colored wooden lid. It is nestled inside a black box with shredded paper, surrounded by a large brown pine cone, two dried orange wheels, a bundle wrapped in a red-and-white gingham plaid bow, and a sprig of glossy red holiday berries.",
+    "relevant_docs": [
+      "YOU_ARE_THE_MAGIC.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for outdoor camping utility or high-end indoor candle care?",
+    "ground_truth_answer": "This product is explicitly designed for high-end indoor candle care and modern home styling because its minimalist monochrome slider packaging and stylized inspirational quotes are tailored to elevate home vanities and indoor relaxation routines.",
+    "relevant_docs": [
+      "Candle_matchbox.md"
+    ]
+  },
+  {
+    "question": "What exact inspirational quote is printed in elegant serif font across the face of the white slider matchbox?",
+    "ground_truth_answer": "The white slider box features the lower-case quote: 'Encounter leisure time, make life more exquisite.' printed across the top surface.",
+    "relevant_docs": [
+      "Candle_matchbox.md"
+    ]
+  },
+  {
+    "question": "What two distinct colorways for the match tips and slide boxes are showcased together in the product image?",
+    "ground_truth_answer": "The image showcases a high-contrast monochrome set: one variant features a matte black box containing wooden sticks with deep charcoal-black tips, while the second variant features a clean white box containing wooden sticks with snow-white tips.",
+    "relevant_docs": [
+      "Candle_matchbox.md"
+    ]
+  },
+  {
+    "question": "Describe the location and specific visual pattern of the friction striking mechanism on these matchboxes.",
+    "ground_truth_answer": "The friction striking surface runs horizontally along the long side panel of the matchbox, featuring a distinctive, tightly repeating brown honeycomb or hexagonal mesh grid pattern.",
+    "relevant_docs": [
+      "Candle_matchbox.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for modern high-tech clinical environments or warm rustic home decor arrangements?",
+    "ground_truth_answer": "This product is exceptionally well-suited for warm rustic home decor arrangements and cozy aesthetics because it consists of real, organic pine log cuts complete with natural concentric growth rings and raw tree bark edges.",
+    "relevant_docs": [
+      "Wood_tray.md"
+    ]
+  },
+  {
+    "question": "What core physical markings are naturally visible across the smooth flat faces of these circular wood cuts?",
+    "ground_truth_answer": "The flat, sanded surfaces distinctly showcase highly detailed, concentric annual tree growth ring patterns originating from the central core of the log.",
+    "relevant_docs": [
+      "Wood_tray.md"
+    ]
+  },
+  {
+    "question": "Describe the perimeter edge texture and visual appearance of these natural wooden display plates.",
+    "ground_truth_answer": "The outer perimeter features an intact, rough, and deeply textured natural brown tree bark trim that contrasts beautifully with the clean, light-tan smooth inner wood faces.",
+    "relevant_docs": [
+      "Wood_tray.md"
+    ]
+  },
+  {
+    "question": "How are the wood slices grouped and arranged together against the plain white backdrop in the image?",
+    "ground_truth_answer": "The slices are grouped into three distinct arrangements: two large circular slabs stand upright in the background, a neat sequence of seven overlapping discs is angled diagonally across the foreground, and a small vertical stack of three slices sits on the lower right side.",
+    "relevant_docs": [
+      "Wood_tray.md"
+    ]
+  },
+  {
+    "question": "Is this product better suited for industrial workshop tool organization or luxury cosmetics and perfume display?",
+    "ground_truth_answer": "This product is explicitly designed for luxury cosmetics, perfume, and home fragrance organization because its polished gold filigree borders, reflective glass mirror bases, and ornate royal details are styled to elevate vanities and living spaces.",
+    "relevant_docs": [
+      "Candle_metal_tray.md"
+    ]
+  },
+  {
+    "question": "What two distinct decorative metal cutout patterns are featured on the borders of the trays in the image?",
+    "ground_truth_answer": "The foreground circular tray features a repeating vertical column/pillar cutout railing pattern, while the background tray showcases a romantic, interlocking geometric open heart cutout design border.",
+    "relevant_docs": [
+      "Candle_metal_tray.md"
+    ]
+  },
+  {
+    "question": "What exact lifestyle items and accessories are arranged inside the main foreground gold tray?",
+    "ground_truth_answer": "The main foreground tray holds an amber glass dropper bottle with a white bulb pipette, a clear square glass reed diffuser bottle fitted with a silver collar, wood reeds, and decorative white flowers, and an elegant white faux pearl hair clip sitting directly on the mirror surface.",
+    "relevant_docs": [
+      "Candle_metal_tray.md"
+    ]
+  },
+  {
+    "question": "Describe the structural components that keep the base of these metal trays elevated from touching table surfaces directly.",
+    "ground_truth_answer": "Each tray is structurally supported by small, integrated, smooth metallic rounded ball feet attached underneath the rim to keep the mirror base safely elevated off countertops.",
+    "relevant_docs": [
+      "Candle_metal_tray.md"
+    ]
+  },
+  {
+    "question": "Is this product mechanism powered by electric batteries or by the natural physics of a burning candle?",
+    "ground_truth_answer": "The product mechanism is entirely powered by the natural physics of a burning candle; the rising warm heat currents generated by the flame underneath turn the turbine wheel, causing the hanging metallic holiday charms to spin automatically without any electricity.",
+    "relevant_docs": [
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "What exact brand name and fragrance flavor are printed on the front label of the largest embossed glass jar?",
+    "ground_truth_answer": "The front label of the large embossed glass jar explicitly displays the brand name 'VOLUSPA' followed by the signature holiday fragrance profile 'GILT POMANDER & HINOKI'.",
+    "relevant_docs": [
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "Identify the three distinct holiday-themed shapes used for the hanging charms on the carousels in the image.",
+    "ground_truth_answer": "The image showcases three distinct holiday charm shapes hanging from the rotating turbines: delicate geometric snowflakes in the center foreground, detailed holiday pine trees on the right side, and walking reindeer on the left background.",
+    "relevant_docs": [
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "Describe the textured pattern covering the exterior surface of the main candle containers and the tray they rest upon.",
+    "ground_truth_answer": "The exterior surfaces of the rose-gold/amber glass candle jars are entirely covered in a deeply textured, embossed ornate floral lace or brocade pattern. They are arranged together on a large, high-shine reflective silver metal mirror tray.",
+    "relevant_docs": [
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "Does this dynamic rotating stand require a battery or an electric plug-in to turn its top blades?",
+    "ground_truth_answer": "No, this stand requires no batteries or electricity; it is entirely powered by thermal convection, using the rising warm air currents from a burning tealight candle flame underneath to spin the top turbine blades automatically.",
+    "relevant_docs": [
+      "Candle_rotation_tray.md"
+    ]
+  },
+  {
+    "question": "What two distinct metallic color finishes are shown side-by-side in the product line image?",
+    "ground_truth_answer": "The image showcases two distinct metallic finishes: a polished yellow gold finish variant on the left side and a bright metallic silver finish variant on the right side.",
+    "relevant_docs": [
+      "Candle_rotation_tray.md"
+    ]
+  },
+  {
+    "question": "Identify the specific silhouette shapes used for the hanging charms on each of the two carousel models.",
+    "ground_truth_answer": "The polished gold model features hanging charms shaped like flying fairies with detailed, outstretched textured wings, while the metallic silver model features hanging charms shaped like standing forest reindeer with prominent antlers.",
+    "relevant_docs": [
+      "Candle_rotation_tray.md"
+    ]
+  },
+  {
+    "question": "Describe the structural path from the base candle cup up to the spinning wheel assembly.",
+    "ground_truth_answer": "At the base sits a circular metallic cup containing a white wax candle wick; from the rear rim of this cup, a thin, single metal rod curves upward and leans over the center of the candle to support the multi-blade pinwheel turbine at its topmost tip.",
+    "relevant_docs": [
+      "Candle_rotation_tray.md"
+    ]
+  },
+  {
+    "question": "Why is the cutting head of this tool shaped like a flat, circular disc basin instead of a standard pointed scissor blade?",
+    "ground_truth_answer": "The cutting head is uniquely shaped like a flat, circular disc basin to act as a built-in debris tray that securely catches and holds the clipped, burnt wick debris, preventing carbon fragments from falling back down and contaminating the clean wax pool below.",
+    "relevant_docs": [
+      "Candle_Scissor.md"
+    ]
+  },
+  {
+    "question": "What two distinct metallic color plating finishes are prominently displayed in the background of the image?",
+    "ground_truth_answer": "The background demonstrates two distinct metallic plating finishes: a classic bright chrome silver variant and an elegant polished rose gold variant.",
+    "relevant_docs": [
+      "Candle_Scissor.md"
+    ]
+  },
+  {
+    "question": "Describe the physical angle of the scissor handles and explain how this shape helps a user maintain their candle jar.",
+    "ground_truth_answer": "The scissor shafts feature an intentional offset geometric bend that angles downward right before the blades; this specialized ergonomic shape allows users to comfortably reach straight down into deep, narrow glass jars to trim wicks flush without their hands getting blocked by the container rim.",
+    "relevant_docs": [
+      "Candle_Scissor.md"
+    ]
+  },
+  {
+    "question": "What exact action is being illustrated in the lower-left circular close-up inset graphic in the image?",
+    "ground_truth_answer": "The lower-left circular inset illustrates the trimmer being lowered vertically into a clear glass bowl to snip the dark wick tip of a lit candle, demonstrating how the flat disc tray rests horizontally against the pink wax pool to catch the debris safely.",
+    "relevant_docs": [
+      "Candle_Scissor.md"
+    ]
+  },
+  {
+    "question": "How does using this specialized long-handle tool to put out a candle flame compare to simply blowing it out with your breath?",
+    "ground_truth_answer": "Using this tool caps the flame to deplete its oxygen, which eliminates the bad odors, black smoke, and airborne soot caused by blowing. It also prevents your breath from accidentally splattering dangerous, hot liquid wax onto nearby furniture or countertops.",
+    "relevant_docs": [
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "What two distinct geometric shapes are used for the pivoting extinguishing caps shown in the upper and lower halves of the image?",
+    "ground_truth_answer": "The upper group features a modern, clean cylindrical cap design with a flat top, while the lower group showcases a traditional, flared vintage bell dome shape.",
+    "relevant_docs": [
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "List the different metallic color finishes that are available across the product options displayed in the image.",
+    "ground_truth_answer": "The available finishes displayed across the collection include Matte Black, Luxury Rose Gold, Polished Chrome Silver, Bright Yellow Gold, and a muted Champagne/Bronze.",
+    "relevant_docs": [
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Describe how the extinguishing head is mechanically attached to the long handle shaft to facilitate reaching wicks at various angles.",
+    "ground_truth_answer": "The extinguishing cap is attached to the long metal rod via a small, flexible pivoting hinge loop near the tip, allowing the bell or cylinder head to swing freely and sit flat over the wick regardless of the angle at which the user holds the handle.",
+    "relevant_docs": [
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "What is the primary practical purpose of placing an oval metal tray underneath a burning glass jar candle?",
+    "ground_truth_answer": "The primary practical purpose is to serve as a heat-resistant barrier that protects delicate furniture surfaces from thermal damage, while also catching any accidental liquid wax drips or trimmed wick debris.",
+    "relevant_docs": [
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "What unique, colorful multi-tone finish option is displayed on two of the trays in the center and right side of the image?",
+    "ground_truth_answer": "The image features an eye-catching Iridescent Rainbow (or chameleon) finish that shifts between vibrant shades of blue, purple, magenta, and green depending on how the light hits the mirror-polished surface.",
+    "relevant_docs": [
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "Describe the specific geometric silhouette and edge design of the trays shown in the collection.",
+    "ground_truth_answer": "The trays feature a clean, elongated oval capsule silhouette with completely smooth, seamless curving rims that are gently raised to contain items securely.",
+    "relevant_docs": [
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "List the classic monochromatic metallic finishes available in this product line besides the multi-colored iridescent one.",
+    "ground_truth_answer": "In addition to the iridescent finish, the collection includes a brilliant highly-reflective yellow gold finish and a crisp, polished chrome silver finish.",
+    "relevant_docs": [
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "What is the specific Vietnamese city name that serves as the main conceptual theme and fragrance profile name for the candle in this gift box?",
+    "ground_truth_answer": "The main conceptual theme and fragrance name printed prominently in stylized font on the front candle label is 'Đà Lạt'.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "According to the front label on the candle jar, what are the four core fragrance notes listed under the main collection name?",
+    "ground_truth_answer": "The four core fragrance notes explicitly listed on the label are Gỗ Thông & Rêu (Pine Wood & Moss), Vỏ Chanh (Lemon Peel), Hổ Phách (Amber), and Tuyết Tùng (Cedarwood).",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "What specific product name, liquid concentration type, and volume are printed on the slender rectangular bottle sitting next to the candle?",
+    "ground_truth_answer": "The slender bottle displays the product name 'Mountain tea', identifies its concentration type as 'EAU DE TOILETTE', and specifies a volume of '10ML'.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Describe the natural dried botanical elements and non-wax accessories packed inside this kraft box to give it a rustic look.",
+    "ground_truth_answer": "The box is packed with a large cream-colored dried hydrangea and bunny tail flower bouquet, two real dried orange slices, a round cross-cut natural wooden log coaster showing growth rings, and a textured gold-colored wax seal sticker attached to the front of the glass jar.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ]
+  }
+]
