@@ -1,0 +1,72 @@
+[
+  {
+    "question": "What kind of surface should be used when burning a scented candle?",
+    "ground_truth_answer": "Candles should be placed on a flat, stable, and heat-resistant surface.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "What should you do before leaving a room with a burning candle?",
+    "ground_truth_answer": "You should extinguish the candle before leaving the room.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "How much of the wick should be trimmed after each use?",
+    "ground_truth_answer": "The wick should be trimmed by approximately 3 millimeters.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Why is a long-handled lighter recommended when lighting candles?",
+    "ground_truth_answer": "It helps prevent burns to your hands when lighting candles.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "What is a safer alternative to burning candles directly?",
+    "ground_truth_answer": "A candle warmer can be used as a safer alternative to reduce fire and explosion risks.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Explain the dual danger that drafty areas pose to an open candle flame as described in the placement guidelines.",
+    "ground_truth_answer": "Drafty areas can cause the candle flame to burn too intensely or they can blow nearby flammable objects directly into the fire.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "According to the text, what are the two specific sources of knowledge that the author combined to create this guidance document?",
+    "ground_truth_answer": "The author gathered these tips from information found on the internet and combined them with their own personal experience.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "List all the textile and interior fabric items explicitly mentioned in the document that must be kept away from burning candles.",
+    "ground_truth_answer": "The textile and interior fabric items explicitly mentioned are clothes, curtains, and carpets.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "What specific structural composition of black smoke is avoided by trimming a candle's wick by 3mm after each use?",
+    "ground_truth_answer": "Trimming the wick avoids the production of black smoke that specifically contains soot.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "What environment restriction is paired with the warning about avoiding enclosed spaces when selecting a location to burn candles?",
+    "ground_truth_answer": "The document pairs enclosed spaces with the restriction against burning candles in small, narrow rooms.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  }
+]

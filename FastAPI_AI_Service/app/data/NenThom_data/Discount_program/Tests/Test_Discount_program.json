@@ -1,0 +1,72 @@
+[
+  {
+    "question": "How much discount does NEWYEAR2025 provide?",
+    "ground_truth_answer": "NEWYEAR2025 provides a 15% discount.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "What is the minimum order value required for VIPMEMBER?",
+    "ground_truth_answer": "The minimum order value required is 500000.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Can WELCOME10 currently be used?",
+    "ground_truth_answer": "No. WELCOME10 is currently disabled.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "How many times can a customer use FREESHIP50?",
+    "ground_truth_answer": "Each customer can use FREESHIP50 up to 3 times.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Is SUMMERSALE currently available?",
+    "ground_truth_answer": "No. SUMMERSALE is currently expired.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Among all the coupons with a 'percent' discount type, which one has the highest maximum discount value, and what is that value?",
+    "ground_truth_answer": "SUMMERSALE has the highest maximum discount value of 80000.0 (compared to NEWYEAR2025 which has 50000.0, and WELCOME10 which has no maximum discount value specified).",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Identify any coupons that have a minimum order value of 300000.0 or more, and state their current status.",
+    "ground_truth_answer": "The coupons are SUMMERSALE (minimum order value 300000.0, status: expired) and VIPMEMBER (minimum order value 500000.0, status: active).",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "What is the total combined 'usage_limit' for all coupons that currently have an 'active' status?",
+    "ground_truth_answer": "The total combined usage limit is 1600 (NEWYEAR2025 has 500, FREESHIP50 has 1000, and VIPMEMBER has 100).",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Compare the validity periods of FREESHIP50 and NEWYEAR2025. Which coupon becomes valid first, and do their validity ranges overlap?",
+    "ground_truth_answer": "FREESHIP50 becomes valid first on 2025-11-01, whereas NEWYEAR2025 becomes valid later on 2025-12-20. Their validity ranges overlap between 2025-12-20 and 2025-12-31.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Which coupon has a total usage limit of 10000, and how many times can an individual user utilize this specific coupon?",
+    "ground_truth_answer": "The WELCOME10 coupon has a total usage limit of 10000, and an individual user can utilize it a maximum of 1 time.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  }
+]

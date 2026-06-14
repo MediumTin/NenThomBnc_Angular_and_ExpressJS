@@ -1,0 +1,291 @@
+[
+    
+    {
+    "question": "What category does this product belong to?",
+    "ground_truth_answer": "Decorative Candle.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Is this candle primarily intended for fragrance or decoration?",
+    "ground_truth_answer": "It is primarily intended for decoration.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  }
+  ,
+  {
+    "question": "What figure is featured in the candle design?",
+    "ground_truth_answer": "A white bear.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What color is the candle?",
+    "ground_truth_answer": "White.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What materials are used in the product?",
+    "ground_truth_answer": "Wax, glass, and wood.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What type of container does the candle use?",
+    "ground_truth_answer": "A glass dome.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What type of base does the candle have?",
+    "ground_truth_answer": "A natural wood base.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What mood does this candle help create?",
+    "ground_truth_answer": "Cute, cozy, peaceful, playful, whimsical, and heartwarming.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Which rooms are suitable for displaying this candle?",
+    "ground_truth_answer": "Bedrooms, living rooms, desks, nurseries, and decorative display spaces.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Recommend a candle for nursery decoration.",
+    "ground_truth_answer": "White Bear Candle Dome because of its cute and playful design.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "I want a candle that doubles as room decor. Which product should I choose?",
+    "ground_truth_answer": "White Bear Candle Dome because it is designed primarily as a decorative candle.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Is this candle suitable as a gift?",
+    "ground_truth_answer": "Yes, it is commonly used as a decorative gift item.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Does this product have an officially specified fragrance profile?",
+    "ground_truth_answer": "No official fragrance information is available.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Would this product be suitable for someone looking for strong fruity scents?",
+    "ground_truth_answer": "Not necessarily, because the product is primarily decorative and no fragrance profile is specified.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What decorative style best matches this candle?",
+    "ground_truth_answer": "Nordic, minimalist, and kawaii decorative styles.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What animal is represented by the candle?",
+    "ground_truth_answer": "A bear.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Is the candle enclosed inside a protective display structure?",
+    "ground_truth_answer": "Yes, it is displayed inside a glass dome.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Would this product fit a minimalist home decor theme?",
+    "ground_truth_answer": "Yes, its simple design and natural materials fit minimalist decor styles.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Why might customers purchase this candle?",
+    "ground_truth_answer": "Customers often purchase it for decoration, gifting, photography props, and aesthetic room styling.",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "What is the name of the candle?",
+    "ground_truth_answer": "Seychelles Coconut + Sea Salt.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Which brand produces the Seychelles Coconut + Sea Salt candle?",
+    "ground_truth_answer": "PotterWick.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What are the main scent notes of this candle?",
+    "ground_truth_answer": "Coconut, Sea Salt, and Ocean Breeze.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Which fragrance family does the candle belong to?",
+    "ground_truth_answer": "Fresh, Aquatic, and Tropical.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What atmosphere does this candle create?",
+    "ground_truth_answer": "A fresh coastal atmosphere with tropical beach-inspired vibes.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What mood does Seychelles Coconut + Sea Salt create?",
+    "ground_truth_answer": "Relaxing, refreshing, tropical, calm, airy, vacation-like, and coastal.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What type of wax is used in this candle?",
+    "ground_truth_answer": "Soy blend wax.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What is the weight of the candle?",
+    "ground_truth_answer": "12 oz.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What type of lid does the candle have?",
+    "ground_truth_answer": "A wooden lid.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "What type of container does the candle use?",
+    "ground_truth_answer": "A ceramic jar.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "How long does the candle burn?",
+    "ground_truth_answer": "Approximately 50–70 hours.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Which seasons are most suitable for this candle?",
+    "ground_truth_answer": "Spring, Summer, and year-round use.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Recommend a candle that smells like a tropical beach vacation.",
+    "ground_truth_answer": "Seychelles Coconut + Sea Salt because it combines coconut and sea salt notes with a fresh coastal character.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "I want a candle that feels fresh and ocean-inspired. Which product should I choose?",
+    "ground_truth_answer": "Seychelles Coconut + Sea Salt.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Why is this candle suitable for a bathroom?",
+    "ground_truth_answer": "Because its fresh marine and sea salt notes help create a clean and airy atmosphere.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Would someone who enjoys beach-themed fragrances like this candle?",
+    "ground_truth_answer": "Yes, because it features coconut and sea salt notes that evoke a tropical coastal environment.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Is Seychelles Coconut + Sea Salt more fresh or gourmand?",
+    "ground_truth_answer": "It is primarily fresh and aquatic with a tropical character.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Which note gives the candle its tropical feeling?",
+    "ground_truth_answer": "Coconut.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Which note contributes to the marine coastal feeling?",
+    "ground_truth_answer": "Sea Salt.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "A customer wants a heavy vanilla dessert scent. Is this candle the best recommendation?",
+    "ground_truth_answer": "No, this candle focuses on fresh tropical and coastal notes rather than rich dessert-like vanilla fragrances.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Would this candle be appropriate for creating a beach house atmosphere?",
+    "ground_truth_answer": "Yes, it is designed around coconut and sea salt notes that create a beach-inspired ambiance.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Is this candle better suited for summer gatherings or winter holiday evenings?",
+    "ground_truth_answer": "It is better suited for summer gatherings because of its tropical and coastal fragrance profile.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  }
+]

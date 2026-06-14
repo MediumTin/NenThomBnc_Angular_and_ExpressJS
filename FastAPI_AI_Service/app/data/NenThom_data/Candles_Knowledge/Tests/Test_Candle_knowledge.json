@@ -1,0 +1,73 @@
+[
+  {
+    "question": "How long do top notes typically last after a candle is lit?",
+    "ground_truth_answer": "Top notes usually last about 10 minutes after the candle is lit.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx"
+    ]
+  },
+  {
+    "question": "Why are middle notes considered the soul of a candle?",
+    "ground_truth_answer": "Middle notes are considered the soul of a candle because they are the longest-lasting and define the main fragrance experience.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx"
+    ]
+  },
+  {
+    "question": "Name two common woody base notes found in scented candles.",
+    "ground_truth_answer": "Sandalwood and cedarwood.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx"
+    ]
+  },
+  {
+    "question": "Which scents are mentioned as helping improve concentration while studying or working?",
+    "ground_truth_answer": "Rosemary, mint, coffee, jasmine, lavender, and lemon.",
+    "relevant_docs": [
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "How can scented candles help deodorize a room?",
+    "ground_truth_answer": "They release natural fragrance from wax and essential oils, helping eliminate damp odors, food smells, bathroom odors, and cigarette smoke.",
+    "relevant_docs": [
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "What distinct physical limitation separates the sillage of base notes from that of top and middle notes?",
+    "ground_truth_answer": "Base notes do not have the same wide and airy sillage as the top two layers, meaning their scent is usually subtle and less widely diffused.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx"
+    ]
+  },
+  {
+    "question": "Based on the documentation, list all the physical bodily responses that are triggered when we breathe in a pleasant candle scent.",
+    "ground_truth_answer": "We tend to breathe deeper and easier, our blood pressure is lowered, and our heart beats at a slower, more relaxed pace.",
+    "relevant_docs": [
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "Identify the three specific floral notes mentioned in the text that can function as top notes, and the one floral note that functions as a middle note.",
+    "ground_truth_answer": "The top floral notes are lavender, rose, and iris. The middle floral note mentioned is jasmine (note: lavender and lemon are also listed generally under concentration scents, but jasmine is uniquely introduced in the concentration section alongside general floral middle notes).",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx",
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "According to the scientific research details provided, what is the anatomical reason why aromatherapy can instantly connect scent to human memory and emotion?",
+    "ground_truth_answer": "According to Dr. Pamela Dalton, it is because the part of the brain that receives and processes scents is physically located very close to the parts of the brain that handle human memory and emotions.",
+    "relevant_docs": [
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "Explain how the functional role of middle notes differs from base notes in terms of timing and visibility after the candle flame is put out.",
+    "ground_truth_answer": "Middle notes are the longest-lasting while the candle is lit (up to 1.5 hours) and form the soul of the experience, whereas base notes serve as the lingering highlight that remains non-volatile and noticeable for up to 6 hours even after the candle has been extinguished.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx"
+    ]
+  }
+]

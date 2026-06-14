@@ -1,0 +1,1618 @@
+[
+  {
+    "question": "Danh mục hiện có bao nhiêu sản phẩm thuộc nhóm nến thơm?",
+    "ground_truth_answer": "Theo markdown trong Product_Catalogs, nhóm nến thơm có 15 sản phẩm.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md",
+      "Day_Party.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md",
+      "Day_Party.md"
+    ]
+  },
+  {
+    "question": "Kể tên các sản phẩm tiêu biểu của nhóm nến thơm.",
+    "ground_truth_answer": "Một số sản phẩm tiêu biểu của nhóm nến thơm: 3_Day_WKND, Lavander_Vanilia, Nen_and_Hoa.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md"
+    ]
+  },
+  {
+    "question": "Nhóm nến thơm phù hợp use case nào nhất trong catalog?",
+    "ground_truth_answer": "Nhóm nến thơm phù hợp tùy ngữ cảnh: nến thơm cho trải nghiệm mùi theo thời điểm, reed diffuser cho tỏa hương liên tục, tinh dầu cho khuếch tán trị liệu, phụ kiện nến cho an toàn/chăm sóc, set quà cho mục đích tặng.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Nếu ưu tiên vận hành không cần lửa thì nhóm nến thơm có phù hợp không?",
+    "ground_truth_answer": "Tùy sản phẩm; nhóm này không phải luôn là giải pháp không lửa.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Trong nhóm nến thơm, markdown có ghi rõ thời lượng sử dụng/burn time cho mọi sản phẩm không?",
+    "ground_truth_answer": "Không phải mọi sản phẩm đều có burn time hoặc thời lượng chi tiết; mức độ đầy đủ dữ liệu khác nhau giữa các file markdown.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Nhóm nến thơm có thể kết hợp thế nào với nhóm khác để tạo trải nghiệm toàn diện?",
+    "ground_truth_answer": "Có thể kết hợp theo bộ: nến + phụ kiện (scissor/snuffer/tray) hoặc diffuser + tinh dầu theo mục tiêu mùi hương và an toàn sử dụng.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lavander_Vanilia.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lavander_Vanilia.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Danh mục hiện có bao nhiêu sản phẩm thuộc nhóm reed diffuser?",
+    "ground_truth_answer": "Theo markdown trong Product_Catalogs, nhóm reed diffuser có 6 sản phẩm.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md",
+      "Lumos_Rose_Boutique.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md",
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "Kể tên các sản phẩm tiêu biểu của nhóm reed diffuser.",
+    "ground_truth_answer": "Một số sản phẩm tiêu biểu của nhóm reed diffuser: Lumos_And_Cucumber, Lumos_Rose_Boutique, Lumos_Midnight_sandalwood.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Rose_Boutique.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Rose_Boutique.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Nhóm reed diffuser phù hợp use case nào nhất trong catalog?",
+    "ground_truth_answer": "Nhóm reed diffuser phù hợp tùy ngữ cảnh: nến thơm cho trải nghiệm mùi theo thời điểm, reed diffuser cho tỏa hương liên tục, tinh dầu cho khuếch tán trị liệu, phụ kiện nến cho an toàn/chăm sóc, set quà cho mục đích tặng.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Nếu ưu tiên vận hành không cần lửa thì nhóm reed diffuser có phù hợp không?",
+    "ground_truth_answer": "Phù hợp, vì không cần đốt nến.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Trong nhóm reed diffuser, markdown có ghi rõ thời lượng sử dụng/burn time cho mọi sản phẩm không?",
+    "ground_truth_answer": "Không phải mọi sản phẩm đều có burn time hoặc thời lượng chi tiết; mức độ đầy đủ dữ liệu khác nhau giữa các file markdown.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Nhóm reed diffuser có thể kết hợp thế nào với nhóm khác để tạo trải nghiệm toàn diện?",
+    "ground_truth_answer": "Có thể kết hợp theo bộ: nến + phụ kiện (scissor/snuffer/tray) hoặc diffuser + tinh dầu theo mục tiêu mùi hương và an toàn sử dụng.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Danh mục hiện có bao nhiêu sản phẩm thuộc nhóm tinh dầu?",
+    "ground_truth_answer": "Theo markdown trong Product_Catalogs, nhóm tinh dầu có 4 sản phẩm.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "Kể tên các sản phẩm tiêu biểu của nhóm tinh dầu.",
+    "ground_truth_answer": "Một số sản phẩm tiêu biểu của nhóm tinh dầu: Lumos_Cajeput, Lumos_Lemongrass, Lumos_cold.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_cold.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "Nhóm tinh dầu phù hợp use case nào nhất trong catalog?",
+    "ground_truth_answer": "Nhóm tinh dầu phù hợp tùy ngữ cảnh: nến thơm cho trải nghiệm mùi theo thời điểm, reed diffuser cho tỏa hương liên tục, tinh dầu cho khuếch tán trị liệu, phụ kiện nến cho an toàn/chăm sóc, set quà cho mục đích tặng.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "Nếu ưu tiên vận hành không cần lửa thì nhóm tinh dầu có phù hợp không?",
+    "ground_truth_answer": "Phù hợp, vì không cần đốt nến.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "Trong nhóm tinh dầu, markdown có ghi rõ thời lượng sử dụng/burn time cho mọi sản phẩm không?",
+    "ground_truth_answer": "Không phải mọi sản phẩm đều có burn time hoặc thời lượng chi tiết; mức độ đầy đủ dữ liệu khác nhau giữa các file markdown.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "Nhóm tinh dầu có thể kết hợp thế nào với nhóm khác để tạo trải nghiệm toàn diện?",
+    "ground_truth_answer": "Có thể kết hợp theo bộ: nến + phụ kiện (scissor/snuffer/tray) hoặc diffuser + tinh dầu theo mục tiêu mùi hương và an toàn sử dụng.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Danh mục hiện có bao nhiêu sản phẩm thuộc nhóm phụ kiện nến?",
+    "ground_truth_answer": "Theo markdown trong Product_Catalogs, nhóm phụ kiện nến có 9 sản phẩm.",
+    "relevant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Candle_rotation_tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Candle_rotation_tray.md"
+    ]
+  },
+  {
+    "question": "Kể tên các sản phẩm tiêu biểu của nhóm phụ kiện nến.",
+    "ground_truth_answer": "Một số sản phẩm tiêu biểu của nhóm phụ kiện nến: Candle_Scissor, Candle_Snuffer, Candle_Tray.",
+    "relevant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "Nhóm phụ kiện nến phù hợp use case nào nhất trong catalog?",
+    "ground_truth_answer": "Nhóm phụ kiện nến phù hợp tùy ngữ cảnh: nến thơm cho trải nghiệm mùi theo thời điểm, reed diffuser cho tỏa hương liên tục, tinh dầu cho khuếch tán trị liệu, phụ kiện nến cho an toàn/chăm sóc, set quà cho mục đích tặng.",
+    "relevant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ],
+    "relavant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "Nếu ưu tiên vận hành không cần lửa thì nhóm phụ kiện nến có phù hợp không?",
+    "ground_truth_answer": "Tùy sản phẩm; nhóm này không phải luôn là giải pháp không lửa.",
+    "relevant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ],
+    "relavant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "Trong nhóm phụ kiện nến, markdown có ghi rõ thời lượng sử dụng/burn time cho mọi sản phẩm không?",
+    "ground_truth_answer": "Không phải mọi sản phẩm đều có burn time hoặc thời lượng chi tiết; mức độ đầy đủ dữ liệu khác nhau giữa các file markdown.",
+    "relevant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ],
+    "relavant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "Nhóm phụ kiện nến có thể kết hợp thế nào với nhóm khác để tạo trải nghiệm toàn diện?",
+    "ground_truth_answer": "Có thể kết hợp theo bộ: nến + phụ kiện (scissor/snuffer/tray) hoặc diffuser + tinh dầu theo mục tiêu mùi hương và an toàn sử dụng.",
+    "relevant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Danh mục hiện có bao nhiêu sản phẩm thuộc nhóm set quà?",
+    "ground_truth_answer": "Theo markdown trong Product_Catalogs, nhóm set quà có 1 sản phẩm.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Kể tên các sản phẩm tiêu biểu của nhóm set quà.",
+    "ground_truth_answer": "Một số sản phẩm tiêu biểu của nhóm set quà: Dalat_Gift.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Nhóm set quà phù hợp use case nào nhất trong catalog?",
+    "ground_truth_answer": "Nhóm set quà phù hợp tùy ngữ cảnh: nến thơm cho trải nghiệm mùi theo thời điểm, reed diffuser cho tỏa hương liên tục, tinh dầu cho khuếch tán trị liệu, phụ kiện nến cho an toàn/chăm sóc, set quà cho mục đích tặng.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Nếu ưu tiên vận hành không cần lửa thì nhóm set quà có phù hợp không?",
+    "ground_truth_answer": "Tùy sản phẩm; nhóm này không phải luôn là giải pháp không lửa.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong nhóm set quà, markdown có ghi rõ thời lượng sử dụng/burn time cho mọi sản phẩm không?",
+    "ground_truth_answer": "Không phải mọi sản phẩm đều có burn time hoặc thời lượng chi tiết; mức độ đầy đủ dữ liệu khác nhau giữa các file markdown.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Nhóm set quà có thể kết hợp thế nào với nhóm khác để tạo trải nghiệm toàn diện?",
+    "ground_truth_answer": "Có thể kết hợp theo bộ: nến + phụ kiện (scissor/snuffer/tray) hoặc diffuser + tinh dầu theo mục tiêu mùi hương và an toàn sử dụng.",
+    "relevant_docs": [
+      "Dalat_Gift.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng ngủ vào mùa hè nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng ngủ và mùa hè; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng khách vào mùa hè nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng khách và mùa hè; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng tắm vào mùa hè nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng tắm và mùa hè; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng làm việc vào mùa hè nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng làm việc và mùa hè; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho khu vực thiền vào mùa hè nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh khu vực thiền và mùa hè; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng ngủ vào mùa thu nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng ngủ và mùa thu; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng khách vào mùa thu nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng khách và mùa thu; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng tắm vào mùa thu nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng tắm và mùa thu; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng làm việc vào mùa thu nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng làm việc và mùa thu; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho khu vực thiền vào mùa thu nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh khu vực thiền và mùa thu; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng ngủ vào mùa đông nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng ngủ và mùa đông; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng khách vào mùa đông nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng khách và mùa đông; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng tắm vào mùa đông nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng tắm và mùa đông; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng làm việc vào mùa đông nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng làm việc và mùa đông; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho khu vực thiền vào mùa đông nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh khu vực thiền và mùa đông; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng ngủ vào quanh năm nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng ngủ và quanh năm; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng khách vào quanh năm nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng khách và quanh năm; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng tắm vào quanh năm nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng tắm và quanh năm; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho phòng làm việc vào quanh năm nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh phòng làm việc và quanh năm; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Gợi ý sản phẩm cho khu vực thiền vào quanh năm nên ưu tiên nhóm nào?",
+    "ground_truth_answer": "Ưu tiên theo markdown: chọn mùi phù hợp bối cảnh khu vực thiền và quanh năm; thường kết hợp nến thơm hoặc reed diffuser, thêm phụ kiện nếu dùng nến.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Nếu mục tiêu là thư giãn sau giờ làm thì nên bắt đầu từ sản phẩm nào trong catalog?",
+    "ground_truth_answer": "Có thể bắt đầu bằng các sản phẩm: Lavander_Vanilia, Nen_and_Hoa, Lumos_Midnight_sandalwood; sau đó tinh chỉnh theo sở thích mùi và mùa.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Để đạt mục tiêu thư giãn sau giờ làm, nên kết hợp nhiều nhóm sản phẩm như thế nào?",
+    "ground_truth_answer": "Cách kết hợp thường hiệu quả: nến hoặc diffuser làm mùi chính; thêm tinh dầu hoặc phụ kiện để tăng độ linh hoạt và an toàn khi sử dụng.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Nếu mục tiêu là tăng tỉnh táo buổi sáng thì nên bắt đầu từ sản phẩm nào trong catalog?",
+    "ground_truth_answer": "Có thể bắt đầu bằng các sản phẩm: Lumos_Lemongrass, Lumos_menthol, 3_Day_WKND; sau đó tinh chỉnh theo sở thích mùi và mùa.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md",
+      "3_Day_WKND.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md",
+      "3_Day_WKND.md"
+    ]
+  },
+  {
+    "question": "Để đạt mục tiêu tăng tỉnh táo buổi sáng, nên kết hợp nhiều nhóm sản phẩm như thế nào?",
+    "ground_truth_answer": "Cách kết hợp thường hiệu quả: nến hoặc diffuser làm mùi chính; thêm tinh dầu hoặc phụ kiện để tăng độ linh hoạt và an toàn khi sử dụng.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md",
+      "3_Day_WKND.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md",
+      "3_Day_WKND.md"
+    ]
+  },
+  {
+    "question": "Nếu mục tiêu là không gian lãng mạn thì nên bắt đầu từ sản phẩm nào trong catalog?",
+    "ground_truth_answer": "Có thể bắt đầu bằng các sản phẩm: Lumos_Rose_Boutique, Sandalwood_And_Rose, BLOW_A_WISH; sau đó tinh chỉnh theo sở thích mùi và mùa.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Rose_Boutique.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Để đạt mục tiêu không gian lãng mạn, nên kết hợp nhiều nhóm sản phẩm như thế nào?",
+    "ground_truth_answer": "Cách kết hợp thường hiệu quả: nến hoặc diffuser làm mùi chính; thêm tinh dầu hoặc phụ kiện để tăng độ linh hoạt và an toàn khi sử dụng.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Rose_Boutique.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Nếu mục tiêu là mùi sạch cho phòng tắm thì nên bắt đầu từ sản phẩm nào trong catalog?",
+    "ground_truth_answer": "Có thể bắt đầu bằng các sản phẩm: Shower_Playlist, Lumos_And_Cucumber, Coconut_And_Sea_Salt; sau đó tinh chỉnh theo sở thích mùi và mùa.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Coconut_And_Sea_Salt.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Để đạt mục tiêu mùi sạch cho phòng tắm, nên kết hợp nhiều nhóm sản phẩm như thế nào?",
+    "ground_truth_answer": "Cách kết hợp thường hiệu quả: nến hoặc diffuser làm mùi chính; thêm tinh dầu hoặc phụ kiện để tăng độ linh hoạt và an toàn khi sử dụng.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Coconut_And_Sea_Salt.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Nếu mục tiêu là tiệc tối tại nhà thì nên bắt đầu từ sản phẩm nào trong catalog?",
+    "ground_truth_answer": "Có thể bắt đầu bằng các sản phẩm: Sunset_Disco, Lumos_Rose_Boutique, Candle_Tray; sau đó tinh chỉnh theo sở thích mùi và mùa.",
+    "relevant_docs": [
+      "Sunset_Disco.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Tray.md"
+    ],
+    "relavant_docs": [
+      "Sunset_Disco.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "Để đạt mục tiêu tiệc tối tại nhà, nên kết hợp nhiều nhóm sản phẩm như thế nào?",
+    "ground_truth_answer": "Cách kết hợp thường hiệu quả: nến hoặc diffuser làm mùi chính; thêm tinh dầu hoặc phụ kiện để tăng độ linh hoạt và an toàn khi sử dụng.",
+    "relevant_docs": [
+      "Sunset_Disco.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Tray.md"
+    ],
+    "relavant_docs": [
+      "Sunset_Disco.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "Nếu mục tiêu là góc đọc sách ấm áp thì nên bắt đầu từ sản phẩm nào trong catalog?",
+    "ground_truth_answer": "Có thể bắt đầu bằng các sản phẩm: Amber_And_Vanilla, smells_like_cacao_and_vanilla, Candle_Snuffer; sau đó tinh chỉnh theo sở thích mùi và mùa.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md",
+      "smells_like_cacao_and_vanilla.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Amber_And_Vanilla.md",
+      "smells_like_cacao_and_vanilla.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Để đạt mục tiêu góc đọc sách ấm áp, nên kết hợp nhiều nhóm sản phẩm như thế nào?",
+    "ground_truth_answer": "Cách kết hợp thường hiệu quả: nến hoặc diffuser làm mùi chính; thêm tinh dầu hoặc phụ kiện để tăng độ linh hoạt và an toàn khi sử dụng.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md",
+      "smells_like_cacao_and_vanilla.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Amber_And_Vanilla.md",
+      "smells_like_cacao_and_vanilla.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Nếu mục tiêu là khử mùi khu vực kín thì nên bắt đầu từ sản phẩm nào trong catalog?",
+    "ground_truth_answer": "Có thể bắt đầu bằng các sản phẩm: Lumos_Lemongrass, Lumos_Cajeput, Lumos_cold; sau đó tinh chỉnh theo sở thích mùi và mùa.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "Để đạt mục tiêu khử mùi khu vực kín, nên kết hợp nhiều nhóm sản phẩm như thế nào?",
+    "ground_truth_answer": "Cách kết hợp thường hiệu quả: nến hoặc diffuser làm mùi chính; thêm tinh dầu hoặc phụ kiện để tăng độ linh hoạt và an toàn khi sử dụng.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "Nếu mục tiêu là trang trí bàn tiếp khách thì nên bắt đầu từ sản phẩm nào trong catalog?",
+    "ground_truth_answer": "Có thể bắt đầu bằng các sản phẩm: Candle_metal_tray, Candle_pinwheel, Wood_tray; sau đó tinh chỉnh theo sở thích mùi và mùa.",
+    "relevant_docs": [
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Wood_tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Wood_tray.md"
+    ]
+  },
+  {
+    "question": "Để đạt mục tiêu trang trí bàn tiếp khách, nên kết hợp nhiều nhóm sản phẩm như thế nào?",
+    "ground_truth_answer": "Cách kết hợp thường hiệu quả: nến hoặc diffuser làm mùi chính; thêm tinh dầu hoặc phụ kiện để tăng độ linh hoạt và an toàn khi sử dụng.",
+    "relevant_docs": [
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Wood_tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Wood_tray.md"
+    ]
+  },
+  {
+    "question": "Nếu mục tiêu là quà tặng dịp lễ thì nên bắt đầu từ sản phẩm nào trong catalog?",
+    "ground_truth_answer": "Có thể bắt đầu bằng các sản phẩm: Dalat_Gift, YOU_ARE_THE_MAGIC, BLOW_A_WISH; sau đó tinh chỉnh theo sở thích mùi và mùa.",
+    "relevant_docs": [
+      "Dalat_Gift.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Để đạt mục tiêu quà tặng dịp lễ, nên kết hợp nhiều nhóm sản phẩm như thế nào?",
+    "ground_truth_answer": "Cách kết hợp thường hiệu quả: nến hoặc diffuser làm mùi chính; thêm tinh dầu hoặc phụ kiện để tăng độ linh hoạt và an toàn khi sử dụng.",
+    "relevant_docs": [
+      "Dalat_Gift.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Nếu mục tiêu là set chăm nến đầy đủ thì nên bắt đầu từ sản phẩm nào trong catalog?",
+    "ground_truth_answer": "Có thể bắt đầu bằng các sản phẩm: Candle_Scissor, Candle_Snuffer, Candle_Tray; sau đó tinh chỉnh theo sở thích mùi và mùa.",
+    "relevant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "Để đạt mục tiêu set chăm nến đầy đủ, nên kết hợp nhiều nhóm sản phẩm như thế nào?",
+    "ground_truth_answer": "Cách kết hợp thường hiệu quả: nến hoặc diffuser làm mùi chính; thêm tinh dầu hoặc phụ kiện để tăng độ linh hoạt và an toàn khi sử dụng.",
+    "relevant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, catalog markdown có chứa giá bán đầy đủ cho mọi sản phẩm không?",
+    "ground_truth_answer": "Không. Dữ liệu giá không được chuẩn hóa đầy đủ trong toàn bộ markdown nên cần nguồn giá riêng.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, catalog markdown có đầy đủ tồn kho hoặc trạng thái còn hàng không?",
+    "ground_truth_answer": "Không thấy trường tồn kho chuẩn hóa xuyên suốt toàn bộ file markdown.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, burn time có xuất hiện đồng đều cho tất cả nến không?",
+    "ground_truth_answer": "Không đồng đều; một số nến có burn time rõ, một số không ghi chi tiết.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, thông số dung tích của diffuser có nhất quán không?",
+    "ground_truth_answer": "Nhiều diffuser ghi 100ml hoặc 100-150ml, nhưng không phải file nào cũng theo cùng một format.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, dữ liệu có lỗi chính tả tên mùi hoặc tên sản phẩm không?",
+    "ground_truth_answer": "Có một số chỗ không đồng nhất cách viết tên hoặc chính tả giữa file.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, metadata thương hiệu có đầy đủ ở tất cả file không?",
+    "ground_truth_answer": "Không phải file nào cũng ghi thương hiệu rõ ràng và nhất quán.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, định dạng trường mood/season có chuẩn schema chung chưa?",
+    "ground_truth_answer": "Chưa hoàn toàn; nội dung hữu ích nhưng chưa chuẩn hóa schema thống nhất.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, có thể dùng markdown làm nguồn duy nhất cho QA sản phẩm không?",
+    "ground_truth_answer": "Có thể cho QA nền tảng, nhưng nên bổ sung nguồn chuẩn cho giá, tồn kho, và chuẩn hóa tên.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, catalog có phân biệt rõ sản phẩm có lửa và không lửa không?",
+    "ground_truth_answer": "Có thể suy luận được từ nhóm nến, diffuser, tinh dầu và phụ kiện, nhưng chưa có trường chuẩn tường minh trong mọi file.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, có thể suy ra đầy đủ thông tin an toàn sử dụng từ markdown không?",
+    "ground_truth_answer": "Chỉ một phần; thông tin an toàn chi tiết chưa xuất hiện đồng đều cho tất cả sản phẩm.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, có dữ liệu nào trùng lặp mô tả giữa nhiều file không?",
+    "ground_truth_answer": "Có khả năng có các đoạn mô tả template lặp giữa các sản phẩm cùng dòng.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, catalog có hỗ trợ truy vấn theo mùa tốt không?",
+    "ground_truth_answer": "Có, vì nhiều file ghi rõ mùa phù hợp; tuy nhiên mức độ chi tiết không hoàn toàn đồng nhất.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, catalog có hỗ trợ truy vấn theo không gian sử dụng tốt không?",
+    "ground_truth_answer": "Có, nhiều file nêu phòng/khu vực dùng phù hợp như phòng ngủ, phòng tắm, phòng khách.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, catalog có đủ dữ liệu để làm gợi ý combo sản phẩm không?",
+    "ground_truth_answer": "Có thể làm ở mức tốt nhờ có nhóm nến, diffuser, tinh dầu, phụ kiện và set quà.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Trong phạm vi toàn catalog, cần cải tiến gì để QA chính xác hơn?",
+    "ground_truth_answer": "Nên chuẩn hóa schema metadata giữa các markdown và bổ sung giá, tồn kho, mã SKU, hướng dẫn an toàn.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa nến thơm và reed diffuser.",
+    "ground_truth_answer": "Nến phù hợp trải nghiệm theo phiên; reed diffuser phù hợp tỏa hương liên tục không lửa.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa reed diffuser và tinh dầu.",
+    "ground_truth_answer": "Diffuser dạng que tiện dụng hằng ngày; tinh dầu linh hoạt cho máy khuếch tán/xông theo mục tiêu.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa phụ kiện scissor và snuffer.",
+    "ground_truth_answer": "Scissor dùng cắt bấc để cháy ổn định; snuffer dùng tắt nến an toàn, giảm khói.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa khay kim loại và khay gỗ.",
+    "ground_truth_answer": "Khay kim loại thiên về decor phản chiếu/sang trọng; khay gỗ thiên về mộc mạc tự nhiên.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa dòng mùi fruity và woody.",
+    "ground_truth_answer": "Fruity thường tươi sáng trẻ trung; woody thường ấm sâu, phù hợp không gian thư giãn buổi tối.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa dòng mùi fresh và gourmand.",
+    "ground_truth_answer": "Fresh tạo cảm giác sạch thoáng; gourmand tạo cảm giác ấm ngọt, dễ chịu khi trời lạnh.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa sản phẩm dùng cho phòng tắm và phòng khách.",
+    "ground_truth_answer": "Phòng tắm ưu tiên fresh/clean; phòng khách linh hoạt theo mục đích tiếp khách hoặc thư giãn.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa mùi cho ban ngày và ban đêm.",
+    "ground_truth_answer": "Ban ngày hợp mùi sáng/nhẹ; ban đêm hợp mùi ấm/sâu để thư giãn.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa sản phẩm trang trí và sản phẩm chức năng mùi.",
+    "ground_truth_answer": "Trang trí nhấn thẩm mỹ không gian; chức năng mùi tập trung vào trải nghiệm khứu giác.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa set quà và mua lẻ.",
+    "ground_truth_answer": "Set quà tiện tặng và đồng bộ; mua lẻ linh hoạt theo ngân sách và sở thích cá nhân.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa sản phẩm thiên về thư giãn và sản phẩm thiên về tỉnh táo.",
+    "ground_truth_answer": "Thư giãn thường floral/woody/warm; tỉnh táo thường fresh/citrus/herbal.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa nến dung tích lớn và nhỏ.",
+    "ground_truth_answer": "Dung tích lớn phù hợp dùng dài hạn; dung tích nhỏ linh hoạt thử mùi hoặc không gian nhỏ.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa sản phẩm có thông số rõ và sản phẩm thiếu thông số.",
+    "ground_truth_answer": "Nên ưu tiên sản phẩm có thông số rõ để dễ tư vấn; sản phẩm thiếu thông số cần xác minh thêm.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa mùa hè và mùa đông trong catalog.",
+    "ground_truth_answer": "Mùa hè thiên mùi trái cây/fresh; mùa đông thiên warm/spicy/woody.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "So sánh ở mức toàn catalog giữa catalog định hướng trải nghiệm và catalog định hướng kỹ thuật.",
+    "ground_truth_answer": "Nguồn markdown hiện thiên về trải nghiệm mùi và ngữ cảnh sử dụng hơn là thông số kỹ thuật đầy đủ.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  }
+]

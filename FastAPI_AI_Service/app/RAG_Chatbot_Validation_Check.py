@@ -19,7 +19,7 @@ import numpy as np
 import time
 # For FastAPI usage
 from Prompt.Promtp_Config import get_prompt_template
-from LLM_Config.LLM_Config import llm_config
+from LLM_Config.LLM_Config import llm_config, llm_for_judge_accuracy
 from Embedding_Model.Embedding_model import embeddings
 
 # For run RAG_Chatbot.py directly
@@ -33,8 +33,42 @@ load_dotenv() # Load the environment variables from the .env file
 from pprint import pprint # Import the pprint function for pretty-printing the splits
 retrieved_docs_list = []
 # 1. Định nghĩa đường dẫn tới file câu hỏi kiểm thử
-validation_file_path = "app/data/Validation/Validation_Request_short.json"
-output_results_path = "app/data/Validation/Result/Validation_Response_short.json"
+
+# Test for Candle knowledge
+Test_Candle_knowledge_PATH = "app/data/NenThom_data/Candles_Knowledge/Tests/Test_Candle_knowledge.json"
+Output_Candle_knowledge_PATH = "app/data/NenThom_data/Candles_Knowledge/Tests/Results/Result_Test_Candle_knowledge.json"    
+
+# Test for Discount program
+Test_Discount_program_PATH = "app/data/NenThom_data/Discount_program/Tests/Test_Discount_program.json"
+Output_Discount_program_PATH = "app/data/NenThom_data/Discount_program/Tests/Results/Result_Test_Discount_program.json"
+
+# Test for Policies
+Test_Policies_PATH = "app/data/NenThom_data/Policies/Tests/Test_Policies.json"
+Output_Policies_PATH = "app/data/NenThom_data/Policies/Tests/Results/Result_Test_Policies.json"
+
+# Test for Product Catalogs
+Test_Product_Catalogs_PATH = "app/data/NenThom_data/Product_Catalogs/Tests/Test_Product_Catalog.json"
+Output_Product_Catalogs_PATH = "app/data/NenThom_data/Product_Catalogs/Tests/Results/Result_Test_Product_Catalog.json"
+
+# Test for Accessories Catalogs
+Test_Accessories_Catalogs_PATH = "app/data/NenThom_data/Product_Catalogs/Tests/Test_Accesories_product_only.json"
+Output_Accessories_Catalogs_PATH = "app/data/NenThom_data/Product_Catalogs/Tests/Results/Result_Test_Accesories_product_only.json"
+
+# Test for Candle Catalogs
+Test_Candle_Catalogs_PATH = "app/data/NenThom_data/Product_Catalogs/Tests/Test_Candle_product_only.json"
+Output_Candle_Catalogs_PATH = "app/data/NenThom_data/Product_Catalogs/Tests/Results/Result_Test_Candle_product_only.json"
+
+# Test for Lumos Catalogs
+Test_Lumos_Catalogs_PATH = "app/data/NenThom_data/Product_Catalogs/Tests/Test_Lumos_product_only.json"
+Output_Lumos_Catalogs_PATH = "app/data/NenThom_data/Product_Catalogs/Tests/Results/Result_Test_Lumos_product_only.json"
+
+# Test for User guidance
+Test_User_guidance_PATH = "app/data/NenThom_data/User_guidance/Tests/Test_User_guidance.json"
+Output_User_guidance_PATH = "app/data/NenThom_data/User_guidance/Tests/Results/Result_Test_User_guidance.json"
+
+# Select which test to run by setting the validation_file_path and output_results_path variables
+validation_file_path = Test_Candle_knowledge_PATH
+output_results_path = Output_Candle_knowledge_PATH
 
 # Kiểm tra đảm bảo thư mục lưu kết quả tồn tại
 os.makedirs(os.path.dirname(output_results_path), exist_ok=True)
@@ -79,7 +113,7 @@ def prepare_input_updated(data):
 
 rag_chain = (
     RunnableLambda(prepare_input_updated)
-    | RunnableLambda(debug_context)
+    # | RunnableLambda(debug_context)
     | get_prompt_template()
     | llm_config
     | StrOutputParser()
@@ -214,7 +248,14 @@ for item in tqdm(dataset, desc="Evaluating RAG Chain"):
         response_time = round(end_time - start_time, 2)
         answer_text = f"ERROR: {str(e)}"
         retrieved_doc_sources = []
-    accuracy = estimate_answer_accuracy(question_text,item.get("ground_truth_answer"), answer_text,llm_config)
+    
+    try:
+        accuracy = estimate_answer_accuracy(question_text,item.get("ground_truth_answer"), answer_text,llm_for_judge_accuracy)
+    except Exception as e:
+        print(e)
+        accuracy = None
+
+    # accuracy = estimate_answer_accuracy(question_text,item.get("ground_truth_answer"), answer_text,llm_config)
     # 3. Định dạng dữ liệu đầu ra chính xác theo format yêu cầu
     test_results.append({
         "question": question_text,

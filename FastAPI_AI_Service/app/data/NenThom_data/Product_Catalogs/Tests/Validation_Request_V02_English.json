@@ -1,0 +1,1618 @@
+[
+  {
+    "question": "How many products in the fragrant candle category are currently available in the catalog?",
+    "ground_truth_answer": "According to the markdown in Product_Catalogs, the fragrant candle category has 15 products.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md",
+      "Day_Party.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md",
+      "Day_Party.md"
+    ]
+  },
+  {
+    "question": "Name the representative products of the fragrant candle category.",
+    "ground_truth_answer": "Some representative products of the fragrant candle category are: 3_Day_WKND, Lavander_Vanilia, Nen_and_Hoa.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md"
+    ]
+  },
+  {
+    "question": "Which use case is the fragrant candle category most suitable for in the catalog?",
+    "ground_truth_answer": "The fragrant candle category is suitable depending on context: fragrant candles for scent experience by time of day, reed diffusers for continuous fragrance diffusion, essential oils for therapeutic diffusion, candle accessories for safety and care, gift sets for gifting purposes.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "If fire-free operation is prioritized, is the fragrant candle category suitable?",
+    "ground_truth_answer": "It depends on the product; this category is not always a fire-free solution.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "In the fragrant candle category, does the markdown clearly specify usage duration or burn time for all products?",
+    "ground_truth_answer": "Not all products have burn time or detailed duration information; the level of data completeness varies among the markdown files.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Amber_And_Vanilla.md",
+      "BLOW_A_WISH.md",
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "How can the fragrant candle category be combined with other categories to create a comprehensive experience?",
+    "ground_truth_answer": "Can be combined as sets: candles plus accessories (scissors/snuffer/tray) or diffuser plus essential oil based on scent objectives and safety of use.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lavander_Vanilia.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lavander_Vanilia.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "How many products in the reed diffuser category are currently available in the catalog?",
+    "ground_truth_answer": "According to the markdown in Product_Catalogs, the reed diffuser category has 6 products.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md",
+      "Lumos_Rose_Boutique.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md",
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "Name the representative products of the reed diffuser category.",
+    "ground_truth_answer": "Some representative products of the reed diffuser category are: Lumos_And_Cucumber, Lumos_Rose_Boutique, Lumos_Midnight_sandalwood.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Rose_Boutique.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Rose_Boutique.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Which use case is the reed diffuser category most suitable for in the catalog?",
+    "ground_truth_answer": "The reed diffuser category is suitable depending on context: fragrant candles for scent experience by time of day, reed diffusers for continuous fragrance diffusion, essential oils for therapeutic diffusion, candle accessories for safety and care, gift sets for gifting purposes.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "If fire-free operation is prioritized, is the reed diffuser category suitable?",
+    "ground_truth_answer": "Suitable, because it does not require burning candles.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "In the reed diffuser category, does the markdown clearly specify usage duration or burn time for all products?",
+    "ground_truth_answer": "Not all products have burn time or detailed duration information; the level of data completeness varies among the markdown files.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Honeydrew_And_Coconut.md",
+      "Lumos_Juicy_Peach.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "How can the reed diffuser category be combined with other categories to create a comprehensive experience?",
+    "ground_truth_answer": "Can be combined as sets: candles plus accessories (scissors/snuffer/tray) or diffuser plus essential oil based on scent objectives and safety of use.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "How many products in the essential oil category are currently available in the catalog?",
+    "ground_truth_answer": "According to the markdown in Product_Catalogs, the essential oil category has 4 products.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "Name the representative products of the essential oil category.",
+    "ground_truth_answer": "Some representative products of the essential oil category are: Lumos_Cajeput, Lumos_Lemongrass, Lumos_cold.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_cold.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "Which use case is the essential oil category most suitable for in the catalog?",
+    "ground_truth_answer": "The essential oil category is suitable depending on context: fragrant candles for scent experience by time of day, reed diffusers for continuous fragrance diffusion, essential oils for therapeutic diffusion, candle accessories for safety and care, gift sets for gifting purposes.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "If fire-free operation is prioritized, is the essential oil category suitable?",
+    "ground_truth_answer": "Suitable, because it does not require burning candles.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "In the essential oil category, does the markdown clearly specify usage duration or burn time for all products?",
+    "ground_truth_answer": "Not all products have burn time or detailed duration information; the level of data completeness varies among the markdown files.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md",
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "How can the essential oil category be combined with other categories to create a comprehensive experience?",
+    "ground_truth_answer": "Can be combined as sets: candles plus accessories (scissors/snuffer/tray) or diffuser plus essential oil based on scent objectives and safety of use.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Cajeput.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "How many products in the candle accessory category are currently available in the catalog?",
+    "ground_truth_answer": "According to the markdown in Product_Catalogs, the candle accessory category has 9 products.",
+    "relevant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Candle_rotation_tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Candle_rotation_tray.md"
+    ]
+  },
+  {
+    "question": "Name the representative products of the candle accessory category.",
+    "ground_truth_answer": "Some representative products of the candle accessory category are: Candle_Scissor, Candle_Snuffer, Candle_Tray.",
+    "relevant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "Which use case is the candle accessory category most suitable for in the catalog?",
+    "ground_truth_answer": "The candle accessory category is suitable depending on context: fragrant candles for scent experience by time of day, reed diffusers for continuous fragrance diffusion, essential oils for therapeutic diffusion, candle accessories for safety and care, gift sets for gifting purposes.",
+    "relevant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ],
+    "relavant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "If fire-free operation is prioritized, is the candle accessory category suitable?",
+    "ground_truth_answer": "It depends on the product; this category is not always a fire-free solution.",
+    "relevant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ],
+    "relavant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "In the candle accessory category, does the markdown clearly specify usage duration or burn time for all products?",
+    "ground_truth_answer": "Not all products have burn time or detailed duration information; the level of data completeness varies among the markdown files.",
+    "relevant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ],
+    "relavant_docs": [
+      "Candle_holder.md",
+      "Candle_matchbox.md",
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "How can the candle accessory category be combined with other categories to create a comprehensive experience?",
+    "ground_truth_answer": "Can be combined as sets: candles plus accessories (scissors/snuffer/tray) or diffuser plus essential oil based on scent objectives and safety of use.",
+    "relevant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "How many products in the gift set category are currently available in the catalog?",
+    "ground_truth_answer": "According to the markdown in Product_Catalogs, the gift set category has 1 product.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Name the representative products of the gift set category.",
+    "ground_truth_answer": "Some representative products of the gift set category are: Dalat_Gift.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Which use case is the gift set category most suitable for in the catalog?",
+    "ground_truth_answer": "The gift set category is suitable depending on context: fragrant candles for scent experience by time of day, reed diffusers for continuous fragrance diffusion, essential oils for therapeutic diffusion, candle accessories for safety and care, gift sets for gifting purposes.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "If fire-free operation is prioritized, is the gift set category suitable?",
+    "ground_truth_answer": "It depends on the product; this category is not always a fire-free solution.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "In the gift set category, does the markdown clearly specify usage duration or burn time for all products?",
+    "ground_truth_answer": "Not all products have burn time or detailed duration information; the level of data completeness varies among the markdown files.",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "How can the gift set category be combined with other categories to create a comprehensive experience?",
+    "ground_truth_answer": "Can be combined as sets: candles plus accessories (scissors/snuffer/tray) or diffuser plus essential oil based on scent objectives and safety of use.",
+    "relevant_docs": [
+      "Dalat_Gift.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a bedroom in summer?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for bedroom environment and summer season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a living room in summer?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for living room environment and summer season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a bathroom in summer?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for bathroom environment and summer season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a workspace in summer?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for workspace environment and summer season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a meditation area in summer?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for meditation area environment and summer season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Coconut_And_Sea_Salt.md",
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a bedroom in autumn?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for bedroom environment and autumn season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a living room in autumn?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for living room environment and autumn season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a bathroom in autumn?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for bathroom environment and autumn season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a workspace in autumn?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for workspace environment and autumn season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a meditation area in autumn?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for meditation area environment and autumn season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Amber_And_Vanilla.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a bedroom in winter?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for bedroom environment and winter season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a living room in winter?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for living room environment and winter season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a bathroom in winter?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for bathroom environment and winter season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a workspace in winter?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for workspace environment and winter season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a meditation area in winter?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for meditation area environment and winter season; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a bedroom year-round?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for bedroom environment and year-round use; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a living room year-round?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for living room environment and year-round use; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a bathroom year-round?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for bathroom environment and year-round use; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a workspace year-round?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for workspace environment and year-round use; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "What product category should be prioritized for a meditation area year-round?",
+    "ground_truth_answer": "Based on markdown: choose scents suitable for meditation area environment and year-round use; typically combine fragrant candles or reed diffusers, add accessories if using candles.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "If the goal is relaxation after work, which product should I start with from the catalog?",
+    "ground_truth_answer": "You can start with products: Lavander_Vanilia, Nen_and_Hoa, Lumos_Midnight_sandalwood; then refine based on scent preference and season.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "To achieve post-work relaxation, how should I combine multiple product categories?",
+    "ground_truth_answer": "An effective combination approach: use candles or diffusers as the primary scent; add essential oils or accessories to increase flexibility and safety of use.",
+    "relevant_docs": [
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ],
+    "relavant_docs": [
+      "Lavander_Vanilia.md",
+      "Nen_and_Hoa.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "If the goal is to increase morning alertness, which product should I start with from the catalog?",
+    "ground_truth_answer": "You can start with products: Lumos_Lemongrass, Lumos_menthol, 3_Day_WKND; then refine based on scent preference and season.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md",
+      "3_Day_WKND.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md",
+      "3_Day_WKND.md"
+    ]
+  },
+  {
+    "question": "To achieve increased morning alertness, how should I combine multiple product categories?",
+    "ground_truth_answer": "An effective combination approach: use candles or diffusers as the primary scent; add essential oils or accessories to increase flexibility and safety of use.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md",
+      "3_Day_WKND.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_menthol.md",
+      "3_Day_WKND.md"
+    ]
+  },
+  {
+    "question": "If the goal is a romantic ambiance, which product should I start with from the catalog?",
+    "ground_truth_answer": "You can start with products: Lumos_Rose_Boutique, Sandalwood_And_Rose, BLOW_A_WISH; then refine based on scent preference and season.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Rose_Boutique.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "To achieve a romantic ambiance, how should I combine multiple product categories?",
+    "ground_truth_answer": "An effective combination approach: use candles or diffusers as the primary scent; add essential oils or accessories to increase flexibility and safety of use.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Rose_Boutique.md",
+      "Sandalwood_And_Rose.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "If the goal is a clean scent for the bathroom, which product should I start with from the catalog?",
+    "ground_truth_answer": "You can start with products: Shower_Playlist, Lumos_And_Cucumber, Coconut_And_Sea_Salt; then refine based on scent preference and season.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Coconut_And_Sea_Salt.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "To achieve a clean bathroom scent, how should I combine multiple product categories?",
+    "ground_truth_answer": "An effective combination approach: use candles or diffusers as the primary scent; add essential oils or accessories to increase flexibility and safety of use.",
+    "relevant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Coconut_And_Sea_Salt.md"
+    ],
+    "relavant_docs": [
+      "Shower_Playlist.md",
+      "Lumos_And_Cucumber.md",
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "If the goal is an evening dinner party at home, which product should I start with from the catalog?",
+    "ground_truth_answer": "You can start with products: Sunset_Disco, Lumos_Rose_Boutique, Candle_Tray; then refine based on scent preference and season.",
+    "relevant_docs": [
+      "Sunset_Disco.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Tray.md"
+    ],
+    "relavant_docs": [
+      "Sunset_Disco.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "To achieve an evening dinner party ambiance at home, how should I combine multiple product categories?",
+    "ground_truth_answer": "An effective combination approach: use candles or diffusers as the primary scent; add essential oils or accessories to increase flexibility and safety of use.",
+    "relevant_docs": [
+      "Sunset_Disco.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Tray.md"
+    ],
+    "relavant_docs": [
+      "Sunset_Disco.md",
+      "Lumos_Rose_Boutique.md",
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "If the goal is a cozy reading nook, which product should I start with from the catalog?",
+    "ground_truth_answer": "You can start with products: Amber_And_Vanilla, smells_like_cacao_and_vanilla, Candle_Snuffer; then refine based on scent preference and season.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md",
+      "smells_like_cacao_and_vanilla.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Amber_And_Vanilla.md",
+      "smells_like_cacao_and_vanilla.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "To achieve a cozy reading nook, how should I combine multiple product categories?",
+    "ground_truth_answer": "An effective combination approach: use candles or diffusers as the primary scent; add essential oils or accessories to increase flexibility and safety of use.",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md",
+      "smells_like_cacao_and_vanilla.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "Amber_And_Vanilla.md",
+      "smells_like_cacao_and_vanilla.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "If the goal is odor removal for an enclosed space, which product should I start with from the catalog?",
+    "ground_truth_answer": "You can start with products: Lumos_Lemongrass, Lumos_Cajeput, Lumos_cold; then refine based on scent preference and season.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "To achieve odor removal for an enclosed space, how should I combine multiple product categories?",
+    "ground_truth_answer": "An effective combination approach: use candles or diffusers as the primary scent; add essential oils or accessories to increase flexibility and safety of use.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md"
+    ],
+    "relavant_docs": [
+      "Lumos_Lemongrass.md",
+      "Lumos_Cajeput.md",
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "If the goal is to decorate a reception desk, which product should I start with from the catalog?",
+    "ground_truth_answer": "You can start with products: Candle_metal_tray, Candle_pinwheel, Wood_tray; then refine based on scent preference and season.",
+    "relevant_docs": [
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Wood_tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Wood_tray.md"
+    ]
+  },
+  {
+    "question": "To decorate a reception desk, how should I combine multiple product categories?",
+    "ground_truth_answer": "An effective combination approach: use candles or diffusers as the primary scent; add essential oils or accessories to increase flexibility and safety of use.",
+    "relevant_docs": [
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Wood_tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_metal_tray.md",
+      "Candle_pinwheel.md",
+      "Wood_tray.md"
+    ]
+  },
+  {
+    "question": "If the goal is a holiday gift, which product should I start with from the catalog?",
+    "ground_truth_answer": "You can start with products: Dalat_Gift, YOU_ARE_THE_MAGIC, BLOW_A_WISH; then refine based on scent preference and season.",
+    "relevant_docs": [
+      "Dalat_Gift.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "To create a holiday gift, how should I combine multiple product categories?",
+    "ground_truth_answer": "An effective combination approach: use candles or diffusers as the primary scent; add essential oils or accessories to increase flexibility and safety of use.",
+    "relevant_docs": [
+      "Dalat_Gift.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "BLOW_A_WISH.md"
+    ],
+    "relavant_docs": [
+      "Dalat_Gift.md",
+      "YOU_ARE_THE_MAGIC.md",
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "If the goal is a complete candle care set, which product should I start with from the catalog?",
+    "ground_truth_answer": "You can start with products: Candle_Scissor, Candle_Snuffer, Candle_Tray; then refine based on scent preference and season.",
+    "relevant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "To create a complete candle care set, how should I combine multiple product categories?",
+    "ground_truth_answer": "An effective combination approach: use candles or diffusers as the primary scent; add essential oils or accessories to increase flexibility and safety of use.",
+    "relevant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ],
+    "relavant_docs": [
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md",
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, does the markdown contain complete pricing information for all products?",
+    "ground_truth_answer": "No. Pricing data is not fully standardized throughout the markdown, so a separate pricing source is needed.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, does the markdown contain complete inventory or stock status information?",
+    "ground_truth_answer": "No standardized inventory field is consistently documented across all markdown files.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, is burn time uniformly present for all candles?",
+    "ground_truth_answer": "Not uniformly; some candles have clear burn time, others lack detailed specifications.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, is the volume specification of diffusers consistent?",
+    "ground_truth_answer": "Many diffusers specify 100ml or 100-150ml, but not all files follow a consistent format.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, are there spelling or naming inconsistencies in fragrance or product names?",
+    "ground_truth_answer": "There are some inconsistencies in naming conventions and spelling across files.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, is brand metadata consistently documented in all files?",
+    "ground_truth_answer": "Not all files clearly and consistently document brand information.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, is there a standardized schema for mood or season fields?",
+    "ground_truth_answer": "Not completely; the content is useful but not yet standardized under a unified schema.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Can the markdown alone be used as the sole source for product quality assurance?",
+    "ground_truth_answer": "Can serve as a foundation for QA, but should be supplemented with authoritative sources for pricing, inventory, and name standardization.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, does the catalog clearly distinguish between fire-bearing and fire-free products?",
+    "ground_truth_answer": "Can be inferred from candle, diffuser, essential oil, and accessory categories, but not explicitly stated in every file.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, can complete product safety information be reliably extracted from the markdown?",
+    "ground_truth_answer": "Partially; detailed safety guidance is not uniformly presented for all products.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, are there duplicate descriptions between multiple product files?",
+    "ground_truth_answer": "Likely yes; template descriptions may be repeated across products in the same line.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, does the catalog support seasonal queries well?",
+    "ground_truth_answer": "Yes, many files document suitable seasons; however, detail levels are not entirely consistent.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, does the catalog support location or space-based queries well?",
+    "ground_truth_answer": "Yes, many files mention suitable rooms or areas such as bedroom, bathroom, and living room.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, does the catalog have sufficient data to provide product combo recommendations?",
+    "ground_truth_answer": "Yes, it performs well because it has candle, diffuser, essential oil, accessory, and gift set categories.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Throughout the entire catalog, what improvements are needed for more accurate QA?",
+    "ground_truth_answer": "Should standardize metadata schema across markdown and add pricing, inventory, SKU codes, and safety instructions.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Compare fragrant candles and reed diffusers at the catalog-wide level.",
+    "ground_truth_answer": "Candles suit time-specific scent experiences; reed diffusers suit continuous, fire-free fragrance diffusion.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare reed diffusers and essential oils at the catalog-wide level.",
+    "ground_truth_answer": "Diffusers are convenient stick forms for daily use; essential oils are flexible for diffuser machines or aromatherapy based on specific goals.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare candle scissors and snuffers at the catalog-wide level.",
+    "ground_truth_answer": "Scissors trim wicks for stable burning; snuffers safely extinguish candles and reduce smoke.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare metal trays and wooden trays at the catalog-wide level.",
+    "ground_truth_answer": "Metal trays lean toward decorative, reflective, and luxurious; wooden trays lean toward rustic and natural.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare fruity and woody fragrance families at the catalog-wide level.",
+    "ground_truth_answer": "Fruity scents are typically fresh and youthful; woody scents are typically warm and deep, suitable for evening relaxation spaces.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare fresh and gourmand fragrance families at the catalog-wide level.",
+    "ground_truth_answer": "Fresh scents create a clean, airy feeling; gourmand scents create a warm, sweet comfort feeling, especially suitable for cold seasons.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare products for bathroom use versus living room use at the catalog-wide level.",
+    "ground_truth_answer": "Bathroom products prioritize fresh/clean scents; living room products are flexible based on entertaining or relaxation purposes.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare daytime and nighttime scents at the catalog-wide level.",
+    "ground_truth_answer": "Daytime scents are typically bright and light; nighttime scents are typically warm and deep for relaxation.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare decorative products versus fragrance-focused products at the catalog-wide level.",
+    "ground_truth_answer": "Decorative products emphasize space aesthetics; fragrance-focused products prioritize olfactory experience.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare gift sets versus individual products at the catalog-wide level.",
+    "ground_truth_answer": "Gift sets are convenient and coordinated for gifting; individual products offer flexibility based on personal budget and preferences.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare relaxation-focused products versus alertness-focused products at the catalog-wide level.",
+    "ground_truth_answer": "Relaxation products are typically floral, woody, or warm; alertness products are typically fresh, citrus, or herbal.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare large and small candle volumes at the catalog-wide level.",
+    "ground_truth_answer": "Large volumes suit long-term use; small volumes are flexible for testing scents or small spaces.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare well-documented products versus under-documented products at the catalog-wide level.",
+    "ground_truth_answer": "Prioritize well-documented products for easier recommendations; under-documented products require additional verification.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare summer and winter seasons in the catalog at the catalog-wide level.",
+    "ground_truth_answer": "Summer favors fruity and fresh scents; winter favors warm, spicy, and woody scents.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Compare an experience-oriented catalog versus a technically-oriented catalog at the catalog-wide level.",
+    "ground_truth_answer": "The current markdown source emphasizes scent experience and usage context over comprehensive technical specifications.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ],
+    "relavant_docs": [
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Lumos_And_Cucumber.md",
+      "Lumos_Lemongrass.md",
+      "Candle_Scissor.md",
+      "Candle_Snuffer.md"
+    ]
+  }
+]

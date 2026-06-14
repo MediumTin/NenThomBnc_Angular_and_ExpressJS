@@ -1,3 +1,5 @@
+import json
+
 from langchain_community.document_loaders import DirectoryLoader, UnstructuredFileLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
@@ -17,6 +19,26 @@ PRODUCTS_CSV_PATH = DATA_DIR / "Product_Catalogs" / "products.csv"
 COUPONS_CSV_PATH = DATA_DIR / "Discount_program" / "coupons.csv"
 CHUNK_DEBUG_XLSX_PATH = APP_DIR / "Chunking" / "chunk_debug.xlsx"
 all_docs = []
+
+FAQ_Candle_Knowledge_PATH = DATA_DIR / "Candles_Knowledge" / "FAQs" / "FAQ_Candle_knowledge.json"
+FAQ_Discount_Program_PATH = DATA_DIR / "Discount_program" / "FAQs" / "FAQ_Discount_program.json"
+FAQ_Policies_PATH = DATA_DIR / "Policies" / "FAQs" / "FAQ_Policies.json"
+FAQ_Product_Catalogs_PATH = DATA_DIR / "Product_Catalogs" / "FAQs" / "FAQ_Product_Catalog.json"
+FAQ_Accesories_products_PATH = DATA_DIR / "Product_Catalogs" / "FAQs" / "FAQ_Accesories_product.json"
+FAQ_Candle_products_PATH = DATA_DIR / "Product_Catalogs" / "FAQs" / "FAQ_Candle_product.json"
+FAQ_Lumos_products_PATH = DATA_DIR / "Product_Catalogs" / "FAQs" / "FAQ_Lumos_product.json"
+FAQ_User_guidance_PATH = DATA_DIR / "User_guidance" / "FAQs" / "FAQ_User_guidance.json"
+
+FAQ_FILES = [
+    FAQ_Candle_Knowledge_PATH,
+    FAQ_Discount_Program_PATH,
+    FAQ_Policies_PATH,
+    FAQ_Product_Catalogs_PATH,
+    FAQ_User_guidance_PATH,
+    FAQ_Accesories_products_PATH,
+    FAQ_Candle_products_PATH,
+    FAQ_Lumos_products_PATH
+]
 # ---------------------------------- Case 1: Loading csv file -----------------------------------
 
 # --------------------- Loading product csv file ---------------------------
@@ -127,6 +149,41 @@ load_markdown = DirectoryLoader(
 )
 docs_markdown = load_markdown.load()
 
+
+# Loading FAQ files and creating Document objects for each FAQ entry
+faq_docs = []
+
+faq_id = 1
+
+for faq_file in FAQ_FILES:
+
+    with open(faq_file, "r", encoding="utf-8") as f:
+        faq_data = json.load(f)
+
+    for faq in faq_data:
+
+        faq_docs.append(
+            Document(
+                page_content=f"""
+                    Question:
+                    {faq["question"]}
+
+                    Answer:
+                    {faq["answer"]}
+                    """.strip(),
+                    metadata={
+                        "type": "faq",
+                        "faq_id": faq_id,
+                        "source": faq_file.name,
+                        "category": faq_file.parent.parent.name
+                    }
+                )
+            )
+
+        faq_id += 1
+
+        print(f"Loaded {len(faq_docs)} FAQ documents")
+
 # ---------------------------------- Merging all document splits -----------------------------------
 all_docs.extend(Doccument_splits)
 
@@ -135,6 +192,8 @@ all_docs.extend(Doccument_splits)
 all_docs.extend(coupon_docs)
 
 all_docs.extend(docs_markdown)  
+
+all_docs.extend(faq_docs)
 
 # Assign chunk_id to each document in all_docs
 for i, doc in enumerate(all_docs):

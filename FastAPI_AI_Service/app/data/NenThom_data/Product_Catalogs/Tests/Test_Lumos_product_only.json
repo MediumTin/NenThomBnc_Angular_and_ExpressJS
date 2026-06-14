@@ -1,0 +1,145 @@
+[
+  {
+    "question": "Formulate a sound structural argument explaining why utilizing Lumos And Cucumber reed diffuser entirely eliminates the primary hỏa hoạn hazards associated with open flame candles in an office environment.",
+    "ground_truth_answer": "Lumos And Cucumber is categorized as a Reed Diffuser that relies on liquid fragrance oil and continuous passive capillary action through wooden/fiber sticks. This completely removes the necessity of an open flame (lửa trần) or heat elements. By eliminating the open fire requirement, it fundamentally zeroes out the risk of accidental fire if knocked over on an office desk, completely wipes out skin burn hazards, and prevents black smoke generation, making it a completely safe corporate household alternative.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md"
+    ]
+  },
+  {
+    "question": "Analyze how Lumos Tropical Orchard manages its sweet aromatic molecules to ensure the background atmosphere doesn't become cloying or induce headaches for customers.",
+    "ground_truth_answer": "Lumos Tropical Orchard prevents its sweet, juicy top notes of ripe mango, passion fruit, and guava from turning overly syrupy or cloying by structurally integrating a balancing base of dew-covered sheer green leaves. According to customer perception, this specific botanical inclusion grounds the sweetness, keeping the continuous room scent throw clean, crisp, and highly uplifting rather than overwhelming.",
+    "relevant_docs": [
+      "Lumos_Tropical_Orchard.md"
+    ]
+  },
+  {
+    "question": "Explain the technical design strategy behind Natural Lumos' selection of bottle colors and labeling materials for their 100% pure essential oil products like Lumos menthol.",
+    "ground_truth_answer": "Natural Lumos utilizes a dark amber glass bottle paired with a rustic kraft paper label for products like Lumos menthol. The dark amber glass is a technical choice engineered to provide optimal UV ray protection, safeguarding the pure natural plant extract from light degradation. The rustic kraft paper label physically reinforces the brand's authentic, natural botanical identity.",
+    "relevant_docs": [
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "Compare the core target mood intentions and structural season designations between Lumos Midnight sandalwood and Lumos Rose Boutique.",
+    "ground_truth_answer": "Lumos Midnight sandalwood is engineered for the Autumn / Winter seasons, targeting a mysterious, luxurious, deep, bold, grounding, and calming mood via woody/oriental notes. Conversely, Lumos Rose Boutique is designed for the Spring / Summer seasons, fostering a romantic, celebratory, elegant, cheerful, and uplifting atmosphere through a floral/fruity/beverage scent profile.",
+    "relevant_docs": [
+      "Lumos_Midnight_sandalwood.md",
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "Synthesize a comprehensive therapeutic argument for why a family experiencing severe seasonal transitions or cold symptoms should deploy Lumos cold in their home aromatherapy diffuser.",
+    "ground_truth_answer": "Lumos cold is a powerful therapeutic blend rooted in traditional Vietnamese herbal remedies consisting of mint, lemongrass, ginger, rosemary, and grapefruit peel. Structurally, it transitions from a sharp minty open to a deeply warming, grounding heart of spicy ginger. This specific composition mimics a traditional boiling herb pot, which customers highly value for warming up physical living spaces, relieving nasal congestion, easing body fatigue, and providing reliable respiratory comfort.",
+    "relevant_docs": [
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "A customer seeks an aesthetic pink bedroom makeover piece that smells like a genuine floral bouquet without synthetic chemical smells. Identify the correct Lumos product and justify why it fits.",
+    "ground_truth_answer": "The correct product is Lumos Juicy Peach. Despite its fruity name, its main scents are Bulgarian Rose and Pink Peony, placing it in the Floral/Soft Rosy family. It fits the aesthetic needs perfectly due to its glossy pastel pink glass/ceramic bottle adorned with a cream-colored ribbon bow. Furthermore, customers highly praise it for capturing the true, non-synthetic essence of a fresh bouquet without causing headaches.",
+    "relevant_docs": [
+      "Lumos_Juicy_Peach.md"
+    ]
+  },
+  {
+    "question": "Detail the specific domestic cleaning and sanitation workflows that can directly leverage Lumos Lemongrass pure essential oil according to its technical sheet.",
+    "ground_truth_answer": "Lumos Lemongrass essential oil can be integrated directly into multiple household workflows: it can be added to electronic humidifiers or room diffusers for air purification, blended into floor-cleaning water mixtures to sanitize surfaces, mixed into natural bug-repellent sprays to repel mosquitoes and insects during wet seasons, and sprayed directly in bathrooms or kitchens to neutralize stubborn cooking or pet odors.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md"
+    ]
+  },
+  {
+    "question": "Contrast the structural scent architecture of Lumos Tropical Orchard with Lumos Honeydrew And Coconut, focusing specifically on their respective mid-layers and sweet profiles.",
+    "ground_truth_answer": "While both are tropical summer/spring diffusers, Lumos Tropical Orchard features a zesty fruit-forward heart of succulent ripe mangoes and sweet fresh guava grounded by green leaves. Lumos Honeydrew And Coconut instead builds a creamy, gourmand sweet profile, combining a watery ripe honeydew melon top note with a rich, velvety mid-layer of smooth coconut milk and sheer tropical blossoms, resting on a base of sweet vanilla and soft musk.",
+    "relevant_docs": [
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Explain the specific health and consumer safety trust factors associated with the Lumos Cajeput collection regarding sensitive demographics within a home.",
+    "ground_truth_answer": "The Lumos Cajeput collection contains 100% pure natural plant extracts from Vietnamese nature, including Lemongrass, Peppermint, Cold Relief Blend, and Cajeput. It has earned deep consumer trust because families with vulnerable or sensitive demographics—specifically elderly members and young children—can reliably use it to safely support respiratory health, clear congestion, and naturally repel disease-carrying insects without exposing them to synthetic chemicals.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md"
+    ]
+  },
+  {
+    "question": "A buyer is confused by the name 'Lumos Juicy Peach' and expects a heavy, sweet peach fruit scent. Correct this misconception based on the official product profile.",
+    "ground_truth_answer": "The product name 'Lumos Juicy Peach' is a misnomer regarding its olfactory core; the product contains zero peach fruit extracts. Its fragrance family is explicitly Floral / Soft Rosy, driven by main scents of Bulgarian Rose, Pink Peony, White Musk, Soft Amber, and Vanilla Berry. It delivers a delicate, elegant, and romantic powdery floral bouquet aroma rather than a syrupy fruit scent.",
+    "relevant_docs": [
+      "Lumos_Juicy_Peach.md"
+    ]
+  },
+  {
+    "question": "Analyze the physical and visual design differences between Lumos' basic collection (like Lumos And Cucumber) and their premium black collection (like Lumos Midnight sandalwood).",
+    "ground_truth_answer": "The basic collection, exemplified by Lumos And Cucumber, utilizes a clean, minimalist aesthetic featuring a glossy white ceramic/glass bottle finished with a wooden stopper and a black decorative ribbon bow. The premium black collection, exemplified by Lumos Midnight sandalwood, shifts to a bold, luxurious theme featuring a glossy, opaque black glass/ceramic bottle, a natural wooden stopper, and a distinctive black decorative ribbon bow, housing deep, mysterious oriental-woody notes.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "What is the explicit volumetric capability and technical carrier material configuration for the active liquid inside Lumos Rose Boutique?",
+    "ground_truth_answer": "Lumos Rose Boutique has an explicit volumetric weight of 100ml. Its technical carrier material configuration consists of a premium Liquid Fragrance & Concentrated Essential Oil Blend, which is safely housed within a heavy clear glass square bottle designed specifically to work with fiber or rattan diffuser sticks.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "Explain why Lumos menthol is a superior environmental alternative for corporate workspaces needing productivity boosts compared to heavy floral or gourmand reed diffusers.",
+    "ground_truth_answer": "Lumos menthol is a 100% pure essential oil that delivers an immediate, powerful blast of cooling menthol and crisp herbal green notes. Unlike heavy floral or sweet gourmand diffusers which encourage relaxation or sleep, Lumos menthol's icy profile acts as an instant mental wake-up call. It is clinically valuable in focus-heavy workspaces for boosting alertness, enhancing daytime productivity, erasing head tension, and wiping out stuffy, stagnant room air.",
+    "relevant_docs": [
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "Identify the primary multi-layered notes that give Lumos Rose Boutique its distinct upscale 'celebratory wine' and luxury lifestyle perception.",
+    "ground_truth_answer": "Lumos Rose Boutique achieves its upscale, celebratory lifestyle perception by blending vibrant beverage and fruit notes with traditional florals. It opens with lively, bubbly top notes of sparkling rosé wine and sweet wild strawberries. This effervescence is combined with a rich heart of fresh-cut red roses and gardenia petals, creating an aroma customers associate with high-end champagne brunches, outdoor weddings, and luxury garden parties.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "How does the structural base layer of Lumos Midnight sandalwood anchor the volatile top floral notes to maintain a continuous masculine or unisex luxury hotel lounge aura?",
+    "ground_truth_answer": "The volatile top notes of blooming midnight roses and warm spices are quickly shifted and anchored by a highly sophisticated, dense heart of rare oud wood and earthy patchouli. This is further reinforced by a smooth, heavy base of warm sandalwood and dark velvet musk. This intense woody-oriental combination counteracts the floral sweetness, creating a grounding, bold, and continuous aura resembling an expensive boutique hotel lounge.",
+    "relevant_docs": [
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Synthesize the specific operational recommendations for applying Lumos Cajeput essential oils in direct physical wellness routines outside of electronic machine diffusion.",
+    "ground_truth_answer": "Outside of mechanical electronic diffusers, the Lumos Cajeput collection is explicitly recommended for direct integration into multiple physical wellness routines: it can be added to warm bath water systems for infusion, used in morning shower steam routines, applied directly in facial steaming workflows, or utilized as a highly effective medium for diluted body massage (specifically the Cajeput oil itself) to ease body fatigue.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md"
+    ]
+  },
+  {
+    "question": "What structural role do the top notes of eucalyptus and mint play in establishing the customer perception of Lumos And Cucumber as an alternative to a luxury spa environment?",
+    "ground_truth_answer": "The crisp, invigorating top notes of eucalyptus and mint act as an immediate sensory clearing agent that purifies the ambient air feeling upon entry. By cutting through stale air instantly, they establish a clean, airy foundation that allows the delicate heart of white tea and jasmine to bloom softly, successfully mimicking the exact refreshing, serene, and welcoming environment found in a premium luxury spa lobby.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md"
+    ]
+  },
+  {
+    "question": "Analyze how the physical product design of Lumos Honeydrew And Coconut complements modern minimalist interior spaces while executing its odor-neutralizing tasks.",
+    "ground_truth_answer": "Lumos Honeydrew And Coconut fulfills dual aesthetic and functional roles. Physically, its light gold/yellow fluid is housed inside a heavy clear glass square bottle capped with a sleek, shiny metallic silver cap, which seamlessly acts as an elegant, minimal decorative accessory. Functionally, it continuously neutralizes everyday domestic odors via passive stick evaporation without needing open flames, preserving the clean, uncluttered ethos of minimalist design.",
+    "relevant_docs": [
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Examine the specific seasonal conditions under which Lumos Lemongrass experiences its highest customer demand, and explain the underlying biological reasons.",
+    "ground_truth_answer": "Lumos Lemongrass experiences its highest customer demand during the Summer and Spring seasons, specifically peaking during heavy rainy periods or high-mosquito windows. The biological reason is that the 100% pure botanical extract contains sharp, powerful citrus and earthy herbaceous components that act as a highly potent, all-natural insect and mosquito repellent, providing critical protection when pest populations spike due to humid weather.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md"
+    ]
+  },
+  {
+    "question": "Determine which specific essential oil product line from Lumos is the most appropriate recommendation for an indoor environment suffering from heavy, cold, musty air during a wet winter season, and justify the selection.",
+    "ground_truth_answer": "The most appropriate selection is Lumos cold essential oil. It is explicitly engineered for the Autumn / Winter seasons and optimized for wet weather or cold seasonal transitions. Its fragrance family is Herbal / Camphorous / Warm Spicy, powered by ginger, lemongrass, and rosemary. It acts as an optimal solution because its core purpose is warming up cold physical living spaces, eliminating thick musty room odors, and providing deep therapeutic relief for winter-induced respiratory discomfort.",
+    "relevant_docs": [
+      "Lumos_cold.md"
+    ]
+  }
+]

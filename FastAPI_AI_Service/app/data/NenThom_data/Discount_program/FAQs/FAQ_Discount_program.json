@@ -1,0 +1,162 @@
+[
+  {
+    "question": "What is the NEWYEAR2025 coupon code?",
+    "answer": "NEWYEAR2025 is a percentage discount coupon that offers 15% off eligible orders."
+  },
+  {
+    "question": "How much discount does NEWYEAR2025 provide?",
+    "answer": "NEWYEAR2025 provides a 15% discount."
+  },
+  {
+    "question": "What is the minimum order value required for NEWYEAR2025?",
+    "answer": "The minimum order value required is 200000."
+  },
+  {
+    "question": "What is the maximum discount amount for NEWYEAR2025?",
+    "answer": "The maximum discount amount is 50000."
+  },
+  {
+    "question": "How many times can a customer use NEWYEAR2025?",
+    "answer": "Each customer can use NEWYEAR2025 up to 2 times."
+  },
+  {
+    "question": "What is the FREESHIP50 coupon code?",
+    "answer": "FREESHIP50 is a fixed amount discount coupon worth 50000."
+  },
+  {
+    "question": "How much discount does FREESHIP50 provide?",
+    "answer": "FREESHIP50 provides a fixed discount of 50000."
+  },
+  {
+    "question": "What minimum purchase is required for FREESHIP50?",
+    "answer": "The minimum order value required is 100000."
+  },
+  {
+    "question": "How many times can a customer use FREESHIP50?",
+    "answer": "Each customer can use FREESHIP50 up to 3 times."
+  },
+  {
+    "question": "What is the status of FREESHIP50?",
+    "answer": "FREESHIP50 is currently active."
+  },
+  {
+    "question": "What discount does WELCOME10 offer?",
+    "answer": "WELCOME10 offers a 10% discount."
+  },
+  {
+    "question": "Can WELCOME10 currently be used?",
+    "answer": "No. WELCOME10 is currently disabled."
+  },
+  {
+    "question": "How many times can a customer use WELCOME10?",
+    "answer": "Each customer can use WELCOME10 once."
+  },
+  {
+    "question": "What discount does VIPMEMBER provide?",
+    "answer": "VIPMEMBER provides a fixed discount of 100000."
+  },
+  {
+    "question": "What minimum order value is required for VIPMEMBER?",
+    "answer": "The minimum order value required is 500000."
+  },
+  {
+    "question": "How many times can a customer use VIPMEMBER?",
+    "answer": "Each customer can use VIPMEMBER up to 5 times."
+  },
+  {
+    "question": "What discount does SUMMERSALE provide?",
+    "answer": "SUMMERSALE provides a 20% discount."
+  },
+  {
+    "question": "What is the maximum discount amount for SUMMERSALE?",
+    "answer": "The maximum discount amount is 80000."
+  },
+  {
+    "question": "Is SUMMERSALE currently available?",
+    "answer": "No. SUMMERSALE is currently expired."
+  },
+  {
+    "question": "What information is usually associated with a coupon?",
+    "answer": "A coupon typically includes a code, discount type, discount value, minimum order value, usage limits, validity period, and status."
+  },
+  {
+    "question": "What is the total usage limit for the NEWYEAR2025 coupon?",
+    "answer": "The total usage limit for NEWYEAR2025 is 500 times."
+  },
+  {
+    "question": "What is the specific validity period for the NEWYEAR2025 coupon?",
+    "answer": "The NEWYEAR2025 coupon is valid from 2025-12-20 00:00:00 until 2026-01-05 00:00:00."
+  },
+  {
+    "question": "What is the total usage limit allowed for the FREESHIP50 coupon?",
+    "answer": "The total usage limit allowed for FREESHIP50 is 1000 times."
+  },
+  {
+    "question": "What are the start and end dates for the FREESHIP50 coupon validity?",
+    "answer": "The FREESHIP50 coupon is valid from 2025-11-01 00:00:00 to 2025-12-31 00:00:00."
+  },
+  {
+    "question": "What is the total usage limit configured for the WELCOME10 coupon?",
+    "answer": "The total usage limit configured for WELCOME10 is 10000 times."
+  },
+  {
+    "question": "What is the exact validity duration of the WELCOME10 coupon?",
+    "answer": "The WELCOME10 coupon is valid from 2025-01-01 00:00:00 until 2025-12-31 00:00:00."
+  },
+  {
+    "question": "Is there a minimum order value required to use the WELCOME10 coupon?",
+    "answer": "The minimum order value required for WELCOME10 is 0.0, meaning there is no minimum purchase required."
+  },
+  {
+    "question": "What is the total usage limit for the VIPMEMBER coupon?",
+    "answer": "The total usage limit for VIPMEMBER is 100 times."
+  },
+  {
+    "question": "What is the validity period for the VIPMEMBER coupon?",
+    "answer": "The VIPMEMBER coupon is valid from 2025-05-01 00:00:00 to 2026-05-01 00:00:00."
+  },
+  {
+    "question": "What is the current status of the VIPMEMBER coupon in the dataset?",
+    "answer": "The current status of the VIPMEMBER coupon is active."
+  },
+  {
+    "question": "What discount type is assigned to the VIPMEMBER coupon?",
+    "answer": "The VIPMEMBER coupon is assigned a fixed amount discount type."
+  },
+  {
+    "question": "What is the total usage limit for the SUMMERSALE coupon?",
+    "answer": "The total usage limit for SUMMERSALE is 2000 times."
+  },
+  {
+    "question": "What is the validity period of the SUMMERSALE coupon?",
+    "answer": "The SUMMERSALE coupon is valid from 2025-06-01 00:00:00 to 2025-08-31 00:00:00."
+  },
+  {
+    "question": "What minimum order value must be met to apply the SUMMERSALE coupon?",
+    "answer": "A minimum order value of 300000.0 must be met to apply the SUMMERSALE coupon."
+  },
+  {
+    "question": "What is the per-user usage limit for the SUMMERSALE coupon?",
+    "answer": "The per-user usage limit for SUMMERSALE is 2 times per customer."
+  },
+  {
+    "question": "Which coupons in the dataset provide a fixed amount discount rather than a percentage discount?",
+    "answer": "The coupons that provide a fixed amount discount are FREESHIP50 and VIPMEMBER."
+  },
+  {
+    "question": "Which coupons currently hold an 'active' status in the system?",
+    "answer": "The coupons with an 'active' status are NEWYEAR2025, FREESHIP50, and VIPMEMBER."
+  },
+  {
+    "question": "What are the unique coupon IDs for NEWYEAR2025 and SUMMERSALE?",
+    "answer": "The unique coupon ID for NEWYEAR2025 is 1, and for SUMMERSALE it is 5."
+  },
+  {
+    "question": "Which coupon has the highest total usage limit in the dataset?",
+    "answer": "The WELCOME10 coupon has the highest total usage limit of 10000."
+  },
+  {
+    "question": "Which coupon has the lowest total usage limit in the dataset?",
+    "answer": "The VIPMEMBER coupon has the lowest total usage limit of 100."
+  }
+]

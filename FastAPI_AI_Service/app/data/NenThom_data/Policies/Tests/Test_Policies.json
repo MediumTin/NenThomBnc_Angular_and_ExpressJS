@@ -1,0 +1,72 @@
+[
+  {
+    "question": "How long does delivery take within Hanoi or Ho Chi Minh City?",
+    "ground_truth_answer": "Orders are usually delivered within 2–4 hours and no later than 24 hours after ordering.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "What payment methods are supported by nenthom.com.vn?",
+    "ground_truth_answer": "Supported payment methods include COD, MoMo, Zalo Pay, and bank transfer via Internet banking.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "How many days do customers have to return a product?",
+    "ground_truth_answer": "Customers can exchange or return products within 7 days from the purchase date.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Does nenthom.com.vn sell customer information to third parties?",
+    "ground_truth_answer": "No. Nenthom.com.vn commits not to trade or exchange customer confidential information with third parties.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "What customer information does nenthom.com.vn collect?",
+    "ground_truth_answer": "The website may collect first name, last name, email address, phone number, country, province, and address.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "If a customer in Da Nang has not received any call from the postman after 3 days from placing an order, what specific action should they take according to the shipping policy?",
+    "ground_truth_answer": "The customer should contact nenthom.com.vn directly for support regarding their delivery status.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Detail the full workflow for a customer who wants to exchange a product, starting from the notification step to the point they receive a replacement.",
+    "ground_truth_answer": "Step 1: Notify nenthom.com.vn via Fanpage or hotline. Step 2: Send the package to 303B Vu Huu, Thanh Xuan Bac Ward, Thanh Xuan District, Hanoi. Step 3: Wait for nenthom.com.vn to receive the goods, after which they will immediately send out a new order.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "According to the Privacy Policy, under what two specific governmental or legal conditions can nenthom.com.vn reasonably share customer information without violating its policies?",
+    "ground_truth_answer": "Information can be shared when it is legally disclosed according to Vietnamese law to protect the interests and assets of the company/partners, or at the request of government agencies when deemed appropriate under Vietnamese law.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "What are the geographical scopes collected by nenthom.com.vn below the country level to process an order?",
+    "ground_truth_answer": "Below the country level, nenthom.com.vn collects the 'Province' and the specific 'Address'.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Explain how the delivery time expectations and handling process differ for an order inside Hanoi versus an order intended as a holiday gift for an outside area.",
+    "ground_truth_answer": "Orders within Hanoi take a maximum of 24 hours (usually 2-4 hours) and may involve a call if there is insufficient stock. In contrast, holiday gifts for outside areas normally take 1-3 days and customers are specifically advised to order 1-3 days earlier to avoid system overload.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  }
+]

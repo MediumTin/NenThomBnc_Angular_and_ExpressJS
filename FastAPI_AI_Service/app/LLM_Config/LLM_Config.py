@@ -11,3 +11,8 @@ llm_config = ChatOpenAI(
     model="gpt-5-mini", 
     temperature=0.0, # 0 for search information, 2 for creative generation: for saler use case, we want to provide accurate information based on the documents, so we set temperature to 0 to minimize randomness and ensure that the model provides consistent and factual responses based on the provided context.
 )   
+
+llm_for_judge_accuracy = ChatOpenAI(
+    model="gpt-5-nano",
+    temperature=0
+)

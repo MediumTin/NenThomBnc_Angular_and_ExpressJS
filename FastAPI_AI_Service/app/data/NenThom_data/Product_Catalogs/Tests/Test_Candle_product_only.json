@@ -1,0 +1,155 @@
+[
+  {
+    "question": "A customer places an order valued at 250,000 VND and attempts to apply the coupon code 'NEWYEAR2025' in December 2025. Based on the system database, calculate the exact discount value they will receive and justify the calculation.",
+    "ground_truth_answer": "The 'NEWYEAR2025' coupon offers a 15% discount for orders with a min_order_value of 200,000 VND, capping the maximum discount at 50,000 VND (max_discount_value). For a 250,000 VND order, the theoretical discount is 250,000 * 15% = 37,500 VND. Since 37,500 VND is below the 50,000 VND cap, the exact discount value they receive is 37,500 VND.",
+    "relevant_docs": [
+      "coupons.csv",
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Analyze the profound contradiction between the retail name and the actual chemical scent composition of 'Milk Vanilla'. Based on the documentation, which fragrance family does it truly belong to?",
+    "ground_truth_answer": "The contradiction is that the product is named 'Milk Vanilla', implying a creamy gourmand profile, but its formulation contains zero milk or vanilla ingredients. Instead, it is made of Vibrant Citrus, Fresh Mango, Sparkling Prosecco, Bright Mandarin, and Sugared Amber, meaning it truly belongs to the Fruity / Citrus / Vibrant fragrance family.",
+    "relevant_docs": [
+      "Milk_Vanilla.md"
+    ]
+  },
+  {
+    "question": "An out-of-province customer orders a holiday gift candle on the 28th day of the lunar month, but has still not received a postman call by the 2nd day of Tet (4 days later). According to shipping policies, what actions should they take and what is the underlying operational reason for this delay?",
+    "ground_truth_answer": "The customer should immediately contact nenthom.com.vn for tracking support since standard out-of-province delivery takes 1-3 days. The underlying operational cause is seasonal courier overload during major holidays; the policy explicitly warns customers to place orders 1-3 days earlier during holiday seasons to avoid this exact issue.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Perform a rigorous comparative analysis of '3 Day WKND' versus 'Shower Playlist' regarding their material composition, total net weight, wick count, and wick type.",
+    "ground_truth_answer": "Both candles share the same manufacturer (Friday Collective) and material composition (Soy Wax Blend). However, they differ significantly in technical metrics: '3 Day WKND' has a heavy weight of 2 Pounds, a wick count of 3 wicks, and uses a Natural Fiber Wick. In contrast, 'Shower Playlist' has a lighter weight of 13.5 oz, uses highly concentrated essential oils, and its exact wick count is not specified in the document.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Shower_Playlist.md"
+    ]
+  },
+  {
+    "question": "Explain how the structural design of the 'Sunset Disco' orange iridescent container achieves visual and olfactory synchronization for the consumer when lit.",
+    "ground_truth_answer": "Visually, the iridescent orange container shifts colors under the flame to physically mimic a real beach sunset. This directly synchronizes with the olfactory scent profile, which transitions from sun-kissed citrus and golden amber into a twilight blend of exotic teakwood, warm vanilla, and velvet musk, fully immersing the user in a synchronized multi-sensory sunset party atmosphere.",
+    "relevant_docs": [
+      "Sunset_Disco.md"
+    ]
+  },
+  {
+    "question": "Identify the shared heart note botanical element in both '3 Day WKND' and 'Shower Playlist'. Contrast how the surrounding note architecture in each file steers this element into two completely separate thematic styles.",
+    "ground_truth_answer": "The shared heart note element is Water Lily. In '3 Day WKND', it is paired with green apple, cucumber, and green juice to create a crisp, light, and carefree weekend getaway style. In 'Shower Playlist', it is paired with refreshing eucalyptus, bergamot, and sea salt to deliver a therapeutic, clean, high-end luxury resort steam room/spa style.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Shower_Playlist.md"
+    ]
+  },
+  {
+    "question": "A user complains that their 'Smells Like Cacao And Vanilla' candle is emitting a thick layer of black soot onto their ceiling. Based on candle maintenance rules, deduce the most probable technical error committed by the user and prescribe the step-by-step remedy.",
+    "ground_truth_answer": "The most probable technical error is that the user failed to perform routine wick maintenance, allowing the wick to become too long and burn unevenly. The prescribed remedy is to trim the wick down to approximately 3mm after each use before relighting it. This controls the flame size, ensures a cleaner, brighter, and consistent burn, and entirely prevents incomplete combustion soot.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx",
+      "smells_like_cacao_and_vanilla.md"
+    ]
+  },
+  {
+    "question": "Cross-reference the platform's non-disclosure commitment with the exceptions outlined in the Privacy Policy. In what explicit scenarios is nenthom.com.vn legally or contractually permitted to share user data with outside entities?",
+    "ground_truth_answer": "The platform can share data with outside entities under four specific exceptions: 1. When explicit user consent is granted. 2. To protect the lawful rights, safety, or property of the company and its partners under Vietnamese law. 3. When responding to mandatory, official requests from government or judicial authorities. 4. In joint marketing events sponsored by third parties, provided users are notified beforehand and given the choice to participate.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "What is the structural and thematic connection between the label artwork of 'Sandalwood And Rose' and its underlying base fragrance architecture?",
+    "ground_truth_answer": "The label features the religious artwork of Our Lady of Guadalupe, establishing a sacred, spiritual collector's theme. This visually mirrors the candle's base architecture, which relies on grounding rare sandalwood, deep oud, velvety musk, and soft incense smoke to construct an atmosphere of quiet reverence, meditation, and sacred routine.",
+    "relevant_docs": [
+      "Sandalwood_And_Rose.md"
+    ]
+  },
+  {
+    "question": "A customer thapping a 'Day Party' candle observes that the initial burst of sharp lemon and orange completely shifts into a heavy aroma of sweet strawberry and peach after 25 minutes. Explain this physical transition using the scientific guidelines of candle fragrance layers.",
+    "ground_truth_answer": "This transition is caused by the differing molecular evaporation rates of fragrance layers. The sharp lemon, orange, and apple pie belong to the Top Notes layer (30% weight), which consists of light, fast-evaporating molecules that fade within 10-20 minutes. After they dissipate, the heavier molecules of the Middle Notes/Heart layer (Strawberry, Rose, Peach Juice) emerge and dominate the room, altering the perceived aroma.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx",
+      "Day_Party.md"
+    ]
+  },
+  {
+    "question": "Contrast the physical packaging geometry, wax colors, and label design systems of the two winter-focused products: 'Warn Cider And Cinnamon' and 'Sandalwood And Rose'.",
+    "ground_truth_answer": "'Warn Cider And Cinnamon' uses a translucent, deep amber-tinted or plum-tinted glass jar, contains white wax, and has a traditional classic plaid/tartan pattern printed on its labels. 'Sandalwood And Rose' is housed in a tall, slender clear glass cylinder jar, contains vibrant crimson red wax, has a clean white screw cap, and features iconic religious fine art on its front label.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "Sandalwood_And_Rose.md"
+    ]
+  },
+  {
+    "question": "Synthesize the biological data from the candle benefits guide to explain how burning 'Smells Like Cacao And Vanilla' inside a home office physically optimizes a remote engineer's focus and mental performance.",
+    "ground_truth_answer": "The candle contains coffee notes. According to the text, inhaling coffee scents physically improves blood circulation to the brain and stimulates the nervous system, which fights fatigue and enhances cognitive function and memory. Combined with the comforting warmth of cacao and vanilla, it triggers deep, relaxed breathing and lowers blood pressure, keeping the remote engineer alert, calm, and highly focused.",
+    "relevant_docs": [
+      "smells_like_cacao_and_vanilla.md",
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "Evaluate why placing a burning candle near open windows or entrance corridors simultaneously degrades product lifetime and compromises fundamental household fire safety parameters.",
+    "ground_truth_answer": "Open windows and entrance corridors create drafty areas. Drafts cause the candle flame to flicker violently and burn unevenly, which accelerates saps consumption and lowers total burn time. In terms of fire safety, erratic wind currents can cause the flame to flare up intensely or physically blow nearby lightweight flammable objects like curtains, paper, or clothing directly into the open flame, starting a fire.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Extract the specific coupon data from the CSV file to isolate the discount code that currently sits in a 'disabled' status. Identify its exact usage limit restrictions per individual user account.",
+    "ground_truth_answer": "The discount code sitting in a 'disabled' status is 'WELCOME10' (which features a 10% discount and a minimum order threshold of 0.00). Its individual account usage restriction parameter (per_user_limit) is strictly set to 1 time per user.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "A consumer wants to purchase the single largest volume candle option manufactured by Friday Collective for summer living room decor. Which product should they choose based on technical specs, and what is its weight?",
+    "ground_truth_answer": "They must choose the 'Milk Vanilla' candle (which actually features a tropical fruit and citrus scent profile). This product represents the single largest volume option from Friday Collective in the documentation, possessing a net weight of 16 oz and housed in a vibrant neon yellow glass jar.",
+    "relevant_docs": [
+      "Milk_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Deduce why the marketing department at PotterWick explicitly injected the keyword phrase 'Seychelles Candle' into the metadata listing of their 'Coconut And Sea Salt' product.",
+    "ground_truth_answer": "Seychelles is an iconic tropical archipelago famed for its pristine sandy beaches and marine landscapes. By injecting 'Seychelles Candle' as an optimized search keyword, PotterWick leverages geographical branding to instantly signal to online buyers that the candle delivers an airy, fresh, premium, and vacation-inspired ocean breeze scent experience.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Based on material specifications, isolate the definitive difference in raw wax purity between COCO by Store's 'Smells Like Cacao And Vanilla' and all listed Friday Collective candles.",
+    "ground_truth_answer": "The definitive difference lies in wax purity: COCO by Store's 'Smells Like Cacao And Vanilla' is manufactured out of 100% pure, unadulterated 'Soy Wax' (all-natural plant origin). Conversely, every single Friday Collective candle listed is constructed out of a 'Soy Wax Blend', meaning the soy wax is blended with other structural or paraffin-based wax compounds.",
+    "relevant_docs": [
+      "smells_like_cacao_and_vanilla.md",
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Milk_Vanilla.md",
+      "Day_Party.md",
+      "Shower_Playlist.md"
+    ]
+  },
+  {
+    "question": "Identify the singular named corporate external entity authorized as a co-sponsor for marketing events within the text of the nenthom.com.vn Privacy Policy framework.",
+    "ground_truth_answer": "The singular named corporate external entity identified in the text is 'Top Qua Tang' (Top Quà Tặng), which acts as the third-party partner co-sponsoring customer promotional rewards or discount campaigns.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Design an optimized event-burning timeline for an all-day luxury beach gathering using 'Day Party' and 'Sunset Disco' to perfectly match environmental transitions with psychological mood shifts.",
+    "ground_truth_answer": "During the bright daytime hours, burn 'Day Party' to establish a fun, energetic, cheerful, and celebratory mood that aligns with social gatherings and pool parties via its sweet lemon, citrus, and apple pie notes. As day turns to dusk and the twilight transition occurs, switch to burning 'Sunset Disco' to shift the ambiance into a groovy, electric, nostalgic, and vibrant mood, matching the fading light with its orange container glare, exotic teakwood, and velvet musk notes.",
+    "relevant_docs": [
+      "Day_Party.md",
+      "Sunset_Disco.md"
+    ]
+  },
+  {
+    "question": "Formulate a sound structural argument explaining why utilizing an electric candle warmer entirely eliminates the primary hỏa hoạn hazards associated with children and family pets.",
+    "ground_truth_answer": "An electric candle warmer utilizes the heat generated by a specialized top-down lightbulb to melt the saps and release the essential oils. This completely removes the necessity of an open flame ( lửa trần). By eliminating the open flame, it removes the risk of accidental fire if children or pets knock the jar over, eliminates accidental skin contact burns from open fires, and stops the generation of soot-laden black smoke, making it a perfectly safe household alternative.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  }
+]
