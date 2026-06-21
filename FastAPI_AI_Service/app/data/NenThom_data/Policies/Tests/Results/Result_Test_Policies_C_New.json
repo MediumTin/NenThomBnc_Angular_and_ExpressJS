@@ -1,0 +1,278 @@
+{
+    "summary": {
+        "Accuracy": 0.8,
+        "Recall@5": 1.0,
+        "Recall@3": 1.0,
+        "Avg_Latency": 7.26,
+        "P95_Latency": 11.49,
+        "Avg_Judge_Latency": 4.6,
+        "P95_Judge_Latency": 11.46
+    },
+    "test_results": [
+        {
+            "question": "How long does delivery take within Hanoi or Ho Chi Minh City?",
+            "classification": "Policies",
+            "retrieval_mode": "hybrid",
+            "response_time": 6.12,
+            "Judge_time": 2.89,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 302,
+                    "content_preview": "Question:\n                    Under what circumstances will nenthom.com.vn's customer service call a customer regarding a delivery delay within Hanoi or Ho Chi Minh City?\n\n                    Answer:\n"
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 4,
+                    "content_preview": "## Average delivery time:\n\nOrders within Hanoi or Ho Chi Minh: Customers will receive within a maximum of 24 hours (Usually 2-4 hours) from the time of order. Except for pre-orders or insufficient inv"
+                }
+            ],
+            "ground_truth_answer": "Orders are usually delivered within 2–4 hours and no later than 24 hours after ordering.",
+            "answer": "Delivery within Hanoi or Ho Chi Minh City:\n\n- Usually: 2–4 hours from the time of order.  \n- Maximum: within 24 hours.  \n- Exception: for pre-orders or if inventory is insufficient, customer service will call to notify you.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "What payment methods are supported by nenthom.com.vn?",
+            "classification": "Policies",
+            "retrieval_mode": "hybrid",
+            "response_time": 6.05,
+            "Judge_time": 2.24,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 290,
+                    "content_preview": "Question:\n                    Does nenthom.com.vn accept Zalo Pay payments?\n\n                    Answer:\n                    Yes. Customers can pay using the Zalo Pay e-wallet."
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 650,
+                    "content_preview": "Question:\n                    Which specific third-party digital mobile wallets are integrated as formal checkout gateways on nenthom.com.vn?\n\n                    Answer:\n                    MoMo and "
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 5,
+                    "content_preview": "# Payment policy\n\nNenthom.com.vn is responsible for and protects your rights when making payment transactions.\n\nWe support the following payment methods:\n\nCash payment for COD (delivery and collection"
+                }
+            ],
+            "ground_truth_answer": "Supported payment methods include COD, MoMo, Zalo Pay, and bank transfer via Internet banking.",
+            "answer": "nenthom.com.vn supports the following payment methods:\n\n- Cash on delivery (COD) — delivery and collection at home, available nationwide.  \n- MoMo e-wallet.  \n- Zalo Pay e-wallet.  \n- Bank transfer via Internet banking — admin will contact you with payment details.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "How many days do customers have to return a product?",
+            "classification": "Policies",
+            "retrieval_mode": "hybrid",
+            "response_time": 4.69,
+            "Judge_time": 5.62,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 293,
+                    "content_preview": "Question:\n                    Do I need to provide invoices and accessories when returning a product?\n\n                    Answer:\n                    Yes. Customers must provide accompanying document"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 595,
+                    "content_preview": "Question:\n                    What are the mandatory product condition parameters for a customer to claim a full return or exchange within the 7-day window?\n\n                    Answer:\n              "
+                }
+            ],
+            "ground_truth_answer": "Customers can exchange or return products within 7 days from the purchase date.",
+            "answer": "Customers have **7 days** to return a product.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Does nenthom.com.vn sell customer information to third parties?",
+            "classification": "Policies",
+            "retrieval_mode": "hybrid",
+            "response_time": 6.19,
+            "Judge_time": 1.86,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 296,
+                    "content_preview": "Question:\n                    What customer information does nenthom.com.vn collect?\n\n                    Answer:\n                    The website may collect first name, last name, email address, phon"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 604,
+                    "content_preview": "Question:\n                    In what specific context does nenthom.com.vn explicitly state it will notify customers prior to sharing their personal data with external entities?\n\n                    A"
+                }
+            ],
+            "ground_truth_answer": "No. Nenthom.com.vn commits not to trade or exchange customer confidential information with third parties.",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "What customer information does nenthom.com.vn collect?",
+            "classification": "Policies",
+            "retrieval_mode": "hybrid",
+            "response_time": 5.65,
+            "Judge_time": 2.54,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 314,
+                    "content_preview": "Question:\n                    What absolute commitment does nenthom.com.vn make regarding the commercial use of customer information?\n\n                    Answer:\n                    The website commi"
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 7,
+                    "content_preview": "# Privacy Policy\n\nTo ensure website security and information security for consumers, nenthom.com.vn has issued a number of information security policies for individual and organizational customers whe"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 581,
+                    "content_preview": "Question:\n                    According to the official data privacy policy of nenthom.com.vn, how long is customer personal information stored?\n\n                    Answer:\n                    Inform"
+                }
+            ],
+            "ground_truth_answer": "The website may collect first name, last name, email address, phone number, country, province, and address.",
+            "answer": "Nenthom collects the following customer information:\n\n- First name  \n- Last name  \n- Email address  \n- Phone number  \n- Country  \n- Province  \n- Address",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "If a customer in Da Nang has not received any call from the postman after 3 days from placing an order, what specific action should they take according to the shipping policy?",
+            "classification": "Policies",
+            "retrieval_mode": "hybrid",
+            "response_time": 6.43,
+            "Judge_time": 4.35,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 307,
+                    "content_preview": "Question:\n                    What action does nenthom.com.vn take immediately after receiving a customer's returned goods?\n\n                    Answer:\n                    Immediately after receiving"
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 4,
+                    "content_preview": "## Average delivery time:\n\nOrders within Hanoi or Ho Chi Minh: Customers will receive within a maximum of 24 hours (Usually 2-4 hours) from the time of order. Except for pre-orders or insufficient inv"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 649,
+                    "content_preview": "Question:\n                    How does nenthom.com.vn handle local Hanoi delivery orders if a sudden inventory deficit occurs?\n\n                    Answer:\n                    The customer service tea"
+                }
+            ],
+            "ground_truth_answer": "The customer should contact nenthom.com.vn directly for support regarding their delivery status.",
+            "answer": "They should contact nenthom.com.vn for support.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Detail the full workflow for a customer who wants to exchange a product, starting from the notification step to the point they receive a replacement.",
+            "classification": "Policies",
+            "retrieval_mode": "hybrid",
+            "response_time": 12.55,
+            "Judge_time": 15.56,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 595,
+                    "content_preview": "Question:\n                    What are the mandatory product condition parameters for a customer to claim a full return or exchange within the 7-day window?\n\n                    Answer:\n              "
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 295,
+                    "content_preview": "Question:\n                    What is the first step in the return process?\n\n                    Answer:\n                    The first step is to notify nenthom.com.vn through the Fanpage or hotline."
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 6,
+                    "content_preview": "## Conditions for returning the product:\n\nThe product is still intact with all parts, showing no signs of heavy use or damage.\n\nThere are complete accompanying documents (purchase invoice, catalog, et"
+                }
+            ],
+            "ground_truth_answer": "Step 1: Notify nenthom.com.vn via Fanpage or hotline. Step 2: Send the package to 303B Vu Huu, Thanh Xuan Bac Ward, Thanh Xuan District, Hanoi. Step 3: Wait for nenthom.com.vn to receive the goods, after which they will immediately send out a new order.",
+            "answer": "Exchange workflow\n\n1. Notify the seller  \n   - Contact nenthom.com.vn via their Fanpage or hotline to start the exchange process.\n\n2. Prepare the item for return (mandatory for a full exchange within the 7-day window)  \n   - Ensure the product is fully intact, unused, and undamaged.  \n   - Keep the original packaging.  \n   - Include all accompanying documents (purchase invoice, catalog) and any promotional gifts or accessories.\n\n3. Ship the item back (customer pays return shipping)  \n   - Send the package to:  \n     303B Vu Huu, Thanh Xuan Bac Ward, Thanh Xuan District, Hanoi.\n\n4. Replacement sent  \n   - Immediately after the returned goods are received, a new order (replacement) will be sent to the customer.\n\nIf you need help with the Fanpage or hotline contact details, you should contact admin for detail information.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "According to the Privacy Policy, under what two specific governmental or legal conditions can nenthom.com.vn reasonably share customer information without violating its policies?",
+            "classification": "Policies",
+            "retrieval_mode": "hybrid",
+            "response_time": 9.3,
+            "Judge_time": 2.16,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 311,
+                    "content_preview": "Question:\n                    Under what condition can customer information be legally disclosed to protect the interests of the company and its partners?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 604,
+                    "content_preview": "Question:\n                    In what specific context does nenthom.com.vn explicitly state it will notify customers prior to sharing their personal data with external entities?\n\n                    A"
+                }
+            ],
+            "ground_truth_answer": "Information can be shared when it is legally disclosed according to Vietnamese law to protect the interests and assets of the company/partners, or at the request of government agencies when deemed appropriate under Vietnamese law.",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "What are the geographical scopes collected by nenthom.com.vn below the country level to process an order?",
+            "classification": "Policies",
+            "retrieval_mode": "hybrid",
+            "response_time": 5.42,
+            "Judge_time": 2.38,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 297,
+                    "content_preview": "Question:\n                    Does nenthom.com.vn sell customer information to third parties?\n\n                    Answer:\n                    No. Nenthom.com.vn commits not to trade or exchange custo"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 594,
+                    "content_preview": "Question:\n                    What specific personal identifying items fall within the standard data collection scope of the nenthom.com.vn platform?\n\n                    Answer:\n                    F"
+                }
+            ],
+            "ground_truth_answer": "Below the country level, nenthom.com.vn collects the 'Province' and the specific 'Address'.",
+            "answer": "They collect the following geographical details below the country level:\n\n- State/Province  \n- Detailed Street Address",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Explain how the delivery time expectations and handling process differ for an order inside Hanoi versus an order intended as a holiday gift for an outside area.",
+            "classification": "Policies",
+            "retrieval_mode": "hybrid",
+            "response_time": 10.19,
+            "Judge_time": 6.44,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 285,
+                    "content_preview": "Question:\n                    How long does delivery take to other areas in Vietnam?\n\n                    Answer:\n                    Delivery usually takes 1–2 days and may take up to 3 days."
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 4,
+                    "content_preview": "## Average delivery time:\n\nOrders within Hanoi or Ho Chi Minh: Customers will receive within a maximum of 24 hours (Usually 2-4 hours) from the time of order. Except for pre-orders or insufficient inv"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 649,
+                    "content_preview": "Question:\n                    How does nenthom.com.vn handle local Hanoi delivery orders if a sudden inventory deficit occurs?\n\n                    Answer:\n                    The customer service tea"
+                }
+            ],
+            "ground_truth_answer": "Orders within Hanoi take a maximum of 24 hours (usually 2-4 hours) and may involve a call if there is insufficient stock. In contrast, holiday gifts for outside areas normally take 1-3 days and customers are specifically advised to order 1-3 days earlier to avoid system overload.",
+            "answer": "Inside Hanoi\n- Delivery time expectation: typically very fast — usually within **2–4 hours**, and at most **24 hours** from the time of order.  \n- If there is an inventory shortage for a Hanoi order, customer service will **call you immediately** to explain and arrange an alternative solution or switch the order to pre-order status.\n\nHoliday gift for an outside area\n- Delivery time expectation: generally **1–2 days**, and may take up to **3 days** for other areas.  \n- For holiday gifts: you should **order 1–3 days earlier** than needed to avoid delays from holiday overload.  \n- If you haven’t received a delivery call within **3 days** of ordering, contact nenthom.com.vn for support.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        }
+    ]
+}

@@ -1,0 +1,155 @@
+[
+  {
+    "question": "Một khách hàng đặt đơn hàng trị giá 250.000 VNĐ và áp dụng mã giảm giá 'NEWYEAR2025' vào tháng 12 năm 2025. Dựa trên dữ liệu hệ thống, hãy tính chính xác số tiền được giảm và giải thích cách tính.",
+    "ground_truth_answer": "Mã giảm giá 'NEWYEAR2025' áp dụng mức giảm 15% cho các đơn hàng có giá trị tối thiểu 200.000 VNĐ và giới hạn mức giảm tối đa là 50.000 VNĐ. Với đơn hàng trị giá 250.000 VNĐ, số tiền giảm theo tỷ lệ phần trăm là 250.000 × 15% = 37.500 VNĐ. Vì 37.500 VNĐ thấp hơn mức giảm tối đa 50.000 VNĐ nên khách hàng sẽ được giảm chính xác 37.500 VNĐ.",
+    "relevant_docs": [
+      "coupons.csv",
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Phân tích sự mâu thuẫn giữa tên thương mại và thành phần hương thực tế của sản phẩm 'Milk Vanilla'. Dựa trên tài liệu sản phẩm, sản phẩm này thực sự thuộc nhóm hương nào?",
+    "ground_truth_answer": "Sự mâu thuẫn nằm ở chỗ tên gọi 'Milk Vanilla' gợi ý một hồ sơ hương kem sữa và vani thuộc nhóm gourmand, nhưng công thức thực tế hoàn toàn không chứa thành phần sữa hay vani. Thay vào đó, sản phẩm được cấu thành từ các nốt hương Cam Chanh Tươi Sáng, Xoài Tươi, Rượu Prosecco Sủi Bọt, Quýt Ngọt và Hổ Phách Ngọt. Vì vậy, sản phẩm thực sự thuộc nhóm hương Fruity / Citrus / Vibrant.",
+    "relevant_docs": [
+      "Milk_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Một khách hàng ở tỉnh đặt mua nến làm quà Tết vào ngày 28 âm lịch nhưng đến mùng 2 Tết vẫn chưa nhận được cuộc gọi từ bưu tá. Theo chính sách giao hàng, họ nên làm gì và nguyên nhân vận hành nào có thể dẫn đến tình trạng này?",
+    "ground_truth_answer": "Khách hàng nên chủ động liên hệ với nenthom.com.vn để được hỗ trợ kiểm tra tình trạng đơn hàng. Theo chính sách, thời gian giao hàng thông thường đến các tỉnh là từ 1–3 ngày. Nguyên nhân có thể là sự quá tải của hệ thống vận chuyển trong các dịp lễ, Tết lớn. Chính sách cũng khuyến nghị khách hàng đặt hàng sớm từ 1–3 ngày trong các dịp cao điểm để tránh tình trạng chậm trễ này.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Hãy thực hiện phân tích so sánh chi tiết giữa '3 Day WKND' và 'Shower Playlist' về thành phần sáp, khối lượng, số lượng tim nến và loại tim nến.",
+    "ground_truth_answer": "Cả hai sản phẩm đều được sản xuất bởi Friday Collective và sử dụng hỗn hợp sáp đậu nành (Soy Wax Blend). Tuy nhiên, chúng khác nhau ở các thông số kỹ thuật. '3 Day WKND' có khối lượng 2 pound, sử dụng 3 tim nến và tim nến sợi tự nhiên (Natural Fiber Wick). Trong khi đó, 'Shower Playlist' có khối lượng 13,5 oz, sử dụng tinh dầu cô đặc cao và tài liệu sản phẩm không nêu rõ số lượng tim nến.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Shower_Playlist.md"
+    ]
+  },
+  {
+    "question": "Giải thích cách thiết kế của hũ nến màu cam ánh ngọc trai của 'Sunset Disco' tạo nên sự đồng bộ giữa trải nghiệm thị giác và khứu giác khi thắp sáng.",
+    "ground_truth_answer": "Về mặt thị giác, hũ nến màu cam ánh ngọc trai thay đổi sắc độ dưới ánh lửa, tái hiện hiệu ứng giống như cảnh hoàng hôn trên bãi biển. Về mặt khứu giác, hương thơm chuyển từ các nốt cam chanh ngập nắng và hổ phách vàng sang sự kết hợp của gỗ teak kỳ lạ, vani ấm áp và xạ hương nhung. Sự đồng bộ này tạo nên trải nghiệm đa giác quan giống như một buổi tiệc hoàng hôn bên bờ biển.",
+    "relevant_docs": [
+      "Sunset_Disco.md"
+    ]
+  },
+  {
+    "question": "Xác định thành phần hương giữa chung giữa '3 Day WKND' và 'Shower Playlist'. Đồng thời phân tích cách các nốt hương xung quanh định hướng thành phần này theo hai phong cách hoàn toàn khác nhau.",
+    "ground_truth_answer": "Thành phần hương giữa chung của cả hai sản phẩm là Hoa Súng (Water Lily). Trong '3 Day WKND', hoa súng được kết hợp với táo xanh, dưa leo và nước ép xanh để tạo nên cảm giác tươi mát, nhẹ nhàng và phóng khoáng như một kỳ nghỉ cuối tuần. Trong 'Shower Playlist', hoa súng được kết hợp với bạch đàn, cam bergamot và muối biển, tạo nên cảm giác trị liệu, sạch sẽ và sang trọng như phòng xông hơi hoặc spa cao cấp.",
+    "relevant_docs": [
+      "3_Day_WKND.md",
+      "Shower_Playlist.md"
+    ]
+  },
+  {
+    "question": "Một người dùng phàn nàn rằng nến 'Smells Like Cacao And Vanilla' tạo ra lớp muội đen dày trên trần nhà. Dựa trên hướng dẫn sử dụng nến, hãy suy luận lỗi kỹ thuật có khả năng cao nhất và đề xuất cách khắc phục từng bước.",
+    "ground_truth_answer": "Nguyên nhân có khả năng cao nhất là người dùng không thực hiện việc cắt tỉa tim nến định kỳ, khiến tim nến quá dài và cháy không đều. Cách khắc phục là cắt tim nến xuống khoảng 3 mm trước mỗi lần đốt. Việc này giúp kiểm soát kích thước ngọn lửa, đảm bảo quá trình cháy sạch hơn, sáng đều hơn và ngăn chặn hiện tượng đốt cháy không hoàn toàn gây ra muội đen.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx",
+      "smells_like_cacao_and_vanilla.md"
+    ]
+  },
+  {
+    "question": "Đối chiếu cam kết bảo mật thông tin với các ngoại lệ được nêu trong Chính sách Quyền riêng tư. Trong những trường hợp nào nenthom.com.vn được phép chia sẻ dữ liệu người dùng với bên thứ ba?",
+    "ground_truth_answer": "Nền tảng được phép chia sẻ dữ liệu người dùng trong bốn trường hợp cụ thể: (1) khi có sự đồng ý rõ ràng từ khách hàng; (2) để bảo vệ quyền lợi, tài sản hoặc sự an toàn hợp pháp của công ty và các đối tác theo quy định của pháp luật Việt Nam; (3) khi có yêu cầu chính thức từ cơ quan nhà nước hoặc cơ quan tư pháp có thẩm quyền; và (4) trong các chương trình tiếp thị hoặc sự kiện hợp tác với bên thứ ba, với điều kiện khách hàng được thông báo trước và có quyền lựa chọn tham gia.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Mối liên hệ giữa hình ảnh trên nhãn của 'Sandalwood And Rose' và cấu trúc hương nền của sản phẩm là gì?",
+    "ground_truth_answer": "Nhãn sản phẩm sử dụng hình ảnh Đức Mẹ Guadalupe, tạo nên chủ đề tâm linh và thiêng liêng. Điều này phản ánh trực tiếp cấu trúc hương nền của sản phẩm với gỗ đàn hương quý, gỗ trầm hương, xạ hương nhung và làn khói hương nhẹ nhàng. Sự kết hợp này tạo nên bầu không khí tĩnh lặng, thiền định và trang nghiêm.",
+    "relevant_docs": [
+      "Sandalwood_And_Rose.md"
+    ]
+  },
+  {
+    "question": "Một khách hàng nhận thấy nến 'Day Party' ban đầu có mùi chanh và cam rất mạnh nhưng sau khoảng 25 phút lại chuyển thành mùi dâu tây và đào ngọt đậm hơn. Hãy giải thích hiện tượng này dựa trên nguyên lý các tầng hương của nến thơm.",
+    "ground_truth_answer": "Hiện tượng này xuất phát từ tốc độ bay hơi khác nhau của các tầng hương. Chanh, cam và bánh táo thuộc tầng hương đầu (Top Notes), chiếm khoảng 30% cấu trúc mùi hương và bao gồm các phân tử nhẹ, bay hơi nhanh trong khoảng 10–20 phút đầu. Sau khi các phân tử này giảm dần, tầng hương giữa (Middle Notes) với dâu tây, hoa hồng và nước ép đào sẽ trở nên nổi bật hơn, làm thay đổi cảm nhận mùi hương trong không gian.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx",
+      "Day_Party.md"
+    ]
+  },
+  {
+    "question": "So sánh hình dáng bao bì, màu sáp và phong cách thiết kế nhãn giữa hai sản phẩm mùa đông 'Warn Cider And Cinnamon' và 'Sandalwood And Rose'.",
+    "ground_truth_answer": "'Warn Cider And Cinnamon' sử dụng hũ thủy tinh màu hổ phách đậm hoặc ánh tím trong mờ, chứa sáp màu trắng và nhãn được trang trí bằng họa tiết kẻ caro tartan cổ điển. Trong khi đó, 'Sandalwood And Rose' được đựng trong hũ thủy tinh hình trụ cao và thanh mảnh, chứa sáp màu đỏ thẫm nổi bật, nắp vặn màu trắng và nhãn mang phong cách nghệ thuật tôn giáo đặc trưng.",
+    "relevant_docs": [
+      "Warn_Cider_And_Cinamon.md",
+      "Sandalwood_And_Rose.md"
+    ]
+  },
+  {
+    "question": "Tổng hợp dữ liệu sinh học từ tài liệu về lợi ích của nến thơm để giải thích cách việc đốt nến 'Smells Like Cacao And Vanilla' trong phòng làm việc tại nhà có thể tối ưu hóa khả năng tập trung và hiệu suất tinh thần của một kỹ sư làm việc từ xa.",
+    "ground_truth_answer": "Sản phẩm chứa nốt hương cà phê. Theo tài liệu, việc hít ngửi hương cà phê giúp tăng cường lưu thông máu lên não và kích thích hệ thần kinh, từ đó giảm cảm giác mệt mỏi, cải thiện chức năng nhận thức và hỗ trợ trí nhớ. Khi kết hợp với sự ấm áp và dễ chịu của cacao và vanilla, hương thơm còn giúp người dùng hít thở sâu hơn, thư giãn hơn và giảm huyết áp. Nhờ đó, kỹ sư làm việc từ xa có thể duy trì trạng thái tỉnh táo, bình tĩnh và tập trung cao độ.",
+    "relevant_docs": [
+      "smells_like_cacao_and_vanilla.md",
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "Đánh giá lý do vì sao việc đặt nến đang cháy gần cửa sổ mở hoặc khu vực hành lang ra vào vừa làm giảm tuổi thọ sản phẩm vừa ảnh hưởng đến các yếu tố an toàn phòng cháy chữa cháy trong gia đình.",
+    "ground_truth_answer": "Cửa sổ mở và hành lang thường tạo ra luồng gió lùa. Các luồng gió này khiến ngọn lửa dao động mạnh và cháy không đều, làm sáp tiêu hao nhanh hơn và giảm tổng thời gian cháy của nến. Về mặt an toàn, gió có thể khiến ngọn lửa bùng lên bất thường hoặc thổi các vật liệu dễ cháy như rèm cửa, giấy hoặc quần áo tiếp xúc trực tiếp với ngọn lửa, làm gia tăng nguy cơ cháy nổ trong gia đình.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Trích xuất dữ liệu từ tệp CSV để xác định mã giảm giá hiện đang ở trạng thái 'disabled'. Đồng thời cho biết chính xác giới hạn sử dụng của mã này đối với từng tài khoản người dùng.",
+    "ground_truth_answer": "Mã giảm giá đang ở trạng thái 'disabled' là 'WELCOME10' (giảm giá 10% và không yêu cầu giá trị đơn hàng tối thiểu). Tham số giới hạn sử dụng trên mỗi tài khoản (per_user_limit) được thiết lập là 1 lần cho mỗi người dùng.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Một khách hàng muốn mua cây nến có dung tích lớn nhất do Friday Collective sản xuất để trang trí phòng khách vào mùa hè. Dựa trên thông số kỹ thuật, họ nên chọn sản phẩm nào và sản phẩm đó nặng bao nhiêu?",
+    "ground_truth_answer": "Khách hàng nên chọn nến 'Milk Vanilla' (mặc dù sản phẩm này thực tế sở hữu hồ sơ hương trái cây nhiệt đới và cam chanh). Theo tài liệu, đây là sản phẩm có dung tích lớn nhất trong danh mục của Friday Collective với trọng lượng tịnh 16 oz và được đựng trong hũ thủy tinh màu vàng neon nổi bật.",
+    "relevant_docs": [
+      "Milk_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Suy luận lý do vì sao bộ phận marketing của PotterWick chủ động đưa cụm từ khóa 'Seychelles Candle' vào phần metadata của sản phẩm 'Coconut And Sea Salt'.",
+    "ground_truth_answer": "Seychelles là một quần đảo nhiệt đới nổi tiếng với những bãi biển nguyên sơ và khung cảnh biển đảo sang trọng. Việc sử dụng từ khóa 'Seychelles Candle' giúp PotterWick tận dụng giá trị nhận diện địa lý để ngay lập tức truyền tải đến khách hàng cảm giác về một mùi hương biển cả cao cấp, tươi mát, thư giãn và mang đậm tinh thần nghỉ dưỡng nhiệt đới.",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Dựa trên thông số nguyên liệu, hãy xác định điểm khác biệt cốt lõi về độ tinh khiết của sáp giữa 'Smells Like Cacao And Vanilla' của COCO by Store và toàn bộ các dòng nến của Friday Collective.",
+    "ground_truth_answer": "Điểm khác biệt nằm ở thành phần sáp. 'Smells Like Cacao And Vanilla' của COCO by Store được làm từ 100% sáp đậu nành nguyên chất (Soy Wax) có nguồn gốc hoàn toàn từ thực vật. Trong khi đó, tất cả các sản phẩm nến của Friday Collective được ghi nhận là sử dụng 'Soy Wax Blend', tức hỗn hợp sáp đậu nành pha trộn với các loại sáp hoặc hợp chất cấu trúc khác.",
+    "relevant_docs": [
+      "smells_like_cacao_and_vanilla.md",
+      "3_Day_WKND.md",
+      "Sunset_Disco.md",
+      "Milk_Vanilla.md",
+      "Day_Party.md",
+      "Shower_Playlist.md"
+    ]
+  },
+  {
+    "question": "Xác định thực thể doanh nghiệp bên ngoài duy nhất được nêu tên trong Chính sách Quyền riêng tư của nenthom.com.vn với vai trò đồng tài trợ các chương trình tiếp thị.",
+    "ground_truth_answer": "Thực thể doanh nghiệp bên ngoài duy nhất được nêu đích danh trong tài liệu là 'Top Quà Tặng' (Top Qua Tang). Đơn vị này được đề cập như đối tác bên thứ ba cùng tài trợ các chương trình khuyến mãi, quà tặng hoặc ưu đãi dành cho khách hàng.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Thiết kế một lịch trình đốt nến tối ưu cho một buổi tụ họp bãi biển kéo dài cả ngày bằng cách kết hợp 'Day Party' và 'Sunset Disco' sao cho phù hợp với sự thay đổi của môi trường và tâm trạng.",
+    "ground_truth_answer": "Trong khoảng thời gian ban ngày, nên sử dụng 'Day Party' để tạo nên bầu không khí vui vẻ, năng động, tươi sáng và mang tính lễ hội nhờ các nốt hương chanh ngọt, cam chanh và bánh táo. Khi ánh sáng bắt đầu chuyển sang hoàng hôn, nên chuyển sang 'Sunset Disco' để đưa không gian sang trạng thái sôi động, hoài cổ và cuốn hút hơn. Hiệu ứng ánh sáng từ hũ màu cam cùng các nốt hương gỗ teak, vanilla và xạ hương nhung sẽ đồng bộ với khung cảnh chiều tà, tạo nên trải nghiệm chuyển tiếp tự nhiên và hấp dẫn.",
+    "relevant_docs": [
+      "Day_Party.md",
+      "Sunset_Disco.md"
+    ]
+  },
+  {
+    "question": "Xây dựng một lập luận hợp lý giải thích vì sao việc sử dụng máy làm ấm nến bằng điện có thể loại bỏ hoàn toàn các nguy cơ cháy nổ chính liên quan đến trẻ em và vật nuôi trong gia đình.",
+    "ground_truth_answer": "Máy làm ấm nến bằng điện hoạt động bằng cách sử dụng nhiệt phát ra từ bóng đèn chuyên dụng chiếu từ phía trên để làm tan chảy sáp và giải phóng tinh dầu thơm. Cơ chế này loại bỏ hoàn toàn sự cần thiết của ngọn lửa trần. Khi không còn ngọn lửa, nguy cơ cháy nổ do trẻ em hoặc vật nuôi vô tình làm đổ hũ nến sẽ được loại bỏ. Đồng thời, thiết bị cũng giúp tránh nguy cơ bỏng do tiếp xúc với lửa trực tiếp và ngăn chặn sự hình thành khói đen chứa muội than, trở thành một giải pháp an toàn hơn cho môi trường gia đình.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  }
+]

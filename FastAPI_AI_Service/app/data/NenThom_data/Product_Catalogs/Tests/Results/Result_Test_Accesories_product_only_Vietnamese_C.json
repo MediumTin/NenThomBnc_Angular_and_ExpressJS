@@ -1,0 +1,708 @@
+{
+    "summary": {
+        "Accuracy": 0.9,
+        "Recall@5": 0.85,
+        "Recall@3": 0.8,
+        "Avg_Latency": 16.89,
+        "P95_Latency": 22.74,
+        "Avg_Judge_Latency": 7.11,
+        "P95_Judge_Latency": 9.57
+    },
+    "test_results": [
+        {
+            "question": "Hãy xây dựng một lập luận hợp lý giải thích vì sao việc sử dụng dụng cụ dập nến chuyên dụng cán dài có thể loại bỏ hoàn toàn các nguy cơ cháy nổ và ô nhiễm mùi phát sinh khi thổi tắt tim nến bằng miệng.",
+            "response_time": 28.27,
+            "Judge_time": 1.51,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 321,
+                    "content_preview": "Question:\n                    How does using a long-handled candle snuffer protect the fragrance integrity of a room after extinguishing a flame?\n\n                    Answer:\n                    A can"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 291,
+                    "content_preview": "Question:\n                    What is a safer alternative to burning candles directly?\n\n                    Answer:\n                    A candle warmer can be used as a safer alternative to reduce fir"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 553,
+                    "content_preview": "Question:\n                    What dual-purpose botanical benefits do the Sả Chanh (Lemongrass) and Bạc Hà (Peppermint) oils within the Lumos Cajeput collection provide?\n\n                    Answer:\n "
+                }
+            ],
+            "ground_truth_answer": "Dụng cụ dập nến chuyên dụng được thiết kế với một tay cầm kim loại dài kết hợp cùng phần chụp hình chuông hoặc hình trụ có khả năng xoay linh hoạt. Khi được đặt phủ lên ngọn lửa, thiết bị sẽ ngay lập tức cắt nguồn oxy và dập tắt nến một cách sạch sẽ. Phương pháp này loại bỏ hoàn toàn nhu cầu thổi mạnh bằng miệng, từ đó ngăn ngừa nguy cơ sáp nóng bắn lên đồ nội thất, da hoặc các vật liệu vải gần đó. Đồng thời, nó hạn chế sự hình thành khói đen chứa muội than và loại bỏ mùi khói sau khi tắt nến, giúp duy trì trọn vẹn hiệu suất lan tỏa hương thơm trong không gian.",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Phân tích cách kéo cắt tim nến chuyên nghiệp tận dụng thiết kế cấu trúc của mình để bảo vệ bề mặt sáp đậu nành trắng khỏi muội than và duy trì hồ sáp tan chảy ổn định.",
+            "response_time": 14.63,
+            "Judge_time": 8.86,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 414,
+                    "content_preview": "Question:\n                    How does a flat circular catch tray on a wick trimmer make candle care a cleaner, more satisfying process?\n\n                    Answer:\n                    It collects th"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                }
+            ],
+            "ground_truth_answer": "Kéo cắt tim nến chuyên nghiệp được thiết kế với thân kéo dài, lưỡi cắt lệch góc và khay hứng vụn tích hợp. Thiết kế này cho phép người dùng dễ dàng tiếp cận đáy các hũ nến cao. Khi cắt, lưỡi kéo chuyên dụng sẽ loại bỏ phần đầu tim nến bị carbon hóa xuống độ dài khuyến nghị khoảng 1/4 inch, trong khi khay hứng giữ lại toàn bộ vụn carbon, ngăn chúng rơi xuống lớp sáp. Điều này giúp duy trì độ sạch của hồ sáp, hạn chế ngọn lửa cháy không ổn định, giảm muội đen và tạo ra quá trình cháy đồng đều, kéo dài tuổi thọ nến.",
+            "answer": "Phân tích cách kéo cắt tim nến chuyên nghiệp bảo vệ bề mặt sáp đậu nành trắng và duy trì hồ sáp tan chảy ổn định\n\n- Tay cầm dài và trục kéo xiên (long, angled handles)\n  - Cho phép tiếp cận sâu bên trong lọ nến cao mà không chạm vào thành hay bề mặt sáp.\n  - Giữ thao tác thẳng đứng, giúp cắt gọn phần đầu bấc mà không làm rung hoặc khuấy hồ sáp đang tan chảy.\n\n- Lưỡi cắt ngang kiểu flush-cut và chiều cắt chuẩn (cutting mechanism + quarter-inch)\n  - Cắt gọn phần muội than ở đầu bấc xuống mức khuyến nghị (khoảng 1/4 inch), hạn chế đầu bấc quá dài gây khói, muội than và ngọn lửa không ổn định.\n  - Lưỡi cắt chuẩn giúp ngọn lửa cháy ổn định, từ đó duy trì hồ sáp tan chảy đều và sâu theo thiết kế của nến.\n\n- Khe/khay bắt mảnh tròn phẳng ngay tại lưỡi (flat circular catch tray)\n  - Ngay khi cắt, mảnh bấc phủ muội than rơi vào khay bắt, không rơi trở lại xuống bề mặt sáp.\n  - Ngăn muội than bám vào mặt sáp trắng, giữ bề mặt trong, không làm đổi màu hoặc ô nhiễm lớp sáp tinh khiết.\n\n- Vật liệu chống gỉ và cấu tạo chắc chắn (stainless steel, heavy-duty)\n  - Độ cứng và độ nặng vừa phải giúp thao tác chính xác, giảm rung lắc khi cắt.\n  - Bề mặt bóng, không sinh tạp chất, đảm bảo không để lại vết bẩn lên sáp.\n\nTóm lại: thiết kế tay cầm dài + lưỡi cắt ngang chuẩn + khay bắt mảnh tích hợp cho phép loại bỏ phần muội than một cách sạch sẽ và an toàn, đồng thời giữ bấc ở chiều cao tối ưu để ngọn lửa cháy ổn định — từ đó bảo vệ bề mặt sáp đậu nành trắng khỏi muội than và duy trì hồ sáp tan chảy đều, kéo dài tuổi thọ và chất lượng khi sử dụng nến.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Giải thích chiến lược thiết kế kỹ thuật và nguyên lý nhiệt động học đằng sau việc sử dụng khay xoay nến vận hành bằng nhiệt để tạo ra các hiệu ứng bóng chuyển động mà không cần điện.",
+            "response_time": 14.1,
+            "Judge_time": 7.15,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 369,
+                    "content_preview": "Question:\n                    What underlying mood does a user experience when watching a heat-powered rotary candle carousel spin in a dark room?\n\n                    Answer:\n                    The "
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 32,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                }
+            ],
+            "ground_truth_answer": "Khay xoay nến sử dụng nguyên lý nhiệt động học cơ bản để tạo chuyển động. Cấu trúc sản phẩm gồm giá đỡ nến tealight bằng kim loại, thanh đỡ cong và bánh tua-bin kim loại nhiều cánh ở phía trên. Khi nến được thắp sáng, luồng không khí nóng sinh ra từ ngọn lửa sẽ bốc lên và tác động lên các cánh tua-bin được đặt nghiêng. Lực này làm tua-bin quay liên tục mà không cần pin hay điện. Quá trình quay khiến các vật trang trí kim loại treo bên dưới chuyển động, tạo nên những hoa văn ánh sáng và bóng đổ sinh động trên tường và các bề mặt xung quanh.",
+            "answer": "Nguyên lý nhiệt động học (tóm tắt)\n- Sử dụng nguyên lý nhiệt động học cơ bản: khi ngọn nến cháy, không khí xung quanh nóng lên và dâng lên thành các luồng không khí nóng.\n- Những luồng không khí nóng dâng lên sẽ va chạm với các cánh của turbine đặt phía trên, tạo lực đẩy khiến carousel quay tự động—không cần nguồn điện.\n\nChiến lược thiết kế kỹ thuật\n- Vị trí nến và khay đựng: thiết kế một chỗ đựng tealight tích hợp để định vị ngọn lửa chính xác dưới turbine, đảm bảo luồng khí nóng đủ mạnh và ổn định.\n- Turbine nhiều cánh với cánh nghiêng: turbine mảnh nhiều cánh có các cánh đặt nghiêng để tối ưu việc “bắt” luồng không khí dâng, chuyển lực khí thành chuyển động quay.\n- Trục và giá đỡ cong: sử dụng một thanh đỡ cong gắn turbine ở đỉnh, đảm bảo trục quay tự do và các đồ trang trí treo có thể dao động nhẹ khi quay.\n- Vật liệu nhẹ, nhạy nhiệt: chế tạo từ hợp kim nhẹ phản ứng tốt với nhiệt (precision-stamped, heat-responsive lightweight alloy) giúp turbine dễ quay với luồng khí yếu.\n- Hoàn thiện phản chiếu: lớp mạ sáng bóng (gold/silver) tăng khả năng phản xạ ánh sáng, làm nổi bật các họa tiết bóng chuyển động trên tường khi carousel quay.\n- Cân bằng và an toàn: đáy có lỗ/đế kim loại tích hợp để cố định cốc tealight chuẩn, bảo đảm ổn định khi quay và an toàn khi sử dụng.\n\nHiệu ứng ánh-sáng và bóng chuyển động\n- Khi turbine quay, các đồ trang trí treo theo chuyển động nhịp nhàng, kết hợp với bề mặt mạ phản xạ tạo nên những họa tiết ánh sáng và bóng động trên tường—tất cả vận hành nhờ nhiệt của ngọn nến, không cần điện.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "So sánh thành phần vật liệu, mục tiêu thiết kế thẩm mỹ và các đặc điểm bảo vệ bề mặt giữa Candle Tray phong cách tối giản dạng capsule và Candle Metal Tray màu vàng hoàng gia.",
+            "response_time": 14.75,
+            "Judge_time": 9.74,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 214,
+                    "content_preview": "Question:\n                    What mood does Candle Tray create?\n\n                    Answer:\n                    Minimalist, neat, organized, sophisticated, polished."
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Candle_metal_tray.md",
+                    "chunk_id": 30,
+                    "content_preview": "Product name: Candle metal tray\n\nCategory: Home Decor / Vanity Display Tray / Candle & Perfume Organizer\n\nMain Scents: Unscented (Premium Finished Metal and Glass construction).\n\nSeason: Year-round (A"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 347,
+                    "content_preview": "Question:\n                    Why is food-grade stainless steel selected for the manufacturing of minimalist capsule oval candle plates?\n\n                    Answer:\n                    Food-grade sta"
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 32,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                }
+            ],
+            "ground_truth_answer": "Candle Tray phong cách tối giản được chế tạo từ thép không gỉ cấp thực phẩm với lớp phủ gương mạ điện, sở hữu hình dáng viên nang thuôn dài cùng viền mép hơi nhô cao để giữ lại sáp chảy hoặc tinh dầu. Thiết kế tập trung vào phong cách Bắc Âu hiện đại và tính ứng dụng cao. Trong khi đó, Candle Metal Tray màu vàng hoàng gia sử dụng khung kim loại chống gỉ phủ vàng sáng kết hợp với mặt gương phản chiếu chịu lực. Sản phẩm được nâng đỡ bởi các chân bi kim loại tròn và trang trí bằng các họa tiết lan can hoặc hoa văn tinh xảo. Cả hai đều bảo vệ đồ nội thất khỏi nhiệt và giúp sắp xếp phụ kiện, nhưng Candle Tray nhấn mạnh tính tối giản hiện đại còn Candle Metal Tray hướng đến vẻ đẹp sang trọng và nổi bật.",
+            "answer": "Dưới đây là so sánh ngắn gọn giữa hai mẫu khay:\n\nCandle Tray (kiểu capsule tối giản)\n- Vật liệu:\n  - Hợp kim inox đạt chuẩn thực phẩm, chống rỉ, phủ lớp mạ gương điện (electroplated mirror coating).\n- Mục tiêu thiết kế thẩm mỹ:\n  - Phong cách tối giản, đường nét Bắc Âu, silhouette viên nang kéo dài, cạnh bo tròn; tạo cảm giác gọn gàng, tinh tế, bóng bẩy.\n- Đặc điểm bảo vệ bề mặt:\n  - Mặt khay đánh bóng và chịu nhiệt, thích hợp để đặt nến và bảo vệ đồ gỗ/marble khỏi nhiệt trực tiếp.\n  - Viền hơi nhô lên để hứng rò rỉ sáp, dầu hoặc que diêm, giúp giữ bề mặt bàn sạch.\n  - Khả năng chống rỉ và chống ố khi tiếp xúc với dầu nến.\n\nCandle Metal Tray (màu vàng hoàng gia)\n- Vật liệu:\n  - Khung kim loại chống rỉ mạ vàng sáng, kết hợp với đế bằng kính gương phản chiếu dày.\n- Mục tiêu thiết kế thẩm mỹ:\n  - Hướng đến vẻ sang trọng, lộng lẫy và quý phái; viền ren hoa nghệ thuật (filigree) mạ vàng và đế gương tạo hiệu ứng boutique/photogenic.\n- Đặc điểm bảo vệ bề mặt:\n  - Đế gương giúp nâng tầm trưng bày và phản chiếu ánh sáng.\n  - Chân tròn nâng nhẹ đế lên so với mặt bàn, giúp tránh trầy xước và cách ly khỏi rìa tiếp xúc trực tiếp.\n  - Phù hợp bảo vệ khỏi vết dầu, vòng dầu của diffuser và trầy xước bề mặt.\n\nTóm tắt điểm khác biệt chính\n- Vật liệu: Candle Tray toàn kim loại inox mạ gương; Candle Metal Tray là kết hợp khung kim loại mạ vàng + đế kính gương.\n- Thiết kế: Candle Tray thiên về tối giản, gọn gàng; Candle Metal Tray thiên về sang trọng, trang trí cầu kỳ.\n- Bảo vệ bề mặt: Candle Tray chú trọng chống nhiệt và hứng sáp/dầu (viền nhô, chịu nhiệt, chống rỉ); Candle Metal Tray chú trọng bảo vệ khỏi dầu/spill và trầy xước nhờ đế gương dày và chân nâng, đồng thời tạo hiệu ứng trang trí.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hãy tổng hợp một lập luận toàn diện về tính ứng dụng và thẩm mỹ để giải thích vì sao chủ một cửa hàng nến thủ công nên đưa các đế gỗ thông cắt lát vào bộ quà tặng cao cấp và các bộ ảnh flat-lay sản phẩm.",
+            "response_time": 16.85,
+            "Judge_time": 9.56,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 390,
+                    "content_preview": "Question:\n                    Why are step-risers or display trays highly favored by small business owners who sell luxury cosmetics or perfumes?\n\n                    Answer:\n                    They "
+                },
+                {
+                    "source": "Wood_tray.md",
+                    "chunk_id": 58,
+                    "content_preview": "Product name: Wood tray\n\nCategory: Home Decor / Candle Accessory / Photography Props\n\nMain Scents: Unscented (Natural, mild earthy pine wood aroma).\n\nSeason: Year-round (An absolute essential for cozy"
+                },
+                {
+                    "source": "Candle_metal_tray.md",
+                    "chunk_id": 30,
+                    "content_preview": "Product name: Candle metal tray\n\nCategory: Home Decor / Vanity Display Tray / Candle & Perfume Organizer\n\nMain Scents: Unscented (Premium Finished Metal and Glass construction).\n\nSeason: Year-round (A"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 227,
+                    "content_preview": "Question:\n                    Where is Candle matchbox best used?\n\n                    Answer:\n                    Bedside candle vanities, living room display trays, cozy fireplace mantels, high-end "
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                }
+            ],
+            "ground_truth_answer": "Đế gỗ thông cắt lát kết hợp hài hòa giữa tính năng sử dụng thực tế và giá trị thẩm mỹ cao cấp. Về mặt kỹ thuật, sản phẩm được cắt từ gỗ thông tự nhiên với độ dày đồng đều khoảng 1–1,5 cm, được chà nhẵn hai mặt, tạo nên bề mặt chắc chắn và có khả năng chịu nhiệt tốt để bảo vệ đồ nội thất khỏi sức nóng từ đáy hũ nến. Về mặt thẩm mỹ, các vòng sinh trưởng tự nhiên cùng lớp vỏ cây nguyên bản tạo nên vẻ đẹp mộc mạc, thủ công và gần gũi với thiên nhiên. Điều này giúp hộp quà và ảnh flat-lay sản phẩm trở nên nổi bật, sang trọng và giàu cảm xúc hơn.",
+            "answer": "Tổng quan ngắn gọn\n  \nĐế gỗ thông cắt lát (wood log slices) là một phụ kiện vừa hữu dụng vừa giàu tính thẩm mỹ — rất phù hợp để đưa vào bộ quà tặng cao cấp và dùng trong ảnh flat‑lay sản phẩm của cửa hàng nến thủ công.\n\nLợi ích về tính ứng dụng\n- Bảo vệ bề mặt: đế gỗ chịu nhiệt, che chắn bàn, hộp quà khỏi hơi nóng và vết sáp/ dầu từ nến.  \n- Đa năng trong sử dụng: có thể làm đế lót nến, miếng tăng chiều cao (step‑riser) để tạo lớp cho bày trí, hoặc làm nền cho ảnh flat‑lay và hộp quà.  \n- Ổn định và tiện dụng: độ dày đồng đều (thường khoảng **1–1.5cm**) cho độ ổn định cần thiết khi đặt lọ nến hoặc phụ kiện.  \n- Mùi tự nhiên nhẹ nhàng: không mùi nhân tạo, giữ hương gỗ thông tự nhiên nhẹ, phù hợp với sản phẩm thủ công (không cạnh tranh với mùi nến).\n\nLợi ích về thẩm mỹ và trải nghiệm khách hàng\n- Tạo cảm giác thủ công, cao cấp: vân gỗ độc đáo và viền vỏ cây giữ lại vẻ handmade, giúp bộ quà tặng trông ấm áp, chân thật và có giá trị cảm nhận cao.  \n- Tăng chiều sâu trong bày trí và chụp ảnh: dùng làm step‑riser hoặc nền tạo lớp, đem lại hiệu ứng “boutique display” — sản phẩm nổi bật, bắt mắt hơn trong ảnh sản phẩm và mạng xã hội.  \n- Gợi cảm xúc: mood rustic, organic, cozy, grounded — phù hợp với khách hàng tìm trải nghiệm thiên nhiên, tối giản nhưng sang trọng.  \n- Tính độc đáo: mỗi miếng có hoa vân riêng, khiến từng hộp quà hoặc khung hình trở nên duy nhất, tăng cảm giác cá nhân hóa cho người nhận.\n\nThông số kỹ thuật (liên quan)\n- Chất liệu: 100% gỗ thông tự nhiên, mặt hai bên được chà nhẵn, giữ viền vỏ cây tự nhiên.  \n- Độ dày: khoảng **1–1.5 cm** (tạo sự ổn định).  \n- Mùi: không có hương tổng hợp, chỉ hương gỗ thông tự nhiên nhẹ.  \n- Phù hợp quanh năm: dùng cho không khí ấm cúng mùa thu‑đông, phong cách cưới mùa hè hoặc chụp ảnh thương mại quanh năm.\n\nGợi ý ứng dụng cụ thể (nhanh)\n- Trong bộ quà tặng cao cấp: đặt nến trên đế gỗ trong hộp, hoặc kẹp làm thẻ tên/nhãn gỗ để tăng giá trị cảm nhận.  \n- Trong ảnh flat‑lay: kết hợp vài kích thước đế gỗ để tạo lớp, thêm phụ kiện (que đốt, kẹp hương, thẻ) để bố cục vừa có chiều sâu vừa mang cảm xúc thủ công.  \n- Tạo set trình bày tại quầy: dùng làm riser để nâng cao vài lọ nến, tạo điểm nhấn cho góc trưng bày.\n\nKết luận ngắn\nĐế gỗ thông cắt lát vừa bảo quản, vừa tôn lên tính thủ công và giá trị cảm nhận của sản phẩm nến — là một khoản đầu tư nhỏ nhưng mang lại lợi ích lớn về trải nghiệm khách hàng, tính nghệ thuật trong bày trí và hiệu quả hình ảnh khi quảng bá.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Một khách hàng đang tìm kiếm một phụ kiện trang trí mùa đông cao cấp mang tính trị liệu, kết hợp giữa hũ nến thủy tinh sang trọng và các chi tiết chuyển động động học. Hãy xác định cấu hình sản phẩm phù hợp nhất và giải thích lý do.",
+            "response_time": 15.99,
+            "Judge_time": 8.21,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 348,
+                    "content_preview": "Question:\n                    How does the rotating silver snowflake theme on a premium candle pinwheel complement textured embossed glass containers?\n\n                    Answer:\n                    "
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Candle_pinwheel.md",
+                    "chunk_id": 31,
+                    "content_preview": "Product name: Candle pinwheel\n\nCategory: Home Decor / Candle Carousel / Luxury Scented Candle Accessory\n\nFeatured Candle Scent: \"Gilt Pomander & Hinoki\" by Voluspa (A rich, luxurious blend of golden p"
+                },
+                {
+                    "source": "Candle_metal_tray.md",
+                    "chunk_id": 30,
+                    "content_preview": "Product name: Candle metal tray\n\nCategory: Home Decor / Vanity Display Tray / Candle & Perfume Organizer\n\nMain Scents: Unscented (Premium Finished Metal and Glass construction).\n\nSeason: Year-round (A"
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 32,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                }
+            ],
+            "ground_truth_answer": "Lựa chọn phù hợp nhất là bộ Candle Pinwheel cao cấp. Bộ sản phẩm bao gồm một hũ nến Voluspa cỡ lớn được đựng trong hũ thủy tinh dày màu hổ phách hoặc vàng hồng với họa tiết nổi tinh xảo. Hương thơm 'Gilt Pomander & Hinoki' kết hợp cam pomander vàng, quả holly, bạch đậu khấu và gỗ hinoki Nhật Bản tạo cảm giác ấm áp mùa lễ hội. Phía trên hũ nến là tua-bin kim loại xoay bằng nhiệt được trang trí bằng các chi tiết như bông tuyết, tuần lộc hoặc cây thông. Khi nến cháy, luồng khí nóng làm tua-bin quay và tạo ra các bóng đổ chuyển động đẹp mắt trên tường, mang lại cảm giác huyền ảo, thư giãn và sang trọng.",
+            "answer": "### Đề xuất cấu hình phù hợp nhất\nCấu hình chính: **Candle pinwheel (bộ chong chóng nến cao cấp)** — hũ nến Voluspa \"Gilt Pomander & Hinoki\" đặt trong hũ thủy tinh dập nổi kèm chong chóng bạc xoay.\n\n- Fragrance / Hương: Gilt Pomander & Hinoki — woody, ấm & gia vị (phù hợp không khí mùa đông).\n- Mùa dùng: Thu – Đông, lễ Giáng Sinh.\n- Mood: Mơ màng, huyền ảo, ấm áp, sang trọng, trị liệu.\n- Kĩ thuật / Thiết kế: hợp kim phản ứng nhiệt mạ sáng, chong chóng bằng bạc/đồng bóng; hũ thủy tinh dày màu hổ phách/rose-gold với họa tiết ren dập nổi; có các charm hình bông tuyết, tuần lộc, cây thông.\n\nTại sao phù hợp:\n- Chuyển động xoay nhẹ của chong chóng tạo hiệu ứng thị giác lặp đi lặp lại, mang tính thư giãn / trị liệu.\n- Bề mặt thủy tinh dập nổi kết hợp với chong chóng bạc phản chiếu ánh sáng, tăng cảm giác huyền ảo và ấm cúng mùa đông.\n- Thiết kế cao cấp, phù hợp làm trung tâm bàn tiệc lễ, góc thư giãn hoặc quà tặng sang trọng.\n\n### Phụ kiện bổ trợ (nên kết hợp)\n1) Candle rotation tray — nếu muốn phiên bản tối giản/động học thuần túy\n- Vật liệu: hợp kim nhẹ phản ứng nhiệt, có bản vàng hoặc bạc.\n- Công dụng: dùng tealight, tạo chuyển động quay nhờ luồng không khí nóng, đổ bóng động học.\n- Khi dùng cùng chong chóng hũ lớn sẽ có lựa chọn đơn giản, giá cả phải chăng hơn hoặc để tạo lớp chuyển động nhỏ kế bên hũ chính.\n\n2) Candle metal tray hoặc Candle Tray (khay gương / khay inox)\n- Chức năng: nền phản chiếu/ bảo vệ bề mặt (bắt sáng, tăng hiệu ứng ánh/đổ bóng; hứng sáp nến).\n- Lợi ích: nâng tầm trưng bày, tăng sự lấp lánh và bảo vệ bàn/kệ.\n\nGợi ý quyết định: nếu mục tiêu là \"mang tính trị liệu + sang trọng mùa đông\" thì ưu tiên chọn **Candle pinwheel với hũ Voluspa dập nổi + đặt trên khay gương**. Nếu muốn phong cách tối giản, thêm hoặc thay bằng **Candle rotation tray** để có hiệu ứng quay nhỏ gọn.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Mô tả các yếu tố đóng gói kỹ thuật và những lợi thế an toàn khi sử dụng hộp diêm Candle Matchbox phong cách tối giản cao cấp thay vì bật lửa dùng một lần để thắp các tim nến nằm sâu trong hũ.",
+            "response_time": 15.57,
+            "Judge_time": 8.34,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 386,
+                    "content_preview": "Question:\n                    How does a minimalist 'Good Day' typography slide-box design elevate a basic candle lighting utility item?\n\n                    Answer:\n                    It transforms "
+                },
+                {
+                    "source": "Candle_matchbox.md",
+                    "chunk_id": 29,
+                    "content_preview": "Product name: Candle matchbox\n\nCategory: Candle Accessory / Luxury Safety Matches\n\nMain Scents: Unscented (Natural Aspen Wood / Sulfur-Free Tip).\n\nSeason:ear-round (An absolute daily essential for can"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                }
+            ],
+            "ground_truth_answer": "Candle Matchbox sử dụng hộp diêm dạng trượt chắc chắn với phong cách thiết kế tối giản và bề mặt đánh lửa dạng tổ ong ở cạnh bên. Bên trong là các que gỗ tự nhiên chất lượng cao, đầu que được phủ hợp chất đánh lửa an toàn và sạch. So với bật lửa nhựa dùng một lần, các que diêm dài này cho thời gian cháy lâu hơn, ngọn lửa ổn định hơn và giúp ngón tay người dùng luôn ở khoảng cách an toàn khi thắp các tim nến nằm sâu trong hũ thủy tinh hoặc các hũ nến nhiều tim đã cháy xuống thấp.",
+            "answer": "Yếu tố đóng gói kỹ thuật\n- Thiết kế hộp trượt (slider matchbox) chắc chắn, dễ rút que diêm mà vẫn bảo vệ đầu diêm khi không dùng.\n- Bề mặt ma sát dạng tổ ong (honeycomb-textured friction strike pad) chạy dọc cạnh hộp để quẹt an toàn, độ bám tốt.\n- Que diêm dài bằng gỗ tự nhiên (Natural Aspen Wood) — chiều dài tăng khả năng tiếp cận trong các hũ nến sâu.\n- Đầu diêm không chứa lưu huỳnh (sulfur-free tip) và được mạ hóa chất cháy sạch, cho ngọn lửa ổn định, ít khói, không ám mùi.\n- Phối màu tương phản và hộp tối giản (ví dụ hộp đen/đầu than, hộp trắng/đầu trắng) giúp dễ định vị khi thắp nến trong không gian tối.\n- Vật liệu thân thiện môi trường: gỗ cao cấp, đóng gói tập trung vào thẩm mỹ và độ bền.\n\nLợi thế an toàn khi dùng thay vì bật lửa dùng một lần\n- Khoảng cách an toàn: que diêm dài giúp giữ tay và ngón tay xa ngọn lửa khi thắp các tim nằm sâu trong hũ, giảm nguy cơ bỏng.\n- Ngọn lửa ổn định và cháy lâu hơn: thiết kế que dài và đầu cháy chất lượng cho thời gian cháy đủ lâu để thắp tim mà không phải cúi sát mặt hoặc thao tác nhiều lần.\n- Quẹt an toàn: miếng ma sát tổ ong trên thân hộp cho độ quẹt chắc, giảm nguy cơ trượt hoặc quẹt nhiều lần gây bất ổn.\n- Ít khói và không ám mùi: đầu diêm sạch cháy giúp không làm ảnh hưởng mùi thơm của nến và giảm bụi than trong hũ.\n- Khả năng chống gió tốt hơn bật lửa rẻ: phù hợp thắp nến trong chậu sâu hoặc nhiều tim mà không bị tắt giữa chừng.\n- Thẩm mỹ và xử lý có ý thức: hộp diêm phong cách tối giản vừa là phụ kiện trưng bày vừa khuyến khích thao tác chậm rãi, an toàn hơn so với bật lửa dùng một lần.\n\nNếu cần, mình có thể tóm tắt ngắn gọn hơn hoặc so sánh trực tiếp các tính năng an toàn cụ thể.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "So sánh cảm nhận của khách hàng và mục đích sử dụng chính giữa mô hình gấu sáp trang trí không mùi Candle Holder và bộ quà tặng hương liệu chức năng Dalat Gift.",
+            "response_time": 13.22,
+            "Judge_time": 7.09,
+            "retrieved_docs": [
+                {
+                    "source": "Dalat_Gift.md",
+                    "chunk_id": 37,
+                    "content_preview": "Product name: Dalat Gift\n\nCategory: Scented Candle & Travel Perfume Gift Set / Essential Oil Keepsake\n\nMain Scents: Pine Wood, Fresh Moss, Lemon Peel, Warm Amber, Cedarwood, and Crisp Mountain Tea.\n\nS"
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 32,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Candle_holder.md",
+                    "chunk_id": 28,
+                    "content_preview": "Product name: Candle holder\n\nCategory: Decorative Candle\n\nMain Scents: - Unspecified - Decorative Product\n\nSeason: Any Season\n\nFragrance Family: Decorative / Unscented\n\nScent Profile:No official fragr"
+                },
+                {
+                    "source": "YOU_ARE_THE_MAGIC.md",
+                    "chunk_id": 59,
+                    "content_preview": "Product name: YOU ARE THE MAGIC\n\nCategory: Scented Candle Gift Set\n\nMain Scents: Sweet Roasted Apple, Festive Cinnamon, Warm Clove, Cozy Pine Needle, Soft Vanilla Frosting.\n\nSeason: Winter / Christmas"
+                }
+            ],
+            "ground_truth_answer": "Candle Holder hình gấu không mùi chủ yếu được xem là vật phẩm trang trí dễ thương và tối giản. Sản phẩm bao gồm tượng gấu bằng sáp thủ công màu trắng đặt dưới chụp kính bảo vệ trên đế gỗ, thường được sử dụng để trang trí phòng ngủ, phòng trẻ em hoặc làm đạo cụ chụp ảnh. Ngược lại, Dalat Gift là một bộ quà tặng hương liệu chức năng được thiết kế để mang lại trải nghiệm thư giãn đa giác quan. Bộ sản phẩm bao gồm nến thơm Đà Lạt, nắp tre thân thiện môi trường, đế gỗ thông và nước hoa du lịch Mountain Tea 10ml, giúp tái hiện không khí se lạnh và thơ mộng của thành phố Đà Lạt đồng thời lan tỏa hương thơm trong không gian.",
+            "answer": "### Candle Holder — Mô hình gấu sáp trang trí (không mùi)\n- Cảm nhận của khách hàng: dễ thương, duyên dáng, phong cách tối giản; thường được xem là vật trang trí hơn là sản phẩm hương thơm; tạo cảm giác ấm cúng, ngọt ngào, yên bình.\n- Mục đích sử dụng chính: trang trí phòng ngủ, bàn làm việc, kệ phòng khách; làm quà tặng, đạo cụ chụp ảnh hoặc đồ sưu tập; không dùng để tạo mùi (sản phẩm mang tính trang trí).\n\n### Dalat Gift — Bộ quà tặng hương liệu chức năng\n- Cảm nhận của khách hàng: gợi nhớ, thư giãn, nghệ thuật; được khen vì tái hiện không khí se lạnh, lãng mạn của Đà Lạt; đánh giá cao sự kết hợp giữa nến nhà và xịt nước hoa cá nhân cùng phần trang trí cao cấp khi mở hộp.\n- Mục đích sử dụng chính: quà tặng sinh nhật hoặc lưu niệm, chăm sóc bản thân trị liệu, tạo bầu không khí thư giãn tại không gian làm việc/nhà; dùng để mang theo hương nhẹ (xịt 10ml) và tạo không gian ấm áp, thơm mát trong nhà.\n\n### So sánh nhanh\n- Tính năng: Candle Holder là sản phẩm trang trí **không mùi**, Dalat Gift là bộ **có hương** (nến + xịt nước hoa).\n- Mục đích chính: Candle Holder hướng tới trang trí và tạo cảm xúc dễ thương/ấm áp; Dalat Gift hướng tới trải nghiệm giác quan, thư giãn và tặng quà có ý nghĩa.\n- Đối tượng: Candle Holder phù hợp người thích decor, sưu tầm; Dalat Gift phù hợp người yêu thiên nhiên, thích hương gỗ-thảo mộc và muốn trải nghiệm thư giãn.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Giải thích cách các phiên bản hoàn thiện khác nhau của khay thép không gỉ dạng capsule tối giản (Vàng bóng, Bạc Chrome bóng và Cầu vồng ánh sắc) giúp người dùng thay đổi phong cách trang trí nội thất mà vẫn duy trì khả năng bảo vệ đồ nội thất giống nhau.",
+            "response_time": 19.17,
+            "Judge_time": 8.36,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 341,
+                    "content_preview": "Question:\n                    How do different metallic finishes like Matte Black and Luxury Rose Gold influence the perceived luxury level of a candle ritual?\n\n                    Answer:\n           "
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "Candle_metal_tray.md",
+                    "chunk_id": 30,
+                    "content_preview": "Product name: Candle metal tray\n\nCategory: Home Decor / Vanity Display Tray / Candle & Perfume Organizer\n\nMain Scents: Unscented (Premium Finished Metal and Glass construction).\n\nSeason: Year-round (A"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                }
+            ],
+            "ground_truth_answer": "Tất cả các phiên bản hoàn thiện đều có cùng khả năng bảo vệ đồ nội thất vì được chế tạo từ thép không gỉ chống gỉ cấp thực phẩm, có bề mặt đánh bóng gương và viền mép nâng nhẹ để giữ lại sáp nóng, vết dầu hoặc các vòng nước. Tuy nhiên, mỗi lớp hoàn thiện mang lại một phong cách thị giác khác nhau: phiên bản Vàng bóng tạo cảm giác sang trọng và ấm áp; phiên bản Bạc Chrome mang phong cách hiện đại, sạch sẽ và tối giản; trong khi phiên bản Cầu vồng ánh sắc tạo hiệu ứng đổi màu nổi bật dưới ánh sáng, biến một vật dụng chức năng thành điểm nhấn trang trí đầy cá tính.",
+            "answer": "Dưới đây là cách mỗi phiên bản hoàn thiện của khay thép không gỉ dạng capsule giúp thay đổi phong cách trang trí trong khi vẫn giữ nguyên khả năng bảo vệ đồ nội thất:\n\nTính năng bảo vệ (không đổi giữa các phiên bản)\n- Chất liệu: hợp kim thép không gỉ chống rỉ, mạ gương; chịu nhiệt tốt.  \n- Thiết kế: thân oval chắc chắn, bề mặt phẳng và ổn định, viền hơi nâng lên để giữ vết sáp hoặc dầu tránh tràn ra mặt bàn.  \n- Cảm nhận: cảm giác kim loại nặng, chắc, bền — bảo vệ đồ đạc khỏi nhiệt, vết bẩn và vệt dầu như nhau ở mọi hoàn thiện.\n\nBrilliant Yellow Gold\n- Ảnh hưởng thẩm mỹ: tạo vẻ sang trọng, thanh lịch và hơi kiểu “boutique/hoàng gia”.  \n- Phù hợp với: không gian cần điểm nhấn lấp lánh, phong cách glam hoặc nội thất có tông vàng/ấm.  \n- Lý do chọn: biến khay thành phụ kiện trang trí cao cấp mà vẫn bảo vệ bề mặt như bản chuẩn.\n\nPolished Chrome Silver\n- Ảnh hưởng thẩm mỹ: đem lại vẻ tối giản, hiện đại và bóng bẩy, giúp không gian trông gọn gàng và tinh tế.  \n- Phù hợp với: nội thất phong cách Bắc Âu/minimal, không gian có tông lạnh hoặc kim loại sáng.  \n- Lý do chọn: giữ đúng tinh thần “minimalist, neat, polished” mà vẫn bảo vệ bề mặt hiệu quả.\n\nIridescent Rainbow / Chameleon\n- Ảnh hưởng thẩm mỹ: tạo điểm nhấn thị giác mạnh, nghệ thuật và độc đáo — khay trở thành “dazzling centerpiece”.  \n- Phù hợp với: không gian cần chi tiết bắt mắt, phong cách sáng tạo hoặc để làm tâm điểm trang trí.  \n- Lý do chọn: biến chức năng tổ chức/ bảo vệ thành món đồ trang trí nổi bật mà công năng vẫn nguyên vẹn.\n\nTóm lại: Bạn có thể chọn phiên bản hoàn thiện dựa trên mood và phong cách nội thất mong muốn — vàng cho sang trọng, chrome cho tối giản hiện đại, cầu vồng cho điểm nhấn nghệ thuật — trong khi khả năng bảo vệ bề mặt (chống nhiệt, chống rò rỉ sáp, chống rỉ) vẫn duy trì như nhau.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Phân tích vì sao việc sử dụng đầu diêm không chứa lưu huỳnh lại quan trọng về mặt kỹ thuật trong việc bảo toàn khả năng lan tỏa hương thơm thực sự của các loại nến hương liệu cao cấp.",
+            "response_time": 12.65,
+            "Judge_time": 5.78,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 371,
+                    "content_preview": "Question:\n                    What is the primary formulation difference between premium safety matches and cheap standard utility matchboxes?\n\n                    Answer:\n                    Premium "
+                },
+                {
+                    "source": "Lumos_Honeydrew_And_Coconut.md",
+                    "chunk_id": 44,
+                    "content_preview": "Product name: Lumos Honeydrew And Coconut\n\nCategory: Reed Diffuser\n\nMain Scents: Honeydew Melon, Coconut Milk, Vanilla, Soft Musk, Sheer Florals.\n\nSeason: Summer / Spring\n\nFragrance Family: Fruity / T"
+                },
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 223,
+                    "content_preview": "Question:\n                    What are the main scents of Candle matchbox?\n\n                    Answer:\n                    Unscented (Natural Aspen Wood / Sulfur-Free Tip)."
+                }
+            ],
+            "ground_truth_answer": "Các que diêm an toàn cao cấp được sản xuất từ gỗ tự nhiên và sử dụng hợp chất đánh lửa không chứa lưu huỳnh. Điều này giúp quá trình cháy diễn ra sạch hơn, không sinh ra mùi hóa chất hăng hoặc mùi trứng thối đặc trưng của lưu huỳnh và một số nhiên liệu butane. Nhờ đó, các nốt hương đầu dễ bay hơi của nến hương liệu cao cấp không bị lẫn với mùi hóa chất, giúp tinh dầu thực vật lan tỏa một cách tinh khiết và trung thực hơn trong không gian.",
+            "answer": "Việc dùng đầu diêm không chứa lưu huỳnh quan trọng vì:\n\n- Đầu diêm không chứa lưu huỳnh / không mùi (Natural Aspen Wood / Sulfur-Free Tip) không tạo mùi hóa chất nặng khi đốt, do đó không che lấp hoặc làm biến dạng hương thơm thật của nến hương liệu cao cấp.  \n\n- Diêm cao cấp dùng que gỗ tự nhiên và đầu chấm cháy sạch (clean-burning safety chemicals, avoiding sulfur or toxic materials) nên ngọn lửa sinh ra ít mùi lạ, giúp giữ nguyên hồ sơ mùi (scent profile) mà nhà sản xuất muốn truyền tải.  \n\n- Mùi khói hoặc mùi hóa chất hậu đốt có thể phá hủy hiệu quả “fragrance throwing” của nến; việc loại bỏ nguồn mùi phụ này giữ cho không gian thơm theo đúng dự định: trong, rõ và nhất quán.  \n\nTóm lại, đầu diêm không chứa lưu huỳnh giúp nến tỏa đúng mùi hương, tránh mùi lạ từ diêm làm nhiễu trải nghiệm hương thơm cao cấp.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Các chân bi kim loại tròn nhẵn trên khay gương trang điểm màu vàng bóng đóng vai trò cấu trúc gì trong việc quản lý mỹ phẩm và tinh dầu khuếch tán?",
+            "response_time": 15.55,
+            "Judge_time": 8.81,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 324,
+                    "content_preview": "Question:\n                    What is the structural utility of the slightly raised rim on a minimalist stainless steel candle tray?\n\n                    Answer:\n                    The slightly raise"
+                },
+                {
+                    "source": "Candle_metal_tray.md",
+                    "chunk_id": 30,
+                    "content_preview": "Product name: Candle metal tray\n\nCategory: Home Decor / Vanity Display Tray / Candle & Perfume Organizer\n\nMain Scents: Unscented (Premium Finished Metal and Glass construction).\n\nSeason: Year-round (A"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 32,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                }
+            ],
+            "ground_truth_answer": "Các chân bi kim loại được tích hợp ở đáy khung hợp kim màu vàng chống gỉ nhằm nâng mặt gương phản chiếu lên khỏi bề mặt bàn. Thiết kế này tạo ra một khoảng cách cách nhiệt giúp bảo vệ các bề mặt gỗ hoặc đá cẩm thạch khỏi nhiệt độ từ đáy nến nóng. Ngoài ra, khoảng hở này còn ngăn hơi ẩm hoặc tinh dầu vô tình tràn ra khỏi khay bị giữ lại trên mặt bàn, từ đó hạn chế các vết ố, vòng nước hoặc trầy xước và giữ cho khu vực trang điểm luôn gọn gàng.",
+            "answer": "### Khay gương vàng bóng — vai trò của các chân bi kim loại tròn nhẵn\n\n- Nâng đỡ và nâng cao khay: các chân bi nâng khay lên một khoảng nhỏ so với mặt bàn, tạo bề mặt ổn định để đặt lọ dropper thủy tinh, bình khuếch tán que (reed diffuser), trang sức và nến.\n\n- Bảo vệ bề mặt kê đồ: khoảng cách này giúp tránh tiếp xúc trực tiếp giữa đáy khay và mặt bàn, ngăn vết dầu, vòng tinh dầu hay trầy xước trên bàn trang điểm hoặc mặt đá.\n\n- Giúp sắp xếp gọn gàng và trình bày sang trọng: cấu trúc chân làm khay trông tinh chỉnh hơn, hỗ trợ việc tổ chức mỹ phẩm và tinh dầu thành một khu vực trưng bày ngăn nắp, tiện thao tác.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hãy tổng hợp một giải thích kỹ thuật chi tiết về cách một tim nến quá dài, không được cắt tỉa gây ra muội đen và cách dụng cụ cắt tim nến chuyên nghiệp loại bỏ nguy cơ này về mặt cấu trúc.",
+            "response_time": 17.49,
+            "Judge_time": 8.19,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 320,
+                    "content_preview": "Question:\n                    What is the primary technical function of utilizing a specialized candle wick trimmer instead of regular household scissors?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 431,
+                    "content_preview": "Question:\n                    How does trimming a candle's wick to approximately 3mm after each use technically prevent the formation of black smoke?\n\n                    Answer:\n                    T"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                }
+            ],
+            "ground_truth_answer": "Một tim nến quá dài và không được cắt tỉa sẽ tạo ra lượng carbon tích tụ quá mức, dẫn đến ngọn lửa lớn, dao động không ổn định và cháy quá mạnh. Ngọn lửa này hút sáp nóng chảy lên quá nhanh khiến quá trình đốt cháy không hoàn toàn. Kết quả là các hạt muội đen được sinh ra, bám lên thành lọ thủy tinh và làm giảm chất lượng không khí trong nhà. Dụng cụ cắt tim nến chuyên nghiệp giải quyết vấn đề này nhờ thiết kế gồm cán kéo dài, lệch góc và lưỡi cắt ngang chuyên dụng tích hợp khay hứng hình tròn. Phần cán dài cho phép người dùng tiếp cận sâu bên trong lọ nến để cắt tim xuống mức an toàn khoảng 1/4 inch trước mỗi lần đốt. Lưỡi cắt ngang giúp cắt gọn sợi tim mà không làm tưa, trong khi khay hứng giữ lại phần carbon đã cắt, ngăn không cho rơi xuống làm bẩn bề mặt sáp.",
+            "answer": "### Cơ chế gây muội đen khi tim nến quá dài\n- Tim quá dài tạo ngọn lửa lớn hơn và không ổn định, làm tim hút lên đồng thời nhiều sáp và oxy hơn.\n- Sự kết hợp sáp + oxy vượt mức khiến cháy không hoàn toàn, phát sinh hạt carbon (muội đen) và khói đen.\n- Ngọn lửa nhảy múa/dao động do tim dài cũng tăng văng muội lên thành lọ/không khí, gây vệt muội trên bề mặt kính và ô nhiễm hồ sáp.\n\n### Cách dụng cụ cắt tim nến chuyên nghiệp loại bỏ nguy cơ (về mặt cấu trúc)\n- Cắt xuống chiều cao lý tưởng:\n  - Việc cắt tim về kích thước khuyến nghị (ví dụ khoảng **3 mm** sau mỗi lần đốt hoặc dụng cụ chuyên dụng cắt xuống **chiều cao lý tưởng ~1/4 inch**) kiểm soát kích thước ngọn lửa và đảm bảo tốc độ cháy ổn định, từ đó ngăn cháy không hoàn toàn và sản sinh muội.\n- Cơ chế lưỡi cắt chính xác:\n  - Lưỡi ngang cắt sát (flush-cutting) cho đường cắt sạch, không làm xơ rối bấc, giúp ngọn lửa ổn định ngay sau khi cắt.\n- Khay bắt mảnh carbon tích hợp:\n  - Khay/đĩa bắt mảnh ở vị trí lưỡi cắt thu giữ đầu bấc cháy (mảnh carbon) ngay lập tức, ngăn chúng rơi trở lại hồ sáp và tránh gây ô nhiễm sáp dẫn đến đốm muội trên kính.\n- Thiết kế tay cầm dài, góc nghiêng:\n  - Tay cầm dài và thân kéo lệch góc cho phép tiếp cận sâu trong lọ thủy tinh cao mà vẫn cắt chính xác, bảo đảm cắt tim ở vị trí đúng mà không chạm vào thành lọ hay hồ sáp.\n- Vật liệu và độ bền:\n  - Cấu tạo inox chống rỉ và lưỡi cắt chắc cho phép cắt đều, bền, duy trì hiệu năng kỹ thuật trong thời gian dài để giảm nguy cơ muội do tim hỏng/đứt.\n\nKết quả tổng hợp: kiểm soát chiều cao tim + cắt sạch + bắt mảnh carbon + tiếp cận sâu là các yếu tố cấu trúc chính giúp dụng cụ cắt tim chuyên nghiệp loại bỏ nguyên nhân sinh muội đen và giảm khói.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Phân tích các đặc tính an toàn về nhiệt động học và cơ học được tích hợp trong giá quay nến màu vàng gold bóng so với các chân đế nến hở thông thường.",
+            "response_time": 22.45,
+            "Judge_time": 1.89,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 375,
+                    "content_preview": "Question:\n                    How does a textured ergonomic grip at the tail handle of a candle snuffer enhance safe handling?\n\n                    Answer:\n                    It prevents slippage and"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Candle_matchbox.md",
+                    "chunk_id": 29,
+                    "content_preview": "Product name: Candle matchbox\n\nCategory: Candle Accessory / Luxury Safety Matches\n\nMain Scents: Unscented (Natural Aspen Wood / Sulfur-Free Tip).\n\nSeason:ear-round (An absolute daily essential for can"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                }
+            ],
+            "ground_truth_answer": "Các chân đế nến hở thông thường không có những cơ chế bảo vệ giúp cố định nến hoặc kiểm soát luồng nhiệt. Ngược lại, giá quay nến màu vàng gold bóng được thiết kế với nhiều đặc tính an toàn cơ học và nhiệt động học. Về mặt cơ học, phần đế có một khoang kim loại hình tròn được chế tạo vừa khít để giữ cố định nến tealight, ngăn nến bị trượt hoặc đổ khi va chạm. Về mặt nhiệt động học, sản phẩm sử dụng thanh đỡ cong chắc chắn để định vị cánh quạt kim loại nhiều lá phía trên ngọn lửa. Thiết kế này hướng luồng khí nóng bốc lên theo phương thẳng đứng để làm quay cánh quạt một cách an toàn, đồng thời tạo ra các hiệu ứng ánh sáng chuyển động phản chiếu trên bề mặt mạ vàng.",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Một khách hàng mong muốn trải nghiệm mở hộp mang cảm giác rừng núi se lạnh, kết hợp các yếu tố gỗ tự nhiên cùng sản phẩm tạo hương cho cá nhân và không gian. Hãy xác định bộ quà tặng phù hợp và liệt kê các thành phần cấu trúc của nó.",
+            "response_time": 9.96,
+            "Judge_time": 6.7,
+            "retrieved_docs": [
+                {
+                    "source": "Dalat_Gift.md",
+                    "chunk_id": 37,
+                    "content_preview": "Product name: Dalat Gift\n\nCategory: Scented Candle & Travel Perfume Gift Set / Essential Oil Keepsake\n\nMain Scents: Pine Wood, Fresh Moss, Lemon Peel, Warm Amber, Cedarwood, and Crisp Mountain Tea.\n\nS"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 402,
+                    "content_preview": "Question:\n                    How does a natural wood cross-cut pine coaster complement a rustic gift set containing dried flowers?\n\n                    Answer:\n                    It completes a cohe"
+                },
+                {
+                    "source": "Nen_and_Hoa.md",
+                    "chunk_id": 52,
+                    "content_preview": "Product name: Nen and Hoa\n\nCategory: Scented Candle\n\nMain Scents: Exotic Jasmine, Sweet Ylang-Ylang, Warm Sandalwood, Smooth Vanilla, Soft Amber.\n\nSeason: Autumn / Winter (Also highly suitable for coz"
+                },
+                {
+                    "source": "YOU_ARE_THE_MAGIC.md",
+                    "chunk_id": 59,
+                    "content_preview": "Product name: YOU ARE THE MAGIC\n\nCategory: Scented Candle Gift Set\n\nMain Scents: Sweet Roasted Apple, Festive Cinnamon, Warm Clove, Cozy Pine Needle, Soft Vanilla Frosting.\n\nSeason: Winter / Christmas"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 559,
+                    "content_preview": "Question:\n                    What structural elements are included in the packaging box of Lumos Tropical Orchard to facilitate the continuous scent throw?\n\n                    Answer:\n              "
+                }
+            ],
+            "ground_truth_answer": "Sản phẩm phù hợp là bộ quà tặng Dalat Gift của Heny Garden, được thiết kế cho mùa Thu, Đông và thời tiết mưa nhằm tái hiện không khí hoài niệm, sương mù của thành phố Đà Lạt. Bộ quà được đóng trong hộp giấy kraft cứng chứa giấy vụn trang trí. Bên trong gồm: một lọ nến hương 'Đà Lạt' bằng thủy tinh trong suốt với các nốt hương Gỗ Thông & Rêu, Vỏ Chanh, Hổ Phách và Tuyết Tùng, đi kèm nắp tre thân thiện môi trường và dấu sáp trang trí; một chai nước hoa xịt 'Mountain Tea' dung tích 10ml với nắp đen; một bó hoa cẩm tú cầu khô màu kem kết hợp cỏ đuôi thỏ; hai lát cam sấy khô thật; và một đế lót bằng gỗ thông cắt ngang thân cây để bảo vệ mặt bàn khỏi nhiệt từ nến.",
+            "answer": "### Đề xuất bộ quà tặng phù hợp\nBộ quà tặng \"Dalat Gift\" — Heny Garden\n\nTại sao phù hợp:\n- Hương: Gỗ thông, rêu xanh, vỏ chanh, hổ phách và tuyết tùng tái tạo ngay cảm giác rừng núi se lạnh, sương mù.\n- Kết hợp cá nhân & không gian: bao gồm nến tạo không gian ấm áp và chai xịt \"Mountain Tea\" 10ml để mang hương theo người.\n- Yếu tố gỗ tự nhiên và trang trí hoa khô tạo trải nghiệm mở hộp rustic, gần gũi với thiên nhiên.\n\n### Thành phần cấu trúc của bộ quà tặng\n- Thương hiệu: **Heny Garden**\n- Hộp quà: hộp kraft chắc chắn, lót giấy xé crinkle.\n- Nến \"Đà Lạt\":\n  - Hương chính: Gỗ Thông & Rêu, Vỏ Chanh, Hổ Phách, Tuyết Tùng.\n  - Hũ thủy tinh trong, nắp gỗ tre tự nhiên.\n  - Dấu hiệu: tem wax seal trên hũ.\n- Nước hoa kèm theo:\n  - \"Mountain Tea\" Eau de Toilette — chai xịt travel 10ml thủy tinh trong, nắp đen.\n- Trang trí & phụ kiện:\n  - Bó hoa hydrangea khô màu kem kèm đệm bunny tail.\n  - Hai lát cam thật sấy khô.\n  - Đế lót nến bằng khúc gỗ thông cắt ngang (natural wood cross-cut pine coaster).\n\nNếu bạn muốn, mình có thể giúp soạn lời tặng/thiệp phù hợp phong cách rustic và gợi ý cách bày trí khi tặng.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Xác định cách các biến thể thiết kế vật trang trí quay bằng nhiệt của Candle Pinwheel làm thay đổi bầu không khí lễ hội mùa đông theo cảm nhận của khách hàng.",
+            "response_time": 19.69,
+            "Judge_time": 7.53,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 235,
+                    "content_preview": "Question:\n                    What season is Candle pinwheel suitable for?\n\n                    Answer:\n                    Autumn / Winter Holiday Season (Perfect for cozy Christmas nights, winter ce"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 348,
+                    "content_preview": "Question:\n                    How does the rotating silver snowflake theme on a premium candle pinwheel complement textured embossed glass containers?\n\n                    Answer:\n                    "
+                },
+                {
+                    "source": "Candle_pinwheel.md",
+                    "chunk_id": 31,
+                    "content_preview": "Product name: Candle pinwheel\n\nCategory: Home Decor / Candle Carousel / Luxury Scented Candle Accessory\n\nFeatured Candle Scent: \"Gilt Pomander & Hinoki\" by Voluspa (A rich, luxurious blend of golden p"
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 32,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                }
+            ],
+            "ground_truth_answer": "Bộ Candle Pinwheel cao cấp tạo ra những sắc thái không khí lễ hội mùa đông khác nhau thông qua các phiên bản hoàn thiện bằng kim loại bạc sáng hoặc vàng bóng kết hợp với các họa tiết trang trí theo chủ đề lễ hội như bông tuyết, cây thông Noel và tuần lộc. Theo cảm nhận của khách hàng, khi nến được thắp sáng bên dưới lọ thủy tinh Voluspa dập nổi cao cấp, luồng khí nóng sẽ tự động làm quay các vật trang trí treo. Các chi tiết bạc hoặc vàng phản chiếu ánh lửa và tạo nên những bóng đổ chuyển động trên tường và gương trang trí, biến trải nghiệm đốt nến thông thường thành một nghi thức mùa lễ hội đầy mộng mơ, kỳ diệu và thư giãn.",
+            "answer": "Các biến thể thiết kế của vật trang trí quay bằng nhiệt trên Candle Pinwheel thay đổi bầu không khí lễ hội mùa đông theo cảm nhận khách hàng như sau:\n\nCác biến thể thiết kế và tác động cảm nhận\n- Snowflake (bông tuyết mạ bạc, chi tiết cắt tinh xảo)\n  - Hiệu ứng: lớp bạc bóng bắt và nhân đôi ánh sáng phản chiếu từ bề mặt thủy tinh dập nổi, khuếch đại chủ đề mùa đông kỳ ảo.\n  - Cảm nhận khách hàng: tạo không khí mê hoặc, sang trọng và mang tính lễ hội mạnh mẽ; nâng trải nghiệm thắp nến thành nghi thức thư giãn.\n\n- Reindeer (hình hươu đi bộ, thường ở lớp hoàn thiện bạc)\n  - Hiệu ứng: tạo các bóng chuyển động rõ nét, mang đến họa ánh sáng chạy múa trên tường.\n  - Cảm nhận khách hàng: gợi cảm giác kỳ ảo, lãng mạn và vui tươi; làm điểm nhấn thu hút trên bàn tiệc hay lò sưởi.\n\n- Pine trees (cây thông trang trí)\n  - Hiệu ứng: bổ sung rõ nét yếu tố lễ hội truyền thống khi xoay và đổ bóng.\n  - Cảm nhận khách hàng: phù hợp để làm trung tâm bàn tiệc hoặc trang trí ấm cúng, mang âm hưởng lễ Giáng sinh.\n\n- Fairy silhouettes / thiết kế vàng (cánh tiên, thường ở bản mạ vàng bóng)\n  - Hiệu ứng: ánh vàng bóng ấm áp, bóng mờ mềm mại khi quay.\n  - Cảm nhận khách hàng: đem lại cảm giác nghệ thuật, ấm áp và dịu nhẹ; dễ phối với nội thất kim loại ấm.\n\nTác dụng chung của cơ chế quay bằng nhiệt\n- Chuyển động quay tạo hiệu ứng ánh sáng động, đổ bóng nhảy múa khắp không gian.\n- Khách hàng mô tả sản phẩm là mê hoặc, mơ mộng, đầy sang trọng và có tác dụng làm dịu, thư giãn—biến việc thắp nến thành một nghi thức lễ hội đặc biệt.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Giải thích vì sao các lát đế gỗ thông tự nhiên được chà nhám mịn ở cả hai mặt nhưng vẫn giữ nguyên lớp vỏ cây thô ráp bên ngoài, tập trung vào sự cân bằng giữa công năng và trang trí nội thất.",
+            "response_time": 11.38,
+            "Judge_time": 5.21,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 392,
+                    "content_preview": "Question:\n                    How does a textured tree bark edge on a pine coaster enhance a botanical-themed photography layout?\n\n                    Answer:\n                    It introduces a raw, "
+                },
+                {
+                    "source": "Wood_tray.md",
+                    "chunk_id": 58,
+                    "content_preview": "Product name: Wood tray\n\nCategory: Home Decor / Candle Accessory / Photography Props\n\nMain Scents: Unscented (Natural, mild earthy pine wood aroma).\n\nSeason: Year-round (An absolute essential for cozy"
+                }
+            ],
+            "ground_truth_answer": "Việc xử lý hai bề mặt gỗ theo cách khác nhau nhằm cân bằng giữa tính thực dụng và vẻ đẹp mộc mạc. Hai mặt được chà nhám mịn để tạo ra bề mặt phẳng, ổn định với độ dày đồng đều từ 1 đến 1,5 cm, giúp các vật như lọ nến, cốc uống nước hoặc chậu cây đứng vững mà không bị nghiêng hoặc rung lắc. Bề mặt phẳng này còn giúp hạn chế nguy cơ đổ sáp nóng hoặc nứt hỏng mặt bàn do nhiệt. Trong khi đó, phần vỏ cây tự nhiên cùng các vòng sinh trưởng được giữ nguyên để bảo tồn vẻ đẹp nguyên bản của gỗ, tạo cảm giác ấm áp, thủ công và gần gũi với thiên nhiên trong trang trí nội thất.",
+            "answer": "Việc chà nhám mịn cả hai mặt nhưng giữ nguyên lớp vỏ cây thô ráp tạo ra sự cân bằng rõ ràng giữa công năng và giá trị trang trí:\n\nVề công năng\n- Bề mặt hai mặt được chà nhám mịn giúp vật đặt lên ổn định, không bị kênh, dễ lau chùi và tránh bị trầy xước hoặc bám bẩn.\n- Bề mặt mịn cũng giảm nguy cơ sần, mảnh gỗ hay gây trầy đồ vật, đồng thời giữ tính an toàn khi dùng làm đế lót nến, lót cốc hay riser trưng bày.\n- Kết cấu đồng đều và độ dày chuẩn (thường **1cm–1.5cm**) mang lại độ ổn định và khả năng chịu nhiệt khi đặt các lọ nến nóng lên trên.\n\nVề trang trí\n- Lớp vỏ cây thô ráp ngoài cùng giữ lại vẻ tự nhiên, kết cấu rỗng và đường vân độc đáo khiến mỗi lát gỗ mang tính thủ công và cá nhân hóa.\n- Việc giữ vỏ cây tạo cảm giác mộc mạc, ấm áp và “rừng” — rất phù hợp cho phong cách rustic, organic, cozy khi dùng làm đạo cụ chụp ảnh hoặc trang trí trung tâm bàn.\n- Sự tương phản giữa bề mặt mịn và viền thô làm tăng chiều sâu thị giác, khiến sản phẩm trưng bày nổi bật hơn.\n\nSự hòa hợp giữa hai yếu tố\n- Bề mặt chà nhám đảm bảo tính thực dụng: bảo vệ đồ nội thất, ổn định khi sử dụng và dễ bảo quản.\n- Viền vỏ giữ lại vẻ thẩm mỹ thiên nhiên, tạo cảm xúc và điểm nhấn trang trí.\n- Kết quả là một phụ kiện vừa tiện dụng (heat-resistant, ổn định, an toàn) vừa mang giá trị thẩm mỹ cao — phù hợp để vừa bảo vệ bàn vừa nâng tầm bố cục trang trí hoặc ảnh sản phẩm.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "So sánh các biến thể thiết kế đầu chụp của dụng cụ dập nến chuyên nghiệp (đầu trụ phẳng và đầu chuông cổ điển loe rộng) và phân tích cách chúng tối ưu hóa việc cắt oxy trong các loại nến khác nhau.",
+            "response_time": 19.06,
+            "Judge_time": 8.25,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 411,
+                    "content_preview": "Question:\n                    How does a pivoting head on a vintage bell candle snuffer simplify extinguishing flames on high mantelpiece displays?\n\n                    Answer:\n                    The"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 32,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                }
+            ],
+            "ground_truth_answer": "Cả hai kiểu đầu chụp đều được chế tạo từ hợp kim thép không gỉ chống gỉ và hoạt động bằng cơ chế treo xoay để cắt nguồn oxy, đồng thời loại bỏ mùi khói sau khi tắt nến. Tuy nhiên, mỗi thiết kế được tối ưu cho những loại nến khác nhau. Đầu trụ phẳng hiện đại có hình dạng nhỏ gọn, giúp dễ dàng đưa vào các lọ thủy tinh cổ hẹp hoặc cốc nến nhỏ mà không va chạm thành lọ. Trong khi đó, đầu chuông cổ điển loe rộng có khẩu độ lớn hơn, phù hợp để dập các loại nến nhiều tim, nến trụ lớn hoặc nến bàn ăn, giúp bao phủ ngọn lửa hiệu quả từ nhiều góc độ khác nhau.",
+            "answer": "So sánh nhanh hai biến thể đầu chụp và cách chúng tối ưu hóa việc cắt oxy\n\nĐầu trụ phẳng (sleeK flat-top cylindrical cap)\n- Phong cách: Thiết kế hình học, hiện đại (geometric cylindrical).\n- Chức năng: Khi hạ xuống chụp lên ngọn lửa, nắp trụ che kín và cắt nguồn oxy để tắt nến sạch sẽ.\n- Tính ưu việt: Kết hợp với tay cầm dài và đầu có cơ chế pivot, đầu trụ có thể tiếp xúc phẳng với tim nến khi điều chỉnh góc, giúp tránh bắn sáp và tạo ít khói.\n\nĐầu chuông cổ điển loe rộng (traditional flared vintage bell dome)\n- Phong cách: Hình chuông cổ điển, mang nét vintage, trang nhã.\n- Chức năng: Lấy nguyên lý tương tự — hạ chuông lên ngọn lửa để cắt oxy và dập tắt ngọn nến mà không thổi bay sáp hay sinh khói nhiều.\n- Tính ưu việt: Được người dùng đánh giá là mang cảm giác “lịch sự, truyền thống”; khi kết hợp với đầu pivot, chuông dễ điều chỉnh góc để ôm khít tim nến ở nhiều vị trí khó với.\n\nPhân tích tối ưu hóa việc cắt oxy cho các loại nến\n- Nguyên lý chung: Cả hai đầu đều hoạt động bằng cách hạ nắp (chuông hoặc trụ) lên ngọn lửa để cắt nguồn oxy — thao tác này tắt nến sạch và giảm khói, tránh sáp bắn.\n- Vai trò của đầu xoay (pivot) và cán dài: Cơ chế đầu xoay tự điều chỉnh góc để tiếp xúc phẳng với tim nến khi nâng/ hạ cán dài, nhờ vậy cả hai kiểu đầu đều dễ đạt hiệu quả cắt oxy trên các dạng nến khác nhau.\n- Phạm vi ứng dụng: Cả hai thiết kế phù hợp để dùng cho multi-wick soy candles, tall jar candles, deep votive cups, tapered dining table candles và các tim nến khó với như lanterns — nhờ khả năng ôm khít ngọn lửa và tiếp cận sâu nhờ cán dài.\n\nTóm lại\n- Về công năng cắt oxy và tắt nến sạch: cả hai đầu (đầu trụ phẳng và đầu chuông loe) đều tối ưu khi dùng đúng cách cùng cán dài và cơ chế pivot — khác biệt chính là yếu tố thẩm mỹ và cảm nhận người dùng (hiện đại vs cổ điển).",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Thiết kế khung hợp kim vàng chống gỉ kết hợp với mặt gương kính phản chiếu dày giúp Candle Metal Tray trở thành vật dụng tổ chức đa năng cho nhiều không gian trong nhà như thế nào?",
+            "response_time": 12.78,
+            "Judge_time": 7.59,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 342,
+                    "content_preview": "Question:\n                    What specific thermal danger is avoided by utilizing an anti-rust metal frame and mirrored glass base for candle metal trays?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "Candle_metal_tray.md",
+                    "chunk_id": 30,
+                    "content_preview": "Product name: Candle metal tray\n\nCategory: Home Decor / Vanity Display Tray / Candle & Perfume Organizer\n\nMain Scents: Unscented (Premium Finished Metal and Glass construction).\n\nSeason: Year-round (A"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 32,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 230,
+                    "content_preview": "Question:\n                    What season is Candle metal tray suitable for?\n\n                    Answer:\n                    Year-round (An elegant classic for updating bedroom vanities, dressing are"
+                }
+            ],
+            "ground_truth_answer": "Khay Candle Metal Tray thuộc dòng Luxury Home Artistry Collection được đánh giá cao nhờ vật liệu bền bỉ và cao cấp. Khung kim loại hợp kim chống gỉ giúp sản phẩm chống ăn mòn, phù hợp cho cả những môi trường ẩm như phòng tắm để sắp xếp xà phòng hoặc chai tinh dầu. Phần mặt đáy bằng kính gương phản chiếu dày vừa dễ vệ sinh vừa tạo hiệu ứng ánh sáng sang trọng. Nhờ đó, sản phẩm có thể được sử dụng làm khay đựng mỹ phẩm và trang sức trên bàn trang điểm hoặc làm đế trưng bày nến và khuếch tán hương trên bàn trà, đồng thời bảo vệ bề mặt nội thất khỏi vết dầu và trầy xước.",
+            "answer": "Thiết kế khung hợp kim vàng chống gỉ kết hợp mặt gương kính phản chiếu dày mang lại tính đa năng cho Candle Metal Tray theo các cách sau:\n\n- Độ bền và giữ dáng\n  - Khung hợp kim chống gỉ phủ vàng giúp khay bền, không oxy hóa, phù hợp dùng lâu dài ở nhiều không gian.\n\n- Bảo vệ bề mặt đồ nội thất\n  - Mặt gương dày và chân tròn nâng nhẹ khay giúp tránh tiếp xúc trực tiếp của đáy nến hoặc dầu với gỗ, laminate hay đá cẩm thạch.\n  - Ngăn nhiệt cao từ đáy nến truyền trực tiếp và bắt giữ sáp nóng hoặc vết dầu tràn, giữ bàn trang điểm và bàn cà phê sạch đẹp.\n\n- Tôn vinh và tổ chức đồ vật\n  - Mặt gương phản chiếu bắt sáng, tạo chiều sâu và vẻ sang trọng, biến bộ đồ dưỡng da, nước hoa hay nến thành “trưng bày boutique”.\n  - Viền filigree và chân đỡ giúp sắp xếp lọ tinh dầu, hộp nến, đồ trang điểm hoặc trang sức gọn gàng, có tính thẩm mỹ cao.\n\n- Phù hợp nhiều không gian\n  - Bàn trang điểm: tổ chức skincare, nước hoa, trang sức với vẻ sang trọng.\n  - Bồn rửa/phòng tắm: đặt xà phòng, lọ tinh dầu, tránh vết ố trên mặt đá.\n  - Bàn trà/khách: làm đế trang trí cho đèn cầy hoặc diffuser, tăng điểm nhấn cho không gian.\n\nTóm lại, sự kết hợp giữa khung hợp kim vàng chống gỉ và mặt gương dày vừa bảo vệ bề mặt, vừa nâng cao giá trị thẩm mỹ, giúp khay dễ ứng dụng trong nhiều khu vực và mục đích trong nhà.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hãy lập luận vì sao hộp diêm nến cao cấp với thiết kế trượt mang thông điệp 'Good Day' có thể biến một hành động tiện ích đơn giản thành một nghi thức chăm sóc bản thân mang tính trị liệu.",
+            "response_time": 22.27,
+            "Judge_time": 7.81,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 417,
+                    "content_preview": "Question:\n                    How does an extra-long straight handle on a candle care tool reinforce an intentional, ritualistic approach to candle care?\n\n                    Answer:\n                 "
+                },
+                {
+                    "source": "Candle_matchbox.md",
+                    "chunk_id": 29,
+                    "content_preview": "Product name: Candle matchbox\n\nCategory: Candle Accessory / Luxury Safety Matches\n\nMain Scents: Unscented (Natural Aspen Wood / Sulfur-Free Tip).\n\nSeason:ear-round (An absolute daily essential for can"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 224,
+                    "content_preview": "Question:\n                    What season is Candle matchbox suitable for?\n\n                    Answer:\n                    ear-round (An absolute daily essential for candle lovers, fireplace lighting"
+                },
+                {
+                    "source": "Day_Party.md",
+                    "chunk_id": 38,
+                    "content_preview": "Product name: Day Party\n\nCategory: Scented Candle\n\nMain Scents: Lemon, Orange, Apple Pie, Strawberry, Rose, Peach Juice, Flowers, Sugar.\n\nSeason:Summer / Spring\n\nFragrance Family: Fruity / Sweet\n\nScen"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                }
+            ],
+            "ground_truth_answer": "Hộp diêm nến cao cấp nâng việc châm nến từ một thao tác thường ngày thành một trải nghiệm sống có chủ đích thông qua thiết kế sản phẩm tinh tế. Hộp sử dụng kiểu chữ tối giản cùng bố cục trượt mang thông điệp 'Good Day', tạo cảm giác thẩm mỹ đủ đẹp để trưng bày cạnh nến trên bàn trà hoặc bàn trang điểm. Bên trong là các que gỗ tự nhiên dài với đầu diêm màu tương phản, cháy đều và sạch mà không tạo mùi lưu huỳnh khó chịu. Quá trình kéo hộp, lấy que diêm và quẹt lên bề mặt ma sát đòi hỏi sự chậm rãi và tập trung, giúp người dùng chuyển từ trạng thái vội vã sang cảm giác thư giãn, chánh niệm và tận hưởng khoảnh khắc chăm sóc bản thân.",
+            "answer": "Dưới đây là những lý do vì sao hộp diêm nến cao cấp (thiết kế trượt, in chữ \"Good Day\") có thể biến hành động tiện ích đơn giản thành một nghi thức chăm sóc bản thân mang tính trị liệu:\n\n- Thiết kế trượt và typography \"Good Day\"  \n  - Hộp trượt với kiểu chữ tối giản và thông điệp thân thiện tạo ra một khoảnh khắc có chủ ý khi mở hộp — hành động không còn là thao tác vội vàng mà trở thành cử chỉ nhỏ, có ý nghĩa.\n\n- Vẻ ngoài và vị trí trưng bày  \n  - Thiết kế thẩm mỹ, ảnh hưởng thị giác cao khiến người dùng muốn để hộp trên bàn cà phê hoặc khay trang điểm, từ đó biến việc lấy diêm thành một phần của không gian chăm sóc bản thân hàng ngày.\n\n- Chất liệu và cơ chế sử dụng (diêm dài, hộp trượt, pad ma sát)  \n  - Que diêm dài, cháy lâu và miếng quẹt ma sát chắc tay giúp thao tác an toàn và thoải mái khi châm nến sâu trong lọ — giảm lo lắng về độ an toàn, cho phép thực hiện chậm rãi, tập trung hơn.\n\n- Cảm quan và trải nghiệm trị liệu  \n  - Tổng hoà giữa hình thức tối giản, cảm giác cầm/ trượt và thông điệp tích cực tạo ra trải nghiệm dễ chịu, mang sắc thái tinh tế, an ủi và có chủ ý — tức là một nghi thức tự chăm sóc hơn là một việc tiện ích thuần túy.\n\n- Nhận thức khách hàng  \n  - Người dùng thường cảm nhận hộp diêm này như một nâng cấp cao cấp, chuyển hành động đơn giản thành “nghi thức trị liệu” và giữ nó hiển thị như một phần thẩm mỹ của không gian sống.\n\nKết luận: thiết kế trượt, thông điệp \"Good Day\", yếu tố thẩm mỹ và tính năng an toàn kết hợp lại để biến việc châm nến từ một thao tác nhanh chóng thành một khoảnh khắc chậm rãi, có chủ ý và mang tính chăm sóc bản thân.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Xác định tổ hợp phụ kiện nến phù hợp nhất cho người dùng có mục tiêu chính là dập tắt an toàn nhiều lọ nến sâu, đồng thời giữ bề mặt sáp luôn sạch đẹp và duy trì chất lượng không khí trong nhà.",
+            "response_time": 21.92,
+            "Judge_time": 5.53,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 418,
+                    "content_preview": "Question:\n                    What is the primary overarching goal of using high-quality candle accessories like trays, snuffers, and trimmers across residential spaces?\n\n                    Answer:\n "
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 203,
+                    "content_preview": "Question:\n                    Where is Candle Scissor best used?\n\n                    Answer:\n                    Trimming cotton, braided, or paper wicks deep inside tall glass jars, ceramic vessels,"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 317,
+                    "content_preview": "Question:\n                    According to the final remarks, what is the ideal balance when using scented candles?\n\n                    Answer:\n                    The ideal balance is using candles "
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                }
+            ],
+            "ground_truth_answer": "Sự kết hợp phù hợp nhất là kéo cắt tim nến chuyên nghiệp (Candle Scissor) và dụng cụ dập nến cán dài (Candle Snuffer). Dụng cụ dập nến sử dụng đầu xoay để bao phủ tim nến nằm sâu trong lọ, cắt nguồn oxy và dập tắt ngọn lửa một cách sạch sẽ mà không làm bắn sáp nóng ra ngoài. Phương pháp này loại bỏ khói đen và mùi khói sau khi tắt nến, giúp duy trì chất lượng không khí trong phòng. Sau đó, kéo cắt tim nến với phần cán dài lệch góc cho phép người dùng tiếp cận sâu vào trong lọ để cắt bỏ phần tim đã cháy xuống chiều dài khuyến nghị khoảng 1/4 inch. Khay hứng tích hợp sẽ giữ lại phần carbon bị cắt, ngăn không cho rơi vào sáp và làm đổi màu bề mặt, đảm bảo quá trình đốt cháy sạch sẽ cho những lần sử dụng tiếp theo.",
+            "answer": "Tổ hợp phụ kiện phù hợp nhất: kết hợp giữa Candle Scissor và Candle Snuffer.  \n\nTại sao nên chọn cả hai:\n- Candle Scissor giúp duy trì bề mặt sáp sạch đẹp, cắt bấc đúng chiều dài, ngăn đọng muội đen và giảm khói.\n- Candle Snuffer dập tắt ngọn nến an toàn trong các lọ sâu hoặc nến nhiều bấc, loại bỏ khói sau khi tắt và tránh bắn sáp nóng ra xung quanh — giúp duy trì chất lượng không khí trong nhà.\n\nCandle Scissor\n- Category: Candle Care Tool / Candle Accessory\n- Suitable for: Trimming cotton, braided, hoặc paper wicks sâu trong các lọ thủy tinh cao, bình gốm, hoặc trụ nến.\n- Lợi ích chính: \n  - Cắt bấc xuống chiều cao khuyến nghị (khoảng 1/4 inch) trước mỗi lần đốt để giữ bề mặt sáp sạch và tránh muội than.\n  - Khay hứng đĩa bắt mảnh bấc, ngăn rơi lại vào hồ sáp.\n- Kỹ thuật/Chất liệu:\n  - Chất liệu: inox hợp kim chống rỉ, mạ bảo vệ.\n  - Thiết kế tay cầm dài, góc nghiêng, lưỡi cắt flush-cut với khay hứng.\n\nCandle Snuffer\n- Category: Candle Care Tool / Candle Accessory\n- Suitable for: Dập tắt nến nhiều bấc, nến trong lọ sâu, votive sâu, nến tapered trên bàn ăn, và bấc trong đèn lồng ngoài trời.\n- Lợi ích chính:\n  - Dập tắt ngọn nến bằng cách che kín ngọn để cắt oxy, tránh thổi làm bắn sáp hoặc tạo khói than.\n  - Loại bỏ mùi khói sau khi tắt, bảo toàn hương thơm nguyên vẹn cho lần đốt tiếp theo.\n- Kỹ thuật/Chất liệu:\n  - Chất liệu: thép không gỉ chống rỉ, mạ kim loại cao cấp.\n  - Tay cầm dài, đầu lật pivot để dễ tiếp cận đáy lọ; có hai kiểu đầu (hình trống tròn hoặc chuông cổ điển).\n  - Hoàn thiện màu: Matte Black, Rose Gold, Chrome Silver, Bright Yellow Gold, Champagne/Bronze.\n\nGợi ý sử dụng ngắn gọn\n- Dùng Candle Scissor cắt bấc trước mỗi lần đốt để có hồ sáp sạch và giảm khói.\n- Dùng Candle Snuffer để dập tắt nến nhẹ nhàng, tránh thổi và hạn chế khói/bụi than trong nhà.\n\nNếu bạn muốn, tôi có thể gợi ý lựa chọn màu/hoàn thiện phù hợp để đồng bộ với nội thất hoặc bộ khay nến.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        }
+    ]
+}

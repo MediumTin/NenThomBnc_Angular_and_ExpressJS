@@ -1,0 +1,73 @@
+[
+  {
+    "question": "Các nốt hương đầu (top notes) thường kéo dài bao lâu sau khi đốt nến?",
+    "ground_truth_answer": "Các nốt hương đầu thường kéo dài khoảng 10 phút sau khi nến được thắp sáng.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx"
+    ]
+  },
+  {
+    "question": "Tại sao nốt hương giữa (middle notes) được xem là linh hồn của cây nến?",
+    "ground_truth_answer": "Nốt hương giữa được xem là linh hồn của cây nến vì chúng tồn tại lâu nhất và định hình trải nghiệm hương thơm chính.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx"
+    ]
+  },
+  {
+    "question": "Hãy kể tên hai nốt hương gỗ nền (base notes) phổ biến được tìm thấy trong nến thơm.",
+    "ground_truth_answer": "Gỗ đàn hương (sandalwood) và gỗ tuyết tùng (cedarwood).",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx"
+    ]
+  },
+  {
+    "question": "Những mùi hương nào được đề cập là có thể giúp cải thiện sự tập trung khi học tập hoặc làm việc?",
+    "ground_truth_answer": "Hương thảo (rosemary), bạc hà (mint), cà phê (coffee), hoa nhài (jasmine), oải hương (lavender) và chanh (lemon).",
+    "relevant_docs": [
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "Nến thơm có thể giúp khử mùi trong phòng như thế nào?",
+    "ground_truth_answer": "Nến thơm giải phóng hương thơm tự nhiên từ sáp và tinh dầu, giúp loại bỏ mùi ẩm mốc, mùi thức ăn, mùi nhà vệ sinh và khói thuốc lá.",
+    "relevant_docs": [
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "Đặc điểm vật lý nào làm cho khả năng khuếch tán hương (sillage) của nốt hương nền khác với nốt hương đầu và nốt hương giữa?",
+    "ground_truth_answer": "Nốt hương nền không có khả năng khuếch tán rộng và thoáng như hai tầng hương phía trên, vì vậy mùi hương của chúng thường nhẹ nhàng và lan tỏa ít hơn.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx"
+    ]
+  },
+  {
+    "question": "Theo tài liệu, hãy liệt kê tất cả các phản ứng sinh lý của cơ thể khi chúng ta hít phải một mùi hương nến dễ chịu.",
+    "ground_truth_answer": "Chúng ta có xu hướng hít thở sâu và dễ dàng hơn, huyết áp giảm xuống, và nhịp tim đập chậm hơn, tạo cảm giác thư giãn hơn.",
+    "relevant_docs": [
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "Xác định ba nốt hương hoa cụ thể được đề cập có thể đóng vai trò là nốt hương đầu, và một nốt hương hoa đóng vai trò là nốt hương giữa.",
+    "ground_truth_answer": "Ba nốt hương hoa thuộc tầng hương đầu là oải hương (lavender), hoa hồng (rose) và hoa diên vĩ (iris). Nốt hương hoa thuộc tầng hương giữa được đề cập là hoa nhài (jasmine). (Lưu ý: oải hương và chanh cũng được nhắc đến trong nhóm hương giúp tăng khả năng tập trung, nhưng hoa nhài là nốt hương giữa được giới thiệu riêng trong phần đó.)",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx",
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "Theo thông tin nghiên cứu khoa học được cung cấp, lý do về mặt giải phẫu học nào giải thích việc liệu pháp hương thơm có thể kết nối tức thì mùi hương với ký ức và cảm xúc của con người?",
+    "ground_truth_answer": "Theo Tiến sĩ Pamela Dalton, điều này xảy ra vì vùng não tiếp nhận và xử lý mùi hương nằm rất gần với các vùng não chịu trách nhiệm về ký ức và cảm xúc của con người.",
+    "relevant_docs": [
+      "Candle_benefit.docx"
+    ]
+  },
+  {
+    "question": "Hãy giải thích sự khác biệt về vai trò của nốt hương giữa và nốt hương nền xét về thời gian tồn tại và khả năng cảm nhận sau khi ngọn nến được dập tắt.",
+    "ground_truth_answer": "Nốt hương giữa tồn tại lâu nhất trong khi nến đang cháy (lên đến khoảng 1,5 giờ) và tạo nên linh hồn của trải nghiệm hương thơm. Trong khi đó, nốt hương nền đóng vai trò là dấu ấn cuối cùng, có độ bay hơi thấp và vẫn có thể được cảm nhận trong tối đa khoảng 6 giờ ngay cả sau khi ngọn nến đã được dập tắt.",
+    "relevant_docs": [
+      "Some_Fragrance_layers_of_scented_candles.docx"
+    ]
+  }
+]

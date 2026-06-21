@@ -1,0 +1,403 @@
+{
+    "summary": {
+        "Accuracy": 0.8,
+        "Recall@5": 1.0,
+        "Recall@3": 0.6,
+        "Avg_Latency": 5.96,
+        "P95_Latency": 10.49,
+        "Avg_Judge_Latency": 2.22,
+        "P95_Judge_Latency": 3.76
+    },
+    "test_results": [
+        {
+            "question": "How long do top notes typically last after a candle is lit?",
+            "classification": "Candle_Knowledge",
+            "retrieval_mode": "english",
+            "response_time": 4.29,
+            "Judge_time": 1.33,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 201,
+                    "content_preview": "Question:\n                    How long do top notes typically last?\n\n                    Answer:\n                    Top notes usually last about 10 minutes after the candle is lit before fading away."
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 642,
+                    "content_preview": "Question:\n                    What is the lifespan of a candle's top note layer before it completely dissipates into the room?\n\n                    Answer:\n                    The top notes evaporate "
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 206,
+                    "content_preview": "Question:\n                    How long can middle notes remain noticeable?\n\n                    Answer:\n                    Middle notes can remain noticeable from around 10–20 minutes up to approxima"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 205,
+                    "content_preview": "Question:\n                    When do middle notes begin to appear?\n\n                    Answer:\n                    Middle notes appear when the top notes begin to fade, approximately 10 to 20 minute"
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 2,
+                    "content_preview": "## 3.Base notes account for 20%\n\nBase notes are considered the lingering highlight of the candle even after it has been extinguished. They include deep, rich, and non-volatile notes that can last up t"
+                }
+            ],
+            "ground_truth_answer": "Top notes usually last about 10 minutes after the candle is lit.",
+            "answer": "Top notes typically last about **10 minutes** after the candle is lit.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Why are middle notes considered the soul of a candle?",
+            "classification": "Candle_Knowledge",
+            "retrieval_mode": "english",
+            "response_time": 5.56,
+            "Judge_time": 2.7,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 204,
+                    "content_preview": "Question:\n                    Why are middle notes considered the soul of a candle?\n\n                    Answer:\n                    Middle notes are considered the soul of a candle because they are t"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 598,
+                    "content_preview": "Question:\n                    Why are Middle Notes scientifically referred to as the 'Heart Notes' or 'soul' of a scented candle?\n\n                    Answer:\n                    Because they are the "
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 1,
+                    "content_preview": "## 2.Middle notes (Heart notes) (70%)\n\nThe middle notes are considered the soul of a candle because they are the longest-lasting, creating a distinctive scent experience when the candle is lit. This l"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 203,
+                    "content_preview": "Question:\n                    What are middle notes in a scented candle?\n\n                    Answer:\n                    Middle notes, also called heart notes, form the core character of a candle's f"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 221,
+                    "content_preview": "Question:\n                    What is another name used to describe the middle notes of a candle?\n\n                    Answer:\n                    The middle notes are also commonly referred to as the"
+                }
+            ],
+            "ground_truth_answer": "Middle notes are considered the soul of a candle because they are the longest-lasting and define the main fragrance experience.",
+            "answer": "Middle notes are considered the soul of a candle because they form the candle’s core fragrance and persist the longest during burning.\n\nKey reasons:\n- They are the longest-lasting layer, dominating the scent after the top notes fade.  \n- They develop as the top notes dissipate and create the candle’s definitive, signature aroma during the main burn.  \n- They typically emerge about **10–20 minutes to 1.5 hours** after lighting.  \n- Common middle-note types include floral, spicy, fruity, and green notes—these shape the candle’s main character and mood.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Name two common woody base notes found in scented candles.",
+            "classification": "Candle_Knowledge",
+            "retrieval_mode": "english",
+            "response_time": 3.79,
+            "Judge_time": 1.36,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 212,
+                    "content_preview": "Question:\n                    What are common woody base notes?\n\n                    Answer:\n                    Sandalwood and cedarwood are common woody base notes."
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 224,
+                    "content_preview": "Question:\n                    What examples of Oriental notes can be found in the base layer of a candle?\n\n                    Answer:\n                    Common Oriental base notes include amber, mus"
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 2,
+                    "content_preview": "## 3.Base notes account for 20%\n\nBase notes are considered the lingering highlight of the candle even after it has been extinguished. They include deep, rich, and non-volatile notes that can last up t"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 208,
+                    "content_preview": "Question:\n                    What are base notes in a scented candle?\n\n                    Answer:\n                    Base notes are deep, rich, long-lasting scents that remain noticeable even after"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 220,
+                    "content_preview": "Question:\n                    What percentages do the top, middle, and base notes account for in a scented candle?\n\n                    Answer:\n                    Top notes account for 30%, middle no"
+                }
+            ],
+            "ground_truth_answer": "Sandalwood and cedarwood.",
+            "answer": "Two common woody base notes are:\n\n- Sandalwood\n- Cedarwood",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Which scents are mentioned as helping improve concentration while studying or working?",
+            "classification": "Candle_Knowledge",
+            "retrieval_mode": "english",
+            "response_time": 3.42,
+            "Judge_time": 1.46,
+            "retrieved_docs": [
+                {
+                    "source": "Candle_benefit.docx",
+                    "chunk_id": 16,
+                    "content_preview": "## Stimulates concentration when working and studying\n\nSome scents such as rosemary, mint, coffee, jasmine, lavender, lemon, etc., help improve blood circulation to the brain, stimulate the nervous sy"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 217,
+                    "content_preview": "Question:\n                    Which candle scents may improve concentration?\n\n                    Answer:\n                    Rosemary, mint, coffee, jasmine, lavender, and lemon scents may help impro"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 218,
+                    "content_preview": "Question:\n                    How can scented candles support studying or working?\n\n                    Answer:\n                    Certain scents may stimulate the nervous system, improve cognitive p"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 575,
+                    "content_preview": "Question:\n                    Which specific scents are scientifically noted in the text to improve brain blood circulation and stimulate cognitive function?\n\n                    Answer:\n             "
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 231,
+                    "content_preview": "Question:\n                    What cognitive benefits do scents like rosemary, mint, or coffee offer besides alertness?\n\n                    Answer:\n                    Besides alertness, these scents"
+                }
+            ],
+            "ground_truth_answer": "Rosemary, mint, coffee, jasmine, lavender, and lemon.",
+            "answer": "Scents that can help improve concentration while studying or working include:\n\n- Rosemary\n- Mint\n- Coffee\n- Jasmine\n- Lavender\n- Lemon",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "How can scented candles help deodorize a room?",
+            "classification": "Candle_Knowledge",
+            "retrieval_mode": "english",
+            "response_time": 4.78,
+            "Judge_time": 4.24,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 219,
+                    "content_preview": "Question:\n                    Can scented candles help remove unpleasant odors?\n\n                    Answer:\n                    Yes. Scented candles made with wax and natural essential oils can help "
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 233,
+                    "content_preview": "Question:\n                    What specific types of household odors can be eliminated by burning scented candles?\n\n                    Answer:\n                    Scented candles can help eliminate d"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 232,
+                    "content_preview": "Question:\n                    What are the main ingredients responsible for the deodorizing effect of a scented candle?\n\n                    Answer:\n                    The main ingredients are candle"
+                },
+                {
+                    "source": "Candle_benefit.docx",
+                    "chunk_id": 16,
+                    "content_preview": "## Stimulates concentration when working and studying\n\nSome scents such as rosemary, mint, coffee, jasmine, lavender, lemon, etc., help improve blood circulation to the brain, stimulate the nervous sy"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 213,
+                    "content_preview": "Question:\n                    How can scented candles enhance home decoration?\n\n                    Answer:\n                    Scented candles can enhance home decoration through attractive designs, "
+                }
+            ],
+            "ground_truth_answer": "They release natural fragrance from wax and essential oils, helping eliminate damp odors, food smells, bathroom odors, and cigarette smoke.",
+            "answer": "Scented candles deodorize a room by releasing natural fragrance when burned. Key points:\n\n- They use candle wax blended with natural essential oils, which evaporate as the candle burns and spread scent through the air.  \n- That fragrance helps neutralize or mask unpleasant smells such as damp room odors, kitchen/food smells, bathroom odors, and cigarette smoke.  \n- Choosing candles with natural essential oils provides a more natural odor-neutralizing aroma.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "What distinct physical limitation separates the sillage of base notes from that of top and middle notes?",
+            "classification": "Candle_Knowledge",
+            "retrieval_mode": "english",
+            "response_time": 5.29,
+            "Judge_time": 2.5,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 235,
+                    "content_preview": "Question:\n                    Why do base notes require close observation to be noticed?\n\n                    Answer:\n                    They require close observation because they do not have the sa"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 570,
+                    "content_preview": "Question:\n                    Why are base notes harder to detect immediately compared to top notes, despite lingering for up to 6 hours after extinguishment?\n\n                    Answer:\n            "
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 210,
+                    "content_preview": "Question:\n                    Why are base notes less noticeable than other fragrance layers?\n\n                    Answer:\n                    Base notes usually have a more subtle scent and less airy"
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 2,
+                    "content_preview": "## 3.Base notes account for 20%\n\nBase notes are considered the lingering highlight of the candle even after it has been extinguished. They include deep, rich, and non-volatile notes that can last up t"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 223,
+                    "content_preview": "Question:\n                    What are the characteristics of base notes that allow them to last so long?\n\n                    Answer:\n                    Base notes include deep, rich, and non-volati"
+                }
+            ],
+            "ground_truth_answer": "Base notes do not have the same wide and airy sillage as the top two layers, meaning their scent is usually subtle and less widely diffused.",
+            "answer": "The base notes are made of heavier, non‑volatile molecules, so they have much lower volatility and less airy diffusion. This reduced volatility limits their sillage compared with top and middle notes, making their scent subtler and noticeable mainly on close observation.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Based on the documentation, list all the physical bodily responses that are triggered when we breathe in a pleasant candle scent.",
+            "classification": "Candle_Knowledge",
+            "retrieval_mode": "english",
+            "response_time": 6.61,
+            "Judge_time": 3.18,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 621,
+                    "content_preview": "Question:\n                    Detail the biological changes that take place when a human inhales a favored, pleasant candle scent.\n\n                    Answer:\n                    Inhaling a preferred"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 228,
+                    "content_preview": "Question:\n                    What physical changes occur in our body when we smell a candle fragrance we enjoy?\n\n                    Answer:\n                    When we smell a preferred scent, we te"
+                },
+                {
+                    "source": "Candle_benefit.docx",
+                    "chunk_id": 15,
+                    "content_preview": "Therefore, when we smell something we like, we tend to breathe deeper and easier, our blood pressure is lowered, and our heart beats at a slower, more relaxed pace – and all of this helps us feel more"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 215,
+                    "content_preview": "Question:\n                    How can scented candles help reduce stress?\n\n                    Answer:\n                    Pleasant scents can encourage deeper breathing, lower blood pressure, slow he"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 566,
+                    "content_preview": "Question:\n                    According to researcher Dr. Pamela Dalton, what biological mechanism explains why scents from candles trigger human memories so rapidly?\n\n                    Answer:\n    "
+                }
+            ],
+            "ground_truth_answer": "We tend to breathe deeper and easier, our blood pressure is lowered, and our heart beats at a slower, more relaxed pace.",
+            "answer": "Physical bodily responses triggered when breathing in a pleasant candle scent:\n\n- Deeper and easier breathing  \n- Lowered systemic blood pressure (**reduced blood pressure**)  \n- Slower, more relaxed heart rate (**heart beats at a slower pace**)  \n- An overall more relaxed physiological state and greater feeling of relaxation and health",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Identify the three specific floral notes mentioned in the text that can function as top notes, and the one floral note that functions as a middle note.",
+            "classification": "Candle_Knowledge",
+            "retrieval_mode": "english",
+            "response_time": 7.16,
+            "Judge_time": 1.8,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 207,
+                    "content_preview": "Question:\n                    What fragrance families are commonly found in middle notes?\n\n                    Answer:\n                    Floral, spicy, fruity, and green fragrance notes are commonly"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 222,
+                    "content_preview": "Question:\n                    What specific terminology is used to describe herbal notes in the top layer?\n\n                    Answer:\n                    Herbal notes in the top layer are referred t"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 202,
+                    "content_preview": "Question:\n                    What are some common examples of top notes?\n\n                    Answer:\n                    Common top notes include citrus scents such as lemon and orange, floral scent"
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 2,
+                    "content_preview": "## 3.Base notes account for 20%\n\nBase notes are considered the lingering highlight of the candle even after it has been extinguished. They include deep, rich, and non-volatile notes that can last up t"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 225,
+                    "content_preview": "Question:\n                    Aside from Oriental and Woody notes, what is the third family mentioned for base notes?\n\n                    Answer:\n                    The third family mentioned for th"
+                }
+            ],
+            "ground_truth_answer": "The top floral notes are lavender, rose, and iris. The middle floral note mentioned is jasmine (note: lavender and lemon are also listed generally under concentration scents, but jasmine is uniquely introduced in the concentration section alongside general floral middle notes).",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "According to the scientific research details provided, what is the anatomical reason why aromatherapy can instantly connect scent to human memory and emotion?",
+            "classification": "Candle_Knowledge",
+            "retrieval_mode": "english",
+            "response_time": 5.44,
+            "Judge_time": 1.94,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 566,
+                    "content_preview": "Question:\n                    According to researcher Dr. Pamela Dalton, what biological mechanism explains why scents from candles trigger human memories so rapidly?\n\n                    Answer:\n    "
+                },
+                {
+                    "source": "Candle_benefit.docx",
+                    "chunk_id": 14,
+                    "content_preview": "## Relax your mind, relieve stress\n\nAccording to Dr. Pamela Dalton, a researcher from the Monell Center for the study of the interaction between human senses and chemicals in Philadelphia: “The part o"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 227,
+                    "content_preview": "Question:\n                    According to Sarah Villafranco, why can aromatherapy act as a powerful tool?\n\n                    Answer:\n                    Aromatherapy is powerful because the connect"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 216,
+                    "content_preview": "Question:\n                    Why is aromatherapy associated with scented candles?\n\n                    Answer:\n                    Aromatherapy uses scents to influence emotions and bodily responses,"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 573,
+                    "content_preview": "Question:\n                    How does natural skincare expert Sarah Villafranco explain the physiological speed and power of aromatherapy?\n\n                    Answer:\n                    She explain"
+                }
+            ],
+            "ground_truth_answer": "According to Dr. Pamela Dalton, it is because the part of the brain that receives and processes scents is physically located very close to the parts of the brain that handle human memory and emotions.",
+            "answer": "Dr. Pamela Dalton explains that the brain region that receives and processes scents sits very close to the neurological areas that govern memory and emotions. This anatomical proximity lets scents trigger memories and emotions almost instantly.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Explain how the functional role of middle notes differs from base notes in terms of timing and visibility after the candle flame is put out.",
+            "classification": "Candle_Knowledge",
+            "retrieval_mode": "english",
+            "response_time": 13.21,
+            "Judge_time": 1.66,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 205,
+                    "content_preview": "Question:\n                    When do middle notes begin to appear?\n\n                    Answer:\n                    Middle notes appear when the top notes begin to fade, approximately 10 to 20 minute"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 206,
+                    "content_preview": "Question:\n                    How long can middle notes remain noticeable?\n\n                    Answer:\n                    Middle notes can remain noticeable from around 10–20 minutes up to approxima"
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 1,
+                    "content_preview": "## 2.Middle notes (Heart notes) (70%)\n\nThe middle notes are considered the soul of a candle because they are the longest-lasting, creating a distinctive scent experience when the candle is lit. This l"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 570,
+                    "content_preview": "Question:\n                    Why are base notes harder to detect immediately compared to top notes, despite lingering for up to 6 hours after extinguishment?\n\n                    Answer:\n            "
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 2,
+                    "content_preview": "## 3.Base notes account for 20%\n\nBase notes are considered the lingering highlight of the candle even after it has been extinguished. They include deep, rich, and non-volatile notes that can last up t"
+                }
+            ],
+            "ground_truth_answer": "Middle notes are the longest-lasting while the candle is lit (up to 1.5 hours) and form the soul of the experience, whereas base notes serve as the lingering highlight that remains non-volatile and noticeable for up to 6 hours even after the candle has been extinguished.",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true
+        }
+    ]
+}

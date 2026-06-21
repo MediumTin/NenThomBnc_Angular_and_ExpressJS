@@ -1,0 +1,383 @@
+{
+    "summary": {
+        "Accuracy": 0.9,
+        "Recall@5": 0.3,
+        "Recall@3": 0.1,
+        "Avg_Latency": 8.2,
+        "P95_Latency": 13.76,
+        "Avg_Judge_Latency": 2.47,
+        "P95_Judge_Latency": 3.52
+    },
+    "test_results": [
+        {
+            "question": "Nên đặt nến thơm trên loại bề mặt nào khi sử dụng?",
+            "response_time": 15.18,
+            "Judge_time": 2.05,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 282,
+                    "content_preview": "Question:\n                    What kind of surface should be used when burning a scented candle?\n\n                    Answer:\n                    Candles should be placed on a flat, stable, and heat-r"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 299,
+                    "content_preview": "Question:\n                    How can users enjoy scented candles safely?\n\n                    Answer:\n                    By following proper placement, supervision, wick maintenance, and lighting pr"
+                },
+                {
+                    "source": "Safe_Usage_guidance.docx",
+                    "chunk_id": 17,
+                    "content_preview": "# IMPORTANT NOTES FOR SAFELY USING SCENTED CANDLES\n\n## 1. Placement when burning candles\n\nKeep candles away from flammable materials such as clothes, curtains, books, paper, carpets, etc., or plastic."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 284,
+                    "content_preview": "Question:\n                    Should scented candles be placed in drafty areas?\n\n                    Answer:\n                    No. Drafty areas can cause flames to burn too intensely or spread fire "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 317,
+                    "content_preview": "Question:\n                    According to the final remarks, what is the ideal balance when using scented candles?\n\n                    Answer:\n                    The ideal balance is using candles "
+                }
+            ],
+            "ground_truth_answer": "Nến nên được đặt trên bề mặt phẳng, chắc chắn và có khả năng chịu nhiệt.",
+            "answer": "Đặt nến thơm trên bề mặt:\n- Phẳng và ổn định\n- Chịu nhiệt\n\nNgoài ra, giữ nến cách xa vật dễ cháy (quần áo, rèm, giấy, thảm...) và không đặt ở khu vực có gió lùa.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Bạn nên làm gì trước khi rời khỏi phòng khi nến vẫn đang cháy?",
+            "response_time": 5.05,
+            "Judge_time": 1.71,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 287,
+                    "content_preview": "Question:\n                    What should you do before leaving a room with a burning candle?\n\n                    Answer:\n                    You should extinguish the candle before leaving the room."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 305,
+                    "content_preview": "Question:\n                    What two specific actions must be taken before you go to sleep regarding candle safety?\n\n                    Answer:\n                    You must extinguish the candles b"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 286,
+                    "content_preview": "Question:\n                    Should candles always remain within sight while burning?\n\n                    Answer:\n                    Yes. Burning candles should always remain within your sight."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 288,
+                    "content_preview": "Question:\n                    Should candles be extinguished before going to sleep?\n\n                    Answer:\n                    Yes. Candles should always be extinguished before going to sleep."
+                },
+                {
+                    "source": "Safe_Usage_guidance.docx",
+                    "chunk_id": 17,
+                    "content_preview": "# IMPORTANT NOTES FOR SAFELY USING SCENTED CANDLES\n\n## 1. Placement when burning candles\n\nKeep candles away from flammable materials such as clothes, curtains, books, paper, carpets, etc., or plastic."
+                }
+            ],
+            "ground_truth_answer": "Bạn nên tắt nến trước khi rời khỏi phòng.",
+            "answer": "Bạn nên dập tắt nến trước khi rời khỏi phòng.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Sau mỗi lần sử dụng, nên cắt bấc nến bao nhiêu?",
+            "response_time": 6.66,
+            "Judge_time": 2.5,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 292,
+                    "content_preview": "Question:\n                    How often should the candle wick be trimmed?\n\n                    Answer:\n                    The wick should be trimmed after each use."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 293,
+                    "content_preview": "Question:\n                    How much of the wick should be trimmed after each use?\n\n                    Answer:\n                    The wick should be trimmed by approximately 3 millimeters."
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 431,
+                    "content_preview": "Question:\n                    How does trimming a candle's wick to approximately 3mm after each use technically prevent the formation of black smoke?\n\n                    Answer:\n                    T"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 315,
+                    "content_preview": "Question:\n                    Why does a trimmed wick help control the flame's behavior?\n\n                    Answer:\n                    Trimming the wick by about 3mm after each use helps control th"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 294,
+                    "content_preview": "Question:\n                    Why should the wick be trimmed regularly?\n\n                    Answer:\n                    Regular trimming helps control the flame and promotes a cleaner, brighter burn."
+                }
+            ],
+            "ground_truth_answer": "Bấc nến nên được cắt ngắn khoảng 3 milimét.",
+            "answer": "Nên cắt bấc khoảng **3 mm** sau mỗi lần sử dụng.\n\nViệc này giúp kiểm soát kích thước ngọn lửa và giúp nến cháy sạch, sáng hơn.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Tại sao nên sử dụng bật lửa cán dài khi thắp nến?",
+            "response_time": 9.9,
+            "Judge_time": 3.06,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 297,
+                    "content_preview": "Question:\n                    Why is a long-handled lighter recommended?\n\n                    Answer:\n                    It helps prevent burns to your hands when lighting candles."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 310,
+                    "content_preview": "Question:\n                    What alternative tool to a long-handled lighter is mentioned for safely lighting a candle?\n\n                    Answer:\n                    Long matches are mentioned as "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 360,
+                    "content_preview": "Question:\n                    What structural advantage does an extra-long straight rod handle with an integrated ergonomic grip give to a candle snuffer user?\n\n                    Answer:\n           "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 296,
+                    "content_preview": "Question:\n                    What tool should be used to light a scented candle safely?\n\n                    Answer:\n                    A long-handled lighter or long matches should be used."
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 323,
+                    "content_preview": "Question:\n                    Why are elongated wooden safety matches preferred over cheap plastic disposable lighters for deep jar candles?\n\n                    Answer:\n                    The elonga"
+                }
+            ],
+            "ground_truth_answer": "Bật lửa cán dài giúp tránh bị bỏng tay khi thắp nến.",
+            "answer": "Nên dùng bật lửa cán dài vì:\n\n- Ngăn bỏng tay khi châm nến.  \n- Giữ khoảng cách an toàn với ngọn lửa, đặc biệt tiện khi châm nến trong lọ sâu hoặc với vào những cây nến cao.  \n- Nếu không có bật lửa cán dài, có thể dùng que diêm dài; que diêm gỗ dài cháy lâu và cháy sạch, giúp giữ tay an toàn khi với sâu vào lọ nến.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Đâu là giải pháp thay thế an toàn hơn so với việc đốt nến trực tiếp?",
+            "response_time": 12.02,
+            "Judge_time": 1.91,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 291,
+                    "content_preview": "Question:\n                    What is a safer alternative to burning candles directly?\n\n                    Answer:\n                    A candle warmer can be used as a safer alternative to reduce fir"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 310,
+                    "content_preview": "Question:\n                    What alternative tool to a long-handled lighter is mentioned for safely lighting a candle?\n\n                    Answer:\n                    Long matches are mentioned as "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 306,
+                    "content_preview": "Question:\n                    What specific device can help minimize the risk of fire and explosion instead of an open flame?\n\n                    Answer:\n                    Using a candle warmer is "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 357,
+                    "content_preview": "Question:\n                    How do clean safety chemicals tipped on wooden match sticks reduce environmental discomfort compared to butane fuel lighters?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 296,
+                    "content_preview": "Question:\n                    What tool should be used to light a scented candle safely?\n\n                    Answer:\n                    A long-handled lighter or long matches should be used."
+                }
+            ],
+            "ground_truth_answer": "Có thể sử dụng đèn làm nóng nến (candle warmer) để giảm nguy cơ cháy nổ.",
+            "answer": "Giải pháp an toàn hơn là sử dụng máy hâm nến (candle warmer).  \nThiết bị này giúp giảm rủi ro cháy và nổ so với việc đốt nến trực tiếp.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Hãy giải thích hai mối nguy mà khu vực có gió lùa gây ra đối với ngọn lửa nến đang cháy.",
+            "response_time": 8.0,
+            "Judge_time": 2.69,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 443,
+                    "content_preview": "Question:\n                    What dual dangers make drafty areas highly hazardous when choosing a placement spot for burning candles?\n\n                    Answer:\n                    Drafts cause the"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 302,
+                    "content_preview": "Question:\n                    What specific accident could happen if a candle flame burns too intensely in a drafty area?\n\n                    Answer:\n                    A drafty area can cause the f"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 284,
+                    "content_preview": "Question:\n                    Should scented candles be placed in drafty areas?\n\n                    Answer:\n                    No. Drafty areas can cause flames to burn too intensely or spread fire "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 316,
+                    "content_preview": "Question:\n                    What is the main danger associated with children and pets near candles as highlighted by the structure of section 2?\n\n                    Answer:\n                    The "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 403,
+                    "content_preview": "Question:\n                    What specific physical danger does a long candle match protect against when lighting a low-burned multi-wick candle?\n\n                    Answer:\n                    It p"
+                }
+            ],
+            "ground_truth_answer": "Khu vực có gió lùa có thể khiến ngọn lửa cháy quá mạnh hoặc thổi các vật liệu dễ cháy ở gần trực tiếp vào ngọn lửa.",
+            "answer": "Hai mối nguy chính là:\n\n- Ngọn lửa cháy quá mạnh và không ổn định: gió làm ngọn lửa cháy dữ dội và bập bùng, khó kiểm soát.\n\n- Thổi vật dễ cháy vào lửa và gây cháy lan: luồng gió có thể đẩy các vật nhẹ, dễ bắt lửa gần đó vào ngọn lửa, làm lan lửa sang đồ vật xung quanh.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Theo tài liệu, tác giả đã kết hợp hai nguồn kiến thức nào để xây dựng hướng dẫn này?",
+            "response_time": 4.74,
+            "Judge_time": 2.36,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 311,
+                    "content_preview": "Question:\n                    Where did the author gather the tips shared in this safety document?\n\n                    Answer:\n                    The author gathered the tips from the internet and f"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 490,
+                    "content_preview": "Question:\n                    From what explicit sources did the creator of the 'Safe Usage Guidance' document gather their safety tips?\n\n                    Answer:\n                    The tips were "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 312,
+                    "content_preview": "Question:\n                    What two qualities of candles does the author want users to enjoy while staying safe?\n\n                    Answer:\n                    The author wants users to enjoy can"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 461,
+                    "content_preview": "Question:\n                    The 'Gourmand' classification is explicitly identified in the profiles of which two candles within the text library?\n\n                    Answer:\n                    It i"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 477,
+                    "content_preview": "Question:\n                    Which two distinct luxury timbers are explicitly listed under the 'Woody notes' category in the fragrance layers document?\n\n                    Answer:\n                  "
+                }
+            ],
+            "ground_truth_answer": "Tác giả đã tổng hợp thông tin từ internet và kết hợp với kinh nghiệm cá nhân của mình.",
+            "answer": "Tác giả đã kết hợp:\n\n- Thông tin từ internet  \n- Kinh nghiệm cá nhân",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Liệt kê tất cả các vật liệu dệt may và đồ nội thất bằng vải được nêu rõ trong tài liệu cần tránh đặt gần nến đang cháy.",
+            "response_time": 6.92,
+            "Judge_time": 2.3,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 281,
+                    "content_preview": "Question:\n                    What types of materials should be kept away from burning candles?\n\n                    Answer:\n                    Clothes, curtains, books, paper, carpets, plastic, and "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 318,
+                    "content_preview": "Question:\n                    Which room items related to windows and bedding are listed as fire hazards in section 1?\n\n                    Answer:\n                    Clothes and curtains are listed "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 319,
+                    "content_preview": "Question:\n                    What type of floor covering is explicitly mentioned as a hazard if placed under a burning candle without protection?\n\n                    Answer:\n                    Carp"
+                },
+                {
+                    "source": "Safe_Usage_guidance.docx",
+                    "chunk_id": 17,
+                    "content_preview": "# IMPORTANT NOTES FOR SAFELY USING SCENTED CANDLES\n\n## 1. Placement when burning candles\n\nKeep candles away from flammable materials such as clothes, curtains, books, paper, carpets, etc., or plastic."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 280,
+                    "content_preview": "Question:\n                    Why should scented candles be kept away from flammable materials?\n\n                    Answer:\n                    Scented candles should be kept away from flammable mate"
+                }
+            ],
+            "ground_truth_answer": "Các vật liệu được đề cập gồm quần áo, rèm cửa và thảm.",
+            "answer": "### Các vật liệu dệt may và đồ nội thất bằng vải cần tránh đặt gần nến đang cháy\n\n- Quần áo  \n- Rèm cửa  \n- Thảm/khăn trải sàn",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Việc cắt bấc nến ngắn khoảng 3mm sau mỗi lần sử dụng giúp ngăn chặn loại thành phần nào có trong khói đen?",
+            "response_time": 7.08,
+            "Judge_time": 2.22,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 431,
+                    "content_preview": "Question:\n                    How does trimming a candle's wick to approximately 3mm after each use technically prevent the formation of black smoke?\n\n                    Answer:\n                    T"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 354,
+                    "content_preview": "Question:\n                    What is the direct correlation between using a candle wick cutter and preventing black smoke rings from forming on glass walls?\n\n                    Answer:\n             "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 295,
+                    "content_preview": "Question:\n                    Can trimming the wick help reduce black smoke?\n\n                    Answer:\n                    Yes. Trimming the wick helps prevent black smoke and soot formation."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 309,
+                    "content_preview": "Question:\n                    What specific type of residue is prevented from forming when the wick is regularly trimmed?\n\n                    Answer:\n                    Regular trimming avoids the p"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 399,
+                    "content_preview": "Question:\n                    How does keeping a candle wick clean and trimmed protect indoor air quality over time?\n\n                    Answer:\n                    It ensures clean, complete combust"
+                }
+            ],
+            "ground_truth_answer": "Việc cắt bấc giúp ngăn sự hình thành khói đen có chứa muội than (soot).",
+            "answer": "Việc cắt bấc khoảng 3mm sau mỗi lần sử dụng giúp ngăn chặn sự sinh ra muội (soot) — tức các hạt muội/bụi than có trong khói đen.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Ngoài việc tránh không gian kín, tài liệu còn khuyến cáo tránh đốt nến trong loại môi trường nào?",
+            "response_time": 6.41,
+            "Judge_time": 3.9,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 303,
+                    "content_preview": "Question:\n                    Does the guidance recommend burning candles in small, narrow rooms?\n\n                    Answer:\n                    No, the guidance explicitly states that you should no"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 437,
+                    "content_preview": "Question:\n                    Why does the safe usage guide strictly forbid burning scented candles inside tightly enclosed spaces or small, narrow rooms?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 285,
+                    "content_preview": "Question:\n                    Is it safe to burn candles in a small enclosed room?\n\n                    Answer:\n                    No. Candles should not be burned in enclosed spaces or small narrow "
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 443,
+                    "content_preview": "Question:\n                    What dual dangers make drafty areas highly hazardous when choosing a placement spot for burning candles?\n\n                    Answer:\n                    Drafts cause the"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 284,
+                    "content_preview": "Question:\n                    Should scented candles be placed in drafty areas?\n\n                    Answer:\n                    No. Drafty areas can cause flames to burn too intensely or spread fire "
+                }
+            ],
+            "ground_truth_answer": "Tài liệu khuyến cáo không nên đốt nến trong những căn phòng nhỏ và chật hẹp.",
+            "answer": "Ngoài không gian kín, tài liệu còn khuyến cáo tránh đốt nến ở những khu vực có gió lùa (drafty areas).\n\n- Gió lùa khiến ngọn lửa cháy quá mạnh hoặc bập bùng, khó kiểm soát.  \n- Gió có thể thổi những vật nhẹ, dễ cháy vào ngọn lửa, làm tăng nguy cơ phát sinh hỏa hoạn.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        }
+    ]
+}

@@ -261,7 +261,7 @@ const Add_New_User_Information_in_MySQL = async(name_register, first_name_regist
     console.log(`Email request is ${email}`);
     console.log(`Address request is ${address_register}`);
     try {
-      const [results] = await pool.query(`INSERT INTO customers (username, password, first_name, last_name, email, address) VALUES ('${username_register}',  '${password}', '${first_name_register}',  '${last_name_register}','${email}', '${address_register}');`);
+      const [results] = await pool.query(`INSERT INTO customers (username, password, first_name, last_name, email, address) VALUES (?, ?, ?, ?, ?, ?)`, [username_register, password, first_name_register, last_name_register, email, address_register]);
       console.log('📦 Register successfully:');
       console.table(results);
       Result_Checking = 1;
@@ -427,7 +427,7 @@ const Delete_product_in_Products = async(Product_name) => {
     var Result_Checking= 0;
     console.log(`Product_name request is ${Product_name}`);
     try {
-      const [results] = await pool.query(`DELETE from products WHERE product_name = '${Product_name}'`);
+      const [results] = await pool.query(`DELETE from products WHERE product_name = ?`, [Product_name]);
       console.log('📦 Dữ liệu lấy được:');
       console.table(results);
       // console.log(results.insertId); // Lấy ID của payment mới tạo
@@ -446,7 +446,7 @@ const Create_New_Order_in_MySQL = async(customer_id,total_payment,status) => {
     console.log(`Total amount request is ${total_payment}`);
     console.log(`Status request is ${status}`);
     try {
-      const [results] = await pool.query(`INSERT INTO orders (customer_id, total_amount, status_order) VALUES ('${customer_id}',  '${total_payment}', '${status}');`);
+      const [results] = await pool.query(`INSERT INTO orders (customer_id, total_amount, status_order) VALUES (?, ?, ?)`, [customer_id, total_payment, status]);
       console.log('📦 Register successfully:');
       console.table(results);
       console.log(results.insertId); // Lấy ID của đơn hàng mới tạo
@@ -465,7 +465,7 @@ const Create_New_payment_in_MySQL = async(order_id,status,method,payment_gateway
     console.log(`Method request is ${method}`);
     console.log(`Payment gateway ID request is ${payment_gateway_id}`);
     try {
-      const [results] = await pool.query(`INSERT INTO payments (order_id, status_payment,method, payment_gateway_id) VALUES ('${order_id}', '${status}', '${method}','${payment_gateway_id}');`);
+      const [results] = await pool.query(`INSERT INTO payments (order_id, status_payment,method, payment_gateway_id) VALUES (?, ?, ?, ?)`, [order_id, status, method, payment_gateway_id]);
       console.log('📦 Register successfully:');
       console.table(results);
       console.log(results.insertId); // Lấy ID của payment mới tạo
@@ -575,7 +575,7 @@ const Add_Chat_History_in_MySQL = async(SessionID, user_message, assistant_respo
     console.log(`User message request is ${user_message}`);
     console.log(`Assistant response request is ${assistant_response}`);
     try {
-      const [results] = await pool.query(`INSERT INTO History_AI_Chatbot (session_id_chatbot, role, content) VALUES ('${SessionID}', '${user_message}', '${assistant_response}');`);
+      const [results] = await pool.query(`INSERT INTO History_AI_Chatbot (session_id_chatbot, role, content) VALUES (?, ?, ?)`, [SessionID, user_message, assistant_response]);
       console.log('📦 Register successfully:');
       Result_Checking = 1;
       return Result_Checking;     
@@ -593,7 +593,7 @@ const Add_Chat_History_in_MySQL_Login = async(customer_id, SessionID, user_messa
     console.log(`User message request is ${user_message}`);
     console.log(`Assistant response request is ${assistant_response}`);
     try {
-      const [results] = await pool.query(`INSERT INTO History_AI_Chatbot (customer_id,session_id_chatbot, role, content) VALUES ('${customer_id}', '${SessionID}', '${user_message}', '${assistant_response}');`);
+      const [results] = await pool.query(`INSERT INTO History_AI_Chatbot (customer_id,session_id_chatbot, role, content) VALUES (?, ?, ?, ?)`, [customer_id, SessionID, user_message, assistant_response]);
       console.log('📦 Register successfully:');
       Result_Checking = 1;
       return Result_Checking;     

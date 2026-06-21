@@ -1,0 +1,383 @@
+{
+    "summary": {
+        "Accuracy": 0.9,
+        "Recall@5": 0.9,
+        "Recall@3": 0.5,
+        "Avg_Latency": 8.23,
+        "P95_Latency": 11.18,
+        "Avg_Judge_Latency": 4.05,
+        "P95_Judge_Latency": 11.25
+    },
+    "test_results": [
+        {
+            "question": "Các nốt hương đầu (top notes) thường kéo dài bao lâu sau khi đốt nến?",
+            "response_time": 6.76,
+            "Judge_time": 2.34,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 61,
+                    "content_preview": "Question:\n                    How long do top notes typically last?\n\n                    Answer:\n                    Top notes usually last about 10 minutes after the candle is lit before fading away."
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 502,
+                    "content_preview": "Question:\n                    What is the lifespan of a candle's top note layer before it completely dissipates into the room?\n\n                    Answer:\n                    The top notes evaporate "
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 66,
+                    "content_preview": "Question:\n                    How long can middle notes remain noticeable?\n\n                    Answer:\n                    Middle notes can remain noticeable from around 10–20 minutes up to approxima"
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 2,
+                    "content_preview": "## 3.Base notes account for 20%\n\nBase notes are considered the lingering highlight of the candle even after it has been extinguished. They include deep, rich, and non-volatile notes that can last up t"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 65,
+                    "content_preview": "Question:\n                    When do middle notes begin to appear?\n\n                    Answer:\n                    Middle notes appear when the top notes begin to fade, approximately 10 to 20 minute"
+                }
+            ],
+            "ground_truth_answer": "Các nốt hương đầu thường kéo dài khoảng 10 phút sau khi nến được thắp sáng.",
+            "answer": "Top notes thường kéo dài khoảng **10 phút** sau khi đốt nến, rồi dần phai.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Tại sao nốt hương giữa (middle notes) được xem là linh hồn của cây nến?",
+            "response_time": 6.08,
+            "Judge_time": 4.84,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 64,
+                    "content_preview": "Question:\n                    Why are middle notes considered the soul of a candle?\n\n                    Answer:\n                    Middle notes are considered the soul of a candle because they are t"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 458,
+                    "content_preview": "Question:\n                    Why are Middle Notes scientifically referred to as the 'Heart Notes' or 'soul' of a scented candle?\n\n                    Answer:\n                    Because they are the "
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 1,
+                    "content_preview": "## 2.Middle notes (Heart notes) (70%)\n\nThe middle notes are considered the soul of a candle because they are the longest-lasting, creating a distinctive scent experience when the candle is lit. This l"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 63,
+                    "content_preview": "Question:\n                    What are middle notes in a scented candle?\n\n                    Answer:\n                    Middle notes, also called heart notes, form the core character of a candle's f"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 81,
+                    "content_preview": "Question:\n                    What is another name used to describe the middle notes of a candle?\n\n                    Answer:\n                    The middle notes are also commonly referred to as the"
+                }
+            ],
+            "ground_truth_answer": "Nốt hương giữa được xem là linh hồn của cây nến vì chúng tồn tại lâu nhất và định hình trải nghiệm hương thơm chính.",
+            "answer": "Vì chúng là phần tạo nên bản sắc hương chính của nến. Cụ thể:\n\n- Lưu mùi lâu nhất, duy trì trong suốt chu kỳ cháy chính.  \n- Khi lớp hương đầu (top notes) lắng xuống, middle notes xuất hiện và xác định trải nghiệm hương chủ đạo.  \n- Thường xuất hiện khoảng **10–20 phút đến 1.5 giờ** sau khi thắp nến.  \n- Ví dụ phổ biến: các nốt hoa (floral), gia vị (spicy), trái cây (fruity) và mùi xanh (green).",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hãy kể tên hai nốt hương gỗ nền (base notes) phổ biến được tìm thấy trong nến thơm.",
+            "response_time": 8.29,
+            "Judge_time": 1.53,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 68,
+                    "content_preview": "Question:\n                    What are base notes in a scented candle?\n\n                    Answer:\n                    Base notes are deep, rich, long-lasting scents that remain noticeable even after"
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 2,
+                    "content_preview": "## 3.Base notes account for 20%\n\nBase notes are considered the lingering highlight of the candle even after it has been extinguished. They include deep, rich, and non-volatile notes that can last up t"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 84,
+                    "content_preview": "Question:\n                    What examples of Oriental notes can be found in the base layer of a candle?\n\n                    Answer:\n                    Common Oriental base notes include amber, mus"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 80,
+                    "content_preview": "Question:\n                    What percentages do the top, middle, and base notes account for in a scented candle?\n\n                    Answer:\n                    Top notes account for 30%, middle no"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 72,
+                    "content_preview": "Question:\n                    What are common woody base notes?\n\n                    Answer:\n                    Sandalwood and cedarwood are common woody base notes."
+                }
+            ],
+            "ground_truth_answer": "Gỗ đàn hương (sandalwood) và gỗ tuyết tùng (cedarwood).",
+            "answer": "Hai nốt hương cơ bản phổ biến:\n\n- Gỗ đàn hương (sandalwood)  \n- Gỗ tuyết tùng (cedarwood)",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Những mùi hương nào được đề cập là có thể giúp cải thiện sự tập trung khi học tập hoặc làm việc?",
+            "response_time": 6.29,
+            "Judge_time": 1.45,
+            "retrieved_docs": [
+                {
+                    "source": "Candle_benefit.docx",
+                    "chunk_id": 6,
+                    "content_preview": "## Stimulates concentration when working and studying\n\nSome scents such as rosemary, mint, coffee, jasmine, lavender, lemon, etc., help improve blood circulation to the brain, stimulate the nervous sy"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 77,
+                    "content_preview": "Question:\n                    Which candle scents may improve concentration?\n\n                    Answer:\n                    Rosemary, mint, coffee, jasmine, lavender, and lemon scents may help impro"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 78,
+                    "content_preview": "Question:\n                    How can scented candles support studying or working?\n\n                    Answer:\n                    Certain scents may stimulate the nervous system, improve cognitive p"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 435,
+                    "content_preview": "Question:\n                    Which specific scents are scientifically noted in the text to improve brain blood circulation and stimulate cognitive function?\n\n                    Answer:\n             "
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 91,
+                    "content_preview": "Question:\n                    What cognitive benefits do scents like rosemary, mint, or coffee offer besides alertness?\n\n                    Answer:\n                    Besides alertness, these scents"
+                }
+            ],
+            "ground_truth_answer": "Hương thảo (rosemary), bạc hà (mint), cà phê (coffee), hoa nhài (jasmine), oải hương (lavender) và chanh (lemon).",
+            "answer": "Các mùi hương có thể giúp cải thiện sự tập trung khi học hoặc làm việc gồm:\n\n- Hương thảo (rosemary)  \n- Bạc hà (mint)  \n- Cà phê (coffee)  \n- Hoa nhài (jasmine)  \n- Oải hương / lavender  \n- Chanh (lemon)",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Nến thơm có thể giúp khử mùi trong phòng như thế nào?",
+            "response_time": 7.71,
+            "Judge_time": 2.6,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 79,
+                    "content_preview": "Question:\n                    Can scented candles help remove unpleasant odors?\n\n                    Answer:\n                    Yes. Scented candles made with wax and natural essential oils can help "
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 93,
+                    "content_preview": "Question:\n                    What specific types of household odors can be eliminated by burning scented candles?\n\n                    Answer:\n                    Scented candles can help eliminate d"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 92,
+                    "content_preview": "Question:\n                    What are the main ingredients responsible for the deodorizing effect of a scented candle?\n\n                    Answer:\n                    The main ingredients are candle"
+                },
+                {
+                    "source": "Candle_benefit.docx",
+                    "chunk_id": 6,
+                    "content_preview": "## Stimulates concentration when working and studying\n\nSome scents such as rosemary, mint, coffee, jasmine, lavender, lemon, etc., help improve blood circulation to the brain, stimulate the nervous sy"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 73,
+                    "content_preview": "Question:\n                    How can scented candles enhance home decoration?\n\n                    Answer:\n                    Scented candles can enhance home decoration through attractive designs, "
+                }
+            ],
+            "ground_truth_answer": "Nến thơm giải phóng hương thơm tự nhiên từ sáp và tinh dầu, giúp loại bỏ mùi ẩm mốc, mùi thức ăn, mùi nhà vệ sinh và khói thuốc lá.",
+            "answer": "Nến thơm khử mùi bằng cách:\n\n- Thành phần chính là sáp kết hợp với tinh dầu thiên nhiên — khi đốt, nến giải phóng hương thơm tự nhiên.\n- Hương thơm này giúp trung hòa và lấn át các mùi khó chịu trong phòng.\n\nCác loại mùi nến thơm có thể giúp loại bỏ:\n- Mùi ẩm mốc\n- Mùi thức ăn trong bếp\n- Mùi khó chịu trong nhà vệ sinh\n- Mùi khói thuốc",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Đặc điểm vật lý nào làm cho khả năng khuếch tán hương (sillage) của nốt hương nền khác với nốt hương đầu và nốt hương giữa?",
+            "response_time": 8.24,
+            "Judge_time": 4.24,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 95,
+                    "content_preview": "Question:\n                    Why do base notes require close observation to be noticed?\n\n                    Answer:\n                    They require close observation because they do not have the sa"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 430,
+                    "content_preview": "Question:\n                    Why are base notes harder to detect immediately compared to top notes, despite lingering for up to 6 hours after extinguishment?\n\n                    Answer:\n            "
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 70,
+                    "content_preview": "Question:\n                    Why are base notes less noticeable than other fragrance layers?\n\n                    Answer:\n                    Base notes usually have a more subtle scent and less airy"
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 2,
+                    "content_preview": "## 3.Base notes account for 20%\n\nBase notes are considered the lingering highlight of the candle even after it has been extinguished. They include deep, rich, and non-volatile notes that can last up t"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 83,
+                    "content_preview": "Question:\n                    What are the characteristics of base notes that allow them to last so long?\n\n                    Answer:\n                    Base notes include deep, rich, and non-volati"
+                }
+            ],
+            "ground_truth_answer": "Nốt hương nền không có khả năng khuếch tán rộng và thoáng như hai tầng hương phía trên, vì vậy mùi hương của chúng thường nhẹ nhàng và lan tỏa ít hơn.",
+            "answer": "Đặc điểm vật lý khiến khả năng tỏa hương (sillage) của base notes khác biệt:\n\n- Phân tử nặng và ít bay hơi (non-volatile): base notes gồm các hợp chất sâu, giàu và nặng nên không dễ bốc hơi nhanh như các lớp mùi trên.\n- Khả năng khuếch tán hạn chế: vì phân tử nặng nên không có sillage rộng, thoáng như top và middle notes — mùi ít lan xa, tinh tế hơn.\n- Lưu hương lâu nhưng cần quan sát gần: mặc dù tồn tại lâu (có thể kéo dài tới khoảng **6 giờ** sau khi tắt), base notes thường chỉ cảm nhận rõ khi đứng gần.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Theo tài liệu, hãy liệt kê tất cả các phản ứng sinh lý của cơ thể khi chúng ta hít phải một mùi hương nến dễ chịu.",
+            "response_time": 8.53,
+            "Judge_time": 2.79,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 481,
+                    "content_preview": "Question:\n                    Detail the biological changes that take place when a human inhales a favored, pleasant candle scent.\n\n                    Answer:\n                    Inhaling a preferred"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 88,
+                    "content_preview": "Question:\n                    What physical changes occur in our body when we smell a candle fragrance we enjoy?\n\n                    Answer:\n                    When we smell a preferred scent, we te"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 426,
+                    "content_preview": "Question:\n                    According to researcher Dr. Pamela Dalton, what biological mechanism explains why scents from candles trigger human memories so rapidly?\n\n                    Answer:\n    "
+                },
+                {
+                    "source": "Candle_benefit.docx",
+                    "chunk_id": 5,
+                    "content_preview": "Therefore, when we smell something we like, we tend to breathe deeper and easier, our blood pressure is lowered, and our heart beats at a slower, more relaxed pace – and all of this helps us feel more"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 75,
+                    "content_preview": "Question:\n                    How can scented candles help reduce stress?\n\n                    Answer:\n                    Pleasant scents can encourage deeper breathing, lower blood pressure, slow he"
+                }
+            ],
+            "ground_truth_answer": "Chúng ta có xu hướng hít thở sâu và dễ dàng hơn, huyết áp giảm xuống, và nhịp tim đập chậm hơn, tạo cảm giác thư giãn hơn.",
+            "answer": "Các phản ứng sinh lý khi hít mùi nến dễ chịu gồm:\n\n- Thở sâu và dễ dàng hơn.  \n\n- Huyết áp giảm.  \n\n- Nhịp tim chậm lại, đập ở tốc độ thư giãn hơn.  \n\nKết quả chung là cảm thấy thư giãn hơn và cải thiện sức khỏe thể chất và tinh thần.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Xác định ba nốt hương hoa cụ thể được đề cập có thể đóng vai trò là nốt hương đầu, và một nốt hương hoa đóng vai trò là nốt hương giữa.",
+            "response_time": 12.34,
+            "Judge_time": 1.57,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 67,
+                    "content_preview": "Question:\n                    What fragrance families are commonly found in middle notes?\n\n                    Answer:\n                    Floral, spicy, fruity, and green fragrance notes are commonly"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 82,
+                    "content_preview": "Question:\n                    What specific terminology is used to describe herbal notes in the top layer?\n\n                    Answer:\n                    Herbal notes in the top layer are referred t"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 62,
+                    "content_preview": "Question:\n                    What are some common examples of top notes?\n\n                    Answer:\n                    Common top notes include citrus scents such as lemon and orange, floral scent"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 85,
+                    "content_preview": "Question:\n                    Aside from Oriental and Woody notes, what is the third family mentioned for base notes?\n\n                    Answer:\n                    The third family mentioned for th"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 448,
+                    "content_preview": "Question:\n                    What are the theoretical weight percentages allocated to Top, Middle, and Base layers in the provided fragrance structure guide?\n\n                    Answer:\n            "
+                }
+            ],
+            "ground_truth_answer": "Ba nốt hương hoa thuộc tầng hương đầu là oải hương (lavender), hoa hồng (rose) và hoa diên vĩ (iris). Nốt hương hoa thuộc tầng hương giữa được đề cập là hoa nhài (jasmine). (Lưu ý: oải hương và chanh cũng được nhắc đến trong nhóm hương giúp tăng khả năng tập trung, nhưng hoa nhài là nốt hương giữa được giới thiệu riêng trong phần đó.)",
+            "answer": "Tôi không biết dựa trên các tài liệu được cung cấp, bạn nên liên hệ với quản trị viên để biết thông tin chi tiết.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Theo thông tin nghiên cứu khoa học được cung cấp, lý do về mặt giải phẫu học nào giải thích việc liệu pháp hương thơm có thể kết nối tức thì mùi hương với ký ức và cảm xúc của con người?",
+            "response_time": 8.25,
+            "Judge_time": 2.62,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 426,
+                    "content_preview": "Question:\n                    According to researcher Dr. Pamela Dalton, what biological mechanism explains why scents from candles trigger human memories so rapidly?\n\n                    Answer:\n    "
+                },
+                {
+                    "source": "Candle_benefit.docx",
+                    "chunk_id": 4,
+                    "content_preview": "## Relax your mind, relieve stress\n\nAccording to Dr. Pamela Dalton, a researcher from the Monell Center for the study of the interaction between human senses and chemicals in Philadelphia: “The part o"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 87,
+                    "content_preview": "Question:\n                    According to Sarah Villafranco, why can aromatherapy act as a powerful tool?\n\n                    Answer:\n                    Aromatherapy is powerful because the connect"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 433,
+                    "content_preview": "Question:\n                    How does natural skincare expert Sarah Villafranco explain the physiological speed and power of aromatherapy?\n\n                    Answer:\n                    She explain"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 76,
+                    "content_preview": "Question:\n                    Why is aromatherapy associated with scented candles?\n\n                    Answer:\n                    Aromatherapy uses scents to influence emotions and bodily responses,"
+                }
+            ],
+            "ground_truth_answer": "Theo Tiến sĩ Pamela Dalton, điều này xảy ra vì vùng não tiếp nhận và xử lý mùi hương nằm rất gần với các vùng não chịu trách nhiệm về ký ức và cảm xúc của con người.",
+            "answer": "Vì phần não nhận và xử lý mùi nằm rất gần các vùng thần kinh chịu trách nhiệm về ký ức và cảm xúc, nên mùi hương dễ dàng và nhanh chóng kích hoạt ký ức cùng cảm xúc.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hãy giải thích sự khác biệt về vai trò của nốt hương giữa và nốt hương nền xét về thời gian tồn tại và khả năng cảm nhận sau khi ngọn nến được dập tắt.",
+            "response_time": 9.77,
+            "Judge_time": 16.5,
+            "retrieved_docs": [
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 2,
+                    "content_preview": "## 3.Base notes account for 20%\n\nBase notes are considered the lingering highlight of the candle even after it has been extinguished. They include deep, rich, and non-volatile notes that can last up t"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 430,
+                    "content_preview": "Question:\n                    Why are base notes harder to detect immediately compared to top notes, despite lingering for up to 6 hours after extinguishment?\n\n                    Answer:\n            "
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 66,
+                    "content_preview": "Question:\n                    How long can middle notes remain noticeable?\n\n                    Answer:\n                    Middle notes can remain noticeable from around 10–20 minutes up to approxima"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 65,
+                    "content_preview": "Question:\n                    When do middle notes begin to appear?\n\n                    Answer:\n                    Middle notes appear when the top notes begin to fade, approximately 10 to 20 minute"
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 1,
+                    "content_preview": "## 2.Middle notes (Heart notes) (70%)\n\nThe middle notes are considered the soul of a candle because they are the longest-lasting, creating a distinctive scent experience when the candle is lit. This l"
+                }
+            ],
+            "ground_truth_answer": "Nốt hương giữa tồn tại lâu nhất trong khi nến đang cháy (lên đến khoảng 1,5 giờ) và tạo nên linh hồn của trải nghiệm hương thơm. Trong khi đó, nốt hương nền đóng vai trò là dấu ấn cuối cùng, có độ bay hơi thấp và vẫn có thể được cảm nhận trong tối đa khoảng 6 giờ ngay cả sau khi ngọn nến đã được dập tắt.",
+            "answer": "So sánh vai trò giữa middle notes và base notes về thời lượng và khả năng cảm nhận sau khi tắt nến:\n\n- Thời lượng\n  - Middle notes (70%): là \"linh hồn\" của nến, xuất hiện khi top notes nhạt đi và kéo dài lâu nhất khi nến đang cháy — khoảng **10–20 phút đến ~1.5 giờ** sau khi thắp.\n  - Base notes (20%): là lớp lưu hương kéo dài nhất, có thể **lưu đến khoảng 6 giờ** kể cả sau khi tắt nến.\n\n- Khả năng cảm nhận sau khi tắt nến\n  - Middle notes: dễ nhận thấy khi nến đang cháy vì là lớp chủ đạo, nhưng không kéo dài lâu sau khi tắt; mức độ cảm nhận giảm nhanh theo thời gian (thường trong khoảng 1.5 giờ).\n  - Base notes: dù lưu lâu sau khi tắt, thường **khó phát hiện ngay lập tức** — mùi tinh tế, sâu và nặng hơn, thường chỉ cảm nhận rõ khi lại gần do phân tử nặng, không tỏa hương rộng như lớp top hoặc middle.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        }
+    ]
+}

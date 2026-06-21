@@ -1,0 +1,142 @@
+[
+  {
+    "question": "Hương thơm 3 Day WKND thuộc nhóm hương nào?",
+    "ground_truth_answer": "Fruity",
+    "relevant_docs": [
+      "3_Day_WKND.md"
+    ]
+  },
+  {
+    "question": "Hương thơm Amber And Vanilla thuộc nhóm hương nào?",
+    "ground_truth_answer": "Amber, Gourmand, Warm Sweet",
+    "relevant_docs": [
+      "Amber_And_Vanilla.md"
+    ]
+  },
+  {
+    "question": "Hương thơm BLOW A WISH thuộc nhóm hương nào?",
+    "ground_truth_answer": "Warm, Amber, Sweet",
+    "relevant_docs": [
+      "BLOW_A_WISH.md"
+    ]
+  },
+  {
+    "question": "Candle Scissor thuộc nhóm hương nào?",
+    "ground_truth_answer": "Non-fragrance / Functional Candle Maintenance Tools",
+    "relevant_docs": [
+      "Candle_Scissor.md"
+    ]
+  },
+  {
+    "question": "Candle Snuffer thuộc nhóm hương nào?",
+    "ground_truth_answer": "Non-fragrance / Functional Candle Maintenance Tools",
+    "relevant_docs": [
+      "Candle_Snuffer.md"
+    ]
+  },
+  {
+    "question": "Candle Tray thuộc nhóm hương nào?",
+    "ground_truth_answer": "Non-fragrance / Functional Candle Care Display",
+    "relevant_docs": [
+      "Candle_Tray.md"
+    ]
+  },
+  {
+    "question": "Candle Holder thuộc nhóm hương nào?",
+    "ground_truth_answer": "Decorative / Unscented",
+    "relevant_docs": [
+      "Candle_holder.md"
+    ]
+  },
+  {
+    "question": "Candle Matchbox thuộc nhóm hương nào?",
+    "ground_truth_answer": "Non-fragrance / Utility Candle Care",
+    "relevant_docs": [
+      "Candle_matchbox.md"
+    ]
+  },
+  {
+    "question": "Candle Metal Tray thuộc nhóm hương nào?",
+    "ground_truth_answer": "Non-fragrance / Utility Home Organization",
+    "relevant_docs": [
+      "Candle_metal_tray.md"
+    ]
+  },
+  {
+    "question": "Candle Pinwheel thuộc nhóm hương nào?",
+    "ground_truth_answer": "Woody / Warm & Spicy Citrus Holiday",
+    "relevant_docs": [
+      "Candle_pinwheel.md"
+    ]
+  },
+  {
+    "question": "Candle Rotation Tray thuộc nhóm hương nào?",
+    "ground_truth_answer": "Non-fragrance / Utility Candle Care",
+    "relevant_docs": [
+      "Candle_rotation_tray.md"
+    ]
+  },
+  {
+    "question": "Hương thơm Coconut And Sea Salt thuộc nhóm hương nào?",
+    "ground_truth_answer": "Fresh, Aquatic, Tropical",
+    "relevant_docs": [
+      "Coconut_And_Sea_Salt.md"
+    ]
+  },
+  {
+    "question": "Hương thơm Dalat Gift thuộc nhóm hương nào?",
+    "ground_truth_answer": "Earthy Woody / Fresh Aromatic Botanical",
+    "relevant_docs": [
+      "Dalat_Gift.md"
+    ]
+  },
+  {
+    "question": "Hương thơm Day Party thuộc nhóm hương nào?",
+    "ground_truth_answer": "Fruity / Sweet",
+    "relevant_docs": [
+      "Day_Party.md"
+    ]
+  },
+  {
+    "question": "Hương thơm Jasmin Ylang Ylang Sandalwood thuộc nhóm hương nào?",
+    "ground_truth_answer": "Floral / Woody / Oriental",
+    "relevant_docs": [
+      "Jasmin_ylang_ylang_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Hương thơm Lavander Vanilia thuộc nhóm hương nào?",
+    "ground_truth_answer": "Floral / Gourmand / Sweet",
+    "relevant_docs": [
+      "Lavander_Vanilia.md"
+    ]
+  },
+  {
+    "question": "Hương thơm Lumos And Cucumber thuộc nhóm hương nào?",
+    "ground_truth_answer": "Fresh / Herbal / Floral",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md"
+    ]
+  },
+  {
+    "question": "Hương thơm Lumos Cajeput thuộc nhóm hương nào?",
+    "ground_truth_answer": "Herbal / Camphorous / Fresh",
+    "relevant_docs": [
+      "Lumos_Cajeput.md"
+    ]
+  },
+  {
+    "question": "Hương thơm Lumos Honeydrew And Coconut thuộc nhóm hương nào?",
+    "ground_truth_answer": "Fruity / Tropical / Sweet",
+    "relevant_docs": [
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Hương thơm Lumos Juicy Peach thuộc nhóm hương nào?",
+    "ground_truth_answer": "Floral / Soft Rosy",
+    "relevant_docs": [
+      "Lumos_Juicy_Peach.md"
+    ]
+  }
+]

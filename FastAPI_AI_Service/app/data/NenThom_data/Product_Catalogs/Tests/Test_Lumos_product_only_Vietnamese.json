@@ -1,0 +1,145 @@
+[
+  {
+    "question": "Hãy xây dựng một lập luận logic giải thích vì sao việc sử dụng tinh dầu khuếch tán Lumos And Cucumber hoàn toàn loại bỏ các nguy cơ hỏa hoạn thường gặp của nến có ngọn lửa trong môi trường văn phòng.",
+    "ground_truth_answer": "Lumos And Cucumber là một sản phẩm khuếch tán hương bằng que (Reed Diffuser), hoạt động dựa trên tinh dầu thơm dạng lỏng và cơ chế mao dẫn thụ động liên tục thông qua các que gỗ hoặc sợi. Thiết kế này hoàn toàn loại bỏ nhu cầu sử dụng ngọn lửa hoặc bất kỳ nguồn nhiệt nào. Nhờ không cần lửa, sản phẩm loại bỏ nguy cơ cháy nổ khi bị đổ trên bàn làm việc, tránh rủi ro bỏng da và ngăn chặn việc tạo ra khói đen, khiến nó trở thành một giải pháp an toàn hơn cho gia đình và văn phòng.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md"
+    ]
+  },
+  {
+    "question": "Phân tích cách Lumos Tropical Orchard kiểm soát các nốt hương ngọt để không gian luôn dễ chịu và không gây cảm giác ngột ngạt hoặc đau đầu cho người dùng.",
+    "ground_truth_answer": "Lumos Tropical Orchard cân bằng các nốt hương ngọt mọng từ xoài chín, chanh dây và ổi bằng cách kết hợp tầng hương nền từ những chiếc lá xanh phủ sương. Theo cảm nhận của khách hàng, thành phần thực vật này giúp làm dịu độ ngọt, duy trì khả năng tỏa hương trong trẻo, tươi mát và đầy năng lượng thay vì trở nên quá đậm hoặc khó chịu.",
+    "relevant_docs": [
+      "Lumos_Tropical_Orchard.md"
+    ]
+  },
+  {
+    "question": "Giải thích chiến lược thiết kế kỹ thuật đằng sau việc Natural Lumos lựa chọn màu chai và chất liệu nhãn cho các sản phẩm tinh dầu nguyên chất như Lumos Menthol.",
+    "ground_truth_answer": "Natural Lumos sử dụng chai thủy tinh màu hổ phách đậm kết hợp với nhãn giấy kraft mộc mạc cho các sản phẩm như Lumos Menthol. Chai thủy tinh màu hổ phách được lựa chọn nhằm tối ưu khả năng chống tia UV, giúp bảo vệ tinh dầu tự nhiên khỏi sự suy giảm chất lượng do ánh sáng. Trong khi đó, nhãn giấy kraft góp phần củng cố hình ảnh thương hiệu gắn liền với sự tự nhiên và nguồn gốc thực vật.",
+    "relevant_docs": [
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "So sánh mục tiêu cảm xúc và mùa sử dụng giữa Lumos Midnight Sandalwood và Lumos Rose Boutique.",
+    "ground_truth_answer": "Lumos Midnight Sandalwood được thiết kế cho mùa Thu và Đông, hướng tới cảm giác bí ẩn, sang trọng, sâu lắng, mạnh mẽ, cân bằng và thư giãn thông qua các nốt hương gỗ và phương Đông. Ngược lại, Lumos Rose Boutique phù hợp với mùa Xuân và Hè, tạo nên bầu không khí lãng mạn, vui tươi, thanh lịch, lễ hội và tràn đầy năng lượng nhờ sự kết hợp của hương hoa, trái cây và đồ uống.",
+    "relevant_docs": [
+      "Lumos_Midnight_sandalwood.md",
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "Hãy tổng hợp các lợi ích trị liệu của Lumos Cold để giải thích vì sao sản phẩm phù hợp cho gia đình trong thời điểm giao mùa hoặc khi có triệu chứng cảm lạnh.",
+    "ground_truth_answer": "Lumos Cold là sự kết hợp của các loại thảo dược truyền thống Việt Nam như bạc hà, sả, gừng, hương thảo và vỏ bưởi. Hương thơm chuyển từ cảm giác mát lạnh của bạc hà sang tầng hương ấm áp từ gừng cay. Cấu trúc hương này gợi nhớ đến nồi nước xông thảo dược truyền thống, giúp làm ấm không gian sống, giảm nghẹt mũi, giảm cảm giác mệt mỏi cơ thể và hỗ trợ hô hấp hiệu quả.",
+    "relevant_docs": [
+      "Lumos_cold.md"
+    ]
+  },
+  {
+    "question": "Một khách hàng muốn tìm một sản phẩm trang trí phòng ngủ màu hồng với mùi hương giống bó hoa tươi tự nhiên và không có cảm giác hóa học. Sản phẩm Lumos nào phù hợp nhất và vì sao?",
+    "ground_truth_answer": "Sản phẩm phù hợp nhất là Lumos Juicy Peach. Mặc dù tên gọi mang sắc thái trái cây, các hương chính của sản phẩm là Hoa Hồng Bulgaria và Mẫu Đơn Hồng, thuộc nhóm hương Floral / Soft Rosy. Chai màu hồng pastel bóng cùng nơ ruy băng màu kem giúp sản phẩm phù hợp với không gian nữ tính. Ngoài ra, khách hàng đánh giá cao khả năng tái hiện chân thực mùi hoa tươi mà không gây cảm giác hóa học hay đau đầu.",
+    "relevant_docs": [
+      "Lumos_Juicy_Peach.md"
+    ]
+  },
+  {
+    "question": "Hãy mô tả các quy trình vệ sinh và khử mùi trong gia đình có thể tận dụng tinh dầu nguyên chất Lumos Lemongrass.",
+    "ground_truth_answer": "Tinh dầu Lumos Lemongrass có thể được thêm vào máy khuếch tán hoặc máy tạo ẩm để làm sạch không khí, pha vào nước lau sàn để hỗ trợ khử khuẩn bề mặt, trộn vào dung dịch chống côn trùng tự nhiên nhằm xua đuổi muỗi trong mùa mưa và xịt trong nhà bếp hoặc phòng tắm để loại bỏ các mùi hôi khó chịu.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md"
+    ]
+  },
+  {
+    "question": "So sánh cấu trúc hương thơm của Lumos Tropical Orchard và Lumos Honeydrew And Coconut, tập trung vào tầng hương giữa và đặc tính ngọt của từng sản phẩm.",
+    "ground_truth_answer": "Lumos Tropical Orchard sở hữu tầng hương giữa từ xoài chín mọng và ổi ngọt tươi, được cân bằng bởi lá xanh. Trong khi đó, Lumos Honeydrew And Coconut xây dựng phong cách gourmand ngọt béo với tầng hương đầu từ dưa lưới mật, tầng hương giữa từ sữa dừa mềm mịn kết hợp hoa nhiệt đới và tầng hương nền từ vani ngọt cùng xạ hương dịu nhẹ.",
+    "relevant_docs": [
+      "Lumos_Tropical_Orchard.md",
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Giải thích những yếu tố về sức khỏe và độ an toàn giúp bộ sưu tập Lumos Cajeput nhận được sự tin tưởng từ các gia đình có người già hoặc trẻ nhỏ.",
+    "ground_truth_answer": "Bộ sưu tập Lumos Cajeput chứa các chiết xuất thực vật tự nhiên 100% từ thiên nhiên Việt Nam như sả, bạc hà, hỗn hợp hỗ trợ cảm lạnh và tinh dầu tràm. Sản phẩm được nhiều gia đình tin tưởng vì có thể hỗ trợ hô hấp, giảm nghẹt mũi và xua đuổi côn trùng mang mầm bệnh mà không cần sử dụng hóa chất tổng hợp, phù hợp với người cao tuổi và trẻ nhỏ.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md"
+    ]
+  },
+  {
+    "question": "Một khách hàng hiểu lầm tên gọi 'Lumos Juicy Peach' và cho rằng sản phẩm có mùi đào đậm và ngọt. Hãy đính chính nhận định này dựa trên hồ sơ sản phẩm chính thức.",
+    "ground_truth_answer": "Tên gọi 'Lumos Juicy Peach' không phản ánh chính xác mùi hương cốt lõi của sản phẩm vì sản phẩm không chứa chiết xuất đào. Nhóm hương của sản phẩm là Floral / Soft Rosy với các thành phần chính gồm Hoa Hồng Bulgaria, Mẫu Đơn Hồng, Xạ Hương Trắng, Hổ Phách Dịu Nhẹ và Vanilla Berry. Hương thơm mang phong cách hoa cỏ thanh lịch, lãng mạn và mềm mại thay vì ngọt đậm kiểu trái cây.",
+    "relevant_docs": [
+      "Lumos_Juicy_Peach.md"
+    ]
+  },
+  {
+    "question": "Phân tích sự khác biệt về thiết kế vật lý và hình ảnh giữa dòng sản phẩm cơ bản của Lumos và dòng sản phẩm cao cấp màu đen.",
+    "ground_truth_answer": "Dòng sản phẩm cơ bản như Lumos And Cucumber sử dụng thiết kế tối giản với chai màu trắng bóng, nút gỗ tự nhiên và nơ đen trang trí. Ngược lại, dòng cao cấp như Lumos Midnight Sandalwood sử dụng chai màu đen bóng không trong suốt, nút gỗ tự nhiên và nơ đen nổi bật, tạo nên cảm giác sang trọng, mạnh mẽ và bí ẩn phù hợp với các nốt hương gỗ phương Đông.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md",
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Dung tích và cấu hình chất lỏng khuếch tán hương bên trong Lumos Rose Boutique là gì?",
+    "ground_truth_answer": "Lumos Rose Boutique có dung tích 100ml. Chất lỏng bên trong là sự kết hợp giữa hương liệu lỏng cao cấp và tinh dầu cô đặc, được chứa trong chai thủy tinh vuông dày, trong suốt và được thiết kế để hoạt động hiệu quả cùng que khuếch tán bằng sợi hoặc mây.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "Vì sao Lumos Menthol là lựa chọn phù hợp hơn cho môi trường làm việc cần tăng năng suất so với các dòng khuếch tán hương hoa hoặc hương ngọt?",
+    "ground_truth_answer": "Lumos Menthol là tinh dầu nguyên chất 100%, mang lại cảm giác mát lạnh mạnh mẽ từ menthol kết hợp cùng các nốt hương thảo mộc xanh. Không giống các sản phẩm hương hoa hoặc gourmand thường tạo cảm giác thư giãn, Lumos Menthol giúp tăng sự tỉnh táo, cải thiện khả năng tập trung, giảm căng thẳng đầu óc và loại bỏ cảm giác ngột ngạt trong không gian làm việc.",
+    "relevant_docs": [
+      "Lumos_menthol.md"
+    ]
+  },
+  {
+    "question": "Những tầng hương nào tạo nên cảm nhận về sự sang trọng và không khí tiệc rượu đặc trưng của Lumos Rose Boutique?",
+    "ground_truth_answer": "Lumos Rose Boutique mở đầu bằng các nốt hương sống động của rượu vang hồng sủi bọt và dâu tây dại ngọt ngào. Tiếp theo là tầng hương giữa từ hoa hồng đỏ tươi và hoa dành dành. Sự kết hợp này tạo nên mùi hương thường được liên tưởng đến những buổi brunch champagne cao cấp, tiệc cưới ngoài trời và các buổi tiệc sân vườn sang trọng.",
+    "relevant_docs": [
+      "Lumos_Rose_Boutique.md"
+    ]
+  },
+  {
+    "question": "Lớp hương nền của Lumos Midnight Sandalwood đóng vai trò như thế nào trong việc neo giữ các nốt hương hoa dễ bay hơi để duy trì cảm giác sang trọng mang tính nam tính hoặc trung tính?",
+    "ground_truth_answer": "Các nốt hương đầu từ hoa hồng nở về đêm và gia vị ấm áp nhanh chóng được chuyển tiếp và neo giữ bởi tầng hương giữa đậm đặc, tinh tế từ gỗ trầm hương quý hiếm và hoắc hương đất. Cấu trúc này tiếp tục được củng cố bởi tầng hương nền mượt mà và sâu lắng từ gỗ đàn hương ấm áp cùng xạ hương nhung đen. Sự kết hợp gỗ phương Đông mạnh mẽ này giúp cân bằng vị ngọt của hương hoa, tạo nên cảm giác vững chãi, sang trọng và liên tục, gợi nhớ đến không gian sảnh khách sạn boutique cao cấp.",
+    "relevant_docs": [
+      "Lumos_Midnight_sandalwood.md"
+    ]
+  },
+  {
+    "question": "Hãy tổng hợp các khuyến nghị sử dụng tinh dầu Lumos Cajeput trong các liệu pháp chăm sóc sức khỏe trực tiếp ngoài việc sử dụng máy khuếch tán điện.",
+    "ground_truth_answer": "Ngoài việc sử dụng trong máy khuếch tán điện, bộ sưu tập Lumos Cajeput còn được khuyến nghị tích hợp trực tiếp vào nhiều liệu pháp chăm sóc sức khỏe như pha vào nước tắm ấm, sử dụng trong liệu pháp xông hơi khi tắm buổi sáng, dùng để xông mặt hoặc pha loãng để massage cơ thể (đặc biệt với tinh dầu tràm). Những phương pháp này giúp giảm mệt mỏi cơ thể, hỗ trợ hô hấp và tăng cường cảm giác thư giãn.",
+    "relevant_docs": [
+      "Lumos_Cajeput.md"
+    ]
+  },
+  {
+    "question": "Các nốt hương đầu từ bạch đàn và bạc hà đóng vai trò gì trong việc tạo nên cảm nhận của khách hàng về Lumos And Cucumber như một lựa chọn thay thế cho không gian spa cao cấp?",
+    "ground_truth_answer": "Các nốt hương đầu tươi mát từ bạch đàn và bạc hà hoạt động như một tác nhân làm sạch cảm giác không khí ngay lập tức khi bước vào phòng. Chúng nhanh chóng loại bỏ cảm giác ngột ngạt, tạo nên nền tảng trong lành và thoáng đãng, giúp tầng hương giữa từ trà trắng và hoa nhài lan tỏa nhẹ nhàng. Nhờ đó, sản phẩm tái hiện hiệu quả bầu không khí thư thái, dễ chịu và sang trọng thường thấy trong các spa cao cấp.",
+    "relevant_docs": [
+      "Lumos_And_Cucumber.md"
+    ]
+  },
+  {
+    "question": "Phân tích cách thiết kế vật lý của Lumos Honeydrew And Coconut hỗ trợ phong cách nội thất tối giản hiện đại đồng thời thực hiện chức năng khử mùi.",
+    "ground_truth_answer": "Lumos Honeydrew And Coconut vừa đảm nhiệm vai trò trang trí vừa mang tính chức năng. Chất lỏng màu vàng nhạt ánh kim được chứa trong chai thủy tinh vuông dày, trong suốt và hoàn thiện bằng nắp kim loại bạc sáng bóng, tạo nên một phụ kiện trang trí thanh lịch, tối giản. Đồng thời, sản phẩm liên tục trung hòa các mùi sinh hoạt hàng ngày thông qua cơ chế bay hơi thụ động từ que khuếch tán mà không cần sử dụng ngọn lửa, giúp duy trì không gian gọn gàng và sạch sẽ theo tinh thần thiết kế tối giản.",
+    "relevant_docs": [
+      "Lumos_Honeydrew_And_Coconut.md"
+    ]
+  },
+  {
+    "question": "Trong những điều kiện thời tiết nào Lumos Lemongrass có nhu cầu sử dụng cao nhất và nguyên nhân sinh học đằng sau hiện tượng đó là gì?",
+    "ground_truth_answer": "Lumos Lemongrass được sử dụng nhiều nhất vào mùa Xuân và mùa Hè, đặc biệt trong những giai đoạn mưa nhiều hoặc khi mật độ muỗi tăng cao. Nguyên nhân là tinh dầu thực vật nguyên chất 100% này chứa các hợp chất cam chanh sắc nét và thảo mộc mạnh mẽ có khả năng xua đuổi côn trùng tự nhiên hiệu quả, giúp bảo vệ người dùng trong điều kiện thời tiết ẩm ướt khiến quần thể côn trùng phát triển mạnh.",
+    "relevant_docs": [
+      "Lumos_Lemongrass.md"
+    ]
+  },
+  {
+    "question": "Hãy xác định dòng tinh dầu Lumos phù hợp nhất cho một không gian trong nhà có không khí lạnh, ẩm mốc và nặng nề trong mùa đông mưa, đồng thời giải thích lý do lựa chọn.",
+    "ground_truth_answer": "Lựa chọn phù hợp nhất là tinh dầu Lumos Cold. Sản phẩm được thiết kế dành cho mùa Thu và Đông, đặc biệt tối ưu trong thời tiết lạnh hoặc các giai đoạn chuyển mùa. Nhóm hương của sản phẩm là Herbal / Camphorous / Warm Spicy với các thành phần nổi bật như gừng, sả và hương thảo. Đây là giải pháp phù hợp vì có khả năng làm ấm không gian sống, loại bỏ mùi ẩm mốc khó chịu và hỗ trợ giảm các triệu chứng khó chịu về hô hấp thường gặp trong mùa lạnh.",
+    "relevant_docs": [
+      "Lumos_cold.md"
+    ]
+  }
+]

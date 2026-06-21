@@ -1,3 +1,5 @@
+import os
+
 from langchain_community.document_loaders import DirectoryLoader, UnstructuredFileLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate
@@ -8,10 +10,14 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_core.runnables import RunnableLambda
+from re import match
 # For FastAPI usage
 from app.Prompt.Promtp_Config import get_prompt_template
 from app.LLM_Config.LLM_Config import llm_config
 from app.Embedding_Model.Embedding_model import embeddings
+from langdetect import detect
+from deep_translator import GoogleTranslator
+from collections import defaultdict
 
 # For run RAG_Chatbot.py directly
 # from Prompt.Promtp_Config import get_prompt_template
@@ -22,7 +28,7 @@ from pathlib import Path
 from dotenv import load_dotenv # Import the load_dotenv function to load environment variables from a .env file
 load_dotenv() # Load the environment variables from the .env file
 from pprint import pprint # Import the pprint function for pretty-printing the splits
-
+mode = os.getenv("RETRIEVAL_MODE", "vietnamese")  # Lấy giá trị từ biến môi trường, mặc định là "vietnamese"
 # ----------------------------------Step 1: Load documents from the specified directory-----------------------------------
 # Using seperate file
 # ----------------------------------Step 2: Split the loaded documents into smaller chunks (chunking)----------------------
@@ -51,6 +57,48 @@ retriever = vectorstore.as_retriever(
     # search_kwargs = {"k":5, "score_threshold": 0.2} 
 ) 
 
+vectorstore_classification = FAISS.load_local(
+    "app/Vector_Store_DB/Built_Vector_Model_Classification",
+    embeddings,
+    allow_dangerous_deserialization=True
+)
+
+retriever_classification = vectorstore_classification.as_retriever(
+    search_type = "similarity",
+    search_kwargs = {"k":1} # Get the most relevant chunk for classification
+)
+
+def get_retriever_classification(question: str):
+    Result_classification = retriever_classification.invoke(question)
+    print(Result_classification[0].metadata)
+    print(f"Classification result: {Result_classification[0].metadata['category']}")
+    return Result_classification[0].metadata['category']
+
+def rrf_merge(vi_docs, en_docs, k=60):
+
+    scores = defaultdict(float)
+    docs = {}
+
+    for rank, doc in enumerate(vi_docs, start=1):
+        key = doc.metadata["source"]
+
+        scores[key] += 1 / (k + rank)
+        docs[key] = doc
+
+    for rank, doc in enumerate(en_docs, start=1):
+        key = doc.metadata["source"]
+
+        scores[key] += 1 / (k + rank)
+        docs[key] = doc
+
+    ranked = sorted(
+        scores.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )
+
+    return [docs[key] for key, _ in ranked]
+
 def debug_context(data):
     print("\n========== HISTORY ==========\n")
     print(data["chat_history"])
@@ -69,10 +117,25 @@ def prepare_input(data):
         f"{msg.role}: {msg.content}"
         for msg in data["chat_history"]
     )
+    Retrieval_mode = data.get("Retrieval_mode", "english")
+    if Retrieval_mode == "english":
+        docs_retrieveds = retriever.invoke(data.get("question_en", ""))
+    elif Retrieval_mode == "vietnamese":
+        docs_retrieveds = retriever.invoke(data.get("question", ""))
+    elif Retrieval_mode == "hybrid":
+        docs_vietnamese = retriever.invoke(data.get("question", ""))
+        docs_english = retriever.invoke(data.get("question_en", ""))
+        docs = rrf_merge(
+            docs_vietnamese,
+            docs_english
+        )
+        docs_retrieveds = docs[:5]
+
     return {
-        "context": retriever.invoke(data["question"]),
+        "context": docs_retrieveds,
         "chat_history": history_text, # Add this line to include chat history in the input to the prompt
-        "question": data["question"]
+        "question": data["question"],
+        "language": data["language"]
     }
 
 # rag_chain = (
@@ -120,4 +183,38 @@ rag_chain = (
 
 
 def RAG_Model_ask(question: str, chat_history: list = []    ):
-    return rag_chain.invoke({"question": question, "chat_history": chat_history})
+    Retrieval_mode = "english"  # Default retrieval mode
+    language = detect(question)
+    lang_map = {
+        "vi": "Vietnamese",
+        "en": "English"
+    }
+    language_name = lang_map.get(language, "English")
+    print(f"Detected language: {language_name}")
+
+    Result_classification = get_retriever_classification(question)
+    print(f"Classification result: {Result_classification}")
+
+    match (Result_classification):
+        case "Candle_Knowledge":
+            Retrieval_mode  = "english"
+        case "Discount_Program":
+            Retrieval_mode  = "english"
+        case "User_Guidance":
+            Retrieval_mode  = "english"
+        case "Policies":
+            if (language_name == "Vietnamese"):
+                Retrieval_mode  = "vietnamese"
+            else:
+                Retrieval_mode  = "english"
+        case "Product_Catalog":
+            Retrieval_mode  = "vietnamese"
+    print(f"Retrieval mode for this question: {Retrieval_mode}")
+
+    if Retrieval_mode == "english" or Retrieval_mode == "hybrid":
+        question_en = GoogleTranslator(source='vi',target='en').translate(question)
+        print(f"Translated question: {question_en}")
+    else:
+        question_en = ""
+
+    return rag_chain.invoke({"question": question, "chat_history": chat_history, "language": language_name, "question_en": question_en, "Retrieval_mode": Retrieval_mode})

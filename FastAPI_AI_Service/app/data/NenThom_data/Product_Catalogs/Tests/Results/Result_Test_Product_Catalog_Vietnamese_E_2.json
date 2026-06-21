@@ -1,0 +1,503 @@
+{
+    "summary": {
+        "Accuracy": 0.8,
+        "Recall@5": 0.8,
+        "Recall@3": 0.8,
+        "Avg_Latency": 6.71,
+        "P95_Latency": 8.82,
+        "Avg_Judge_Latency": 2.42,
+        "P95_Judge_Latency": 3.39
+    },
+    "test_results": [
+        {
+            "question": "Hương thơm 3 Day WKND thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 5.35,
+            "Judge_time": 1.95,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 180,
+                    "content_preview": "What fragrance family is Day Party in?"
+                },
+                {
+                    "source": "3_Day_WKND.md",
+                    "chunk_id": 65,
+                    "content_preview": "Product name: 3 Day WKND\n\nCategory: Scented Candle\n\nMain Scents: - Green Apple - Cucumber - Waterlily\n\nSeason: - Spring - Summer - Any Season\n\nFragrance Family: Fruity\n\nScent Profile: Top notes is gre"
+                }
+            ],
+            "ground_truth_answer": "Fruity",
+            "answer": "Hương thơm 3 Day WKND thuộc nhóm hương: **Hương trái cây (Fruity)**.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hương thơm Amber And Vanilla thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 5.96,
+            "Judge_time": 2.43,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 327,
+                    "content_preview": "Question:\n                    What are the main scents of Amber And Vanilla?\n\n                    Answer:\n                    - Amber - Vanilla - Soft Musk"
+                },
+                {
+                    "source": "Amber_And_Vanilla.md",
+                    "chunk_id": 66,
+                    "content_preview": "Product name: Amber And Vanilla\n\nCategory: Candle\n\nMain Scents: - Amber - Vanilla - Soft Musk\n\nSeason: - Autumn - Winter - Any Season\n\nFragrance Family: Amber, Gourmand, Warm Sweet\n\nScent Profile: A c"
+                }
+            ],
+            "ground_truth_answer": "Amber, Gourmand, Warm Sweet",
+            "answer": "### Nhóm hương của Amber And Vanilla\n\n- **Amber**\n- **Gourmand**\n- **Warm Sweet**",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hương thơm BLOW A WISH thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 8.78,
+            "Judge_time": 1.89,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 333,
+                    "content_preview": "Question:\n                    What are the main scents of BLOW A WISH?\n\n                    Answer:\n                    - Vanilla - Amber - Soft Musk"
+                }
+            ],
+            "ground_truth_answer": "Warm, Amber, Sweet",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Candle Scissor thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 8.82,
+            "Judge_time": 3.21,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 127,
+                    "content_preview": "What fragrance family is Candle Snuffer in?"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 73,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Functional Candle Maintenance Tools",
+            "answer": "Candle Scissor thuộc nhóm hương: **Không mùi / Công cụ bảo dưỡng nến chức năng**.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Candle Snuffer thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 6.14,
+            "Judge_time": 2.08,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 121,
+                    "content_preview": "What fragrance family is Candle Scissor in?"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 74,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Functional Candle Maintenance Tools",
+            "answer": "Candle Snuffer thuộc nhóm hương: **Không mùi / Dụng cụ bảo dưỡng nến chức năng**.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Candle Tray thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 7.05,
+            "Judge_time": 6.76,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 162,
+                    "content_preview": "What fragrance family is Candle rotation tray in?"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 75,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 72,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Functional Candle Care Display",
+            "answer": "Candle Tray thuộc nhóm hương: **Không mùi — Dụng cụ chăm sóc nến chức năng**.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Candle Holder thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 7.22,
+            "Judge_time": 2.0,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 356,
+                    "content_preview": "Question:\n                    What category does Candle holder belong to?\n\n                    Answer:\n                    Candle holder belongs to the Decorative Candle category."
+                },
+                {
+                    "source": "Candle_holder.md",
+                    "chunk_id": 68,
+                    "content_preview": "Product name: Candle holder\n\nCategory: Decorative Candle\n\nMain Scents: - Unspecified - Decorative Product\n\nSeason: Any Season\n\nFragrance Family: Decorative / Unscented\n\nScent Profile:No official fragr"
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 72,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                }
+            ],
+            "ground_truth_answer": "Decorative / Unscented",
+            "answer": "### Nhóm hương của Candle holder\n\n- **Fragrance Family:** Decorative / Unscented (Trang trí / Vô hương)\n\nSản phẩm chủ yếu là đồ trang trí và không có thông tin hương chính thức.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Candle Matchbox thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 4.9,
+            "Judge_time": 1.63,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 146,
+                    "content_preview": "What mood does Candle matchbox create?"
+                },
+                {
+                    "source": "Candle_matchbox.md",
+                    "chunk_id": 69,
+                    "content_preview": "Product name: Candle matchbox\n\nCategory: Candle Accessory / Luxury Safety Matches\n\nMain Scents: Unscented (Natural Aspen Wood / Sulfur-Free Tip).\n\nSeason:ear-round (An absolute daily essential for can"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Utility Candle Care",
+            "answer": "Candle Matchbox thuộc nhóm hương: **Không mùi / Utility Candle Care (Non-fragrance)** — tức là không có hương, thuộc nhóm phụ kiện chăm sóc nến tiện dụng.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Candle Metal Tray thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 6.26,
+            "Judge_time": 2.71,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 371,
+                    "content_preview": "Question:\n                    What fragrance family is Candle metal tray in?\n\n                    Answer:\n                    Non-fragrance / Utility Home Organization"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 75,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Utility Home Organization",
+            "answer": "### Nhóm hương\n\n- Không hương — thuộc loại **dụng cụ chăm sóc nến / tổ chức nhà** (functional candle care display).",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Candle Pinwheel thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 8.81,
+            "Judge_time": 2.5,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 139,
+                    "content_preview": "What fragrance family is Candle holder in?"
+                },
+                {
+                    "source": "Candle_pinwheel.md",
+                    "chunk_id": 71,
+                    "content_preview": "Product name: Candle pinwheel\n\nCategory: Home Decor / Candle Carousel / Luxury Scented Candle Accessory\n\nFeatured Candle Scent: \"Gilt Pomander & Hinoki\" by Voluspa (A rich, luxurious blend of golden p"
+                }
+            ],
+            "ground_truth_answer": "Woody / Warm & Spicy Citrus Holiday",
+            "answer": "Candle Pinwheel thuộc nhóm hương: hương gỗ và hương ấm, cay pha cam quýt mang không khí lễ hội.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Candle Rotation Tray thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 5.98,
+            "Judge_time": 2.4,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 159,
+                    "content_preview": "What category does Candle rotation tray belong to?"
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 72,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Utility Candle Care",
+            "answer": "- Nhóm hương: **Không mùi / Chăm sóc nến tiện ích**",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hương thơm Coconut And Sea Salt thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 5.13,
+            "Judge_time": 2.27,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 385,
+                    "content_preview": "Question:\n                    What category does Coconut And Sea Salt belong to?\n\n                    Answer:\n                    Coconut And Sea Salt belongs to the Scented Candle category."
+                },
+                {
+                    "source": "Coconut_And_Sea_Salt.md",
+                    "chunk_id": 76,
+                    "content_preview": "Product name: Coconut And Sea Salt\n\nCategory: Scented Candle\n\nMain Scents: - Coconut - Sea Salt - Ocean Breeze\n\nSeason: - Spring - Summer - Any Season\n\nFragrance Family:Fresh, Aquatic, Tropical\n\nScent"
+                }
+            ],
+            "ground_truth_answer": "Fresh, Aquatic, Tropical",
+            "answer": "Hương thơm Coconut And Sea Salt thuộc nhóm:\n\n- Tươi mát  \n- Hương biển  \n- Nhiệt đới",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hương thơm Dalat Gift thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 8.87,
+            "Judge_time": 2.76,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 391,
+                    "content_preview": "Question:\n                    What category does Dalat Gift belong to?\n\n                    Answer:\n                    Dalat Gift belongs to the Scented Candle & Travel Perfume Gift Set / Essential O"
+                }
+            ],
+            "ground_truth_answer": "Earthy Woody / Fresh Aromatic Botanical",
+            "answer": "Hương thơm Dalat Gift thuộc nhóm: Quà tặng nến thơm và bộ nước hoa du lịch / Lưu niệm tinh dầu.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Hương thơm Day Party thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 4.27,
+            "Judge_time": 1.74,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 398,
+                    "content_preview": "Question:\n                    What are the main scents of Day Party?\n\n                    Answer:\n                    Lemon, Orange, Apple Pie, Strawberry, Rose, Peach Juice, Flowers, Sugar."
+                },
+                {
+                    "source": "Day_Party.md",
+                    "chunk_id": 78,
+                    "content_preview": "Product name: Day Party\n\nCategory: Scented Candle\n\nMain Scents: Lemon, Orange, Apple Pie, Strawberry, Rose, Peach Juice, Flowers, Sugar.\n\nSeason:Summer / Spring\n\nFragrance Family: Fruity / Sweet\n\nScen"
+                }
+            ],
+            "ground_truth_answer": "Fruity / Sweet",
+            "answer": "Hương thơm Day Party thuộc nhóm hương trái cây và ngọt ngào (Fruity / Sweet).",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hương thơm Jasmin Ylang Ylang Sandalwood thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 6.79,
+            "Judge_time": 1.86,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 403,
+                    "content_preview": "Question:\n                    What category does Jasmin ylang ylang sandalwood belong to?\n\n                    Answer:\n                    Jasmin ylang ylang sandalwood belongs to the Scented Candle c"
+                },
+                {
+                    "source": "Jasmin_ylang_ylang_sandalwood.md",
+                    "chunk_id": 79,
+                    "content_preview": "Product name: Jasmin ylang ylang sandalwood\n\nCategory: Scented Candle\n\nMain Scents: - Jasmin (Jasmine) - Ylang-Ylang - Sandalwood\n\nSeason: Autumn / Winter (but suitable for year-round relaxation)\n\nFra"
+                }
+            ],
+            "ground_truth_answer": "Floral / Woody / Oriental",
+            "answer": "### Nhóm hương\n\n- Hoa (Floral)  \n- Gỗ (Woody)  \n- Hương phương Đông (Oriental)",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hương thơm Lavander Vanilia thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 8.25,
+            "Judge_time": 2.26,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 409,
+                    "content_preview": "Question:\n                    What category does Lavander Vanilia belong to?\n\n                    Answer:\n                    Lavander Vanilia belongs to the Scented Candle category."
+                },
+                {
+                    "source": "Lavander_Vanilia.md",
+                    "chunk_id": 80,
+                    "content_preview": "Product name: Lavander Vanilia\n\nCategory: Scented Candle\n\nMain Scents: Lavender, Vanilla, Tonka Bean, Soft Musk.\n\nSeason: Year-round / Autumn (với thiết kế nắp chủ đề tạ ơn/thu hoạch)\n\nFragrance Famil"
+                }
+            ],
+            "ground_truth_answer": "Floral / Gourmand / Sweet",
+            "answer": "### Lavander Vanilia\n\n- Nhóm hương: **Floral / Gourmand / Sweet**",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hương thơm Lumos And Cucumber thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 6.58,
+            "Judge_time": 1.81,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 199,
+                    "content_preview": "What mood does Lumos And Cucumber create?"
+                }
+            ],
+            "ground_truth_answer": "Fresh / Herbal / Floral",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Hương thơm Lumos Cajeput thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 8.43,
+            "Judge_time": 2.12,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 196,
+                    "content_preview": "What are the main scents of Lumos And Cucumber?"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 747,
+                    "content_preview": "Question:\n                    What specific single-note botanical family does Lumos Lemongrass explicitly belong to?\n\n                    Answer:\n                    It belongs to the Citrus / Herbal "
+                },
+                {
+                    "source": "Lumos_Cajeput.md",
+                    "chunk_id": 82,
+                    "content_preview": "Product name: Lumos Cajeput\n\nCategory: Essential Oil\n\nMain Scents: Xông Cảm (Cold/Flu Relief Blend), Sả Chanh (Lemongrass), Bạc Hà (Peppermint), Tràm Gió (Cajeput).\n\nSeason: Year-round (Particularly b"
+                }
+            ],
+            "ground_truth_answer": "Herbal / Camphorous / Fresh",
+            "answer": "- Nhóm hương: **Herbal / Camphorous / Fresh**\n\nTức là mang hương vị thảo mộc, có đặc trưng camphor và cảm giác tươi mát.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hương thơm Lumos Honeydrew And Coconut thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 5.38,
+            "Judge_time": 2.35,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 715,
+                    "content_preview": "Question:\n                    What target consumers or flavor profiles is Lumos Honeydrew And Coconut designed for as an ideal gift choice?\n\n                    Answer:\n                    It is desig"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 196,
+                    "content_preview": "What are the main scents of Lumos And Cucumber?"
+                },
+                {
+                    "source": "Lumos_Honeydrew_And_Coconut.md",
+                    "chunk_id": 84,
+                    "content_preview": "Product name: Lumos Honeydrew And Coconut\n\nCategory: Reed Diffuser\n\nMain Scents: Honeydew Melon, Coconut Milk, Vanilla, Soft Musk, Sheer Florals.\n\nSeason: Summer / Spring\n\nFragrance Family: Fruity / T"
+                }
+            ],
+            "ground_truth_answer": "Fruity / Tropical / Sweet",
+            "answer": "Nhóm hương của Lumos Honeydrew And Coconut:\n\n- Trái cây (Fruity)  \n- Hương nhiệt đới (Tropical)  \n- Ngọt (Sweet)",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hương thơm Lumos Juicy Peach thuộc nhóm hương nào?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "hybrid",
+            "response_time": 5.2,
+            "Judge_time": 1.65,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 716,
+                    "content_preview": "Question:\n                    What base notes are responsible for leaving the sophisticated, powdery trailing aroma in Lumos Juicy Peach?\n\n                    Answer:\n                    A smooth, war"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 418,
+                    "content_preview": "Question:\n                    What fragrance family is Lumos And Cucumber in?\n\n                    Answer:\n                    Fresh / Herbal / Floral"
+                },
+                {
+                    "source": "Lumos_Juicy_Peach.md",
+                    "chunk_id": 85,
+                    "content_preview": "Product name: Lumos Juicy Peach\n\nCategory: Reed Diffuser\n\nMain Scents: Bulgarian Rose, Pink Peony, White Musk, Soft Amber, Vanilla Berry.\n\nSeason:Spring / Summer\n\nFragrance Family: Floral / Soft Rosy\n"
+                }
+            ],
+            "ground_truth_answer": "Floral / Soft Rosy",
+            "answer": "**Nhóm hương:** Floral / Soft Rosy",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        }
+    ]
+}

@@ -1,0 +1,753 @@
+{
+    "summary": {
+        "Accuracy": 0.95,
+        "Recall@5": 0.4,
+        "Recall@3": 0.25,
+        "Avg_Latency": 12.97,
+        "P95_Latency": 20.09,
+        "Avg_Judge_Latency": 7.23,
+        "P95_Judge_Latency": 9.41
+    },
+    "test_results": [
+        {
+            "question": "Formulate a sound structural argument explaining why utilizing a specialized long-handled candle snuffer entirely eliminates the primary hỏa hoạn hazards and odor contamination associated with blowing out candle wicks.",
+            "response_time": 14.12,
+            "Judge_time": 6.28,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 359,
+                    "content_preview": "Question:\n                    Why should users avoid blowing out candles with their breath when a specialized candle snuffer tool is available?\n\n                    Answer:\n                    Blowing"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 321,
+                    "content_preview": "Question:\n                    How does using a long-handled candle snuffer protect the fragrance integrity of a room after extinguishing a flame?\n\n                    Answer:\n                    A can"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 360,
+                    "content_preview": "Question:\n                    What structural advantage does an extra-long straight rod handle with an integrated ergonomic grip give to a candle snuffer user?\n\n                    Answer:\n           "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 328,
+                    "content_preview": "Question:\n                    What specific safety risk is completely eliminated when replacing the act of hard blowing with a pivoting-head candle snuffer?\n\n                    Answer:\n              "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 375,
+                    "content_preview": "Question:\n                    How does a textured ergonomic grip at the tail handle of a candle snuffer enhance safe handling?\n\n                    Answer:\n                    It prevents slippage and"
+                }
+            ],
+            "ground_truth_answer": "A professional long-handled candle snuffer features an extended metal rod fitted with a dangling, pivoting bell or cylindrical head. When lowered over a flame, it instantly cuts off oxygen, extinguishing the candle cleanly. This method completely removes the necessity of hard blowing, which fundamentally zeroes out the risk of hot liquid wax blowing back onto furniture, skin, or nearby textiles. Furthermore, it stops the generation of soot-laden black smoke and eliminates the post-burn smoke smell that would otherwise contaminate and ruin the room's lingering fragrance performance.",
+            "answer": "Argument — why a specialized long-handled candle snuffer eliminates the main fire hazards and odor contamination from blowing out wicks\n\nThesis\n- A long-handled candle snuffer extinguishes the flame by cutting off oxygen instantly and using a controlled, covered motion. That single change prevents the soot, burnt odor, and wax splatter that blowing produces, while keeping people and surfaces physically farther from the flame.\n\nKey points (cause → mitigation)\n\n- Blowing out a wick\n  - Produces a prolonged puff of black soot and an intense burnt smell that ruins the room’s fragrance.\n  - Risks splattering hot liquid wax across surfaces or onto people, which can cause burns or ignite nearby materials.\n\n- What the long-handled snuffer does\n  - Cuts off oxygen instantly, so there is no post‑burn smoke smell or black soot generation — the room’s fragrance is preserved.\n  - A pivoting/covered head prevents messy liquid wax blow-back, so hot wax cannot splatter onto furniture, textiles, or skin.\n  - An extra‑long straight rod and textured ergonomic grip maximize distance from the flame and ensure a non‑slip, steady hold, protecting fingers from heat and reducing the chance of disturbing the wick or wax pool.\n\nConclusion\n- Because it eliminates the soot-and-smoke source, prevents wax blow‑back, and keeps the user safely distanced and steady, a specialized long-handled candle snuffer removes the primary fire and burn hazards and the odor contamination associated with blowing out candle wicks.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Analyze how a professional candle wick trimmer leverages its structural design to protect white soy wax pools from soot contamination and maintain a controlled candle melt pool.",
+            "response_time": 8.62,
+            "Judge_time": 4.77,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 320,
+                    "content_preview": "Question:\n                    What is the primary technical function of utilizing a specialized candle wick trimmer instead of regular household scissors?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 327,
+                    "content_preview": "Question:\n                    Why is trimming overgrown braided cotton wicks considered crucial for extending the total lifespan of a soy candle?\n\n                    Answer:\n                    Trimm"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 377,
+                    "content_preview": "Question:\n                    What functional problem does an integrated horizontal debris catch basin on a wick trimmer solve for multi-wick soy candles?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 345,
+                    "content_preview": "Question:\n                    How does a flat circular catch tray on a candle scissor assist in maintaining the clean aesthetic of white soy wax?\n\n                    Answer:\n                    By in"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 414,
+                    "content_preview": "Question:\n                    How does a flat circular catch tray on a wick trimmer make candle care a cleaner, more satisfying process?\n\n                    Answer:\n                    It collects th"
+                }
+            ],
+            "ground_truth_answer": "A professional candle wick trimmer is engineered with long, offset angled scissor shafts paired with heavy-duty, flush-cutting horizontal blades integrated with a flat circular catch tray basin. The angled shafts allow the user to easily reach deep into tall glass jars vertically. When snipping, the specialized horizontal blades cleanly cut overgrown carbon tips down to the recommended quarter-inch height, while the flat catch basin instantly traps the clipped carbon debris, preventing it from dropping back down and contaminating the pristine wax pool. This controlled wick height prevents erratic dancing flames, eliminates black soot, and ensures a uniform, clean melt pool that extends the candle's lifespan.",
+            "answer": "How a professional wick trimmer’s design protects white soy wax pools and keeps the melt pool controlled\n\n- Precise cutting to the ideal height  \n  - The trimmer is built to trim wicks down to the recommended quarter-inch height inside tall containers.  \n  - Keeping wicks at that height prevents oversized, erratic flames and regulates the rate of wax consumption, which supports a controlled, uniform melt pool.\n\n- Long reach and blade geometry for deep cuts  \n  - The structural length and scissor action allow accurate trimming deep inside containers so the wick is cut at the correct level every time, reducing soot-producing uneven burning.\n\n- Integrated disc-shaped / flat circular catch basin  \n  - A horizontal, disc-style tray immediately catches snipped carbon tips as they are cut.  \n  - By trapping soot-covered clippings, the tray prevents blackened debris from falling back into and discoloring pristine white soy wax.\n\n- Multi-wick debris control  \n  - The catch basin is designed to receive clippings from multiple wicks simultaneously, keeping wide wax pools clean when trimming multi-wick candles.\n\n- Cleaner, more satisfying maintenance  \n  - Immediate collection of burned carbon prevents users from having to remove sticky, sooty debris from the wax, preserving both appearance and melt quality.\n\nTogether, these structural features (precise cut height, reach/blade design, and an integrated debris-catching tray) minimize soot contamination and stabilize the flame and melt behavior for a cleaner, more consistent burn.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Explain the technical design strategy and thermodynamic principles behind utilizing a heat-powered candle rotation tray carousel to create dynamic moving shadows without electrical power.",
+            "response_time": 10.7,
+            "Judge_time": 5.78,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 322,
+                    "content_preview": "Question:\n                    What thermodynamic mechanism allows the candle rotation tray to spin automatically without any electrical power source?\n\n                    Answer:\n                    O"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 330,
+                    "content_preview": "Question:\n                    How do the dangling charms on a heat-powered candle pinwheel alter the atmospheric shadow patterns of a dark room?\n\n                    Answer:\n                    As the"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 343,
+                    "content_preview": "Question:\n                    Why does a candle rotation tray package include an integrated, circular metal well in its design?\n\n                    Answer:\n                    The integrated circular"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 397,
+                    "content_preview": "Question:\n                    Why is a high-shine reflective plating applied to the metal turbines of kinetic candle accessories?\n\n                    Answer:\n                    The reflective surfac"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 369,
+                    "content_preview": "Question:\n                    What underlying mood does a user experience when watching a heat-powered rotary candle carousel spin in a dark room?\n\n                    Answer:\n                    The "
+                }
+            ],
+            "ground_truth_answer": "The candle rotation tray carousel utilizes basic thermodynamic principles to add rhythmic motion to home decor. Its structural strategy involves an integrated circular metal tealight cup holder, a curved support rod, and a delicate multi-blade metal turbine wheel at its peak. When a candle wick is ignited in the secure well below, it generates rising hot thermal air currents. These currents travel upward and push against the angled blades of the metal turbine, spinning the carousel automatically. This mechanical rotation causes the detailed hanging metallic ornaments to dance through the air, casting beautiful, dynamic moving patterns of light and shadows across surrounding walls without utilizing any electrical batteries or cord power.",
+            "answer": "Here’s a clear, human-friendly explanation of how the design and thermodynamics work together to produce moving shadows without electricity.\n\nThermodynamic principle\n- A lit candle creates rising hot thermal air currents above the flame.\n- Those upward currents push against angled blades on a small turbine, causing the turbine (and attached carousel) to spin automatically via thermodynamics.\n\nKey design elements that make it work\n- Delicate, multi-blade metal turbine with angled blades positioned at the top so the rising hot air can push each blade and produce rotation.\n- An integrated circular metal well sized for standard tealights, which holds the candle firmly in place and prevents the heat source from shifting — this stability ensures steady, consistent rising air currents.\n- High-shine reflective plating on the metal turbine, which bounces the candle’s light upward and outward to amplify shifting light and shadow patterns.\n- Dangling metallic charms attached to the rotating assembly; as the turbine turns, the charms spin and cast rhythmic, dancing shadows across walls and mirrors.\n\nResulting effect\n- Continuous, self-powered rotation translates a simple candle flame into dynamic, moving shadow patterns and enhanced firelight reflections.\n- The overall atmosphere becomes whimsical, enchanting, cozy, and calming due to the rhythmic movement of light and shadows.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Compare the material composition, visual design intentions, and specific structural protection features of the minimalist capsule Candle Tray versus the royal gold Candle metal tray.",
+            "response_time": 10.48,
+            "Judge_time": 2.1,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 347,
+                    "content_preview": "Question:\n                    Why is food-grade stainless steel selected for the manufacturing of minimalist capsule oval candle plates?\n\n                    Answer:\n                    Food-grade sta"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 232,
+                    "content_preview": "Question:\n                    What mood does Candle metal tray create?\n\n                    Answer:\n                    Glamorous, luxurious, neat, elegant, royal, artistic."
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 324,
+                    "content_preview": "Question:\n                    What is the structural utility of the slightly raised rim on a minimalist stainless steel candle tray?\n\n                    Answer:\n                    The slightly raise"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 214,
+                    "content_preview": "Question:\n                    What mood does Candle Tray create?\n\n                    Answer:\n                    Minimalist, neat, organized, sophisticated, polished."
+                }
+            ],
+            "ground_truth_answer": "The minimalist Candle Tray is crafted from food-grade, anti-rust stainless steel alloy with an electroplated mirror coating, featuring a sleek, elongated oval capsule silhouette with smooth rounded edges and a slightly raised rim designed to contain wax drips and oils cleanly according to Nordic lines. Conversely, the royal Candle metal tray features an anti-rust alloy metal frame finished in brilliant gold paired with a heavy-duty reflective mirror glass base, supported by smooth rounded metal ball feet to elevate it slightly off flat surfaces, accented with an ornate vertical pillar cutout filigree rail or interlocking heart border. While both protect furniture from heat damage and organize accessories, the capsule tray focuses on sleek metallic contemporary utility, whereas the metal tray focuses on glamorous, high-shine royal display depth.",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Synthesize a comprehensive utility and aesthetic argument for why an artisanal candle shop owner should incorporate cross-cut pine wood tray discs into their luxury candle gift sets and lifestyle flat-lay photography.",
+            "response_time": 17.99,
+            "Judge_time": 4.8,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 339,
+                    "content_preview": "Question:\n                    Why is the inclusion of unique organic wood grains in pine coasters highly valued by artisanal shop owners for product photography?\n\n                    Answer:\n         "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 386,
+                    "content_preview": "Question:\n                    How does a minimalist 'Good Day' typography slide-box design elevate a basic candle lighting utility item?\n\n                    Answer:\n                    It transforms "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 418,
+                    "content_preview": "Question:\n                    What is the primary overarching goal of using high-quality candle accessories like trays, snuffers, and trimmers across residential spaces?\n\n                    Answer:\n "
+                },
+                {
+                    "source": "Wood_tray.md",
+                    "chunk_id": 58,
+                    "content_preview": "Product name: Wood tray\n\nCategory: Home Decor / Candle Accessory / Photography Props\n\nMain Scents: Unscented (Natural, mild earthy pine wood aroma).\n\nSeason: Year-round (An absolute essential for cozy"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 382,
+                    "content_preview": "Question:\n                    How does a geometric interlocking heart design border on a candle metal tray combine aesthetics with utility?\n\n                    Answer:\n                    It provides"
+                }
+            ],
+            "ground_truth_answer": "An artisanal shop owner should incorporate cross-cut pine wood tray discs because they bridge premium technical utility with high-end rustic aesthetics. Structurally, these discs are cut from premium natural pine wood to a uniform thickness of 1cm to 1.5cm and smoothly sanded on both faces, providing a dense, highly stable, and heat-resistant coaster layer that protects delicate household furniture from hot candle jar thermal damage. Aesthetically, they showcase tightly concentric annual growth rings and naturally intact textured tree bark edges, providing a photogenic backdrop or display riser that adds a warm, handcrafted, and organic forest vibe to gift boxes, making the luxury products stand out visually in lifestyle flat-lays.",
+            "answer": "Short answer\nYes — cross-cut pine wood tray discs are a high‑impact, low‑effort addition that improves both the look and the function of luxury candle gift sets and lifestyle flat-lays.\n\nAesthetic case\n- Warm, handcrafted backdrop  \n  - The visible concentric growth rings and textured bark edges create a cozy, artisanal feel that reads as luxury and authenticity in photos and unboxing moments.\n- Built‑in visual riser  \n  - The discs lift candle jars and accessories just enough to create depth and hierarchy in flat-lays, making your candles stand out without extra props.\n- Consistent mood and storytelling  \n  - They reinforce a rustic, organic, and minimalist atmosphere that complements self‑care and slow‑living narratives — ideal for premium candle branding.\n- Perceived value uplift  \n  - Unique natural grain on every piece makes each gift feel bespoke and handcrafted, increasing customer perception of quality.\n\nUtility / functional case\n- Heat and surface protection  \n  - Acts as a heat‑resistant protective layer under hot candle jars, preventing tabletop damage, wax drips, and soot contact.\n- Practical display aid  \n  - Serves as a stable coaster, step‑riser for product displays, and an elegant center element for gift boxes and event tables.\n- Versatile usage across channels  \n  - Works equally well in packaged gift sets, e‑commerce hero shots, lifestyle photography, and in‑store displays.\n- Safety and maintenance benefits  \n  - Helps reduce direct contact between flame/heat and surfaces, supporting safer candle use and cleaner presentation.\n\nRelevant product details (for sourcing or spec decisions)\n- Material: 100% real premium pine wood, sanded faces with preserved natural bark trim  \n- Shape: organic circular / slightly oval slices  \n- Thickness: typically 1 cm to 1.5 cm (uniformly cut for stability)  \n- Functional note: heat‑resistant and suitable as coasters, risers, or photography props\n\nHow to use them in your shop\n- Include one disc inside luxury gift boxes as a built‑in coaster and presentation platform.  \n- Use discs as primary props for hero and flat‑lay shots to add texture, depth, and a handcrafted story.  \n- Pair discs with minimalist packaging and small accessories (matches, snuffers) for a cohesive self‑care aesthetic.  \n- Offer them as an optional add‑on or bundle to increase average order value and perceived gift readiness.\n\nBottom line\nCross‑cut pine wood tray discs simultaneously protect and elevate — they improve safety and product longevity while giving your candles a richer, more photogenic, and distinctly artisanal presentation that resonates with luxury shoppers.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "A consumer seeks a high-end, therapeutic winter holiday ritual accent piece that combines a premium textured glass vessel with kinetic moving elements. Identify the correct product configuration from the docs and justify why it satisfies this specific target mood.",
+            "response_time": 20.29,
+            "Judge_time": 8.34,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 407,
+                    "content_preview": "Question:\n                    Why is the premium rose-gold or amber glass container of a luxury candle often designed with a deeply textured pattern?\n\n                    Answer:\n                    T"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 383,
+                    "content_preview": "Question:\n                    What defines the overall mood profile induced by lighting an premium holiday candle like Voluspa's 'Gilt Pomander & Hinoki'?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 415,
+                    "content_preview": "Question:\n                    What specific design details make a polished yellow gold candle carousel an appropriate holiday dinner center piece?\n\n                    Answer:\n                    Its "
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 429,
+                    "content_preview": "Question:\n                    If a customer seeks a candle that perfectly replicates a 'luxury resort steam room spa', which product is ideal and why?\n\n                    Answer:\n                    "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 366,
+                    "content_preview": "Question:\n                    How does an elegant cream-colored decorative ribbon bow on a pastel pink glass candle jar influence consumer purchasing intent?\n\n                    Answer:\n             "
+                }
+            ],
+            "ground_truth_answer": "The correct product configuration is the Candle pinwheel luxury set. It features a premium large Voluspa jar candle housed in a thick rose-gold/amber glass container covered in a deeply textured, embossed floral lace pattern, emitting the rich 'Gilt Pomander & Hinoki' fragrance (golden pomander, holly berries, warm cardamom, and Japanese hinoki bark). This is topped with a heat-powered rotating metallic carousel turbine adorned with hanging holiday charms like intricate snowflakes, reindeer, or pine trees. When lit, rising thermal air current automatically spins the charms, casting beautiful dancing holiday shadows across walls. This striking combination satisfies the desired dreamy, magical, mesmerizing, luxurious, and warm festive mood, transforming routine candle burning into a therapeutic holiday ritual.",
+            "answer": "### Recommended configuration\n- Premium textured **rose‑gold or amber glass** vessel  \n  - Deeply textured pattern that turns the container into an artistic statement piece and catches ambient room light.\n\n- Polished **yellow‑gold candle carousel** with kinetic elements  \n  - Brilliant reflective plating.  \n  - Integrated tealight well.  \n  - Delicate hanging ornaments that create a festive moving display.\n\nWhy this fits the brief\n- The textured glass provides a high‑end, decorative focal point that glows and feels luxurious when lit.  \n- The yellow‑gold carousel supplies the kinetic, moving elements and a festive visual ritual suitable for holiday dinners or gatherings.  \n- Together they evoke the premium holiday mood profile—dreamy, magical, mesmerizing, luxurious, warm, festive, and therapeutic—making the pairing ideal for a winter holiday ritual accent piece that feels both elegant and restorative.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Detail the specific technical packaging elements and physical safety advantages of utilizing premium Artisanal Minimalism Candle matchboxes over standard disposable lighters for lighting deep wax wicks.",
+            "response_time": 10.71,
+            "Judge_time": 8.32,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 386,
+                    "content_preview": "Question:\n                    How does a minimalist 'Good Day' typography slide-box design elevate a basic candle lighting utility item?\n\n                    Answer:\n                    It transforms "
+                },
+                {
+                    "source": "Candle_matchbox.md",
+                    "chunk_id": 29,
+                    "content_preview": "Product name: Candle matchbox\n\nCategory: Candle Accessory / Luxury Safety Matches\n\nMain Scents: Unscented (Natural Aspen Wood / Sulfur-Free Tip).\n\nSeason:ear-round (An absolute daily essential for can"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 331,
+                    "content_preview": "Question:\n                    What structural feature of a candle matchbox box ensures smooth, wind-resistant ignition over long periods of storage?\n\n                    Answer:\n                    Th"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 416,
+                    "content_preview": "Question:\n                    Why are eco-friendly natural wood splints preferred over synthetic materials for high-end candle safety matches?\n\n                    Answer:\n                    Natural "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 323,
+                    "content_preview": "Question:\n                    Why are elongated wooden safety matches preferred over cheap plastic disposable lighters for deep jar candles?\n\n                    Answer:\n                    The elonga"
+                }
+            ],
+            "ground_truth_answer": "The premium Candle matchbox features heavy-duty slider matchboxes adorned with minimalist typography, incorporating a specialized honeycomb-textured friction strike pad running along the side panel. Inside, it utilizes eco-friendly premium natural wood splints tipped with high-quality, clean-burning safety chemicals, available in high-contrast options like sleek all-black boxes with charcoal tips or crisp white boxes with white tips. The physical safety advantage over disposable plastic lighters is that these elongated wooden sticks are engineered to provide a clean, steady, wind-resistant, and extra-long burn time, allowing user fingers and knuckles to stay completely safe from fire burns when reaching deep into tall glass candle jars or lighting low-burned multi-wick waxes.",
+            "answer": "Technical packaging elements\n- Packaging type: heavy-duty **slider matchbox** — designed for repeated, safe access and long-term storage.\n- Friction strike: **honeycomb-textured friction strike pad** running along the side panel for reliable, wind-resistant ignition.\n- Match design: **elongated wooden sticks** housed inside the box to provide extra length for reaching deep wicks.\n- Tips and burn chemistry: **clean-burning safety tips** (sulfur-free / high-quality safety chemicals) formulated for steady ignition and minimal residue.\n- Materials: **eco-friendly premium natural wood splints** giving structural stiffness and consistent burn performance.\n- Aesthetic/placement: minimalist slide-box design intended for display (keeps matches accessible and visible on trays or vanities).\n\nPhysical safety advantages vs. standard disposable lighters\n- Greater reach: elongated wooden sticks let you light deep jar or multi-wick candles without putting fingers near the flame.\n- Cleaner burn: natural wood splints and clean-burning tips produce steadier, more controllable flames than many disposable lighters, reducing flare-ups.\n- Wind resistance & reliability: the honeycomb strike pad plus stable tip chemistry maintain ignition performance after long storage, so you’re less likely to struggle and accidentally expose hands to flame.\n- Safer handling: wooden matches avoid the close-proximity hand positioning sometimes required by short plastic lighters when reaching into tall glass containers.\n- Durable, intentional packaging: the slider box both protects the matches and provides a stable, easy-to-grip dispenser that reduces fumbling during lighting.\n\nIf you’d like, I can summarize these points into a short comparison you can use for product descriptions or training—tell me the format you prefer.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Contrast the consumer perception and ultimate primary use-case of the unscented decorative wax Candle holder bear display versus a functional aromatherapy candle gift set like the Dalat Gift.",
+            "response_time": 12.07,
+            "Judge_time": 9.38,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 335,
+                    "content_preview": "Question:\n                    What aesthetic asset makes a white bear candle under a glass dome popular as a gift item over standard utility candles?\n\n                    Answer:\n                    I"
+                },
+                {
+                    "source": "Candle_holder.md",
+                    "chunk_id": 28,
+                    "content_preview": "Product name: Candle holder\n\nCategory: Decorative Candle\n\nMain Scents: - Unspecified - Decorative Product\n\nSeason: Any Season\n\nFragrance Family: Decorative / Unscented\n\nScent Profile:No official fragr"
+                },
+                {
+                    "source": "Dalat_Gift.md",
+                    "chunk_id": 37,
+                    "content_preview": "Product name: Dalat Gift\n\nCategory: Scented Candle & Travel Perfume Gift Set / Essential Oil Keepsake\n\nMain Scents: Pine Wood, Fresh Moss, Lemon Peel, Warm Amber, Cedarwood, and Crisp Mountain Tea.\n\nS"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 217,
+                    "content_preview": "Question:\n                    What are the main scents of Candle holder?\n\n                    Answer:\n                    - Unspecified - Decorative Product"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 219,
+                    "content_preview": "Question:\n                    What fragrance family is Candle holder in?\n\n                    Answer:\n                    Decorative / Unscented"
+                }
+            ],
+            "ground_truth_answer": "The unscented Candle holder bear display is perceived primarily as a cute, charming, and minimalist decorative object rather than a functional fragrance item. It features a handcrafted white wax bear displayed under a protective glass dome on a wooden base, used for bedroom decor, nursery decoration, or photography props to cultivate a peaceful, playful, and heartwarming mood. In contrast, the Dalat Gift set is a functional, multi-layered aromatherapy experience designed for deep sensory relaxation routines. It contains a functional 'Đà Lạt' scented candle jar (Pine Wood, Fresh Moss, Lemon Peel, Warm Amber, Cedarwood) topped with an eco-friendly bamboo lid, a wax seal emblem, a cross-cut pine log coaster, and a matching 10ml 'Mountain Tea' travel perfume spray, engineered to evoke a nostalgic, misty high-altitude city chill while physically throwing fragrance to clear indoor spaces.",
+            "answer": "Candle holder (White bear candle under glass dome)\n\n- Consumer perception\n  - Cute, charming, minimalist and handcrafted aesthetic.\n  - Seen as whimsical, heartwarming, and decorative rather than functional fragrance product.\n  - Popular as a gift for its visual appeal and cozy, playful mood.\n\n- Primary use-case\n  - Decorative object for bedrooms, desks, living rooms, nurseries, photography props, or shelf displays.\n  - Acts as a collectible/display item and mood-setting ornament even when unlit (unscented).\n\nDalat Gift (Aromatherapy candle + travel perfume gift set)\n\n- Consumer perception\n  - Thoughtful, nostalgic, and high-end sensory gift that evokes pine forests and misty highlands.\n  - Perceived as relaxing, grounding, and suitable for people who love nature and atmospheric scents.\n  - Appreciated for its curated presentation (candle + 10 ml Mountain Tea spray + dried florals and rustic accessories).\n\n- Primary use-case\n  - Functional aromatherapy and home fragrance: creates a cozy, pine-scented indoor atmosphere (best in autumn/winter/rainy seasons).\n  - Gift set for self-care, calming home workspaces, or a memorable travel/souvenir experience; includes a portable perfume for on-the-go use.\n\nSummary contrast (one line)\n- The bear candle is primarily a visual/decorative keepsake valued for its aesthetic; the Dalat Gift is a multi-sensory, functional aromatherapy gift intended to deliver a specific fragrant mood and practical use.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Explain how the choice of finish variations on a minimalist stainless steel capsule tray (Brilliant Yellow Gold, Polished Chrome Silver, Iridescent Rainbow) allows consumers to alter their home decor statement while maintaining identical furniture protection.",
+            "response_time": 20.08,
+            "Judge_time": 8.44,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 404,
+                    "content_preview": "Question:\n                    Why are polished chrome silver finishes popular for minimalist, high-traffic living room accessories?\n\n                    Answer:\n                    The finish offers a"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 388,
+                    "content_preview": "Question:\n                    What visual benefit does an iridescent rainbow finish offer when paired with minimalist Nordic home styling?\n\n                    Answer:\n                    It adds an e"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 347,
+                    "content_preview": "Question:\n                    Why is food-grade stainless steel selected for the manufacturing of minimalist capsule oval candle plates?\n\n                    Answer:\n                    Food-grade sta"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 394,
+                    "content_preview": "Question:\n                    Why are smooth rounded edges a key feature of minimalist capsule stainless steel candle plates?\n\n                    Answer:\n                    The smooth rounded design"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 341,
+                    "content_preview": "Question:\n                    How do different metallic finishes like Matte Black and Luxury Rose Gold influence the perceived luxury level of a candle ritual?\n\n                    Answer:\n           "
+                }
+            ],
+            "ground_truth_answer": "All finish variations of the minimalist stainless steel capsule tray maintain identical physical furniture protection properties because they are all constructed from the same high-grade, food-grade, anti-rust stainless steel alloy featuring a mirror-polished coating and an elongated oval silhouette with a raised rim that intercepts hot candle jars, catches wax spills, and blocks oil rings. However, the finish options completely alter the visual decor statement: Brilliant Yellow Gold delivers a classic warm metallic tone; Polished Chrome Silver brings a clean, contemporary Nordic look; and the Iridescent Rainbow/Chameleon finish introduces a vibrant, multi-tone plating that turns a simple utility tray into a dazzling contemporary centerpiece that shifts colors under light.",
+            "answer": "All three finishes sit on the same minimalist stainless-steel capsule tray, so the tray’s protective features stay identical: food‑grade stainless steel gives premium weight, density, rust resistance, and stain-free performance even with candle oils, and the smooth rounded edges ensure safe handling and the same furniture protection.\n\nHow each finish changes the decor statement\n\nBrilliant Yellow Gold\n- Warmer, luxurious metallic accent that elevates perceived luxury and turns routine candle rituals into a more stylish, personalized statement.\n\nPolished Chrome Silver\n- Clean, contemporary look that suits minimalist or high‑traffic living rooms.\n- Resists fingerprint smudges better than highly polished gold, so it maintains a neater appearance in everyday use.\n\nIridescent Rainbow\n- Eye‑catching, multi‑tone metallic pop that breaks up monochromatic spaces.\n- Reflects shifting colors with changing light, adding dynamic visual interest.\n\nBottom line\n- Pick a finish to match the mood you want (warm/luxury, clean/minimal, or playful/statement) while keeping identical protection for your furniture thanks to the same steel construction and rounded design.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Analyze why a sulfur-free chemical tip composition on elongated safety matches is technically important for preserving the true scent throw of luxury aromatherapy candles.",
+            "response_time": 13.34,
+            "Judge_time": 5.57,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 393,
+                    "content_preview": "Question:\n                    What functional issue is avoided by utilizing sulfur-free match tips for lighting premium aromatherapy waxes?\n\n                    Answer:\n                    It avoids r"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 357,
+                    "content_preview": "Question:\n                    How do clean safety chemicals tipped on wooden match sticks reduce environmental discomfort compared to butane fuel lighters?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 223,
+                    "content_preview": "Question:\n                    What are the main scents of Candle matchbox?\n\n                    Answer:\n                    Unscented (Natural Aspen Wood / Sulfur-Free Tip)."
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 416,
+                    "content_preview": "Question:\n                    Why are eco-friendly natural wood splints preferred over synthetic materials for high-end candle safety matches?\n\n                    Answer:\n                    Natural "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 371,
+                    "content_preview": "Question:\n                    What is the primary formulation difference between premium safety matches and cheap standard utility matchboxes?\n\n                    Answer:\n                    Premium "
+                }
+            ],
+            "ground_truth_answer": "Elongated safety matches are engineered with eco-friendly natural wood splints tipped with sulfur-free, high-quality safety chemicals. Technically, sulfur-free tips ensure that upon physical striking against the honeycomb friction pad, the ignition process is completely clean-burning and does not release the pungent, harsh chemical, rotten-egg odor typical of standard sulfur matches or butane fuel residue. This structural clean ignition ensures that the volatile initial top notes of a luxury aromatherapy candle are not contaminated by harsh chemical smoke, allowing the true botanical essential oils to throw cleanly into the room atmosphere.",
+            "answer": "Short answer: Using sulfur-free, clean-burning tips on elongated safety matches prevents any harsh chemical or sulfurous smoke from masking the candle’s fragrance, so the candle’s true scent throw is heard clearly from the moment it’s lit.\n\nWhy that matters (technical points)\n\n- Immediate avoidance of sulfurous/rotten-egg odors  \n  - Sulfur-free tips do not release the harsh, rotten-egg sulfur smell that ordinary sulfur-tipped matches produce when struck, so the air isn’t contaminated with an off-putting odor that would compete with the candle’s essential oils.\n\n- Clean-burning ignition that doesn’t mask the first impression  \n  - Clean safety chemicals burn without producing the pungent, chemical smoke common to cheap lighters or matches, preserving the candle’s initial scent burst (the critical first moments of aroma).\n\n- No added fragrance from the ignition source  \n  - Matches made from natural aspen wood with sulfur-free tips are unscented, so they don’t introduce competing notes that would alter the intended fragrance profile.\n\n- Avoidance of heavy chemical off-gassing  \n  - Premium safety matches are formulated to avoid sulfur or other toxic materials that create heavy chemical odors on ignition, so the room is filled only with the candle’s designed aromatherapy notes.\n\nTogether, these points explain why a sulfur-free tip composition is technically important: it prevents masking or altering of the candle’s aroma at ignition, ensuring the luxury candle delivers its intended scent experience.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What structural role do the smooth rounded metal ball feet play on a polished gold mirror vanity tray when managing cosmetic and oil diffuser containment?",
+            "response_time": 12.87,
+            "Judge_time": 7.15,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 356,
+                    "content_preview": "Question:\n                    What specific domestic maintenance issue is resolved by placing reed diffusers on a polished gold mirror vanity tray?\n\n                    Answer:\n                    It "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 332,
+                    "content_preview": "Question:\n                    Why do premium candle metal trays incorporate smooth, integrated bottom metal ball feet instead of a completely flat bottom?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 337,
+                    "content_preview": "Question:\n                    How does an ornate gold filigree rail border on a vanity tray protect surrounding glassware and amber dropper bottles?\n\n                    Answer:\n                    Th"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 401,
+                    "content_preview": "Question:\n                    What practical value does a heavy-duty reflective mirror glass base bring to a cosmetics organizer tray?\n\n                    Answer:\n                    It allows users "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 324,
+                    "content_preview": "Question:\n                    What is the structural utility of the slightly raised rim on a minimalist stainless steel candle tray?\n\n                    Answer:\n                    The slightly raise"
+                }
+            ],
+            "ground_truth_answer": "The smooth rounded metal ball feet are integrated into the bottom of the anti-rust gold alloy frame to elevate the heavy-duty reflective mirror glass base slightly off flat furniture tops. This structural design creates an isolating air gap that protects delicate wood veneers or marble from direct heat transfer from hot candle bottoms. Furthermore, it prevents any residual moisture or accidental oil diffuser spills that run down the tray frame from getting trapped flat against the table surface, avoiding permanent rings, staining, or scratches while keeping the vanity station neat and organized.",
+            "answer": "They slightly lift the tray off the surface to:\n\n- Prevent scratches on delicate furniture by keeping the metal base from rubbing directly on the tabletop.  \n- Create an insulating air gap that minimizes thermal transfer.\n\nTogether these effects help the tray act as a protective barrier when holding cosmetics and reed diffusers—reducing direct heat transfer and separating any stray oils or residue from the underlying finish.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Synthesize a detailed technical response explaining how an overgrown, untrimmed candle wick leads to black soot deposits and how a professional wick trimmer structurally eliminates this hazard.",
+            "response_time": 13.32,
+            "Judge_time": 9.37,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 431,
+                    "content_preview": "Question:\n                    How does trimming a candle's wick to approximately 3mm after each use technically prevent the formation of black smoke?\n\n                    Answer:\n                    T"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 309,
+                    "content_preview": "Question:\n                    What specific type of residue is prevented from forming when the wick is regularly trimmed?\n\n                    Answer:\n                    Regular trimming avoids the p"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 320,
+                    "content_preview": "Question:\n                    What is the primary technical function of utilizing a specialized candle wick trimmer instead of regular household scissors?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 354,
+                    "content_preview": "Question:\n                    What is the direct correlation between using a candle wick cutter and preventing black smoke rings from forming on glass walls?\n\n                    Answer:\n             "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 399,
+                    "content_preview": "Question:\n                    How does keeping a candle wick clean and trimmed protect indoor air quality over time?\n\n                    Answer:\n                    It ensures clean, complete combust"
+                }
+            ],
+            "ground_truth_answer": "An overgrown, untrimmed candle wick causes excessive carbon buildup, resulting in an erratic, oversized dancing flame that draws up melted wax too rapidly for complete combustion. This incomplete combustion releases heavy black soot deposits that stain the interior glass walls of the candle container and degrade indoor air quality. A professional wick trimmer structurally eliminates this hazard through its long, offset angled scissor shafts and unique horizontal flush-cutting blades integrated with a flat circular catch tray. The long shafts allow the user to reach deep vertically to snip the wick down to the safe quarter-inch height before every burn cycle. The horizontal blades shear the fibers cleanly to prevent fraying, while the circular catch basin instantly traps the carbon tip, preventing dirty debris from contaminating the wax pool.",
+            "answer": "How an overgrown, untrimmed wick causes black soot deposits\n\n- An overgrown wick lets the flame grow larger and burn less consistently, which changes the burn rate.  \n- A large or split/carbonized wick end draws up excess wax and oxygen at the same time, causing incomplete combustion.  \n- Incomplete combustion produces soot-filled black smoke and carbon debris that settles as black rings on glass and as airborne particles.  \n- Split or carbonized wick tips accelerate soot formation, worsening deposits on jar walls and contaminating the wax pool over time.  \n- This soot release also degrades indoor air quality by increasing airborne soot particles and black smoke.\n\nHow a professional wick trimmer structurally eliminates the hazard\n\n- Precise cut to ideal height: the trimmer is built to accurately shorten wicks down to the recommended height (guidance includes trimming to approximately **3 mm** after each use, and specialized trimmers can reach an ideal **quarter-inch** depth inside tall containers).  \n- Flame control and consistent burn: keeping the wick at the correct height limits flame size and stabilizes the burn rate, preventing the wick from drawing excess wax and oxygen that leads to incomplete combustion and soot.  \n- Carbon-capture design: an integrated disc-shaped catching basin traps the trimmed carbonized wick debris so it cannot fall back into and contaminate the wax pool.  \n- Deep-reach cutting: the trimmer’s shape allows accurate cuts deep inside tall jars, removing split or carbonized ends that would otherwise keep producing soot and black smoke rings on glass.\n\nBottom line\n\nTrim wicks regularly and use a professional trimmer to maintain the correct wick height, capture carbon debris, stabilize the flame, and prevent soot formation and indoor air contamination.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Examine the thermodynamic and mechanical safety features embedded within a polished yellow gold candle carousel stand compared to open un-contained candle holders.",
+            "response_time": 19.24,
+            "Judge_time": 9.94,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 415,
+                    "content_preview": "Question:\n                    What specific design details make a polished yellow gold candle carousel an appropriate holiday dinner center piece?\n\n                    Answer:\n                    Its "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 395,
+                    "content_preview": "Question:\n                    How does an integrated metal tealight cup holder inside a rotary carousel prevent accidental fire hazards?\n\n                    Answer:\n                    It locks the s"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 355,
+                    "content_preview": "Question:\n                    Why are metallic finishes like Polished Chrome Silver and Brilliant Yellow Gold highly requested for kinetic candle carousels?\n\n                    Answer:\n              "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 342,
+                    "content_preview": "Question:\n                    What specific thermal danger is avoided by utilizing an anti-rust metal frame and mirrored glass base for candle metal trays?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "Candle_rotation_tray.md",
+                    "chunk_id": 32,
+                    "content_preview": "Product name: Candle rotation tray\n\nCategory: Candle Holder / Rotary Carousel / Decorative Home Accessory\n\nMain Scents: Unscented (Premium Finished Metal construction engineered to accommodate standar"
+                }
+            ],
+            "ground_truth_answer": "An open un-contained candle holder lacks structural safeguards against displacement or thermal air flow control. In contrast, the polished yellow gold candle carousel incorporates premium thermodynamic and mechanical safety features. Mechanically, its base design features an integrated, circular metal well securely sized to firmly lock standard tealight candles into place, ensuring the candle cannot slide or tip over if bumped. Thermodynamically, it features a rigid curved support rod that positions a delicate multi-blade metal turbine precisely above the flame. This design safely channels rising hot thermal air currents to spin the turbine automatically, containing the thermal energy within an engineered vertical path while casting moving light patterns gracefully through reflective yellow gold plating.",
+            "answer": "Here’s a concise comparison of the carousel’s thermodynamic and mechanical safety features versus open, un‑contained candle holders.\n\nThermodynamic features\n- Heat‑responsive alloy construction: the precision‑stamped, heat‑responsive lightweight alloy is engineered to work with the candle’s rising hot air, driving the multi‑blade turbine reliably without electrical parts.\n- Predictable thermal airflow: the carousel’s turbine is powered by rising thermal air currents from the tealight, a controlled mechanism that uses the candle’s heat rather than relying on unstable external airflow.\n- Mirrored glass / metal tray protection: using an anti‑rust metal frame and mirrored glass base prevents high heat from glass candle bottoms from transferring to and damaging vulnerable tabletops, and it catches hot wax mishaps cleanly.\n\nMechanical safety features\n- Integrated metal tealight cup well: the circular metal well locks a standard aluminum or clear‑cup tealight into place so the candle cannot slide or tip if the table is bumped, containing the heat source securely.\n- Secure support for moving parts: the curved support rod and turbine are designed to sit above the candle in a stable arrangement, keeping ornament movement separated from the flame.\n- Durable plated finish: the high‑shine plated metal (polished yellow gold option) is a robust, metal construction rather than fragile glass that could crack under heat stress.\n\nHow these reduce risks compared with open un‑contained holders\n- Prevents tipping and spill hazards that can occur when a tealight is not locked into a metal well.\n- Reduces direct heat transfer from glass candle bottoms to tabletops, lowering the chance of surface damage.\n- Contains hot wax and heat within a designed tray area instead of allowing drips and concentrated heat to contact furniture.\n\nIf you need a short summary for use on a product label or safety sheet, I can draft that as well.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "A buyer requests an unboxing experience that evokes a chilling forest mood, incorporating organic timber elements along with personal and room fragrance products. Identify the gift set and break down its structural contents.",
+            "response_time": 8.79,
+            "Judge_time": 8.48,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 402,
+                    "content_preview": "Question:\n                    How does a natural wood cross-cut pine coaster complement a rustic gift set containing dried flowers?\n\n                    Answer:\n                    It completes a cohe"
+                },
+                {
+                    "source": "Dalat_Gift.md",
+                    "chunk_id": 37,
+                    "content_preview": "Product name: Dalat Gift\n\nCategory: Scented Candle & Travel Perfume Gift Set / Essential Oil Keepsake\n\nMain Scents: Pine Wood, Fresh Moss, Lemon Peel, Warm Amber, Cedarwood, and Crisp Mountain Tea.\n\nS"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 559,
+                    "content_preview": "Question:\n                    What structural elements are included in the packaging box of Lumos Tropical Orchard to facilitate the continuous scent throw?\n\n                    Answer:\n              "
+                },
+                {
+                    "source": "Wood_tray.md",
+                    "chunk_id": 58,
+                    "content_preview": "Product name: Wood tray\n\nCategory: Home Decor / Candle Accessory / Photography Props\n\nMain Scents: Unscented (Natural, mild earthy pine wood aroma).\n\nSeason: Year-round (An absolute essential for cozy"
+                },
+                {
+                    "source": "YOU_ARE_THE_MAGIC.md",
+                    "chunk_id": 59,
+                    "content_preview": "Product name: YOU ARE THE MAGIC\n\nCategory: Scented Candle Gift Set\n\nMain Scents: Sweet Roasted Apple, Festive Cinnamon, Warm Clove, Cozy Pine Needle, Soft Vanilla Frosting.\n\nSeason: Winter / Christmas"
+                }
+            ],
+            "ground_truth_answer": "The product is the Dalat Gift set by Heny Garden, engineered for the Autumn/Winter/Rainy seasons to capture the nostalgic, misty city mood of Da Lat. Its structural packaging consists of a sturdy kraft paper gift box filled with paper crinkle shreds. The contents include: a clear glass 'Đà Lạt' candle jar (key notes: Gỗ Thông & Rêu, Vỏ Chanh, Hổ Phách, Tuyết Tùng) topped with an eco-friendly light bamboo wooden lid and accented by a wax seal emblem; a 10ml travel-sized clear glass spray bottle of 'Mountain Tea' Eau De Toilette with a sleek black cap; a dried cream hydrangea flower bouquet accented with bunny tail grass stems; two dehydrated real orange slices; and a thick natural cross-cut pine log coaster to protect tables from candle heat.",
+            "answer": "Gift set: Dalat Gift — Heny Garden\n\nStructural contents and packaging breakdown:\n\n- Sturdy kraft paper gift box (outer packaging)\n- Paper crinkle shreds (internal cushioning and presentation)\n- \"Đà Lạt\" scented candle jar\n  - Clear glass jar\n  - Natural light bamboo wooden lid\n  - Wax seal emblem on the jar\n  - Candle variation: Đà Lạt (key notes: Pine Wood & Moss, Lemon Peel, Amber, Cedarwood)\n- Mountain Tea Eau de Toilette\n  - 10 ml travel-sized clear glass spray bottle with sleek black cap (personal fragrance)\n- Thick natural cross-cut pine log coaster (heat-resistant timber element)\n- Dried cream hydrangea bouquet accented with bunny tail stems (organic botanical accent)\n- Two dehydrated real orange slices (decorative aromatic detail)\n\nWhy this fits the requested mood:\n- Main scents (pine wood, fresh moss, cedarwood, amber) and the Mountain Tea spray create a chilly forest—grounding and misty—atmosphere.\n- Organic timber elements (cross-cut pine coaster, bamboo lid, natural wood visuals) and dried botanicals deliver an authentic rustic/unboxing experience.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Determine how the physical design variations of the heat-powered luxury Candle pinwheel charms alter the winter festive atmosphere according to customer perception.",
+            "response_time": 12.24,
+            "Judge_time": 5.6,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 330,
+                    "content_preview": "Question:\n                    How do the dangling charms on a heat-powered candle pinwheel alter the atmospheric shadow patterns of a dark room?\n\n                    Answer:\n                    As the"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 400,
+                    "content_preview": "Question:\n                    Why are standing holiday pine trees featured as a charm theme variation for seasonal candle pinwheels?\n\n                    Answer:\n                    They reinforce a t"
+                },
+                {
+                    "source": "Candle_pinwheel.md",
+                    "chunk_id": 31,
+                    "content_preview": "Product name: Candle pinwheel\n\nCategory: Home Decor / Candle Carousel / Luxury Scented Candle Accessory\n\nFeatured Candle Scent: \"Gilt Pomander & Hinoki\" by Voluspa (A rich, luxurious blend of golden p"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 348,
+                    "content_preview": "Question:\n                    How does the rotating silver snowflake theme on a premium candle pinwheel complement textured embossed glass containers?\n\n                    Answer:\n                    "
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 238,
+                    "content_preview": "Question:\n                    Where is Candle pinwheel best used?\n\n                    Answer:\n                    Holiday dinner table centerpieces, cozy living room mantels, festive bedside tables, "
+                }
+            ],
+            "ground_truth_answer": "The luxury Candle pinwheel set alters the winter festive atmosphere by offering high-shine metallic silver and polished gold turbine finishes paired with distinct intricate holiday charm theme variations: intricate cut snowflakes, standing holiday pine trees, and whimsical walking reindeer. According to customer perception, when a candle is ignited beneath the premium embossed glass floral lace Voluspa container, rising warm air currents automatically rotate these hanging charms. The rotating silver or gold shapes catch the firelight and cast beautiful, dancing holiday shadows across walls and vanity mirror trays, instantly elevating a standard candle-burning routine into a dreamlike, magical, and therapeutic winter holiday ritual.",
+            "answer": "Customers describe each charm variation as shifting the room’s winter feel in a distinct, recognizable way:\n\nSnowflake charms\n- Mood: Dreamy, magical, and highly sophisticated.  \n- Visual effect: High-shine silver snowflakes catch and multiply light from the embossed glass, creating amplified reflections and a shimmering, immersive winter scene.  \n- Experience: The slow, rhythmic rotation is perceived as mesmerizing and therapeutic—turning candle time into an elevated holiday ritual.\n\nStanding pine tree charms\n- Mood: Warmly traditional and festive.  \n- Visual effect: Evokes classic winter/holiday imagery, reinforcing a cozy seasonal atmosphere.  \n- Experience: Feels like a luxury seasonal decoration or upscale gift—well suited for formal holiday tables and luxury gifting.\n\nWalking reindeer charms\n- Mood: Whimsical and playful while still elegant.  \n- Visual effect: The moving reindeer produce lively, dancing shadows that add motion and storytelling to the display.  \n- Experience: Brings a charming, animated touch to mantels and centerpieces without losing the product’s premium feel.\n\nMaterials & finishes (shared influence)\n- The precision-cut, heat-responsive alloy in polished silver and gold increases sparkle and reflection.  \n- The rotating charms plus textured, embossed glass create dynamic light and shadow patterns that customers find mesmerizing and mood-setting for cozy winter evenings.\n\nOverall takeaway\n- Choice of charm lets you steer the atmosphere: snowflakes for magical luxury, pine trees for classic holiday warmth, and reindeer for playful elegance—each enhancing the candle’s movement, reflections, and festive impact.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Explain why natural pine wood tray slices are smoothly sanded on both faces while their rough organic bark edges are preserved intact, focusing on the balanced requirements of home decor utility.",
+            "response_time": 10.35,
+            "Judge_time": 6.58,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 344,
+                    "content_preview": "Question:\n                    What structural detail prevents the unique organic bark trim on a wood tray from peeling off or crumbling over time?\n\n                    Answer:\n                    The "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 364,
+                    "content_preview": "Question:\n                    Why is an organic circular or slightly oval shape maintained for natural pine wood tray slices?\n\n                    Answer:\n                    Preserving the organic sh"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 410,
+                    "content_preview": "Question:\n                    Why is smoothly sanded natural pine wood preferred for table centerpieces over raw, unsanded lumber?\n\n                    Answer:\n                    Smooth sanding preve"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 333,
+                    "content_preview": "Question:\n                    What specific material composition guarantees that a wood tray log slice will remain stable under the weight of heavy glass candle vessels?\n\n                    Answer:\n "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 326,
+                    "content_preview": "Question:\n                    What dual-purpose protective advantages do natural pine wood tray slices offer when used as candle coasters?\n\n                    Answer:\n                    They serve a"
+                }
+            ],
+            "ground_truth_answer": "The dual treatment of natural pine wood tray slices balances physical utility with rustic aesthetics. Smoothly sanding both faces provides a perfectly flat, uniform, and stable horizontal surface cut to a uniform 1cm to 1.5cm thickness, which ensures that hot glass candle jars, beverage mugs, or planters rest securely without wobbling or tilting. This flat surface prevents hot wax spills or thermal cracking of delicate tabletops. Concurrently, leaving the rough organic bark edges and tightly concentric annual growth rings completely intact preserves the raw, unrefined forest texture that consumers desire, delivering a warm, handcrafted, and cozy minimalist home decor statement piece.",
+            "answer": "Why they sand the faces but keep the bark\n\nDesigners intentionally combine safety, stability, and rustic charm by sanding both faces while leaving the bark intact.\n\nPractical / utility benefits\n- Smooth faces prevent splinters that could damage delicate linens or scratch tabletops.  \n- A smooth, uniform surface gives a stable base for heavy glass candle vessels and other objects.  \n- When cut to a consistent thickness (about **1–1.5 cm**), the slice reliably supports weight and acts as a heat‑resistant layer that shields furniture from thermal stress.\n\nAesthetic and tactile benefits\n- Preserving the organic circular or slightly oval shape and the rough bark emphasizes a raw, handcrafted forest aesthetic—showing the concentric growth rings people appreciate in cozy interiors.  \n- The intact bark provides a warm, rustic edge that contrasts nicely with the finished faces.\n\nHow durability is maintained\n- Artisanal cutting and careful sanding smooth the faces while stabilizing the bark trim so it remains intact and non‑crumbling, giving you both a safe, functional surface and an authentic natural look.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Contrast the structural head styling variations (flat-top cylinder cap vs. flared vintage bell dome) of professional candle snuffers and analyze how they optimize oxygen deprivation across different candle vessels.",
+            "response_time": 9.5,
+            "Judge_time": 9.17,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 334,
+                    "content_preview": "Question:\n                    How does a cylindrical modern cap design on a candle snuffer operate differently from a traditional flared vintage bell dome?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 387,
+                    "content_preview": "Question:\n                    Why is a flared vintage bell dome shape on a candle snuffer considered highly effective for tapered dining table candles?\n\n                    Answer:\n                   "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 362,
+                    "content_preview": "Question:\n                    How does a flat-top cylindrical cap design on a candle snuffer optimize space when extinguishing multiple small votive cups?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 411,
+                    "content_preview": "Question:\n                    How does a pivoting head on a vintage bell candle snuffer simplify extinguishing flames on high mantelpiece displays?\n\n                    Answer:\n                    The"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 372,
+                    "content_preview": "Question:\n                    Why is an elongated oval capsule silhouette chosen for Nordic-style minimalist stainless steel candle plates?\n\n                    Answer:\n                    The elongat"
+                }
+            ],
+            "ground_truth_answer": "Both head styling variations are manufactured from heavy-duty anti-rust stainless steel alloy and utilize a dangling, pivoting mechanism to cut off oxygen and eliminate post-burn smoke smell. However, they optimize oxygen deprivation for different vessels: the modern flat-top cylindrical cap features a streamlined, compact geometric silhouette, making it highly optimal for dropping straight down into narrow-necked glass containers or tight votive cups without hitting the glass. Conversely, the traditional flared vintage bell dome features a wide, dramatic opening, making it highly optimal for extinguishing large multi-wick soy candles, tall freestanding pillars, or tapered dining table candles, covering the exposed wick cleanly from multiple side angles.",
+            "answer": "Overview\n\nFlat-top cylindrical cap\n\n- Structure: compact, streamlined flat-top cylinder.\n- Best for: narrow-necked glass containers and small votive cups.\n- How it optimizes oxygen deprivation:\n  - Its slim, geometric silhouette fits down into confined openings so it can be dropped directly over the wick.\n  - Because it seats cleanly inside narrow vessels, it cuts off oxygen without striking or disturbing fragile glass edges.\n\nFlared vintage bell dome\n\n- Structure: wide, flared bell-shaped dome (often available with a pivoting head).\n- Best for: tapered dining candles and other exposed wicks where side access is required; useful on high displays when paired with a pivoting head.\n- How it optimizes oxygen deprivation:\n  - The broad flared shape easily covers the exposed wick from any side angle, rapidly excluding air around the flame.\n  - A pivoting head helps the dome meet the wick flatly on high or awkward placements, ensuring a complete seal without the user changing position.\n\nQuick comparison / practical guidance\n\n- Use a flat-top cylindrical snuffer for narrow or confined vessels (jar candles, votives) where inserting a compact cap gives a clean seal without damaging the container.\n- Use a flared bell dome for tapered or exposed candles where a wide coverage area and angle flexibility ensure the flame is sealed off quickly from any approach.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "How does the structural composition of an anti-rust gold alloy frame paired with a heavy-duty reflective mirror glass base qualify the Candle metal tray to serve as a versatile multi-room organizer?",
+            "response_time": 11.16,
+            "Judge_time": 7.42,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 379,
+                    "content_preview": "Question:\n                    Why are anti-rust alloy metal frames essential for vanity trays displayed in high-humidity luxury restrooms?\n\n                    Answer:\n                    High humidit"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 342,
+                    "content_preview": "Question:\n                    What specific thermal danger is avoided by utilizing an anti-rust metal frame and mirrored glass base for candle metal trays?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 325,
+                    "content_preview": "Question:\n                    How does a premium gold mirror tray enhance the visual presentation of candle displays on a bedroom vanity table?\n\n                    Answer:\n                    It feat"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 401,
+                    "content_preview": "Question:\n                    What practical value does a heavy-duty reflective mirror glass base bring to a cosmetics organizer tray?\n\n                    Answer:\n                    It allows users "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 398,
+                    "content_preview": "Question:\n                    What specific household maintenance risk does an anti-rust gold mirror tray manage on a bathroom counter?\n\n                    Answer:\n                    It protects the"
+                }
+            ],
+            "ground_truth_answer": "The Luxury Home Artistry Collection vanity tray is qualified by its premium, durable materials. The anti-rust alloy metal frame ensures it resists tarnishing and corrosion, making it perfect for high-humidity bathroom counters to organize hand soaps and glass droppers. Its heavy-duty reflective mirror glass base provides an elegant, easy-to-wipe surface that catches light beautifully, making it an excellent dressing table cosmetic/jewelry organizer or a glamorous coffee table base for reed diffusers and candles, protecting all underlying furniture from oil rings or scratches.",
+            "answer": "Why it's a versatile multi-room organizer\n\n- Durability in humid spaces  \n  - The anti-rust gold alloy frame resists corrosion and stays reflective and elegant in high-humidity rooms like bathrooms.\n\n- Surface protection and safety  \n  - The heavy-duty mirrored glass base prevents high heat from candle bottoms transferring to and damaging wood, laminate, or marble surfaces, and it catches hot wax mishaps cleanly.  \n  - It also protects counters from moisture marks, rust circles from metal canisters, and oil stains from glass droppers.\n\n- Organization and visibility  \n  - The reflective mirror base lets you read labels on the bottoms of dropper bottles and small containers via reflection, making arrangement and retrieval easier.\n\n- Aesthetic versatility  \n  - The crystal-clear mirror base amplifies ambient light and warm candle glow, creating a glamorous display suitable for bedroom vanities, living rooms, or guest bathrooms.\n\nCombined, the anti-rust gold alloy frame and heavy-duty mirror base deliver durability, surface protection, improved organization, and attractive presentation—making the candle metal tray useful across multiple rooms and uses.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Formulate an argument explaining why a premium candle matchbox featuring an aesthetic 'Good Day' slide-box design transforms a basic utility act into a therapeutic self-care ritual.",
+            "response_time": 12.71,
+            "Judge_time": 8.86,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 386,
+                    "content_preview": "Question:\n                    How does a minimalist 'Good Day' typography slide-box design elevate a basic candle lighting utility item?\n\n                    Answer:\n                    It transforms "
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 226,
+                    "content_preview": "Question:\n                    What mood does Candle matchbox create?\n\n                    Answer:\n                    Minimalist, sophisticated, comforting, intentional, therapeutic, clean."
+                },
+                {
+                    "source": "Candle_matchbox.md",
+                    "chunk_id": 29,
+                    "content_preview": "Product name: Candle matchbox\n\nCategory: Candle Accessory / Luxury Safety Matches\n\nMain Scents: Unscented (Natural Aspen Wood / Sulfur-Free Tip).\n\nSeason:ear-round (An absolute daily essential for can"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 407,
+                    "content_preview": "Question:\n                    Why is the premium rose-gold or amber glass container of a luxury candle often designed with a deeply textured pattern?\n\n                    Answer:\n                    T"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 374,
+                    "content_preview": "Question:\n                    What specific consumer group or demographic is a white slide-box match box with snow-white tips designed to attract?\n\n                    Answer:\n                    Cons"
+                }
+            ],
+            "ground_truth_answer": "A premium candle matchbox upgrades the lighting process from a cheap, disposable plastic utility into an intentional self-care ritual through thoughtful product design. It features minimalist typography and an aesthetic 'Good Day' slide-box layout that users find visually pleasing, prompting them to keep it on display on coffee tables or vanity trays next to luxury candles. The heavy-duty slider box contains elongated natural wood splints with contrasting monochrome tips (all-black with charcoal tips or crisp white with white tips) that burn steadily and cleanly without sulfur odors. This design requires a deliberate, slow motion to strike against the side panel, shifting the user's mindset from a hurried task into a comforting, mindful, and therapeutic lifestyle ritual.",
+            "answer": "Thesis\nA premium matchbox with a minimalist “Good Day” slide-box design turns lighting a candle from a simple, functional task into a deliberate, calming self-care ritual by combining aesthetics, safety, and ritual cues that encourage mindfulness.\n\nSupporting points\n\n- Visual elevation and displayability  \n  - The sleek typography and refined slide-box make the matchbox a decorative object you want to keep on view—on coffee tables, vanity trays, or bath counters—so it becomes part of your environment rather than hidden away.  \n  - As a visible, attractive item, it signals an intentional moment: you’re more likely to pause and perform the lighting with care.\n\n- Sensory and emotional framing  \n  - The minimalist, sophisticated look creates a comforting and clean mood that complements the calming effect of candlelight, helping the act feel therapeutic rather than purely utilitarian.\n\n- Improved ritual mechanics and safety  \n  - Longer, extra-long wooden matches keep fingers safely away from flames when reaching into deep jars, turning an awkward task into a smooth, unhurried action that supports relaxation.\n\n- Perception of quality and intention  \n  - Customers experience the matchbox as a premium upgrade from disposable lighters; that sense of care and craftsmanship reinforces the notion that the moment is worth savoring.\n\n- Consistent styling and context  \n  - When paired with luxury candles and curated trays, the matchbox completes a considered setup that encourages repetition of the ritual—lighting a candle becomes a predictable, soothing habit.\n\nConclusion\nBy making the tool beautiful, safe, and intentionally present, the “Good Day” slide-box shifts candle lighting from a quick utility to a small, repeatable act of self-care.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Determine which candle accessory combination from the provided documents is most appropriate for a consumer whose primary goal is to safely extinguish multiple deep-set jar candles while preserving a pristine wax appearance and clean indoor air quality.",
+            "response_time": 10.74,
+            "Judge_time": 8.34,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 418,
+                    "content_preview": "Question:\n                    What is the primary overarching goal of using high-quality candle accessories like trays, snuffers, and trimmers across residential spaces?\n\n                    Answer:\n "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 317,
+                    "content_preview": "Question:\n                    According to the final remarks, what is the ideal balance when using scented candles?\n\n                    Answer:\n                    The ideal balance is using candles "
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 209,
+                    "content_preview": "Question:\n                    Where is Candle Snuffer best used?\n\n                    Answer:\n                    Extinguishing multi-wick soy candles, tall jar candles, deep votive cups, tapered dini"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 518,
+                    "content_preview": "Question:\n                    What is the ultimate, overarching objective of strict adherence to candle care and candle placement instructions?\n\n                    Answer:\n                    The obj"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 299,
+                    "content_preview": "Question:\n                    How can users enjoy scented candles safely?\n\n                    Answer:\n                    By following proper placement, supervision, wick maintenance, and lighting pr"
+                }
+            ],
+            "ground_truth_answer": "The most appropriate combination is a professional candle wick trimmer (Candle Scissor) paired with a long-handled candle snuffer (Candle Snuffer). The long-handled snuffer utilizes a pivoting head to seal over wicks deep inside tall jars, cutting off oxygen cleanly to extinguish the flame without blowing liquid wax onto furniture. This completely eliminates the post-burn smoke smell and black soot that ruins room air. Following this, the candle wick trimmer uses its long, offset angled shafts to reach down vertically, snipping the burnt carbon wick down to the recommended quarter-inch height. Its flat circular catch tray instantly traps the clipped carbon debris, preventing it from dropping into and discoloring the pristine wax pool, ensuring clean combustion for the next burn cycle.",
+            "answer": "Recommended accessory combination\n================================\n\nCandle Snuffer\n- Best use: extinguishing deep-set jar candles and multi-wick jars (also works for tall jars, deep votives, tapered candles, and hard-to-reach wicks).\n- Benefit: safely puts out flames without blowing wax or creating extra soot.\n\nWick Trimmer\n- Benefit: keeps wicks at the proper length to minimize soot, protect the wax surface, and help maintain clean indoor air quality and a pristine appearance.\n\nCandle Tray\n- Benefit: catches any stray wax and prevents accidental wax damage to surfaces, preserving the candle’s aesthetics.\n\nShort usage note\n- Use the snuffer together with regular wick trimming and proper placement/supervision to enjoy fragrances and appearance while eliminating fire risk, soot deposits, and accidental wax damage.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        }
+    ]
+}

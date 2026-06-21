@@ -1,0 +1,72 @@
+[
+  {
+    "question": "Nên đặt nến thơm trên loại bề mặt nào khi sử dụng?",
+    "ground_truth_answer": "Nến nên được đặt trên bề mặt phẳng, chắc chắn và có khả năng chịu nhiệt.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Bạn nên làm gì trước khi rời khỏi phòng khi nến vẫn đang cháy?",
+    "ground_truth_answer": "Bạn nên tắt nến trước khi rời khỏi phòng.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Sau mỗi lần sử dụng, nên cắt bấc nến bao nhiêu?",
+    "ground_truth_answer": "Bấc nến nên được cắt ngắn khoảng 3 milimét.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Tại sao nên sử dụng bật lửa cán dài khi thắp nến?",
+    "ground_truth_answer": "Bật lửa cán dài giúp tránh bị bỏng tay khi thắp nến.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Đâu là giải pháp thay thế an toàn hơn so với việc đốt nến trực tiếp?",
+    "ground_truth_answer": "Có thể sử dụng đèn làm nóng nến (candle warmer) để giảm nguy cơ cháy nổ.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Hãy giải thích hai mối nguy mà khu vực có gió lùa gây ra đối với ngọn lửa nến đang cháy.",
+    "ground_truth_answer": "Khu vực có gió lùa có thể khiến ngọn lửa cháy quá mạnh hoặc thổi các vật liệu dễ cháy ở gần trực tiếp vào ngọn lửa.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Theo tài liệu, tác giả đã kết hợp hai nguồn kiến thức nào để xây dựng hướng dẫn này?",
+    "ground_truth_answer": "Tác giả đã tổng hợp thông tin từ internet và kết hợp với kinh nghiệm cá nhân của mình.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Liệt kê tất cả các vật liệu dệt may và đồ nội thất bằng vải được nêu rõ trong tài liệu cần tránh đặt gần nến đang cháy.",
+    "ground_truth_answer": "Các vật liệu được đề cập gồm quần áo, rèm cửa và thảm.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Việc cắt bấc nến ngắn khoảng 3mm sau mỗi lần sử dụng giúp ngăn chặn loại thành phần nào có trong khói đen?",
+    "ground_truth_answer": "Việc cắt bấc giúp ngăn sự hình thành khói đen có chứa muội than (soot).",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  },
+  {
+    "question": "Ngoài việc tránh không gian kín, tài liệu còn khuyến cáo tránh đốt nến trong loại môi trường nào?",
+    "ground_truth_answer": "Tài liệu khuyến cáo không nên đốt nến trong những căn phòng nhỏ và chật hẹp.",
+    "relevant_docs": [
+      "Safe_Usage_guidance.docx"
+    ]
+  }
+]

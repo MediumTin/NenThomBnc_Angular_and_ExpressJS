@@ -1,0 +1,72 @@
+[
+  {
+    "question": "Thời gian giao hàng tại Hà Nội hoặc Thành phố Hồ Chí Minh là bao lâu?",
+    "ground_truth_answer": "Đơn hàng thường được giao trong vòng 2–4 giờ và không muộn hơn 24 giờ sau khi đặt hàng.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Nenthom.com.vn hỗ trợ những phương thức thanh toán nào?",
+    "ground_truth_answer": "Các phương thức thanh toán được hỗ trợ bao gồm COD, MoMo, Zalo Pay và chuyển khoản ngân hàng qua Internet Banking.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Khách hàng có bao nhiêu ngày để đổi hoặc trả sản phẩm?",
+    "ground_truth_answer": "Khách hàng có thể đổi hoặc trả sản phẩm trong vòng 7 ngày kể từ ngày mua.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Nenthom.com.vn có bán thông tin khách hàng cho bên thứ ba không?",
+    "ground_truth_answer": "Không. Nenthom.com.vn cam kết không mua bán hoặc trao đổi thông tin bảo mật của khách hàng với bên thứ ba.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Nenthom.com.vn thu thập những thông tin nào của khách hàng?",
+    "ground_truth_answer": "Website có thể thu thập họ, tên, địa chỉ email, số điện thoại, quốc gia, tỉnh/thành phố và địa chỉ.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Nếu một khách hàng ở Đà Nẵng không nhận được cuộc gọi nào từ nhân viên giao hàng sau 3 ngày kể từ khi đặt hàng, họ nên làm gì theo chính sách giao hàng?",
+    "ground_truth_answer": "Khách hàng nên liên hệ trực tiếp với nenthom.com.vn để được hỗ trợ về tình trạng giao hàng của mình.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Hãy mô tả toàn bộ quy trình đổi sản phẩm, từ bước thông báo đến khi khách hàng nhận được sản phẩm thay thế.",
+    "ground_truth_answer": "Bước 1: Thông báo cho nenthom.com.vn qua Fanpage hoặc hotline. Bước 2: Gửi sản phẩm đến địa chỉ 303B Vũ Hữu, Phường Thanh Xuân Bắc, Quận Thanh Xuân, Hà Nội. Bước 3: Chờ nenthom.com.vn nhận hàng, sau đó công ty sẽ ngay lập tức gửi một đơn hàng mới thay thế.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Theo Chính sách Bảo mật, trong hai trường hợp pháp lý hoặc liên quan đến cơ quan nhà nước nào nenthom.com.vn có thể chia sẻ thông tin khách hàng mà không vi phạm chính sách của mình?",
+    "ground_truth_answer": "Thông tin có thể được chia sẻ khi việc tiết lộ là hợp pháp theo quy định của pháp luật Việt Nam nhằm bảo vệ quyền lợi và tài sản của công ty hoặc đối tác, hoặc khi có yêu cầu từ cơ quan nhà nước và được xem là phù hợp theo pháp luật Việt Nam.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Những phạm vi địa lý nào dưới cấp quốc gia được nenthom.com.vn thu thập để xử lý đơn hàng?",
+    "ground_truth_answer": "Dưới cấp quốc gia, nenthom.com.vn thu thập thông tin về 'Tỉnh/Thành phố' và 'Địa chỉ' cụ thể.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  },
+  {
+    "question": "Hãy giải thích sự khác biệt về thời gian giao hàng dự kiến và quy trình xử lý giữa một đơn hàng trong Hà Nội và một đơn hàng quà tặng dịp lễ gửi đến khu vực ngoại tỉnh.",
+    "ground_truth_answer": "Các đơn hàng trong Hà Nội được giao tối đa trong vòng 24 giờ (thường từ 2–4 giờ) và có thể có cuộc gọi xác nhận nếu hàng tồn kho không đủ. Trong khi đó, các đơn quà tặng dịp lễ gửi đến khu vực ngoại tỉnh thường mất từ 1–3 ngày để giao và khách hàng được khuyến nghị đặt hàng trước từ 1–3 ngày để tránh tình trạng quá tải hệ thống.",
+    "relevant_docs": [
+      "Chinh_sach_mua_hang.docx"
+    ]
+  }
+]

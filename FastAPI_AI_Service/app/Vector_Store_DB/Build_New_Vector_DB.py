@@ -14,14 +14,14 @@ import sys
 
 try:
     from app.Embedding_Model.Embedding_model import embeddings
-    from app.Chunking.Chunking import all_docs
+    from app.Chunking.Chunking import all_docs, KnowledgeBase_for_Classification
 except ModuleNotFoundError:
     # Allow direct execution: python app/Vector_Store_DB/Build_New_Vector_DB.py
     PROJECT_ROOT = Path(__file__).resolve().parents[2]
     if str(PROJECT_ROOT) not in sys.path:
         sys.path.insert(0, str(PROJECT_ROOT))
     from app.Embedding_Model.Embedding_model import embeddings
-    from app.Chunking.Chunking import all_docs
+    from app.Chunking.Chunking import all_docs, KnowledgeBase_for_Classification
 
 from dotenv import load_dotenv # Import the load_dotenv function to load environment variables from a .env file
 load_dotenv() # Load the environment variables from the .env file
@@ -41,6 +41,14 @@ vectorstore = FAISS.from_documents(
 )
 
 vectorstore.save_local("app/Vector_Store_DB/Built_Vector_Model")
+
+vectorstore_classification = FAISS.from_documents(
+    documents=[doc for docs in KnowledgeBase_for_Classification.values() for doc in docs], # Flatten the list of documents from the classification knowledge base
+    embedding=embeddings, # The embedding model to be used for converting the documents into vector representations. In this case, it uses the OpenAIEmbeddings model defined earlier.
+    distance_strategy=DistanceStrategy.COSINE, # Use cosine similarity for distance calculation
+)
+
+vectorstore_classification.save_local("app/Vector_Store_DB/Built_Vector_Model_Classification")
 
 # Print embedding results for all_docs
 # Lấy nội dung các chunk

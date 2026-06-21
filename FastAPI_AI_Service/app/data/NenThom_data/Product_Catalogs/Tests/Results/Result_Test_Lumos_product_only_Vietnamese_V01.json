@@ -1,0 +1,731 @@
+{
+    "summary": {
+        "Accuracy": 0.8,
+        "Recall@5": 0.95,
+        "Recall@3": 0.95,
+        "Avg_Latency": 13.97,
+        "P95_Latency": 19.2
+    },
+    "test_results": [
+        {
+            "question": "Hãy xây dựng một lập luận logic giải thích vì sao việc sử dụng tinh dầu khuếch tán Lumos And Cucumber hoàn toàn loại bỏ các nguy cơ hỏa hoạn thường gặp của nến có ngọn lửa trong môi trường văn phòng.",
+            "response_time": 18.96,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 542,
+                    "content_preview": "Question:\n                    Why is Lumos And Cucumber considered an excellent alternative for office desks or locations where candles are banned?\n\n                    Answer:\n                    Bec"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Lumos_And_Cucumber.md",
+                    "chunk_id": 41,
+                    "content_preview": "Product name: Lumos And Cucumber\n\nCategory: Reed Diffuser (Tinh dầu tán hương cắm que)\n\nMain Scents: Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng (White Tea), Gỗ tuyết tùn"
+                },
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 275,
+                    "content_preview": "Question:\n                    What category does Lumos And Cucumber belong to?\n\n                    Answer:\n                    Lumos And Cucumber belongs to the Reed Diffuser (Tinh dầu tán hương cắm "
+                }
+            ],
+            "ground_truth_answer": "Lumos And Cucumber là một sản phẩm khuếch tán hương bằng que (Reed Diffuser), hoạt động dựa trên tinh dầu thơm dạng lỏng và cơ chế mao dẫn thụ động liên tục thông qua các que gỗ hoặc sợi. Thiết kế này hoàn toàn loại bỏ nhu cầu sử dụng ngọn lửa hoặc bất kỳ nguồn nhiệt nào. Nhờ không cần lửa, sản phẩm loại bỏ nguy cơ cháy nổ khi bị đổ trên bàn làm việc, tránh rủi ro bỏng da và ngăn chặn việc tạo ra khói đen, khiến nó trở thành một giải pháp an toàn hơn cho gia đình và văn phòng.",
+            "answer": "## Lập luận logic\n\n1. Tính năng then chốt của sản phẩm: Lumos And Cucumber là một **Reed Diffuser** hoạt động bằng cách khuếch tán tinh dầu liên tục qua que khuếch tán, **hoàn toàn không dùng nhiệt hay ngọn lửa hở**.  \n\n2. Nguyên nhân rủi ro của nến: Nến tạo mùi yêu cầu có **ngọn lửa hở** để đốt, và chính **ngọn lửa/nghiền nhiệt** này là yếu tố gây ra nguy cơ hỏa hoạn trong môi trường làm việc (vì vậy nhiều văn phòng cấm nến).\n\n3. Kết luận logic: Vì Lumos And Cucumber phân tán hương mà **không có nguồn nhiệt hay ngọn lửa**, nên nó **loại bỏ yếu tố nguy hiểm cơ bản** mà nến có — tức là không còn nguồn gây cháy do đốt — do đó triệt tiêu những rủi ro hỏa hoạn thường gặp khi dùng nến trong văn phòng.\n\n4. Hỗ trợ thêm từ thiết kế: Sản phẩm sử dụng bình sứ/thuỷ tinh và que khuếch tán để tạo mùi một cách thẩm mỹ và liên tục, nên không cần thao tác đốt hay giám sát kiểu nến.\n\nKết quả: Sử dụng Lumos And Cucumber thay cho nến trong văn phòng vừa giữ được hương thơm tinh tế, vừa loại bỏ hoàn toàn nguy cơ liên quan đến ngọn lửa. \n\n---\n\nThông tin sản phẩm liên quan (tóm tắt):\n- Thể loại: **Reed Diffuser**  \n- Hoạt động: khuếch tán liên tục **không có nhiệt/ngọn lửa hở**  \n- Phù hợp cho: bàn làm việc, khu vực cấm nến hoặc không an toàn khi dùng lửa  \n- Vật liệu: tinh dầu trong bình sứ/thuỷ tinh với que khuếch tán",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Phân tích cách Lumos Tropical Orchard kiểm soát các nốt hương ngọt để không gian luôn dễ chịu và không gây cảm giác ngột ngạt hoặc đau đầu cho người dùng.",
+            "response_time": 14.3,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_Tropical_Orchard.md",
+                    "chunk_id": 50,
+                    "content_preview": "Product name: Lumos Tropical Orchard\n\nCategory: Reed Diffuser\n\nMain Scents: Ripe Mango, Passion Fruit, Fresh Guava, Sweet Citrus, Sheer Green Leaves.\n\nSeason: Summer / Spring\n\nFragrance Family: Fruity"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 599,
+                    "content_preview": "Question:\n                    How does Lumos Tropical Orchard prevent its intense fruity core from becoming an overly heavy, syrupy headache hazard?\n\n                    Answer:\n                    By"
+                },
+                {
+                    "source": "Lumos_cold.md",
+                    "chunk_id": 43,
+                    "content_preview": "Product name: Lumos cold\n\nCategory: Essential Oil\n\nMain Scents: Lemongrass, Ginger, Grapefruit Peel, Mint, Rosemary.\n\nSeason: Autumn / Winter (Extremely beneficial during wet seasons, cold weather, or"
+                },
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 520,
+                    "content_preview": "Question:\n                    How do the sheer green elements in Lumos Tropical Orchard influence the overall customer perception of its sweet fruit notes?\n\n                    Answer:\n               "
+                }
+            ],
+            "ground_truth_answer": "Lumos Tropical Orchard cân bằng các nốt hương ngọt mọng từ xoài chín, chanh dây và ổi bằng cách kết hợp tầng hương nền từ những chiếc lá xanh phủ sương. Theo cảm nhận của khách hàng, thành phần thực vật này giúp làm dịu độ ngọt, duy trì khả năng tỏa hương trong trẻo, tươi mát và đầy năng lượng thay vì trở nên quá đậm hoặc khó chịu.",
+            "answer": "Tóm tắt ngắn: Lumos Tropical Orchard giữ cho các nốt hương ngọt luôn dễ chịu bằng cách cân bằng trái cây nhiệt đới giàu đường với những yếu tố “xanh” nhẹ nhàng và phương thức khuếch tán liên tục, nhờ đó tránh cảm giác ngột ngạt hoặc quá nồng.\n\nCách thực hiện (chi tiết)\n- Cân bằng hương trái cây bằng tầng nền lá xanh nhẹ  \n  - Một lớp nền “dew‑covered green leaves” (lá xanh phủ sương) làm nền cho các nốt xoài và ổi ngọt, giúp hương không tràn sang hướng quá syrupy hay gắt.  \n  - Các yếu tố xanh này giữ cho độ ngọt “grounded, clean, and crisp” — tức là cân bằng, sạch và tươi mát.\n\n- Cấu trúc nốt hương giúp kiểm soát độ dày của mùi  \n  - Hương mở là chanh dây và cam quýt tươi, tạo cảm giác sảng khoái, sau đó đến trái cây chín như xoài/ổi; bố cục này cho phép phần “tươi” và “xanh” trung hòa phần “ngọt” ở tim hương.\n\n- Phương thức khuếch tán và hiệu ứng cảm nhận  \n  - Dạng reed diffuser cung cấp tỏa hương liên tục, nhẹ nhàng (continuous background scent throw) thay vì những đợt hương đột ngột và quá mạnh — điều này giảm nguy cơ gây ngột hay đau đầu.  \n  - Thiết kế để dùng liên tục trong không gian ban ngày, phù hợp cho phòng bếp sáng, phòng khách có ánh sáng, nhà ven biển… nơi hương được đón nhận là tươi mát, năng động hơn là nặng nề.\n\nThông tin kỹ thuật liên quan\n- Material: Liquid Fragrance & Concentrated Essential Oil Blend.  \n- Weight: **100ml**.  \n\nKết luận: Sự kết hợp giữa lớp lá xanh làm nền, cấu trúc mở‑tim‑nền của hương trái cây và việc tỏa hương liên tục qua que khuếch tán giúp Lumos Tropical Orchard duy trì hương ngọt ở mức dễ chịu, tươi mát và không gây ngột ngạt hay đau đầu.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Giải thích chiến lược thiết kế kỹ thuật đằng sau việc Natural Lumos lựa chọn màu chai và chất liệu nhãn cho các sản phẩm tinh dầu nguyên chất như Lumos Menthol.",
+            "response_time": 15.6,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Lumos_cold.md",
+                    "chunk_id": 43,
+                    "content_preview": "Product name: Lumos cold\n\nCategory: Essential Oil\n\nMain Scents: Lemongrass, Ginger, Grapefruit Peel, Mint, Rosemary.\n\nSeason: Autumn / Winter (Extremely beneficial during wet seasons, cold weather, or"
+                },
+                {
+                    "source": "Lumos_Lemongrass.md",
+                    "chunk_id": 46,
+                    "content_preview": "Product name: Lumos Lemongrass\n\nCategory: Essential Oil\n\nMain Scents: Lemongrass, Citrus, Herbaceous Green Notes.\n\nSeason: Summer / Spring (Extremely popular during the rainy season or high-mosquito p"
+                },
+                {
+                    "source": "Lumos_Cajeput.md",
+                    "chunk_id": 42,
+                    "content_preview": "Product name: Lumos Cajeput\n\nCategory: Essential Oil\n\nMain Scents: Xông Cảm (Cold/Flu Relief Blend), Sả Chanh (Lemongrass), Bạc Hà (Peppermint), Tràm Gió (Cajeput).\n\nSeason: Year-round (Particularly b"
+                }
+            ],
+            "ground_truth_answer": "Natural Lumos sử dụng chai thủy tinh màu hổ phách đậm kết hợp với nhãn giấy kraft mộc mạc cho các sản phẩm như Lumos Menthol. Chai thủy tinh màu hổ phách được lựa chọn nhằm tối ưu khả năng chống tia UV, giúp bảo vệ tinh dầu tự nhiên khỏi sự suy giảm chất lượng do ánh sáng. Trong khi đó, nhãn giấy kraft góp phần củng cố hình ảnh thương hiệu gắn liền với sự tự nhiên và nguồn gốc thực vật.",
+            "answer": "Chiến lược thiết kế kỹ thuật tập trung vào hai yếu tố chính:\n\n- Màu chai (Dark amber glass)\n  - Mục đích kỹ thuật: **bảo vệ khỏi tia UV tối ưu** như mô tả, giúp giảm tác động của ánh sáng tới tinh dầu.\n  - Ứng dụng: được sử dụng cho các chai 50ml của dòng Natural Lumos, đảm bảo tính ổn định và tuổi thọ sản phẩm trong điều kiện lưu trữ thông thường.\n\n- Chất liệu nhãn (rustic kraft paper)\n  - Mục đích thiết kế: tạo vẻ ngoài thiên nhiên, thô mộc và đồng bộ với hình ảnh thương hiệu “tinh dầu thiên nhiên”.\n  - Ứng dụng: kết hợp với chai màu tối để truyền tải cảm giác sản phẩm nguyên chất, chân thực và thân thiện môi trường.\n\nTổng hợp: việc kết hợp chai thủy tinh màu tối và nhãn kraft vừa mang ý nghĩa kỹ thuật (bảo vệ sản phẩm khỏi ánh sáng) vừa phục vụ mục tiêu thẩm mỹ và nhận diện thương hiệu cho các sản phẩm như Lumos Menthol.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "So sánh mục tiêu cảm xúc và mùa sử dụng giữa Lumos Midnight Sandalwood và Lumos Rose Boutique.",
+            "response_time": 15.88,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_Midnight_sandalwood.md",
+                    "chunk_id": 48,
+                    "content_preview": "Product name: Lumos Midnight sandalwood\n\nCategory: Reed Diffuser\n\nMain Scents: Dark Rose, Oud Wood, Sandalwood, Patchouli, Velvet Musk. (Lumos's premium black collection traditionally highlights deep,"
+                },
+                {
+                    "source": "Lumos_Rose_Boutique.md",
+                    "chunk_id": 49,
+                    "content_preview": "Product name: Lumos Rose Boutique\n\nCategory: Reed Diffuser\n\nMain Scents: Sparkling Rosé Wine, Fresh Red Roses, Wild Strawberries, White Musk, Soft Amber.\n\nSeason: Spring / Summer\n\nFragrance Family: Fl"
+                },
+                {
+                    "source": "Lumos_And_Cucumber.md",
+                    "chunk_id": 41,
+                    "content_preview": "Product name: Lumos And Cucumber\n\nCategory: Reed Diffuser (Tinh dầu tán hương cắm que)\n\nMain Scents: Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng (White Tea), Gỗ tuyết tùn"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 532,
+                    "content_preview": "Question:\n                    To which specific premium product collection does Lumos Midnight sandalwood belong, and what are its signature characteristics?\n\n                    Answer:\n             "
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 541,
+                    "content_preview": "Question:\n                    Describe the complete chronological scent transition of Lumos Midnight sandalwood from the moment it is uncorked.\n\n                    Answer:\n                    It open"
+                }
+            ],
+            "ground_truth_answer": "Lumos Midnight Sandalwood được thiết kế cho mùa Thu và Đông, hướng tới cảm giác bí ẩn, sang trọng, sâu lắng, mạnh mẽ, cân bằng và thư giãn thông qua các nốt hương gỗ và phương Đông. Ngược lại, Lumos Rose Boutique phù hợp với mùa Xuân và Hè, tạo nên bầu không khí lãng mạn, vui tươi, thanh lịch, lễ hội và tràn đầy năng lượng nhờ sự kết hợp của hương hoa, trái cây và đồ uống.",
+            "answer": "Dưới đây là so sánh ngắn giữa hai sản phẩm theo mục tiêu cảm xúc và mùa sử dụng.\n\n# Lumos Midnight Sandalwood\n- Mùa sử dụng: **Mùa thu / Mùa đông**  \n- Mục tiêu cảm xúc (Mood): **Huyền bí**, **sang trọng**, **sâu lắng**, **mạnh mẽ**, **tạo cảm giác vững chãi**, **điềm tĩnh**\n\n# Lumos Rose Boutique\n- Mùa sử dụng: **Mùa xuân / Mùa hè**  \n- Mục tiêu cảm xúc (Mood): **Lãng mạn**, **ăn mừng/hoan hỉ**, **thanh lịch**, **vui tươi**, **sang trọng**, **nâng cao tinh thần**\n\nSo sánh nhanh:\n- Về mùa: Midnight dùng cho mùa lạnh (thu/đông); Rose Boutique hợp với mùa ấm và tươi sáng (xuân/hè).  \n- Về cảm xúc: Midnight hướng tới không khí trầm, sâu và vững chãi; Rose Boutique hướng tới không khí tươi vui, lãng mạn và nâng cao tinh thần.  \n- Điểm chung: cả hai đều mang sắc thái **sang trọng**, nhưng thể hiện theo hai hướng cảm xúc trái ngược.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hãy tổng hợp các lợi ích trị liệu của Lumos Cold để giải thích vì sao sản phẩm phù hợp cho gia đình trong thời điểm giao mùa hoặc khi có triệu chứng cảm lạnh.",
+            "response_time": 16.53,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_cold.md",
+                    "chunk_id": 43,
+                    "content_preview": "Product name: Lumos cold\n\nCategory: Essential Oil\n\nMain Scents: Lemongrass, Ginger, Grapefruit Peel, Mint, Rosemary.\n\nSeason: Autumn / Winter (Extremely beneficial during wet seasons, cold weather, or"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 593,
+                    "content_preview": "Question:\n                    Which product under the Natural Lumos essential oil lineup is explicitly labeled as a 'Cold/Flu Relief Blend' in Vietnamese?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "Lumos_Cajeput.md",
+                    "chunk_id": 42,
+                    "content_preview": "Product name: Lumos Cajeput\n\nCategory: Essential Oil\n\nMain Scents: Xông Cảm (Cold/Flu Relief Blend), Sả Chanh (Lemongrass), Bạc Hà (Peppermint), Tràm Gió (Cajeput).\n\nSeason: Year-round (Particularly b"
+                },
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 554,
+                    "content_preview": "Question:\n                    During which specific seasonal transitions or weather conditions is the therapeutic use of Lumos cold highly recommended?\n\n                    Answer:\n                   "
+                }
+            ],
+            "ground_truth_answer": "Lumos Cold là sự kết hợp của các loại thảo dược truyền thống Việt Nam như bạc hà, sả, gừng, hương thảo và vỏ bưởi. Hương thơm chuyển từ cảm giác mát lạnh của bạc hà sang tầng hương ấm áp từ gừng cay. Cấu trúc hương này gợi nhớ đến nồi nước xông thảo dược truyền thống, giúp làm ấm không gian sống, giảm nghẹt mũi, giảm cảm giác mệt mỏi cơ thể và hỗ trợ hô hấp hiệu quả.",
+            "answer": "### Lumos Cold — Lợi ích trị liệu chính\n\n- Giảm nghẹt mũi, thông xoang  \n  - Mùi hương mở đầu bằng bạc hà và sả chanh tạo cảm giác thông thoáng ngay lập tức, giúp giảm khó chịu vùng mũi họng.\n\n- Làm dịu triệu chứng cảm lạnh và mệt mỏi cơ thể  \n  - Trung tâm mùi gừng ấm và hương rosemary mang lại cảm giác an ủi, ấm áp, hỗ trợ thư giãn khi cơ thể mệt mỏi do cảm lạnh.\n\n- Ấm không gian và xua mùi ẩm mốc  \n  - Hỗn hợp thảo mộc có tính ấm, đồng thời làm sạch mùi khó chịu trong phòng, tạo bầu không khí dễ chịu hơn khi trời ẩm hoặc nhà có mùi mốc.\n\n- Thanh lọc không khí, cảm giác an toàn quen thuộc  \n  - Hương cam quýt tươi mát kết hợp với các lá thuốc tạo cảm giác giống việc xông thuốc truyền thống, đem lại sự thoải mái và yên tâm cho người dùng.\n\n- Hỗ trợ thư giãn tinh thần  \n  - Tổng thể mùi thơm mang tâm trạng chữa lành, ấm áp và trấn tĩnh, giúp giảm căng thẳng khi đang không khỏe.\n\n### Vì sao phù hợp cho gia đình vào thời điểm giao mùa hoặc khi có triệu chứng cảm lạnh\n- Dùng được trong nhiều kiểu ứng dụng gia đình: khuếch tán phòng, xông hơi mặt, thêm vào nước tắm ấm hoặc xông phòng để giảm nghẹt mũi và làm ấm cơ thể.  \n- Hương quen thuộc như nồi thuốc xông truyền thống giúp tạo cảm giác an toàn, phù hợp cho mọi thành viên gia đình vào mùa thu / đông, đặc biệt trong thời tiết ẩm ướt hoặc khi có giao mùa.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Một khách hàng muốn tìm một sản phẩm trang trí phòng ngủ màu hồng với mùi hương giống bó hoa tươi tự nhiên và không có cảm giác hóa học. Sản phẩm Lumos nào phù hợp nhất và vì sao?",
+            "response_time": 11.53,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_And_Cucumber.md",
+                    "chunk_id": 41,
+                    "content_preview": "Product name: Lumos And Cucumber\n\nCategory: Reed Diffuser (Tinh dầu tán hương cắm que)\n\nMain Scents: Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng (White Tea), Gỗ tuyết tùn"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Lumos_Rose_Boutique.md",
+                    "chunk_id": 49,
+                    "content_preview": "Product name: Lumos Rose Boutique\n\nCategory: Reed Diffuser\n\nMain Scents: Sparkling Rosé Wine, Fresh Red Roses, Wild Strawberries, White Musk, Soft Amber.\n\nSeason: Spring / Summer\n\nFragrance Family: Fl"
+                },
+                {
+                    "source": "Lumos_cold.md",
+                    "chunk_id": 43,
+                    "content_preview": "Product name: Lumos cold\n\nCategory: Essential Oil\n\nMain Scents: Lemongrass, Ginger, Grapefruit Peel, Mint, Rosemary.\n\nSeason: Autumn / Winter (Extremely beneficial during wet seasons, cold weather, or"
+                },
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                }
+            ],
+            "ground_truth_answer": "Sản phẩm phù hợp nhất là Lumos Juicy Peach. Mặc dù tên gọi mang sắc thái trái cây, các hương chính của sản phẩm là Hoa Hồng Bulgaria và Mẫu Đơn Hồng, thuộc nhóm hương Floral / Soft Rosy. Chai màu hồng pastel bóng cùng nơ ruy băng màu kem giúp sản phẩm phù hợp với không gian nữ tính. Ngoài ra, khách hàng đánh giá cao khả năng tái hiện chân thực mùi hoa tươi mà không gây cảm giác hóa học hay đau đầu.",
+            "answer": "### Sản phẩm phù hợp: Lumos Rose Boutique\n\n- Thể loại: Reed Diffuser (tinh dầu cắm que)  \n- Mùi chính: rượu vang rosé sủi bọt, hoa hồng đỏ tươi, dâu rừng, xạ trắng, hổ phách nhẹ  \n- Màu sắc: chất lỏng mang tông **rose gold / hổ phách** (phù hợp với trang trí tông hồng)  \n- Dung tích: **100ml**  \n- Phù hợp cho: phòng ngủ chính, không gian cần cảm giác lãng mạn, trang điểm, hoặc làm quà\n\nTại sao phù hợp với yêu cầu của bạn\n- Hương giống bó hoa tươi tự nhiên: lõi hương là hoa hồng tươi kết hợp với nốt dâu và hoa, tạo cảm giác như một bó hoa tươi, sáng và sống động.  \n- Không có cảm giác “hóa học”: tổng thể mùi được mô tả nhẹ nhàng, tươi mới, hiện đại, không bị nặng hay cũ, phù hợp nếu bạn muốn hương tự nhiên, trong trẻo.  \n- Phù hợp trang trí màu hồng: tông chất lỏng rose-gold/hổ phách và thiết kế sang trọng thích hợp với phong cách phòng ngủ màu hồng.  \n- An toàn dùng trong phòng ngủ: là tinh dầu cắm que, không cần đốt nến nên an toàn và tiện dụng.\n\nNếu bạn muốn mình so sánh thêm với sản phẩm khác hoặc cần gợi ý cách bố trí để hợp màu hồng, cho mình biết nhé.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Hãy mô tả các quy trình vệ sinh và khử mùi trong gia đình có thể tận dụng tinh dầu nguyên chất Lumos Lemongrass.",
+            "response_time": 17.79,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 547,
+                    "content_preview": "Question:\n                    Apart from room diffusing, what other household maintenance or cleaning activities can incorporate Lumos Lemongrass?\n\n                    Answer:\n                    It c"
+                },
+                {
+                    "source": "Lumos_Lemongrass.md",
+                    "chunk_id": 46,
+                    "content_preview": "Product name: Lumos Lemongrass\n\nCategory: Essential Oil\n\nMain Scents: Lemongrass, Citrus, Herbaceous Green Notes.\n\nSeason: Summer / Spring (Extremely popular during the rainy season or high-mosquito p"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 528,
+                    "content_preview": "Question:\n                    What specific domestic households or environments are highly encouraged to use the Lumos Lemongrass essential oil for practical, non-aesthetic benefits?\n\n                "
+                },
+                {
+                    "source": "Lumos_Cajeput.md",
+                    "chunk_id": 42,
+                    "content_preview": "Product name: Lumos Cajeput\n\nCategory: Essential Oil\n\nMain Scents: Xông Cảm (Cold/Flu Relief Blend), Sả Chanh (Lemongrass), Bạc Hà (Peppermint), Tràm Gió (Cajeput).\n\nSeason: Year-round (Particularly b"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 587,
+                    "content_preview": "Question:\n                    What specific target locations are recommended for the placement of Lumos Lemongrass to ensure maximum domestic sanitation?\n\n                    Answer:\n                 "
+                }
+            ],
+            "ground_truth_answer": "Tinh dầu Lumos Lemongrass có thể được thêm vào máy khuếch tán hoặc máy tạo ẩm để làm sạch không khí, pha vào nước lau sàn để hỗ trợ khử khuẩn bề mặt, trộn vào dung dịch chống côn trùng tự nhiên nhằm xua đuổi muỗi trong mùa mưa và xịt trong nhà bếp hoặc phòng tắm để loại bỏ các mùi hôi khó chịu.",
+            "answer": "Dưới đây là các quy trình vệ sinh và khử mùi trong gia đình mà bạn có thể tận dụng tinh dầu nguyên chất Lumos Lemongrass, cùng lợi ích và vị trí khuyến nghị sử dụng.\n\nRửa sàn\n- Tích hợp Lumos Lemongrass vào hỗn hợp nước rửa/đánh sàn.\n- Lợi ích: giúp làm sạch, trung hòa mùi mạnh trong nhà và góp phần đuổi côn trùng.\n- Vị trí phù hợp: sàn nhà bếp, hành lang, khu vực có mùi hoặc nơi hay ẩm ướt.\n\nPha xịt đuổi côn trùng tự nhiên\n- Sử dụng trong các công thức xịt đuổi muỗi/côn trùng tự nhiên.\n- Lợi ích: hỗ trợ đuổi muỗi và côn trùng ở những vùng có mật độ cao.\n- Vị trí phù hợp: cửa sổ, ban công, góc ẩm, khu vực ra vào.\n\nKhử mùi và làm thơm phòng tắm\n- Ứng dụng để khử mùi phòng tắm và giữ không khí trong lành.\n- Lợi ích: loại bỏ mùi hôi, tạo cảm giác sạch sẽ, sảng khoái.\n- Vị trí phù hợp: phòng tắm, nhà vệ sinh.\n\nLàm mới không khí bếp / khử mùi nhà bếp\n- Dùng để làm thơm và trung hòa mùi nấu nướng trong bếp.\n- Lợi ích: loại bỏ mùi dầu mỡ, mùi thức ăn, đem lại không khí tươi mát.\n- Vị trí phù hợp: bếp, khu vực nấu ăn.\n\nXông phòng và dùng với máy khuếch tán / máy tạo ẩm điện tử\n- Dùng trong máy xông/phun tinh dầu hoặc máy tạo ẩm điện tử để lan tỏa hương.\n- Lợi ích: thanh lọc không khí, nâng cao tâm trạng (sảng khoái, tiếp thêm năng lượng), làm không gian giống spa.\n- Vị trí phù hợp: phòng khách, phòng ngủ, phòng làm việc, không gian spa tại nhà.\n\nThông tin ngắn về sản phẩm (liên quan)\n- Chất liệu: 100% tinh dầu nguyên chất (chiết xuất thực vật).\n- Thể tích: **50ml**.\n- Lợi thế cảm quan: hương chanh sả tươi, sạch, có khả năng làm sạch mùi và đuổi côn trùng.\n\nNếu bạn cần hướng dẫn cụ thể về cách pha chế (tỷ lệ, cách sử dụng an toàn), bạn nên liên hệ admin để lấy thông tin chi tiết.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "So sánh cấu trúc hương thơm của Lumos Tropical Orchard và Lumos Honeydrew And Coconut, tập trung vào tầng hương giữa và đặc tính ngọt của từng sản phẩm.",
+            "response_time": 11.07,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_Honeydrew_And_Coconut.md",
+                    "chunk_id": 44,
+                    "content_preview": "Product name: Lumos Honeydrew And Coconut\n\nCategory: Reed Diffuser\n\nMain Scents: Honeydew Melon, Coconut Milk, Vanilla, Soft Musk, Sheer Florals.\n\nSeason: Summer / Spring\n\nFragrance Family: Fruity / T"
+                },
+                {
+                    "source": "Lumos_Tropical_Orchard.md",
+                    "chunk_id": 50,
+                    "content_preview": "Product name: Lumos Tropical Orchard\n\nCategory: Reed Diffuser\n\nMain Scents: Ripe Mango, Passion Fruit, Fresh Guava, Sweet Citrus, Sheer Green Leaves.\n\nSeason: Summer / Spring\n\nFragrance Family: Fruity"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 565,
+                    "content_preview": "Question:\n                    What unique fruit pairing defines the vibrant tropical profile of Lumos Honeydrew And Coconut?\n\n                    Answer:\n                    The pairing of watery, rip"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 545,
+                    "content_preview": "Question:\n                    What specific gourmand note is blended with coconut milk in Lumos Honeydrew And Coconut to create an upscale tropical resort vibe?\n\n                    Answer:\n          "
+                }
+            ],
+            "ground_truth_answer": "Lumos Tropical Orchard sở hữu tầng hương giữa từ xoài chín mọng và ổi ngọt tươi, được cân bằng bởi lá xanh. Trong khi đó, Lumos Honeydrew And Coconut xây dựng phong cách gourmand ngọt béo với tầng hương đầu từ dưa lưới mật, tầng hương giữa từ sữa dừa mềm mịn kết hợp hoa nhiệt đới và tầng hương nền từ vani ngọt cùng xạ hương dịu nhẹ.",
+            "answer": "Dưới đây là so sánh ngắn gọn, tập trung vào tầng hương giữa và đặc tính ngọt của từng sản phẩm:\n\nLumos Tropical Orchard\n- Tầng hương giữa: lớp giữa là vị trái cây chín mọng—chủ yếu là xoài chín và mận/ổi tươi (ripe mango, fresh guava).\n- Tính chất ngọt: ngọt tươi, mọng nước và năng lượng; vị ngọt hướng về trái cây tươi (juicy) nhưng được tiết chế bằng yếu tố lá xanh và hương chanh dây/cam quýt ở tầng trên, nên không bị quá ngọt hay sệt.\n\nLumos Honeydrew And Coconut\n- Tầng hương giữa: lớp giữa là kem dừa mịn màng kết hợp với một chút hoa nhiệt đới nhẹ (coconut milk + sheer florals).\n- Tính chất ngọt: ngọt mềm, êm ái và hơi gourmand—kết hợp dưa lưới ngọt và vani kem, mang cảm giác ngọt ngào, ấm áp và giống món tráng miệng hơn là ngọt tươi.\n\nTóm lại\n- Tropical Orchard là ngọt theo hướng trái cây tươi, sảng khoái và không bị ngấy nhờ yếu tố lá xanh/citrus.\n- Honeydrew And Coconut là ngọt theo hướng kem/đường (gourmand), ấm và mượt, phù hợp nếu muốn cảm giác tropical “resort” và tráng miệng.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Giải thích những yếu tố về sức khỏe và độ an toàn giúp bộ sưu tập Lumos Cajeput nhận được sự tin tưởng từ các gia đình có người già hoặc trẻ nhỏ.",
+            "response_time": 11.1,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 543,
+                    "content_preview": "Question:\n                    Which specific demographic or target group within a household is the Lumos Cajeput collection trusted to protect and support?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "Lumos_Cajeput.md",
+                    "chunk_id": 42,
+                    "content_preview": "Product name: Lumos Cajeput\n\nCategory: Essential Oil\n\nMain Scents: Xông Cảm (Cold/Flu Relief Blend), Sả Chanh (Lemongrass), Bạc Hà (Peppermint), Tràm Gió (Cajeput).\n\nSeason: Year-round (Particularly b"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 553,
+                    "content_preview": "Question:\n                    What dual-purpose botanical benefits do the Sả Chanh (Lemongrass) and Bạc Hà (Peppermint) oils within the Lumos Cajeput collection provide?\n\n                    Answer:\n "
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 524,
+                    "content_preview": "Question:\n                    In the Lumos Cajeput collection, which specific essential oils are explicitly designated for warm, medicinal respiratory support when body fatigue sets in?\n\n             "
+                }
+            ],
+            "ground_truth_answer": "Bộ sưu tập Lumos Cajeput chứa các chiết xuất thực vật tự nhiên 100% từ thiên nhiên Việt Nam như sả, bạc hà, hỗn hợp hỗ trợ cảm lạnh và tinh dầu tràm. Sản phẩm được nhiều gia đình tin tưởng vì có thể hỗ trợ hô hấp, giảm nghẹt mũi và xua đuổi côn trùng mang mầm bệnh mà không cần sử dụng hóa chất tổng hợp, phù hợp với người cao tuổi và trẻ nhỏ.",
+            "answer": "Những yếu tố về sức khỏe và độ an toàn khiến gia đình có người già hoặc trẻ nhỏ tin tưởng Lumos Cajeput\n\n- Hỗ trợ đường hô hấp rõ ràng  \n  - Hai loại chuyên dùng cho hỗ trợ hô hấp khi mệt mỏi hoặc bị cảm là **Xông Cảm** và **Tràm Gió (Cajeput)**, có hương ấm, giàu tính dược liệu giúp giảm cảm giác nghẹt mũi, dễ chịu cho hệ hô hấp.\n\n- Tính trị liệu và làm dịu  \n  - Hương thuộc nhóm thảo mộc/đồng camphor (herbal/camphorous/fresh), mang lại cảm giác trị liệu, sảng khoái và thư giãn — phù hợp khi chăm sóc người già hoặc trẻ nhỏ cần môi trường dễ chịu.\n\n- Hiệu quả làm sạch không khí và đuổi côn trùng tự nhiên  \n  - Sả chanh và bạc hà vừa làm sạch, thanh lọc không khí vừa **tự nhiên đuổi muỗi, côn trùng**, giảm nguy cơ muỗi cắn cho trẻ nhỏ và người lớn tuổi.\n\n- Nguyên liệu và đóng gói an toàn  \n  - Sản phẩm là **100% tinh dầu nguyên chất** (chiết xuất thiên nhiên) và được đóng chai **thủy tinh màu hổ phách** nhằm bảo vệ khỏi tia UV, giúp giữ nguyên chất lượng tinh dầu.\n\n- Cách dùng phù hợp với gia đình  \n  - Có nhiều phương thức sử dụng an toàn: máy khuếch tán, máy tạo ẩm, thêm vào nước tắm, xông hơi mặt, hoặc pha loãng để massage (riêng tinh dầu Tràm Gió được đề xuất pha loãng cho body massage) — cho phép điều chỉnh liều lượng phù hợp với trẻ em và người già.\n\n- Nhận thức và trải nghiệm người dùng  \n  - Người tiêu dùng đánh giá cao hương thơm tự nhiên, chân thực và cảm giác chuyên nghiệp như spa/wellness, tạo sự tin tưởng khi dùng trong không gian gia đình.\n\nNếu bạn cần hướng dẫn liều lượng hoặc cách pha loãng an toàn cụ thể cho trẻ em hoặc người già, bạn nên liên hệ với admin để được tư vấn chi tiết.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Một khách hàng hiểu lầm tên gọi 'Lumos Juicy Peach' và cho rằng sản phẩm có mùi đào đậm và ngọt. Hãy đính chính nhận định này dựa trên hồ sơ sản phẩm chính thức.",
+            "response_time": 11.78,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_Juicy_Peach.md",
+                    "chunk_id": 45,
+                    "content_preview": "Product name: Lumos Juicy Peach\n\nCategory: Reed Diffuser\n\nMain Scents: Bulgarian Rose, Pink Peony, White Musk, Soft Amber, Vanilla Berry.\n\nSeason:Spring / Summer\n\nFragrance Family: Floral / Soft Rosy\n"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 586,
+                    "content_preview": "Question:\n                    What specific word does customer perception use to describe the floral essence of Lumos Juicy Peach, emphasizing its premium quality?\n\n                    Answer:\n       "
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 546,
+                    "content_preview": "Question:\n                    What important safety or physiological benefit does customer perception highlight regarding the floral composition of Lumos Juicy Peach?\n\n                    Answer:\n    "
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 520,
+                    "content_preview": "Question:\n                    How do the sheer green elements in Lumos Tropical Orchard influence the overall customer perception of its sweet fruit notes?\n\n                    Answer:\n               "
+                }
+            ],
+            "ground_truth_answer": "Tên gọi 'Lumos Juicy Peach' không phản ánh chính xác mùi hương cốt lõi của sản phẩm vì sản phẩm không chứa chiết xuất đào. Nhóm hương của sản phẩm là Floral / Soft Rosy với các thành phần chính gồm Hoa Hồng Bulgaria, Mẫu Đơn Hồng, Xạ Hương Trắng, Hổ Phách Dịu Nhẹ và Vanilla Berry. Hương thơm mang phong cách hoa cỏ thanh lịch, lãng mạn và mềm mại thay vì ngọt đậm kiểu trái cây.",
+            "answer": "### Đính chính về mùi hương \"Lumos Juicy Peach\"\n\n- Tên sản phẩm có thể gây hiểu lầm, nhưng trong hồ sơ sản phẩm **không liệt kê nốt đào** là nốt chủ đạo.\n\n- Hương chính:\n  - Bulgarian Rose (hoa hồng)\n  - Pink Peony (hoa mẫu đơn hồng)\n  - White Musk (xạ trắng)\n  - Soft Amber (hổ phách nhẹ)\n  - Vanilla Berry (vani berry)\n\n- Phong cách hương: thuộc nhóm **Floral / Soft Rosy** — dịu dàng, lãng mạn, thanh lịch chứ không phải mùi trái đào đậm, ngọt.\n\n- Cảm nhận khách hàng: mùi được mô tả là \"chân thực, không nhân tạo\", rất nhẹ nhàng, không bị gắt hay gây đau đầu.\n\nKết luận: Lumos Juicy Peach là một hương hoa hồng–mẫu đơn dịu, ấm với nền vani và hổ phách — **không phải một mùi đào đậm, ngọt**.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Phân tích sự khác biệt về thiết kế vật lý và hình ảnh giữa dòng sản phẩm cơ bản của Lumos và dòng sản phẩm cao cấp màu đen.",
+            "response_time": 12.78,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 550,
+                    "content_preview": "Question:\n                    What type of liquid color distinction can a user visually perceive when comparing Lumos Tropical Orchard with Lumos Rose Boutique?\n\n                    Answer:\n          "
+                },
+                {
+                    "source": "Lumos_And_Cucumber.md",
+                    "chunk_id": 41,
+                    "content_preview": "Product name: Lumos And Cucumber\n\nCategory: Reed Diffuser (Tinh dầu tán hương cắm que)\n\nMain Scents: Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng (White Tea), Gỗ tuyết tùn"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 582,
+                    "content_preview": "Question:\n                    What overarching design philosophy does the clean white bottle and black ribbon of Lumos And Cucumber reflect?\n\n                    Answer:\n                    It reflect"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Lumos_Midnight_sandalwood.md",
+                    "chunk_id": 48,
+                    "content_preview": "Product name: Lumos Midnight sandalwood\n\nCategory: Reed Diffuser\n\nMain Scents: Dark Rose, Oud Wood, Sandalwood, Patchouli, Velvet Musk. (Lumos's premium black collection traditionally highlights deep,"
+                }
+            ],
+            "ground_truth_answer": "Dòng sản phẩm cơ bản như Lumos And Cucumber sử dụng thiết kế tối giản với chai màu trắng bóng, nút gỗ tự nhiên và nơ đen trang trí. Ngược lại, dòng cao cấp như Lumos Midnight Sandalwood sử dụng chai màu đen bóng không trong suốt, nút gỗ tự nhiên và nơ đen nổi bật, tạo nên cảm giác sang trọng, mạnh mẽ và bí ẩn phù hợp với các nốt hương gỗ phương Đông.",
+            "answer": "Tóm tắt ngắn: Dòng cơ bản của Lumos hướng tới hình ảnh nhẹ nhàng, tối giản và tươi mát; dòng cao cấp màu đen hướng tới hình ảnh sang trọng, bí ẩn và đậm chất boutique. Chi tiết phân tích:\n\nDòng cơ bản (ví dụ: Lumos And Cucumber)\n- Vật liệu & hoàn thiện:\n  - Chai bóng màu trắng (glass/ceramic) với nắp/stopper gỗ.\n  - Có nơ/riêm trang trí màu đen.\n  - Thể tích tiêu chuẩn: khoảng **100ml–150ml**.\n- Ấn tượng hình ảnh:\n  - Thiết kế tối giản, sạch sẽ, giống một tác phẩm nghệ thuật hiện đại.\n  - Màu trắng và điểm nhấn đen tạo cảm giác thanh lịch, tinh tế, dễ phối với không gian.\n- Thông điệp cảm xúc / công năng:\n  - Gợi không khí tươi mát, thư giãn, spa-like.\n  - Phù hợp decor tối giản, không gian cần cảm giác thoáng, nhẹ.\n\nDòng cao cấp màu đen (ví dụ: Lumos Midnight sandalwood)\n- Vật liệu & hoàn thiện:\n  - Chai bóng, đen mờ/óng ánh (glossy, opaque black glass/ceramic) với nắp/stopper gỗ tự nhiên.\n  - Có nơ/riêm trang trí màu đen (dạng nơ).\n  - Thể tích tiêu chuẩn: khoảng **100ml–150ml**.\n- Ấn tượng hình ảnh:\n  - Tông màu đen bóng tạo vẻ bí ẩn, sang trọng và đậm chất cao cấp.\n  - Độ tương phản mạnh, đóng vai trò là món đồ trang trí nổi bật trong không gian hiện đại hoặc tông tối.\n- Thông điệp cảm xúc / công năng:\n  - Gợi cảm giác sâu lắng, quyến rũ, như lounge khách sạn cao cấp.\n  - Phù hợp không gian cần sự trang trọng, ấm áp hoặc phong cách tối/nam tính.\n\nSo sánh trực tiếp (điểm khác biệt chính)\n- Màu & ánh nhìn: trắng tinh tế vs đen sang trọng — là khác biệt hình ảnh rõ rệt nhất.\n- Cảm xúc truyền tải: tươi mát, nhẹ nhàng vs bí ẩn, sang trọng.\n- Vai trò trang trí: dòng cơ bản hòa nhập, làm dịu không gian; dòng đen là điểm nhấn mạnh mẽ, statement piece.\n- Vật liệu và cấu trúc (nắp gỗ, ribbon, dung tích) tương đồng — khác biệt chính nằm ở màu sắc và phong cách thiết kế.\n\nNếu cần, tôi có thể tóm tắt thành các tiêu chí ngắn gọn để so sánh trực quan hơn.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Dung tích và cấu hình chất lỏng khuếch tán hương bên trong Lumos Rose Boutique là gì?",
+            "response_time": 7.34,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_Rose_Boutique.md",
+                    "chunk_id": 49,
+                    "content_preview": "Product name: Lumos Rose Boutique\n\nCategory: Reed Diffuser\n\nMain Scents: Sparkling Rosé Wine, Fresh Red Roses, Wild Strawberries, White Musk, Soft Amber.\n\nSeason: Spring / Summer\n\nFragrance Family: Fl"
+                },
+                {
+                    "source": "Lumos_And_Cucumber.md",
+                    "chunk_id": 41,
+                    "content_preview": "Product name: Lumos And Cucumber\n\nCategory: Reed Diffuser (Tinh dầu tán hương cắm que)\n\nMain Scents: Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng (White Tea), Gỗ tuyết tùn"
+                },
+                {
+                    "source": "Lumos_Juicy_Peach.md",
+                    "chunk_id": 45,
+                    "content_preview": "Product name: Lumos Juicy Peach\n\nCategory: Reed Diffuser\n\nMain Scents: Bulgarian Rose, Pink Peony, White Musk, Soft Amber, Vanilla Berry.\n\nSeason:Spring / Summer\n\nFragrance Family: Floral / Soft Rosy\n"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                }
+            ],
+            "ground_truth_answer": "Lumos Rose Boutique có dung tích 100ml. Chất lỏng bên trong là sự kết hợp giữa hương liệu lỏng cao cấp và tinh dầu cô đặc, được chứa trong chai thủy tinh vuông dày, trong suốt và được thiết kế để hoạt động hiệu quả cùng que khuếch tán bằng sợi hoặc mây.",
+            "answer": "Lumos Rose Boutique\n\n- Dung tích: **100 ml**\n- Cấu hình chất lỏng khuếch tán: hỗn hợp nước hoa dạng lỏng và tinh dầu cô đặc (Liquid Fragrance & Concentrated Essential Oil Blend)\n- Đóng gói/chai: đặt trong chai thủy tinh vuông dày, trong suốt, phù hợp dùng cùng que khuếch tán sợi hoặc mây (fiber/rattan sticks)\n- Màu chất lỏng: **hổ phách đậm / vàng hồng (rose gold)**",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Vì sao Lumos Menthol là lựa chọn phù hợp hơn cho môi trường làm việc cần tăng năng suất so với các dòng khuếch tán hương hoa hoặc hương ngọt?",
+            "response_time": 11.93,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 529,
+                    "content_preview": "Question:\n                    What makes the scent profile of Lumos menthol particularly appropriate for a professional office or study environment during the morning hours?\n\n                    Answe"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 538,
+                    "content_preview": "Question:\n                    Why is Lumos menthol classified under the 'Fresh / Minty / Herbal' family instead of a simple sweet mint category?\n\n                    Answer:\n                    Becaus"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 568,
+                    "content_preview": "Question:\n                    Why is Lumos menthol highly recommended for a post-workout recovery or gym environment?\n\n                    Answer:\n                    Because its intensely crisp, shar"
+                }
+            ],
+            "ground_truth_answer": "Lumos Menthol là tinh dầu nguyên chất 100%, mang lại cảm giác mát lạnh mạnh mẽ từ menthol kết hợp cùng các nốt hương thảo mộc xanh. Không giống các sản phẩm hương hoa hoặc gourmand thường tạo cảm giác thư giãn, Lumos Menthol giúp tăng sự tỉnh táo, cải thiện khả năng tập trung, giảm căng thẳng đầu óc và loại bỏ cảm giác ngột ngạt trong không gian làm việc.",
+            "answer": "Lý do Lumos Menthol phù hợp hơn cho môi trường cần tăng năng suất:\n\n- Tác động tỉnh táo tức thì  \n  Luồng menthol mạnh, lạnh và sắc sẽ \"mở\" giác quan ngay lập tức, tạo hiệu ứng wake-up giúp đầu óc nhanh chóng tỉnh táo và sẵn sàng làm việc.\n\n- Tăng tập trung và năng lượng tinh thần  \n  Hương thơm mang tính kích thích, energizing và clarifying — hỗ trợ duy trì trạng thái tập trung trong giờ làm việc buổi sáng hoặc khi cần xử lý công việc nặng.\n\n- Khử mùi, làm không gian trong lành hơn  \n  Khả năng xóa bỏ mùi hôi, không khí tù đọng giúp phòng làm việc cảm thấy sạch và ít gây xao nhãng hơn.\n\n- Cảm giác mát lạnh, giảm căng thẳng đầu  \n  Tính làm mát và giảm áp lực vùng đầu giúp dễ vào trạng thái làm việc hiệu quả hơn, đặc biệt trong không gian cần cảnh giác và năng suất cao.\n\n- Hồ sơ mùi rõ ràng, không ngọt hay hoa cỏ nặng  \n  Sự kết hợp menthol + thân thảo mát lạnh với hậu vị balsamic tạo cảm giác sắc nét, tinh khiết — phù hợp cho không gian cần sự minh mẫn thay vì không khí ấm áp hoặc lãng mạn của mùi hoa/ngọt.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Những tầng hương nào tạo nên cảm nhận về sự sang trọng và không khí tiệc rượu đặc trưng của Lumos Rose Boutique?",
+            "response_time": 12.25,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_Rose_Boutique.md",
+                    "chunk_id": 49,
+                    "content_preview": "Product name: Lumos Rose Boutique\n\nCategory: Reed Diffuser\n\nMain Scents: Sparkling Rosé Wine, Fresh Red Roses, Wild Strawberries, White Musk, Soft Amber.\n\nSeason: Spring / Summer\n\nFragrance Family: Fl"
+                },
+                {
+                    "source": "Lumos_And_Cucumber.md",
+                    "chunk_id": 41,
+                    "content_preview": "Product name: Lumos And Cucumber\n\nCategory: Reed Diffuser (Tinh dầu tán hương cắm que)\n\nMain Scents: Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng (White Tea), Gỗ tuyết tùn"
+                },
+                {
+                    "source": "Lumos_Juicy_Peach.md",
+                    "chunk_id": 45,
+                    "content_preview": "Product name: Lumos Juicy Peach\n\nCategory: Reed Diffuser\n\nMain Scents: Bulgarian Rose, Pink Peony, White Musk, Soft Amber, Vanilla Berry.\n\nSeason:Spring / Summer\n\nFragrance Family: Floral / Soft Rosy\n"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 600,
+                    "content_preview": "Question:\n                    What specific color profile does the liquid fragrance of Lumos Rose Boutique exhibit through its clear glass bottle?\n\n                    Answer:\n                    It e"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 570,
+                    "content_preview": "Question:\n                    What specific notes evoke the sensation of a high-end champagne brunch when using Lumos Rose Boutique?\n\n                    Answer:\n                    The effervescent c"
+                }
+            ],
+            "ground_truth_answer": "Lumos Rose Boutique mở đầu bằng các nốt hương sống động của rượu vang hồng sủi bọt và dâu tây dại ngọt ngào. Tiếp theo là tầng hương giữa từ hoa hồng đỏ tươi và hoa dành dành. Sự kết hợp này tạo nên mùi hương thường được liên tưởng đến những buổi brunch champagne cao cấp, tiệc cưới ngoài trời và các buổi tiệc sân vườn sang trọng.",
+            "answer": "### Tầng hương tạo cảm giác sang trọng và không khí tiệc rượu của Lumos Rose Boutique\n\n- **Tầng đầu (top):** sparkling rosé wine + sweet wild strawberries — mang tới cảm giác sủi bọt, tươi mát và lễ hội như một bữa brunch rượu champagne.  \n\n- **Tầng giữa (heart):** fresh red roses + gardenia petals — tạo nên bó hoa sang trọng, lãng mạn, nâng tổng thể thành mùi hương cao cấp.  \n\n- **Tầng cuối (base):** white musk + soft amber — tạo nền ấm áp, mượt mà và tinh khiết, cố định cảm giác sang trọng lâu dài.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Lớp hương nền của Lumos Midnight Sandalwood đóng vai trò như thế nào trong việc neo giữ các nốt hương hoa dễ bay hơi để duy trì cảm giác sang trọng mang tính nam tính hoặc trung tính?",
+            "response_time": 23.8,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_Midnight_sandalwood.md",
+                    "chunk_id": 48,
+                    "content_preview": "Product name: Lumos Midnight sandalwood\n\nCategory: Reed Diffuser\n\nMain Scents: Dark Rose, Oud Wood, Sandalwood, Patchouli, Velvet Musk. (Lumos's premium black collection traditionally highlights deep,"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 541,
+                    "content_preview": "Question:\n                    Describe the complete chronological scent transition of Lumos Midnight sandalwood from the moment it is uncorked.\n\n                    Answer:\n                    It open"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Sandalwood_And_Rose.md",
+                    "chunk_id": 53,
+                    "content_preview": "Product name: Sandalwood And Rose\n\nCategory: Scented Candle\n\nMain Scents: Rich Sandalwood, Crimson Rose Petals, Velvety Musk, Soft Incense, Warm Oud.\n\nSeason: Autumn / Winter (Also deeply favored for "
+                },
+                {
+                    "source": "Nen_and_Hoa.md",
+                    "chunk_id": 52,
+                    "content_preview": "Product name: Nen and Hoa\n\nCategory: Scented Candle\n\nMain Scents: Exotic Jasmine, Sweet Ylang-Ylang, Warm Sandalwood, Smooth Vanilla, Soft Amber.\n\nSeason: Autumn / Winter (Also highly suitable for coz"
+                }
+            ],
+            "ground_truth_answer": "Các nốt hương đầu từ hoa hồng nở về đêm và gia vị ấm áp nhanh chóng được chuyển tiếp và neo giữ bởi tầng hương giữa đậm đặc, tinh tế từ gỗ trầm hương quý hiếm và hoắc hương đất. Cấu trúc này tiếp tục được củng cố bởi tầng hương nền mượt mà và sâu lắng từ gỗ đàn hương ấm áp cùng xạ hương nhung đen. Sự kết hợp gỗ phương Đông mạnh mẽ này giúp cân bằng vị ngọt của hương hoa, tạo nên cảm giác vững chãi, sang trọng và liên tục, gợi nhớ đến không gian sảnh khách sạn boutique cao cấp.",
+            "answer": "Lớp hương nền của Lumos Midnight Sandalwood (warm sandalwood và dark velvet musk) hoạt động như một nền tảng dày, mượt và có tính “neo” theo các cách sau:\n\n- Tạo nền ấm và trầm: sandalwood và velvet musk tạo thành lớp đế đậm, giúp làm lắng các nốt hoa đầu (midnight rose) thay vì để chúng biến mất nhanh chóng.  \n- Bao bọc và kéo dài cảm nhận: lớp nền này “quấn” toàn bộ không gian trong một cảm giác sang trọng, khiến nốt hoa dễ bay hơi hòa vào một tổng thể trưởng thành và liên tục.  \n- Chuyển đổi sắc thái hương: thay vì giữ hương hoa ở dạng ngọt/light, nền gỗ–musk đẩy mùi hướng về chiều sâu woody/oriental, nhờ đó duy trì vẻ sang trọng mang tính nam tính hoặc trung tính.  \n- Ổn định tổng thể mùi: lớp nền giúp mùi phòng duy trì sự tinh tế và đồng nhất trong không gian như phòng khách, phòng làm việc hay phòng ngủ chính.\n\nKết quả là các nốt hoa ban đầu vẫn cảm nhận được nhưng được neo giữ và hòa nhập vào một nền hương trầm, bền vững, giữ vững định hướng sang trọng và nam tính/trung tính cho toàn bộ mùi hương.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hãy tổng hợp các khuyến nghị sử dụng tinh dầu Lumos Cajeput trong các liệu pháp chăm sóc sức khỏe trực tiếp ngoài việc sử dụng máy khuếch tán điện.",
+            "response_time": 18.19,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_Cajeput.md",
+                    "chunk_id": 42,
+                    "content_preview": "Product name: Lumos Cajeput\n\nCategory: Essential Oil\n\nMain Scents: Xông Cảm (Cold/Flu Relief Blend), Sả Chanh (Lemongrass), Bạc Hà (Peppermint), Tràm Gió (Cajeput).\n\nSeason: Year-round (Particularly b"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 553,
+                    "content_preview": "Question:\n                    What dual-purpose botanical benefits do the Sả Chanh (Lemongrass) and Bạc Hà (Peppermint) oils within the Lumos Cajeput collection provide?\n\n                    Answer:\n "
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 534,
+                    "content_preview": "Question:\n                    For what specific physical application is the individual Tràm Gió oil within the Lumos Cajeput collection uniquely suited compared to room diffusion?\n\n                   "
+                },
+                {
+                    "source": "Lumos_And_Cucumber.md",
+                    "chunk_id": 41,
+                    "content_preview": "Product name: Lumos And Cucumber\n\nCategory: Reed Diffuser (Tinh dầu tán hương cắm que)\n\nMain Scents: Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng (White Tea), Gỗ tuyết tùn"
+                },
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                }
+            ],
+            "ground_truth_answer": "Ngoài việc sử dụng trong máy khuếch tán điện, bộ sưu tập Lumos Cajeput còn được khuyến nghị tích hợp trực tiếp vào nhiều liệu pháp chăm sóc sức khỏe như pha vào nước tắm ấm, sử dụng trong liệu pháp xông hơi khi tắm buổi sáng, dùng để xông mặt hoặc pha loãng để massage cơ thể (đặc biệt với tinh dầu tràm). Những phương pháp này giúp giảm mệt mỏi cơ thể, hỗ trợ hô hấp và tăng cường cảm giác thư giãn.",
+            "answer": "Đề xuất cách sử dụng tinh dầu Lumos Cajeput trong liệu pháp chăm sóc sức khỏe trực tiếp (không dùng máy khuếch tán điện)\n\n- Tắm ngâm (bath water infusion)  \n  - Vì sao: giúp tạo môi trường thư giãn, ấm áp, hỗ trợ giảm mệt mỏi và tạo cảm giác thanh lọc không khí xung quanh.\n\n- Xông hơi / xông giải cảm (inhalation steam) và xông mặt (facial steaming)  \n  - Vì sao: các nốt ấm, thuốc của dòng Xông Cảm và Tràm Gió hỗ trợ cảm giác thông mũi, dễ thở và mang lại hiệu quả làm dịu đường hô hấp khi xông hơi hoặc xông mặt.\n\n- Xoa bóp toàn thân hoặc chấm điểm (diluted body massage) — đặc biệt dành cho tinh dầu Tràm Gió (Cajeput)  \n  - Vì sao: Tràm Gió trong bộ Lumos Cajeput được ghi nhận phù hợp cho massage khi pha loãng, mang lại cảm giác ấm, dễ chịu và hỗ trợ thư giãn cơ bắp, dùng trực tiếp trên da sau khi đã pha loãng.\n\n- Dùng trong máy tạo ẩm / máy phun sương (humidifier / nebulizer) — nếu không coi là máy khuếch tán điện thông thường  \n  - Vì sao: duy trì độ ẩm và phân tán mùi thảo dược nhẹ nhàng vào không gian, hỗ trợ thông thoáng đường hô hấp và cảm giác thanh mát tinh thần.\n\nGhi chú ngắn: tinh dầu Lumos Cajeput là dòng tinh dầu thiên nhiên, phù hợp cho các phương thức dùng kể trên và được đánh giá hỗ trợ giảm tình trạng nghẹt mũi, thanh lọc không khí và tạo cảm giác thư thái.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Các nốt hương đầu từ bạch đàn và bạc hà đóng vai trò gì trong việc tạo nên cảm nhận của khách hàng về Lumos And Cucumber như một lựa chọn thay thế cho không gian spa cao cấp?",
+            "response_time": 13.2,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Lumos_And_Cucumber.md",
+                    "chunk_id": 41,
+                    "content_preview": "Product name: Lumos And Cucumber\n\nCategory: Reed Diffuser (Tinh dầu tán hương cắm que)\n\nMain Scents: Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng (White Tea), Gỗ tuyết tùn"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 523,
+                    "content_preview": "Question:\n                    What specific spa-like and welcoming ambiance does the scent profile of Lumos And Cucumber mimic for indoor spaces?\n\n                    Answer:\n                    It mi"
+                },
+                {
+                    "source": "Lumos_Cajeput.md",
+                    "chunk_id": 42,
+                    "content_preview": "Product name: Lumos Cajeput\n\nCategory: Essential Oil\n\nMain Scents: Xông Cảm (Cold/Flu Relief Blend), Sả Chanh (Lemongrass), Bạc Hà (Peppermint), Tràm Gió (Cajeput).\n\nSeason: Year-round (Particularly b"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 603,
+                    "content_preview": "Question:\n                    What traditional wellness environments do customers compare the Lumos Cajeput collection to when diffused?\n\n                    Answer:\n                    It evokes the "
+                }
+            ],
+            "ground_truth_answer": "Các nốt hương đầu tươi mát từ bạch đàn và bạc hà hoạt động như một tác nhân làm sạch cảm giác không khí ngay lập tức khi bước vào phòng. Chúng nhanh chóng loại bỏ cảm giác ngột ngạt, tạo nên nền tảng trong lành và thoáng đãng, giúp tầng hương giữa từ trà trắng và hoa nhài lan tỏa nhẹ nhàng. Nhờ đó, sản phẩm tái hiện hiệu quả bầu không khí thư thái, dễ chịu và sang trọng thường thấy trong các spa cao cấp.",
+            "answer": "Tóm tắt vai trò của nốt hương đầu (bạch đàn & bạc hà)\n\n- Tạo mở đầu tươi mát và kích thích: bạch đàn và bạc hà mang đến những nốt đầu sắc nét, làm không gian cảm thấy sạch sẽ và tỉnh táo.\n\n- Gợi cảm giác không khí spa/khách sạn: lớp mở này ngay lập tức truyền đạt sự thanh khiết và thư thái, giống ấn tượng bước vào một spa cao cấp hoặc sảnh khách sạn boutique.\n\n- Đặt nền cho lớp giữa và cuối: nốt đầu làm cầu nối để hương giữa (trà trắng, hoa nhài) trở nên tinh khiết hơn và hương nền gỗ nhẹ nhàng bền vững.\n\n- Giúp sản phẩm được nhận diện là lựa chọn thay thế “không phiền phức” cho nến: nhờ sự tươi mát, liên tục và không áp đảo của lớp đầu, khách hàng cảm thấy sản phẩm tinh tế, dễ dùng và phù hợp cho không gian cần an toàn hoặc kín lửa.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Phân tích cách thiết kế vật lý của Lumos Honeydrew And Coconut hỗ trợ phong cách nội thất tối giản hiện đại đồng thời thực hiện chức năng khử mùi.",
+            "response_time": 15.88,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_Honeydrew_And_Coconut.md",
+                    "chunk_id": 44,
+                    "content_preview": "Product name: Lumos Honeydrew And Coconut\n\nCategory: Reed Diffuser\n\nMain Scents: Honeydew Melon, Coconut Milk, Vanilla, Soft Musk, Sheer Florals.\n\nSeason: Summer / Spring\n\nFragrance Family: Fruity / T"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 615,
+                    "content_preview": "Question:\n                    Does Lumos Honeydrew And Coconut incorporate open flames or electronic heating components to throw its scent?\n\n                    Answer:\n                    No, it requ"
+                },
+                {
+                    "source": "Lumos_And_Cucumber.md",
+                    "chunk_id": 41,
+                    "content_preview": "Product name: Lumos And Cucumber\n\nCategory: Reed Diffuser (Tinh dầu tán hương cắm que)\n\nMain Scents: Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng (White Tea), Gỗ tuyết tùn"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 595,
+                    "content_preview": "Question:\n                    What specific background vibe does Lumos Honeydrew And Coconut maintain in apartment entryways over time?\n\n                    Answer:\n                    It maintains a "
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 605,
+                    "content_preview": "Question:\n                    What comforting floral notes are layered beneath the coconut milk heart of Lumos Honeydrew And Coconut?\n\n                    Answer:\n                    A delicate layer "
+                }
+            ],
+            "ground_truth_answer": "Lumos Honeydrew And Coconut vừa đảm nhiệm vai trò trang trí vừa mang tính chức năng. Chất lỏng màu vàng nhạt ánh kim được chứa trong chai thủy tinh vuông dày, trong suốt và hoàn thiện bằng nắp kim loại bạc sáng bóng, tạo nên một phụ kiện trang trí thanh lịch, tối giản. Đồng thời, sản phẩm liên tục trung hòa các mùi sinh hoạt hàng ngày thông qua cơ chế bay hơi thụ động từ que khuếch tán mà không cần sử dụng ngọn lửa, giúp duy trì không gian gọn gàng và sạch sẽ theo tinh thần thiết kế tối giản.",
+            "answer": "Phân tích ngắn về cách thiết kế vật lý hỗ trợ phong cách nội thất tối giản hiện đại và thực hiện chức năng khử mùi của Lumos Honeydrew And Coconut\n\nThiết kế vật lý hỗ trợ phong cách tối giản hiện đại\n- Dáng chai: hộp vuông bằng thủy tinh trong, dày (heavy clear glass square bottle) — hình khối đơn giản, rõ ràng và cân đối phù hợp với thẩm mỹ tối giản.\n- Màu sắc tinh tế: dung dịch màu vàng nhạt/kim (light gold/yellow liquid) tạo điểm nhấn màu nhẹ nhàng, không làm rối mắt không gian tối giản.\n- Phiên bản nắp: nắp kim loại bóng màu bạc (shiny metallic silver cap) cung cấp chi tiết kim loại tinh chế, mang cảm giác hiện đại nhưng vẫn tối giản.\n- Kết hợp tổng thể: hình khối trong suốt + màu nhẹ + chi tiết kim loại tạo vẻ trang nhã, tối giản và dễ hòa vào các không gian phòng khách, hành lang, hoặc bếp theo phong cách hiện đại.\n\nCách thực hiện chức năng khử mùi và duy trì không gian\n- Hệ hoạt động không đốt: không cần lửa hay gia nhiệt điện tử; hoạt động hoàn toàn bằng cơ chế mao dẫn qua que khuếch tán (passive capillary action via diffuser sticks).  \n  - Lợi thế: khử mùi liên tục mà an toàn trong những không gian không cho phép lửa hoặc thiết bị gia nhiệt.\n- Phát tán hương nền ổn định, không lấn át: mùi thơm được mô tả là tươi sáng, dịu, mượt mà và giữ nền hương đều theo thời gian (smooth and consistent background scent throw / bright, cheerful, smooth).  \n  - Hiệu quả khử mùi: mang lại bầu không khí tươi, ngăn mùi sinh hoạt hàng ngày một cách nhẹ nhàng mà không làm mất tính tối giản của không gian.\n- Phù hợp vị trí: thiết kế và cách khuếch tán phù hợp cho hành lang, phòng khách, phòng tắm khách — những nơi cần khử mùi liên tục nhưng giữ vẻ gọn gàng, tối giản.\n\nTóm lại\n- Thiết kế hình khối thủy tinh trong, màu dung dịch nhẹ và nắp kim loại tạo ngôn ngữ thẩm mỹ tối giản — ít chi tiết, sang trọng nhưng không phô trương.\n- Cơ chế khuếch tán bằng que (không cần lửa/điện) và nền hương mượt mà giúp khử mùi liên tục, giữ không gian sạch thơm mà vẫn duy trì tính tối giản hiện đại.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Trong những điều kiện thời tiết nào Lumos Lemongrass có nhu cầu sử dụng cao nhất và nguyên nhân sinh học đằng sau hiện tượng đó là gì?",
+            "response_time": 8.13,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 597,
+                    "content_preview": "Question:\n                    What specific environmental condition makes Lumos Lemongrass an essential purchase during specific months in Vietnam?\n\n                    Answer:\n                    The"
+                },
+                {
+                    "source": "Lumos_Lemongrass.md",
+                    "chunk_id": 46,
+                    "content_preview": "Product name: Lumos Lemongrass\n\nCategory: Essential Oil\n\nMain Scents: Lemongrass, Citrus, Herbaceous Green Notes.\n\nSeason: Summer / Spring (Extremely popular during the rainy season or high-mosquito p"
+                },
+                {
+                    "source": "Lumos_cold.md",
+                    "chunk_id": 43,
+                    "content_preview": "Product name: Lumos cold\n\nCategory: Essential Oil\n\nMain Scents: Lemongrass, Ginger, Grapefruit Peel, Mint, Rosemary.\n\nSeason: Autumn / Winter (Extremely beneficial during wet seasons, cold weather, or"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 537,
+                    "content_preview": "Question:\n                    What are the core technical specifications regarding the volume capacity and product origin of the Lumos Lemongrass oil?\n\n                    Answer:\n                    "
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 528,
+                    "content_preview": "Question:\n                    What specific domestic households or environments are highly encouraged to use the Lumos Lemongrass essential oil for practical, non-aesthetic benefits?\n\n                "
+                }
+            ],
+            "ground_truth_answer": "Lumos Lemongrass được sử dụng nhiều nhất vào mùa Xuân và mùa Hè, đặc biệt trong những giai đoạn mưa nhiều hoặc khi mật độ muỗi tăng cao. Nguyên nhân là tinh dầu thực vật nguyên chất 100% này chứa các hợp chất cam chanh sắc nét và thảo mộc mạnh mẽ có khả năng xua đuổi côn trùng tự nhiên hiệu quả, giúp bảo vệ người dùng trong điều kiện thời tiết ẩm ướt khiến quần thể côn trùng phát triển mạnh.",
+            "answer": "### Tình huống sử dụng và nguyên nhân\n\n- Điều kiện thời tiết: **mùa mưa, khí hậu ẩm ướt** (mùa xuân / mùa hè — đặc biệt vào những giai đoạn nhiều mưa).  \n\n- Nguyên nhân sinh học: môi trường ẩm ướt trong mùa mưa dẫn đến **thời kỳ bùng phát muỗi và côn trùng**, nên nhu cầu dùng Lumos Lemongrass (như tinh dầu đuổi muỗi và khử mùi) tăng cao.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hãy xác định dòng tinh dầu Lumos phù hợp nhất cho một không gian trong nhà có không khí lạnh, ẩm mốc và nặng nề trong mùa đông mưa, đồng thời giải thích lý do lựa chọn.",
+            "response_time": 11.43,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_cold.md",
+                    "chunk_id": 43,
+                    "content_preview": "Product name: Lumos cold\n\nCategory: Essential Oil\n\nMain Scents: Lemongrass, Ginger, Grapefruit Peel, Mint, Rosemary.\n\nSeason: Autumn / Winter (Extremely beneficial during wet seasons, cold weather, or"
+                },
+                {
+                    "source": "Lumos_And_Cucumber.md",
+                    "chunk_id": 41,
+                    "content_preview": "Product name: Lumos And Cucumber\n\nCategory: Reed Diffuser (Tinh dầu tán hương cắm que)\n\nMain Scents: Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng (White Tea), Gỗ tuyết tùn"
+                },
+                {
+                    "source": "Lumos_Tropical_Orchard.md",
+                    "chunk_id": 50,
+                    "content_preview": "Product name: Lumos Tropical Orchard\n\nCategory: Reed Diffuser\n\nMain Scents: Ripe Mango, Passion Fruit, Fresh Guava, Sweet Citrus, Sheer Green Leaves.\n\nSeason: Summer / Spring\n\nFragrance Family: Fruity"
+                },
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                },
+                {
+                    "source": "Lumos_Honeydrew_And_Coconut.md",
+                    "chunk_id": 44,
+                    "content_preview": "Product name: Lumos Honeydrew And Coconut\n\nCategory: Reed Diffuser\n\nMain Scents: Honeydew Melon, Coconut Milk, Vanilla, Soft Musk, Sheer Florals.\n\nSeason: Summer / Spring\n\nFragrance Family: Fruity / T"
+                }
+            ],
+            "ground_truth_answer": "Lựa chọn phù hợp nhất là tinh dầu Lumos Cold. Sản phẩm được thiết kế dành cho mùa Thu và Đông, đặc biệt tối ưu trong thời tiết lạnh hoặc các giai đoạn chuyển mùa. Nhóm hương của sản phẩm là Herbal / Camphorous / Warm Spicy với các thành phần nổi bật như gừng, sả và hương thảo. Đây là giải pháp phù hợp vì có khả năng làm ấm không gian sống, loại bỏ mùi ẩm mốc khó chịu và hỗ trợ giảm các triệu chứng khó chịu về hô hấp thường gặp trong mùa lạnh.",
+            "answer": "### Lumos cold\n\nLựa chọn phù hợp nhất: **Lumos cold**\n\n- Main scents: sả (lemongrass), gừng, vỏ bưởi (grapefruit peel), bạc hà (mint), hương rosemary.  \n- Fragrance family: Herbal / Camphorous / Warm Spicy.  \n- Mùa sử dụng: Thu / Đông — rất có lợi trong mùa ẩm ướt, thời tiết lạnh hoặc chuyển mùa.  \n- Phù hợp cho: máy khuếch tán tinh dầu trong phòng, xông hơi thảo mộc, thêm vào nước tắm ấm, xông mặt, hoặc làm trong lành không gian trong mùa cảm cúm.  \n- Tác dụng chính (lý do chọn): giúp làm ấm không gian, giảm cảm giác nặng nề, khử mùi ẩm mốc, giảm nghẹt mũi/khó thở, mang lại cảm giác an toàn và thư thái tức thì.  \n- Thông số kỹ thuật quan trọng:  \n  - Thương hiệu: Natural Lumos  \n  - Chất liệu: 100% tinh dầu nguyên chất (chiết xuất tự nhiên)  \n  - Dung tích: **50ml**  \n  - Đựng trong lọ thủy tinh màu hổ phách bảo vệ tia UV.\n\nTóm lại, với đặc tính khử mùi ẩm mốc, làm ấm và giảm khó chịu đường hô hấp trong không khí lạnh ẩm, Lumos cold là lựa chọn phù hợp nhất cho căn phòng mùa đông mưa.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        }
+    ]
+}

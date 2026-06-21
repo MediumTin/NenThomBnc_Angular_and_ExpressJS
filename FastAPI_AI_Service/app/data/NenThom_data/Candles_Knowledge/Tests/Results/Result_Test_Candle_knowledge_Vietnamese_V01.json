@@ -1,0 +1,371 @@
+{
+    "summary": {
+        "Accuracy": 0.6,
+        "Recall@5": 0.4,
+        "Recall@3": 0.3,
+        "Avg_Latency": 13.06,
+        "P95_Latency": 21.22
+    },
+    "test_results": [
+        {
+            "question": "Các nốt hương đầu (top notes) thường kéo dài bao lâu sau khi đốt nến?",
+            "response_time": 11.81,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 61,
+                    "content_preview": "Question:\n                    How long do top notes typically last?\n\n                    Answer:\n                    Top notes usually last about 10 minutes after the candle is lit before fading away."
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 2,
+                    "content_preview": "## 3.Base notes account for 20%\n\nBase notes are considered the lingering highlight of the candle even after it has been extinguished. They include deep, rich, and non-volatile notes that can last up t"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 66,
+                    "content_preview": "Question:\n                    How long can middle notes remain noticeable?\n\n                    Answer:\n                    Middle notes can remain noticeable from around 10–20 minutes up to approxima"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 430,
+                    "content_preview": "Question:\n                    Why are base notes harder to detect immediately compared to top notes, despite lingering for up to 6 hours after extinguishment?\n\n                    Answer:\n            "
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 69,
+                    "content_preview": "Question:\n                    How long can base notes last?\n\n                    Answer:\n                    Base notes can last up to 6 hours."
+                }
+            ],
+            "ground_truth_answer": "Các nốt hương đầu thường kéo dài khoảng 10 phút sau khi nến được thắp sáng.",
+            "answer": "Nốt hương đầu (top notes) thường kéo dài khoảng **10 phút** sau khi đốt nến trước khi mờ dần.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Tại sao nốt hương giữa (middle notes) được xem là linh hồn của cây nến?",
+            "response_time": 8.72,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 64,
+                    "content_preview": "Question:\n                    Why are middle notes considered the soul of a candle?\n\n                    Answer:\n                    Middle notes are considered the soul of a candle because they are t"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 458,
+                    "content_preview": "Question:\n                    Why are Middle Notes scientifically referred to as the 'Heart Notes' or 'soul' of a scented candle?\n\n                    Answer:\n                    Because they are the "
+                },
+                {
+                    "source": "Nen_and_Hoa.md",
+                    "chunk_id": 52,
+                    "content_preview": "Product name: Nen and Hoa\n\nCategory: Scented Candle\n\nMain Scents: Exotic Jasmine, Sweet Ylang-Ylang, Warm Sandalwood, Smooth Vanilla, Soft Amber.\n\nSeason: Autumn / Winter (Also highly suitable for coz"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Some_Fragrance_layers_of_scented_candles.docx",
+                    "chunk_id": 1,
+                    "content_preview": "## 2.Middle notes (Heart notes) (70%)\n\nThe middle notes are considered the soul of a candle because they are the longest-lasting, creating a distinctive scent experience when the candle is lit. This l"
+                }
+            ],
+            "ground_truth_answer": "Nốt hương giữa được xem là linh hồn của cây nến vì chúng tồn tại lâu nhất và định hình trải nghiệm hương thơm chính.",
+            "answer": "# Vì sao nốt hương giữa được xem là \"linh hồn\" của cây nến\n\n- Nốt hương giữa tồn tại lâu nhất trong quá trình cháy, nên tạo ra trải nghiệm mùi chính và kéo dài nhất của cây nến.  \n- Chúng xuất hiện khi nốt hương đầu (top notes) bắt đầu phai — thường khoảng **10–20 phút đến 1.5 giờ** sau khi thắp nến.  \n- Nốt giữa định hình đặc trưng mùi nền (signature aromatic character) trong chu kỳ cháy chính, vì vậy người dùng cảm nhận rõ nhất \"tinh thần\" của mùi nến từ lớp này.  \n- Các nốt giữa thường là các nhóm hoa, gia vị, trái cây hoặc hương xanh, góp phần tạo nên cảm giác đặc trưng và bền lâu của nến.\n\nTóm lại: nốt hương giữa được coi là linh hồn vì chúng định nghĩa trải nghiệm mùi chính và duy trì lâu nhất khi nến được thắp.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Hãy kể tên hai nốt hương gỗ nền (base notes) phổ biến được tìm thấy trong nến thơm.",
+            "response_time": 8.39,
+            "retrieved_docs": [
+                {
+                    "source": "Nen_and_Hoa.md",
+                    "chunk_id": 52,
+                    "content_preview": "Product name: Nen and Hoa\n\nCategory: Scented Candle\n\nMain Scents: Exotic Jasmine, Sweet Ylang-Ylang, Warm Sandalwood, Smooth Vanilla, Soft Amber.\n\nSeason: Autumn / Winter (Also highly suitable for coz"
+                },
+                {
+                    "source": "Amber_And_Vanilla.md",
+                    "chunk_id": 26,
+                    "content_preview": "Product name: Amber And Vanilla\n\nCategory: Candle\n\nMain Scents: - Amber - Vanilla - Soft Musk\n\nSeason: - Autumn - Winter - Any Season\n\nFragrance Family: Amber, Gourmand, Warm Sweet\n\nScent Profile: A c"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Sandalwood_And_Rose.md",
+                    "chunk_id": 53,
+                    "content_preview": "Product name: Sandalwood And Rose\n\nCategory: Scented Candle\n\nMain Scents: Rich Sandalwood, Crimson Rose Petals, Velvety Musk, Soft Incense, Warm Oud.\n\nSeason: Autumn / Winter (Also deeply favored for "
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 477,
+                    "content_preview": "Question:\n                    Which two distinct luxury timbers are explicitly listed under the 'Woody notes' category in the fragrance layers document?\n\n                    Answer:\n                  "
+                }
+            ],
+            "ground_truth_answer": "Gỗ đàn hương (sandalwood) và gỗ tuyết tùng (cedarwood).",
+            "answer": "Hai nốt hương gỗ nền phổ biến trong nến thơm:\n\n- Đàn hương (Sandalwood)  \n- Gỗ tuyết tùng (Cedarwood)",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Những mùi hương nào được đề cập là có thể giúp cải thiện sự tập trung khi học tập hoặc làm việc?",
+            "response_time": 6.86,
+            "retrieved_docs": [
+                {
+                    "source": "Candle_benefit.docx",
+                    "chunk_id": 6,
+                    "content_preview": "## Stimulates concentration when working and studying\n\nSome scents such as rosemary, mint, coffee, jasmine, lavender, lemon, etc., help improve blood circulation to the brain, stimulate the nervous sy"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 78,
+                    "content_preview": "Question:\n                    How can scented candles support studying or working?\n\n                    Answer:\n                    Certain scents may stimulate the nervous system, improve cognitive p"
+                },
+                {
+                    "source": "FAQ_Candle_knowledge.json",
+                    "chunk_id": 77,
+                    "content_preview": "Question:\n                    Which candle scents may improve concentration?\n\n                    Answer:\n                    Rosemary, mint, coffee, jasmine, lavender, and lemon scents may help impro"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 435,
+                    "content_preview": "Question:\n                    Which specific scents are scientifically noted in the text to improve brain blood circulation and stimulate cognitive function?\n\n                    Answer:\n             "
+                }
+            ],
+            "ground_truth_answer": "Hương thảo (rosemary), bạc hà (mint), cà phê (coffee), hoa nhài (jasmine), oải hương (lavender) và chanh (lemon).",
+            "answer": "# Các mùi hương giúp cải thiện sự tập trung\n\n- Húng tây (rosemary)  \n- Bạc hà (mint)  \n- Cà phê (coffee)  \n- Hoa nhài (jasmine)  \n- Oải hương (lavender)  \n- Chanh (lemon)",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Nến thơm có thể giúp khử mùi trong phòng như thế nào?",
+            "response_time": 21.12,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                },
+                {
+                    "source": "Nen_and_Hoa.md",
+                    "chunk_id": 52,
+                    "content_preview": "Product name: Nen and Hoa\n\nCategory: Scented Candle\n\nMain Scents: Exotic Jasmine, Sweet Ylang-Ylang, Warm Sandalwood, Smooth Vanilla, Soft Amber.\n\nSeason: Autumn / Winter (Also highly suitable for coz"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 525,
+                    "content_preview": "Question:\n                    What traditional Vietnamese practice does the scent profile of Lumos cold essential oil replicate to provide comfort for respiratory discomfort?\n\n                    Answ"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 593,
+                    "content_preview": "Question:\n                    Which product under the Natural Lumos essential oil lineup is explicitly labeled as a 'Cold/Flu Relief Blend' in Vietnamese?\n\n                    Answer:\n                "
+                }
+            ],
+            "ground_truth_answer": "Nến thơm giải phóng hương thơm tự nhiên từ sáp và tinh dầu, giúp loại bỏ mùi ẩm mốc, mùi thức ăn, mùi nhà vệ sinh và khói thuốc lá.",
+            "answer": "Nến thơm có thể giúp khử mùi trong phòng như sau:\n\n- Cách hoạt động: khi đốt, nến tỏa hương đặc trưng qua ngọn lửa và sợi đốt (ví dụ nến sử dụng wooden/cotton wick), tạo lớp mùi thơm che phủ mùi khó chịu trong không gian.  \n- Hiệu quả mùi: nến Nen and Hoa mang nhóm hương Floral/Woody/Creamy (hoa nhài, ylang-ylang, đàn hương, vanilla, amber) nên tạo ra một “throw” ấm áp và tinh tế, **che phủ mùi trong phòng** và tạo cảm giác dễ chịu, thư giãn.  \n- Thời gian lưu hương: dung tích lớn **16oz** cho thời gian cháy dài, phù hợp cho các phiên xông thơm kéo dài để duy trì mùi thơm ổn định.  \n- Ứng dụng phù hợp: rất hữu ích trong phòng ngủ buổi tối, phòng tắm khi ngâm bồn, góc thiền/yoga hoặc không gian sống nhỏ cần tạo không khí ấm áp và che mùi.\n\nNếu bạn muốn đề xuất nến phù hợp cho mục đích khử mùi cụ thể (phòng tắm, phòng khách, phòng ngủ), mình có thể gợi ý lựa chọn phù hợp.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Đặc điểm vật lý nào làm cho khả năng khuếch tán hương (sillage) của nốt hương nền khác với nốt hương đầu và nốt hương giữa?",
+            "response_time": 9.83,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 275,
+                    "content_preview": "Question:\n                    What category does Lumos And Cucumber belong to?\n\n                    Answer:\n                    Lumos And Cucumber belongs to the Reed Diffuser (Tinh dầu tán hương cắm "
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Nen_and_Hoa.md",
+                    "chunk_id": 52,
+                    "content_preview": "Product name: Nen and Hoa\n\nCategory: Scented Candle\n\nMain Scents: Exotic Jasmine, Sweet Ylang-Ylang, Warm Sandalwood, Smooth Vanilla, Soft Amber.\n\nSeason: Autumn / Winter (Also highly suitable for coz"
+                }
+            ],
+            "ground_truth_answer": "Nốt hương nền không có khả năng khuếch tán rộng và thoáng như hai tầng hương phía trên, vì vậy mùi hương của chúng thường nhẹ nhàng và lan tỏa ít hơn.",
+            "answer": "Tôi không biết dựa trên các tài liệu được cung cấp, bạn nên liên hệ với quản trị viên để biết thông tin chi tiết.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Theo tài liệu, hãy liệt kê tất cả các phản ứng sinh lý của cơ thể khi chúng ta hít phải một mùi hương nến dễ chịu.",
+            "response_time": 21.3,
+            "retrieved_docs": [
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 524,
+                    "content_preview": "Question:\n                    In the Lumos Cajeput collection, which specific essential oils are explicitly designated for warm, medicinal respiratory support when body fatigue sets in?\n\n             "
+                },
+                {
+                    "source": "Lumos_cold.md",
+                    "chunk_id": 43,
+                    "content_preview": "Product name: Lumos cold\n\nCategory: Essential Oil\n\nMain Scents: Lemongrass, Ginger, Grapefruit Peel, Mint, Rosemary.\n\nSeason: Autumn / Winter (Extremely beneficial during wet seasons, cold weather, or"
+                },
+                {
+                    "source": "Lumos_Cajeput.md",
+                    "chunk_id": 42,
+                    "content_preview": "Product name: Lumos Cajeput\n\nCategory: Essential Oil\n\nMain Scents: Xông Cảm (Cold/Flu Relief Blend), Sả Chanh (Lemongrass), Bạc Hà (Peppermint), Tràm Gió (Cajeput).\n\nSeason: Year-round (Particularly b"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 593,
+                    "content_preview": "Question:\n                    Which product under the Natural Lumos essential oil lineup is explicitly labeled as a 'Cold/Flu Relief Blend' in Vietnamese?\n\n                    Answer:\n                "
+                }
+            ],
+            "ground_truth_answer": "Chúng ta có xu hướng hít thở sâu và dễ dàng hơn, huyết áp giảm xuống, và nhịp tim đập chậm hơn, tạo cảm giác thư giãn hơn.",
+            "answer": "Các phản ứng sinh lý được nêu trong tài liệu khi hít phải một mùi hương dễ chịu gồm:\n\n- Tăng tỉnh táo / đánh thức tinh thần (ví dụ: Lumos menthol).  \n- Tăng khả năng tập trung, cải thiện năng suất tinh thần (Lumos menthol).  \n- Giảm căng thẳng vùng đầu / giảm cảm giác đầu nặng (Lumos menthol).  \n- Thông mũi / giảm nghẹt mũi, làm dễ chịu đường hô hấp trên (Lumos menthol; Lumos cold).  \n- Cảm giác mát lạnh, làm dịu và làm giảm cảm nhận nóng (Lumos menthol).  \n- Cảm giác ấm áp, làm ấm và an ủi cơ thể khi mệt (Lumos cold; Lumos Cajeput).  \n- Làm dịu triệu chứng cảm cúm / hỗ trợ giảm mệt mỏi cơ thể (Lumos cold; Cajeput/Xông Cảm).  \n- Hỗ trợ cảm giác thoải mái cho hệ hô hấp (Lumos Cajeput / Xông Cảm).  \n- Thư giãn tinh thần, cảm giác an yên, giảm stress tinh thần (Lumos cold; các sản phẩm ghi “relaxation”).  \n- Tăng rõ rệt cảm giác minh mẫn, làm không khí cảm thấy “thanh sạch”/làm rõ suy nghĩ (Lumos menthol — “clarifying”).",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Xác định ba nốt hương hoa cụ thể được đề cập có thể đóng vai trò là nốt hương đầu, và một nốt hương hoa đóng vai trò là nốt hương giữa.",
+            "response_time": 14.33,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Nen_and_Hoa.md",
+                    "chunk_id": 52,
+                    "content_preview": "Product name: Nen and Hoa\n\nCategory: Scented Candle\n\nMain Scents: Exotic Jasmine, Sweet Ylang-Ylang, Warm Sandalwood, Smooth Vanilla, Soft Amber.\n\nSeason: Autumn / Winter (Also highly suitable for coz"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 275,
+                    "content_preview": "Question:\n                    What category does Lumos And Cucumber belong to?\n\n                    Answer:\n                    Lumos And Cucumber belongs to the Reed Diffuser (Tinh dầu tán hương cắm "
+                },
+                {
+                    "source": "Lavander_Vanilia.md",
+                    "chunk_id": 40,
+                    "content_preview": "Product name: Lavander Vanilia\n\nCategory: Scented Candle\n\nMain Scents: Lavender, Vanilla, Tonka Bean, Soft Musk.\n\nSeason: Year-round / Autumn (với thiết kế nắp chủ đề tạ ơn/thu hoạch)\n\nFragrance Famil"
+                },
+                {
+                    "source": "Amber_And_Vanilla.md",
+                    "chunk_id": 26,
+                    "content_preview": "Product name: Amber And Vanilla\n\nCategory: Candle\n\nMain Scents: - Amber - Vanilla - Soft Musk\n\nSeason: - Autumn - Winter - Any Season\n\nFragrance Family: Amber, Gourmand, Warm Sweet\n\nScent Profile: A c"
+                }
+            ],
+            "ground_truth_answer": "Ba nốt hương hoa thuộc tầng hương đầu là oải hương (lavender), hoa hồng (rose) và hoa diên vĩ (iris). Nốt hương hoa thuộc tầng hương giữa được đề cập là hoa nhài (jasmine). (Lưu ý: oải hương và chanh cũng được nhắc đến trong nhóm hương giúp tăng khả năng tập trung, nhưng hoa nhài là nốt hương giữa được giới thiệu riêng trong phần đó.)",
+            "answer": "Tôi không biết dựa trên các tài liệu được cung cấp, bạn nên liên hệ admin để biết thông tin chi tiết.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Theo thông tin nghiên cứu khoa học được cung cấp, lý do về mặt giải phẫu học nào giải thích việc liệu pháp hương thơm có thể kết nối tức thì mùi hương với ký ức và cảm xúc của con người?",
+            "response_time": 8.29,
+            "retrieved_docs": [
+                {
+                    "source": "Candle_benefit.docx",
+                    "chunk_id": 4,
+                    "content_preview": "## Relax your mind, relieve stress\n\nAccording to Dr. Pamela Dalton, a researcher from the Monell Center for the study of the interaction between human senses and chemicals in Philadelphia: “The part o"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                },
+                {
+                    "source": "Lumos_menthol.md",
+                    "chunk_id": 47,
+                    "content_preview": "Product name: Lumos menthol\n\nCategory: Essential Oil\n\nMain Scents: Peppermint, Menthol, Crisp Herbal Green Notes.\n\nSeason: Summer / Spring (Extremely refreshing during hot weather or for morning wake-"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 481,
+                    "content_preview": "Question:\n                    Detail the biological changes that take place when a human inhales a favored, pleasant candle scent.\n\n                    Answer:\n                    Inhaling a preferred"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 524,
+                    "content_preview": "Question:\n                    In the Lumos Cajeput collection, which specific essential oils are explicitly designated for warm, medicinal respiratory support when body fatigue sets in?\n\n             "
+                }
+            ],
+            "ground_truth_answer": "Theo Tiến sĩ Pamela Dalton, điều này xảy ra vì vùng não tiếp nhận và xử lý mùi hương nằm rất gần với các vùng não chịu trách nhiệm về ký ức và cảm xúc của con người.",
+            "answer": "### Giải thích về mặt giải phẫu học\n\nPhần não nhận và xử lý mùi (theo nhận xét của Dr. Pamela Dalton, Monell Center) nằm rất gần các vùng não chịu trách nhiệm về ký ức và cảm xúc. Sự gần kề về vị trí này khiến mùi hương có thể kết nối một cách tức thì với ký ức và trạng thái cảm xúc.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Hãy giải thích sự khác biệt về vai trò của nốt hương giữa và nốt hương nền xét về thời gian tồn tại và khả năng cảm nhận sau khi ngọn nến được dập tắt.",
+            "response_time": 19.98,
+            "retrieved_docs": [
+                {
+                    "source": "Nen_and_Hoa.md",
+                    "chunk_id": 52,
+                    "content_preview": "Product name: Nen and Hoa\n\nCategory: Scented Candle\n\nMain Scents: Exotic Jasmine, Sweet Ylang-Ylang, Warm Sandalwood, Smooth Vanilla, Soft Amber.\n\nSeason: Autumn / Winter (Also highly suitable for coz"
+                },
+                {
+                    "source": "Amber_And_Vanilla.md",
+                    "chunk_id": 26,
+                    "content_preview": "Product name: Amber And Vanilla\n\nCategory: Candle\n\nMain Scents: - Amber - Vanilla - Soft Musk\n\nSeason: - Autumn - Winter - Any Season\n\nFragrance Family: Amber, Gourmand, Warm Sweet\n\nScent Profile: A c"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "Warn_Cider_And_Cinamon.md",
+                    "chunk_id": 57,
+                    "content_preview": "Product name: Warn Cider And Cinamon\n\nCategory: Scented Candle\n\nMain Scents: Crisp Apple Cider, Ground Cinnamon, Spiced Clove, Sweet Nutmeg, Brown Sugar.\n\nSeason: Autumn / Winter (A quintessential fra"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 276,
+                    "content_preview": "Question:\n                    What are the main scents of Lumos And Cucumber?\n\n                    Answer:\n                    Bạch đàn (Eucalyptus), Bạc hà (Peppermint), Hoa nhài (Jasmine), Trà trắng"
+                }
+            ],
+            "ground_truth_answer": "Nốt hương giữa tồn tại lâu nhất trong khi nến đang cháy (lên đến khoảng 1,5 giờ) và tạo nên linh hồn của trải nghiệm hương thơm. Trong khi đó, nốt hương nền đóng vai trò là dấu ấn cuối cùng, có độ bay hơi thấp và vẫn có thể được cảm nhận trong tối đa khoảng 6 giờ ngay cả sau khi ngọn nến đã được dập tắt.",
+            "answer": "Tóm tắt ngắn gọn vai trò và khác biệt giữa nốt hương giữa và nốt hương nền:\n\n- Nốt hương giữa (nốt giữa)\n  - Vai trò: là “trái tim” của mùi, tạo nên đặc trưng chính khi nến đang cháy — ví dụ mô tả nến “Nen and Hoa” chuyển thành tim gỗ đàn hương, hoặc “Amber And Vanilla” phát triển thành các nét vanilla đậm.\n  - Thời gian tồn tại & cảm nhận sau khi dập nến: xuất hiện sau nốt đầu và thường được cảm nhận rõ nhất khi nến đang cháy; sau khi tắt nến, nốt giữa dễ mờ đi hơn so với nốt nền.\n\n- Nốt hương nền\n  - Vai trò: cung cấp chiều sâu, “neo” cả tổ hợp hương, làm dịu và cân bằng các nốt trên — ví dụ các sản phẩm nói đến “base of smooth vanilla and amber” hay “settles into a sweet, lingering base”.\n  - Thời gian tồn tại & cảm nhận sau khi dập nến: thường bền hơn và để lại mùi lắng (lingering) trong phòng, nên dễ được phát hiện lâu hơn sau khi ngọn nến đã tắt.\n\nGhi chú về cách tắt nến:\n- Việc tắt nến đúng cách ảnh hưởng tới cảm nhận mùi sau khi tắt. Dụng cụ như chuông tắt nến giúp loại bỏ khói và mùi cháy thừa, nhờ đó nốt nền và bầu không khí hương thơm còn lại sẽ rõ ràng và “sạch” hơn.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        }
+    ]
+}

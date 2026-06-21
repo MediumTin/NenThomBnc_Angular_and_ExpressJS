@@ -1,0 +1,72 @@
+[
+  {
+    "question": "Mã giảm giá NEWYEAR2025 cung cấp mức giảm giá bao nhiêu?",
+    "ground_truth_answer": "NEWYEAR2025 cung cấp mức giảm giá 15%.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Giá trị đơn hàng tối thiểu cần thiết để sử dụng VIPMEMBER là bao nhiêu?",
+    "ground_truth_answer": "Giá trị đơn hàng tối thiểu cần thiết là 500000.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "WELCOME10 hiện tại có thể sử dụng được không?",
+    "ground_truth_answer": "Không. WELCOME10 hiện đang bị vô hiệu hóa.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Một khách hàng có thể sử dụng FREESHIP50 bao nhiêu lần?",
+    "ground_truth_answer": "Mỗi khách hàng có thể sử dụng FREESHIP50 tối đa 3 lần.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "SUMMERSALE hiện tại còn hiệu lực không?",
+    "ground_truth_answer": "Không. SUMMERSALE hiện đã hết hạn.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Trong tất cả các mã giảm giá có loại giảm giá là 'percent', mã nào có giá trị giảm tối đa cao nhất và giá trị đó là bao nhiêu?",
+    "ground_truth_answer": "SUMMERSALE có giá trị giảm tối đa cao nhất là 80000.0 (so với NEWYEAR2025 là 50000.0, còn WELCOME10 không có giá trị giảm tối đa được chỉ định).",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Hãy xác định các mã giảm giá có giá trị đơn hàng tối thiểu từ 300000.0 trở lên và cho biết trạng thái hiện tại của chúng.",
+    "ground_truth_answer": "Các mã giảm giá gồm SUMMERSALE (giá trị đơn hàng tối thiểu 300000.0, trạng thái: expired) và VIPMEMBER (giá trị đơn hàng tối thiểu 500000.0, trạng thái: active).",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Tổng 'usage_limit' của tất cả các mã giảm giá hiện đang ở trạng thái 'active' là bao nhiêu?",
+    "ground_truth_answer": "Tổng giới hạn sử dụng là 1600 (NEWYEAR2025 có 500, FREESHIP50 có 1000 và VIPMEMBER có 100).",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "So sánh khoảng thời gian hiệu lực của FREESHIP50 và NEWYEAR2025. Mã nào có hiệu lực trước và khoảng thời gian hiệu lực của chúng có chồng lấp nhau không?",
+    "ground_truth_answer": "FREESHIP50 có hiệu lực trước vào ngày 2025-11-01, trong khi NEWYEAR2025 có hiệu lực sau vào ngày 2025-12-20. Khoảng thời gian hiệu lực của chúng chồng lấp từ 2025-12-20 đến 2025-12-31.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  },
+  {
+    "question": "Mã giảm giá nào có tổng giới hạn sử dụng là 10000 và một người dùng cá nhân có thể sử dụng mã này tối đa bao nhiêu lần?",
+    "ground_truth_answer": "Mã giảm giá WELCOME10 có tổng giới hạn sử dụng là 10000 và một người dùng cá nhân có thể sử dụng tối đa 1 lần.",
+    "relevant_docs": [
+      "coupons.csv"
+    ]
+  }
+]

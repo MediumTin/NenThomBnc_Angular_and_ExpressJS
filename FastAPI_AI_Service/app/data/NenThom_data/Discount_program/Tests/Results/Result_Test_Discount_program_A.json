@@ -1,0 +1,383 @@
+{
+    "summary": {
+        "Accuracy": 0.8,
+        "Recall@5": 0.6,
+        "Recall@3": 0.2,
+        "Avg_Latency": 6.49,
+        "P95_Latency": 10.19,
+        "Avg_Judge_Latency": 2.43,
+        "P95_Judge_Latency": 5.14
+    },
+    "test_results": [
+        {
+            "question": "How much discount does NEWYEAR2025 provide?",
+            "response_time": 6.16,
+            "Judge_time": 1.32,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 101,
+                    "content_preview": "Question:\n                    How much discount does NEWYEAR2025 provide?\n\n                    Answer:\n                    NEWYEAR2025 provides a 15% discount."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 103,
+                    "content_preview": "Question:\n                    What is the maximum discount amount for NEWYEAR2025?\n\n                    Answer:\n                    The maximum discount amount is 50000."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 100,
+                    "content_preview": "Question:\n                    What is the NEWYEAR2025 coupon code?\n\n                    Answer:\n                    NEWYEAR2025 is a percentage discount coupon that offers 15% off eligible orders."
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 19,
+                    "content_preview": "\n            Coupon Code: NEWYEAR2025\n\n            Discount Type: percent\n\n            Discount Value: 15.0\n\n            Minimum Order: 200000.0\n\n            Maximum Discount: 50000.0\n\n            Usa"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 121,
+                    "content_preview": "Question:\n                    What is the specific validity period for the NEWYEAR2025 coupon?\n\n                    Answer:\n                    The NEWYEAR2025 coupon is valid from 2025-12-20 00:00:00"
+                }
+            ],
+            "ground_truth_answer": "NEWYEAR2025 provides a 15% discount.",
+            "answer": "NEWYEAR2025 provides a **15%** discount.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "What is the minimum order value required for VIPMEMBER?",
+            "response_time": 4.42,
+            "Judge_time": 2.68,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 114,
+                    "content_preview": "Question:\n                    What minimum order value is required for VIPMEMBER?\n\n                    Answer:\n                    The minimum order value required is 500000."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 113,
+                    "content_preview": "Question:\n                    What discount does VIPMEMBER provide?\n\n                    Answer:\n                    VIPMEMBER provides a fixed discount of 100000."
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 22,
+                    "content_preview": "\n            Coupon Code: VIPMEMBER\n\n            Discount Type: amount\n\n            Discount Value: 100000.0\n\n            Minimum Order: 500000.0\n\n            Maximum Discount: nan\n\n            Usage "
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 115,
+                    "content_preview": "Question:\n                    How many times can a customer use VIPMEMBER?\n\n                    Answer:\n                    Each customer can use VIPMEMBER up to 5 times."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 127,
+                    "content_preview": "Question:\n                    What is the total usage limit for the VIPMEMBER coupon?\n\n                    Answer:\n                    The total usage limit for VIPMEMBER is 100 times."
+                }
+            ],
+            "ground_truth_answer": "The minimum order value required is 500000.",
+            "answer": "The minimum order value required for the **VIPMEMBER** coupon is **500,000**.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "Can WELCOME10 currently be used?",
+            "response_time": 4.78,
+            "Judge_time": 1.57,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 111,
+                    "content_preview": "Question:\n                    Can WELCOME10 currently be used?\n\n                    Answer:\n                    No. WELCOME10 is currently disabled."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 112,
+                    "content_preview": "Question:\n                    How many times can a customer use WELCOME10?\n\n                    Answer:\n                    Each customer can use WELCOME10 once."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 110,
+                    "content_preview": "Question:\n                    What discount does WELCOME10 offer?\n\n                    Answer:\n                    WELCOME10 offers a 10% discount."
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 21,
+                    "content_preview": "\n            Coupon Code: WELCOME10\n\n            Discount Type: percent\n\n            Discount Value: 10.0\n\n            Minimum Order: 0.0\n\n            Maximum Discount: nan\n\n            Usage per Cust"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 125,
+                    "content_preview": "Question:\n                    What is the exact validity duration of the WELCOME10 coupon?\n\n                    Answer:\n                    The WELCOME10 coupon is valid from 2025-01-01 00:00:00 until"
+                }
+            ],
+            "ground_truth_answer": "No. WELCOME10 is currently disabled.",
+            "answer": "No — WELCOME10 is currently disabled and cannot be used.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "How many times can a customer use FREESHIP50?",
+            "response_time": 4.2,
+            "Judge_time": 1.42,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 108,
+                    "content_preview": "Question:\n                    How many times can a customer use FREESHIP50?\n\n                    Answer:\n                    Each customer can use FREESHIP50 up to 3 times."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 122,
+                    "content_preview": "Question:\n                    What is the total usage limit allowed for the FREESHIP50 coupon?\n\n                    Answer:\n                    The total usage limit allowed for FREESHIP50 is 1000 tim"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 105,
+                    "content_preview": "Question:\n                    What is the FREESHIP50 coupon code?\n\n                    Answer:\n                    FREESHIP50 is a fixed amount discount coupon worth 50000."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 106,
+                    "content_preview": "Question:\n                    How much discount does FREESHIP50 provide?\n\n                    Answer:\n                    FREESHIP50 provides a fixed discount of 50000."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 109,
+                    "content_preview": "Question:\n                    What is the status of FREESHIP50?\n\n                    Answer:\n                    FREESHIP50 is currently active."
+                }
+            ],
+            "ground_truth_answer": "Each customer can use FREESHIP50 up to 3 times.",
+            "answer": "You can use **FREESHIP50** up to **3 times** per customer.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Is SUMMERSALE currently available?",
+            "response_time": 8.41,
+            "Judge_time": 1.96,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 118,
+                    "content_preview": "Question:\n                    Is SUMMERSALE currently available?\n\n                    Answer:\n                    No. SUMMERSALE is currently expired."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 116,
+                    "content_preview": "Question:\n                    What discount does SUMMERSALE provide?\n\n                    Answer:\n                    SUMMERSALE provides a 20% discount."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 132,
+                    "content_preview": "Question:\n                    What is the validity period of the SUMMERSALE coupon?\n\n                    Answer:\n                    The SUMMERSALE coupon is valid from 2025-06-01 00:00:00 to 2025-08-"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 23,
+                    "content_preview": "\n            Coupon Code: SUMMERSALE\n\n            Discount Type: percent\n\n            Discount Value: 20.0\n\n            Minimum Order: 300000.0\n\n            Maximum Discount: 80000.0\n\n            Usag"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 117,
+                    "content_preview": "Question:\n                    What is the maximum discount amount for SUMMERSALE?\n\n                    Answer:\n                    The maximum discount amount is 80000."
+                }
+            ],
+            "ground_truth_answer": "No. SUMMERSALE is currently expired.",
+            "answer": "No — SUMMERSALE is currently expired.\n\n- Coupon status: **expired**\n- Validity period: **2025-06-01 00:00:00 to 2025-08-31 00:00:00**",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Among all the coupons with a 'percent' discount type, which one has the highest maximum discount value, and what is that value?",
+            "response_time": 7.37,
+            "Judge_time": 2.23,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 138,
+                    "content_preview": "Question:\n                    Which coupon has the highest total usage limit in the dataset?\n\n                    Answer:\n                    The WELCOME10 coupon has the highest total usage limit of "
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 135,
+                    "content_preview": "Question:\n                    Which coupons in the dataset provide a fixed amount discount rather than a percentage discount?\n\n                    Answer:\n                    The coupons that provide "
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 139,
+                    "content_preview": "Question:\n                    Which coupon has the lowest total usage limit in the dataset?\n\n                    Answer:\n                    The VIPMEMBER coupon has the lowest total usage limit of 10"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 23,
+                    "content_preview": "\n            Coupon Code: SUMMERSALE\n\n            Discount Type: percent\n\n            Discount Value: 20.0\n\n            Minimum Order: 300000.0\n\n            Maximum Discount: 80000.0\n\n            Usag"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 21,
+                    "content_preview": "\n            Coupon Code: WELCOME10\n\n            Discount Type: percent\n\n            Discount Value: 10.0\n\n            Minimum Order: 0.0\n\n            Maximum Discount: nan\n\n            Usage per Cust"
+                }
+            ],
+            "ground_truth_answer": "SUMMERSALE has the highest maximum discount value of 80000.0 (compared to NEWYEAR2025 which has 50000.0, and WELCOME10 which has no maximum discount value specified).",
+            "answer": "Answer\n\n- Coupon: SUMMERSALE  \n- Discount type: percent  \n- Highest maximum discount: **80000.0**",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": false
+        },
+        {
+            "question": "Identify any coupons that have a minimum order value of 300000.0 or more, and state their current status.",
+            "response_time": 8.62,
+            "Judge_time": 2.04,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 133,
+                    "content_preview": "Question:\n                    What minimum order value must be met to apply the SUMMERSALE coupon?\n\n                    Answer:\n                    A minimum order value of 300000.0 must be met to app"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 22,
+                    "content_preview": "\n            Coupon Code: VIPMEMBER\n\n            Discount Type: amount\n\n            Discount Value: 100000.0\n\n            Minimum Order: 500000.0\n\n            Maximum Discount: nan\n\n            Usage "
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 23,
+                    "content_preview": "\n            Coupon Code: SUMMERSALE\n\n            Discount Type: percent\n\n            Discount Value: 20.0\n\n            Minimum Order: 300000.0\n\n            Maximum Discount: 80000.0\n\n            Usag"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 136,
+                    "content_preview": "Question:\n                    Which coupons currently hold an 'active' status in the system?\n\n                    Answer:\n                    The coupons with an 'active' status are NEWYEAR2025, FREES"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 21,
+                    "content_preview": "\n            Coupon Code: WELCOME10\n\n            Discount Type: percent\n\n            Discount Value: 10.0\n\n            Minimum Order: 0.0\n\n            Maximum Discount: nan\n\n            Usage per Cust"
+                }
+            ],
+            "ground_truth_answer": "The coupons are SUMMERSALE (minimum order value 300000.0, status: expired) and VIPMEMBER (minimum order value 500000.0, status: active).",
+            "answer": "### Coupons with minimum order ≥ 300000.0\n\n#### VIPMEMBER\n- Minimum order: **500000.0**\n- Status: **active**\n\n#### SUMMERSALE\n- Minimum order: **300000.0**\n- Status: **expired**",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true
+        },
+        {
+            "question": "What is the total combined 'usage_limit' for all coupons that currently have an 'active' status?",
+            "response_time": 3.48,
+            "Judge_time": 1.9,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 138,
+                    "content_preview": "Question:\n                    Which coupon has the highest total usage limit in the dataset?\n\n                    Answer:\n                    The WELCOME10 coupon has the highest total usage limit of "
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 139,
+                    "content_preview": "Question:\n                    Which coupon has the lowest total usage limit in the dataset?\n\n                    Answer:\n                    The VIPMEMBER coupon has the lowest total usage limit of 10"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 124,
+                    "content_preview": "Question:\n                    What is the total usage limit configured for the WELCOME10 coupon?\n\n                    Answer:\n                    The total usage limit configured for WELCOME10 is 1000"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 131,
+                    "content_preview": "Question:\n                    What is the total usage limit for the SUMMERSALE coupon?\n\n                    Answer:\n                    The total usage limit for SUMMERSALE is 2000 times."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 127,
+                    "content_preview": "Question:\n                    What is the total usage limit for the VIPMEMBER coupon?\n\n                    Answer:\n                    The total usage limit for VIPMEMBER is 100 times."
+                }
+            ],
+            "ground_truth_answer": "The total combined usage limit is 1600 (NEWYEAR2025 has 500, FREESHIP50 has 1000, and VIPMEMBER has 100).",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Compare the validity periods of FREESHIP50 and NEWYEAR2025. Which coupon becomes valid first, and do their validity ranges overlap?",
+            "response_time": 11.48,
+            "Judge_time": 7.15,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 123,
+                    "content_preview": "Question:\n                    What are the start and end dates for the FREESHIP50 coupon validity?\n\n                    Answer:\n                    The FREESHIP50 coupon is valid from 2025-11-01 00:00"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 121,
+                    "content_preview": "Question:\n                    What is the specific validity period for the NEWYEAR2025 coupon?\n\n                    Answer:\n                    The NEWYEAR2025 coupon is valid from 2025-12-20 00:00:00"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 136,
+                    "content_preview": "Question:\n                    Which coupons currently hold an 'active' status in the system?\n\n                    Answer:\n                    The coupons with an 'active' status are NEWYEAR2025, FREES"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 105,
+                    "content_preview": "Question:\n                    What is the FREESHIP50 coupon code?\n\n                    Answer:\n                    FREESHIP50 is a fixed amount discount coupon worth 50000."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 106,
+                    "content_preview": "Question:\n                    How much discount does FREESHIP50 provide?\n\n                    Answer:\n                    FREESHIP50 provides a fixed discount of 50000."
+                }
+            ],
+            "ground_truth_answer": "FREESHIP50 becomes valid first on 2025-11-01, whereas NEWYEAR2025 becomes valid later on 2025-12-20. Their validity ranges overlap between 2025-12-20 and 2025-12-31.",
+            "answer": "Validity comparison\n\n- **FREESHIP50**: valid from **2025-11-01 00:00:00** to **2025-12-31 00:00:00**.\n\n- **NEWYEAR2025**: valid from **2025-12-20 00:00:00** to **2026-01-05 00:00:00**.\n\nConclusion\n\n- **FREESHIP50** becomes valid first.\n- Yes — their validity ranges overlap from **2025-12-20 00:00:00** to **2025-12-31 00:00:00** (an overlap period of 11 days).",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "Which coupon has a total usage limit of 10000, and how many times can an individual user utilize this specific coupon?",
+            "response_time": 6.0,
+            "Judge_time": 2.05,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 138,
+                    "content_preview": "Question:\n                    Which coupon has the highest total usage limit in the dataset?\n\n                    Answer:\n                    The WELCOME10 coupon has the highest total usage limit of "
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 124,
+                    "content_preview": "Question:\n                    What is the total usage limit configured for the WELCOME10 coupon?\n\n                    Answer:\n                    The total usage limit configured for WELCOME10 is 1000"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 120,
+                    "content_preview": "Question:\n                    What is the total usage limit for the NEWYEAR2025 coupon?\n\n                    Answer:\n                    The total usage limit for NEWYEAR2025 is 500 times."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 127,
+                    "content_preview": "Question:\n                    What is the total usage limit for the VIPMEMBER coupon?\n\n                    Answer:\n                    The total usage limit for VIPMEMBER is 100 times."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 139,
+                    "content_preview": "Question:\n                    Which coupon has the lowest total usage limit in the dataset?\n\n                    Answer:\n                    The VIPMEMBER coupon has the lowest total usage limit of 10"
+                }
+            ],
+            "ground_truth_answer": "The WELCOME10 coupon has a total usage limit of 10000, and an individual user can utilize it a maximum of 1 time.",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        }
+    ]
+}

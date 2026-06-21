@@ -1,0 +1,793 @@
+{
+    "summary": {
+        "Accuracy": 0.9,
+        "Recall@5": 0.0,
+        "Recall@3": 0.0,
+        "Avg_Latency": 4.5,
+        "P95_Latency": 5.96,
+        "Avg_Judge_Latency": 1.78,
+        "P95_Judge_Latency": 3.0
+    },
+    "test_results": [
+        {
+            "question": "What fragrance family is 3 Day WKND in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.26,
+            "Judge_time": 1.75,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 103,
+                    "content_preview": "What fragrance family is 3 Day WKND in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 323,
+                    "content_preview": "Question:\n                    What fragrance family is 3 Day WKND in?\n\n                    Answer:\n                    Fruity"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 180,
+                    "content_preview": "What fragrance family is Day Party in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 101,
+                    "content_preview": "What are the main scents of 3 Day WKND?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 321,
+                    "content_preview": "Question:\n                    What are the main scents of 3 Day WKND?\n\n                    Answer:\n                    - Green Apple - Cucumber - Waterlily"
+                }
+            ],
+            "ground_truth_answer": "Fruity",
+            "answer": "3 Day WKND belongs to the **Fruity** fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Amber And Vanilla in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.53,
+            "Judge_time": 2.76,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 109,
+                    "content_preview": "What fragrance family is Amber And Vanilla in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 329,
+                    "content_preview": "Question:\n                    What fragrance family is Amber And Vanilla in?\n\n                    Answer:\n                    Amber, Gourmand, Warm Sweet"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 107,
+                    "content_preview": "What are the main scents of Amber And Vanilla?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 106,
+                    "content_preview": "What category does Amber And Vanilla belong to?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 192,
+                    "content_preview": "What fragrance family is Lavander Vanilia in?"
+                }
+            ],
+            "ground_truth_answer": "Amber, Gourmand, Warm Sweet",
+            "answer": "### Fragrance family for Amber And Vanilla\n\n- Amber  \n- Gourmand  \n- Warm Sweet",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is BLOW A WISH in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 4.27,
+            "Judge_time": 1.44,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 115,
+                    "content_preview": "What fragrance family is BLOW A WISH in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 335,
+                    "content_preview": "Question:\n                    What fragrance family is BLOW A WISH in?\n\n                    Answer:\n                    Warm, Amber, Sweet"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 113,
+                    "content_preview": "What are the main scents of BLOW A WISH?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 333,
+                    "content_preview": "Question:\n                    What are the main scents of BLOW A WISH?\n\n                    Answer:\n                    - Vanilla - Amber - Soft Musk"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 332,
+                    "content_preview": "Question:\n                    What category does BLOW A WISH belong to?\n\n                    Answer:\n                    BLOW A WISH belongs to the Scented Candle category."
+                }
+            ],
+            "ground_truth_answer": "Warm, Amber, Sweet",
+            "answer": "BLOW A WISH is in the **Warm, Amber, Sweet** fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Candle Scissor in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.68,
+            "Judge_time": 1.28,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 121,
+                    "content_preview": "What fragrance family is Candle Scissor in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 127,
+                    "content_preview": "What fragrance family is Candle Snuffer in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 341,
+                    "content_preview": "Question:\n                    What fragrance family is Candle Scissor in?\n\n                    Answer:\n                    Non-fragrance / Functional Candle Maintenance Tools"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 139,
+                    "content_preview": "What fragrance family is Candle holder in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 156,
+                    "content_preview": "What fragrance family is Candle pinwheel in?"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Functional Candle Maintenance Tools",
+            "answer": "Candle Scissor is in the **Non-fragrance / Functional Candle Maintenance Tools** fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Candle Snuffer in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.39,
+            "Judge_time": 1.62,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 127,
+                    "content_preview": "What fragrance family is Candle Snuffer in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 121,
+                    "content_preview": "What fragrance family is Candle Scissor in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 347,
+                    "content_preview": "Question:\n                    What fragrance family is Candle Snuffer in?\n\n                    Answer:\n                    Non-fragrance / Functional Candle Maintenance Tools"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 139,
+                    "content_preview": "What fragrance family is Candle holder in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 133,
+                    "content_preview": "What fragrance family is Candle Tray in?"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Functional Candle Maintenance Tools",
+            "answer": "### Candle Snuffer\n\n- Fragrance family: Non-fragrance / Functional Candle Maintenance Tools",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Candle Tray in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 4.68,
+            "Judge_time": 1.81,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 133,
+                    "content_preview": "What fragrance family is Candle Tray in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 162,
+                    "content_preview": "What fragrance family is Candle rotation tray in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 151,
+                    "content_preview": "What fragrance family is Candle metal tray in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 353,
+                    "content_preview": "Question:\n                    What fragrance family is Candle Tray in?\n\n                    Answer:\n                    Non-fragrance / Functional Candle Care Display"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 139,
+                    "content_preview": "What fragrance family is Candle holder in?"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Functional Candle Care Display",
+            "answer": "Answer\n\n- Fragrance family: **Non-fragrance / Functional Candle Care Display**",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Candle holder in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 4.32,
+            "Judge_time": 1.65,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 139,
+                    "content_preview": "What fragrance family is Candle holder in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 359,
+                    "content_preview": "Question:\n                    What fragrance family is Candle holder in?\n\n                    Answer:\n                    Decorative / Unscented"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 133,
+                    "content_preview": "What fragrance family is Candle Tray in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 127,
+                    "content_preview": "What fragrance family is Candle Snuffer in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 162,
+                    "content_preview": "What fragrance family is Candle rotation tray in?"
+                }
+            ],
+            "ground_truth_answer": "Decorative / Unscented",
+            "answer": "### Candle holder — Fragrance Family\n\n- **Decorative / Unscented**",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Candle matchbox in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 6.09,
+            "Judge_time": 1.23,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 145,
+                    "content_preview": "What fragrance family is Candle matchbox in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 365,
+                    "content_preview": "Question:\n                    What fragrance family is Candle matchbox in?\n\n                    Answer:\n                    Non-fragrance / Utility Candle Care"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 139,
+                    "content_preview": "What fragrance family is Candle holder in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 143,
+                    "content_preview": "What are the main scents of Candle matchbox?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 133,
+                    "content_preview": "What fragrance family is Candle Tray in?"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Utility Candle Care",
+            "answer": "Candle matchbox belongs to the **Non-fragrance / Utility Candle Care** fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Candle metal tray in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.38,
+            "Judge_time": 2.99,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 151,
+                    "content_preview": "What fragrance family is Candle metal tray in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 133,
+                    "content_preview": "What fragrance family is Candle Tray in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 371,
+                    "content_preview": "Question:\n                    What fragrance family is Candle metal tray in?\n\n                    Answer:\n                    Non-fragrance / Utility Home Organization"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 162,
+                    "content_preview": "What fragrance family is Candle rotation tray in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 139,
+                    "content_preview": "What fragrance family is Candle holder in?"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Utility Home Organization",
+            "answer": "The Candle metal tray is classified in the **Non-fragrance / Utility Home Organization** fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Candle pinwheel in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 3.95,
+            "Judge_time": 1.94,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 156,
+                    "content_preview": "What fragrance family is Candle pinwheel in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 376,
+                    "content_preview": "Question:\n                    What fragrance family is Candle pinwheel in?\n\n                    Answer:\n                    Woody / Warm & Spicy Citrus Holiday"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 121,
+                    "content_preview": "What fragrance family is Candle Scissor in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 139,
+                    "content_preview": "What fragrance family is Candle holder in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 162,
+                    "content_preview": "What fragrance family is Candle rotation tray in?"
+                }
+            ],
+            "ground_truth_answer": "Woody / Warm & Spicy Citrus Holiday",
+            "answer": "Candle pinwheel belongs to the Woody / Warm & Spicy Citrus Holiday fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Candle rotation tray in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 3.97,
+            "Judge_time": 1.72,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 162,
+                    "content_preview": "What fragrance family is Candle rotation tray in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 133,
+                    "content_preview": "What fragrance family is Candle Tray in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 382,
+                    "content_preview": "Question:\n                    What fragrance family is Candle rotation tray in?\n\n                    Answer:\n                    Non-fragrance / Utility Candle Care"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 151,
+                    "content_preview": "What fragrance family is Candle metal tray in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 139,
+                    "content_preview": "What fragrance family is Candle holder in?"
+                }
+            ],
+            "ground_truth_answer": "Non-fragrance / Utility Candle Care",
+            "answer": "### Candle rotation tray — Fragrance family\n\n- Fragrance family: Non-fragrance / Utility Candle Care",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Coconut And Sea Salt in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.95,
+            "Judge_time": 1.6,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 168,
+                    "content_preview": "What fragrance family is Coconut And Sea Salt in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 388,
+                    "content_preview": "Question:\n                    What fragrance family is Coconut And Sea Salt in?\n\n                    Answer:\n                    Fresh, Aquatic, Tropical"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 166,
+                    "content_preview": "What are the main scents of Coconut And Sea Salt?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 165,
+                    "content_preview": "What category does Coconut And Sea Salt belong to?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 169,
+                    "content_preview": "What mood does Coconut And Sea Salt create?"
+                }
+            ],
+            "ground_truth_answer": "Fresh, Aquatic, Tropical",
+            "answer": "Coconut And Sea Salt belongs to the Fresh, Aquatic, and Tropical fragrance families.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Dalat Gift in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 3.74,
+            "Judge_time": 2.64,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 174,
+                    "content_preview": "What fragrance family is Dalat Gift in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 394,
+                    "content_preview": "Question:\n                    What fragrance family is Dalat Gift in?\n\n                    Answer:\n                    Earthy Woody / Fresh Aromatic Botanical"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 172,
+                    "content_preview": "What are the main scents of Dalat Gift?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 392,
+                    "content_preview": "Question:\n                    What are the main scents of Dalat Gift?\n\n                    Answer:\n                    Pine Wood, Fresh Moss, Lemon Peel, Warm Amber, Cedarwood, and Crisp Mountain Tea."
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 171,
+                    "content_preview": "What category does Dalat Gift belong to?"
+                }
+            ],
+            "ground_truth_answer": "Earthy Woody / Fresh Aromatic Botanical",
+            "answer": "Dalat Gift is in the Earthy Woody / Fresh Aromatic Botanical fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Day Party in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 3.49,
+            "Judge_time": 1.12,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 180,
+                    "content_preview": "What fragrance family is Day Party in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 400,
+                    "content_preview": "Question:\n                    What fragrance family is Day Party in?\n\n                    Answer:\n                    Fruity / Sweet"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 178,
+                    "content_preview": "What are the main scents of Day Party?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 103,
+                    "content_preview": "What fragrance family is 3 Day WKND in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 323,
+                    "content_preview": "Question:\n                    What fragrance family is 3 Day WKND in?\n\n                    Answer:\n                    Fruity"
+                }
+            ],
+            "ground_truth_answer": "Fruity / Sweet",
+            "answer": "Day Party is in the Fruity / Sweet fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Jasmin ylang ylang sandalwood in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 4.65,
+            "Judge_time": 1.38,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 186,
+                    "content_preview": "What fragrance family is Jasmin ylang ylang sandalwood in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 406,
+                    "content_preview": "Question:\n                    What fragrance family is Jasmin ylang ylang sandalwood in?\n\n                    Answer:\n                    Floral / Woody / Oriental"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 183,
+                    "content_preview": "What category does Jasmin ylang ylang sandalwood belong to?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 184,
+                    "content_preview": "What are the main scents of Jasmin ylang ylang sandalwood?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 187,
+                    "content_preview": "What mood does Jasmin ylang ylang sandalwood create?"
+                }
+            ],
+            "ground_truth_answer": "Floral / Woody / Oriental",
+            "answer": "Jasmin ylang ylang sandalwood belongs to the Floral / Woody / Oriental fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Lavander Vanilia in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 4.09,
+            "Judge_time": 3.18,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 192,
+                    "content_preview": "What fragrance family is Lavander Vanilia in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 412,
+                    "content_preview": "Question:\n                    What fragrance family is Lavander Vanilia in?\n\n                    Answer:\n                    Floral / Gourmand / Sweet"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 189,
+                    "content_preview": "What category does Lavander Vanilia belong to?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 190,
+                    "content_preview": "What are the main scents of Lavander Vanilia?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 109,
+                    "content_preview": "What fragrance family is Amber And Vanilla in?"
+                }
+            ],
+            "ground_truth_answer": "Floral / Gourmand / Sweet",
+            "answer": "Lavander Vanilia belongs to the **Floral / Gourmand / Sweet** fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Lumos And Cucumber in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 2.91,
+            "Judge_time": 1.2,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 198,
+                    "content_preview": "What fragrance family is Lumos And Cucumber in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 418,
+                    "content_preview": "Question:\n                    What fragrance family is Lumos And Cucumber in?\n\n                    Answer:\n                    Fresh / Herbal / Floral"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 196,
+                    "content_preview": "What are the main scents of Lumos And Cucumber?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 195,
+                    "content_preview": "What category does Lumos And Cucumber belong to?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 199,
+                    "content_preview": "What mood does Lumos And Cucumber create?"
+                }
+            ],
+            "ground_truth_answer": "Fresh / Herbal / Floral",
+            "answer": "Lumos And Cucumber belongs to the **Fresh / Herbal / Floral** fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Lumos Cajeput in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 4.42,
+            "Judge_time": 1.55,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 198,
+                    "content_preview": "What fragrance family is Lumos And Cucumber in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 418,
+                    "content_preview": "Question:\n                    What fragrance family is Lumos And Cucumber in?\n\n                    Answer:\n                    Fresh / Herbal / Floral"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 747,
+                    "content_preview": "Question:\n                    What specific single-note botanical family does Lumos Lemongrass explicitly belong to?\n\n                    Answer:\n                    It belongs to the Citrus / Herbal "
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 196,
+                    "content_preview": "What are the main scents of Lumos And Cucumber?"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 703,
+                    "content_preview": "Question:\n                    What type of label is affixed to the Lumos Cajeput essential oil bottle, and what brand ethos does it communicate?\n\n                    Answer:\n                    It fea"
+                }
+            ],
+            "ground_truth_answer": "Herbal / Camphorous / Fresh",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Lumos Honeydrew And Coconut in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 3.52,
+            "Judge_time": 1.39,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 198,
+                    "content_preview": "What fragrance family is Lumos And Cucumber in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 168,
+                    "content_preview": "What fragrance family is Coconut And Sea Salt in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 418,
+                    "content_preview": "Question:\n                    What fragrance family is Lumos And Cucumber in?\n\n                    Answer:\n                    Fresh / Herbal / Floral"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 745,
+                    "content_preview": "Question:\n                    What comforting floral notes are layered beneath the coconut milk heart of Lumos Honeydrew And Coconut?\n\n                    Answer:\n                    A delicate layer "
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 685,
+                    "content_preview": "Question:\n                    What specific gourmand note is blended with coconut milk in Lumos Honeydrew And Coconut to create an upscale tropical resort vibe?\n\n                    Answer:\n          "
+                }
+            ],
+            "ground_truth_answer": "Fruity / Tropical / Sweet",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false
+        },
+        {
+            "question": "What fragrance family is Lumos Juicy Peach in?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 2.68,
+            "Judge_time": 1.35,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 198,
+                    "content_preview": "What fragrance family is Lumos And Cucumber in?"
+                },
+                {
+                    "source": "FAQ_Product_Catalog.json",
+                    "chunk_id": 418,
+                    "content_preview": "Question:\n                    What fragrance family is Lumos And Cucumber in?\n\n                    Answer:\n                    Fresh / Herbal / Floral"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 667,
+                    "content_preview": "Question:\n                    Despite what its name 'Lumos Juicy Peach' might suggest to an uninformed buyer, what is the actual fragrance family and dominant floral core of this reed diffuser?\n\n     "
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 696,
+                    "content_preview": "Question:\n                    Which two primary flowers dominate the middle and top notes of the Lumos Juicy Peach fragrance profile?\n\n                    Answer:\n                    Premium Bulgarian"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 716,
+                    "content_preview": "Question:\n                    What base notes are responsible for leaving the sophisticated, powdery trailing aroma in Lumos Juicy Peach?\n\n                    Answer:\n                    A smooth, war"
+                }
+            ],
+            "ground_truth_answer": "Floral / Soft Rosy",
+            "answer": "Lumos Juicy Peach is in the **Floral / Soft Rosy** fragrance family.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false
+        }
+    ]
+}
