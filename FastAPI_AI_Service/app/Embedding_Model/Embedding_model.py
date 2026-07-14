@@ -5,7 +5,7 @@ load_dotenv() # Load the environment variables from the .env file
 # ----------------------------------Step 3: Embedding to vector space------------------------------------------
 embeddings = OpenAIEmbeddings(
     model="text-embedding-3-small", 
-    dimensions=1024
+    dimensions=1024 # Set the dimensions to 1024 for the "text-embedding-3-small" model
 )
 
 # For testing

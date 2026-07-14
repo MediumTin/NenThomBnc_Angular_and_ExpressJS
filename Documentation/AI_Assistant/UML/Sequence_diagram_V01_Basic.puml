@@ -1,0 +1,35 @@
+@startuml
+title RAG Question Answering Sequence Diagram
+
+actor Customer
+
+participant Frontend
+participant "FastAPI Backend" as Backend
+participant "Retriever Service" as Retriever
+database "FAISS Vector DB" as FAISS
+participant "OpenAI Embedding" as Embedding
+participant "OpenAI GPT" as LLM
+
+Customer -> Frontend : Enter question
+
+Frontend -> Backend : POST /ask(question)
+
+Backend -> Retriever : Retrieve relevant documents
+
+Retriever -> Embedding : Generate query embedding
+Embedding --> Retriever : Query vector
+
+Retriever -> FAISS : Similarity Search
+FAISS --> Retriever : Top-K documents
+
+Retriever --> Backend : Retrieved context
+
+Backend -> LLM : Prompt(question + context)
+
+LLM --> Backend : Generated answer
+
+Backend --> Frontend : Response(answer)
+
+Frontend --> Customer : Display answer
+
+@enduml

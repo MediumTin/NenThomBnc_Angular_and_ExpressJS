@@ -1,0 +1,50 @@
+@startuml
+title Multilingual RAG Chatbot Sequence Diagram
+
+actor Customer
+
+participant Frontend
+participant Backend
+participant LanguageDetector
+participant Translator
+participant Retriever
+database FAISS
+participant Embedding
+participant LLM
+
+Customer -> Frontend : Ask Question
+Frontend -> Backend : Send Question
+
+Backend -> LanguageDetector : Detect Language
+LanguageDetector --> Backend : Language
+
+alt Vietnamese
+
+    Backend -> Translator : Translate Question to English
+    Translator --> Backend : English Question
+end
+    Backend -> Retriever : Retrieve Context
+
+    Retriever -> Embedding : Generate Embedding
+    Embedding --> Retriever : Query Vector
+
+    Retriever -> FAISS : Similarity Search
+    FAISS --> Retriever : Top-K Documents
+
+    Retriever --> Backend : Retrieved Context
+
+alt Vietnamese
+    Backend -> LLM : Original Question + Context
+    LLM --> Backend : Answer (Vietnamese)
+
+else English
+
+    Backend -> LLM : Question + Context
+    LLM --> Backend : Answer (English)
+
+end
+
+Backend --> Frontend : Final Answer
+Frontend --> Customer : Display Answer
+
+@enduml

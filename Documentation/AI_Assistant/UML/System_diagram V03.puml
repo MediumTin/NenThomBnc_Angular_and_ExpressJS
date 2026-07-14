@@ -1,0 +1,99 @@
+@startuml
+
+left to right direction
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+actor User
+
+rectangle "Frontend Layer" {
+
+    [Web Application]
+}
+
+rectangle "Backend (FastAPI)" {
+
+    [Language Detection]
+
+    [Translation Service]
+
+    [Retriever Service]
+
+    [Prompt Builder]
+
+}
+
+cloud "OpenAI Services" {
+
+    [Embedding Model]
+
+    [GPT-4o]
+
+}
+
+database "FAISS Vector Database"
+
+folder "Knowledge Base" {
+
+    [Product Documents]
+
+    [FAQ Documents]
+
+    [Promotion Documents]
+
+}
+
+rectangle "Document Processing Pipeline" {
+
+    [Chunking]
+
+}
+
+'=========================
+' Offline Indexing
+'=========================
+
+[Product Documents] --> [Chunking]
+[FAQ Documents] --> [Chunking]
+[Promotion Documents] --> [Chunking]
+
+[Chunking] --> [Embedding Model]
+[Embedding Model] --> "FAISS Vector Database"
+
+'=========================
+' Online Query Flow
+'=========================
+
+User --> [Web Application] : Ask Question
+
+[Web Application] --> [Language Detection]
+
+[Language Detection] --> [Translation Service] : Vietnamese
+
+[Translation Service] --> [Retriever Service] : English Query
+
+[Language Detection] --> [Retriever Service] : English
+
+[Retriever Service] --> [Embedding Model] : Query Embedding
+
+[Embedding Model] --> [Retriever Service]
+
+[Retriever Service] --> "FAISS Vector Database" : Similarity Search
+
+"FAISS Vector Database" --> [Retriever Service] : Top-K Chunks
+
+[Retriever Service] --> [Prompt Builder]
+
+[Prompt Builder] --> [GPT-4o] : Context + Query
+
+[GPT-4o] --> [Prompt Builder] : Answer
+
+[Prompt Builder] --> [Translation Service] : Vietnamese Response
+
+[Prompt Builder] --> [Web Application] : English Response
+
+[Translation Service] --> [Web Application] : Vietnamese Response
+
+[Web Application] --> User : Final Answer
+
+@enduml

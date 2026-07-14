@@ -1,0 +1,70 @@
+@startuml
+
+left to right direction
+skinparam componentStyle rectangle
+
+actor User
+
+rectangle "Presentation Layer" {
+
+    [React Frontend]
+
+}
+
+rectangle "Application Layer" {
+
+    [FastAPI Backend]
+
+    [Language Detection]
+
+    [Translation Service]
+
+    [Retriever Service]
+
+}
+
+rectangle "Knowledge Layer" {
+
+    database "FAISS Vector DB"
+
+    folder "Knowledge Base"
+
+}
+
+rectangle "LLM Layer" {
+
+    [OpenAI Embedding]
+
+    [OpenAI GPT]
+
+}
+
+User --> [React Frontend]
+
+[React Frontend] --> [FastAPI Backend]
+
+[FastAPI Backend] --> [Language Detection]
+
+[Language Detection] --> [Translation Service]
+
+[Translation Service] --> [Retriever Service]
+
+[Language Detection] --> [Retriever Service]
+
+[Retriever Service] --> [OpenAI Embedding]
+
+[Retriever Service] --> "FAISS Vector DB"
+
+"Knowledge Base" --> "FAISS Vector DB"
+
+[FastAPI Backend] --> [OpenAI GPT]
+
+"FAISS Vector DB" --> [Retriever Service]
+
+[Retriever Service] --> [FastAPI Backend]
+
+[OpenAI GPT] --> [FastAPI Backend]
+
+[FastAPI Backend] --> [React Frontend]
+
+@enduml

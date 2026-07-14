@@ -1,0 +1,479 @@
+{
+    "summary": {
+        "Accuracy": 1.0,
+        "Recall@5": 1.0,
+        "Recall@3": 1.0,
+        "MRR": 1.0,
+        "faithfulness": 0.8759,
+        "answer_relevancy": 0.9105,
+        "context_precision": 0.8089,
+        "context_recall": 1.0,
+        "RAGAS_Avg_4": 0.8988,
+        "Avg_Latency": 7.69,
+        "P95_Latency": 12.84,
+        "Avg_Judge_Latency": 4.07,
+        "P95_Judge_Latency": 7.83
+    },
+    "test_results": [
+        {
+            "question": "Thời gian giao hàng tại Hà Nội hoặc Thành phố Hồ Chí Minh là bao lâu?",
+            "classification": "Policies",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.86,
+            "Judge_time": 3.1,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 177,
+                    "content_preview": "Question:\n                    What is the expected delivery timeframe if a customer is located outside Hanoi and Ho Chi Minh City?\n\n                    Answer:\n                    The average delivery"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 144,
+                    "content_preview": "Question:\n                    How long does delivery take within Hanoi or Ho Chi Minh City?\n\n                    Answer:\n                    Orders are usually delivered within 2–4 hours and no later "
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 10,
+                    "content_preview": "## Average delivery time:\n\nOrders within Hanoi or Ho Chi Minh: Customers will receive within a maximum of 24 hours (Usually 2-4 hours) from the time of order. Except for pre-orders or insufficient inv"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 145,
+                    "content_preview": "Question:\n                    How long does delivery take to other areas in Vietnam?\n\n                    Answer:\n                    Delivery usually takes 1–2 days and may take up to 3 days."
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 162,
+                    "content_preview": "Question:\n                    Under what circumstances will nenthom.com.vn's customer service call a customer regarding a delivery delay within Hanoi or Ho Chi Minh City?\n\n                    Answer:\n"
+                }
+            ],
+            "ground_truth_answer": "Đơn hàng thường được giao trong vòng 2–4 giờ và không muộn hơn 24 giờ sau khi đặt hàng.",
+            "answer": "- Thời gian giao hàng tại Hà Nội hoặc TP. Hồ Chí Minh: **tối đa 24 giờ**, thường **2–4 giờ** kể từ khi đặt hàng.  \n\n- Trường hợp đặt trước (pre-order) hoặc hết hàng: dịch vụ khách hàng sẽ gọi thông báo.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9602415431458743,
+            "context_precision": 0.5833333333041666,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.8858937191125102,
+            "ragas_error": null
+        },
+        {
+            "question": "Nenthom.com.vn hỗ trợ những phương thức thanh toán nào?",
+            "classification": "Policies",
+            "retrieval_mode": "vietnamese",
+            "response_time": 7.38,
+            "Judge_time": 2.3,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 147,
+                    "content_preview": "Question:\n                    What payment methods are supported by nenthom.com.vn?\n\n                    Answer:\n                    Supported payment methods include COD, MoMo, Zalo Pay, and bank tra"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 150,
+                    "content_preview": "Question:\n                    Does nenthom.com.vn accept Zalo Pay payments?\n\n                    Answer:\n                    Yes. Customers can pay using the Zalo Pay e-wallet."
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 149,
+                    "content_preview": "Question:\n                    Does nenthom.com.vn accept MoMo payments?\n\n                    Answer:\n                    Yes. Customers can pay using the MoMo e-wallet."
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 510,
+                    "content_preview": "Question:\n                    Which specific third-party digital mobile wallets are integrated as formal checkout gateways on nenthom.com.vn?\n\n                    Answer:\n                    MoMo and "
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 11,
+                    "content_preview": "# Payment policy\n\nNenthom.com.vn is responsible for and protects your rights when making payment transactions.\n\nWe support the following payment methods:\n\nCash payment for COD (delivery and collection"
+                }
+            ],
+            "ground_truth_answer": "Các phương thức thanh toán được hỗ trợ bao gồm COD, MoMo, Zalo Pay và chuyển khoản ngân hàng qua Internet Banking.",
+            "answer": "Nenthom.com.vn hỗ trợ các phương thức thanh toán sau:\n\n- Thanh toán tiền mặt khi nhận hàng (COD) — giao nhận và thu tiền tận nhà (toàn quốc)  \n- Ví điện tử MoMo  \n- Ví điện tử Zalo Pay  \n- Chuyển khoản ngân hàng qua Internet banking — **Admin sẽ liên hệ** để hướng dẫn chi tiết",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9534087082246339,
+            "context_precision": 0.99999999998,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9883521770511585,
+            "ragas_error": null
+        },
+        {
+            "question": "Khách hàng có bao nhiêu ngày để đổi hoặc trả sản phẩm?",
+            "classification": "Policies",
+            "retrieval_mode": "vietnamese",
+            "response_time": 4.06,
+            "Judge_time": 1.46,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 151,
+                    "content_preview": "Question:\n                    How many days do I have to return a product?\n\n                    Answer:\n                    Customers can exchange or return products within 7 days from the purchase da"
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 12,
+                    "content_preview": "## Conditions for returning the product:\n\nThe product is still intact with all parts, showing no signs of heavy use or damage.\n\nThere are complete accompanying documents (purchase invoice, catalog, et"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 451,
+                    "content_preview": "Question:\n                    Under the merchandise return framework, at what exact point will nenthom.com.vn dispatch a replacement order to the customer?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 11,
+                    "content_preview": "# Payment policy\n\nNenthom.com.vn is responsible for and protects your rights when making payment transactions.\n\nWe support the following payment methods:\n\nCash payment for COD (delivery and collection"
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 10,
+                    "content_preview": "## Average delivery time:\n\nOrders within Hanoi or Ho Chi Minh: Customers will receive within a maximum of 24 hours (Usually 2-4 hours) from the time of order. Except for pre-orders or insufficient inv"
+                }
+            ],
+            "ground_truth_answer": "Khách hàng có thể đổi hoặc trả sản phẩm trong vòng 7 ngày kể từ ngày mua.",
+            "answer": "Khách hàng có **7 ngày** kể từ ngày mua để đổi hoặc trả sản phẩm.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9835075873147583,
+            "context_precision": 0.7499999999625,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9333768968193146,
+            "ragas_error": null
+        },
+        {
+            "question": "Nenthom.com.vn có bán thông tin khách hàng cho bên thứ ba không?",
+            "classification": "Policies",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.68,
+            "Judge_time": 6.29,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 157,
+                    "content_preview": "Question:\n                    Does nenthom.com.vn sell customer information to third parties?\n\n                    Answer:\n                    No. Nenthom.com.vn commits not to trade or exchange custo"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 174,
+                    "content_preview": "Question:\n                    What absolute commitment does nenthom.com.vn make regarding the commercial use of customer information?\n\n                    Answer:\n                    The website commi"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 156,
+                    "content_preview": "Question:\n                    What customer information does nenthom.com.vn collect?\n\n                    Answer:\n                    The website may collect first name, last name, email address, phon"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 159,
+                    "content_preview": "Question:\n                    How can customers update or access their personal information?\n\n                    Answer:\n                    Customers can access the website themselves or contact nen"
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 18,
+                    "content_preview": "## Contact information\n\nWe always welcome your comments, contacts and feedback on this \"Privacy Policy\". If you have any related questions, please contact us at Email address: nenthom.com.vn"
+                }
+            ],
+            "ground_truth_answer": "Không. Nenthom.com.vn cam kết không mua bán hoặc trao đổi thông tin bảo mật của khách hàng với bên thứ ba.",
+            "answer": "Không. Nenthom.com.vn cam kết không bán, trao đổi hay giao dịch thông tin khách hàng cho bên thứ ba vì mục đích thương mại.\n\nNếu bạn cần biết thêm chi tiết, vui lòng liên hệ email: nenthom.com.vn.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9084391026704032,
+            "context_precision": 0.99999999995,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9771097756551008,
+            "ragas_error": null
+        },
+        {
+            "question": "Nenthom.com.vn thu thập những thông tin nào của khách hàng?",
+            "classification": "Policies",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.29,
+            "Judge_time": 2.29,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 156,
+                    "content_preview": "Question:\n                    What customer information does nenthom.com.vn collect?\n\n                    Answer:\n                    The website may collect first name, last name, email address, phon"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 157,
+                    "content_preview": "Question:\n                    Does nenthom.com.vn sell customer information to third parties?\n\n                    Answer:\n                    No. Nenthom.com.vn commits not to trade or exchange custo"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 174,
+                    "content_preview": "Question:\n                    What absolute commitment does nenthom.com.vn make regarding the commercial use of customer information?\n\n                    Answer:\n                    The website commi"
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 13,
+                    "content_preview": "# Privacy Policy\n\nTo ensure website security and information security for consumers, nenthom.com.vn has issued a number of information security policies for individual and organizational customers whe"
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 16,
+                    "content_preview": "## Information storage time\n\nNenthom.com.vn will store Personal Information provided by Customers on our internal systems during the process of providing services to Customers or until the purpose of "
+                }
+            ],
+            "ground_truth_answer": "Website có thể thu thập họ, tên, địa chỉ email, số điện thoại, quốc gia, tỉnh/thành phố và địa chỉ.",
+            "answer": "Nenthom.com.vn thu thập các thông tin sau của khách hàng:\n\n- Họ  \n- Tên  \n- Địa chỉ email  \n- Số điện thoại  \n- Quốc gia  \n- Tỉnh/Thành phố  \n- Địa chỉ (địa chỉ cụ thể)",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9335311319917697,
+            "context_precision": 0.7499999999625,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9208827829885675,
+            "ragas_error": null
+        },
+        {
+            "question": "Nếu một khách hàng ở Đà Nẵng không nhận được cuộc gọi nào từ nhân viên giao hàng sau 3 ngày kể từ khi đặt hàng, họ nên làm gì theo chính sách giao hàng?",
+            "classification": "Policies",
+            "retrieval_mode": "vietnamese",
+            "response_time": 9.86,
+            "Judge_time": 2.34,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 146,
+                    "content_preview": "Question:\n                    What should I do if I have not received my order after 3 days?\n\n                    Answer:\n                    You should contact nenthom.com.vn for support if you have "
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 162,
+                    "content_preview": "Question:\n                    Under what circumstances will nenthom.com.vn's customer service call a customer regarding a delivery delay within Hanoi or Ho Chi Minh City?\n\n                    Answer:\n"
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 10,
+                    "content_preview": "## Average delivery time:\n\nOrders within Hanoi or Ho Chi Minh: Customers will receive within a maximum of 24 hours (Usually 2-4 hours) from the time of order. Except for pre-orders or insufficient inv"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 167,
+                    "content_preview": "Question:\n                    What action does nenthom.com.vn take immediately after receiving a customer's returned goods?\n\n                    Answer:\n                    Immediately after receiving"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 509,
+                    "content_preview": "Question:\n                    How does nenthom.com.vn handle local Hanoi delivery orders if a sudden inventory deficit occurs?\n\n                    Answer:\n                    The customer service tea"
+                }
+            ],
+            "ground_truth_answer": "Khách hàng nên liên hệ trực tiếp với nenthom.com.vn để được hỗ trợ về tình trạng giao hàng của mình.",
+            "answer": "Bạn nên liên hệ **nenthom.com.vn** để được hỗ trợ.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.5,
+            "answer_relevancy": 0.7329385884064149,
+            "context_precision": 0.7555555555303703,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.7471235359841963,
+            "ragas_error": null
+        },
+        {
+            "question": "Hãy mô tả toàn bộ quy trình đổi sản phẩm, từ bước thông báo đến khi khách hàng nhận được sản phẩm thay thế.",
+            "classification": "Policies",
+            "retrieval_mode": "vietnamese",
+            "response_time": 13.97,
+            "Judge_time": 6.81,
+            "retrieved_docs": [
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 12,
+                    "content_preview": "## Conditions for returning the product:\n\nThe product is still intact with all parts, showing no signs of heavy use or damage.\n\nThere are complete accompanying documents (purchase invoice, catalog, et"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 155,
+                    "content_preview": "Question:\n                    What is the first step in the return process?\n\n                    Answer:\n                    The first step is to notify nenthom.com.vn through the Fanpage or hotline."
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 167,
+                    "content_preview": "Question:\n                    What action does nenthom.com.vn take immediately after receiving a customer's returned goods?\n\n                    Answer:\n                    Immediately after receiving"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 451,
+                    "content_preview": "Question:\n                    Under the merchandise return framework, at what exact point will nenthom.com.vn dispatch a replacement order to the customer?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 509,
+                    "content_preview": "Question:\n                    How does nenthom.com.vn handle local Hanoi delivery orders if a sudden inventory deficit occurs?\n\n                    Answer:\n                    The customer service tea"
+                }
+            ],
+            "ground_truth_answer": "Bước 1: Thông báo cho nenthom.com.vn qua Fanpage hoặc hotline. Bước 2: Gửi sản phẩm đến địa chỉ 303B Vũ Hữu, Phường Thanh Xuân Bắc, Quận Thanh Xuân, Hà Nội. Bước 3: Chờ nenthom.com.vn nhận hàng, sau đó công ty sẽ ngay lập tức gửi một đơn hàng mới thay thế.",
+            "answer": "# Quy trình đổi sản phẩm\n\nCác điều kiện cần:\n- Sản phẩm còn nguyên vẹn, đầy đủ phụ kiện, không có dấu hiệu sử dụng nhiều hoặc hư hỏng.  \n- Có đầy đủ giấy tờ kèm theo (hóa đơn mua hàng, catalogue, v.v.) và quà tặng (nếu có).  \n- Khách hàng chịu chi phí gửi trả hàng.\n\nCác bước thực hiện:\n1. Thông báo cho nenthom.com.vn qua **Fanpage hoặc hotline**.  \n2. Gửi sản phẩm trả lại về địa chỉ: **303B Vũ Hữu, Phường Thanh Xuân Bắc, Quận Thanh Xuân, Hà Nội**.  \n3. Sau khi cửa hàng tiếp nhận và xác minh sản phẩm trả về hợp lệ, nenthom.com.vn sẽ **gửi đơn hàng thay thế ngay lập tức**.\n\nLưu ý thêm:\n- Nếu đơn hàng giao nội thành Hà Nội gặp tình trạng thiếu hàng đột xuất, bộ phận chăm sóc khách hàng sẽ **gọi điện trực tiếp** để thông báo và sắp xếp phương án thay thế hoặc đặt trước.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.8861990459599268,
+            "context_precision": 0.999999999975,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9715497614837317,
+            "ragas_error": null
+        },
+        {
+            "question": "Theo Chính sách Bảo mật, trong hai trường hợp pháp lý hoặc liên quan đến cơ quan nhà nước nào nenthom.com.vn có thể chia sẻ thông tin khách hàng mà không vi phạm chính sách của mình?",
+            "classification": "Policies",
+            "retrieval_mode": "vietnamese",
+            "response_time": 6.28,
+            "Judge_time": 2.87,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 158,
+                    "content_preview": "Question:\n                    Can customer information be shared in special cases?\n\n                    Answer:\n                    Yes. Information may be shared with customer consent, to comply with"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 171,
+                    "content_preview": "Question:\n                    Under what condition can customer information be legally disclosed to protect the interests of the company and its partners?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 14,
+                    "content_preview": "## Scope of information use\n\nWe take customer information security very seriously, so we commit to absolutely not arbitrarily use customer information for purposes that do not benefit customers, we co"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 157,
+                    "content_preview": "Question:\n                    Does nenthom.com.vn sell customer information to third parties?\n\n                    Answer:\n                    No. Nenthom.com.vn commits not to trade or exchange custo"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 174,
+                    "content_preview": "Question:\n                    What absolute commitment does nenthom.com.vn make regarding the commercial use of customer information?\n\n                    Answer:\n                    The website commi"
+                }
+            ],
+            "ground_truth_answer": "Thông tin có thể được chia sẻ khi việc tiết lộ là hợp pháp theo quy định của pháp luật Việt Nam nhằm bảo vệ quyền lợi và tài sản của công ty hoặc đối tác, hoặc khi có yêu cầu từ cơ quan nhà nước và được xem là phù hợp theo pháp luật Việt Nam.",
+            "answer": "Hai trường hợp:\n\n- Khi việc cung cấp thông tin nhằm bảo vệ lợi ích và tài sản của công ty và các đối tác, và công ty chắc chắn rằng việc công bố đó được thực hiện theo quy định của pháp luật Việt Nam.  \n\n- Khi có yêu cầu từ cơ quan nhà nước, và công ty đánh giá việc cung cấp thông tin là phù hợp theo luật pháp Việt Nam.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.75,
+            "answer_relevancy": 0.8781279331447328,
+            "context_precision": 0.9999999999666667,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9070319832778498,
+            "ragas_error": null
+        },
+        {
+            "question": "Những phạm vi địa lý nào dưới cấp quốc gia được nenthom.com.vn thu thập để xử lý đơn hàng?",
+            "classification": "Policies",
+            "retrieval_mode": "vietnamese",
+            "response_time": 7.11,
+            "Judge_time": 4.53,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 157,
+                    "content_preview": "Question:\n                    Does nenthom.com.vn sell customer information to third parties?\n\n                    Answer:\n                    No. Nenthom.com.vn commits not to trade or exchange custo"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 178,
+                    "content_preview": "Question:\n                    Who is responsible for protecting the customer's rights during payment transactions on the website?\n\n                    Answer:\n                    Nenthom.com.vn is res"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 147,
+                    "content_preview": "Question:\n                    What payment methods are supported by nenthom.com.vn?\n\n                    Answer:\n                    Supported payment methods include COD, MoMo, Zalo Pay, and bank tra"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 156,
+                    "content_preview": "Question:\n                    What customer information does nenthom.com.vn collect?\n\n                    Answer:\n                    The website may collect first name, last name, email address, phon"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 486,
+                    "content_preview": "Question:\n                    What legal condition overrides nenthom.com.vn's primary customer data nondisclosure agreement?\n\n                    Answer:\n                    The nondisclosure agreemen"
+                }
+            ],
+            "ground_truth_answer": "Dưới cấp quốc gia, nenthom.com.vn thu thập thông tin về 'Tỉnh/Thành phố' và 'Địa chỉ' cụ thể.",
+            "answer": "Những phạm vi địa lý dưới cấp quốc gia được thu thập gồm:\n\n- Tỉnh (province)  \n- Địa chỉ (address)",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.6666666666666666,
+            "answer_relevancy": 0.941204737886551,
+            "context_precision": 0.249999999975,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.7144678511320544,
+            "ragas_error": null
+        },
+        {
+            "question": "Hãy giải thích sự khác biệt về thời gian giao hàng dự kiến và quy trình xử lý giữa một đơn hàng trong Hà Nội và một đơn hàng quà tặng dịp lễ gửi đến khu vực ngoại tỉnh.",
+            "classification": "Policies",
+            "retrieval_mode": "vietnamese",
+            "response_time": 11.46,
+            "Judge_time": 8.66,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 177,
+                    "content_preview": "Question:\n                    What is the expected delivery timeframe if a customer is located outside Hanoi and Ho Chi Minh City?\n\n                    Answer:\n                    The average delivery"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 509,
+                    "content_preview": "Question:\n                    How does nenthom.com.vn handle local Hanoi delivery orders if a sudden inventory deficit occurs?\n\n                    Answer:\n                    The customer service tea"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 162,
+                    "content_preview": "Question:\n                    Under what circumstances will nenthom.com.vn's customer service call a customer regarding a delivery delay within Hanoi or Ho Chi Minh City?\n\n                    Answer:\n"
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 10,
+                    "content_preview": "## Average delivery time:\n\nOrders within Hanoi or Ho Chi Minh: Customers will receive within a maximum of 24 hours (Usually 2-4 hours) from the time of order. Except for pre-orders or insufficient inv"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 473,
+                    "content_preview": "Question:\n                    For customers located in outlying provinces, what advanced ordering timeline is advised for holiday gift purchases?\n\n                    Answer:\n                    Out-o"
+                }
+            ],
+            "ground_truth_answer": "Các đơn hàng trong Hà Nội được giao tối đa trong vòng 24 giờ (thường từ 2–4 giờ) và có thể có cuộc gọi xác nhận nếu hàng tồn kho không đủ. Trong khi đó, các đơn quà tặng dịp lễ gửi đến khu vực ngoại tỉnh thường mất từ 1–3 ngày để giao và khách hàng được khuyến nghị đặt hàng trước từ 1–3 ngày để tránh tình trạng quá tải hệ thống.",
+            "answer": "### Thời gian giao hàng dự kiến\n- Đơn hàng trong Hà Nội (hoặc TP. HCM): giao trong tối đa **24 giờ**, thường **2–4 giờ** kể từ khi đặt.\n- Đơn quà tặng dịp lễ gửi ngoại tỉnh: giao **1–3 ngày**, thường **1–2 ngày**.\n\n### Quy trình xử lý và lưu ý khác nhau\n- Hà Nội / TP. HCM:\n  - Giao nhanh trong ngày, thời gian thực tế còn phụ thuộc vào giờ đặt hàng.\n  - Nếu đơn là **pre-order** hoặc xảy ra **thiếu hàng**, đội chăm sóc khách hàng sẽ gọi để thông báo và sắp xếp phương án thay thế hoặc trạng thái đặt trước.\n\n- Ngoại tỉnh (quà tặng dịp lễ):\n  - Thời gian vận chuyển dài hơn (1–3 ngày); dịp lễ có thể phát sinh tắc nghẽn vận chuyển.\n  - Khuyến nghị **đặt trước 1–3 ngày** so với ngày dự định tặng để tránh quá tải trong mùa lễ.\n  - Nếu sau **3 ngày** kể từ khi đặt mà không nhận cuộc gọi giao hàng, hãy liên hệ nenthom.com.vn để được hỗ trợ.\n\nNếu cần, mình có thể tóm tắt thành checklist để bạn nhớ khi đặt quà dịp lễ.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.8421052631578947,
+            "answer_relevancy": 0.9272055748898961,
+            "context_precision": 0.99999999998,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9423277095069477,
+            "ragas_error": null
+        }
+    ]
+}

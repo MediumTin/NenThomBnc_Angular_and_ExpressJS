@@ -1,0 +1,86 @@
+[
+    {
+        "suite_name": "Discount_Program",
+        "dataset_label": "english",
+        "retrieval_mode": "vietnamese",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\Discount_program\\Tests\\Results\\Result_Test_Discount_program__retrieval_vietnamese__run_1.json"
+    },
+    {
+        "suite_name": "Discount_Program",
+        "dataset_label": "english",
+        "retrieval_mode": "english",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\Discount_program\\Tests\\Results\\Result_Test_Discount_program__retrieval_english__run_1.json"
+    },
+    {
+        "suite_name": "Discount_Program",
+        "dataset_label": "vietnamese",
+        "retrieval_mode": "vietnamese",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\Discount_program\\Tests\\Results\\Result_Test_Discount_program_Vietnamese__retrieval_vietnamese__run_1.json"
+    },
+    {
+        "suite_name": "Discount_Program",
+        "dataset_label": "vietnamese",
+        "retrieval_mode": "english",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\Discount_program\\Tests\\Results\\Result_Test_Discount_program_Vietnamese__retrieval_english__run_1.json"
+    },
+    {
+        "suite_name": "Product_Catalog",
+        "dataset_label": "english",
+        "retrieval_mode": "vietnamese",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\Product_Catalogs\\Tests\\Results\\Result_Test_Product_Catalog__retrieval_vietnamese__run_1.json"
+    },
+    {
+        "suite_name": "Product_Catalog",
+        "dataset_label": "english",
+        "retrieval_mode": "english",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\Product_Catalogs\\Tests\\Results\\Result_Test_Product_Catalog__retrieval_english__run_1.json"
+    },
+    {
+        "suite_name": "Product_Catalog",
+        "dataset_label": "vietnamese",
+        "retrieval_mode": "vietnamese",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\Product_Catalogs\\Tests\\Results\\Result_Test_Product_Catalog_Vietnamese__retrieval_vietnamese__run_1.json"
+    },
+    {
+        "suite_name": "Product_Catalog",
+        "dataset_label": "vietnamese",
+        "retrieval_mode": "english",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\Product_Catalogs\\Tests\\Results\\Result_Test_Product_Catalog_Vietnamese__retrieval_english__run_1.json"
+    },
+    {
+        "suite_name": "User_Guidance",
+        "dataset_label": "english",
+        "retrieval_mode": "vietnamese",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\User_guidance\\Tests\\Results\\Result_Test_User_guidance__retrieval_vietnamese__run_1.json"
+    },
+    {
+        "suite_name": "User_Guidance",
+        "dataset_label": "english",
+        "retrieval_mode": "english",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\User_guidance\\Tests\\Results\\Result_Test_User_guidance__retrieval_english__run_1.json"
+    },
+    {
+        "suite_name": "User_Guidance",
+        "dataset_label": "vietnamese",
+        "retrieval_mode": "vietnamese",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\User_guidance\\Tests\\Results\\Result_Test_User_guidance_Vietnamese__retrieval_vietnamese__run_1.json"
+    },
+    {
+        "suite_name": "User_Guidance",
+        "dataset_label": "vietnamese",
+        "retrieval_mode": "english",
+        "run_index": 1,
+        "output_results_path": "app\\data\\NenThom_data\\User_guidance\\Tests\\Results\\Result_Test_User_guidance_Vietnamese__retrieval_english__run_1.json"
+    }
+]

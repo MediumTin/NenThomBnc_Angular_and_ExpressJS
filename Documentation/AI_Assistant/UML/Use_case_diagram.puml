@@ -1,0 +1,31 @@
+@startuml
+
+left to right direction
+
+actor Customer
+actor Admin
+
+rectangle "AI Chatbot System" {
+
+  usecase "Ask Question" as UC1
+  usecase "View Product" as UC2
+  usecase "View Promotion" as UC3
+  usecase "Place Order" as UC4
+
+  usecase "Manage Product" as UC5
+  usecase "Manage Knowledge Base" as UC6
+  usecase "Manage FAQ" as UC7
+  usecase "View Chat Logs" as UC8
+}
+
+Customer --> UC1
+Customer --> UC2
+Customer --> UC3
+Customer --> UC4
+
+Admin --> UC5
+Admin --> UC6
+Admin --> UC7
+Admin --> UC8
+
+@enduml

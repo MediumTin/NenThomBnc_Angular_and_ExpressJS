@@ -1,0 +1,479 @@
+{
+    "summary": {
+        "Accuracy": 0.9,
+        "Recall@5": 1.0,
+        "Recall@3": 1.0,
+        "MRR": 0.8,
+        "faithfulness": 0.8756,
+        "answer_relevancy": 0.9133,
+        "context_precision": 0.8989,
+        "context_recall": 1.0,
+        "RAGAS_Avg_4": 0.9219,
+        "Avg_Latency": 5.56,
+        "P95_Latency": 6.96,
+        "Avg_Judge_Latency": 3.77,
+        "P95_Judge_Latency": 5.63
+    },
+    "test_results": [
+        {
+            "question": "What kind of surface should be used when burning a scented candle?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.53,
+            "Judge_time": 1.65,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 282,
+                    "content_preview": "Question:\n                    What kind of surface should be used when burning a scented candle?\n\n                    Answer:\n                    Candles should be placed on a flat, stable, and heat-r"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 296,
+                    "content_preview": "Question:\n                    What tool should be used to light a scented candle safely?\n\n                    Answer:\n                    A long-handled lighter or long matches should be used."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 283,
+                    "content_preview": "Question:\n                    Why is a stable surface important when burning candles?\n\n                    Answer:\n                    A stable surface helps prevent candles from tipping over and caus"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 437,
+                    "content_preview": "Question:\n                    Why does the safe usage guide strictly forbid burning scented candles inside tightly enclosed spaces or small, narrow rooms?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 299,
+                    "content_preview": "Question:\n                    How can users enjoy scented candles safely?\n\n                    Answer:\n                    By following proper placement, supervision, wick maintenance, and lighting pr"
+                }
+            ],
+            "ground_truth_answer": "Candles should be placed on a flat, stable, and heat-resistant surface.",
+            "answer": "Place the candle on a flat, stable, and heat-resistant surface to prevent tipping and protect underlying surfaces.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.6666666666666666,
+            "answer_relevancy": 0.8825335769985655,
+            "context_precision": 0.7555555555303703,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.8261889497989006,
+            "ragas_error": null
+        },
+        {
+            "question": "What should you do before leaving a room with a burning candle?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.71,
+            "Judge_time": 2.35,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 287,
+                    "content_preview": "Question:\n                    What should you do before leaving a room with a burning candle?\n\n                    Answer:\n                    You should extinguish the candle before leaving the room."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 305,
+                    "content_preview": "Question:\n                    What two specific actions must be taken before you go to sleep regarding candle safety?\n\n                    Answer:\n                    You must extinguish the candles b"
+                },
+                {
+                    "source": "Safe_Usage_guidance.docx",
+                    "chunk_id": 7,
+                    "content_preview": "# IMPORTANT NOTES FOR SAFELY USING SCENTED CANDLES\n\n## 1. Placement when burning candles\n\nKeep candles away from flammable materials such as clothes, curtains, books, paper, carpets, etc., or plastic."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 286,
+                    "content_preview": "Question:\n                    Should candles always remain within sight while burning?\n\n                    Answer:\n                    Yes. Burning candles should always remain within your sight."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 296,
+                    "content_preview": "Question:\n                    What tool should be used to light a scented candle safely?\n\n                    Answer:\n                    A long-handled lighter or long matches should be used."
+                }
+            ],
+            "ground_truth_answer": "You should extinguish the candle before leaving the room.",
+            "answer": "You should extinguish the candle before leaving the room.\n\nAlso keep candles within sight and out of reach of children and pets.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9228687004035905,
+            "context_precision": 0.999999999975,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9807171750946476,
+            "ragas_error": null
+        },
+        {
+            "question": "How much of the wick should be trimmed after each use?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 4.29,
+            "Judge_time": 2.72,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 293,
+                    "content_preview": "Question:\n                    How much of the wick should be trimmed after each use?\n\n                    Answer:\n                    The wick should be trimmed by approximately 3 millimeters."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 292,
+                    "content_preview": "Question:\n                    How often should the candle wick be trimmed?\n\n                    Answer:\n                    The wick should be trimmed after each use."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 294,
+                    "content_preview": "Question:\n                    Why should the wick be trimmed regularly?\n\n                    Answer:\n                    Regular trimming helps control the flame and promotes a cleaner, brighter burn."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 315,
+                    "content_preview": "Question:\n                    Why does a trimmed wick help control the flame's behavior?\n\n                    Answer:\n                    Trimming the wick by about 3mm after each use helps control th"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 431,
+                    "content_preview": "Question:\n                    How does trimming a candle's wick to approximately 3mm after each use technically prevent the formation of black smoke?\n\n                    Answer:\n                    T"
+                }
+            ],
+            "ground_truth_answer": "The wick should be trimmed by approximately 3 millimeters.",
+            "answer": "Trim about **3 millimeters** of the wick after each use.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 1.0000000000000002,
+            "context_precision": 0.6999999999766667,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9249999999941667,
+            "ragas_error": null
+        },
+        {
+            "question": "Why is a long-handled lighter recommended when lighting candles?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.74,
+            "Judge_time": 5.39,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 297,
+                    "content_preview": "Question:\n                    Why is a long-handled lighter recommended?\n\n                    Answer:\n                    It helps prevent burns to your hands when lighting candles."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 310,
+                    "content_preview": "Question:\n                    What alternative tool to a long-handled lighter is mentioned for safely lighting a candle?\n\n                    Answer:\n                    Long matches are mentioned as "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 296,
+                    "content_preview": "Question:\n                    What tool should be used to light a scented candle safely?\n\n                    Answer:\n                    A long-handled lighter or long matches should be used."
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 360,
+                    "content_preview": "Question:\n                    What structural advantage does an extra-long straight rod handle with an integrated ergonomic grip give to a candle snuffer user?\n\n                    Answer:\n           "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 323,
+                    "content_preview": "Question:\n                    Why are elongated wooden safety matches preferred over cheap plastic disposable lighters for deep jar candles?\n\n                    Answer:\n                    The elonga"
+                }
+            ],
+            "ground_truth_answer": "It helps prevent burns to your hands when lighting candles.",
+            "answer": "A long-handled lighter is recommended because it keeps your hands well away from the flame, preventing burns and protecting your fingers—especially when reaching into deep jar candles or lighting tall pillars.  \n\nLong matches are a safe alternative that provide the same extra reach.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.625,
+            "answer_relevancy": 0.8799316306341123,
+            "context_precision": 0.99999999998,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.876232907653528,
+            "ragas_error": null
+        },
+        {
+            "question": "What is a safer alternative to burning candles directly?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 4.29,
+            "Judge_time": 5.67,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 291,
+                    "content_preview": "Question:\n                    What is a safer alternative to burning candles directly?\n\n                    Answer:\n                    A candle warmer can be used as a safer alternative to reduce fir"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 310,
+                    "content_preview": "Question:\n                    What alternative tool to a long-handled lighter is mentioned for safely lighting a candle?\n\n                    Answer:\n                    Long matches are mentioned as "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 306,
+                    "content_preview": "Question:\n                    What specific device can help minimize the risk of fire and explosion instead of an open flame?\n\n                    Answer:\n                    Using a candle warmer is "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 357,
+                    "content_preview": "Question:\n                    How do clean safety chemicals tipped on wooden match sticks reduce environmental discomfort compared to butane fuel lighters?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 296,
+                    "content_preview": "Question:\n                    What tool should be used to light a scented candle safely?\n\n                    Answer:\n                    A long-handled lighter or long matches should be used."
+                }
+            ],
+            "ground_truth_answer": "A candle warmer can be used as a safer alternative to reduce fire and explosion risks.",
+            "answer": "Use a candle warmer — it lets you enjoy the scent without an open flame, reducing fire and explosion risks.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.75,
+            "answer_relevancy": 0.9095262111451476,
+            "context_precision": 0.8333333332916666,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.8732148861092035,
+            "ragas_error": null
+        },
+        {
+            "question": "Explain the dual danger that drafty areas pose to an open candle flame as described in the placement guidelines.",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 6.03,
+            "Judge_time": 4.49,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 443,
+                    "content_preview": "Question:\n                    What dual dangers make drafty areas highly hazardous when choosing a placement spot for burning candles?\n\n                    Answer:\n                    Drafts cause the"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 302,
+                    "content_preview": "Question:\n                    What specific accident could happen if a candle flame burns too intensely in a drafty area?\n\n                    Answer:\n                    A drafty area can cause the f"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 284,
+                    "content_preview": "Question:\n                    Should scented candles be placed in drafty areas?\n\n                    Answer:\n                    No. Drafty areas can cause flames to burn too intensely or spread fire "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 316,
+                    "content_preview": "Question:\n                    What is the main danger associated with children and pets near candles as highlighted by the structure of section 2?\n\n                    Answer:\n                    The "
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 437,
+                    "content_preview": "Question:\n                    Why does the safe usage guide strictly forbid burning scented candles inside tightly enclosed spaces or small, narrow rooms?\n\n                    Answer:\n                "
+                }
+            ],
+            "ground_truth_answer": "Drafty areas can cause the candle flame to burn too intensely or they can blow nearby flammable objects directly into the fire.",
+            "answer": "Drafty areas create two main hazards for an open candle flame:\n\n- The flame can burn too intensely and erratically, making it harder to control.  \n- Air currents can blow lightweight flammable items (or nearby objects) into the flame, allowing fire to spread.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 0.5,
+            "faithfulness": 0.7142857142857143,
+            "answer_relevancy": 0.9458750511167395,
+            "context_precision": 0.9999999999666667,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9150401913422801,
+            "ragas_error": null
+        },
+        {
+            "question": "According to the text, what are the two specific sources of knowledge that the author combined to create this guidance document?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 4.57,
+            "Judge_time": 5.58,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 490,
+                    "content_preview": "Question:\n                    From what explicit sources did the creator of the 'Safe Usage Guidance' document gather their safety tips?\n\n                    Answer:\n                    The tips were "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 311,
+                    "content_preview": "Question:\n                    Where did the author gather the tips shared in this safety document?\n\n                    Answer:\n                    The author gathered the tips from the internet and f"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 300,
+                    "content_preview": "Question:\n                    What title is given to the first safety category mentioned in the guidance?\n\n                    Answer:\n                    The first safety category is titled 'Placemen"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 304,
+                    "content_preview": "Question:\n                    What is the heading of the second safety rule section in the document?\n\n                    Answer:\n                    The heading is 'Always keep the candle within your"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 312,
+                    "content_preview": "Question:\n                    What two qualities of candles does the author want users to enjoy while staying safe?\n\n                    Answer:\n                    The author wants users to enjoy can"
+                }
+            ],
+            "ground_truth_answer": "The author gathered these tips from information found on the internet and combined them with their own personal experience.",
+            "answer": "The author combined:\n\n- Safety information found on the internet  \n- The author’s own personal experience",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 0.5,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.8466735199178133,
+            "context_precision": 0.99999999995,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9616683799669533,
+            "ragas_error": null
+        },
+        {
+            "question": "List all the textile and interior fabric items explicitly mentioned in the document that must be kept away from burning candles.",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.55,
+            "Judge_time": 1.98,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 281,
+                    "content_preview": "Question:\n                    What types of materials should be kept away from burning candles?\n\n                    Answer:\n                    Clothes, curtains, books, paper, carpets, plastic, and "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 318,
+                    "content_preview": "Question:\n                    Which room items related to windows and bedding are listed as fire hazards in section 1?\n\n                    Answer:\n                    Clothes and curtains are listed "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 319,
+                    "content_preview": "Question:\n                    What type of floor covering is explicitly mentioned as a hazard if placed under a burning candle without protection?\n\n                    Answer:\n                    Carp"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 280,
+                    "content_preview": "Question:\n                    Why should scented candles be kept away from flammable materials?\n\n                    Answer:\n                    Scented candles should be kept away from flammable mate"
+                },
+                {
+                    "source": "Safe_Usage_guidance.docx",
+                    "chunk_id": 7,
+                    "content_preview": "# IMPORTANT NOTES FOR SAFELY USING SCENTED CANDLES\n\n## 1. Placement when burning candles\n\nKeep candles away from flammable materials such as clothes, curtains, books, paper, carpets, etc., or plastic."
+                }
+            ],
+            "ground_truth_answer": "The textile and interior fabric items explicitly mentioned are clothes, curtains, and carpets.",
+            "answer": "### Textile and interior fabric items to keep away from burning candles\n\n- Clothes  \n- Curtains  \n- Carpets",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9669817989203515,
+            "context_precision": 0.699999999965,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9167454497213379,
+            "ragas_error": null
+        },
+        {
+            "question": "What specific structural composition of black smoke is avoided by trimming a candle's wick by 3mm after each use?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 6.57,
+            "Judge_time": 3.2,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 431,
+                    "content_preview": "Question:\n                    How does trimming a candle's wick to approximately 3mm after each use technically prevent the formation of black smoke?\n\n                    Answer:\n                    T"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 309,
+                    "content_preview": "Question:\n                    What specific type of residue is prevented from forming when the wick is regularly trimmed?\n\n                    Answer:\n                    Regular trimming avoids the p"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 295,
+                    "content_preview": "Question:\n                    Can trimming the wick help reduce black smoke?\n\n                    Answer:\n                    Yes. Trimming the wick helps prevent black smoke and soot formation."
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 354,
+                    "content_preview": "Question:\n                    What is the direct correlation between using a candle wick cutter and preventing black smoke rings from forming on glass walls?\n\n                    Answer:\n             "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 327,
+                    "content_preview": "Question:\n                    Why is trimming overgrown braided cotton wicks considered crucial for extending the total lifespan of a soy candle?\n\n                    Answer:\n                    Trimm"
+                }
+            ],
+            "ground_truth_answer": "Trimming the wick avoids the production of black smoke that specifically contains soot.",
+            "answer": "Trimming the wick to about 3 mm prevents the formation of black smoke made up of soot (soot-filled / soot-laden smoke).",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 0.5,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9085841410731467,
+            "context_precision": 0.99999999998,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9771460352632867,
+            "ragas_error": null
+        },
+        {
+            "question": "What environment restriction is paired with the warning about avoiding enclosed spaces when selecting a location to burn candles?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 7.28,
+            "Judge_time": 4.66,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 437,
+                    "content_preview": "Question:\n                    Why does the safe usage guide strictly forbid burning scented candles inside tightly enclosed spaces or small, narrow rooms?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 303,
+                    "content_preview": "Question:\n                    Does the guidance recommend burning candles in small, narrow rooms?\n\n                    Answer:\n                    No, the guidance explicitly states that you should no"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 285,
+                    "content_preview": "Question:\n                    Is it safe to burn candles in a small enclosed room?\n\n                    Answer:\n                    No. Candles should not be burned in enclosed spaces or small narrow "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 300,
+                    "content_preview": "Question:\n                    What title is given to the first safety category mentioned in the guidance?\n\n                    Answer:\n                    The first safety category is titled 'Placemen"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 443,
+                    "content_preview": "Question:\n                    What dual dangers make drafty areas highly hazardous when choosing a placement spot for burning candles?\n\n                    Answer:\n                    Drafts cause the"
+                }
+            ],
+            "ground_truth_answer": "The document pairs enclosed spaces with the restriction against burning candles in small, narrow rooms.",
+            "answer": "Avoid drafty areas.\n\n- Drafts can make the flame burn too intensely and erratically.\n- Drafts can blow lightweight flammable objects into the open flame.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 0.5,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.8699311240455078,
+            "context_precision": 0.9999999999666667,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9674827810030436,
+            "ragas_error": null
+        }
+    ]
+}

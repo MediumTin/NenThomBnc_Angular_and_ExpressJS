@@ -1,0 +1,479 @@
+{
+    "summary": {
+        "Accuracy": 0.8,
+        "Recall@5": 1.0,
+        "Recall@3": 1.0,
+        "MRR": 1.0,
+        "faithfulness": 0.7133,
+        "answer_relevancy": 0.7142,
+        "context_precision": 0.7683,
+        "context_recall": 0.75,
+        "RAGAS_Avg_4": 0.7365,
+        "Avg_Latency": 7.52,
+        "P95_Latency": 9.99,
+        "Avg_Judge_Latency": 2.43,
+        "P95_Judge_Latency": 4.65
+    },
+    "test_results": [
+        {
+            "question": "Mã giảm giá NEWYEAR2025 cung cấp mức giảm giá bao nhiêu?",
+            "classification": "Discount_Program",
+            "retrieval_mode": "english",
+            "response_time": 4.53,
+            "Judge_time": 1.71,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 101,
+                    "content_preview": "Question:\n                    How much discount does NEWYEAR2025 provide?\n\n                    Answer:\n                    NEWYEAR2025 provides a 15% discount."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 100,
+                    "content_preview": "Question:\n                    What is the NEWYEAR2025 coupon code?\n\n                    Answer:\n                    NEWYEAR2025 is a percentage discount coupon that offers 15% off eligible orders."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 103,
+                    "content_preview": "Question:\n                    What is the maximum discount amount for NEWYEAR2025?\n\n                    Answer:\n                    The maximum discount amount is 50000."
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 19,
+                    "content_preview": "\n            Coupon Code: NEWYEAR2025\n\n            Discount Type: percent\n\n            Discount Value: 15.0\n\n            Minimum Order: 200000.0\n\n            Maximum Discount: 50000.0\n\n            Usa"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 121,
+                    "content_preview": "Question:\n                    What is the specific validity period for the NEWYEAR2025 coupon?\n\n                    Answer:\n                    The NEWYEAR2025 coupon is valid from 2025-12-20 00:00:00"
+                }
+            ],
+            "ground_truth_answer": "NEWYEAR2025 cung cấp mức giảm giá 15%.",
+            "answer": "Mã giảm giá **NEWYEAR2025** cung cấp mức giảm **15%**.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7746749062679427,
+            "context_precision": 0.9166666666361111,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9228353932260134,
+            "ragas_error": null
+        },
+        {
+            "question": "Giá trị đơn hàng tối thiểu cần thiết để sử dụng VIPMEMBER là bao nhiêu?",
+            "classification": "Discount_Program",
+            "retrieval_mode": "english",
+            "response_time": 7.98,
+            "Judge_time": 1.7,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 114,
+                    "content_preview": "Question:\n                    What minimum order value is required for VIPMEMBER?\n\n                    Answer:\n                    The minimum order value required is 500000."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 113,
+                    "content_preview": "Question:\n                    What discount does VIPMEMBER provide?\n\n                    Answer:\n                    VIPMEMBER provides a fixed discount of 100000."
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 22,
+                    "content_preview": "\n            Coupon Code: VIPMEMBER\n\n            Discount Type: amount\n\n            Discount Value: 100000.0\n\n            Minimum Order: 500000.0\n\n            Maximum Discount: nan\n\n            Usage "
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 115,
+                    "content_preview": "Question:\n                    How many times can a customer use VIPMEMBER?\n\n                    Answer:\n                    Each customer can use VIPMEMBER up to 5 times."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 127,
+                    "content_preview": "Question:\n                    What is the total usage limit for the VIPMEMBER coupon?\n\n                    Answer:\n                    The total usage limit for VIPMEMBER is 100 times."
+                }
+            ],
+            "ground_truth_answer": "Giá trị đơn hàng tối thiểu cần thiết là 500000.",
+            "answer": "Giá trị đơn hàng tối thiểu để sử dụng mã **VIPMEMBER** là **500000**.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9889471540272726,
+            "context_precision": 0.8333333332916666,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9555701218297348,
+            "ragas_error": null
+        },
+        {
+            "question": "WELCOME10 hiện tại có thể sử dụng được không?",
+            "classification": "Discount_Program",
+            "retrieval_mode": "english",
+            "response_time": 5.86,
+            "Judge_time": 1.65,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 111,
+                    "content_preview": "Question:\n                    Can WELCOME10 currently be used?\n\n                    Answer:\n                    No. WELCOME10 is currently disabled."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 112,
+                    "content_preview": "Question:\n                    How many times can a customer use WELCOME10?\n\n                    Answer:\n                    Each customer can use WELCOME10 once."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 110,
+                    "content_preview": "Question:\n                    What discount does WELCOME10 offer?\n\n                    Answer:\n                    WELCOME10 offers a 10% discount."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 125,
+                    "content_preview": "Question:\n                    What is the exact validity duration of the WELCOME10 coupon?\n\n                    Answer:\n                    The WELCOME10 coupon is valid from 2025-01-01 00:00:00 until"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 21,
+                    "content_preview": "\n            Coupon Code: WELCOME10\n\n            Discount Type: percent\n\n            Discount Value: 10.0\n\n            Minimum Order: 0.0\n\n            Maximum Discount: nan\n\n            Usage per Cust"
+                }
+            ],
+            "ground_truth_answer": "Không. WELCOME10 hiện đang bị vô hiệu hóa.",
+            "answer": "Không — mã WELCOME10 hiện đang bị vô hiệu hóa nên không thể sử dụng.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.8753112179989505,
+            "context_precision": 0.6999999999766667,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.8938278044939043,
+            "ragas_error": null
+        },
+        {
+            "question": "Một khách hàng có thể sử dụng FREESHIP50 bao nhiêu lần?",
+            "classification": "Discount_Program",
+            "retrieval_mode": "english",
+            "response_time": 4.35,
+            "Judge_time": 1.48,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 108,
+                    "content_preview": "Question:\n                    How many times can a customer use FREESHIP50?\n\n                    Answer:\n                    Each customer can use FREESHIP50 up to 3 times."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 122,
+                    "content_preview": "Question:\n                    What is the total usage limit allowed for the FREESHIP50 coupon?\n\n                    Answer:\n                    The total usage limit allowed for FREESHIP50 is 1000 tim"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 105,
+                    "content_preview": "Question:\n                    What is the FREESHIP50 coupon code?\n\n                    Answer:\n                    FREESHIP50 is a fixed amount discount coupon worth 50000."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 106,
+                    "content_preview": "Question:\n                    How much discount does FREESHIP50 provide?\n\n                    Answer:\n                    FREESHIP50 provides a fixed discount of 50000."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 109,
+                    "content_preview": "Question:\n                    What is the status of FREESHIP50?\n\n                    Answer:\n                    FREESHIP50 is currently active."
+                }
+            ],
+            "ground_truth_answer": "Mỗi khách hàng có thể sử dụng FREESHIP50 tối đa 3 lần.",
+            "answer": "Mỗi khách hàng có thể sử dụng mã FREESHIP50 tối đa **3 lần**.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9786759311783871,
+            "context_precision": 0.9999999999,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9946689827695968,
+            "ragas_error": null
+        },
+        {
+            "question": "SUMMERSALE hiện tại còn hiệu lực không?",
+            "classification": "Discount_Program",
+            "retrieval_mode": "english",
+            "response_time": 8.0,
+            "Judge_time": 2.73,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 118,
+                    "content_preview": "Question:\n                    Is SUMMERSALE currently available?\n\n                    Answer:\n                    No. SUMMERSALE is currently expired."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 132,
+                    "content_preview": "Question:\n                    What is the validity period of the SUMMERSALE coupon?\n\n                    Answer:\n                    The SUMMERSALE coupon is valid from 2025-06-01 00:00:00 to 2025-08-"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 23,
+                    "content_preview": "\n            Coupon Code: SUMMERSALE\n\n            Discount Type: percent\n\n            Discount Value: 20.0\n\n            Minimum Order: 300000.0\n\n            Maximum Discount: 80000.0\n\n            Usag"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 116,
+                    "content_preview": "Question:\n                    What discount does SUMMERSALE provide?\n\n                    Answer:\n                    SUMMERSALE provides a 20% discount."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 117,
+                    "content_preview": "Question:\n                    What is the maximum discount amount for SUMMERSALE?\n\n                    Answer:\n                    The maximum discount amount is 80000."
+                }
+            ],
+            "ground_truth_answer": "Không. SUMMERSALE hiện đã hết hạn.",
+            "answer": "Không, mã **SUMMERSALE** hiện **đã hết hạn**.\n\nThời gian áp dụng: **2025-06-01** đến **2025-08-31**.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9291052633010166,
+            "context_precision": 0.9999999999666667,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9822763158169208,
+            "ragas_error": null
+        },
+        {
+            "question": "Trong tất cả các mã giảm giá có loại giảm giá là 'percent', mã nào có giá trị giảm tối đa cao nhất và giá trị đó là bao nhiêu?",
+            "classification": "Discount_Program",
+            "retrieval_mode": "english",
+            "response_time": 10.75,
+            "Judge_time": 3.47,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 138,
+                    "content_preview": "Question:\n                    Which coupon has the highest total usage limit in the dataset?\n\n                    Answer:\n                    The WELCOME10 coupon has the highest total usage limit of "
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 21,
+                    "content_preview": "\n            Coupon Code: WELCOME10\n\n            Discount Type: percent\n\n            Discount Value: 10.0\n\n            Minimum Order: 0.0\n\n            Maximum Discount: nan\n\n            Usage per Cust"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 23,
+                    "content_preview": "\n            Coupon Code: SUMMERSALE\n\n            Discount Type: percent\n\n            Discount Value: 20.0\n\n            Minimum Order: 300000.0\n\n            Maximum Discount: 80000.0\n\n            Usag"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 22,
+                    "content_preview": "\n            Coupon Code: VIPMEMBER\n\n            Discount Type: amount\n\n            Discount Value: 100000.0\n\n            Minimum Order: 500000.0\n\n            Maximum Discount: nan\n\n            Usage "
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 117,
+                    "content_preview": "Question:\n                    What is the maximum discount amount for SUMMERSALE?\n\n                    Answer:\n                    The maximum discount amount is 80000."
+                }
+            ],
+            "ground_truth_answer": "SUMMERSALE có giá trị giảm tối đa cao nhất là 80000.0 (so với NEWYEAR2025 là 50000.0, còn WELCOME10 không có giá trị giảm tối đa được chỉ định).",
+            "answer": "### Mã giảm giá có giá trị giảm tối đa cao nhất (loại **percent**)\n\n- Mã: **SUMMERSALE**\n- Giá trị giảm tối đa: **80,000**",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.3333333333333333,
+            "answer_relevancy": 0.9441797182848568,
+            "context_precision": 0.36666666664833336,
+            "context_recall": 0.0,
+            "RAGAS_Avg_4": 0.41104492956663086,
+            "ragas_error": null
+        },
+        {
+            "question": "Hãy xác định các mã giảm giá có giá trị đơn hàng tối thiểu từ 300000.0 trở lên và cho biết trạng thái hiện tại của chúng.",
+            "classification": "Policies",
+            "retrieval_mode": "english",
+            "response_time": 8.89,
+            "Judge_time": 1.9,
+            "retrieved_docs": [
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 22,
+                    "content_preview": "\n            Coupon Code: VIPMEMBER\n\n            Discount Type: amount\n\n            Discount Value: 100000.0\n\n            Minimum Order: 500000.0\n\n            Maximum Discount: nan\n\n            Usage "
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 23,
+                    "content_preview": "\n            Coupon Code: SUMMERSALE\n\n            Discount Type: percent\n\n            Discount Value: 20.0\n\n            Minimum Order: 300000.0\n\n            Maximum Discount: 80000.0\n\n            Usag"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 21,
+                    "content_preview": "\n            Coupon Code: WELCOME10\n\n            Discount Type: percent\n\n            Discount Value: 10.0\n\n            Minimum Order: 0.0\n\n            Maximum Discount: nan\n\n            Usage per Cust"
+                },
+                {
+                    "source": "coupons.csv",
+                    "chunk_id": 20,
+                    "content_preview": "\n            Coupon Code: FREESHIP50\n\n            Discount Type: amount\n\n            Discount Value: 50000.0\n\n            Minimum Order: 100000.0\n\n            Maximum Discount: nan\n\n            Usage "
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 133,
+                    "content_preview": "Question:\n                    What minimum order value must be met to apply the SUMMERSALE coupon?\n\n                    Answer:\n                    A minimum order value of 300000.0 must be met to app"
+                }
+            ],
+            "ground_truth_answer": "Các mã giảm giá gồm SUMMERSALE (giá trị đơn hàng tối thiểu 300000.0, trạng thái: expired) và VIPMEMBER (giá trị đơn hàng tối thiểu 500000.0, trạng thái: active).",
+            "answer": "### Các mã giảm giá có đơn hàng tối thiểu từ **300000.0** trở lên\n\n- **VIPMEMBER**\n  - Đơn hàng tối thiểu: **500000.0**\n  - Trạng thái: **active**\n\n- **SUMMERSALE**\n  - Đơn hàng tối thiểu: **300000.0**\n  - Trạng thái: **expired**",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.8,
+            "answer_relevancy": 0.8102637107639253,
+            "context_precision": 0.8666666666377778,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.8692325943504258,
+            "ragas_error": null
+        },
+        {
+            "question": "Tổng 'usage_limit' của tất cả các mã giảm giá hiện đang ở trạng thái 'active' là bao nhiêu?",
+            "classification": "Discount_Program",
+            "retrieval_mode": "english",
+            "response_time": 9.06,
+            "Judge_time": 2.25,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 138,
+                    "content_preview": "Question:\n                    Which coupon has the highest total usage limit in the dataset?\n\n                    Answer:\n                    The WELCOME10 coupon has the highest total usage limit of "
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 139,
+                    "content_preview": "Question:\n                    Which coupon has the lowest total usage limit in the dataset?\n\n                    Answer:\n                    The VIPMEMBER coupon has the lowest total usage limit of 10"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 124,
+                    "content_preview": "Question:\n                    What is the total usage limit configured for the WELCOME10 coupon?\n\n                    Answer:\n                    The total usage limit configured for WELCOME10 is 1000"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 120,
+                    "content_preview": "Question:\n                    What is the total usage limit for the NEWYEAR2025 coupon?\n\n                    Answer:\n                    The total usage limit for NEWYEAR2025 is 500 times."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 131,
+                    "content_preview": "Question:\n                    What is the total usage limit for the SUMMERSALE coupon?\n\n                    Answer:\n                    The total usage limit for SUMMERSALE is 2000 times."
+                }
+            ],
+            "ground_truth_answer": "Tổng giới hạn sử dụng là 1600 (NEWYEAR2025 có 500, FREESHIP50 có 1000 và VIPMEMBER có 100).",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.0,
+            "answer_relevancy": 0.0,
+            "context_precision": 0.499999999975,
+            "context_recall": 0.0,
+            "RAGAS_Avg_4": 0.12499999999375,
+            "ragas_error": null
+        },
+        {
+            "question": "So sánh khoảng thời gian hiệu lực của FREESHIP50 và NEWYEAR2025. Mã nào có hiệu lực trước và khoảng thời gian hiệu lực của chúng có chồng lấp nhau không?",
+            "classification": "Discount_Program",
+            "retrieval_mode": "english",
+            "response_time": 8.01,
+            "Judge_time": 5.61,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 123,
+                    "content_preview": "Question:\n                    What are the start and end dates for the FREESHIP50 coupon validity?\n\n                    Answer:\n                    The FREESHIP50 coupon is valid from 2025-11-01 00:00"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 121,
+                    "content_preview": "Question:\n                    What is the specific validity period for the NEWYEAR2025 coupon?\n\n                    Answer:\n                    The NEWYEAR2025 coupon is valid from 2025-12-20 00:00:00"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 109,
+                    "content_preview": "Question:\n                    What is the status of FREESHIP50?\n\n                    Answer:\n                    FREESHIP50 is currently active."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 106,
+                    "content_preview": "Question:\n                    How much discount does FREESHIP50 provide?\n\n                    Answer:\n                    FREESHIP50 provides a fixed discount of 50000."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 108,
+                    "content_preview": "Question:\n                    How many times can a customer use FREESHIP50?\n\n                    Answer:\n                    Each customer can use FREESHIP50 up to 3 times."
+                }
+            ],
+            "ground_truth_answer": "FREESHIP50 có hiệu lực trước vào ngày 2025-11-01, trong khi NEWYEAR2025 có hiệu lực sau vào ngày 2025-12-20. Khoảng thời gian hiệu lực của chúng chồng lấp từ 2025-12-20 đến 2025-12-31.",
+            "answer": "### FREESHIP50\n- Mã: **FREESHIP50**  \n- Hiệu lực: **2025-11-01 00:00:00** đến **2025-12-31 00:00:00**\n\n### NEWYEAR2025\n- Mã: **NEWYEAR2025**  \n- Hiệu lực: **2025-12-20 00:00:00** đến **2026-01-05 00:00:00**\n\nKết luận:\n- Mã **FREESHIP50** có hiệu lực trước (bắt đầu **2025-11-01**), trong khi **NEWYEAR2025** bắt đầu **2025-12-20**.\n- Khoảng thời gian hiệu lực có chồng lấp: từ **2025-12-20 00:00:00** đến **2025-12-31 00:00:00**.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.8413192011076756,
+            "context_precision": 0.99999999995,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9603298002644189,
+            "ragas_error": null
+        },
+        {
+            "question": "Mã giảm giá nào có tổng giới hạn sử dụng là 10000 và một người dùng cá nhân có thể sử dụng mã này tối đa bao nhiêu lần?",
+            "classification": "Discount_Program",
+            "retrieval_mode": "english",
+            "response_time": 7.78,
+            "Judge_time": 1.84,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 120,
+                    "content_preview": "Question:\n                    What is the total usage limit for the NEWYEAR2025 coupon?\n\n                    Answer:\n                    The total usage limit for NEWYEAR2025 is 500 times."
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 124,
+                    "content_preview": "Question:\n                    What is the total usage limit configured for the WELCOME10 coupon?\n\n                    Answer:\n                    The total usage limit configured for WELCOME10 is 1000"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 138,
+                    "content_preview": "Question:\n                    Which coupon has the highest total usage limit in the dataset?\n\n                    Answer:\n                    The WELCOME10 coupon has the highest total usage limit of "
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 122,
+                    "content_preview": "Question:\n                    What is the total usage limit allowed for the FREESHIP50 coupon?\n\n                    Answer:\n                    The total usage limit allowed for FREESHIP50 is 1000 tim"
+                },
+                {
+                    "source": "FAQ_Discount_program.json",
+                    "chunk_id": 131,
+                    "content_preview": "Question:\n                    What is the total usage limit for the SUMMERSALE coupon?\n\n                    Answer:\n                    The total usage limit for SUMMERSALE is 2000 times."
+                }
+            ],
+            "ground_truth_answer": "Mã giảm giá WELCOME10 có tổng giới hạn sử dụng là 10000 và một người dùng cá nhân có thể sử dụng tối đa 1 lần.",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.0,
+            "answer_relevancy": 0.0,
+            "context_precision": 0.49999999995,
+            "context_recall": 0.5,
+            "RAGAS_Avg_4": 0.2499999999875,
+            "ragas_error": null
+        }
+    ]
+}

@@ -63,14 +63,47 @@ for i, (doc, vector) in enumerate(zip(all_docs, vectors), start=1):
     rows.append({
         "chunk_id": i,
         "content": doc.page_content,
+        "source": doc.metadata.get("source", ""),
+        "category": doc.metadata.get("category", ""),
         "embedding": str(vector)  # lưu nguyên vector thành chuỗi
     })
 
 df = pd.DataFrame(rows)
 
 df.to_excel(
-    "app/Vector_Store_DB/chunk_embeddings.xlsx",
+    "app/Embedding_Model/Gen_Result/chunk_embeddings.xlsx",
     index=False
 )
+print("Embedding Process: Đã xuất file Excel thành công")
 
-print("Đã xuất file Excel thành công")
+#---------------------------------- Export embeddings and metadata to TSV files ------------------------------------------
+with open(
+    "app/Embedding_Model/Gen_Result/embeddings.tsv",
+    "w",
+    encoding="utf-8"
+) as f:
+
+    for vector in vectors:
+        f.write("\t".join(map(str, vector)) + "\n")
+print("Embedding Process: Đã xuất file embeddings.tsv thành công")
+
+#---------------------------------- Export metadata to TSV file ------------------------------------------
+with open(
+    "app/Embedding_Model/Gen_Result/metadata.tsv",
+    "w",
+    encoding="utf-8"
+) as f:
+
+    f.write("chunk_id\tsource\tpage\tcategory\tcontent\n")
+
+    for i, doc in enumerate(all_docs, start=1):
+
+        source = doc.metadata.get("source", "")
+        page = doc.metadata.get("page", "")
+        category = doc.metadata.get("category", "")
+        content = doc.page_content.replace("\n", " ")
+
+        f.write(
+            f"{i}\t{source}\t{page}\t{category}\t{content}\n"
+        )
+print("Embedding Process: Đã xuất file metadata.tsv thành công")

@@ -1,0 +1,479 @@
+{
+    "summary": {
+        "Accuracy": 0.9,
+        "Recall@5": 0.8,
+        "Recall@3": 0.8,
+        "MRR": 0.5333,
+        "faithfulness": 0.7982,
+        "answer_relevancy": 0.7916,
+        "context_precision": 0.7289,
+        "context_recall": 0.9,
+        "RAGAS_Avg_4": 0.8047,
+        "Avg_Latency": 6.32,
+        "P95_Latency": 7.94,
+        "Avg_Judge_Latency": 2.34,
+        "P95_Judge_Latency": 3.28
+    },
+    "test_results": [
+        {
+            "question": "Nên đặt nến thơm trên loại bề mặt nào khi sử dụng?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 7.99,
+            "Judge_time": 3.05,
+            "retrieved_docs": [
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 282,
+                    "content_preview": "Question:\n                    What kind of surface should be used when burning a scented candle?\n\n                    Answer:\n                    Candles should be placed on a flat, stable, and heat-r"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 342,
+                    "content_preview": "Question:\n                    What specific thermal danger is avoided by utilizing an anti-rust metal frame and mirrored glass base for candle metal trays?\n\n                    Answer:\n               "
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                }
+            ],
+            "ground_truth_answer": "Nến nên được đặt trên bề mặt phẳng, chắc chắn và có khả năng chịu nhiệt.",
+            "answer": "Nên đặt nến thơm trên bề mặt phẳng, ổn định và chịu nhiệt.\n\nGợi ý thêm:\n- Sử dụng khay đựng nến kim loại (inox/electroplated) để bảo vệ bàn gỗ, laminate hoặc đá cẩm thạch khỏi nhiệt trực tiếp và để hứng vết sáp chảy.\n- Tránh đặt trực tiếp lên bề mặt dễ tổn hại mà không có lớp bảo vệ.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 0.5,
+            "faithfulness": 0.8571428571428571,
+            "answer_relevancy": 0.9410809760452287,
+            "context_precision": 0.94999999997625,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9370559582910839,
+            "ragas_error": null
+        },
+        {
+            "question": "Bạn nên làm gì trước khi rời khỏi phòng khi nến vẫn đang cháy?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 7.47,
+            "Judge_time": 1.83,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 287,
+                    "content_preview": "Question:\n                    What should you do before leaving a room with a burning candle?\n\n                    Answer:\n                    You should extinguish the candle before leaving the room."
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 155,
+                    "content_preview": "Question:\n                    What is the first step in the return process?\n\n                    Answer:\n                    The first step is to notify nenthom.com.vn through the Fanpage or hotline."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 305,
+                    "content_preview": "Question:\n                    What two specific actions must be taken before you go to sleep regarding candle safety?\n\n                    Answer:\n                    You must extinguish the candles b"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 365,
+                    "content_preview": "Question:\n                    What is the ultimate objective of using specialized candle care tools like scissors and snuffers during a relaxation ritual?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 167,
+                    "content_preview": "Question:\n                    What action does nenthom.com.vn take immediately after receiving a customer's returned goods?\n\n                    Answer:\n                    Immediately after receiving"
+                }
+            ],
+            "ground_truth_answer": "Bạn nên tắt nến trước khi rời khỏi phòng.",
+            "answer": "Bạn nên dập tắt nến trước khi rời khỏi phòng.\n\n- Mục đích: tránh rủi ro hỏa hoạn, bồ hóng hoặc sự cố chảy sáp.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 0.5,
+            "answer_relevancy": 0.9265242799944363,
+            "context_precision": 0.8055555555287036,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.8080199588807849,
+            "ragas_error": null
+        },
+        {
+            "question": "Sau mỗi lần sử dụng, nên cắt bấc nến bao nhiêu?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 3.72,
+            "Judge_time": 2.55,
+            "retrieved_docs": [
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 293,
+                    "content_preview": "Question:\n                    How much of the wick should be trimmed after each use?\n\n                    Answer:\n                    The wick should be trimmed by approximately 3 millimeters."
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 292,
+                    "content_preview": "Question:\n                    How often should the candle wick be trimmed?\n\n                    Answer:\n                    The wick should be trimmed after each use."
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                }
+            ],
+            "ground_truth_answer": "Bấc nến nên được cắt ngắn khoảng 3 milimét.",
+            "answer": "Nên cắt khoảng **3 mm** bấc nến sau mỗi lần sử dụng.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 0.3333333333333333,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9544635565927052,
+            "context_precision": 0.3333333333,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.8219492224731764,
+            "ragas_error": null
+        },
+        {
+            "question": "Tại sao nên sử dụng bật lửa cán dài khi thắp nến?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.74,
+            "Judge_time": 3.46,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 323,
+                    "content_preview": "Question:\n                    Why are elongated wooden safety matches preferred over cheap plastic disposable lighters for deep jar candles?\n\n                    Answer:\n                    The elonga"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 297,
+                    "content_preview": "Question:\n                    Why is a long-handled lighter recommended?\n\n                    Answer:\n                    It helps prevent burns to your hands when lighting candles."
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 503,
+                    "content_preview": "Question:\n                    What specialized fire safety lighting instruments are explicitly recommended in the safety brief to prevent physical hand burns?\n\n                    Answer:\n            "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 296,
+                    "content_preview": "Question:\n                    What tool should be used to light a scented candle safely?\n\n                    Answer:\n                    A long-handled lighter or long matches should be used."
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 403,
+                    "content_preview": "Question:\n                    What specific physical danger does a long candle match protect against when lighting a low-burned multi-wick candle?\n\n                    Answer:\n                    It p"
+                }
+            ],
+            "ground_truth_answer": "Bật lửa cán dài giúp tránh bị bỏng tay khi thắp nến.",
+            "answer": "### Vì sao nên dùng bật lửa cán dài khi thắp nến\n\n- Giữ tay tránh xa ngọn lửa, giúp **ngăn bỏng tay** khi châm nến.\n- Tránh cho ngón tay và khớp tay chạm vào vành kính nóng hoặc những ngọn lửa thấp bên trong lọ nến sâu.\n- (Tương tự que diêm dài) cán dài cho thời gian cháy dài hơn và cháy sạch, an toàn khi với vào những lọ nến cao.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 0.5,
+            "faithfulness": 0.625,
+            "answer_relevancy": 0.9946596668602335,
+            "context_precision": 0.99999999998,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9049149167100584,
+            "ragas_error": null
+        },
+        {
+            "question": "Đâu là giải pháp thay thế an toàn hơn so với việc đốt nến trực tiếp?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 7.32,
+            "Judge_time": 2.57,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 328,
+                    "content_preview": "Question:\n                    What specific safety risk is completely eliminated when replacing the act of hard blowing with a pivoting-head candle snuffer?\n\n                    Answer:\n              "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 291,
+                    "content_preview": "Question:\n                    What is a safer alternative to burning candles directly?\n\n                    Answer:\n                    A candle warmer can be used as a safer alternative to reduce fir"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 613,
+                    "content_preview": "Question:\n                    Which specific domestic safety hazard is eliminated by choosing the Lumos Cajeput collection over traditional steaming pots?\n\n                    Answer:\n                "
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 408,
+                    "content_preview": "Question:\n                    How does a slider-box design on a safety matchbox enhance safety around children compared to flip-top boxes?\n\n                    Answer:\n                    The heavy-du"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                }
+            ],
+            "ground_truth_answer": "Có thể sử dụng đèn làm nóng nến (candle warmer) để giảm nguy cơ cháy nổ.",
+            "answer": "Giải pháp an toàn hơn là sử dụng máy hâm nến (candle warmer), giúp giảm rủi ro cháy và nổ.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 0.5,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9017549504499743,
+            "context_precision": 0.49999999995,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.8504387375999936,
+            "ragas_error": null
+        },
+        {
+            "question": "Hãy giải thích hai mối nguy mà khu vực có gió lùa gây ra đối với ngọn lửa nến đang cháy.",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 7.68,
+            "Judge_time": 2.67,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 443,
+                    "content_preview": "Question:\n                    What dual dangers make drafty areas highly hazardous when choosing a placement spot for burning candles?\n\n                    Answer:\n                    Drafts cause the"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 302,
+                    "content_preview": "Question:\n                    What specific accident could happen if a candle flame burns too intensely in a drafty area?\n\n                    Answer:\n                    A drafty area can cause the f"
+                },
+                {
+                    "source": "Candle_matchbox.md",
+                    "chunk_id": 29,
+                    "content_preview": "Product name: Candle matchbox\n\nCategory: Candle Accessory / Luxury Safety Matches\n\nMain Scents: Unscented (Natural Aspen Wood / Sulfur-Free Tip).\n\nSeason:ear-round (An absolute daily essential for can"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 346,
+                    "content_preview": "Question:\n                    What specific environmental condition makes a wind-resistant safety matchbox essential for lighting outdoor patio lanterns?\n\n                    Answer:\n                 "
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 316,
+                    "content_preview": "Question:\n                    What is the main danger associated with children and pets near candles as highlighted by the structure of section 2?\n\n                    Answer:\n                    The "
+                }
+            ],
+            "ground_truth_answer": "Khu vực có gió lùa có thể khiến ngọn lửa cháy quá mạnh hoặc thổi các vật liệu dễ cháy ở gần trực tiếp vào ngọn lửa.",
+            "answer": "Hai mối nguy chính:\n\n- Ngọn lửa cháy quá mạnh và bất ổn, tức là flame trở nên dữ dội và không ổn định.  \n\n- Các vật nhẹ, dễ cháy xung quanh có thể bị gió thổi trực tiếp vào ngọn lửa.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 0.5,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7514106827932702,
+            "context_precision": 0.99999999995,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9378526706858176,
+            "ragas_error": null
+        },
+        {
+            "question": "Theo tài liệu, tác giả đã kết hợp hai nguồn kiến thức nào để xây dựng hướng dẫn này?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 3.93,
+            "Judge_time": 1.98,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 311,
+                    "content_preview": "Question:\n                    Where did the author gather the tips shared in this safety document?\n\n                    Answer:\n                    The author gathered the tips from the internet and f"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 490,
+                    "content_preview": "Question:\n                    From what explicit sources did the creator of the 'Safe Usage Guidance' document gather their safety tips?\n\n                    Answer:\n                    The tips were "
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 16,
+                    "content_preview": "## Information storage time\n\nNenthom.com.vn will store Personal Information provided by Customers on our internal systems during the process of providing services to Customers or until the purpose of "
+                },
+                {
+                    "source": "Chinh_sach_mua_hang.docx",
+                    "chunk_id": 18,
+                    "content_preview": "## Contact information\n\nWe always welcome your comments, contacts and feedback on this \"Privacy Policy\". If you have any related questions, please contact us at Email address: nenthom.com.vn"
+                },
+                {
+                    "source": "FAQ_Policies.json",
+                    "chunk_id": 179,
+                    "content_preview": "Question:\n                    What emotional goal does nenthom.com.vn aim for regarding customer confidence in their security policy?\n\n                    Answer:\n                    They aim to make "
+                }
+            ],
+            "ground_truth_answer": "Tác giả đã tổng hợp thông tin từ internet và kết hợp với kinh nghiệm cá nhân của mình.",
+            "answer": "Tác giả đã kết hợp thông tin từ Internet và kinh nghiệm cá nhân.",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.9204585853324327,
+            "context_precision": 0.99999999995,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9801146463206082,
+            "ragas_error": null
+        },
+        {
+            "question": "Liệt kê tất cả các vật liệu dệt may và đồ nội thất bằng vải được nêu rõ trong tài liệu cần tránh đặt gần nến đang cháy.",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 6.34,
+            "Judge_time": 1.6,
+            "retrieved_docs": [
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 281,
+                    "content_preview": "Question:\n                    What types of materials should be kept away from burning candles?\n\n                    Answer:\n                    Clothes, curtains, books, paper, carpets, plastic, and "
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 318,
+                    "content_preview": "Question:\n                    Which room items related to windows and bedding are listed as fire hazards in section 1?\n\n                    Answer:\n                    Clothes and curtains are listed "
+                }
+            ],
+            "ground_truth_answer": "Các vật liệu được đề cập gồm quần áo, rèm cửa và thảm.",
+            "answer": "- Quần áo\n  \n- Rèm cửa\n  \n- Thảm (carpets)",
+            "Accuracy": 1,
+            "Recall@5": true,
+            "Recall@3": true,
+            "Reciprocal_Rank": 1.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7529115752876507,
+            "context_precision": 0.699999999965,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.8632278938131627,
+            "ragas_error": null
+        },
+        {
+            "question": "Việc cắt bấc nến ngắn khoảng 3mm sau mỗi lần sử dụng giúp ngăn chặn loại thành phần nào có trong khói đen?",
+            "classification": "Product_Catalog",
+            "retrieval_mode": "vietnamese",
+            "response_time": 5.11,
+            "Judge_time": 2.0,
+            "retrieved_docs": [
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "FAQ_Candle_product.json",
+                    "chunk_id": 431,
+                    "content_preview": "Question:\n                    How does trimming a candle's wick to approximately 3mm after each use technically prevent the formation of black smoke?\n\n                    Answer:\n                    T"
+                },
+                {
+                    "source": "FAQ_User_guidance.json",
+                    "chunk_id": 309,
+                    "content_preview": "Question:\n                    What specific type of residue is prevented from forming when the wick is regularly trimmed?\n\n                    Answer:\n                    Regular trimming avoids the p"
+                },
+                {
+                    "source": "FAQ_Accesories_product.json",
+                    "chunk_id": 354,
+                    "content_preview": "Question:\n                    What is the direct correlation between using a candle wick cutter and preventing black smoke rings from forming on glass walls?\n\n                    Answer:\n             "
+                }
+            ],
+            "ground_truth_answer": "Việc cắt bấc giúp ngăn sự hình thành khói đen có chứa muội than (soot).",
+            "answer": "Cắt bấc khoảng 3mm giúp ngăn chặn **muội than (soot)** có trong khói đen.",
+            "Accuracy": 1,
+            "Recall@5": false,
+            "Recall@3": false,
+            "Reciprocal_Rank": 0.0,
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7726597256857453,
+            "context_precision": 0.99999999998,
+            "context_recall": 1.0,
+            "RAGAS_Avg_4": 0.9431649314164363,
+            "ragas_error": null
+        },
+        {
+            "question": "Ngoài việc tránh không gian kín, tài liệu còn khuyến cáo tránh đốt nến trong loại môi trường nào?",
+            "classification": "User_Guidance",
+            "retrieval_mode": "vietnamese",
+            "response_time": 7.87,
+            "Judge_time": 1.73,
+            "retrieved_docs": [
+                {
+                    "source": "Candle_Snuffer.md",
+                    "chunk_id": 34,
+                    "content_preview": "Product name: Candle Snuffer\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium plated alloy construction).\n\nSeason: Year-round (An essential tool for anyone wanting to ex"
+                },
+                {
+                    "source": "FAQ_Lumos_product.json",
+                    "chunk_id": 597,
+                    "content_preview": "Question:\n                    What specific environmental condition makes Lumos Lemongrass an essential purchase during specific months in Vietnam?\n\n                    Answer:\n                    The"
+                },
+                {
+                    "source": "Candle_Scissor.md",
+                    "chunk_id": 33,
+                    "content_preview": "Product name: Candle Scissor\n\nCategory: Candle Care Tool / Candle Accessory\n\nMain Scents: Unscented (Premium heavy-duty plated steel construction).\n\nSeason: Year-round (An absolute daily essential for"
+                },
+                {
+                    "source": "Candle_Tray.md",
+                    "chunk_id": 35,
+                    "content_preview": "Product name: Candle Tray\n\nCategory: Candle Accessory / Organizer Tray / Decorative Plate\n\nMain Scents: Unscented (Premium electroplated stainless steel construction).\n\nSeason: Year-round (A sleek, ve"
+                },
+                {
+                    "source": "Wood_tray.md",
+                    "chunk_id": 58,
+                    "content_preview": "Product name: Wood tray\n\nCategory: Home Decor / Candle Accessory / Photography Props\n\nMain Scents: Unscented (Natural, mild earthy pine wood aroma).\n\nSeason: Year-round (An absolute essential for cozy"
+                }
+            ],
+            "ground_truth_answer": "Tài liệu khuyến cáo không nên đốt nến trong những căn phòng nhỏ và chật hẹp.",
+            "answer": "I don't know based on the provided documents, you should contact admin for detail information.",
+            "Accuracy": 0,
+            "Recall@5": false,
+            "Recall@3": false,
+            "Reciprocal_Rank": 0.0,
+            "faithfulness": 0.0,
+            "answer_relevancy": 0.0,
+            "context_precision": 0.0,
+            "context_recall": 0.0,
+            "RAGAS_Avg_4": 0.0,
+            "ragas_error": null
+        }
+    ]
+}

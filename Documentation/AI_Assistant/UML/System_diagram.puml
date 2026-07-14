@@ -1,0 +1,62 @@
+@startuml
+
+skinparam componentStyle rectangle
+left to right direction
+
+actor Customer
+
+package "Frontend Layer" {
+    [React Web UI] as Frontend
+}
+
+package "Backend Layer" {
+    [FastAPI API Server] as Backend
+    [Language Detection] as LangDetect
+    [Translation Service] as Translator
+    [Retriever Service] as Retriever
+}
+
+database "FAISS Vector DB" as FAISS
+
+folder "Knowledge Base" {
+    [Product Documents]
+    [FAQ Documents]
+    [Promotion Documents]
+}
+
+cloud "OpenAI Services" {
+    [Embedding Model]
+    [GPT Model]
+}
+
+Customer --> Frontend
+
+Frontend --> Backend
+
+Backend --> LangDetect
+
+LangDetect --> Translator : Vietnamese Query
+
+LangDetect --> Retriever : English Query
+
+Translator --> Retriever
+
+Retriever --> "Embedding Model"
+
+Retriever --> FAISS
+
+FAISS --> Retriever
+
+Retriever --> Backend
+
+Backend --> "GPT Model"
+
+"GPT Model" --> Backend
+
+Backend --> Frontend
+
+[Product Documents] --> FAISS
+[FAQ Documents] --> FAISS
+[Promotion Documents] --> FAISS
+
+@enduml

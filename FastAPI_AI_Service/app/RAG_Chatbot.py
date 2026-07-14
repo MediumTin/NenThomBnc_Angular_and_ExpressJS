@@ -195,20 +195,26 @@ def RAG_Model_ask(question: str, chat_history: list = []    ):
     Result_classification = get_retriever_classification(question)
     print(f"Classification result: {Result_classification}")
 
-    match (Result_classification):
-        case "Candle_Knowledge":
-            Retrieval_mode  = "english"
-        case "Discount_Program":
-            Retrieval_mode  = "english"
-        case "User_Guidance":
-            Retrieval_mode  = "english"
-        case "Policies":
-            if (language_name == "Vietnamese"):
-                Retrieval_mode  = "vietnamese"
-            else:
-                Retrieval_mode  = "english"
-        case "Product_Catalog":
-            Retrieval_mode  = "vietnamese"
+    # Dynamic mode
+    # match (Result_classification):
+    #     case "Candle_Knowledge":
+    #         Retrieval_mode  = "english"
+    #     case "Discount_Program":
+    #         Retrieval_mode  = "english"
+    #     case "User_Guidance":
+    #         if (language_name == "Vietnamese"):
+    #             Retrieval_mode  = "english" # Translate to English for User Guidance questions in Vietnamese
+    #         else:
+    #             Retrieval_mode  = "vietnamese" # Use original question if it's in English
+    #     case "Policies":
+    #         Retrieval_mode  = "english"
+    #     case "Product_Catalog":
+    #         Retrieval_mode  = "vietnamese"
+
+    # Fixed mode: for testing performance
+    # Retrieval_mode  = "vietnamese"
+    Retrieval_mode  = "english" # Based on testing performance, we can set this to "english" for now. Adjust as needed for different scenarios.
+            
     print(f"Retrieval mode for this question: {Retrieval_mode}")
 
     if Retrieval_mode == "english" or Retrieval_mode == "hybrid":

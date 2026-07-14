@@ -69,7 +69,8 @@ for _, row in products_df.iterrows():
             metadata={
                 "type": "product",
                 "product_id": row["product_id"],
-                "source" : PRODUCTS_CSV_PATH
+                "source" : PRODUCTS_CSV_PATH,
+                "category": "Product_Catalog"
             }
         )
     )
@@ -99,13 +100,15 @@ for _, row in discounts_df.iterrows():
              metadata={
                 "type": "coupon",
                 "coupon_id": row["coupon_id"],
-                "source" : COUPONS_CSV_PATH,
+                "source" : COUPONS_CSV_PATH.name,
                 "category": "Discount_Program"
             }
         )
     )
 
-all_discount_questions = coupon_docs
+# all_discount_questions = coupon_docs # Dead code, Both coupon_list and all_discount are pointing to same address in memory, so any changes made to one will affect the other. If you want to keep them separate, you should create a new list for all_discount_questions and append the coupon_docs to it. For example:
+all_discount_questions = coupon_docs.copy()
+
 # ---------------------------------- Case 2: Loading word file -----------------------------------
 
 
@@ -151,8 +154,11 @@ text_splitter = RecursiveCharacterTextSplitter(
 # )
 
 Doccument_splits = text_splitter.split_documents(docs)
+# for doc in Doccument_splits:
+#     doc.metadata["category"] = "Candle_Knowledge"
 # pprint(splits)
 
+Doccument_splits_Combined = []
 # Call only for Candle knowledge base
 loader_CandleKnowledge = DirectoryLoader(
     path = str(Candle_Knowledge_DIR),
@@ -166,8 +172,10 @@ docs_CandleKnowledge = loader_CandleKnowledge.load()
 Doccument_splits_CandleKnowledge = text_splitter.split_documents(docs_CandleKnowledge)
 for doc in Doccument_splits_CandleKnowledge:
     doc.metadata["category"] = "Candle_Knowledge"
+    source_path = doc.metadata.get("source", "")
+    doc.metadata["source"] = Path(source_path).name if source_path else ""
 all_candle_knowledge_questions = Doccument_splits_CandleKnowledge
-
+Doccument_splits_Combined.extend(Doccument_splits_CandleKnowledge)
 # Call only for User guidance base
 loader_UserGuidance = DirectoryLoader(
     path = str(User_Guidance_DIR),
@@ -181,8 +189,10 @@ docs_UserGuidance = loader_UserGuidance.load()
 Doccument_splits_UserGuidance = text_splitter.split_documents(docs_UserGuidance)
 for doc in Doccument_splits_UserGuidance:
     doc.metadata["category"] = "User_Guidance"
+    source_path = doc.metadata.get("source", "")
+    doc.metadata["source"] = Path(source_path).name if source_path else ""
 all_user_guidance_questions = Doccument_splits_UserGuidance
-
+Doccument_splits_Combined.extend(Doccument_splits_UserGuidance)
 # Call only for Policies base
 loader_Policies = DirectoryLoader(
     path = str(POLICIES_PATH),
@@ -196,7 +206,10 @@ docs_Policies = loader_Policies.load()
 Doccument_splits_Policies = text_splitter.split_documents(docs_Policies)
 for doc in Doccument_splits_Policies:
     doc.metadata["category"] = "Policies"
+    source_path = doc.metadata.get("source", "")
+    doc.metadata["source"] = Path(source_path).name if source_path else ""
 all_policy_questions = Doccument_splits_Policies
+Doccument_splits_Combined.extend(Doccument_splits_Policies)
 
 # ------ For reading markdown file directly ---------------
 load_markdown = DirectoryLoader(
@@ -206,13 +219,28 @@ load_markdown = DirectoryLoader(
 docs_markdown = load_markdown.load()
 for doc in docs_markdown:
     doc.metadata["category"] = "Product_Catalog"
+    source_path = doc.metadata.get("source", "")
+    doc.metadata["source"] = Path(source_path).name if source_path else ""
 
-all_product_questions = docs_markdown
+all_product_questions = docs_markdown.copy() # Avoid 2 variables pointing to the same list in memory, which can lead to unintended side effects when modifying one of them.
 
 # Loading FAQ files and creating Document objects for each FAQ entry
 faq_docs = []
 
-faq_id = 1
+faq_id = 1 # 
+
+def Mapping_category_from_file_name(file_name):
+    mapping = {
+        "FAQ_Candle_knowledge.json": "Candle_Knowledge",
+        "FAQ_Discount_program.json": "Discount_Program",
+        "FAQ_User_guidance.json": "User_Guidance",
+        "FAQ_Policies.json": "Policies",
+        "FAQ_Product_Catalog.json": "Product_Catalog",
+        "FAQ_Accesories_product.json": "Product_Catalog",
+        "FAQ_Candle_product.json": "Product_Catalog",
+        "FAQ_Lumos_product.json": "Product_Catalog"
+    }
+    return mapping.get(file_name, "Unknown_Category")
 
 for faq_file in FAQ_FILES:
 
@@ -232,7 +260,7 @@ for faq_file in FAQ_FILES:
                         "type": "faq",
                         "faq_id": faq_id,
                         "source": faq_file.name,
-                        "category": faq_file.parent.parent.name
+                        "category": Mapping_category_from_file_name(faq_file.name)
                     }
                 )
             )
@@ -311,7 +339,7 @@ for faq_file in FAQ_FILES:
         print(f"Loaded {len(faq_docs)} FAQ documents")
 
 # ---------------------------------- Merging all document splits -----------------------------------
-all_docs.extend(Doccument_splits)
+all_docs.extend(Doccument_splits_Combined)
 
 # all_docs.extend(product_docs)
 
@@ -343,6 +371,7 @@ for chunk in all_docs:
     rows.append({
         "chunk_id": chunk.metadata.get("chunk_id"),
         "source": chunk.metadata.get("source", ""),
+        "category": chunk.metadata.get("category", ""),
         "length": len(chunk.page_content),
         "content": chunk.page_content
     })
@@ -369,6 +398,6 @@ df_classification.to_excel(
     index=False
 )
 
-print(f"Exported {len(rows)} chunks to {CHUNK_DEBUG_XLSX_PATH}")
-print(f"Exported {len(rows_Classification)} classification data to {Report_Data_for_Classification_XLSX_PATH}")
+print(f"Chunking Process : Exported {len(rows)} chunks to {CHUNK_DEBUG_XLSX_PATH}")
+print(f"Chunking Process : Exported {len(rows_Classification)} classification data to {Report_Data_for_Classification_XLSX_PATH}")
 

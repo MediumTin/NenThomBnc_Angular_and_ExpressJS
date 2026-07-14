@@ -1,0 +1,44 @@
+@startuml
+title Multilingual RAG Workflow
+
+start
+
+:Receive User Question;
+
+:Detect Language;
+
+if (Vietnamese?) then (Yes)
+
+    :Translate Question to English;
+
+endif
+
+:Generate Query Embedding;
+
+:Search Similar Documents;
+
+:Retrieve Top-K Context;
+
+if (Relevant Context Found?) then (Yes)
+
+    :Build Prompt with Context;
+
+else (No)
+
+    :Build Prompt without Context;
+
+endif
+
+:Generate Answer using LLM;
+
+if (Vietnamese?) then (Yes)
+
+    :Translate Answer to Vietnamese;
+
+endif
+
+:Return Answer to User;
+
+stop
+
+@enduml
