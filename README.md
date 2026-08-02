@@ -6,6 +6,6 @@ This source is a combined program for e-Commercial website with MEAN stack
 
 Detail for each design was described in Documentation folder, please refer for detail understanding.
 
-Official website link: https://nenthombnc.com
+Official website link: https://nenthombnc.com \n
 Link you tube for AI Service demo: https://www.youtube.com/watch?v=kW8ot0YEB9c
 Slide detail for AI Service:
