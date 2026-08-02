@@ -7,4 +7,4 @@ This source is a combined program for e-Commercial website with MEAN stack
 - Detail for each design was described in Documentation folder, please refer for detail understanding.
 - Official website link: https://nenthombnc.com
 - Link you tube for AI Service demo: https://www.youtube.com/watch?v=kW8ot0YEB9c
-- Slide detail for AI Service:
+- Slide detail for AI Service: https://github.com/MediumTin/NenThomBnc_Angular_and_ExpressJS/blob/main/Documentation/AI_Assistant/Presentation/Thuyet_minh_AI_Chatbot.pdf
